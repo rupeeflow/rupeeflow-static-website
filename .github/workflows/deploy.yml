@@ -22,12 +22,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-        if ! bun install --frozen-lockfile; then
-            echo "Lockfile out of sync, updating..."
-            bun install
-            echo "Please update your lockfile locally and commit it"
-            exit 1
-        fi
+          if ! bun install --frozen-lockfile; then
+              echo "Lockfile out of sync, updating..."
+              bun install
+              echo "Please update your lockfile locally and commit it"
+              exit 1
+          fi
 
       - name: Type check
         run: bun run type-check
@@ -35,7 +35,7 @@ jobs:
       - name: Lint code
         run: bun run lint
 
-     - name: Run tests
+      - name: Run tests
         run: bun test
 
       - name: Build static site
