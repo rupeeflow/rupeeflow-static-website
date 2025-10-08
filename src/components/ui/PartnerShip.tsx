@@ -1,11 +1,14 @@
-import { BBPSImgSVG } from "./icon/BBPSImgSVG";
-import { NPCIImgSVG } from "./icon/NPCIImgSVG";
-import { UPIImgSVG } from "./icon/UPIImgLogo";
+import { BBPSImgSVG } from './icon/BBPSImgSVG'
+import { NPCIImgSVG } from './icon/NPCIImgSVG'
+import { UPIImgSVG } from './icon/UPIImgLogo'
 
 export default function PartnerShip() {
   return (
-    <section className="relative bg-white overflow-hidden">
-
+    <section
+      data-section
+      data-theme="dark"
+      className="relative bg-white overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto px-6 py-28 relative z-40 text-center">
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-10">
           In Partnership with
@@ -42,5 +45,5 @@ export default function PartnerShip() {
         </p>
       </div>
     </section>
-  );
+  )
 }

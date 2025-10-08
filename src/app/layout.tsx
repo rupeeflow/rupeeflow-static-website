@@ -1,16 +1,9 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+
 import './globals.css'
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
+import Navbar from '@/components/ui/navbar'
+import Footer from '@/components/ui/footer'
+import SmoothScrollProvider from '@/lib/smoothScrollProvider'
 
 export const metadata: Metadata = {
   title: 'Rupeeflow Static Website',
@@ -27,10 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased background-black text-white`}
-      >
-        {children}
+      <body className={`antialiased background-black text-white`}>
+        <SmoothScrollProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   )
