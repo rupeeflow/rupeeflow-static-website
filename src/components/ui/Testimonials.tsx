@@ -24,7 +24,7 @@ export default function Testimonials() {
           What our clients say
         </h2>
         <p className="text-gray-600 mb-12">
-          Hear from those who have experienced the Elanore Joaillerie difference
+          Hear from those who have experienced the Rupeeflow difference
         </p>
 
         <div className="relative flex justify-center items-center">
