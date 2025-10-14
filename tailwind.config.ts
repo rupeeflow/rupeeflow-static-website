@@ -7,6 +7,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        portrait: { raw: '(orientation: portrait)' },
+        landscape: { raw: '(orientation: landscape)' },
+      },
       colors: {
         teal: {
           500: '#14b8a6', // default Tailwind teal

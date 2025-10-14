@@ -43,8 +43,8 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="w-full bg-gradient-to-b from-[#021E16] to-[#043022] text-gray-300 pt-16 pb-8 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between gap-10 border-b border-green-900/40 pb-10">
+    <footer className="w-full bg-black-emerald text-gray-300 pt-16 pb-8">
+      <div className="w-full flex flex-col lg:flex-row justify-between border-b border-green-900/40 pb-10 px-20">
         {/* Left: Logo and App Download */}
         <div className="flex-1">
           <div className="flex items-center space-x-2 mb-4">
@@ -100,7 +100,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Footer */}
-      <div className="max-w-7xl mx-auto mt-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-400">
+      <div className="w-full mt-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-400 px-16">
         <p className="text-center md:text-left">
           © 2025 RupeeFlow. All Rights Reserved.
         </p>

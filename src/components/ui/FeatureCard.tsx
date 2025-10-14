@@ -27,9 +27,9 @@ export default function FeatureCard({
       onMouseLeave={() => setHovered(false)}
       whileHover={{ y: -5 }}
       transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-      className="relative z-20 flex flex-col justify-between backdrop-blur-lg  bg-black/30
-      rounded-3xl p-6 text-white shadow-lg overflow-hidden border border-emerald-400/50
-      w-full max-w-sm h-[56vh] group"
+      className="relative z-20 flex flex-col justify-between backdrop-blur-lg  bg-neutral-600/30
+      rounded-3xl p-6 text-white  border border-white/60 hover:border-white
+      w-full max-w-sm h-[56vh] group hover:shadow-[0_0_10px_rgba(34,197,94,0.3)]"
     >
       <div>
         {/* Top Badge */}
@@ -66,7 +66,7 @@ export default function FeatureCard({
         transition={{ type: 'spring', stiffness: 200, damping: 15 }}
         className="absolute bottom-6 left-0 w-full flex justify-center"
       >
-        <button className="bg-teal-emerald hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-2 transition">
+        <button className="cursor-pointer bg-teal-emerald hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-2 transition">
           EXPLORE MORE
         </button>
       </motion.div>

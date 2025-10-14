@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function LanguageSection() {
   return (
-    <section className="relative w-full bg-black text-white text-center py-24 px-6 overflow-hidden">
+    <section className="relative w-full bg-black-emerald text-white text-center py-24 px-6 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
         <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-snug">
@@ -16,7 +16,7 @@ export default function LanguageSection() {
         </h2>
 
         {/* Icon Section */}
-        <div className="flex justify-center items-center gap-3 md:gap-6 my-10">
+        <div className="flex justify-center items-center  my-10">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -32,7 +32,10 @@ export default function LanguageSection() {
             transition={{ duration: 0.6, delay: 0.2, type: 'spring' }}
             viewport={{ once: true }}
           >
-            <Mic className="w-14 h-14 md:w-20 md:h-20 text-gray-300" />
+            <Mic
+              strokeWidth={1.4}
+              className="w-24 h-24 md:w-30 md:h-30 text-gray-300"
+            />
           </motion.div>
 
           <motion.div
@@ -46,7 +49,7 @@ export default function LanguageSection() {
         </div>
 
         {/* Tagline */}
-        <p className="text-green-400 font-semibold mb-2 text-sm md:text-base">
+        <p className="text-gradient-teal-emerald font-semibold mb-2 text-sm md:text-base">
           Your Voice, Your Language, Your Payments
         </p>
 

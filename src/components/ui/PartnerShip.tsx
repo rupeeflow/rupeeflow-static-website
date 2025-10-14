@@ -1,46 +1,42 @@
-import { BBPSImgSVG } from './icon/BBPSImgSVG'
-import { NPCIImgSVG } from './icon/NPCIImgSVG'
-import { UPIImgSVG } from './icon/UPIImgLogo'
+'use client'
+import Image from 'next/image'
 
-export default function PartnerShip() {
+export default function PartnershipSection() {
+  // You can easily add or remove partners here ↓
+  const partners = [
+    { name: 'UPI', logo: '/partners/upi.png' },
+    { name: 'BBPS', logo: '/partners/bbps.png' },
+    { name: 'NPCI', logo: '/partners/npci.png' },
+    { name: 'RBI', logo: '/partners/rbi.png' },
+  ]
+
   return (
-    <section
-      data-section
-      data-theme="dark"
-      className="relative bg-white overflow-hidden"
-    >
-      <div className="max-w-6xl mx-auto px-6 py-28 relative z-40 text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-10">
+    <section className="relative overflow-hidden py-16 bg-white">
+      {/* Optional radial glow */}
+
+      <div className="relative z-10 flex flex-col items-center text-center px-6">
+        <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 ">
           In Partnership with
         </h2>
 
-        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 mb-10">
-          <div className="flex items-center h-12 md:h-16">
-            <UPIImgSVG width={160} height={40} />
-          </div>
-
-          <div className="flex items-center h-12 md:h-16">
-            <BBPSImgSVG width={160} height={40} />
-          </div>
-
-          <div className="flex items-center h-12 md:h-16">
-            <NPCIImgSVG width={140} height={40} />
-          </div>
-
-          {/* Replace with vector logos if you have SVG versions */}
-          {/* <img
-            src="/partners/rbi.png"
-            alt="RBI"
-            className="h-10 md:h-12 object-contain"
-          />
-          <img
-            src="/partners/hdfc.png"
-            alt="HDFC Bank"
-            className="h-10 md:h-12 object-contain"
-          /> */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-8 md:gap-14 max-w-6xl">
+          {partners.map(partner => (
+            <div
+              key={partner.name}
+              className="flex items-center justify-center w-28 md:w-36 transition-transform hover:scale-105"
+            >
+              <Image
+                src={partner.logo}
+                alt={partner.name}
+                width={150}
+                height={60}
+                className="object-contain w-full h-auto"
+              />
+            </div>
+          ))}
         </div>
 
-        <p className="text-gray-700 text-sm md:text-base">
+        <p className="mt-10 text-md text-gray-700 ">
           Backed by trusted institutions and leading technology partners
         </p>
       </div>

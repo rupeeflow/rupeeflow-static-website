@@ -50,10 +50,10 @@ export default function FeatureSection() {
   return (
     <section className="relative bg-black text-center py-40 px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-2">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl fontheadingthin text-white mb-2">
           The Future of UPI, Built for You
         </h2>
-        <p className="text-2xl md:text-3xl text-green-400 font-semibold mb-4">
+        <p className="text-2xl md:text-3xl text-gradient-teal-emerald font-semibold mb-4">
           Connecting Voices
         </p>
         <p className="text-gray-300 max-w-2xl mx-auto mb-12">
@@ -69,6 +69,7 @@ export default function FeatureSection() {
       </div>
 
       <div className="absolute opacity-70 top-[15%] left-[15%] w-100 h-100 bg-radial-teal-soft "></div>
+
       <div className="absolute opacity-70 bottom-0 right-[10%] w-150 h-150 bg-radial-emerald-soft "></div>
     </section>
   )

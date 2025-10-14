@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   ChevronLeft,
   ChevronRight,
@@ -16,16 +16,18 @@ const cards = [
     title: 'Cross-Border UPI for NRIs',
     description:
       'Pay Indian bills directly from your foreign bank accounts using international UPI.',
+    imageUrl: '/images/crossborder.png',
     features: [
       { icon: Globe, label: 'Real-time forex conversion' },
-      { icon: Globe, label: 'Family delegated payments' },
       { icon: Globe, label: 'Secure remittance' },
+      { icon: Globe, label: 'Family delegated payments' },
     ],
   },
   {
     title: 'AI-Powered Bill Management',
     description:
       'Automate bill tracking, reminders, and insights with our advanced AI engine.',
+    imageUrl: '/images/ai-bill.png',
     features: [
       { icon: Brain, label: 'Predictive analytics' },
       { icon: Brain, label: 'Smart alerts' },
@@ -36,16 +38,18 @@ const cards = [
     title: 'Smart Wallet for Gig Workers',
     description:
       'Simplify finances with automated payments and instant access to micro-loans.',
+    imageUrl: '/images/smart-wallet.png',
     features: [
       { icon: Wallet, label: 'Bill auto-pay' },
-      { icon: Wallet, label: 'Savings goals' },
       { icon: Wallet, label: 'One-tap withdrawals' },
+      { icon: Wallet, label: 'Savings goals' },
     ],
   },
   {
     title: 'Fraud Resilient UPI Security',
     description:
       'Protect your transactions with blockchain verification and real-time alerts.',
+    imageUrl: '/images/fraud-resilient.png',
     features: [
       { icon: ShieldCheck, label: '2FA & biometrics' },
       { icon: ShieldCheck, label: 'Blockchain verification' },
@@ -61,16 +65,24 @@ export default function CardSlider() {
   const prevCard = () =>
     setIndex(prev => (prev - 1 + cards.length) % cards.length)
 
+  // ✅ Auto slide every 6 seconds
+  useEffect(() => {
+    const autoSlide = setInterval(() => {
+      setIndex(prev => (prev + 1) % cards.length)
+    }, 6000)
+    return () => clearInterval(autoSlide)
+  }, [])
+
   return (
-    <div className="relative w-full flex flex-col   items-center mb-40">
+    <div className="relative w-full flex flex-col items-center mb-40">
       {/* Slider */}
-      <div className="overflow-hidden w-full max-w-6xl  relative ">
+      <div className="overflow-hidden w-full max-w-6xl relative">
         <div
-          className="flex transition-transform  duration-700  ease-in-out"
+          className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
           {cards.map((card, i) => (
-            <div key={i} className="w-full flex-shrink-0  px-10">
+            <div key={i} className="flex w-full flex-shrink-0 px-3">
               <InfoCard {...card} isActive={i === index} />
             </div>
           ))}

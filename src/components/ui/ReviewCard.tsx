@@ -13,22 +13,21 @@ export default function ReviewCard({
   quote,
   name,
   role,
-  image,
+  image = '/defaultaccount.svg',
 }: ReviewCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center text-center max-w-md mx-auto transition-all duration-300">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center text-center max-w-5xl mx-auto transition-all duration-300">
       {/* Quote */}
-      <p className="text-lg font-medium text-gray-800 mb-6">"{quote}"</p>
+      <p className="text-3xl fontheading2 text-gray-800 mb-6">"{quote}"</p>
 
       {/* Avatar */}
       <div className="w-14 h-14 mb-4 relative rounded-full overflow-hidden bg-gray-100">
-        {image ? (
-          <Image src={image} alt={name} fill className="object-cover" />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-gray-400 text-2xl">
-            ☺
-          </div>
-        )}
+        <Image
+          src={image}
+          alt={name}
+          fill
+          className="object-cover w-full h-full"
+        />
       </div>
 
       {/* Name + Role */}

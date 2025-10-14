@@ -1,28 +1,28 @@
 'use client'
 
 import { motion, Variants } from 'framer-motion'
-import { ShieldCheck, Clock, Mic, Receipt } from 'lucide-react'
+import { ShieldCheck, Clock, Mic, ReceiptIndianRupee } from 'lucide-react'
 import Link from 'next/link'
 
 export default function WhyChooseSection() {
   const features = [
     {
-      icon: <Receipt className="w-10 h-10 text-green-400" />,
+      icon: <ReceiptIndianRupee className="w-10 h-10 text-neutral-300" />,
       title: 'All your bills, paid in seconds.',
       desc: 'Electricity, water, mobile, and more — manage every bill in one place, without the hassle.',
     },
     {
-      icon: <ShieldCheck className="w-10 h-10 text-green-400" />,
+      icon: <ShieldCheck className="w-10 h-10 text-neutral-300" />,
       title: 'Payments you can trust.',
       desc: 'End-to-end encryption and UPI compliance keep your money safe, no matter where you are.',
     },
     {
-      icon: <Clock className="w-10 h-10 text-green-400" />,
+      icon: <Clock className="w-10 h-10 text-neutral-300" />,
       title: 'Always on, whenever you need us.',
       desc: 'RupeeFlow never sleeps. Pay, transfer, or get help anytime with round-the-clock support.',
     },
     {
-      icon: <Mic className="w-10 h-10 text-green-400" />,
+      icon: <Mic className="w-10 h-10 text-neutral-300" />,
       title: 'Just say it, and it’s done.',
       desc: 'Make payments in your own language with simple voice commands — no typing, no stress.',
     },
@@ -46,7 +46,7 @@ export default function WhyChooseSection() {
   }
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-[#021E16] to-[#043022] text-white py-24 px-6 overflow-hidden">
+    <section className="relative w-full bg-black-emerald text-white py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">
         {/* Left Side */}
         <motion.div
@@ -68,9 +68,9 @@ export default function WhyChooseSection() {
 
           <Link
             href="/features"
-            className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-black font-semibold px-6 py-3 rounded-md transition shadow-lg"
+            className="inline-flex items-center gap-2 bg-teal-emerald hover:bg-hover text-black font-semibold px-6 py-3 rounded-md transition-colors duration-300 ease-in-out shadow-lg "
           >
-            <Receipt className="w-5 h-5" />
+            <ReceiptIndianRupee className="w-5 h-5" />
             SEE ALL FEATURES
           </Link>
         </motion.div>

@@ -88,14 +88,14 @@ export default function AddonsSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto"
+        className="relative z-20 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto"
       >
         {addons.map((addon, index) => (
           <motion.div
             key={addon.title}
             variants={card}
             whileHover={{ scale: 1.03 }}
-            className="relative backdrop-blur-lg bg-white/10 border border-green-500/40 hover:border-green-400 rounded-2xl p-8 flex flex-col justify-between shadow-[0_0_20px_rgba(34,197,94,0.1)] transition-all duration-300"
+            className="relative backdrop-blur-lg bg-neutral-500/30 border border-teal-500/40 hover:border-white hover:shadow-[0_0_25px_rgba(34,197,94,0.3)] rounded-2xl p-8 flex flex-col justify-between shadow-[0_0_20px_rgba(34,197,94,0.1)] transition-all duration-300"
           >
             {/* Title and Price */}
             <div>
@@ -123,7 +123,7 @@ export default function AddonsSection() {
             {/* Button */}
             <Link
               href={addon.buttonHref}
-              className="inline-flex items-center justify-center gap-2 font-semibold text-sm rounded-md px-6 py-3 bg-green-500 hover:bg-green-600 text-black transition"
+              className="inline-flex items-center justify-center gap-2 font-semibold text-sm rounded-md px-6 py-3 bg-teal-emerald hover:bg-green-600 text-black transition"
             >
               {addon.buttonText} <ArrowRight className="w-4 h-4" />
             </Link>
@@ -133,6 +133,8 @@ export default function AddonsSection() {
 
       {/* Glow Effect (you can tweak gradient manually) */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-green-500/20 to-transparent blur-3xl" />
+      <div className="absolute opacity-70 top-[5%] left-[15%] w-100 h-100 bg-radial-teal-soft "></div>
+      <div className="absolute opacity-70 bottom-[-10%] right-[10%] w-150 h-150 bg-radial-emerald-soft "></div>
     </section>
   )
 }

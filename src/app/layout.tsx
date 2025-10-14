@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/ui/navbar'
 import Footer from '@/components/ui/footer'
 import SmoothScrollProvider from '@/lib/smoothScrollProvider'
+import Marquee from '@/components/ui/MarqueeSection'
 
 export const metadata: Metadata = {
   title: 'Rupeeflow Static Website',
@@ -24,6 +25,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <Navbar />
           <main>{children}</main>
+          <Marquee />
           <Footer />
         </SmoothScrollProvider>
       </body>

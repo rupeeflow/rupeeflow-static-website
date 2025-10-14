@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "question": "How do cross-border UPI payments work?",
+    "answer": "RupeeFlow allows you to pay Indian bills and manage transfers from your foreign accounts. We use secure NPCI-approved channels for instant UPI settlement across countries."
+  },
+  {
+    "id": 2,
+    "question": "What are the transaction fees?",
+    "answer": "Most domestic UPI transactions are free. For cross-border payments, a minimal forex markup (typically 0.5–1%) may apply, depending on your bank and country."
+  },
+  {
+    "id": 3,
+    "question": "Are there any hidden charges?",
+    "answer": "No hidden fees. All charges, if applicable, are displayed upfront before you confirm your payment."
+  },
+  {
+    "id": 4,
+    "question": "How does RupeeFlow handle forex conversion?",
+    "answer": "RupeeFlow partners with RBI-regulated forex gateways to ensure real-time and transparent currency conversion for international payments."
+  },
+  {
+    "id": 5,
+    "question": "Do I need KYC to use RupeeFlow?",
+    "answer": "Yes, basic KYC verification is mandatory for regulatory compliance. You can complete this easily through your dashboard using your Aadhaar or passport."
+  },
+  {
+    "id": 6,
+    "question": "How can I access RupeeFlow APIs?",
+    "answer": "Developers can access our public API suite by creating a Dev account. Full documentation and sandbox access are available under the ‘Dev Tools’ section."
+  },
+  {
+    "id": 7,
+    "question": "What developer tools are available?",
+    "answer": "We offer API documentation, SDKs, and test environments for payments, authentication, and webhook integrations."
+  },
+  {
+    "id": 8,
+    "question": "How secure are my transactions?",
+    "answer": "RupeeFlow uses multi-layer encryption, 2FA, and RBI/NPCI compliance to ensure all your transactions are 100% secure."
+  },
+  {
+    "id": 9,
+    "question": "Can I track my transaction status?",
+    "answer": "Yes. You can track real-time status updates for every payment, including initiated, settled, or refunded transactions."
+  },
+  {
+    "id": 10,
+    "question": "How do I contact support?",
+    "answer": "You can reach our 24x7 support via email at support@rupeeflow.in or through in-app live chat for faster responses."
+  }
+]

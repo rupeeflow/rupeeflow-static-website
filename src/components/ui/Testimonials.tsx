@@ -4,29 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ReviewCard from './ReviewCard'
 
-const testimonials = [
-  {
-    quote:
-      "The necklace is more than jewelry. It's a work of art that tells my story.",
-    name: 'Elizabeth Hartley',
-    role: 'Creative Director, London',
-    image: '/images/client1.jpg',
-  },
-  {
-    quote:
-      'Exceptional craftsmanship. Each piece feels like a personal treasure.',
-    name: 'Michael Chen',
-    role: 'Entrepreneur, New York',
-    image: '/images/client2.jpg',
-  },
-  {
-    quote:
-      'Bespoke design that exceeded all my expectations. Truly remarkable.',
-    name: 'Sophie Laurent',
-    role: 'Art Curator, Paris',
-    image: '/images/client3.jpg',
-  },
-]
+import testimonials from '@/data/testimonials.json'
 
 export default function Testimonials() {
   const [current, setCurrent] = useState(0)
@@ -35,14 +13,14 @@ export default function Testimonials() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent(prev => (prev + 1) % testimonials.length)
-    }, 5000)
+    }, 6000)
     return () => clearInterval(interval)
   }, [])
 
   return (
     <section className="w-full bg-white py-20 px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-3">
+        <h2 className="text-3xl fontheading2 md:text-4xl font-bold mb-3">
           What our clients say
         </h2>
         <p className="text-gray-600 mb-12">

@@ -36,7 +36,7 @@ export default function StatsSection() {
     <section className="w-full bg-gray-100 py-20 px-6">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left image area */}
-        <div className="relative w-full max-w-sm lg:max-w-md flex-shrink-0">
+        <div className="relative w-full lg:w-[50%] flex-shrink-0">
           <Image
             src="/images/smiling-man.png" // 👈 change to your image path
             alt="Happy customer"
