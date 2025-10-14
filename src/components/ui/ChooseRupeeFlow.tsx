@@ -1,115 +1,100 @@
-import { SecureSVG } from './icon/SecureSVG'
-import { RoundClockLogo } from './icon/RoundClockSVG'
-import { NoteBookSVG } from './icon/NotebookSvg'
-import { SpeechLogoSVG } from './icon/SpeechLogoSVG'
-import { GoogleStoreImgSVG } from './icon/GooglePlayStore'
+'use client'
 
-export default function ChooseRupeeFlow() {
+import { motion, Variants } from 'framer-motion'
+import { ShieldCheck, Clock, Mic, Receipt } from 'lucide-react'
+import Link from 'next/link'
+
+export default function WhyChooseSection() {
+  const features = [
+    {
+      icon: <Receipt className="w-10 h-10 text-green-400" />,
+      title: 'All your bills, paid in seconds.',
+      desc: 'Electricity, water, mobile, and more — manage every bill in one place, without the hassle.',
+    },
+    {
+      icon: <ShieldCheck className="w-10 h-10 text-green-400" />,
+      title: 'Payments you can trust.',
+      desc: 'End-to-end encryption and UPI compliance keep your money safe, no matter where you are.',
+    },
+    {
+      icon: <Clock className="w-10 h-10 text-green-400" />,
+      title: 'Always on, whenever you need us.',
+      desc: 'RupeeFlow never sleeps. Pay, transfer, or get help anytime with round-the-clock support.',
+    },
+    {
+      icon: <Mic className="w-10 h-10 text-green-400" />,
+      title: 'Just say it, and it’s done.',
+      desc: 'Make payments in your own language with simple voice commands — no typing, no stress.',
+    },
+  ]
+
+  const container: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.2 },
+    },
+  }
+
+  const item: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'spring', stiffness: 100 },
+    },
+  }
+
   return (
-    <section
-      data-section
-      data-theme="light"
-      className="min-h-screen bg-black relative overflow-hidden"
-    >
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-screen">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-                Why People Choose
-              </h1>
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
-                  RupeeFlow
-                </span>
-              </h2>
-            </div>
+    <section className="relative w-full bg-gradient-to-b from-[#021E16] to-[#043022] text-white py-24 px-6 overflow-hidden">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">
+        {/* Left Side */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="flex-1"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-snug">
+            Why People Choose{' '}
+            <span className="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
+              RupeeFlow
+            </span>
+          </h2>
+          <p className="text-gray-300 mb-10 text-sm md:text-base max-w-md">
+            Stay ahead of the money management and transactions
+          </p>
 
-            <p className="text-lg text-[#B3B3B3] leading-relaxed max-w-lg">
-              Stay ahead of the money management and transactions.
-            </p>
+          <Link
+            href="/features"
+            className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-black font-semibold px-6 py-3 rounded-md transition shadow-lg"
+          >
+            <Receipt className="w-5 h-5" />
+            SEE ALL FEATURES
+          </Link>
+        </motion.div>
 
-            <button className="p-[2px] relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#53BEC2] to-[#00EF64] rounded-lg" />
-              <div className="flex items-center justify-center gap-3 px-8 py-4 bg-black rounded-lg relative group-hover:bg-transparent transition-all duration-300">
-                <GoogleStoreImgSVG width={24} height={24} />
-                <span className="text-white font-semibold group-hover:text-black">
-                  DOWNLOAD THE APP
-                </span>
-              </div>
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gradient-to-br from-[#011A1A] via-[#034C32] to-[#039C8A] p-6 rounded-2xl border border-[#53BEC2]/20 hover:border-[#53BEC2]/40 transition-all duration-300">
-              <div className="flex items-center mb-4">
-                <h3 className="text-lg font-bold text-white">
-                  All your bills, paid in seconds.
-                </h3>
-              </div>
-
-              <div className="mb-4 flex justify-center">
-                <NoteBookSVG width={60} height={60} className="text-white" />
-              </div>
-
-              <p className="text-white/90 text-sm text-center">
-                Electricity, water, mobile, and more — manage every bill in one
-                place, without the hassle.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-[#011A1A] via-[#034C32] to-[#039C8A] p-6 rounded-2xl border border-[#53BEC2]/20 hover:border-[#53BEC2]/40 transition-all duration-300">
-              <div className="flex items-center mb-4">
-                <h3 className="text-lg font-bold text-white">
-                  Payments you can trust.
-                </h3>
-              </div>
-
-              <div className="mb-4 flex justify-center">
-                <SecureSVG width={60} height={60} className="text-white" />
-              </div>
-
-              <p className="text-white/90 text-sm text-center">
-                End-to-end encryption and UPI compliance keep your money safe,
-                no matter where you are.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-[#011A1A] via-[#034C32] to-[#039C8A] p-6 rounded-2xl border border-[#53BEC2]/20 hover:border-[#53BEC2]/40 transition-all duration-300">
-              <div className="flex items-center mb-4">
-                <h3 className="text-lg font-bold text-white">
-                  Always on, whenever you need us.
-                </h3>
-              </div>
-
-              <div className="mb-4 flex justify-center">
-                <RoundClockLogo width={60} height={60} className="text-white" />
-              </div>
-
-              <p className="text-white/90 text-sm text-center">
-                RupeeFlow never sleeps. Pay, transfer, or get help anytime with
-                round-the-clock support.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-[#011A1A] via-[#034C32] to-[#039C8A] p-6 rounded-2xl border border-[#53BEC2]/20 hover:border-[#53BEC2]/40 transition-all duration-300">
-              <div className="flex items-center mb-4">
-                <h3 className="text-lg font-bold text-white">
-                  Just say it, and it&aposs done.
-                </h3>
-              </div>
-
-              <div className="mb-4 flex justify-center">
-                <SpeechLogoSVG width={60} height={60} className="text-white" />
-              </div>
-
-              <p className="text-white/90 text-sm text-center">
-                Make payments in your own language with simple voice commands —
-                no typing, no stress.
-              </p>
-            </div>
-          </div>
-        </div>
+        {/* Right Side - Feature Grid */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-10 flex-1"
+        >
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              variants={item}
+              className="flex flex-col space-y-3 text-left"
+            >
+              <div>{feature.icon}</div>
+              <h4 className="text-lg font-semibold">{feature.title}</h4>
+              <p className="text-sm text-gray-400">{feature.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )

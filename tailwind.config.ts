@@ -8,10 +8,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'border-primary-50': 'var(--border-primary-50)',
-        'border-primary-100': 'var(--border-primary-100)',
-      }
-    }
+        teal: {
+          500: '#14b8a6', // default Tailwind teal
+        },
+        emerald: {
+          500: '#10b981', // default Tailwind emerald
+        },
+      },
+      backgroundImage: {
+        'gradient-teal-emerald': 'linear-gradient(135deg, #14b8a6, #10b981)',
+      },
+    },
   },
   plugins: [],
 }

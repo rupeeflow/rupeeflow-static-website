@@ -1,55 +1,57 @@
-import { SpeechLogoSVG } from './icon/SpeechLogoSVG'
+'use client'
 
-export default function RegionalLanguage() {
+import { Mic, AudioLines } from 'lucide-react'
+import { motion } from 'framer-motion'
+
+export default function LanguageSection() {
   return (
-    <section
-      data-section
-      data-theme="light"
-      className="min-h-screen bg-black relative overflow-hidden"
-    >
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#53BEC2] to-[#00EF64] rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-[#53BEC2] to-[#00EF64] rounded-full opacity-15 blur-3xl"></div>
-
-      <div className="container mx-auto px-6 py-16 flex flex-col items-center justify-center min-h-screen text-center">
-        <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-          Don&t Loose Your Flow, Use
-        </h1>
-
-        <h2 className="text-5xl lg:text-7xl font-bold mb-12 leading-tight">
-          <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
+    <section className="relative w-full bg-black text-white text-center py-24 px-6 overflow-hidden">
+      <div className="max-w-4xl mx-auto">
+        {/* Heading */}
+        <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-snug">
+          Don’t Loose Your Flow, Use <br />
+          <span className="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
             RupeeFlow
           </span>
         </h2>
 
-        <div className="flex items-center justify-center mb-8 relative">
-          <div className="flex items-end gap-1 mr-4">
-            <div className="w-1 bg-white h-8 rounded-full"></div>
-            <div className="w-1 bg-white h-12 rounded-full"></div>
-            <div className="w-1 bg-white h-6 rounded-full"></div>
-            <div className="w-1 bg-white h-10 rounded-full"></div>
-            <div className="w-1 bg-white h-4 rounded-full"></div>
-          </div>
+        {/* Icon Section */}
+        <div className="flex justify-center items-center gap-3 md:gap-6 my-10">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <AudioLines className="w-10 h-10 md:w-14 md:h-14 text-gray-300" />
+          </motion.div>
 
-          <div className="flex justify-center">
-            <SpeechLogoSVG width={120} height={120} className="text-white" />
-          </div>
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2, type: 'spring' }}
+            viewport={{ once: true }}
+          >
+            <Mic className="w-14 h-14 md:w-20 md:h-20 text-gray-300" />
+          </motion.div>
 
-          <div className="flex items-end gap-1 ml-4">
-            <div className="w-1 bg-white h-4 rounded-full"></div>
-            <div className="w-1 bg-white h-10 rounded-full"></div>
-            <div className="w-1 bg-white h-6 rounded-full"></div>
-            <div className="w-1 bg-white h-12 rounded-full"></div>
-            <div className="w-1 bg-white h-8 rounded-full"></div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <AudioLines className="w-10 h-10 md:w-14 md:h-14 text-gray-300" />
+          </motion.div>
         </div>
 
-        <h3 className="text-2xl lg:text-3xl font-bold mb-8 leading-tight">
-          <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
-            Your Voice, Your Language, Your Payments
-          </span>
-        </h3>
+        {/* Tagline */}
+        <p className="text-green-400 font-semibold mb-2 text-sm md:text-base">
+          Your Voice, Your Language, Your Payments
+        </p>
 
-        <p className="text-lg lg:text-xl text-white max-w-2xl leading-relaxed">
+        {/* Subtext */}
+        <p className="text-gray-300 max-w-2xl mx-auto text-sm md:text-lg">
           Supports multiple Indian regional languages for true inclusivity
         </p>
       </div>

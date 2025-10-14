@@ -12,20 +12,56 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-@theme {
-  --color-primary-50: #30f3bc;
-  --color-primary-100: #15c285;
-  --color-primary-150: #0db572;
-  --color-primary-200: #0d4b36;
-  --color-primary-300: #2e3b3a;
-  --color-primary-400: #aec5bf;
 
-  --color-white: #ffffff;
+@layer utilities {
+  .bg-teal-emerald {
+    background-image: linear-gradient(135deg, #14b8a6, #10b981);
+  }
 
-  --color-black: #020506;
+  .text-gradient-teal-emerald {
+    background: linear-gradient(135deg, #14b8a6, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-  --border-primary-50: #53bec2;
-  --border-primary-100: #00ef64;
+  .hover\:bg-teal-emerald:hover {
+    background-image: linear-gradient(135deg, #14b8a6, #10b981);
+  }
+
+  /* === Radial Gradient Utilities === */
+  .bg-radial-teal {
+    background: radial-gradient(
+      circle at center,
+      rgba(20, 184, 166, 0.6),
+      transparent 70%
+    );
+  }
+
+  /* Optional: for a softer, larger glow */
+  .bg-radial-teal-soft {
+    background: radial-gradient(
+      circle at center,
+      rgba(20, 184, 166, 0.35),
+      transparent 80%
+    );
+  }
+
+  .bg-radial-emerald-soft {
+    background: radial-gradient(
+      circle at center,
+      rgba(20, 184, 102, 0.35),
+      transparent 80%
+    );
+  }
+
+  /* Optional variant for top or corner glow */
+  .bg-radial-teal-top {
+    background: radial-gradient(
+      circle at top center,
+      rgba(20, 184, 166, 0.5),
+      transparent 75%
+    );
+  }
 }
 
 @font-face {
