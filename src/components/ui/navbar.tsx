@@ -103,10 +103,18 @@ export default function Navbar() {
                 <ul className="flex flex-col  text-sm text-gray-800">
                   <li>
                     <Link
-                      href="/solutions/payment"
+                      href="/solutions/neft"
                       className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
                     >
-                      Payments
+                      NEFT Payment
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/solutions/imps"
+                      className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
+                    >
+                      IMPS Payment
                     </Link>
                   </li>
                   <li>
@@ -127,10 +135,18 @@ export default function Navbar() {
                   </li>
                   <li>
                     <Link
-                      href="/solutions/finance"
+                      href="/solutions/upi-switch"
                       className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
                     >
-                      Financial Management
+                      UPI Switch
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/solutions/verification"
+                      className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
+                    >
+                      Verification
                     </Link>
                   </li>
                   <li>

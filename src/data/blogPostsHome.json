@@ -4,7 +4,7 @@
     "title": "How AI is Transforming Fintech in 2025",
     "description": "From fraud detection to customer insights, explore how artificial intelligence is reshaping financial innovation globally.",
     "date": "05 Jan, 2025",
-    "image": "/blog/ai-in-fintech.jpg",
+    "image": "/blog/ai-in-fintech.webp",
     "link": "/blog/ai-in-fintech"
   },
   {
@@ -12,7 +12,7 @@
     "title": "The Rise of UPI 2.0: Smarter, Faster, Global",
     "description": "Discover the new features of UPI 2.0 that are redefining how users transact across borders and ecosystems.",
     "date": "22 Jan, 2025",
-    "image": "/blog/upi-2.jpg",
+    "image": "/blog/upi-2.webp",
     "link": "/blog/upi-2"
   },
   {
@@ -20,7 +20,7 @@
     "title": "Cross-Border UPI: Breaking Financial Barriers for NRIs",
     "description": "Understand how RupeeFlow and NPCI’s initiatives are making global UPI transfers secure, instant, and accessible.",
     "date": "10 Feb, 2025",
-    "image": "/blog/cross-border-upi.jpg",
+    "image": "/blog/cross-border-upi.webp",
     "link": "/blog/cross-border-upi"
   }
 ]

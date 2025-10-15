@@ -6,11 +6,12 @@ import { ArrowUpRight } from 'lucide-react'
 
 interface BlogPost {
   id: number
+  slug: string
   title: string
   description: string
   date: string
   image: string
-  link: string
+  file: string
 }
 
 interface BlogSectionProps {

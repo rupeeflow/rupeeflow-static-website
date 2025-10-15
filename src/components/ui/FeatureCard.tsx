@@ -3,6 +3,7 @@
 import { motion } from 'motion/react'
 import { useState } from 'react'
 import { Check } from 'lucide-react'
+import Link from 'next/link'
 
 interface FeatureCardProps {
   title: string
@@ -66,9 +67,12 @@ export default function FeatureCard({
         transition={{ type: 'spring', stiffness: 200, damping: 15 }}
         className="absolute bottom-6 left-0 w-full flex justify-center"
       >
-        <button className="cursor-pointer bg-teal-emerald hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-2 transition">
+        <Link
+          href="/product"
+          className="cursor-pointer bg-teal-emerald hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-2 transition"
+        >
           EXPLORE MORE
-        </button>
+        </Link>
       </motion.div>
     </motion.div>
   )

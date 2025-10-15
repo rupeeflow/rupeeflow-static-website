@@ -58,7 +58,7 @@ export default function VisionSection() {
           </h2>
 
           <p className="fontbody2 text-emerald-400 text-lg md:text-xl">
-            fast, low-cost, and limitless.
+            Fast, low-cost, and limitless.
           </p>
 
           <p className="fontbody2 text-gray-400 max-w-md mx-auto md:mx-0">

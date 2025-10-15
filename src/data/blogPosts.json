@@ -1,98 +1,110 @@
 [
   {
     "id": 1,
+    "slug": "ai-in-fintech",
     "title": "How AI is Transforming Fintech in 2025",
     "description": "From fraud detection to customer insights, explore how artificial intelligence is reshaping financial innovation globally.",
     "date": "05 Jan, 2025",
-    "image": "/blog/ai-in-fintech.jpg",
-    "link": "/blog/ai-in-fintech"
+    "image": "/blog/ai-in-fintech.webp",
+    "file": "ai-in-fintech.mdx"
   },
   {
     "id": 2,
+    "slug": "upi-2",
     "title": "The Rise of UPI 2.0: Smarter, Faster, Global",
     "description": "Discover the new features of UPI 2.0 that are redefining how users transact across borders and ecosystems.",
     "date": "22 Jan, 2025",
-    "image": "/blog/upi-2.jpg",
-    "link": "/blog/upi-2"
+    "image": "/blog/upi-2.webp",
+    "file": "upi-2.mdx"
   },
   {
     "id": 3,
+    "slug": "cross-border-upi",
     "title": "Cross-Border UPI: Breaking Financial Barriers for NRIs",
     "description": "Understand how RupeeFlow and NPCI’s initiatives are making global UPI transfers secure, instant, and accessible.",
     "date": "10 Feb, 2025",
-    "image": "/blog/cross-border-upi.jpg",
-    "link": "/blog/cross-border-upi"
+    "image": "/blog/cross-border-upi.webp",
+    "file": "cross-border-upi.mdx"
   },
   {
     "id": 4,
+    "slug": "digital-banking",
     "title": "Digital Banking 3.0: The Future of Personalized Finance",
     "description": "Learn how neobanks and super-apps are creating seamless, personalized experiences powered by smart automation.",
     "date": "02 Mar, 2025",
-    "image": "/blog/digital-banking.jpg",
-    "link": "/blog/digital-banking"
+    "image": "/blog/digital-banking.webp",
+    "file": "digital-banking.mdx"
   },
   {
     "id": 5,
+    "slug": "global-upi",
     "title": "The Evolution of UPI in Global Transactions",
     "description": "A deep dive into how India’s UPI system is influencing payment innovation across the world.",
     "date": "18 Mar, 2025",
-    "image": "/blog/global-upi.jpg",
-    "link": "/blog/global-upi"
+    "image": "/blog/global-upi.webp",
+    "file": "global-upi.mdx"
   },
   {
     "id": 6,
+    "slug": "top-fintechs",
     "title": "Top 10 Fintech Startups Redefining Payments in India",
     "description": "Explore the companies leading India’s digital payment revolution and what makes them stand out in 2025.",
     "date": "04 Apr, 2025",
-    "image": "/blog/top-fintechs.jpg",
-    "link": "/blog/top-fintechs"
+    "image": "/blog/top-fintechs.webp",
+    "file": "top-fintechs.mdx"
   },
   {
     "id": 7,
+    "slug": "ai-investing",
     "title": "The Future of Investing: AI-Powered Portfolio Management",
     "description": "See how artificial intelligence is empowering smarter investments and risk-free wealth strategies.",
     "date": "21 May, 2025",
-    "image": "/blog/ai-investing.jpg",
-    "link": "/blog/ai-investing"
+    "image": "/blog/ai-investing.webp",
+    "file": "ai-investing.mdx"
   },
   {
     "id": 8,
+    "slug": "secure-transactions",
     "title": "How Secure Are Your Digital Transactions?",
     "description": "A closer look at encryption, tokenization, and regulatory frameworks ensuring fintech transaction safety.",
     "date": "12 Jun, 2025",
-    "image": "/blog/secure-transactions.jpg",
-    "link": "/blog/secure-transactions"
+    "image": "/blog/secure-transactions.webp",
+    "file": "secure-transactions.mdx"
   },
   {
     "id": 9,
+    "slug": "open-banking",
     "title": "Open Banking: The API Revolution in Fintech",
     "description": "Discover how open APIs are enabling interoperability and transforming the financial ecosystem for developers and users alike.",
     "date": "28 Jul, 2025",
-    "image": "/blog/open-banking.jpg",
-    "link": "/blog/open-banking"
+    "image": "/blog/open-banking.webp",
+    "file": "open-banking.mdx"
   },
   {
     "id": 10,
+    "slug": "digital-rupee",
     "title": "RBI and the Roadmap to Digital Currency in India",
     "description": "What India’s digital rupee means for users, banks, and the broader fintech industry.",
     "date": "09 Aug, 2025",
-    "image": "/blog/digital-rupee.jpg",
-    "link": "/blog/digital-rupee"
+    "image": "/blog/digital-rupee.webp",
+    "file": "digital-rupee.mdx"
   },
   {
     "id": 11,
+    "slug": "fintech-trust",
     "title": "Building Trust in Fintech: Transparency and Regulation",
     "description": "How new compliance standards are fostering user confidence in financial technology companies.",
     "date": "20 Sep, 2025",
-    "image": "/blog/fintech-trust.jpg",
-    "link": "/blog/fintech-trust"
+    "image": "/blog/fintech-trust.webp",
+    "file": "fintech-trust.mdx"
   },
   {
     "id": 12,
+    "slug": "cross-border-investing",
     "title": "The Future of Cross-Border Investing for NRIs",
     "description": "How global payment systems and fintech platforms are simplifying international investing for Indian citizens abroad.",
     "date": "11 Oct, 2025",
-    "image": "/blog/cross-border-investing.jpg",
-    "link": "/blog/cross-border-investing"
+    "image": "/blog/cross-border-investing.webp",
+    "file": "cross-border-investing.mdx"
   }
 ]

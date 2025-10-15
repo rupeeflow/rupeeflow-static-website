@@ -8,6 +8,8 @@ import {
   Brain,
   Wallet,
   ShieldCheck,
+  Zap,
+  Cpu,
 } from 'lucide-react'
 import InfoCard from './ProductCard'
 
@@ -23,6 +25,18 @@ const cards = [
       { icon: Globe, label: 'Family delegated payments' },
     ],
   },
+  {
+    title: 'Intelligent UPI Switch',
+    description:
+      'RupeeFlow’s AI-powered UPI Switch ensures seamless cross-bank routing, real-time optimization, and unmatched reliability for every transaction.',
+    imageUrl: '/images/upi-switch.png',
+    features: [
+      { icon: Zap, label: 'Dynamic transaction routing' },
+      { icon: Cpu, label: 'AI-based load balancing' },
+      { icon: ShieldCheck, label: '99.99% uptime & resilience' },
+    ],
+  },
+
   {
     title: 'AI-Powered Bill Management',
     description:
