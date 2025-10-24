@@ -1,6 +1,6 @@
 'use client'
 
-import FaqSection from '@/components/ui/FAQ'
+import FaqSection from '@/components/sections/FAQ'
 import { motion, Variants } from 'framer-motion'
 import {
   Banknote,

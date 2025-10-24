@@ -1,6 +1,6 @@
-import FaqSupportSection from '@/components/ui/FaqSupportSection'
+import FaqSupportSection from '@/components/sections/FaqSupportSection'
 
-import SupportHero from '@/components/ui/SupportHero'
+import SupportHero from '@/components/sections/SupportHero'
 import React from 'react'
 
 const SupportPage = () => {

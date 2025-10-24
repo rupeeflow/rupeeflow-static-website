@@ -2,7 +2,7 @@
 
 import { motion, Variants } from 'framer-motion'
 import Image from 'next/image'
-import FaqCard from './FaqCard'
+import FaqCard from '../ui/FaqCard'
 import faqs from '@/data/faqs.json'
 
 export default function FaqSupportSection() {

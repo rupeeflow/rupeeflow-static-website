@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import ReviewCard from './ReviewCard'
+import ReviewCard from '../ui/ReviewCard'
 
 import testimonials from '@/data/testimonials.json'
 

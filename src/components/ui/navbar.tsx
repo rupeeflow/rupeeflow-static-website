@@ -14,7 +14,7 @@ export default function Navbar() {
   const pathname = usePathname()
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
-  // Handle scroll background
+  // Scroll effect for background
   useEffect(() => {
     const handleScroll = () =>
       setScrolled(window.scrollY > window.innerHeight * 0.8)
@@ -22,7 +22,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // ✅ Close mobile menu when clicking outside
+  // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -53,9 +53,7 @@ export default function Navbar() {
             ? 'w-full bg-white/90 shadow-md backdrop-blur-md'
             : 'w-[90%] bg-white rounded-2xl mt-4'
         } mx-auto items-center justify-between px-6`}
-        style={{
-          maxWidth: scrolled ? '100%' : '1200px',
-        }}
+        style={{ maxWidth: scrolled ? '100%' : '1200px' }}
       >
         {/* Logo */}
         <Link
@@ -65,9 +63,8 @@ export default function Navbar() {
           <Image src="/rflogowhitebg.svg" alt="Logo" width={180} height={36} />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-8 text-sm font-semibold relative">
-          {/* PRODUCT */}
+        {/* Desktop Nav (only on large screens) */}
+        <nav className="hidden lg:flex space-x-8 text-sm font-semibold relative">
           <Link
             href="/product"
             className={`transition-colors flex items-center h-14 ${
@@ -100,69 +97,30 @@ export default function Navbar() {
             </button>
             {showSolutions && (
               <div className="absolute top-full left-0 bg-white overflow-hidden shadow-lg rounded-lg border border-gray-200 w-48 z-50">
-                <ul className="flex flex-col  text-sm text-gray-800">
-                  <li>
-                    <Link
-                      href="/solutions/neft"
-                      className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
-                    >
-                      NEFT Payment
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/solutions/imps"
-                      className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
-                    >
-                      IMPS Payment
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/solutions/aeps"
-                      className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
-                    >
-                      AEPS
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/solutions/dmt"
-                      className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
-                    >
-                      DMT
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/solutions/upi-switch"
-                      className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
-                    >
-                      UPI Switch
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/solutions/verification"
-                      className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
-                    >
-                      Verification
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/solutions/enterprise"
-                      className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
-                    >
-                      Enterprise APIs
-                    </Link>
-                  </li>
+                <ul className="flex flex-col text-sm text-gray-800">
+                  {[
+                    ['neft', 'NEFT Payment'],
+                    ['imps', 'IMPS Payment'],
+                    ['aeps', 'AEPS'],
+                    ['dmt', 'DMT'],
+                    ['upi-switch', 'UPI Switch'],
+                    ['verification', 'Verification'],
+                    ['enterprise', 'Enterprise APIs'],
+                  ].map(([path, label]) => (
+                    <li key={path}>
+                      <Link
+                        href={`/solutions/${path}`}
+                        className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             )}
           </div>
 
-          {/* PRICING */}
           <Link
             href="/pricing"
             className={`transition-colors flex items-center h-14 ${
@@ -196,36 +154,25 @@ export default function Navbar() {
             {showDev && (
               <div className="absolute top-full overflow-hidden left-0 bg-white shadow-lg rounded-lg border border-gray-200 w-48 z-50">
                 <ul className="flex flex-col text-sm text-gray-800">
-                  <li>
-                    <Link
-                      href="/dev/api-docs"
-                      className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
-                    >
-                      API Documentation
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/dev/sdk"
-                      className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
-                    >
-                      SDK Downloads
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/dev/support"
-                      className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
-                    >
-                      Developer Support
-                    </Link>
-                  </li>
+                  {[
+                    ['/dev/api-docs', 'API Documentation'],
+                    ['/dev/sdk', 'SDK Downloads'],
+                    ['/dev/support', 'Developer Support'],
+                  ].map(([path, label]) => (
+                    <li key={path}>
+                      <Link
+                        href={path}
+                        className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             )}
           </div>
 
-          {/* BLOG */}
           <Link
             href="/blog"
             className={`transition-colors flex items-center h-14 ${
@@ -237,7 +184,6 @@ export default function Navbar() {
             BLOG
           </Link>
 
-          {/* SUPPORT */}
           <Link
             href="/support"
             className={`transition-colors flex items-center h-14 ${
@@ -250,8 +196,8 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* Desktop Buttons */}
-        <div className="hidden md:flex items-center space-x-4">
+        {/* Desktop Buttons (only on large screens) */}
+        <div className="hidden lg:flex items-center space-x-4">
           <Link
             href="/login"
             className="px-5 py-1.5 border border-emerald-600 rounded-full text-sm font-semibold hover:bg-emerald-50 transition"
@@ -266,24 +212,20 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile + Tablet Hamburger Menu */}
         <button
-          className="md:hidden p-2 rounded-md border border-gray-300"
+          className="lg:hidden p-2 rounded-md border border-gray-300"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? (
-            <X size={22} />
-          ) : (
-            <span className="text-lg">☰</span>
-          )}
+          {mobileMenuOpen ? <X size={22} /> : <span className="text-lg">☰</span>}
         </button>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div
           ref={mobileMenuRef}
-          className="absolute top-[8vh] right-0 w-1/2 h-[100vh] bg-white shadow-lg border-t border-gray-200 flex flex-col items-start px-6 py-6 space-y-4 text-sm font-semibold md:hidden z-[98]"
+          className="absolute top-[8vh] right-0 w-3/4 sm:w-1/2 h-[100vh] bg-white shadow-lg border-t border-gray-200 flex flex-col items-start px-6 py-6 space-y-4 text-sm font-semibold lg:hidden z-[98]"
         >
           <Link
             href="/product"

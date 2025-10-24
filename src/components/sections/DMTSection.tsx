@@ -120,7 +120,7 @@ export default function DMTSection() {
           <h3 className="text-2xl fontheading2 mb-3 text-gradient-teal-emerald">
             Expand your reach with instant DMT services
           </h3>
-          <p className="fontbody max-w-2xl text-gray-300 mb-12">
+          <p className="max-w-2xl text-gray-300 mb-12">
             Offer customers secure money transfers anytime, anywhere — with
             RupeeFlow’s DMT API integration designed for speed and scalability.
           </p>

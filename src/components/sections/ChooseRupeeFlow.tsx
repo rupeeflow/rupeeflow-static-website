@@ -67,7 +67,7 @@ export default function WhyChooseSection() {
           </p>
 
           <Link
-            href="/features"
+            href="/product"
             className="inline-flex items-center gap-2 bg-teal-emerald hover:bg-hover text-black font-semibold px-6 py-3 rounded-md transition-colors duration-300 ease-in-out shadow-lg "
           >
             <ReceiptIndianRupee className="w-5 h-5" />

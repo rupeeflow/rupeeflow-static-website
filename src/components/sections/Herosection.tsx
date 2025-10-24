@@ -67,7 +67,7 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row gap-4 mb-6 relative z-20"
         >
           <Link
-            href="/solutions"
+            href="/product"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-green-400 text-black font-semibold px-6 py-3 rounded-full transition"
           >
             Explore Solutions <ArrowRight className="w-4 h-4" />

@@ -14,7 +14,7 @@ import {
   Clock,
   Banknote,
 } from 'lucide-react'
-import FaqSection from '@/components/ui/FAQ'
+import FaqSection from '@/components/sections/FAQ'
 
 export default function IMPSIntegrationPage() {
   // 🔹 Animation Variants

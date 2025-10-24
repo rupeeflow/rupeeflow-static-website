@@ -7,18 +7,18 @@ export default function FuturePayments() {
     <section
       data-section
       data-theme="dark"
-      className="min-h-screen bg-white overflow-hidden"
+      className="flex items-center min-h-screen bg-white overflow-hidden "
     >
-      <div className="container mx-auto px-6 ">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen">
+      <div className="flex mx-auto px-6 items-center">
+        <div className="flex portrait:flex-col landscape:flex-row gap-12 items-center min-h-screen">
           <div className="flex justify-center lg:justify-start">
             <RupeeFlowMobileImgsvg width={800} height={800} />
           </div>
 
           {/* Right Section - Text and Logos */}
-          <div className="space-y-8">
+          <div className="flex flex-col items-center space-y-8">
             {/* Main Headline */}
-            <h1 className="text-4xl lg:text-6xl font-bold text-black leading-tight">
+            <h1 className="text-4xl lg:text-6xl fontheading2 text-black leading-tight">
               The Future of UPI, Now in Your Hands
             </h1>
 

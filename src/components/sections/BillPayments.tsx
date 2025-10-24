@@ -1,7 +1,7 @@
-import { ArrowImgsvg } from './icon/ArrowIconSVG'
-import { CrossCheckSVG } from './icon/CrossCheckSVG'
-import { RightArrowSVG } from './icon/RightArrowSVG'
-import { SquareImgsvg } from './icon/SquareImgSVG'
+import { ArrowImgsvg } from '../ui/icon/ArrowIconSVG'
+import { CrossCheckSVG } from '../ui/icon/CrossCheckSVG'
+import { RightArrowSVG } from '../ui/icon/RightArrowSVG'
+import { SquareImgsvg } from '../ui/icon/SquareImgSVG'
 
 export default function BillPayments() {
   return (

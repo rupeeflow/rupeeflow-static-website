@@ -1,6 +1,6 @@
 'use client'
 
-import BlogSection from '@/components/ui/BlogSection'
+import BlogSection from '@/components/sections/BlogSection'
 import blogPosts from '@/data/blogPosts.json'
 
 export default function BlogPage() {

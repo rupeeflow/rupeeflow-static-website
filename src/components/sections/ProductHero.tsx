@@ -22,7 +22,7 @@ const ProductHero = () => {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="text-center max-w-5xl mb-10"
+        className="text-center px-5 max-w-5xl mb-10"
       >
         <motion.h1
           variants={content}

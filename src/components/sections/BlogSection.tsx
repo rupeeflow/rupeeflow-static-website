@@ -1,6 +1,6 @@
 'use client'
 
-import BlogPostCard from './BlogPostCard'
+import BlogPostCard from '../ui/BlogPostCard'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 

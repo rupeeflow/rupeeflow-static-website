@@ -17,8 +17,8 @@ const BigCard: React.FC<FeatureCardProps> = ({
 }) => {
   return (
     <div
-      className="flex bg-neutral-100 flex-col md:flex-row sticky top-[12%] lg:top-[18%] 
-                  w-full h-[60dvh] gap-10 bg-gray-100 rounded-4xl 
+      className="flex bg-neutral-100 portrait:flex-col landscape:flex-row sticky top-[12%] lg:top-[18%] 
+                  w-full h-[80vh] md:h-[70dvh]   lg:gap-10 bg-gray-100 rounded-4xl 
                   p-2 "
     >
       {/* Left side (image / placeholder) */}
@@ -39,8 +39,8 @@ const BigCard: React.FC<FeatureCardProps> = ({
       </div>
 
       {/* Right side (text + list + button) */}
-      <div className="flex flex-col portrait:w-full portrait:h-[50%] landscape:w-[50%] landscape:h-full  gap-6 text-center md:text-left py-12 ">
-        <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-[4vw] fontheading2 text-black ">
+      <div className="flex flex-col portrait:w-full portrait:h-[50%] landscape:w-[50%] landscape:h-full  gap-6 text-center md:text-left py-4 px-3 lg:px-0 lg:py-12 ">
+        <h2 className="text-lg sm:text-2xl md:text-5xl lg:text-[4vw] fontheading2 text-black ">
           {title}
         </h2>
 

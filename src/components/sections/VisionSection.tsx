@@ -50,7 +50,7 @@ export default function VisionSection() {
         {/* Left Content */}
         <motion.div
           variants={content}
-          className="flex-1 text-center md:text-left pl-10 space-y-4"
+          className="flex-1 text-center md:text-left lg:pl-10 space-y-4"
         >
           <h2 className="fontheading2 text-4xl md:text-6xl leading-tight">
             Bridging borders <br /> with{' '}

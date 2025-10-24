@@ -1,6 +1,6 @@
 'use client'
 
-import FeatureCard from './FeatureCard'
+import FeatureCard from '../ui/FeatureCard'
 import { Globe, Wifi, Mic, ShieldCheck } from 'lucide-react'
 
 export default function FeatureSection() {

@@ -33,37 +33,22 @@ const cardVariants: Variants = {
 
 export default function StatsSection() {
   return (
-    <section className="w-full bg-gray-100 py-20 px-6">
+    <section className="w-full bg-gray-100 pt-20 px-6">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left image area */}
-        <div className="relative w-full lg:w-[50%] flex-shrink-0">
+        <div className="relative w-full portrait:h-[50vh] landscape:h-[90vh] lg:w-[50%] flex-shrink-0">
           <Image
-            src="/images/smiling-man.png" // 👈 change to your image path
+            src="/images/happy-man.png"
             alt="Happy customer"
-            width={500}
-            height={500}
-            className="rounded-xl object-cover w-full h-auto"
+            fill
+            className="flex rounded-xl object-contain h-fit "
           />
-
-          {/* Decorative green curve */}
-          <svg
-            viewBox="0 0 500 500"
-            className="absolute -top-10 left-0 w-full h-full opacity-90 pointer-events-none"
-          >
-            <path
-              d="M0,200 C150,300 350,100 500,200"
-              stroke="#10B981"
-              strokeWidth="20"
-              fill="none"
-            />
-          </svg>
         </div>
 
         {/* Right content area */}
         <div className="flex-1 text-center lg:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
-            Trusted by Thousands, <br className="hidden md:block" />
-            Growing Every Day
+          <h2 className="text-3xl md:text-4xl lg:text-5xl fontheading2 text-gray-900 mb-10">
+            Trusted by Thousands, Growing Every Day
           </h2>
 
           {/* Animated stats grid */}

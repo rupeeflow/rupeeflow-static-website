@@ -11,7 +11,7 @@ interface BlogPostCardProps {
   description: string
   date: string
   image: string
-  file: string
+  file?: string
 }
 
 export default function BlogPostCard({

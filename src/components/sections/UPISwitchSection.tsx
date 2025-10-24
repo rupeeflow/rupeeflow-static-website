@@ -75,7 +75,7 @@ export default function UPISwitchSection() {
         {/* Left Content */}
         <motion.div
           variants={content}
-          className="flex-1 text-center md:text-left pl-12 space-y-5"
+          className="flex-1 text-center md:text-left lg:pl-12 space-y-5"
         >
           <h2 className="fontheading2 text-4xl md:text-6xl leading-tight">
             Powering the Future of{' '}

@@ -25,10 +25,10 @@ export default function InfoCard({
       transition={{ duration: 0.4 }}
       className={`w-full mx-auto rounded-[32px] border ${
         isActive ? 'border-emerald-200/50' : 'border-white/10'
-      } bg-neutral-600/30 backdrop-blur-lg text-white p-2 md:p-4 flex flex-col md:flex-row justify-center items-center gap-8`}
+      } bg-neutral-600/30 backdrop-blur-lg text-white p-2 md:p-4 flex portrait:flex-col landscape:flex-row justify-center items-center gap-8 portrait:h-[80vh] landscape:h-auto `}
     >
       {/* left Side */}
-      <div className="portrait:w-full portrait:h-[50%] landscape:w-[50%] landscape:h-full flex relative overflow-hidden rounded-3xl">
+      <div className="portrait:w-full portrait:h-[35%] landscape:w-[50%] landscape:h-full flex relative overflow-hidden rounded-3xl">
         <Image
           src={imageUrl}
           alt={title}
@@ -38,9 +38,11 @@ export default function InfoCard({
       </div>
 
       {/* right Side */}
-      <div className="flex flex-col portrait:w-full portrait:h-[50%] landscape:w-[50%] landscape:h-full gap-8 py-6  px-12 items-center">
-        <h3 className="text-5xl md:text-6xl lg:text-[4vw] ">{title}</h3>
-        <p className="text-gray-300 text-base text-sm pr-2">{description}</p>
+      <div className="flex flex-col portrait:w-full portrait:h-[65%] landscape:w-[50%] landscape:h-full gap-8 py-6  px-12 items-center">
+        <h3 className="text-2xl md:text-5xl lg:text-[4vw] ">{title}</h3>
+        <p className="text-gray-300 text-base text-sm md:text-lg pr-2">
+          {description}
+        </p>
         <div className="flex  justify-center gap-8 mt-6 md:mt-0 ">
           {features.map((f, i) => (
             <div

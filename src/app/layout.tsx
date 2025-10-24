@@ -4,7 +4,7 @@ import './globals.css'
 import Navbar from '@/components/ui/navbar'
 import Footer from '@/components/ui/footer'
 import SmoothScrollProvider from '@/lib/smoothScrollProvider'
-import Marquee from '@/components/ui/MarqueeSection'
+import Marquee from '@/components/sections/MarqueeSection'
 
 export const metadata: Metadata = {
   title: 'Rupeeflow Static Website',
