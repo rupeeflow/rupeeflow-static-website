@@ -29,7 +29,7 @@ export default function FaqSupportSection() {
 
         <div className="flex justify-center mt-10">
           <Image
-            src="/faq/faq-illustration.png"
+            src="/images/faq-image.png"
             alt="FAQ illustration"
             width={320}
             height={320}
