@@ -88,7 +88,7 @@ export default function CardSlider() {
   }, [])
 
   return (
-    <div className="relative w-full flex flex-col items-center mb-40">
+    <div className="relative w-full flex flex-col items-center mb-20">
       {/* Slider */}
       <div className="overflow-hidden w-full max-w-6xl relative">
         <div

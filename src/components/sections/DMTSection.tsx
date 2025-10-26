@@ -2,7 +2,7 @@
 
 import { motion, Variants } from 'framer-motion'
 
-import { ArrowRight, IndianRupee, ShieldCheck, Zap, Globe } from 'lucide-react'
+import { ArrowRight, IndianRupee, ShieldCheck, Zap } from 'lucide-react'
 import Link from 'next/link'
 
 export default function DMTSection() {

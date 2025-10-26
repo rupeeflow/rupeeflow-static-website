@@ -90,7 +90,7 @@ export default function AddonsSection() {
         viewport={{ once: true, amount: 0.3 }}
         className="relative z-20 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto"
       >
-        {addons.map((addon, index) => (
+        {addons.map(addon => (
           <motion.div
             key={addon.title}
             variants={card}

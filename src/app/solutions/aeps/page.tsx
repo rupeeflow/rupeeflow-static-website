@@ -180,7 +180,7 @@ export default function AEPSPage() {
             secure, and reliable Aadhaar-based payment solutions.
           </p>
           <Link
-            href="/signup?product=aeps"
+            href="https://rupeeflow.org/"
             className="inline-block px-8 py-3 bg-black text-white font-semibold rounded-full hover:bg-neutral-900 transition"
           >
             Get AEPS Access →

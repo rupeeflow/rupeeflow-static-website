@@ -31,6 +31,7 @@
     "@studio-freight/lenis": "^1.0.42",
     "@tabler/icons-react": "^3.34.1",
     "clsx": "^2.1.1",
+    "critters": "^0.0.25",
     "framer-motion": "^12.23.22",
     "gray-matter": "^4.0.3",
     "gsap": "^3.13.0",

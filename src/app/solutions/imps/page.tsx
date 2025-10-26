@@ -5,7 +5,6 @@ import Link from 'next/link'
 import {
   Zap,
   ShieldCheck,
-  FileText,
   BarChart,
   Code2,
   Server,
@@ -213,7 +212,7 @@ export default function IMPSIntegrationPage() {
 
           <motion.div variants={content}>
             <Link
-              href="/signup"
+              href="https://rupeeflow.org/"
               className="inline-block px-8 py-3 bg-black text-white font-semibold rounded-full hover:bg-neutral-900 transition"
             >
               Get Started →

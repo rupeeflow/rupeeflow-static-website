@@ -193,7 +193,7 @@ export default function DMTPage() {
 
           <motion.div variants={content}>
             <Link
-              href="/signup?product=dmt"
+              href="https://rupeeflow.org/"
               className="inline-flex items-center gap-2 px-8 py-3 bg-black text-white font-semibold rounded-full hover:bg-neutral-900 transition"
             >
               Get DMT Access <ArrowRightCircle className="w-5 h-5" />

@@ -1,22 +1,28 @@
-import { RupeeFlowMobileImgsvg } from './icon/RupeeFlowMobileSVG'
 import { UPIImgSVG } from './icon/UPIImgLogo'
 import { NPCIImgSVG } from './icon/NPCIImgSVG'
+import Image from 'next/image'
 
 export default function FuturePayments() {
   return (
     <section
       data-section
       data-theme="dark"
-      className="flex items-center min-h-screen bg-white overflow-hidden "
+      className="flex w-full h-full items-center min-h-screen bg-white overflow-hidden mb-10 md:mb-0 "
     >
       <div className="flex mx-auto px-6 items-center">
-        <div className="flex portrait:flex-col landscape:flex-row gap-12 items-center min-h-screen">
-          <div className="flex justify-center lg:justify-start">
-            <RupeeFlowMobileImgsvg width={800} height={800} />
+        <div className="flex portrait:flex-col landscape:flex-row gap-5 lg:gap-30 items-center px-2 lg:px-20">
+          <div className="flex portrait:w-full portrait:h-[70vh] landscape:h-[110vh] landscape:w-[50%]relative">
+            <Image
+              src="/images/rupeeflow-phone.png"
+              alt="RupeeFlow Mobile"
+              height={800}
+              width={400}
+              className="object-contain h-full w-auto"
+            />
           </div>
 
           {/* Right Section - Text and Logos */}
-          <div className="flex flex-col items-center space-y-8">
+          <div className="flex flex-col items-center space-y-8 portrait:w-full  landscape:w-[50%]">
             {/* Main Headline */}
             <h1 className="text-4xl lg:text-6xl fontheading2 text-black leading-tight">
               The Future of UPI, Now in Your Hands

@@ -13,6 +13,7 @@ export default function SolutionPage() {
   return (
     <>
       <ProductHero />
+
       <NEFTInfoSection />
       <IMPSInfoSection />
       <UPISwitchSection />

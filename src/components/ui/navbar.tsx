@@ -64,7 +64,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav (only on large screens) */}
-        <nav className="hidden lg:flex space-x-8 text-sm font-semibold relative">
+        <nav className="hidden lg:flex space-x-8 text-sm fontbody relative">
           <Link
             href="/product"
             className={`transition-colors flex items-center h-14 ${
@@ -105,7 +105,6 @@ export default function Navbar() {
                     ['dmt', 'DMT'],
                     ['upi-switch', 'UPI Switch'],
                     ['verification', 'Verification'],
-                    ['enterprise', 'Enterprise APIs'],
                   ].map(([path, label]) => (
                     <li key={path}>
                       <Link
@@ -155,11 +154,11 @@ export default function Navbar() {
               <div className="absolute top-full overflow-hidden left-0 bg-white shadow-lg rounded-lg border border-gray-200 w-48 z-50">
                 <ul className="flex flex-col text-sm text-gray-800">
                   {[
-                    ['/dev/api-docs', 'API Documentation'],
-                    ['/dev/sdk', 'SDK Downloads'],
-                    ['/dev/support', 'Developer Support'],
+                    ['/comingsoon', 'API Documentation'],
+                    ['/comingsoon', 'SDK Downloads'],
+                    ['/comingsoon', 'Developer Support'],
                   ].map(([path, label]) => (
-                    <li key={path}>
+                    <li key={label}>
                       <Link
                         href={path}
                         className="block px-4 py-2 hover:bg-gray-50 hover:text-emerald-600"
@@ -217,16 +216,22 @@ export default function Navbar() {
           className="lg:hidden p-2 rounded-md border border-gray-300"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? <X size={22} /> : <span className="text-lg">☰</span>}
+          {mobileMenuOpen ? (
+            <X size={22} />
+          ) : (
+            <span className="text-lg">☰</span>
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div
           ref={mobileMenuRef}
-          className="absolute top-[8vh] right-0 w-3/4 sm:w-1/2 h-[100vh] bg-white shadow-lg border-t border-gray-200 flex flex-col items-start px-6 py-6 space-y-4 text-sm font-semibold lg:hidden z-[98]"
+          className="absolute top-[8vh] right-0 w-3/4 sm:w-1/2 h-[100vh] bg-white shadow-lg border-t border-gray-200 flex flex-col items-start px-6 py-6 space-y-4 text-sm font-semibold lg:hidden z-[98] overflow-y-auto"
         >
+          {/* PRODUCT */}
           <Link
             href="/product"
             className="text-black hover:text-emerald-600"
@@ -235,48 +240,45 @@ export default function Navbar() {
             PRODUCT
           </Link>
 
-          <div>
+          {/* SOLUTIONS */}
+          <div className="w-full">
             <button
               onClick={() => setShowSolutions(!showSolutions)}
               className="flex items-center justify-between w-full text-black hover:text-emerald-600"
             >
-              SOLUTIONS{' '}
+              SOLUTIONS
               <ChevronDown
                 className={`w-5 h-5 transform transition-transform ${
                   showSolutions ? 'rotate-180' : ''
                 }`}
               />
             </button>
+
             {showSolutions && (
               <ul className="ml-4 mt-2 space-y-2 text-gray-700">
-                <li>
-                  <Link
-                    href="/solutions/payment"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Payment Automation
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/solutions/finance"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Financial Management
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/solutions/enterprise"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Enterprise APIs
-                  </Link>
-                </li>
+                {[
+                  ['neft', 'NEFT Payment'],
+                  ['imps', 'IMPS Payment'],
+                  ['aeps', 'AEPS'],
+                  ['dmt', 'DMT'],
+                  ['upi-switch', 'UPI Switch'],
+                  ['verification', 'Verification'],
+                ].map(([path, label]) => (
+                  <li key={path}>
+                    <Link
+                      href={`/solutions/${path}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-1 hover:text-emerald-600"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             )}
           </div>
 
+          {/* PRICING */}
           <Link
             href="/pricing"
             className="text-black hover:text-emerald-600"
@@ -285,48 +287,42 @@ export default function Navbar() {
             PRICING
           </Link>
 
-          <div>
+          {/* DEV */}
+          <div className="w-full">
             <button
               onClick={() => setShowDev(!showDev)}
               className="flex items-center justify-between w-full text-black hover:text-emerald-600"
             >
-              DEV{' '}
+              DEV
               <ChevronDown
                 className={`w-5 h-5 transform transition-transform ${
                   showDev ? 'rotate-180' : ''
                 }`}
               />
             </button>
+
             {showDev && (
               <ul className="ml-4 mt-2 space-y-2 text-gray-700">
-                <li>
-                  <Link
-                    href="/dev/api-docs"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    API Documentation
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/dev/sdk"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    SDK Downloads
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/dev/support"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Developer Support
-                  </Link>
-                </li>
+                {[
+                  ['/comingsoon', 'API Documentation'],
+                  ['/comingsoon', 'SDK Downloads'],
+                  ['/comingsoon', 'Developer Support'],
+                ].map(([path, label]) => (
+                  <li key={label}>
+                    <Link
+                      href={path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-1 hover:text-emerald-600"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             )}
           </div>
 
+          {/* BLOG + SUPPORT */}
           <Link
             href="/blog"
             className="text-black hover:text-emerald-600"
@@ -334,6 +330,7 @@ export default function Navbar() {
           >
             BLOG
           </Link>
+
           <Link
             href="/support"
             className="text-black hover:text-emerald-600"
@@ -342,6 +339,7 @@ export default function Navbar() {
             SUPPORT
           </Link>
 
+          {/* LOGIN + SIGNUP */}
           <div className="flex flex-col gap-2 pt-4 w-full">
             <Link
               href="/login"

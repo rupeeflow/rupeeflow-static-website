@@ -1,6 +1,5 @@
 import React from 'react'
 import BigCard from '../ui/BigCard'
-import { image } from 'framer-motion/client'
 
 const data = [
   {

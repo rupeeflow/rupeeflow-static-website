@@ -38,7 +38,7 @@ export default function SupportHero() {
             variants={content}
             className="text-3xl md:text-5xl lg:text-[5vw]  mb-12"
           >
-            We're Here to{' '}
+            We&apos;re Here to{' '}
             <span className="text-gradient-teal-emerald ">Support You</span>
           </motion.h2>
           <motion.p variants={content} className="text-gray-300 mb-2">
@@ -78,7 +78,7 @@ export default function SupportHero() {
             className="backdrop-blur-lg  bg-neutral-600/30 rounded-3xl border border-emerald-700/40  p-6 flex flex-col items-center text-center hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300"
           >
             <Image
-              src="/support/chat-support.png"
+              src="/images/chat-support.png"
               alt="Live Chat"
               width={180}
               height={180}
@@ -102,7 +102,7 @@ export default function SupportHero() {
             className="backdrop-blur-lg  bg-neutral-600/30 rounded-3xl border border-emerald-700/40  p-6 flex flex-col items-center text-center hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300"
           >
             <Image
-              src="/support/email-support.png"
+              src="/images/email-support.png"
               alt="Email Support"
               width={180}
               height={180}
@@ -128,7 +128,7 @@ export default function SupportHero() {
             className="backdrop-blur-lg  bg-neutral-600/30 rounded-3xl border border-emerald-700/40  p-6 flex flex-col items-center text-center hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all duration-300"
           >
             <Image
-              src="/support/call-support.png"
+              src="/images/call-support.png"
               alt="Call Support"
               width={180}
               height={180}

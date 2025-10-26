@@ -3,7 +3,6 @@
 import FaqSection from '@/components/sections/FAQ'
 import { motion, Variants } from 'framer-motion'
 import {
-  Zap,
   ShieldCheck,
   Cpu,
   Network,
@@ -197,7 +196,7 @@ export default function UPISwitchPage() {
 
           <motion.div variants={content}>
             <Link
-              href="/signup"
+              href="https://rupeeflow.org/"
               className="inline-block px-8 py-3 bg-black text-white font-semibold rounded-full hover:bg-neutral-900 transition"
             >
               Get Started →

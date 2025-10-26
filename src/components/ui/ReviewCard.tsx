@@ -18,7 +18,9 @@ export default function ReviewCard({
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center text-center max-w-5xl mx-auto transition-all duration-300">
       {/* Quote */}
-      <p className="text-3xl fontheading2 text-gray-800 mb-6">"{quote}"</p>
+      <p className="text-3xl fontheading2 text-gray-800 mb-6">
+        &quot;{quote}&quot;
+      </p>
 
       {/* Avatar */}
       <div className="w-14 h-14 mb-4 relative rounded-full overflow-hidden bg-gray-100">
