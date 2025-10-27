@@ -2,7 +2,6 @@
 
 import FAQContent from '@/components/sections/FAQContent'
 import FAQHero from '@/components/sections/FAQHero'
-import { Metadata } from 'next'
 import { useState } from 'react'
 
 export default function FAQsPage() {

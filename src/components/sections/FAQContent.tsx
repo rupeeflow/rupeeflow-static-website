@@ -830,7 +830,7 @@ export default function FAQContent({ searchQuery }: FAQContentProps) {
     if (searchQuery && filteredFAQs.length > 0) {
       setOpenQuestions([filteredFAQs[0].id])
     }
-  }, [searchQuery])
+  }, [searchQuery, filteredFAQs])
 
   return (
     <section className="py-16 px-6 bg-gradient-to-b from-black via-[#0a1413] to-black">

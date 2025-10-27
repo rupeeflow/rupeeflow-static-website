@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 import blogList from '@/data/blogPosts.json'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://rupeeflow.co'
 
@@ -17,6 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/solutions/dmt',
     '/solutions/imps',
     '/solutions/neft',
+    '/terms',
+    '/privacy',
+    '/cookies',
+    '/refund',
+    '/faq',
+    '/faqs',
+    '/careers',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
