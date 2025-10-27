@@ -59,7 +59,7 @@ export default function SupportHero() {
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-emerald-400" />
-              +91 99999 12345
+              +91 
             </div>
           </motion.div>
         </motion.div>

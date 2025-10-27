@@ -55,7 +55,6 @@ export default function Navbar() {
         } mx-auto items-center justify-between px-6`}
         style={{ maxWidth: scrolled ? '100%' : '1200px' }}
       >
-        {/* Logo */}
         <Link
           href="/"
           className="flex items-center space-x-2 hover:translate-x-2 transition duration-200 ease-in-out"
@@ -63,7 +62,6 @@ export default function Navbar() {
           <Image src="/rflogowhitebg.svg" alt="Logo" width={180} height={36} />
         </Link>
 
-        {/* Desktop Nav (only on large screens) */}
         <nav className="hidden lg:flex space-x-8 text-sm fontbody relative">
           <Link
             href="/product"
@@ -76,7 +74,6 @@ export default function Navbar() {
             PRODUCT
           </Link>
 
-          {/* SOLUTIONS */}
           <div
             className="relative"
             onMouseEnter={() => setShowSolutions(true)}
@@ -131,7 +128,6 @@ export default function Navbar() {
             PRICING
           </Link>
 
-          {/* DEV */}
           <div
             className="relative"
             onMouseEnter={() => setShowDev(true)}
@@ -199,7 +195,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center space-x-4">
           <Link
             href="/login"
-            className="px-5 py-1.5 border border-emerald-600 rounded-full text-sm font-semibold hover:bg-emerald-50 transition"
+            className="px-5 py-1.5 border border-emerald-600 rounded-full text-sm font-semibold hover:bg-emerald-50 transition disabled"
           >
             LOGIN
           </Link>

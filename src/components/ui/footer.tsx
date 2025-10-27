@@ -9,16 +9,16 @@ export default function Footer() {
     {
       title: 'Product',
       links: [
-        { label: 'Features', href: '/features' },
-        { label: 'Solutions', href: '/solutions' },
+        { label: 'Features', href: '/product' },
+        { label: 'Solutions', href: '/solutions/neft' },
         { label: 'Pricing', href: '/pricing' },
-        { label: 'For Businesses', href: '/business' },
+        // { label: 'For Businesses', href: '/business' },
       ],
     },
     {
       title: 'Company',
       links: [
-        { label: 'About Us', href: '/about' },
+        // { label: 'About Us', href: '/about' },
         { label: 'Blog', href: '/blog' },
         { label: 'Careers', href: '/careers' },
       ],
@@ -27,8 +27,8 @@ export default function Footer() {
       title: 'Support',
       links: [
         { label: 'Help Center', href: '/help' },
-        { label: 'FAQs', href: '/faqs' },
-        { label: 'Contact Us', href: '/contact' },
+        // { label: 'FAQs', href: '/faqs' },
+        // { label: 'Contact Us', href: '/contact' },
       ],
     },
     {
