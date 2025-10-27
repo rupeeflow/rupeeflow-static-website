@@ -7,37 +7,42 @@ import { Twitter, Linkedin, Instagram } from 'lucide-react'
 export default function Footer() {
   const sections = [
     {
-      title: 'Product',
+      title: 'Sitemap',
       links: [
-        { label: 'Features', href: '/features' },
-        { label: 'Solutions', href: '/solutions' },
+        { label: 'Home', href: '/' },
+        { label: 'Product', href: '/product' },
         { label: 'Pricing', href: '/pricing' },
-        { label: 'For Businesses', href: '/business' },
+        { label: 'Blog', href: '/blog' },
+        { label: 'Support', href: '/support' },
       ],
     },
     {
-      title: 'Company',
+      title: 'Product',
       links: [
-        { label: 'About Us', href: '/about' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'Careers', href: '/careers' },
+        { label: 'AEPS', href: '/solutions/aeps' },
+        { label: 'DMT', href: '/solutions/dmt' },
+        { label: 'IMPS', href: '/solutions/imps' },
+        { label: 'NEFT', href: '/solutions/neft' },
+        { label: 'Verification', href: '/solutions/verification' },
+        { label: 'UPI Switch', href: '/solutions/upi-switch' },
       ],
     },
     {
       title: 'Support',
       links: [
-        { label: 'Help Center', href: '/help' },
-        { label: 'FAQs', href: '/faqs' },
-        { label: 'Contact Us', href: '/contact' },
+        { label: 'Dev Support', href: '/comingsoon' },
+        { label: 'Help Center', href: '/support' },
+        { label: 'FAQs', href: '/support' },
+        { label: 'Contact Us', href: '/support' },
       ],
     },
     {
       title: 'Legal',
       links: [
-        { label: 'Terms & Conditions', href: '/terms' },
-        { label: 'Privacy Policy', href: '/privacy' },
-        { label: 'Cookie Policy', href: '/cookies' },
-        { label: 'Refund Policy', href: '/refund' },
+        { label: 'Terms & Conditions', href: '/legal/termsandconditions' },
+        { label: 'Privacy Policy', href: '/legal/privacypolicy' },
+        { label: 'Cookie Policy', href: '/legal/cookiepolicy' },
+        { label: 'Refund Policy', href: '/legal/refundpolicy' },
       ],
     },
   ]
