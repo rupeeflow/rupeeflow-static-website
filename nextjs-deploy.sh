@@ -149,6 +149,10 @@ else
     exit 1
 fi
 
+# Fix ownership before build (in case previous build set it to www-data)
+print_status "Setting correct ownership for build..."
+sudo chown -R $USER:$USER $APP_DIR
+
 # Install dependencies
 print_status "Installing dependencies..."
 cd $APP_DIR
@@ -264,6 +268,8 @@ set -e
 source ~/.nextjs-deploy-config
 echo "🚀 Deploying static site..."
 cd $APP_DIR
+# Fix ownership before build
+sudo chown -R $USER:$USER $APP_DIR
 git stash
 git pull origin $(git rev-parse --abbrev-ref HEAD)
 pnpm install
