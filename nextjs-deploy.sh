@@ -9,7 +9,7 @@ set -e
 echo "🚀 Starting Next.js deployment with PNPM and Caddy..."
 
 # Variables (customize these before running)
-DOMAIN="yourdomain.com"
+DOMAIN="https://rupeeflow.co"
 APP_DIR="/var/www/nextjs-app"
 REPO_URL=""  # Will prompt user if empty
 NODE_VERSION="18"
