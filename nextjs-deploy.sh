@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# Next.js + PNPM + Caddy Automated Deployment Script
+# Next.js Static Site + PNPM + Caddy Deployment Script
+# For Next.js projects with output: 'export'
 # Idempotent - Safe to run multiple times
 # Usage: ./nextjs-deploy.sh
 
 set -e
 
-echo "🚀 Starting Next.js deployment with PNPM and Caddy..."
+echo "🚀 Starting Next.js static site deployment with PNPM and Caddy..."
 
 # Variables
 DOMAIN="rupeeflow.co"
 APP_DIR="/var/www/nextjs-app"
 REPO_URL=""
 NODE_VERSION="18"
-PORT="3000"
 
 # Colors
 RED='\033[0;31m'
@@ -58,14 +58,10 @@ if [ "$IS_FIRST_RUN" = true ] || [ ! -f ~/.nextjs-deploy-config ]; then
         [ ! -z "$user_repo" ] && REPO_URL="$user_repo"
     fi
 
-    read -p "Port (default: $PORT): " user_port
-    [ ! -z "$user_port" ] && PORT="$user_port"
-
     # Save config
     cat > ~/.nextjs-deploy-config << EOL
 DOMAIN="$DOMAIN"
 REPO_URL="$REPO_URL"
-PORT="$PORT"
 APP_DIR="$APP_DIR"
 EOL
     chmod 600 ~/.nextjs-deploy-config
@@ -78,7 +74,6 @@ echo ""
 print_status "Configuration:"
 echo "   Domain: $DOMAIN"
 echo "   Repository: ${REPO_URL:-'Already cloned'}"
-echo "   Port: $PORT"
 echo "   App Directory: $APP_DIR"
 echo ""
 
@@ -111,14 +106,6 @@ if command -v pnpm &> /dev/null; then
 else
     print_status "Installing PNPM..."
     sudo npm install -g pnpm
-fi
-
-# PM2
-if command -v pm2 &> /dev/null; then
-    print_skip "PM2 already installed ($(pm2 -v))"
-else
-    print_status "Installing PM2..."
-    sudo npm install -g pm2
 fi
 
 # Caddy
@@ -167,63 +154,28 @@ print_status "Installing dependencies..."
 cd $APP_DIR
 pnpm install
 
-# Build
-print_status "Building application..."
+# Build static site
+print_status "Building static site..."
 pnpm build
 
-# PM2 config
-print_status "Configuring PM2..."
-cat > $APP_DIR/ecosystem.config.js << EOL
-module.exports = {
-  apps: [{
-    name: 'nextjs-app',
-    script: 'pnpm',
-    args: 'start',
-    cwd: '$APP_DIR',
-    instances: 1,
-    autorestart: true,
-    watch: false,
-    max_memory_restart: '1G',
-    env: {
-      NODE_ENV: 'production',
-      PORT: $PORT
-    },
-    error_file: '/var/log/pm2/nextjs-error.log',
-    out_file: '/var/log/pm2/nextjs-out.log',
-    log_file: '/var/log/pm2/nextjs.log',
-    time: true
-  }]
-}
-EOL
-
-sudo mkdir -p /var/log/pm2
-sudo chown -R $USER:$USER /var/log/pm2
-
-# PM2 start/restart
-if pm2 list | grep -q "nextjs-app"; then
-    print_status "Restarting PM2 app..."
-    pm2 restart nextjs-app
-    pm2 save
-else
-    print_status "Starting PM2 app..."
-    cd $APP_DIR
-    pm2 start ecosystem.config.js
-    pm2 save
-    STARTUP_CMD=$(pm2 startup | tail -n 1 | grep -o 'sudo.*')
-    [ ! -z "$STARTUP_CMD" ] && eval "$STARTUP_CMD"
+# Verify build output
+if [ ! -d "$APP_DIR/out" ]; then
+    print_error "Build failed! 'out' directory not found. Make sure next.config.ts has output: 'export'"
+    exit 1
 fi
 
-# Caddy config
-print_status "Configuring Caddy..."
+# Configure Caddy for static file serving
+print_status "Configuring Caddy for static file serving..."
 sudo tee /etc/caddy/Caddyfile > /dev/null <<EOL
 $DOMAIN {
-    # Reverse proxy to Next.js app
-    reverse_proxy localhost:$PORT {
-        header_up Host {host}
-        header_up X-Real-IP {remote}
-        header_up X-Forwarded-For {remote}
-        header_up X-Forwarded-Proto {scheme}
-    }
+    # Root directory for static files
+    root * $APP_DIR/out
+
+    # Enable file server
+    file_server
+
+    # Try files (for client-side routing)
+    try_files {path}.html {path} /index.html
 
     # Security headers
     header {
@@ -236,13 +188,19 @@ $DOMAIN {
     }
 
     # Compression
-    encode gzip
+    encode gzip zstd
 
-    # Handle Next.js static files efficiently
+    # Cache static assets
     @static {
-        path /_next/static/*
+        path /_next/static/* *.js *.css *.png *.jpg *.jpeg *.gif *.svg *.ico *.woff *.woff2
     }
     header @static Cache-Control "public, max-age=31536000, immutable"
+
+    # Cache HTML with revalidation
+    @html {
+        path *.html /
+    }
+    header @html Cache-Control "public, max-age=3600, must-revalidate"
 
     # Logging
     log {
@@ -257,6 +215,11 @@ EOL
 
 sudo mkdir -p /var/log/caddy
 sudo chown caddy:caddy /var/log/caddy
+
+# Set correct permissions for static files
+print_status "Setting file permissions..."
+sudo chown -R www-data:www-data $APP_DIR/out
+sudo chmod -R 755 $APP_DIR/out
 
 # Firewall (first run only)
 if [ "$IS_FIRST_RUN" = true ]; then
@@ -279,6 +242,18 @@ else
     sudo systemctl start caddy
 fi
 
+# Wait for Caddy to start
+sleep 2
+
+# Check Caddy status
+if systemctl is-active --quiet caddy; then
+    print_status "Caddy is running successfully"
+else
+    print_error "Caddy failed to start!"
+    sudo systemctl status caddy
+    exit 1
+fi
+
 # Helper scripts
 if [ ! -f ~/deploy-nextjs.sh ]; then
     print_status "Creating helper scripts..."
@@ -287,24 +262,35 @@ if [ ! -f ~/deploy-nextjs.sh ]; then
 #!/bin/bash
 set -e
 source ~/.nextjs-deploy-config
-echo "🚀 Deploying..."
+echo "🚀 Deploying static site..."
 cd $APP_DIR
 git stash
 git pull origin $(git rev-parse --abbrev-ref HEAD)
 pnpm install
 pnpm build
-pm2 restart nextjs-app
-sudo systemctl reload caddy
-echo "✅ Deployed!"
-pm2 status
+if [ -d "$APP_DIR/out" ]; then
+    sudo chown -R www-data:www-data $APP_DIR/out
+    sudo chmod -R 755 $APP_DIR/out
+    sudo systemctl reload caddy
+    echo "✅ Deployed successfully!"
+    echo "🔗 Site: https://$DOMAIN"
+else
+    echo "❌ Build failed - out directory not found"
+    exit 1
+fi
 EOL
 
     cat > ~/status-nextjs.sh << 'EOL'
 #!/bin/bash
-echo "📊 Status:"
-pm2 status
-echo ""
+echo "📊 Caddy Status:"
 sudo systemctl status caddy --no-pager
+echo ""
+echo "📁 Build Directory:"
+source ~/.nextjs-deploy-config
+ls -lh $APP_DIR/out 2>/dev/null || echo "No out directory found"
+echo ""
+echo "📝 Recent Caddy Logs:"
+sudo tail -n 20 /var/log/caddy/access.log 2>/dev/null || echo "No logs yet"
 EOL
 
     cat > ~/env-nextjs.sh << 'EOL'
@@ -313,7 +299,10 @@ source ~/.nextjs-deploy-config
 case "$1" in
     "edit")
         nano $APP_DIR/.env.local
-        pm2 restart nextjs-app
+        cd $APP_DIR
+        pnpm build
+        sudo chown -R www-data:www-data $APP_DIR/out
+        sudo systemctl reload caddy
         ;;
     "show")
         [ -f "$APP_DIR/.env.local" ] && cat $APP_DIR/.env.local || echo "No .env.local file"
@@ -344,25 +333,24 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo ""
 echo "📋 Summary:"
 echo "   Domain: $DOMAIN"
-echo "   App: $APP_DIR"
-echo "   Port: $PORT"
+echo "   App Directory: $APP_DIR"
+echo "   Static Files: $APP_DIR/out"
+echo "   Type: Static Site (No PM2 needed)"
 echo ""
 echo "🛠️  Quick Commands:"
 echo "   ~/deploy-nextjs.sh  - Redeploy from Git"
-echo "   ~/status-nextjs.sh  - Check status"
+echo "   ~/status-nextjs.sh  - Check status & logs"
 echo "   ~/env-nextjs.sh     - Manage environment"
-echo "   pm2 logs            - View logs"
 echo ""
 
 if [ "$IS_FIRST_RUN" = true ]; then
     print_warning "⚠️  Next Steps:"
     echo "1. Update DNS to point $DOMAIN to server IP"
-    echo "2. Set env vars: ~/env-nextjs.sh edit"
+    echo "2. Set env vars if needed: ~/env-nextjs.sh edit"
     echo "3. SSL auto-provisions once DNS configured"
     echo ""
 fi
 
-print_status "📊 Current Status:"
-pm2 status
+print_status "🔗 Your site should be live at: https://$DOMAIN"
+print_status "(If DNS is configured, SSL will provision automatically)"
 echo ""
-print_status "🔗 App: https://$DOMAIN"
