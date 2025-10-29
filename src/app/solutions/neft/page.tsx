@@ -13,7 +13,7 @@ import {
   FileJson,
   CheckCircle2,
 } from 'lucide-react'
-import FaqSection from '@/components/sections/FAQ'
+
 
 export default function NEFTIntegrationPage() {
   // 🔹 Animation Variants
@@ -220,7 +220,7 @@ export default function NEFTIntegrationPage() {
           </motion.div>
         </motion.div>
       </section>
-      <FaqSection />
+
     </main>
   )
 }

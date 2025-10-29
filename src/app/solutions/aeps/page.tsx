@@ -1,6 +1,7 @@
 'use client'
 
 import FaqSection from '@/components/sections/FAQ'
+import faq from '@/data/top-faqs.json'
 import { motion, Variants } from 'framer-motion'
 import {
   Fingerprint,
@@ -187,7 +188,7 @@ export default function AEPSPage() {
           </Link>
         </div>
       </section>
-      <FaqSection />
+      <FaqSection faqs={faq} />
     </main>
   )
 }

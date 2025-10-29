@@ -1,0 +1,26 @@
+[
+  {
+    "question": "What is RupeeFlow?",
+    "answer": "RupeeFlow is a unified UPI platform that enables users and businesses to send, receive, and manage payments seamlessly — across borders and languages."
+  },
+  {
+    "question": "Is RupeeFlow free?",
+    "answer": "Yes! Basic UPI transactions and core features are completely free. Premium features like AI Insights and international transfers may have small fees."
+  },
+  {
+    "question": "How is RupeeFlow different from other UPI apps?",
+    "answer": "RupeeFlow supports voice-enabled payments, cross-border transactions, and AI-powered analytics — offering a smarter and more inclusive experience."
+  },
+  {
+    "question": "Is RupeeFlow Safe?",
+    "answer": "Absolutely. RupeeFlow uses RBI and NPCI-compliant security standards, end-to-end encryption, and multi-factor authentication to protect your data."
+  },
+  {
+    "question": "How does RupeeFlow Work?",
+    "answer": "Simply link your bank account and start sending or receiving money instantly via UPI. You can also automate bill payments and monitor expenses in real time."
+  },
+  {
+    "question": "How to do bulk invoice payments?",
+    "answer": "With RupeeFlow Business, you can upload invoices in bulk and process all payments in one go — saving time while maintaining full payment tracking."
+  }
+]

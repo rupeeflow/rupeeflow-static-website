@@ -13,7 +13,6 @@ import {
   Clock,
   Banknote,
 } from 'lucide-react'
-import FaqSection from '@/components/sections/FAQ'
 
 export default function IMPSIntegrationPage() {
   // 🔹 Animation Variants
@@ -220,7 +219,6 @@ export default function IMPSIntegrationPage() {
           </motion.div>
         </motion.div>
       </section>
-      <FaqSection />
     </main>
   )
 }

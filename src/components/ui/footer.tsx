@@ -19,10 +19,11 @@ export default function Footer() {
     {
       title: 'Product',
       links: [
+        { label: 'NEFT', href: '/solutions/neft' },
+        { label: 'Kirana', href: '/kirana' },
         { label: 'AEPS', href: '/solutions/aeps' },
         { label: 'DMT', href: '/solutions/dmt' },
         { label: 'IMPS', href: '/solutions/imps' },
-        { label: 'NEFT', href: '/solutions/neft' },
         { label: 'Verification', href: '/solutions/verification' },
         { label: 'UPI Switch', href: '/solutions/upi-switch' },
       ],

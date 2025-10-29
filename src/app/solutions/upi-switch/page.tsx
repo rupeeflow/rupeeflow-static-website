@@ -1,6 +1,6 @@
 'use client'
 
-import FaqSection from '@/components/sections/FAQ'
+
 import { motion, Variants } from 'framer-motion'
 import {
   ShieldCheck,
@@ -205,7 +205,7 @@ export default function UPISwitchPage() {
         </motion.div>
       </section>
 
-      <FaqSection />
+  
     </main>
   )
 }

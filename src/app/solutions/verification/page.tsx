@@ -2,6 +2,8 @@
 
 import { motion, Variants } from 'framer-motion'
 import Link from 'next/link'
+import FaqSection from '@/components/sections/FAQ'
+import faq from '@/data/top-faqs.json'
 import {
   Fingerprint,
   IdCard,
@@ -14,7 +16,6 @@ import {
   FileJson,
   CheckCircle2,
 } from 'lucide-react'
-import FaqSection from '@/components/sections/FAQ'
 
 export default function VerificationPage() {
   // Animation Variants
@@ -225,7 +226,7 @@ export default function VerificationPage() {
           </motion.div>
         </motion.div>
       </section>
-      <FaqSection />
+      <FaqSection faqs={faq} />
     </main>
   )
 }

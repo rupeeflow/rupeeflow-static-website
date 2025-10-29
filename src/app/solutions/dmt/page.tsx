@@ -1,6 +1,5 @@
 'use client'
 
-import FaqSection from '@/components/sections/FAQ'
 import { motion, Variants } from 'framer-motion'
 import {
   Banknote,
@@ -201,8 +200,6 @@ export default function DMTPage() {
           </motion.div>
         </motion.div>
       </section>
-
-      <FaqSection />
     </main>
   )
 }

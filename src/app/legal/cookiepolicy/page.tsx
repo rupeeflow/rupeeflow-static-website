@@ -1,6 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import FaqSection from '@/components/sections/FAQ'
+import faq from '@/data/top-faqs.json'
 
 export default function CookiePolicy() {
   return (
@@ -66,6 +68,7 @@ export default function CookiePolicy() {
           </section>
         </div>
       </section>
+      <FaqSection faqs={faq} />
     </main>
   )
 }
