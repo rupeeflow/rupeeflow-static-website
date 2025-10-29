@@ -54,7 +54,7 @@ export default function KiranaPromo() {
           </div>
         </motion.div>
         <Link
-          href="/kirana"
+          href="/solutions/kirana"
           className="inline-block px-8 py-3 rounded-full bg-teal-emerald-dark text-white font-semibold text-md md:text-base md:text-lg transition"
         >
           Know More About Kirana →
