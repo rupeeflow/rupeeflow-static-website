@@ -18,6 +18,7 @@ import VisionSection from '@/components/sections/VisionSection'
 import FeatureSection from '@/components/sections/FeatureSection'
 
 import faq from '@/data/top-faqs.json'
+import KiranaPromo from '@/components/sections/KiranaPromo'
 
 export default function HomePage() {
   return (
@@ -27,6 +28,7 @@ export default function HomePage() {
       <FeatureSection />
       <PartnerShip />
       <FuturePayments />
+      <KiranaPromo />
       <BuiltForSection />
       <ChooseRupeeFlow />
       <StatsSection />

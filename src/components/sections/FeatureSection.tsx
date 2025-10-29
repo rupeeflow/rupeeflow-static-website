@@ -88,7 +88,7 @@ export default function FeatureSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
-              className="group bg-white/10 border border-white/10 backdrop-blur-md rounded-2xl p-8 flex flex-col items-center text-center hover:bg-white/15 hover:shadow-[0_0_25px_rgba(34,197,94,0.25)] transition"
+              className="group bg-gray-700/20 border border-white/70 backdrop-blur-md rounded-2xl p-8 flex flex-col items-center text-center  hover:shadow-[0_0_25px_rgba(34,197,94,0.25)] transition"
             >
               {/* Icon */}
               <div className="mb-6">{f.icon}</div>
@@ -113,7 +113,7 @@ export default function FeatureSection() {
               {/* Button */}
               <Link
                 href="/product"
-                className="flex items-center justify-center gap-2 px-5 py-2 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition mt-auto"
+                className="flex items-center justify-center gap-2 px-5 py-2 rounded-full bg-teal-emerald-dark text-white font-semibold hover:bg-emerald-700 transition mt-auto"
               >
                 Learn More
                 <ArrowRight className="w-4 h-4" />
