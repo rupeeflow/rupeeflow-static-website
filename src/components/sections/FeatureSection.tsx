@@ -54,7 +54,7 @@ export default function FeatureSection() {
         {/* Section Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-6xl fontheadingthin text-white mb-3"
         >
@@ -63,8 +63,8 @@ export default function FeatureSection() {
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
           className="text-2xl md:text-3xl text-gradient-teal-emerald font-semibold mb-4"
         >
           Connecting Voices
@@ -72,8 +72,8 @@ export default function FeatureSection() {
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="text-gray-300 max-w-2xl mx-auto mb-14 fontbody2 text-lg"
         >
           Key features that make RupeeFlow the next-generation UPI platform —
@@ -86,9 +86,9 @@ export default function FeatureSection() {
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1, duration: 0.6 }}
-              className="group bg-white/10 border border-white/10 backdrop-blur-md rounded-2xl p-8 flex flex-col items-center text-center hover:bg-white/15 hover:shadow-[0_0_25px_rgba(34,197,94,0.25)] transition"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1, duration: 0.6, ease: 'easeOut' }}
+              className="group bg-gray-700/20 border border-white/70 backdrop-blur-md rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-[0_0_25px_rgba(34,197,94,0.25)] transition"
             >
               {/* Icon */}
               <div className="mb-6">{f.icon}</div>
@@ -104,7 +104,7 @@ export default function FeatureSection() {
               </p>
 
               {/* Points */}
-              <ul className="text-gray-300 text-sm space-y-1 mb-6">
+              <ul className="flex flex-col gap-2 text-left items-start justify-center w-full text-gray-300 text-xs space-y-1 mb-6">
                 {f.points.map((point, i) => (
                   <li key={i}>• {point}</li>
                 ))}

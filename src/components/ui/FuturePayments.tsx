@@ -1,5 +1,3 @@
-import { UPIImgSVG } from './icon/UPIImgLogo'
-import { NPCIImgSVG } from './icon/NPCIImgSVG'
 import Image from 'next/image'
 
 export default function FuturePayments() {
@@ -31,10 +29,22 @@ export default function FuturePayments() {
             {/* Payment Logos */}
             <div className="flex gap-6">
               <div className="flex items-center gap-4">
-                <UPIImgSVG width={120} height={60} />
+                <Image
+                  src="/partners/upi.png"
+                  alt="UPI Logo"
+                  width={150}
+                  height={60}
+                  className="object-contain w-full h-auto"
+                />
               </div>
               <div className="flex items-center gap-4">
-                <NPCIImgSVG width={120} height={60} />
+                <Image
+                  src="/partners/npci.png"
+                  alt="NPCI Logo"
+                  width={150}
+                  height={60}
+                  className="object-contain w-full h-auto"
+                />
               </div>
             </div>
 

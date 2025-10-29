@@ -19,7 +19,6 @@ export default function KiranaPage() {
       <HeroSection />
       <WhyTrustSection />
       <HowItWorksSection />
-
       <CTASection />
       <LegalNoteSection />
       <TestimonialsSection />
