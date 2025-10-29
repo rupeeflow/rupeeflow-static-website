@@ -5,7 +5,7 @@ export default function LegalNoteSection() {
     <section className="relative z-10 py-12 px-6 bg-black/80 text-gray-400 text-center border-t border-white/10">
       <div className="max-w-4xl mx-auto fontbody2 text-sm">
         <p className="mb-2">
-          RupeeFlow Kirana is a Tech Service Provider to Razorpay (RBI-licensed
+          RupeeFlow Kirana is a Tech Service Provider to (RBI-licensed
           Payment Aggregator). We do not hold your money.
         </p>
         <p>

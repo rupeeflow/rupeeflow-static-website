@@ -13,6 +13,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/pricing',
     '/support',
     '/blog',
+    '/docs',
+    '/docs/authentication',
+    '/docs/payin',
+    '/docs/payout',
+    '/docs/faq',
     '/solutions/upi-switch',
     '/solutions/verification',
     '/solutions/aeps',
@@ -31,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
+    priority: route === '' ? 1 : route.startsWith('/docs') ? 0.9 : 0.8,
   }))
 
   // Blog posts

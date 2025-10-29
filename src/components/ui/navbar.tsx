@@ -135,7 +135,7 @@ export default function Navbar() {
           >
             <button
               className={`group flex items-center h-14 gap-1 transition-colors ${
-                showDev
+                showDev || isActive('/docs')
                   ? 'text-emerald-600 pb-1'
                   : 'text-black hover:text-emerald-600'
               }`}
@@ -150,7 +150,7 @@ export default function Navbar() {
               <div className="absolute top-full overflow-hidden left-0 bg-white shadow-lg rounded-lg border border-gray-200 w-48 z-50">
                 <ul className="flex flex-col text-sm text-gray-800">
                   {[
-                    ['/comingsoon', 'API Documentation'],
+                    ['/docs', 'API Documentation'],
                     ['/comingsoon', 'SDK Downloads'],
                     ['/comingsoon', 'Developer Support'],
                   ].map(([path, label]) => (
@@ -300,7 +300,7 @@ export default function Navbar() {
             {showDev && (
               <ul className="ml-4 mt-2 space-y-2 text-gray-700">
                 {[
-                  ['/comingsoon', 'API Documentation'],
+                  ['/docs', 'API Documentation'],
                   ['/comingsoon', 'SDK Downloads'],
                   ['/comingsoon', 'Developer Support'],
                 ].map(([path, label]) => (

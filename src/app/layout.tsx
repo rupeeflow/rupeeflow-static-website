@@ -33,7 +33,12 @@ export const metadata: Metadata = {
       follow: true,
     },
   icons: {
-    icon: '/rupeeflow.svg',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/rupeeflow.png', type: 'image/png', sizes: '32x32' },
+      { url: '/rupeeflow.svg', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
   },
 }
 

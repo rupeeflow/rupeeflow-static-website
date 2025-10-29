@@ -128,7 +128,7 @@ const sections: Section[] = [
           'Firebase | App analytics & performance | https://firebase.google.com/support/privacy',
           'Google Ads | Advertising & remarketing | https://policies.google.com/technologies/ads',
           'Facebook Pixel | Social media advertising | https://www.facebook.com/privacy/explanation',
-          'Razorpay | Payment processing | https://razorpay.com/privacy/',
+          // 'Razorpay | Payment processing | https://razorpay.com/privacy/',
           'NPCI | UPI transaction processing | https://www.npci.org.in/privacy-policy',
           'Amazon Web Services | Cloud infrastructure | https://aws.amazon.com/privacy/',
           'Cloudflare | Content delivery & security | https://www.cloudflare.com/privacypolicy/',
