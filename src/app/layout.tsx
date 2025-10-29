@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     openGraph: {
       type: 'website',
       locale: 'en_IN',
-      url: 'https://rupeeflow.com',
+      url: 'https://rupeeflow.co',
       siteName: 'RupeeFlow',
       title: 'RupeeFlow - Modern UPI Payment Infrastructure',
       description: 'Enterprise-grade payment solutions for India',

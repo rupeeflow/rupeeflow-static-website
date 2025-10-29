@@ -7,8 +7,8 @@ export function OrganizationSchema() {
     "logo": "https://rupeeflow.co/rupeeflow.svg",
     "description": "Modern UPI payment infrastructure for India",
     "sameAs": [
-      "https://twitter.co/rupeeflow",
-      "https://linkedin.co/company/rupeeflow"
+      "https://twitter.com/rupeeflow",
+      "https://linkedin.com/company/rupeeflow"
     ]
   }
 
@@ -71,6 +71,61 @@ export function BreadcrumbSchema({ items }: { items: Array<{ name: string; url: 
       "position": index + 1,
       "name": item.name,
       "item": `https://rupeeflow.co${item.url}`
+    }))
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+export function WebPageSchema({
+  title,
+  description,
+  url
+}: {
+  title: string
+  description: string
+  url: string
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": title,
+    "description": description,
+    "url": `https://rupeeflow.co${url}`,
+    "publisher": {
+      "@type": "Organization",
+      "name": "RupeeFlow",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://rupeeflow.co/rupeeflow.svg"
+      }
+    }
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+export function FAQSchema({ faqs }: { faqs: Array<{ question: string; answer: string }> }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
     }))
   }
 

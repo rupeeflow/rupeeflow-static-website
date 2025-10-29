@@ -3,6 +3,7 @@ import FaqSection from '@/components/sections/FAQ'
 import PricingSection from '@/components/sections/PricingHero'
 import React from 'react'
 import { Metadata } from 'next'
+import { WebPageSchema } from '@/components/StructuredData'
 
 export const metadata: Metadata = {
   title: 'Pricing - Transparent Payment Solutions Pricing | RupeeFlow',
@@ -28,6 +29,11 @@ export const metadata: Metadata = {
 const PricingPage = () => {
   return (
     <div>
+      <WebPageSchema
+        title="Pricing - Transparent Payment Solutions Pricing"
+        description="Simple, transparent pricing for UPI, AEPS, DMT, IMPS, and NEFT payment solutions. No hidden fees. Scale as you grow."
+        url="/pricing"
+      />
       <PricingSection />
       <AddonsSection />
     </div>

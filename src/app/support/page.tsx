@@ -5,6 +5,7 @@ import React from 'react'
 import { Metadata } from 'next'
 import FaqSection from '@/components/sections/FAQ'
 import faq from '@/data/top-faqs.json'
+import { WebPageSchema, FAQSchema } from '@/components/StructuredData'
 
 
 export const metadata: Metadata = {
@@ -31,6 +32,12 @@ export const metadata: Metadata = {
 const SupportPage = () => {
   return (
     <div>
+      <WebPageSchema
+        title="Support - Get Help with RupeeFlow Payment Solutions"
+        description="Expert support for RupeeFlow payment infrastructure. Access documentation, FAQs, API guides, and contact our technical team."
+        url="/support"
+      />
+      <FAQSchema faqs={faq.map(f => ({ question: f.question, answer: f.answer }))} />
       <SupportHero />
       <FaqSupportSection />
       <FaqSection faqs={faq} />
