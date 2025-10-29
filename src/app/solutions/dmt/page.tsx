@@ -201,8 +201,6 @@ export default function DMTPage() {
           </motion.div>
         </motion.div>
       </section>
-
-      <FaqSection />
     </main>
   )
 }

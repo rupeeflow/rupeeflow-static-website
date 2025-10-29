@@ -220,7 +220,7 @@ export default function CareersContent() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-b from-black-emerald via-black to-black-emerald">
+    <section className="py-20 bg-black-emerald">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Company Culture Section */}
         <motion.div

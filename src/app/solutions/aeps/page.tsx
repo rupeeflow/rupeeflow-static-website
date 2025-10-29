@@ -187,7 +187,6 @@ export default function AEPSPage() {
           </Link>
         </div>
       </section>
-      <FaqSection />
     </main>
   )
 }

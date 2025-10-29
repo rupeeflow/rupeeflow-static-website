@@ -13,7 +13,6 @@ import {
   FileJson,
   CheckCircle2,
 } from 'lucide-react'
-import FaqSection from '@/components/sections/FAQ'
 
 export default function NEFTIntegrationPage() {
   // 🔹 Animation Variants
@@ -29,7 +28,6 @@ export default function NEFTIntegrationPage() {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   }
-
   const features = [
     {
       icon: Banknote,
@@ -220,7 +218,6 @@ export default function NEFTIntegrationPage() {
           </motion.div>
         </motion.div>
       </section>
-      <FaqSection />
     </main>
   )
 }

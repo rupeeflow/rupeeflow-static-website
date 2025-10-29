@@ -1,0 +1,18 @@
+[
+  {
+    "question": "Do I need a special device?",
+    "answer": "No! Just your Android phone (v4.4+). No dongle, no printer, no extra cost."
+  },
+  {
+    "question": "What if internet never comes back?",
+    "answer": "Transactions auto-reverse after 7 days if unsynced. Customer gets refund automatically."
+  },
+  {
+    "question": "Is it RBI approved?",
+    "answer": "Yes. Built on UPI Lite (NPCI)."
+  },
+  {
+    "question": "How much does it cost?",
+    "answer": "Free for 3 months. Then ₹99/month or 1% per transaction (you choose)."
+  }
+]

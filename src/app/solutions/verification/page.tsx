@@ -14,7 +14,9 @@ import {
   FileJson,
   CheckCircle2,
 } from 'lucide-react'
-import FaqSection from '@/components/sections/FAQ'
+import FaqSection from '@/components/sections/FAQ';
+import faq from '@/data/top-faqs.json'
+
 
 export default function VerificationPage() {
   // Animation Variants
@@ -225,7 +227,7 @@ export default function VerificationPage() {
           </motion.div>
         </motion.div>
       </section>
-      <FaqSection />
+      <FaqSection faqs={faq} />
     </main>
   )
 }

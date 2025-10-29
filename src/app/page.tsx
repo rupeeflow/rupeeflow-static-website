@@ -16,6 +16,8 @@ import BlogSection from '@/components/sections/BlogSection'
 import blogPosts from '@/data/blogPostsHome.json'
 import VisionSection from '@/components/sections/VisionSection'
 import FeatureSection from '@/components/sections/FeatureSection'
+import faq from '@/data/top-faqs.json'
+
 
 export default function HomePage() {
   return (
@@ -35,7 +37,8 @@ export default function HomePage() {
         microcopy="Explore fresh perspectives and updates from the RupeeFlow team."
         posts={blogPosts}
       />
-      <FaqSection />
+      <FaqSection faqs={faq} />
+
     </div>
   )
 }

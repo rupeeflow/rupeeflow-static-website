@@ -30,7 +30,6 @@ const PricingPage = () => {
     <div>
       <PricingSection />
       <AddonsSection />
-      <FaqSection />
     </div>
   )
 }

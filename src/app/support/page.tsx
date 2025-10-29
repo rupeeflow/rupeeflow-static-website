@@ -3,6 +3,9 @@ import FaqSupportSection from '@/components/sections/FaqSupportSection'
 import SupportHero from '@/components/sections/SupportHero'
 import React from 'react'
 import { Metadata } from 'next'
+import FaqSection from '@/components/sections/FAQ'
+import faq from '@/data/top-faqs.json'
+
 
 export const metadata: Metadata = {
   title: 'Support - Get Help with RupeeFlow Payment Solutions',
@@ -30,6 +33,8 @@ const SupportPage = () => {
     <div>
       <SupportHero />
       <FaqSupportSection />
+      <FaqSection faqs={faq} />
+
     </div>
   )
 }

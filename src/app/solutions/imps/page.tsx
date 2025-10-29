@@ -220,7 +220,6 @@ export default function IMPSIntegrationPage() {
           </motion.div>
         </motion.div>
       </section>
-      <FaqSection />
     </main>
   )
 }

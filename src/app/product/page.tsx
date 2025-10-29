@@ -8,6 +8,8 @@ import NEFTInfoSection from '@/components/sections/NEFTSection'
 import ProductHero from '@/components/sections/ProductHero'
 import UPISwitchSection from '@/components/sections/UPISwitchSection'
 import VerificationSection from '@/components/sections/VerificationSection'
+import faq from '@/data/top-faqs.json'
+
 
 export default function SolutionPage() {
   return (
@@ -20,8 +22,8 @@ export default function SolutionPage() {
       <VerificationSection />
       <AEPSInfoSection />
       <DMTSection />
+      <FaqSection faqs={faq} />
 
-      <FaqSection />
     </>
   )
 }

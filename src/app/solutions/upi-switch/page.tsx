@@ -204,8 +204,6 @@ export default function UPISwitchPage() {
           </motion.div>
         </motion.div>
       </section>
-
-      <FaqSection />
     </main>
   )
 }

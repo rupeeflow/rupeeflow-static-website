@@ -3,49 +3,21 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import { faqData } from '@/interface/typesInterfaces'
 
-export default function FaqSection() {
+
+interface faqProps {
+faqs?: faqData[]
+}
+export default function FaqSection({ faqs = [] }: faqProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
-
-  const faqs = [
-    {
-      question: 'What is RupeeFlow?',
-      answer:
-        'RupeeFlow is a unified UPI platform that enables users and businesses to send, receive, and manage payments seamlessly — across borders and languages.',
-    },
-    {
-      question: 'Is RupeeFlow free?',
-      answer:
-        'Yes! Basic UPI transactions and core features are completely free. Premium features like AI Insights and international transfers may have small fees.',
-    },
-    {
-      question: 'How is RupeeFlow different from other UPI apps?',
-      answer:
-        'RupeeFlow supports voice-enabled payments, cross-border transactions, and AI-powered analytics — offering a smarter and more inclusive experience.',
-    },
-    {
-      question: 'Is RupeeFlow Safe?',
-      answer:
-        'Absolutely. RupeeFlow uses RBI and NPCI-compliant security standards, end-to-end encryption, and multi-factor authentication to protect your data.',
-    },
-    {
-      question: 'How does RupeeFlow Work?',
-      answer:
-        'Simply link your bank account and start sending or receiving money instantly via UPI. You can also automate bill payments and monitor expenses in real time.',
-    },
-    {
-      question: 'How to do bulk invoice payments?',
-      answer:
-        'With RupeeFlow Business, you can upload invoices in bulk and process all payments in one go — saving time while maintaining full payment tracking.',
-    },
-  ]
 
   const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index)
   }
 
   return (
-    <section className="w-full bg-gray-50 text-gray-900 py-24 px-6">
+    <section className="relative w-full z-20 bg-gray-50 text-gray-900 py-24 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left Text Section */}
         <div>
@@ -60,7 +32,7 @@ export default function FaqSection() {
 
         {/* Right Accordion Section */}
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {faqs.map((faq: faqData, index: number) => (
             <div key={index} className="border-b border-gray-300 pb-4">
               <button
                 onClick={() => toggleFAQ(index)}

@@ -8,3 +8,8 @@ export type cardData = {
 export interface cardProps {
   CardData: cardData
 }
+
+export type faqData = {
+  question: string
+  answer: string
+}

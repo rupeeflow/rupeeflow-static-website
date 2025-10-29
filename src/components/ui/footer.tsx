@@ -12,6 +12,8 @@ export default function Footer() {
         { label: 'Features', href: '/product' },
         { label: 'Solutions', href: '/solutions/neft' },
         { label: 'Pricing', href: '/pricing' },
+         { label: 'NEFT', href: '/solutions/neft' },
+        { label: 'Kirana', href: '/kirana' },
         // { label: 'For Businesses', href: '/business' },
       ],
     },
