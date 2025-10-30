@@ -2,59 +2,64 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Twitter, Linkedin, Instagram } from 'lucide-react'
+import { FaXTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa6' // ✅ modern replacements
 
 export default function Footer() {
   const sections = [
     {
-      title: 'Product',
+      title: 'Sitemap',
       links: [
-        { label: 'Features', href: '/product' },
-        { label: 'Solutions', href: '/solutions/neft' },
+        { label: 'Home', href: '/' },
+        { label: 'Product', href: '/product' },
         { label: 'Pricing', href: '/pricing' },
-         { label: 'NEFT', href: '/solutions/neft' },
-        { label: 'Kirana', href: '/kirana' },
-        // { label: 'For Businesses', href: '/business' },
+        { label: 'Blog', href: '/blog' },
+        { label: 'Support', href: '/support' },
       ],
     },
     {
-      title: 'Company',
+      title: 'Product',
       links: [
-        // { label: 'About Us', href: '/about' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'Careers', href: '/careers' },
+        { label: 'NEFT', href: '/solutions/neft' },
+        { label: 'Kirana', href: '/solutions/kirana' },
+        { label: 'AEPS', href: '/solutions/aeps' },
+        { label: 'DMT', href: '/solutions/dmt' },
+        { label: 'IMPS', href: '/solutions/imps' },
+        { label: 'Verification', href: '/solutions/verification' },
+        { label: 'UPI Switch', href: '/solutions/upi-switch' },
       ],
     },
     {
       title: 'Support',
       links: [
-        { label: 'Help Center', href: '/help' },
-        // { label: 'FAQs', href: '/faqs' },
-        // { label: 'Contact Us', href: '/contact' },
+        { label: 'Dev Support', href: '/comingsoon' },
+        { label: 'Help Center', href: '/support' },
+        { label: 'FAQs', href: '/faqs' },
+        { label: 'Contact Us', href: '/support' },
       ],
     },
     {
       title: 'Legal',
       links: [
-        { label: 'Terms & Conditions', href: '/terms' },
-        { label: 'Privacy Policy', href: '/privacy' },
-        { label: 'Cookie Policy', href: '/cookies' },
-        { label: 'Refund Policy', href: '/refund' },
+        { label: 'Terms & Conditions', href: '/legal/terms' },
+        { label: 'Privacy Policy', href: '/legal/privacy' },
+        { label: 'Cookie Policy', href: '/legal/cookies' },
+        { label: 'Refund Policy', href: '/legal/refund' },
       ],
     },
   ]
 
   return (
     <footer className="w-full bg-black-emerald text-gray-300 pt-16 pb-8">
-      <div className="w-full flex flex-col lg:flex-row justify-between border-b border-green-900/40 pb-10 px-20">
+      <div className="w-full flex flex-col lg:flex-row justify-between border-b border-green-900/40 pb-10 px-6 md:px-20">
         {/* Left: Logo and App Download */}
         <div className="flex-1">
           <div className="flex items-center space-x-2 mb-4">
             <Image
-              src="/rflogo-darkbg.svg" // Replace with your logo file
+              src="/rflogo-darkbg.svg"
               alt="RupeeFlow"
               width={300}
               height={56}
+              className="object-contain"
             />
           </div>
           <p className="text-sm text-gray-400 mb-6 max-w-sm">
@@ -80,7 +85,7 @@ export default function Footer() {
         </div>
 
         {/* Right: Footer Links */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 flex-1">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 flex-1 mt-10 lg:mt-0">
           {sections.map(section => (
             <div key={section.title}>
               <h4 className="text-white font-semibold mb-4">{section.title}</h4>
@@ -102,7 +107,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Footer */}
-      <div className="w-full mt-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-400 px-16">
+      <div className="w-full mt-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-400 px-6 md:px-16">
         <p className="text-center md:text-left">
           © 2025 RupeeFlow. All Rights Reserved.
         </p>
@@ -120,7 +125,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full hover:bg-green-500/20 transition"
           >
-            <Twitter className="w-4 h-4 text-white" />
+            <FaXTwitter className="w-4 h-4 text-white" />
           </Link>
           <Link
             href="https://linkedin.com"
@@ -128,7 +133,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full hover:bg-green-500/20 transition"
           >
-            <Linkedin className="w-4 h-4 text-white" />
+            <FaLinkedinIn className="w-4 h-4 text-white" />
           </Link>
           <Link
             href="https://instagram.com"
@@ -136,7 +141,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full hover:bg-green-500/20 transition"
           >
-            <Instagram className="w-4 h-4 text-white" />
+            <FaInstagram className="w-4 h-4 text-white" />
           </Link>
         </div>
       </div>

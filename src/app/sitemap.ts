@@ -18,18 +18,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/docs/payin',
     '/docs/payout',
     '/docs/faq',
+    '/faqs',
+    '/solutions/kirana',
     '/solutions/upi-switch',
     '/solutions/verification',
     '/solutions/aeps',
     '/solutions/dmt',
     '/solutions/imps',
     '/solutions/neft',
-    '/terms',
-    '/privacy',
-    '/cookies',
-    '/refund',
-    '/faq',
-    '/faqs',
+    '/legal/terms',
+    '/legal/privacy',
+    '/legal/cookies',
+    '/legal/refund',
     '/careers',
     '/kirana',
   ].map((route) => ({
@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Blog posts
-  const blogPages = blogList.map((blog) => ({
+  const blogPages = blogList.map(blog => ({
     url: `${baseUrl}/blog/${blog.slug}`,
     lastModified: new Date(blog.date),
     changeFrequency: 'monthly' as const,

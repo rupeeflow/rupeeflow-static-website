@@ -55,6 +55,7 @@ export default function Navbar() {
         } mx-auto items-center justify-between px-6`}
         style={{ maxWidth: scrolled ? '100%' : '1200px' }}
       >
+        {/* Logo */}
         <Link
           href="/"
           className="flex items-center space-x-2 hover:translate-x-2 transition duration-200 ease-in-out"
@@ -62,6 +63,7 @@ export default function Navbar() {
           <Image src="/rflogowhitebg.svg" alt="Logo" width={180} height={36} />
         </Link>
 
+        {/* Desktop Nav (only on large screens) */}
         <nav className="hidden lg:flex space-x-8 text-sm fontbody relative">
           <Link
             href="/product"
@@ -74,6 +76,7 @@ export default function Navbar() {
             PRODUCT
           </Link>
 
+          {/* SOLUTIONS */}
           <div
             className="relative"
             onMouseEnter={() => setShowSolutions(true)}
@@ -96,6 +99,7 @@ export default function Navbar() {
               <div className="absolute top-full left-0 bg-white overflow-hidden shadow-lg rounded-lg border border-gray-200 w-48 z-50">
                 <ul className="flex flex-col text-sm text-gray-800">
                   {[
+                    ['kirana', 'Kirana'],
                     ['neft', 'NEFT Payment'],
                     ['imps', 'IMPS Payment'],
                     ['aeps', 'AEPS'],
@@ -128,6 +132,7 @@ export default function Navbar() {
             PRICING
           </Link>
 
+          {/* DEV */}
           <div
             className="relative"
             onMouseEnter={() => setShowDev(true)}
@@ -195,7 +200,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center space-x-4">
           <Link
             href="/login"
-            className="px-5 py-1.5 border border-emerald-600 rounded-full text-sm font-semibold hover:bg-emerald-50 transition disabled"
+            className="px-5 py-1.5 border border-emerald-600 rounded-full text-sm font-semibold hover:bg-emerald-50 transition"
           >
             LOGIN
           </Link>
@@ -212,21 +217,25 @@ export default function Navbar() {
           className="lg:hidden p-2 rounded-md border border-gray-300"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? (
-            <X size={22} />
-          ) : (
-            <span className="text-lg">☰</span>
-          )}
+          <span className="text-lg">☰</span>
         </button>
       </div>
-
       {/* Mobile Menu */}
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div
           ref={mobileMenuRef}
-          className="absolute top-[8vh] right-0 w-3/4 sm:w-1/2 h-[100vh] bg-white shadow-lg border-t border-gray-200 flex flex-col items-start px-6 py-6 space-y-4 text-sm font-semibold lg:hidden z-[98] overflow-y-auto"
+          className="absolute top-0 right-0 w-3/4 sm:w-1/2 h-[100vh] bg-white shadow-lg border-t border-gray-200 flex flex-col items-start px-6 pt-16 pb-8 space-y-4 text-sm font-semibold lg:hidden z-[98] overflow-y-auto "
         >
+          {/* Close Button */}
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition"
+            aria-label="Close menu"
+          >
+            <X className="w-6 h-6 text-gray-700" />
+          </button>
+
           {/* PRODUCT */}
           <Link
             href="/product"
@@ -253,6 +262,7 @@ export default function Navbar() {
             {showSolutions && (
               <ul className="ml-4 mt-2 space-y-2 text-gray-700">
                 {[
+                  ['kirana', 'Kirana'],
                   ['neft', 'NEFT Payment'],
                   ['imps', 'IMPS Payment'],
                   ['aeps', 'AEPS'],

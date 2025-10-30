@@ -16,10 +16,6 @@
 @layer utilities {
   .bg-teal-emerald {
     background-image: linear-gradient(135deg, #14b8a6, #10b981);
-
-    &:hover {
-      background-image: linear-gradient(135deg, #8eccb7, #e9fdfb);
-    }
   }
 
   .bg-black-emerald {
