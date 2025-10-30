@@ -97,7 +97,7 @@ export default function HeroSection() {
           className="relative z-20 rounded-3xl w-full max-w-5xl shadow-[0_-10px_36px_rgba(81,255,189,0.36)]"
         >
           <Image
-            src="/images/world-pay.webp"
+            src="/images/payments.png"
             alt="RupeeFlow Dashboard"
             width={1200}
             height={700}

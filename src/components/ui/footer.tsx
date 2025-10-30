@@ -33,17 +33,17 @@ export default function Footer() {
       links: [
         { label: 'Dev Support', href: '/comingsoon' },
         { label: 'Help Center', href: '/support' },
-        { label: 'FAQs', href: '/support' },
+        { label: 'FAQs', href: '/faqs' },
         { label: 'Contact Us', href: '/support' },
       ],
     },
     {
       title: 'Legal',
       links: [
-        { label: 'Terms & Conditions', href: '/legal/termsandconditions' },
-        { label: 'Privacy Policy', href: '/legal/privacypolicy' },
-        { label: 'Cookie Policy', href: '/legal/cookiepolicy' },
-        { label: 'Refund Policy', href: '/legal/refundpolicy' },
+        { label: 'Terms & Conditions', href: '/legal/terms' },
+        { label: 'Privacy Policy', href: '/legal/privacy' },
+        { label: 'Cookie Policy', href: '/legal/cookies' },
+        { label: 'Refund Policy', href: '/legal/refund' },
       ],
     },
   ]

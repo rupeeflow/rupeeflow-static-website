@@ -2,6 +2,7 @@
 
 import { motion, Variants } from 'framer-motion'
 import Image from 'next/image'
+import MainCTA from '../ui/mainCTA'
 
 export default function VisionSection() {
   // 🔹 Animation Variants
@@ -36,21 +37,32 @@ export default function VisionSection() {
   }
 
   return (
-    <section className="relative w-full bg-black text-white py-12 px-6 overflow-hidden">
+    <section className=" relative w-full  lg:h-[90vh] p-4 bg-black text-white py-12 px-6 overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_30%,rgba(16,185,129,0.15),transparent_70%)] blur-3xl" />
-
+      <div className="relative inset-0 bg-[radial-gradient(circle_at_10%_30%,rgba(16,185,129,0.15),transparent_70%)] blur-3xl" />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.7 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="absolute top-[10%] right-[20%] w-80 h-80 bg-radial-emerald-soft rounded-full blur-3xl"
+      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.7 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="absolute bottom-[10%] left-[20%] w-80 h-80 bg-radial-emerald-soft rounded-full blur-3xl"
+      />
       <motion.div
         variants={container}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        className="relative z-10 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-16"
+        className="group p-6 lg:p-0 relative h-full w-full z-10 overflow-hidden  mx-auto rounded-2xl border border-white/10 hover:border-teal-200/70 bg-gray-600/30 flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-16 transition-all duration-300 ease-in"
       >
         {/* Left Content */}
         <motion.div
           variants={content}
-          className="flex-1 text-center md:text-left lg:pl-10 space-y-4"
+          className="relative flex-1 text-center md:text-left lg:pl-20 space-y-4"
         >
           <h2 className="fontheading2 text-4xl md:text-6xl leading-tight">
             Bridging borders <br /> with{' '}
@@ -67,18 +79,24 @@ export default function VisionSection() {
             intelligence, we bring speed, transparency, and human simplicity to
             global money movement.
           </p>
+          <motion.div
+            variants={content}
+            className="mt-5 w-full flex justify-center lg:justify-start"
+          >
+            <MainCTA label="Get Started" destination="https://rupeeflow.org/" />
+          </motion.div>
         </motion.div>
 
         {/* Right Image */}
         <motion.div
           variants={imageReveal}
-          className="flex-1 relative rounded-5xl overflow-hidden w-full max-w-lg"
+          className="flex lg:absolute rounded-5xl overflow-hidden lg:w-[50%] lg:right-0 lg:translate-x-30 group-hover:translate-x-10 transition-transform duration-400 ease-in-out"
         >
           <Image
-            src="/images/vision-business.jpg"
+            src="/images/vision-image.png"
             alt="RupeeFlow Vision"
-            width={600}
-            height={400}
+            width={800}
+            height={900}
             className="rounded-3xl object-cover w-full h-auto"
             priority
           />
