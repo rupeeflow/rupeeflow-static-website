@@ -3,8 +3,45 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaXTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa6' // ✅ modern replacements
+import { useState } from 'react'
 
 export default function Footer() {
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handlePay = async () => {
+    setIsLoading(true)
+    try {
+      const response = await fetch('https://api.rupeeflow.co/api/v1/payments/payin/geopay/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          // Add any required payload here
+        }),
+      })
+
+      const data = await response.json()
+      
+      if (response.ok) {
+        // Handle successful response
+        console.log('Payment checkout successful:', data)
+        // You can redirect or show a success message here
+        if (data.checkoutUrl) {
+          window.location.href = data.checkoutUrl
+        }
+      } else {
+        // Handle error
+        console.error('Payment checkout failed:', data)
+        alert('Payment checkout failed. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error calling payment API:', error)
+      alert('An error occurred. Please try again.')
+    } finally {
+      setIsLoading(false)
+    }
+  }
   const sections = [
     {
       title: 'Sitemap',
@@ -70,7 +107,7 @@ export default function Footer() {
             href="https://play.google.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-3 border border-green-500 px-4 py-2 rounded-md hover:bg-green-600/20 transition"
+            className="inline-flex items-center space-x-3 border border-green-500 px-4 py-2 rounded-md hover:bg-green-600/20 transition mb-4"
           >
             <Image
               src="/icons/google-play.png"
@@ -82,6 +119,21 @@ export default function Footer() {
               DOWNLOAD THE APP
             </span>
           </Link>
+
+          <button
+            onClick={handlePay}
+            disabled={isLoading}
+            className="inline-flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md transition disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
+          >
+            {isLoading ? (
+              <>
+                <span className="animate-spin">⏳</span>
+                <span>Processing...</span>
+              </>
+            ) : (
+              <span>Pay Now</span>
+            )}
+          </button>
         </div>
 
         {/* Right: Footer Links */}
