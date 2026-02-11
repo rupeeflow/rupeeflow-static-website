@@ -37,7 +37,7 @@ export default function VisionSection() {
   }
 
   return (
-    <section className=" relative w-full  lg:h-[90vh] p-4 bg-black text-white py-12 px-6 overflow-hidden">
+    <section className=" relative w-full  lg:h-[90vh] p-4 bg-black text-white py-2 px-6 overflow-hidden">
       {/* Background Glow */}
       <div className="relative inset-0 bg-[radial-gradient(circle_at_10%_30%,rgba(16,185,129,0.15),transparent_70%)] blur-3xl" />
       <motion.div

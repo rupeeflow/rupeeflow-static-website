@@ -13,3 +13,12 @@ export type faqData = {
   question: string
   answer: string
 }
+
+export type navlist = {
+   id: string
+  desc?: string
+  label: string
+  icon: string
+  href: string
+  
+}

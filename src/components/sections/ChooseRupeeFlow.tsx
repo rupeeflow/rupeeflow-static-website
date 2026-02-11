@@ -7,22 +7,22 @@ import Link from 'next/link'
 export default function WhyChooseSection() {
   const features = [
     {
-      icon: <ReceiptIndianRupee className="w-10 h-10 text-neutral-300" />,
+      icon: <ReceiptIndianRupee className="w-20 h-20 text-neutral-300" />,
       title: 'All your bills, paid in seconds.',
       desc: 'Electricity, water, mobile, and more — manage every bill in one place, without the hassle.',
     },
     {
-      icon: <ShieldCheck className="w-10 h-10 text-neutral-300" />,
+      icon: <ShieldCheck className="w-20 h-20 text-neutral-300" />,
       title: 'Payments you can trust.',
       desc: 'End-to-end encryption and UPI compliance keep your money safe, no matter where you are.',
     },
     {
-      icon: <Clock className="w-10 h-10 text-neutral-300" />,
+      icon: <Clock className="w-20 h-20 text-neutral-300" />,
       title: 'Always on, whenever you need us.',
       desc: 'RupeeFlow never sleeps. Pay, transfer, or get help anytime with round-the-clock support.',
     },
     {
-      icon: <Mic className="w-10 h-10 text-neutral-300" />,
+      icon: <Mic className="w-20 h-20 text-neutral-300" />,
       title: 'Just say it, and it’s done.',
       desc: 'Make payments in your own language with simple voice commands — no typing, no stress.',
     },
@@ -46,7 +46,7 @@ export default function WhyChooseSection() {
   }
 
   return (
-    <section className="relative w-full bg-black-emerald text-white py-24 px-6 overflow-hidden">
+    <section className="relative w-full bg-black-emerald text-white py-42 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">
         {/* Left Side */}
         <motion.div
@@ -56,9 +56,10 @@ export default function WhyChooseSection() {
           viewport={{ once: true }}
           className="flex-1"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-snug">
-            Why People Choose{' '}
+          <h2 className="text-4xl md:text-7xl font-bold mb-4 leading-snug">
+            Why {' '}
             <span className="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
+              <br></br>
               RupeeFlow
             </span>
           </h2>

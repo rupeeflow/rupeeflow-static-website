@@ -1,202 +1,109 @@
 'use client'
 
-import Link from 'next/link'
 import Image from 'next/image'
-import { FaXTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa6' // ✅ modern replacements
-import { useState } from 'react'
+import Link from 'next/link'
+import { FaXTwitter, FaLinkedinIn, FaInstagram, FaFacebookF } from 'react-icons/fa6'
 
 export default function Footer() {
-  const [isLoading, setIsLoading] = useState(false)
-
-  const handlePay = async () => {
-    setIsLoading(true)
-    try {
-      const response = await fetch('https://api.rupeeflow.co/api/v1/payments/payin/geopay/checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          // Add any required payload here
-        }),
-      })
-
-      const data = await response.json()
-      
-      if (response.ok) {
-        // Handle successful response
-        console.log('Payment checkout successful:', data)
-        // You can redirect or show a success message here
-        if (data.checkoutUrl) {
-          window.location.href = data.checkoutUrl
-        }
-      } else {
-        // Handle error
-        console.error('Payment checkout failed:', data)
-        alert('Payment checkout failed. Please try again.')
-      }
-    } catch (error) {
-      console.error('Error calling payment API:', error)
-      alert('An error occurred. Please try again.')
-    } finally {
-      setIsLoading(false)
-    }
-  }
-  const sections = [
-    {
-      title: 'Sitemap',
-      links: [
-        { label: 'Home', href: '/' },
-        { label: 'Product', href: '/product' },
-        { label: 'Pricing', href: '/pricing' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'Support', href: '/support' },
-      ],
-    },
-    {
-      title: 'Product',
-      links: [
-        { label: 'NEFT', href: '/solutions/neft' },
-        { label: 'Kirana', href: '/solutions/kirana' },
-        { label: 'AEPS', href: '/solutions/aeps' },
-        { label: 'DMT', href: '/solutions/dmt' },
-        { label: 'IMPS', href: '/solutions/imps' },
-        { label: 'Verification', href: '/solutions/verification' },
-        { label: 'UPI Switch', href: '/solutions/upi-switch' },
-      ],
-    },
-    {
-      title: 'Support',
-      links: [
-        { label: 'Dev Support', href: '/comingsoon' },
-        { label: 'Help Center', href: '/support' },
-        { label: 'FAQs', href: '/faqs' },
-        { label: 'Contact Us', href: '/support' },
-      ],
-    },
-    {
-      title: 'Legal',
-      links: [
-        { label: 'Terms & Conditions', href: '/legal/terms' },
-        { label: 'Privacy Policy', href: '/legal/privacy' },
-        { label: 'Cookie Policy', href: '/legal/cookies' },
-        { label: 'Refund Policy', href: '/legal/refund' },
-      ],
-    },
-  ]
-
   return (
-    <footer className="w-full bg-black-emerald text-gray-300 pt-16 pb-8">
-      <div className="w-full flex flex-col lg:flex-row justify-between border-b border-green-900/40 pb-10 px-6 md:px-20">
-        {/* Left: Logo and App Download */}
-        <div className="flex-1">
-          <div className="flex items-center space-x-2 mb-4">
-            <Image
-              src="/rflogo-darkbg.svg"
-              alt="RupeeFlow"
-              width={300}
-              height={56}
-              className="object-contain"
-            />
-          </div>
-          <p className="text-sm text-gray-400 mb-6 max-w-sm">
+    <footer className="w-full bg-gradient-to-br from-[#020d09] via-[#061613] to-[#020d09] text-gray-300">
+
+      {/* MAIN */}
+      <div className="max-w-[1600px] mx-auto px-20 py-20 grid grid-cols-1 lg:grid-cols-6 gap-12 border-b border-white/10">
+
+        {/* BRAND */}
+        <div className="col-span-2">
+          <Image src="/rflogo-darkbg.svg" alt="RupeeFlow" width={220} height={48} />
+
+          <p className="text-sm text-gray-400 mt-6 max-w-xs">
             Providing Indian Businesses and NRIs better financial solutions.
           </p>
 
           <Link
             href="https://play.google.com"
             target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center space-x-3 border border-green-500 px-4 py-2 rounded-md hover:bg-green-600/20 transition mb-4"
+            className="inline-flex items-center gap-3 border border-emerald-400 rounded-lg px-6 py-3 mt-8 hover:bg-emerald-400/10 transition"
           >
-            <Image
-              src="/icons/google-play.png"
-              alt="Google Play"
-              width={24}
-              height={24}
-            />
-            <span className="text-sm font-semibold text-white">
-              DOWNLOAD THE APP
-            </span>
+            <Image src="/icons/google-play.png" alt="" width={22} height={22} />
+            <span className="font-semibold text-white text-sm">DOWNLOAD THE APP</span>
           </Link>
-
-          <button
-            onClick={handlePay}
-            disabled={isLoading}
-            className="inline-flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md transition disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
-          >
-            {isLoading ? (
-              <>
-                <span className="animate-spin">⏳</span>
-                <span>Processing...</span>
-              </>
-            ) : (
-              <span>Pay Now</span>
-            )}
-          </button>
         </div>
 
-        {/* Right: Footer Links */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 flex-1 mt-10 lg:mt-0">
-          {sections.map(section => (
-            <div key={section.title}>
-              <h4 className="text-white font-semibold mb-4">{section.title}</h4>
-              <ul className="space-y-2 text-sm">
-                {section.links.map(link => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="hover:text-green-400 transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        {/* COLLECT */}
+        <FooterColumn title="Collect Payment" items={[
+          'Payment Gateway','Payment Links','Payment Button','Payment Page',
+          'UPI Payments','QR Code','Auto Collect','e-NACH',
+          'Instant Settlements','Affordability Suite'
+        ]} />
+
+        {/* MAKE */}
+        <FooterColumn title="Make Payments" items={[
+          'Business Bill Payments','Vendor Payment','Rental Payment',
+          'Invoice Management','Payroll Processing','Bulk Pay',
+          'Vendor Management','GST Payment','Payable Analytics'
+        ]} />
+
+        {/* RESOURCES */}
+        <FooterColumn title="Resources" items={[
+          'Blogs','Case Studies','API Docs','Pricing','Help Center'
+        ]} />
+
+        {/* COMPANY */}
+        <FooterColumn title="Company" items={[
+          'About Us','Careers','Media Coverage','Contact Us','Corporate Information'
+        ]} />
+
+      </div>
+
+      {/* SECOND ROW */}
+      <div className="max-w-[1600px] mx-auto px-20 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-white/10">
+
+        <FooterColumn title="Get Credit" items={[
+          'Merchant Cash Advance','NRI Loans','Invoice Financing',
+          'Credit Line','Education Loans'
+        ]} />
+
+        <FooterColumn title="Partnerships" items={[
+          'For Banks','Affiliate Program','Co-branded Cards',
+          'Co-branded Digital Wallet','Payment Gateway','Bharat Connect'
+        ]} />
+
+        <FooterColumn title="Legal" items={[
+          'Terms & Conditions','Privacy Policy','Refund Policy','Fair Practices'
+        ]} />
+
+      </div>
+
+      {/* BOTTOM */}
+      <div className="max-w-[1600px] mx-auto px-20 py-6 flex justify-between items-center text-sm text-gray-400">
+
+        <p>© 2025 RupeeFlow. All Rights Reserved.</p>
+
+        <div className="flex gap-4">
+          {[FaXTwitter, FaLinkedinIn, FaFacebookF, FaInstagram].map((Icon, i) => (
+            <Link key={i} href="#" className="w-9 h-9 flex items-center justify-center rounded-full border border-white/20 hover:bg-emerald-500/20">
+              <Icon className="text-white w-4 h-4" />
+            </Link>
           ))}
         </div>
-      </div>
 
-      {/* Bottom Footer */}
-      <div className="w-full mt-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-400 px-6 md:px-16">
-        <p className="text-center md:text-left">
-          © 2025 RupeeFlow. All Rights Reserved.
-        </p>
-
-        <p className="text-xs italic text-center md:text-left max-w-sm">
-          Disclaimer: UPI services powered by NPCI. All transactions are secured
-          and regulated under RBI guidelines.
-        </p>
-
-        {/* Social Links */}
-        <div className="flex space-x-4">
-          <Link
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full hover:bg-green-500/20 transition"
-          >
-            <FaXTwitter className="w-4 h-4 text-white" />
-          </Link>
-          <Link
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full hover:bg-green-500/20 transition"
-          >
-            <FaLinkedinIn className="w-4 h-4 text-white" />
-          </Link>
-          <Link
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full hover:bg-green-500/20 transition"
-          >
-            <FaInstagram className="w-4 h-4 text-white" />
-          </Link>
-        </div>
       </div>
     </footer>
+  )
+}
+
+function FooterColumn({ title, items }: { title: string; items: string[] }) {
+  return (
+    <div>
+      <h4 className="text-white mb-6 font-semibold">{title}</h4>
+
+      <ul className="space-y-3 text-sm">
+        {items.map(i => (
+          <li key={i} className="hover:text-emerald-400 cursor-pointer">
+            {i}
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }

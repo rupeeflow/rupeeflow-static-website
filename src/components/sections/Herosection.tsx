@@ -1,139 +1,153 @@
-'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-import { delay, motion, Variants } from 'framer-motion'
+'use client';
 
-export default function HeroSection() {
-  const container: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.2 },
-    },
-  }
+import Link from 'next/link';
 
-  const content: Variants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  }
 
-  const content2: Variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 1 } },
-  }
-
+export default function Hero() {
   return (
-    <section className="relative w-full bg-black text-white py-30 px-6 overflow-hidden">
-      {/* Background Glows */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.8 }}
-        transition={{ delay: 2, duration: 0.7 }}
-        className="absolute inset-0 blur-3xl top-[20%] left-[20%] w-100 h-100 bg-radial-teal-soft "
-      />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
-        transition={{ delay: 1, duration: 0.7 }}
-        className="absolute blur-3xl top-[4%] right-[20%] w-100 h-100 bg-radial-emerald-soft "
-      />
+    <section className="relative w-full min-h-[90vh] bg-gradient-to-b from-[#0a2f23] via-black to-black flex items-center justify-center overflow-hidden">
+     <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.25),transparent_60%)] pointer-events-none" />
 
-      {/* Faded Background Map Image */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="absolute inset-0 z-0 top-[30%]"
-      >
-        <motion.div variants={content2} className="relative w-full h-full">
-          <Image
-            src="/images/world-pay.webp"
-            alt="RupeeFlow Global Map Background"
-            fill
-            priority
-            className="object-cover opacity-60 brightness-[0.55] [mask-image:radial-gradient(circle_at_center,white,transparent_85%)]"
-          />
-        </motion.div>
-      </motion.div>
+{/* LEFT ICONS */}
+<img
+  src="/home/rupee.svg"
+  className="absolute left-[240px] top-[55%] w-[70px] opacity-90"
+/>
 
-      {/* Foreground Content */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 max-w-6xl mx-auto flex flex-col items-center text-center gap-10"
-      >
+<img
+  src="/payments/upi-collections.svg"
+  className="absolute left-[290px] top-[65%] w-[80px] opacity-90"
+/>
+
+{/* RIGHT ICONS */}
+<img
+  src="/home/wallet.svg"
+  className="absolute right-[240px] top-[55%] w-[70px] opacity-90"
+/>
+
+<img
+  src="/home/globe.svg"
+  className="absolute right-[290px] top-[65%] w-[70px] opacity-90"
+/>
+
+
+      <div className="relative z-10 max-w-5xl mx-auto text-center px-6">
+
+        {/* Pills */}
+        <div className="flex justify-center gap-3 mb-1 mt-40 flex-wrap">
+          {['Payment Gateway', 'Credits', 'Lending'].map(item => (
+            <span
+              key={item}
+              className="border border-emerald-400/40 rounded-full px-4 py-1 text-xs text-emerald-300"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+        
+
         {/* Heading */}
-        <motion.h1
-          variants={content}
-          className="text-3xl md:text-5xl lg:text-[5vw] fontheading2 leading-tight"
-        >
-          Send Money Across Borders in <br className="hidden md:block" />
-          <span className="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
-            One Tap with UPI
-          </span>
-          .
-        </motion.h1>
+      
+  <h1 className="text-3xl md:text-6xl  text-white light-gradient font-weight-900 ">
+    India’s <span className="text-emerald-400">Complete Financial </span>
+    <br></br>
+    <span className="text-emerald-400 ">Platform </span>
+       for Businesses
+  </h1>
 
-        {/* Subtext */}
-        <motion.p
-          variants={content}
-          className="text-gray-300 fontbody2 text-sm md:text-base mb-4"
-        >
-          Move money across borders in seconds — no queues, no paperwork, no
-          hidden charges. <br className="hidden md:block" /> Just the power of
-          UPI, now without boundaries.
-        </motion.p>
 
-        {/* CTA Section with Subtle Dark Background */}
-        <motion.div
-          variants={content}
-          className="relative z-20 mb-6 rounded-full px-8 py-4 md:px-10 md:py-6"
-        >
-          {/* Background Blur / Overlay */}
-          <div className="absolute inset-0 bg-black/50 opacity-70 backdrop-blur-2xl rounded-3xl -z-10  [mask-image:radial-gradient(circle_at_center,white,transparent_85%)]" />
 
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-            <Link
-              href="/product"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-green-400 text-black font-semibold px-6 py-3 rounded-full transition hover:opacity-90"
-            >
-              Explore Solutions <ArrowRight className="w-4 h-4" />
-            </Link>
 
-            <Link
-              href="https://play.google.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-3 border border-emerald-700 px-4 py-2 rounded-full hover:bg-green-600/20 transition"
-            >
-              <Image
-                src="/icons/google-play.png"
-                alt="Google Play"
-                width={24}
-                height={24}
-              />
-              <span className="text-sm font-semibold text-white">
-                DOWNLOAD THE APP
-              </span>
-            </Link>
+        <p className="mt-4 text-gray-300">
+          
+  Accept payments, Make payouts. Get instant credit – All In One App
+</p>
+
+
+{/* Decorative Wave */}
+{/* Decorative Wave */}
+
+
+<div className=" w-full flex justify-center mb-10 ">
+  <img
+    src="/wave1.png"
+    alt="decorative wave"
+    className="w-full max-w-[1800px] opacity-50"
+  />
+</div>
+
+    <defs>
+      <linearGradient id="waveGradient" x1="0" y1="0" x2="1200" y2="0">
+        <stop offset="0%" stopColor="#0f3f30" />
+        <stop offset="50%" stopColor="#2AB871" />
+        <stop offset="100%" stopColor="#0f3f30" />
+      </linearGradient>
+    </defs>
+
+    <path
+      d="M0 70
+         C 200 20, 400 120, 600 70
+         S 1000 20, 1200 70"
+      stroke="url(#waveGradient)"
+      strokeWidth="8"
+      strokeLinecap="round"
+      fill="none"
+    />
+  
+
+
+
+
+    
+
+
+        {/* Buttons */}
+       
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <Link href="#" className="px-6 py-3 rounded-full border border-emerald-400 text-white hover:bg-emerald-500/20">
+            Start Getting Paid
+          </Link>
+
+          <Link href="#" className="px-6 py-3 rounded-full border border-emerald-400 text-white hover:bg-emerald-500/20">
+            Make Bulk Payouts
+          </Link>
+
+          <Link href="#" className="px-6 py-3 rounded-full border border-emerald-400 text-white hover:bg-emerald-500/20">
+            Get instant 5L Credit
+          </Link>
+        </div>
+        
+        
+
+        
+
+
+        {/* Stats */}
+       
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <Stat title="100K+" sub="Businesses Onboard" />
+
+          <div className="border border-emerald-400 rounded-xl p-6">
+            <h3 className="text-3xl text-white font-bold">150 Cr+</h3>
+            <p className="text-gray-400 mt-1">Credit Disbursed</p>
           </div>
-        </motion.div>
 
-        {/* Subheading below */}
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className=" text-md md:text-lg text-gray-200 font-medium"
-        >
-          Manage All Your Finances in One Dashboard
-        </motion.h3>
-      </motion.div>
+          <Stat title="50+" sub="Partnerships" />
+
+        </div>
+        
+      </div>
     </section>
-  )
+  );
+}
+
+function Stat({ title, sub }: { title: string; sub: string }) {
+  return (
+    <div className="border border-white/20 rounded-xl p-6">
+      <h3 className="text-3xl text-white font-bold">{title}</h3>
+      <p className="text-gray-400 mt-1">{sub}</p>
+    </div>
+  );
 }

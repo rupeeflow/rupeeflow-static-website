@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function LanguageSection() {
   return (
-    <section className="relative w-full bg-black-emerald text-white text-center py-24 px-6 overflow-hidden">
+    <section className="relative w-full bg-black-emerald text-white text-center py-45 px-6 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
         <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-snug">
