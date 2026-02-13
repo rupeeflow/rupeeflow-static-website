@@ -1,5 +1,40 @@
 @import 'tailwindcss';
 
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-wave {
+  animation: waveMove 10s linear infinite;
+}
+
+
+@keyframes floatCard {
+  0% {
+    transform: translateY(0px) scale(1);
+    box-shadow: 0 0 0px rgba(16,185,129,0);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 25px rgba(16,185,129,0.4);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    box-shadow: 0 0 0px rgba(16,185,129,0);
+  }
+}
+
+.auto-hover {
+  animation: floatCard 3.5s ease-in-out infinite;
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

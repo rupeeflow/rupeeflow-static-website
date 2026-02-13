@@ -59,14 +59,14 @@ export default function Hero() {
 {/* Decorative Wave */}
 
 
-        <div className=" w-full flex justify-center mb-10 ">
-          <img
-            src="/wave1.png"
-            alt="decorative wave"
-            className="w-full max-w-[1800px] opacity-50"
-          />
-        </div>
-
+<div className="w-full flex justify-center mb-10">
+  <svg
+    width="1200"
+    height="140"
+    viewBox="0 0 1200 140"
+    xmlns="http://www.w3.org/2000/svg"
+    className="opacity-50"
+  >
     <defs>
       <linearGradient id="waveGradient" x1="0" y1="0" x2="1200" y2="0">
         <stop offset="0%" stopColor="#0f3f30" />
@@ -76,15 +76,14 @@ export default function Hero() {
     </defs>
 
     <path
-      d="M0 70
-         C 200 20, 400 120, 600 70
-         S 1000 20, 1200 70"
+      d="M0 70 C 200 20, 400 120, 600 70 S 1000 20, 1200 70"
       stroke="url(#waveGradient)"
       strokeWidth="8"
       strokeLinecap="round"
       fill="none"
     />
-  
+  </svg>
+</div>
 
 
 
@@ -114,19 +113,26 @@ export default function Hero() {
 
 
         {/* Stats */}
-       
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+       {/* Stats */}
+<div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
 
-          <Stat title="100K+" sub="Businesses Onboard" />
+  <div className="auto-hover border border-emerald-400 rounded-xl p-6 transition-all duration-500">
+    <h3 className="text-3xl text-white font-bold">100K+</h3>
+    <p className="text-gray-400 mt-1">Businesses Onboard</p>
+  </div>
 
-          <div className="border border-emerald-400 rounded-xl p-6">
-            <h3 className="text-3xl text-white font-bold">150 Cr+</h3>
-            <p className="text-gray-400 mt-1">Credit Disbursed</p>
-          </div>
+  <div className="auto-hover border border-emerald-400 rounded-xl p-6 transition-all duration-500 [animation-delay:0.4s]">
+    <h3 className="text-3xl text-white font-bold">150 Cr+</h3>
+    <p className="text-gray-400 mt-1">Credit Disbursed</p>
+  </div>
 
-          <Stat title="50+" sub="Partnerships" />
+  <div className="auto-hover border border-emerald-400 rounded-xl p-6 transition-all duration-500 [animation-delay:0.8s]">
+    <h3 className="text-3xl text-white font-bold">50+</h3>
+    <p className="text-gray-400 mt-1">Partnerships</p>
+  </div>
 
-        </div>
+</div>
+
         
       </div>
     </section>
