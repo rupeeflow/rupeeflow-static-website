@@ -1,0 +1,9 @@
+import React from 'react'
+
+function QrCodePage() {
+  return (
+    <div>QrCodePage</div>
+  )
+}
+
+export default QrCodePage
