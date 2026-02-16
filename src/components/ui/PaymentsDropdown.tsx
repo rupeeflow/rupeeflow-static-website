@@ -10,7 +10,7 @@ const collectPayments: navlist[] = [
   { id: 'button', label: 'Payment Button', desc: 'Custom payment buttons', icon: '/payments/payment-button.svg', href: '/payment-button' },
   { id: 'upi', label: 'UPI Collections', desc: 'Accept UPI payments with ease', icon: '/payments/upi-collections.svg', href: '/upi-collections' },
   { id: 'qr', label: 'QR Code', desc: 'Multiple QRs for payment collection', icon: '/payments/qr-code.svg', href: '/qr-code' },
-  { id: 'cross', label: 'Cross-border Payments', desc: 'International payment solutions', icon: '/payments/cross-border-payments.svg', href: '/cross-border-payments' },
+  { id: 'cross', label: 'Cross-border Payments', desc: 'International payment solutions', icon: '/payments/cross-border-payments.svg', href: 'cross-border-payments' },
   { id: 'voice', label: 'Voice Payments', desc: 'Accept payments via voice', icon: '/payments/voice-payments.svg', href: '/voice-payments' },
 ]
 
