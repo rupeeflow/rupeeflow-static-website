@@ -47,6 +47,7 @@ export default function HomePage() {
       <MakePayments />
       <GetCredit />
       <BusinessBanking />
+       <LendingBanner />
       <ChooseBusinessType />
 
 
@@ -56,11 +57,12 @@ export default function HomePage() {
       {/* <KiranaPromo /> */}
       {/* <BuiltForSection /> */}
 
-      <ChooseRupeeFlow />
+     
       
-      <LendingBanner />
-      <VisionSection />
+     
+      {/* <VisionSection /> */}
       <PartnershipBanner />
+       <ChooseRupeeFlow />
       
       {/* <StatsSection /> */}
       <LanguageSection />

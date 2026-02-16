@@ -6,7 +6,7 @@ export default function LendingBanner() {
 
       {/* Background Image */}
       <Image
-        src="/home/lending-banner.png"
+        src="/home/landing-banner.png"
         alt="Smart lending"
         fill
         className="object-cover"

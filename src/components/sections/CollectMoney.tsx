@@ -52,12 +52,12 @@ export default function CollectMoney() {
 
           {/* Woman */}
           <Image
-            src="/home/women.png"
+            src="/home/men.png"
             alt="woman"
-            width={356}
-            height={356}
+            width={256}
+            height={256}
             priority
-            className="absolute right-[91px] top-[90px] z-30 pointer-events-none"
+            className="absolute right-[105px] top-[135px] z-30 pointer-events-none"
           />
         </div>
 

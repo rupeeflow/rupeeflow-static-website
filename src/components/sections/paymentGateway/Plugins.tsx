@@ -1,15 +1,20 @@
-export default function Plugins() {
+import Image from "next/image"
+
+export default function IntegrationPanels() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-35">
+      <div className="max-w-6xl mx-auto px-6">
 
-      <div className="max-w-6xl mx-auto px-6 text-center">
-
-        <h2 className="text-3xl font-bold">
-          Ready-made Plugins
-        </h2>
+        <Image
+          src="/integration-panels.png"
+          alt="Integration Platforms"
+          width={1800}
+          height={900}
+          className="w-full "
+          priority
+        />
 
       </div>
-
     </section>
   )
 }

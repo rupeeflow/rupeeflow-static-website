@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[1000px] bg-gradient-to-b from-[#020506] via-black to-black overflow-hidden">
+    <section className="relative min-h-[1000px] bg-gradient-to-b from-[#020506] via-black to-black ">
 
       {/* Background Glow */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.35),transparent_60%)]" />
@@ -14,15 +14,19 @@ export default function HeroSection() {
       <div className="max-w-6xl mx-auto text-center pt-40 px-6 relative z-10">
 
         {/* Heading */}
-        <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+        <h1 className="text-5xl md:text-6xl  text-white leading-tight font-weight-100">
           Accept Payments with cutting edge <br />
-          <span className="text-emerald-400">Payment Gateway</span>
+          <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
+  Payment Gateway
+</span>
+
         </h1>
 
         {/* Sub Text */}
-        <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
-          Accept online payments via Web, iOS, Android app or APIs.
-          UPI, Net Banking, Debit Cards, Wallets, Anytime.
+        <p className="mt-6  text-gray-400 max-w-2xl mx-auto">
+          Accept online payments instantly with a RBI-authorized payment gateway, 
+          <br>
+          </br>whether you are a NRI, SMB or a vendor. From Anyone, Anywhere.
         </p>
 
         {/* ICON ROW */}
@@ -37,14 +41,14 @@ export default function HeroSection() {
         <div className="mt-12 flex justify-center gap-6">
           <Link
             href="#"
-            className="px-8 py-3 rounded-full bg-emerald-500 text-black font-semibold hover:opacity-90 transition"
+            className="px-12 py-3 mt-6 rounded-full bg-emerald-500 text-black font-semibold hover:opacity-90 transition"
           >
             Start Accepting Payments
           </Link>
 
           <Link
             href="#"
-            className="px-8 py-3 rounded-full border border-emerald-500 text-white hover:bg-emerald-500/10 transition"
+            className="px-8 py-3 mt-6 rounded-full border border-emerald-500 text-white hover:bg-emerald-500/10 transition"
           >
             Documentation
           </Link>
@@ -52,23 +56,23 @@ export default function HeroSection() {
       </div>
 
       {/* Dashboard Image */}
-      <div className="absolute bottom-[60px] left-1/2 -translate-x-1/2 z-20">
+      <div className="absolute -bottom-[60px] left-1/2 -translate-x-1/2 z-20">
         <Image
           src="/Dashboard 2.svg"
           alt="dashboard"
-          width={1100}
-          height={650}
-          className="rounded-xl shadow-2xl"
+          width={680}
+          height={390}
+          className="rounded-xl shadow-xl"
         />
       </div>
 
       {/* Mobile Image */}
-      <div className="absolute -bottom-[130px] right-[18%] z-30">
+      <div className="absolute -bottom-[152px] right-[27%] z-30">
         <Image
           src="/image 11.svg"
           alt="mobile"
-          width={280}
-          height={600}
+          width={220}
+          height={360}
         />
       </div>
 
