@@ -1,9 +1,8 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
-import Button from '@/components/ui/Button';
-import Card from '@/components/ui/Card';
-import Container from '@/components/ui/Container';
+import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
+import Container from '@/components/ui/Container'
 
 const cards = [
   {
@@ -26,86 +25,126 @@ const cards = [
     desc: 'Receive payments from 15+ countries. Real-time forex, instant settlement',
     icon: '/payments/cross-border-payments.svg',
   },
-];
+]
 
 export default function CollectMoney() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current)
+      }
+    }
+  }, [])
+
   return (
-    <section className="relative bg-black pt-10 pb-16 overflow-hidden">
-      <Container className="relative">
-
+    <section
+      ref={sectionRef}
+      className="relative bg-black pt-10 pb-10 overflow-hidden min-h-screen flex items-center"
+    >
+      <Container
+        className={`relative transition-all duration-600 ${isVisible ? 'animate-fade-in-section' : 'opacity-0'}`}
+      >
         {/* Hero */}
-        <div className="relative text-center mb-32">
-
-          <h1 className="text-white text-4xl md:text-5xl font-semibold leading-tight max-w-4xl mx-auto">
-            India’s First Platform with End-to-End Payments & Lending together
+        <div className="relative text-center mb-12 md:mb-20 z-10 px-4">
+          <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight max-w-6xl mx-auto">
+            India&apos;s First Platform with{' '}
+            <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
+              End-to-End Payments
+            </span>{' '}
+            &{' '}
+            <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
+              Lending
+            </span>{' '}
+            together
           </h1>
 
-          <p className="mt-4 text-gray-300 text-lg">
+          <p className="mt-4 md:mt-6 text-gray-400 text-base md:text-xl">
             Everything Your Business Needs In One Place
           </p>
 
-          {/* Floating Boxes */}
-          <div className="absolute right-[260px] top-[160px] z-10">
-            <div className="absolute top-[5px] left-[10px] w-[210px] h-[105px] border-2 border-emerald-400 rounded-[20px] bg-[#181A1A]" />
-            <div className="absolute top-[140px] left-[80px] w-[110px] h-[55px] border-2 border-emerald-400 rounded-[14px] bg-[#181A1A]" />
-          </div>
-
-          {/* Woman */}
+          {/* Man - Hidden on mobile, visible on desktop */}
           <Image
-            src="/home/men.png"
+            src="/home/man.svg"
             alt="woman"
-            width={256}
-            height={256}
+            width={500}
+            height={500}
             priority
-            className="absolute right-[105px] top-[135px] z-30 pointer-events-none"
+            className="hidden lg:block absolute right-[20px] top-[75px] z-0 pointer-events-none"
           />
         </div>
 
         {/* Collect Money Pill */}
-        <div className="relative w-[320px] h-[60px] mb-10">
-          <div className="absolute inset-0 rounded-[18px] rounded-tr-[320px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
-          <span className="absolute left-8 top-1/2 -translate-y-1/2 text-white text-[20px] font-semibold tracking-wide">
+        <div className="relative w-[280px] sm:w-[320px] h-[50px] sm:h-[60px] mt-20 md:mt-40 z-10 mx-4 md:mx-0">
+          <div className="absolute inset-0 rounded-[18px] rounded-tr-[280px] sm:rounded-tr-[320px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
+          <span className="absolute left-6 sm:left-8 top-1/2 -translate-y-1/2 text-white text-[16px] sm:text-[20px] font-semibold tracking-wide">
             COLLECT MONEY
           </span>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-2 gap-x-10 gap-y-8">
-
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-10 md:gap-y-8 relative z-50 px-4 md:px-0">
           {cards.map((card, i) => (
-
-            <Card
+            <div
               key={i}
-              className="relative h-[220px] flex flex-col"
+              className={`group relative min-h-[200px] md:h-[220px] flex flex-col backdrop-blur-sm rounded-2xl p-5 md:p-6 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[0_0_40px_rgba(83,190,194,0.3)] hover:-translate-y-1 ${isVisible ? `animate-card-${i + 1}` : 'opacity-0'}`}
+              style={{ background: '#122427BF' }}
             >
+              {/* White border that becomes gradient on hover */}
+              <div className="absolute inset-0 rounded-2xl p-[2px] transition-all duration-300 ease-in-out bg-gradient-to-r from-white/20 via-white/20 to-white/20 group-hover:from-[#53BEC2] group-hover:via-[#00EF64] group-hover:to-[#53BEC2]">
+                <div
+                  className="h-full w-full rounded-2xl transition-all duration-300 ease-in-out"
+                  style={{ background: '#122427BF' }}
+                />
+              </div>
 
-              <Image
-                src={card.icon}
-                alt=""
-                width={56}
-                height={56}
-                className="absolute top-6 right-6"
-              />
+              {/* Content */}
+              <div className="relative z-10 flex flex-col h-full">
+                <Image
+                  src={card.icon}
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="absolute top-0 right-0 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 transition-transform duration-300 ease-in-out group-hover:scale-110"
+                />
 
-              <h3 className="text-white text-xl font-semibold">
-                {card.title}
-              </h3>
+                <h3 className="text-white text-lg md:text-xl font-semibold pr-12 transition-colors duration-300 ease-in-out group-hover:text-[#30f3bc]">
+                  {card.title}
+                </h3>
 
-              <p className="text-gray-300 text-sm mt-2 leading-relaxed max-w-[85%]">
-                {card.desc}
-              </p>
+                <p className="text-gray-400 text-sm mt-2 leading-relaxed pr-2 md:max-w-[85%] transition-colors duration-300 ease-in-out group-hover:text-gray-300">
+                  {card.desc}
+                </p>
 
-              <Button className="absolute bottom-6 right-6">
-                Learn more →
-              </Button>
-
-            </Card>
-
+                <div className="mt-auto pt-4">
+                  <button className="rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium flex items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:bg-gradient-to-r group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black">
+                    <span className="flex items-center gap-2">
+                      Learn more →
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
           ))}
-
         </div>
-
       </Container>
     </section>
-  );
+  )
 }
