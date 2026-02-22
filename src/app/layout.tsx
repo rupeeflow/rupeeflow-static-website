@@ -70,10 +70,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body
-        className={`antialiased background-black text-white`}
-        style={{ fontFamily: '"Nunito Sans", sans-serif' }}
-      >
+      <body className="antialiased background-black text-white">
         <SmoothScrollProvider>
           <Navbar />
           <main>{children}</main>
