@@ -13,7 +13,7 @@ const features = [
   {
     icon: '/Developer-friendly/security-card.svg',
     title: 'No Credit Impact',
-    desc: 'Soft check that doesn\'t affect your credit score',
+    desc: 'Soft check that doesn&apos;t affect your credit score',
   },
   {
     icon: '/features/shield.svg',
@@ -122,7 +122,7 @@ export default function InstantCheckSection() {
                   className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-full bg-white text-emerald-600 font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-2xl hover:shadow-white/50 hover:scale-105"
                 >
                   <span className="w-3 h-3 rounded-full bg-emerald-600 animate-pulse" />
-                  Check Now - It's Free
+                  Check Now - It&apos;s Free
                 </a>
               </motion.div>
 

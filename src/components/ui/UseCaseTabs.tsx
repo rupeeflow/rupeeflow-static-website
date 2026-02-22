@@ -24,7 +24,6 @@ interface UseCaseTabsProps {
 
 export default function UseCaseTabs({ heading, headingHighlight, tabs }: UseCaseTabsProps) {
   const [activeTab, setActiveTab] = useState(0)
-  const current = tabs[activeTab]
 
   return (
     <section className="bg-white py-24 overflow-hidden">

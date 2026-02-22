@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
@@ -12,16 +13,24 @@ export default function Hero() {
       {/* Decorative Icons - Hidden on mobile */}
       <div className="absolute inset-0 pointer-events-none z-20 hidden lg:block">
         {/* Left Side Icons */}
-        <img
-          src="/home/rupee.svg"
-          className="absolute left-[4%] top-[42%] w-[60px] lg:w-[85px] opacity-0 animate-slide-in-left"
-          alt="Rupee icon"
-        />
-        <img
-          src="/payments/upi-collections.svg"
-          className="absolute left-[9%] top-[54%] w-[70px] lg:w-[95px] opacity-0 animate-slide-in-left-delayed"
-          alt="UPI icon"
-        />
+        <div className="absolute left-[4%] top-[42%] w-[60px] lg:w-[85px] opacity-0 animate-slide-in-left">
+          <Image
+            src="/home/rupee.svg"
+            width={85}
+            height={85}
+            alt="Rupee icon"
+            className="w-full h-auto"
+          />
+        </div>
+        <div className="absolute left-[9%] top-[54%] w-[70px] lg:w-[95px] opacity-0 animate-slide-in-left-delayed">
+          <Image
+            src="/payments/upi-collections.svg"
+            width={95}
+            height={95}
+            alt="UPI icon"
+            className="w-full h-auto"
+          />
+        </div>
 
         {/* UPI Text */}
         <div className="absolute left-[11%] top-[60%] text-[#ffffff] text-xl lg:text-2xl font-bold opacity-0 animate-fade-in-delayed">
@@ -29,16 +38,24 @@ export default function Hero() {
         </div>
 
         {/* Right Side Icons */}
-        <img
-          src="/home/wallet.svg"
-          className="absolute right-[4%] top-[42%] w-[60px] lg:w-[85px] opacity-0 animate-slide-in-right"
-          alt="Wallet icon"
-        />
-        <img
-          src="/home/globe.svg"
-          className="absolute right-[8%] top-[54%] w-[60px] lg:w-[85px] opacity-0 animate-slide-in-right-delayed"
-          alt="Globe icon"
-        />
+        <div className="absolute right-[4%] top-[42%] w-[60px] lg:w-[85px] opacity-0 animate-slide-in-right">
+          <Image
+            src="/home/wallet.svg"
+            width={85}
+            height={85}
+            alt="Wallet icon"
+            className="w-full h-auto"
+          />
+        </div>
+        <div className="absolute right-[8%] top-[54%] w-[60px] lg:w-[85px] opacity-0 animate-slide-in-right-delayed">
+          <Image
+            src="/home/globe.svg"
+            width={85}
+            height={85}
+            alt="Globe icon"
+            className="w-full h-auto"
+          />
+        </div>
       </div>
 
       {/* Main Content Container */}
@@ -70,10 +87,13 @@ export default function Hero() {
 
         {/* Decorative Frame */}
         <div className="w-full max-w-[98vw] -mt-4 sm:-mt-6 lg:-mt-36 mb-6 sm:mb-8 opacity-0 animate-scale-in">
-          <img
+          <Image
             src="/Frame.svg"
             alt="decorative wave"
+            width={1920}
+            height={400}
             className="w-full h-auto"
+            priority
           />
         </div>
 

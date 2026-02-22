@@ -30,7 +30,7 @@ export default function GlobalReachSection() {
             </span>
           </h2>
           <p className="fontbody2 text-gray-600 text-lg max-w-3xl mx-auto">
-            No matter where you are, we're here to help your family in India
+            No matter where you are, we&apos;re here to help your family in India
           </p>
         </motion.div>
 

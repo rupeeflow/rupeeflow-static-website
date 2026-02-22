@@ -45,7 +45,7 @@ export default function TrustIndicators() {
             </span>
           </h2>
           <p className="fontbody2 text-gray-600 text-lg max-w-3xl mx-auto">
-            Your family's financial security is our top priority
+            Your family&apos;s financial security is our top priority
           </p>
         </motion.div>
 

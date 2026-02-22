@@ -57,7 +57,7 @@ export default function EmergencyTypesSection() {
             </span>
           </h2>
           <p className="fontbody2 text-gray-600 text-lg max-w-3xl mx-auto">
-            Quick financial support for your family's urgent needs
+            Quick financial support for your family&apos;s urgent needs
           </p>
         </motion.div>
 

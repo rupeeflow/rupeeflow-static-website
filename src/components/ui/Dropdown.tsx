@@ -1,8 +1,9 @@
 'use client'
 
 import { navlist } from '@/interface/typesInterfaces'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 interface DropdownProps {
   navitems: navlist[]
@@ -13,7 +14,7 @@ export default function Dropdown({ navitems }: DropdownProps) {
   const pathname = usePathname()
   
   // Find the active item based on current pathname, or default to first item
-  const getActiveItem = () => {
+  const getActiveItem = useCallback(() => {
     // Normalize pathname by removing trailing slash
     const normalizedPathname = pathname.endsWith('/') && pathname !== '/' 
       ? pathname.slice(0, -1) 
@@ -28,14 +29,14 @@ export default function Dropdown({ navitems }: DropdownProps) {
     })
     
     return matchedItem || navitems[0]
-  }
+  }, [pathname, navitems])
   
   const [active, setActive] = useState<navlist>(getActiveItem())
 
   // Update active item when pathname changes
   useEffect(() => {
     setActive(getActiveItem())
-  }, [pathname, navitems])
+  }, [pathname, navitems, getActiveItem])
 
   return (
     <div className="bg-white rounded-xl shadow-2xl border border-gray-100 p-4 w-[760px] flex gap-2 mt-2">
@@ -59,7 +60,9 @@ export default function Dropdown({ navitems }: DropdownProps) {
               }
             `}
           >
-            <img src={item.icon} alt={item.label} className="w-6 h-6" />
+            <div className="w-6 h-6 relative">
+              <Image src={item.icon} alt={item.label} width={24} height={24} className="w-full h-full" />
+            </div>
             <span className="text-sm font-medium">{item.label}</span>
           </button>
         ))}
@@ -69,7 +72,9 @@ export default function Dropdown({ navitems }: DropdownProps) {
       <div className="flex-1 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl flex items-center justify-center min-h-[380px]">
         <div className="text-center p-8">
           <div className="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-lg">
-            <img src={active.icon} alt={active.label} className="w-10 h-10" />
+            <div className="w-10 h-10 relative">
+              <Image src={active.icon} alt={active.label} width={40} height={40} className="w-full h-full" />
+            </div>
           </div>
           <h3 className="text-xl font-bold text-gray-900 mb-2">{active.label}</h3>
           <p className="text-sm text-gray-600 mb-4">

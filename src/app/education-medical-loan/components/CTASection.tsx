@@ -50,7 +50,7 @@ export default function CTASection() {
             viewport={{ once: true }}
             className="fontbody2 text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto"
           >
-            Whether it's education or medical needs, we're here to support you. 
+            Whether it&apos;s education or medical needs, we&apos;re here to support you. 
             Apply now and get instant approval with competitive rates.
           </motion.p>
 

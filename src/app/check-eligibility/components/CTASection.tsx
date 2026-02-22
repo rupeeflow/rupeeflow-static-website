@@ -47,7 +47,7 @@ export default function CTASection() {
               viewport={{ once: true }}
               className="fontbody2 text-gray-600 text-lg mb-8 max-w-2xl mx-auto"
             >
-              Once you've checked your eligibility, apply for the loan that best fits your needs. 
+              Once you&apos;ve checked your eligibility, apply for the loan that best fits your needs. 
               Our team will guide you through every step.
             </motion.p>
 

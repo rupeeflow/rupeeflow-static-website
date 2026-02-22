@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import { navlist } from '@/interface/typesInterfaces'
 
 const collectPayments: navlist[] = [
@@ -58,7 +59,9 @@ export default function PaymentsDropdown() {
                 onClick={() => router.push(item.href)}
                 className="flex items-start gap-2.5 text-left group"
               >
-                <img src={item.icon} alt="" className="w-5 h-5 mt-0.5 shrink-0 opacity-70 group-hover:opacity-100 transition-opacity" />
+                <div className="w-5 h-5 mt-0.5 shrink-0 relative opacity-70 group-hover:opacity-100 transition-opacity">
+                  <Image src={item.icon} alt="" width={20} height={20} className="w-full h-full" />
+                </div>
                 <div>
                   <span className="text-[13px] font-bold text-gray-900 group-hover:text-emerald-600 transition-colors leading-tight">
                     {item.label}
@@ -92,7 +95,9 @@ export default function PaymentsDropdown() {
                 onClick={() => router.push(item.href)}
                 className="flex items-start gap-2.5 text-left group w-full"
               >
-                <img src={item.icon} alt="" className="w-5 h-5 mt-0.5 shrink-0 opacity-70 group-hover:opacity-100 transition-opacity" />
+                <div className="w-5 h-5 mt-0.5 shrink-0 relative opacity-70 group-hover:opacity-100 transition-opacity">
+                  <Image src={item.icon} alt="" width={20} height={20} className="w-full h-full" />
+                </div>
                 <div>
                   <span className="text-[13px] font-bold text-gray-900 group-hover:text-emerald-600 transition-colors leading-tight">
                     {item.label}
@@ -126,7 +131,9 @@ export default function PaymentsDropdown() {
                 onClick={() => router.push(item.href)}
                 className="flex items-center gap-2.5 text-left group self-start"
               >
-                <img src={item.icon} alt="" className="w-5 h-5 shrink-0 opacity-70 group-hover:opacity-100 transition-opacity" />
+                <div className="w-5 h-5 shrink-0 relative opacity-70 group-hover:opacity-100 transition-opacity">
+                  <Image src={item.icon} alt="" width={20} height={20} className="w-full h-full" />
+                </div>
                 <span className="text-[13px] font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">
                   {item.label}
                 </span>
@@ -140,7 +147,9 @@ export default function PaymentsDropdown() {
       <div className="border-t border-gray-100 bg-gray-50/50 px-6 py-4 flex items-center gap-4 min-h-[60px]">
         {hoveredItem ? (
           <>
-            <img src={hoveredItem.icon} alt={hoveredItem.label} className="w-8 h-8 opacity-80" />
+            <div className="w-8 h-8 relative opacity-80">
+              <Image src={hoveredItem.icon} alt={hoveredItem.label} width={32} height={32} className="w-full h-full" />
+            </div>
             <div>
               <p className="text-sm font-semibold text-gray-800">{hoveredItem.label}</p>
               {hoveredItem.desc && (

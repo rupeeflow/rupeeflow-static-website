@@ -127,7 +127,7 @@ export default function RevenueCalculator() {
               {result ? (
                 <div className="space-y-6">
                   <div className="text-center pb-6 border-b border-gray-100">
-                    <div className="text-gray-600 text-sm mb-2">You're Eligible For</div>
+                    <div className="text-gray-600 text-sm mb-2">You&apos;re Eligible For</div>
                     <div className="text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-2">
                       {result.eligible}
                     </div>
