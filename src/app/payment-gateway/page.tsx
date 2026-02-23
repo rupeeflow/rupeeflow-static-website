@@ -2,7 +2,8 @@ import {
   HeroSection,
   AcceptMethods,
   DeveloperIntegration,
-  
+  EmpoweringSuccess,
+  FeesComparison,
   PerfectFor,
   Plugins,
 } from '../../components/sections/paymentGateway'
@@ -14,7 +15,8 @@ export default function PaymentGatewayPage() {
       <HeroSection />
       <AcceptMethods />
       <DeveloperIntegration />
-     
+      <EmpoweringSuccess />
+      <FeesComparison />
       <PerfectFor />
       <Plugins />
     </main>

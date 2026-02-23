@@ -8,6 +8,7 @@ const tabs: UseCaseTab[] = [
     id: 'invoicing',
     label: 'Invoicing and Billing',
     icon: <FileText className="w-6 h-6" />,
+    image: '/images/payment-link/InvoicingTemplate.jpeg',
     subItems: [
       {
         title: 'Invoice Payments',
@@ -25,6 +26,7 @@ const tabs: UseCaseTab[] = [
     id: 'fee-collection',
     label: 'Fee Collection',
     icon: <GraduationCap className="w-6 h-6" />,
+    image: '/images/payment-link/WomenHandyPhone.png',
     subItems: [
       {
         title: 'Schools and Educational Institutions',
@@ -42,6 +44,7 @@ const tabs: UseCaseTab[] = [
     id: 'online-sales',
     label: 'Online Sales',
     icon: <ShoppingBag className="w-6 h-6" />,
+    image: '/images/payment-link/Onlinbesales.jpeg',
     subItems: [
       {
         title: 'Direct Sales',
@@ -59,6 +62,7 @@ const tabs: UseCaseTab[] = [
     id: 'registration',
     label: 'Registration Fees',
     icon: <ClipboardList className="w-6 h-6" />,
+    image: '/images/payment-link/eventTicketing.jpeg',
     subItems: [
       {
         title: 'Event Tickets',
@@ -76,6 +80,7 @@ const tabs: UseCaseTab[] = [
     id: 'travel',
     label: 'Travel Bookings',
     icon: <Plane className="w-6 h-6" />,
+    image: '/images/payment-link/travel&booking.jpeg',
     subItems: [
       {
         title: 'Travel Agents and Operators',
