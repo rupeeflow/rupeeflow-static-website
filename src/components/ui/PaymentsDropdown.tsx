@@ -25,17 +25,15 @@ const makePayments: navlist[] = [
 ]
 
 const payableReceivable: navlist[] = [
-  { id: 'collection-reminders', label: 'Payment Reminders', icon: '/features/clock.svg', href: '/collection-reminders' },
-  { id: 'digital-invoicing', label: ' E-Invoicing', icon: '/payouts/invoicing.svg', href: '/digital-invoicing' },
-  { id: 'collection-analytics', label: 'Analytics', icon: '/resources/case-studies.svg', href: '/collection-analytics' },
+  { id: 'payment-reminders', label: 'Payment Reminders', icon: '/features/clock.svg', href: '/payment-reminders' },
+  { id: 'e-invoicing', label: 'E-Invoicing', icon: '/payouts/invoicing.svg', href: '/e-invoicing' },
+  { id: 'analytics', label: 'Analytics', icon: '/resources/case-studies.svg', href: '/analytics' },
   { id: 'auto-reconciliation', label: 'Auto Reconciliation', icon: '/features/bill.svg', href: '/auto-reconciliation' },
   { id: 'invoice-management', label: 'Invoice Management', icon: '/payouts/invoicing.svg', href: '/invoice-management' },
   { id: 'vendor-management', label: 'Vendor Management', icon: '/payouts/vendor-payments.svg', href: '/vendor-management' },
   { id: 'payable-analytics', label: 'Payable Analytics', icon: '/resources/pricing.svg', href: '/payable-analytics' },
-  // { id: 'connected-banking', label: 'Connected Banking', icon: '/business/api-banking.svg', href: '/connected-banking' },
   { id: 'cashflow-analytics', label: 'Cashflow Analytics', icon: '/home/wallet.svg', href: '/cashflow-analytics' },
-  // { id: 'workflow-management', label: 'Workflow Management', icon: '/features/shield.svg', href: '/workflow-management' },
-]
+];
 
 export default function PaymentsDropdown() {
   const [hoveredItem, setHoveredItem] = useState<navlist | null>(null)

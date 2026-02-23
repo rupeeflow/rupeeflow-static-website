@@ -36,28 +36,38 @@ export default function CollectMoney() {
         {/* Hero */}
         <div className="relative text-center mb-32">
 
-          <h1 className="text-white text-4xl md:text-5xl font-semibold leading-tight max-w-4xl mx-auto">
-            India’s First Platform with End-to-End Payments & Lending together
-          </h1>
+          <h1 className="text-white font-semibold leading-[1.15] tracking-[-0.02em]
+                 text-2xl md:text-4xl max-w-5xl mx-auto">
+    
+    India’s First Platform with{" "}
+    <span className="text-emerald-400">
+      End-to-End Payments
+    </span>{" "}
+    &
 
-          <p className="mt-4 text-gray-300 text-lg">
-            Everything Your Business Needs In One Place
-          </p>
+    <br className="hidden md:block" />
+
+    <span className="text-emerald-400">Lending</span>{" "}
+    together
+  </h1>
+  <p className="mt-6 text-gray-300 text-lg md:text-xl">
+    Everything Your Business Needs In One Place
+  </p>
 
           {/* Floating Boxes */}
-          <div className="absolute right-[260px] top-[160px] z-10">
+          {/* <div className="absolute right-[260px] top-[160px] z-10">
             <div className="absolute top-[5px] left-[10px] w-[210px] h-[105px] border-2 border-emerald-400 rounded-[20px] bg-[#181A1A]" />
             <div className="absolute top-[140px] left-[80px] w-[110px] h-[55px] border-2 border-emerald-400 rounded-[14px] bg-[#181A1A]" />
-          </div>
+          </div> */}
 
           {/* Woman */}
           <Image
             src="/home/men.png"
             alt="woman"
-            width={256}
-            height={256}
+            width={416}
+            height={416}
             priority
-            className="absolute right-[105px] top-[135px] z-30 pointer-events-none"
+            className="absolute right-[105px] top-[87px] z-30 pointer-events-none"
           />
         </div>
 
