@@ -15,7 +15,7 @@ const creditCards = [
   {
     title: 'Invoice Financing',
     desc: '1L–50L for unpaid B2B invoices. Get 80% upfront, 24 hour approval.',
-    icon: '/credit/invoicing.svg'
+    icon: '/credit/invoicing-financing.svg'
   },
   {
     title: 'NRI Emergency Loans',
@@ -50,19 +50,19 @@ export default function GetCredit() {
           </div>
 
           {/* Floating Boxes */}
-          <div className="absolute right-[260px] top-[20px] z-10">
+          {/* <div className="absolute right-[260px] top-[20px] z-10">
             <div className="absolute top-[15px] left-[10px] w-[210px] h-[105px] border-2 border-emerald-400 rounded-[20px] bg-[#181A1A]" />
             <div className="absolute top-[140px] left-[80px] w-[110px] h-[55px] border-2 border-emerald-400 rounded-[14px] bg-[#181A1A]" />
-          </div>
+          </div> */}
 
           {/* Man */}
           <Image
-            src="/home/menc.png"
+            src="/home/mencc.png"
             alt="man"
-            width={365}
-            height={365}
+            width={525}
+            height={525}
             priority
-            className="absolute right-[71px] -top-[46px] z-30 pointer-events-none"
+            className="absolute right-[71px] -top-[45px] z-30 pointer-events-none"
           />
 
         </div>

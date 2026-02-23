@@ -1,41 +1,31 @@
 'use client';
+import Link from "next/link";
 
 const businessCards = [
   {
     title: 'MSME / SMBs',
-    items: [
-      'Payment Gateway',
-      'Bulk Payouts',
-      'Invoice Financing',
-      'Business Current Account',
-    ],
+    items: [ 'Payment Gateway', 'Bulk Payouts', 'Invoice Financing', 'Business Current Account', ],
     image: '/business/msme.svg',
     active: true,
+    link: '/solutions/msme',
   },
   {
     title: 'Kirana Store / Small Merchant',
     items: ['Kirana POS', 'Merchant Cash', 'Bill Payments', 'Voice Payments'],
     image: '/business/kirana.svg',
+    link: '/solutions/kirana',
   },
   {
     title: 'NRI / Overseas Indian',
-    items: [
-      'Cross-border Remittance',
-      'NRI Emergency Loans',
-      'Direct bill Payments to India',
-      'Multi-currency support',
-    ],
+    items: [ 'Cross-border Remittance', 'NRI Emergency Loans', 'Direct bill Payments to India', 'Multi-currency support', ],
     image: '/business/nri.svg',
+    link: '/solutions/nri',
   },
   {
     title: 'Developer / Platform',
-    items: [
-      'Payment Gateway APIs',
-      'Payouts APIs',
-      'Verification APIs',
-      'Banking-as-a-Service',
-    ],
+    items: [ 'Payment Gateway APIs', 'Payouts APIs', 'Verification APIs', 'Banking-as-a-Service', ],
     image: '/business/developer.svg',
+    link: '/solutions/developer',
   },
 ];
 
@@ -45,9 +35,9 @@ export default function ChooseBusinessType() {
 
   {/* BIG WAVE */}
   <img
-    src="/wave.png"
-    className="absolute top-[160px] left-0 w-[1500px] z-[1] pointer-events-none"
-  />
+  src="/wave.png"
+  className="absolute top-[160px] left-0 w-[1500px] z-0 pointer-events-none"
+/>
 
   {/* CONTENT */}
   <div className="relative z-[10] max-w-[1200px] mx-auto px-8">
@@ -94,10 +84,20 @@ export default function ChooseBusinessType() {
     className="absolute right-8 top-1/2 -translate-y-1/2 w-[180px] pointer-events-none"
   />
 
-  <button className="absolute bottom-2 right-8 px-6 py-2 rounded-full bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white text-sm flex items-center gap-2">
-    See Complete Solution →
-  </button>
-
+<Link
+  href={card.link}
+  className="absolute bottom-4 right-8 z-20
+             px-6 py-2 rounded-full
+             bg-gradient-to-r from-[#054C38] to-[#2AB871]
+             text-white text-sm flex items-center gap-2
+             transition-all duration-300
+             hover:scale-105 hover:shadow-lg
+             hover:shadow-black-500/30
+             active:scale-95
+             hover:text-pink/450"
+>
+  See Complete Solution →
+</Link>
 </div>
 
           ))}

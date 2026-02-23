@@ -13,7 +13,9 @@ export default function Dropdown({ navitems }: DropdownProps) {
   const router = useRouter()
 
   return (
-    <div className="absolute top-full left-1/2 -translate-x-1/2 bg-white rounded-xl shadow-xl h-[380px] p-4 w-[760px] flex gap-2 z-20">
+   <div className="absolute top-full left-17 -translate-x-1/2 bg-white rounded-xl shadow-xl h-[380px] p-4 w-[760px] flex gap-2 z-20">
+
+
 
       {/* LEFT LIST */}
       <div className="w-[260px] space-y-2 h-full overflow-y-auto">

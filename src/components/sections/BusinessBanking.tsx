@@ -10,13 +10,13 @@ const bankingCards = [
     title: 'Business Current Account',
     desc: 'Open Account in 10 min, Zero balance. Free NEFT/RTGS, virtual accounts',
     cta: 'Open Account →',
-    icon: '/banking/business-current-account.svg',
+    icon: '/business/business-current-account.svg',
   },
   {
     title: 'API Banking',
     desc: 'Build financial products on our platform. Collections, Payouts, Credit, Verification APIs.',
     cta: 'Read Docs →',
-    icon: '/banking/api-banking.svg',
+    icon: '/business/api-banking.svg',
   },
 ];
 
@@ -33,19 +33,19 @@ export default function BusinessBanking() {
 
 
           {/* Floating Boxes LEFT */}
-          <div className="absolute left-[220px] top-[20px] z-10">
+          {/* <div className="absolute left-[220px] top-[20px] z-10">
             <div className="absolute -top-[15px] left-[10px] w-[210px] h-[105px] border-2 border-emerald-400 rounded-[20px] bg-[#181A1A]" />
             <div className="absolute top-[110px] left-[60px] w-[110px] h-[55px] border-2 border-emerald-400 rounded-[14px] bg-[#181A1A]" />
-          </div>
+          </div> */}
 
           {/* Man LEFT */}
           <Image
-            src="/home/man.png"
+            src="/home/businessmen.png"
             alt="man"
-            width={195}
-            height={195}
+            width={495}
+            height={495}
             priority
-            className="absolute left-[141px] -top-[68px] z-30 pointer-events-none"
+            className="absolute left-[91px] -top-[35px] z-30 pointer-events-none"
           />
 
           {/* BUSINESS BANKING Pill RIGHT */}

@@ -93,13 +93,13 @@ export default function HeroSection() {
         >
           <Link
             href="#"
-            className="px-8 py-3 rounded-full bg-emerald-500 text-black font-semibold hover:opacity-90 transition"
+            className="px-12 py-3 mt-6 rounded-full bg-emerald-500 text-black font-semibold hover:opacity-90 transition"
           >
             Start Accepting Payments
           </Link>
           <Link
             href="#"
-            className="px-8 py-3 rounded-full border border-emerald-500 text-white hover:bg-emerald-500/10 transition"
+            className="px-8 py-3 mt-6 rounded-full border border-emerald-500 text-white hover:bg-emerald-500/10 transition"
           >
             Documentation
           </Link>

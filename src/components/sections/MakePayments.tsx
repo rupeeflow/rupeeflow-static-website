@@ -49,21 +49,21 @@ export default function MakePayments() {
   </div>
 
   {/* Floating boxes LEFT */}
-  <div className="absolute left-[260px] top-[160px] z-10">
+  {/* <div className="absolute left-[260px] top-[160px] z-10">
 
       <div className="absolute -top-[185px] -left-[5px] w-[210px] h-[105px] border-2 border-emerald-400 rounded-[20px] bg-[#181A1A]" />
 
             <div className="absolute -top-[55px] left-[40px] w-[110px] h-[55px] border-2 border-emerald-400 rounded-[14px] bg-[#181A1A]" />
-          </div>
+          </div> */}
 
   {/* Man LEFT */}
   <Image
-    src="/home/man.png"
+    src="/home/mann.png"
     alt="man"
-    width={196}
-    height={196}
+    width={306}
+    height={306}
     priority
-    className="absolute left-[141px] -top-[70px] z-30 pointer-events-none "
+    className="absolute left-[41px] -top-[89px] z-30 pointer-events-none "
   />
 
 </div>

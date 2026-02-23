@@ -1,11 +1,13 @@
 import { Metadata } from 'next'
 import './globals.css'
 import HeroSection from '@/components/sections/Herosection'
+import StopUsingApps from '@/components/sections/StopUsingApps'
 import CollectMoney from '@/components/sections/CollectMoney'
 import MakePayments from '@/components/sections/MakePayments'
 import GetCredit from '@/components/sections/GetCredit'
 import LendingBanner from '@/components/sections/LendingBanner'
 import PartnershipBanner from '@/components/sections/PartnershipBanner'
+
 
 // import PartnerShip from '@/components/sections/PartnerShip'
 
@@ -42,11 +44,14 @@ export default function HomePage() {
       <FAQSchema faqs={faq.map(f => ({ question: f.question, answer: f.answer }))} />
 
       <HeroSection />
-     
+     <StopUsingApps />
+      <LendingBanner />
       <CollectMoney />
       <MakePayments />
+      
       <GetCredit />
       <BusinessBanking />
+      
       <ChooseBusinessType />
 
 
@@ -56,11 +61,13 @@ export default function HomePage() {
       {/* <KiranaPromo /> */}
       {/* <BuiltForSection /> */}
 
-      <ChooseRupeeFlow />
+     
       
-      <LendingBanner />
-      <VisionSection />
+     
+      {/* <VisionSection /> */}
+      <ChooseRupeeFlow />
       <PartnershipBanner />
+      
       
       {/* <StatsSection /> */}
       <LanguageSection />

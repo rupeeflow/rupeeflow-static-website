@@ -27,13 +27,20 @@ const resourcesnav: navlist[] = [
 ]
 
 const partnershipsnav: navlist[] = [
-  { id: 'banking', label: 'Business Banking', icon: '/business/business-current-account.svg', href: '/business-banking' },
-  { id: 'api', label: 'API Banking', icon: '/business/api-banking.svg', href: '/api-banking' },
-  { id: 'developer', label: 'Developer Tools', icon: '/business/developer.svg', href: '/developer' },
-  { id: 'kirana', label: 'Kirana Partners', icon: '/business/kirana.svg', href: '/kirana-partners' },
-  { id: 'msme', label: 'MSME Partners', icon: '/business/msme.svg', href: '/msme-partners' },
-  { id: 'nri', label: 'NRI Services', icon: '/business/nri.svg', href: '/nri-services' },
+  {
+    id: 'bank',
+    label: 'For Banks',
+    icon: '/business/business-current-account.svg',
+    href: '/partnerships/banking',
+  },
+  {
+    id: 'partner',
+    label: 'Affiliate Partners',
+    icon: '/business/api-banking.svg',
+    href: '/partnerships/affiliates',
+  },
 ]
+
 
 
 const cardTypes: navlist[] = [
