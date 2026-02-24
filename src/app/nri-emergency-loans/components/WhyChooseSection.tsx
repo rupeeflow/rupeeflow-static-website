@@ -4,15 +4,6 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Container from '@/components/ui/Container'
 
-const ImagePlaceholder = ({ size }: { size?: string }) => (
-  <div className="text-center text-gray-400">
-    <svg className="w-14 h-14 mx-auto mb-2 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-    </svg>
-    {size && <p className="text-xs">{size}</p>}
-  </div>
-)
-
 const features = [
   {
     title: '24-Hour Disbursal',
@@ -100,7 +91,7 @@ export default function WhyChooseSection() {
             ))}
           </div>
 
-          {/* Right: Image Placeholder */}
+          {/* Right: Why Choose Image */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -108,8 +99,14 @@ export default function WhyChooseSection() {
             viewport={{ once: true }}
             className="flex-1 flex justify-center items-center w-full"
           >
-            <div className="w-full max-w-[500px] h-[400px] md:h-[500px] bg-gray-100 rounded-3xl flex items-center justify-center border-2 border-gray-200">
-              <ImagePlaceholder size="500x500" />
+            <div className="w-full max-w-[500px] rounded-3xl overflow-hidden border-2 border-gray-200 shadow-lg">
+              <Image
+                src="/nri-emergency-loans/why.jpeg"
+                alt="Why choose NRI emergency loans"
+                width={500}
+                height={500}
+                className="w-full h-auto object-cover"
+              />
             </div>
           </motion.div>
         </div>

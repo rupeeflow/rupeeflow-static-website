@@ -119,13 +119,13 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-white/10 backdrop-blur-md p-8">
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-white/10 backdrop-blur-md">
               <Image
-                src="/credit/nri-emergency-loans.svg"
-                alt="NRI Emergency Loans"
+                src="/nri-emergency-loans/nri hero.png"
+                alt="NRI Emergency Loans - Support your family in India"
                 width={600}
                 height={500}
-                className="w-full h-auto"
+                className="w-full h-auto object-cover"
                 priority
               />
               
