@@ -161,8 +161,30 @@ export default function HeroSection() {
 
       {/* Wave bottom */}
       <div className="absolute bottom-0 left-0 w-full">
-        <img src="/wave.png" alt="" className="w-full scale-110" />
+        <Image
+          src="/wave.png"
+          alt="wave"
+          width={1920}
+          height={200}
+          className="w-full scale-110"
+        />
       </div>
     </section>
+  )
+}
+
+/* Feature Component */
+function Feature({ icon, text }: { icon: string; text: string }) {
+  return (
+    <div className="flex flex-col items-center gap-3">
+      <Image
+        src={icon}
+        alt={text}
+        width={40}
+        height={40}
+        className="w-10 h-10 object-contain"
+      />
+      <p className="text-sm text-gray-400">{text}</p>
+    </div>
   )
 }

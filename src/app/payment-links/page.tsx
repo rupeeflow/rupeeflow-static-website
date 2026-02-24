@@ -505,8 +505,43 @@ export default function PaymentLinksPage() {
                 </div>
               </div>
 
-              <div className="flex-1 flex justify-center">
-                  <Image src="/images/payment-link/creatingLink.jpeg" alt="How to create payment links" width={500} height={1000} className="object-contain rounded-lg" />
+              {/* Right: Interactive Image */}
+              <div className="flex-1 flex justify-center items-center">
+                <div className="relative w-full max-w-[700px] h-[500px] md:h-[648px] group">
+                  {/* Main character - positioned on the right */}
+                  <div className="absolute top-0 right-0 w-[60%] md:w-[65%] h-full z-10 transition-transform duration-500 ease-out group-hover:scale-[1.02]">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/payment-links/mainchar.svg"
+                      alt="Payment Links Character"
+                      className="w-full h-full object-contain object-top"
+                    />
+                  </div>
+
+                  {/* Menu card - positioned center-right, overlapping with character */}
+                  <div className="absolute top-[50%] right-[15%] md:right-[18%] w-[45%] md:w-[50%] z-20 transition-all duration-500 ease-out group-hover:translate-x-[6px] group-hover:translate-y-[-6px] group-hover:scale-[1.08]" style={{ perspective: '1000px' }}>
+                    <div className="relative transform-gpu transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-emerald-500/30 group-hover:rotate-[2deg]" style={{ transformStyle: 'preserve-3d' }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/payment-links/menu.svg"
+                        alt="Payment Menu"
+                        className="w-full h-auto object-contain drop-shadow-xl"
+                      />
+                      
+                      {/* 3D card glow effect */}
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/0 via-emerald-500/0 to-emerald-600/0 group-hover:from-white/5 group-hover:via-emerald-500/10 group-hover:to-emerald-600/5 transition-all duration-500 pointer-events-none" />
+                      
+                      {/* Enhanced shadow for depth */}
+                      <div className="absolute -inset-2 rounded-2xl bg-emerald-500/0 group-hover:bg-emerald-500/10 blur-xl transition-all duration-500 -z-10" />
+                    </div>
+                  </div>
+
+                  {/* Ambient glow effect behind menu */}
+                  <div className="absolute top-[40%] right-[25%] w-[200px] h-[200px] rounded-full bg-emerald-500/0 group-hover:bg-emerald-500/20 blur-3xl transition-all duration-700 pointer-events-none z-0" />
+                  
+                  {/* Connecting line effect (subtle) */}
+                  <div className="absolute top-[45%] right-[35%] w-[80px] h-[2px] bg-gradient-to-r from-emerald-400/0 via-emerald-400/0 to-transparent group-hover:from-emerald-400/30 group-hover:via-emerald-400/20 transition-all duration-500 z-5" />
+                </div>
               </div>
             </div>
           </div>

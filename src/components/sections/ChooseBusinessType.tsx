@@ -1,6 +1,8 @@
 'use client';
 import Link from "next/link";
 
+import Image from 'next/image'
+
 const businessCards = [
   {
     title: 'MSME / SMBs',
@@ -34,10 +36,13 @@ export default function ChooseBusinessType() {
    <section className="relative bg-white py-8 overflow-hidden">
 
   {/* BIG WAVE */}
-  <img
-  src="/wave.png"
-  className="absolute top-[160px] left-0 w-[1500px] z-0 pointer-events-none"
-/>
+  <Image
+    src="/wave.png"
+    alt="wave"
+    width={1500}
+    height={200}
+    className="absolute top-[160px] left-0 w-[1500px] z-[1] pointer-events-none"
+  />
 
   {/* CONTENT */}
   <div className="relative z-[10] max-w-[1200px] mx-auto px-8">
@@ -79,8 +84,11 @@ export default function ChooseBusinessType() {
   </ul>
 
   {/* 👇 ADD THIS IMAGE RIGHT HERE */}
-  <img
+  <Image
     src={card.image}
+    alt={card.title}
+    width={180}
+    height={180}
     className="absolute right-8 top-1/2 -translate-y-1/2 w-[180px] pointer-events-none"
   />
 
