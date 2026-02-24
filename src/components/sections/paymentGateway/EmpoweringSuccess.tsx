@@ -199,7 +199,10 @@ export default function EmpoweringSuccess() {
                 <div className="flex flex-col gap-1.5 mt-1">
                   {Array.from({ length: feature.checks }).map((_, j) => (
                     <div key={j} className="flex items-center gap-2">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <svg width="16"
+                       height="16"
+                        viewBox="0 0 16 16"
+                         fill="none">
                         <circle cx="8" cy="8" r="8" fill="#30F3BC" fillOpacity="0.2" />
                         <path
                           d="M5 8l2 2 4-4"
@@ -299,8 +302,9 @@ export default function EmpoweringSuccess() {
             </motion.div>
 
             {/* Woman Image (EmpoweringSuccess.png) */}
+
             <motion.div
-              className="absolute bottom-0 right-0 w-[320px] h-[500px]"
+              className="absolute bottom-10 left-20 w-[460px] h-[890px]"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -310,7 +314,7 @@ export default function EmpoweringSuccess() {
                 src="/images/payment-gateway/EmpoweringSuccess.png"
                 alt="Expert Support"
                 fill
-                className="object-contain object-bottom"
+                className="object-contain object-bottom mt-23"
                 priority
               />
             </motion.div>

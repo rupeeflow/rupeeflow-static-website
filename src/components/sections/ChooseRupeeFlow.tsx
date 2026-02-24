@@ -9,22 +9,22 @@ export default function WhyChooseSection() {
     {
       icon: <ReceiptIndianRupee className="w-20 h-20 text-neutral-300" />,
       title: 'All your bills, paid in seconds.',
-      desc: 'Electricity, water, mobile, and more — manage every bill in one place, without the hassle.',
+      desc: 'Effortlessly manage all your utility bills—electricity, water, mobile, and more—from a single, intuitive platform. Say goodbye to late fees and scattered due dates with automated reminders and smart scheduling.',
     },
     {
       icon: <ShieldCheck className="w-20 h-20 text-neutral-300" />,
       title: 'Payments you can trust.',
-      desc: 'End-to-end encryption and UPI compliance keep your money safe, no matter where you are.',
+      desc: 'Bank-grade security with 256-bit encryption, PCI DSS Level 1 compliance, and multi-factor authentication. Every transaction is protected by advanced fraud detection systems and real-time monitoring.',
     },
     {
       icon: <Clock className="w-20 h-20 text-neutral-300" />,
       title: 'Always on, whenever you need us.',
-      desc: 'RupeeFlow never sleeps. Pay, transfer, or get help anytime with round-the-clock support.',
+      desc: '24/7/365 availability with dedicated support teams, instant transaction processing, and real-time notifications. RupeeFlow ensures your business never stops with 99.9% uptime guarantee.',
     },
     {
       icon: <Mic className="w-20 h-20 text-neutral-300" />,
-      title: 'Just say it, and it’s done.',
-      desc: 'Make payments in your own language with simple voice commands — no typing, no stress.',
+      title: 'Just say it, and it\'s done.',
+      desc: 'Revolutionary voice-powered payments supporting 12+ Indian languages. Simply speak your payment instructions and watch as AI processes transactions with 99.5% accuracy.',
     },
   ]
 
@@ -67,13 +67,20 @@ export default function WhyChooseSection() {
             Stay ahead of the money management and transactions
           </p>
 
-          <Link
-            href="/product"
-            className="inline-flex items-center gap-2 bg-teal-emerald hover:bg-hover text-black font-semibold px-6 py-3 rounded-md transition-colors duration-300 ease-in-out shadow-lg "
+          <motion.button
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 10px 30px rgba(16, 185, 129, 0.3)"
+            }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            className="relative inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg overflow-hidden group"
           >
-            <ReceiptIndianRupee className="w-5 h-5" />
-            SEE ALL FEATURES
-          </Link>
+            <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <ReceiptIndianRupee className="w-5 h-5 relative z-10" />
+            <span className="relative z-10">SEE ALL FEATURES</span>
+            <div className="absolute -right-2 -top-2 w-4 h-4 bg-white/30 rounded-full animate-ping" />
+          </motion.button>
         </motion.div>
 
         {/* Right Side - Feature Grid */}

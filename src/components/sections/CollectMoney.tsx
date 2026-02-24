@@ -97,11 +97,11 @@ export default function CollectMoney() {
                 className="absolute top-6 right-6"
               />
 
-              <h3 className="text-white text-xl font-semibold">
+              <h3 className="text-white text-2xl font-bold">
                 {card.title}
               </h3>
 
-              <p className="text-gray-300 text-sm mt-2 leading-relaxed max-w-[85%]">
+              <p className="text-gray-100 text-sm mt-5 leading-relaxed max-w-[80%]">
                 {card.desc}
               </p>
 

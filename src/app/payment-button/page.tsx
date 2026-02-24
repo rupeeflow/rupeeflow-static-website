@@ -42,7 +42,7 @@ export default function PaymentButtonPage() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-5xl mx-auto text-center pt-48 px-6">
+        <div className="relative z-10 max-w-5xl mx-auto text-center pt-28 px-6">
           <h1 className="fontheading text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[4rem] leading-tight text-white">
             Collect Smarter with Custom
             <br />
@@ -72,7 +72,13 @@ export default function PaymentButtonPage() {
           </div>
 
           {/* Dashboard + Mobile mockup placeholders */}
-          <div className="relative mt-16 mb-[-80px]">
+          <div className="relative mt-1 mb-[-2px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/payment-button/payment-button-menn.png"
+              alt="Dashboard"
+              className="w-full h-[743px]"
+            />
             {/* Browser window mockup */}
             <div className="max-w-3xl mx-auto bg-[#2a2a2a] rounded-t-xl shadow-2xl overflow-hidden">
               {/* Browser chrome */}
@@ -81,32 +87,33 @@ export default function PaymentButtonPage() {
                 <span className="w-3 h-3 rounded-full bg-blue-400" />
                 <span className="w-3 h-3 rounded-full bg-red-400" />
               </div>
+
               {/* Content area */}
-              <div className="p-8">
-                <h3 className="text-white fontheading text-xl mb-6 text-left">Order Summary</h3>
+              {/* <div className="p-8"> */}
+                {/* <h3 className="text-white fontheading text-xl mb-6 text-left">Order Summary</h3> */}
                 {/* Product placeholders */}
-                <div className="flex gap-4 mb-6">
+                {/* <div className="flex gap-4 mb-6">
                   {[1, 2, 3, 4].map((i) => (
                     <div key={i} className="w-24 h-20 bg-gray-600 rounded-lg" />
                   ))}
-                </div>
+                </div> */}
                 {/* Info bars */}
-                <div className="w-48 h-3 bg-gray-500 rounded mb-4" />
-                <div className="w-72 h-3 bg-gray-500 rounded mb-6" />
+                {/* <div className="w-48 h-3 bg-gray-500 rounded mb-4" />
+                <div className="w-72 h-3 bg-gray-500 rounded mb-6" /> */}
                 {/* Pay button */}
-                <div className="w-36 py-2.5 bg-emerald-500 rounded-lg text-center text-white text-sm font-semibold">
+                {/* <div className="w-36 py-2.5 bg-emerald-500 rounded-lg text-center text-white text-sm font-semibold">
                   Pay Here
-                </div>
-              </div>
+                </div> */}
+              {/* </div> */}
             </div>
 
             {/* Mobile mockup — overlapping right */}
             <div className="absolute -right-4 md:right-[10%] bottom-0 w-[180px] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
               <div className="p-4">
-                <p className="text-xs font-semibold text-gray-800 mb-3">Order Summary</p>
+                {/* <p className="text-xs font-semibold text-gray-800 mb-3">Order Summary</p> */}
                 {/* Mini product rows */}
                 <div className="space-y-2 mb-3">
-                  {[1, 2, 3].map((i) => (
+                  {/* {[1, 2, 3].map((i) => (
                     <div key={i} className="flex items-center gap-2">
                       <div className="w-6 h-6 bg-gray-200 rounded" />
                       <div className="flex-1 space-y-1">
@@ -114,15 +121,15 @@ export default function PaymentButtonPage() {
                         <div className="w-2/3 h-1.5 bg-gray-200 rounded" />
                       </div>
                     </div>
-                  ))}
+                  ))} */}
                 </div>
-                <div className="flex justify-between items-center mb-3">
+                {/* <div className="flex justify-between items-center mb-23">
                   <span className="text-[10px] text-gray-500">Total :</span>
                   <span className="text-xs font-bold text-gray-800">&#8377;4030</span>
-                </div>
-                <div className="w-full py-1.5 bg-emerald-500 rounded-md text-center text-white text-[10px] font-semibold">
+                </div> */}
+                {/* <div className="w-full py-1.5 bg-emerald-500 rounded-md text-center text-white text-[10px] font-semibold">
                   Pay Here
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -131,6 +138,7 @@ export default function PaymentButtonPage() {
 
       {/* ── HOW TO CREATE PAYMENT BUTTON ── */}
       <div className="relative bg-white overflow-hidden">
+
         {/* Decorative strip spanning both sections */}
         <div className="absolute inset-0 pointer-events-none">
           <PaymentButtonRoundedStripIcon
@@ -198,7 +206,7 @@ export default function PaymentButtonPage() {
               <div className="flex-1 flex justify-center">
                 <div className="relative w-full max-w-[480px]">
                   {/* Phone frame */}
-                  <div className="w-[300px] md:w-[340px] mx-auto h-[440px] md:h-[500px] border-2 border-emerald-400 rounded-[2rem] overflow-hidden bg-gray-50 relative">
+                  <div className="w-[300px] md:w-[340px] mx-auto h-[440px] md:h-[500px]  overflow-hidden bg-gray-50 relative">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="/images/payment-button/personStanding.png"
@@ -374,7 +382,7 @@ export default function PaymentButtonPage() {
               <div className="lg:w-[40%] flex justify-center">
                 <div className="relative w-full max-w-[380px]">
                   {/* Phone frame with person */}
-                  <div className="w-[260px] md:w-[300px] mx-auto h-[380px] md:h-[440px] border-2 border-emerald-400 rounded-[2rem] overflow-hidden bg-gray-50 relative">
+                  <div className="w-[260px] md:w-[300px] mx-auto h-[380px] md:h-[440px] 2 border-emerald-400 rounded-[3.6rem] overflow-hidden bg-gray-50 relative">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="/images/payment-button/womenStanding.png"
@@ -530,12 +538,16 @@ export default function PaymentButtonPage() {
               {/* Right: PhoneFooterIcon frame with person image + floating elements */}
               <div className="lg:w-[45%] flex justify-center">
                 <div className="relative w-full max-w-[460px]">
+
                   {/* Phone frame container */}
-                  <div className="relative w-[280px] md:w-[300px] mx-auto">
+                  <div className="relative w-[330px] md:w-[350px] mx-auto">
+
                     {/* PhoneFooterIcon as the frame */}
-                    <PhoneFooterIcon className="w-full h-auto relative z-10" />
+                    <PhoneFooterIcon className="w-full h-auto relative " />
+
                     {/* Person image inside the frame */}
-                    <div className="absolute inset-0 z-0 overflow-hidden" style={{ borderRadius: '70px', margin: '3px' }}>
+                    <div className="absolute inset-3 z-0 " style={{ borderRadius: '70px', margin: '3px' }}>
+
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src="/images/payment-button/personalOptions.png"
@@ -546,7 +558,7 @@ export default function PaymentButtonPage() {
                   </div>
 
                   {/* Floating card: Button types list (left side) */}
-                  <div className="absolute top-[15%] -left-[40%] md:-left-[50%] bg-white rounded-xl px-5 py-5 shadow-xl border border-gray-100 z-20 w-[200px]">
+                  {/* <div className="absolute top-[15%] -left-[40%] md:-left-[50%] bg-white rounded-xl px-5 py-5 shadow-xl border border-gray-100 z-20 w-[200px]">
                     <ul className="space-y-3 mb-4">
                       <li className="flex items-center gap-2.5">
                         <span className="w-3 h-3 rounded-full border-2 border-gray-300 shrink-0" />
@@ -573,7 +585,7 @@ export default function PaymentButtonPage() {
                         Payment <span className="text-gray-400">&gt;</span>
                       </button>
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Floating badge: Explore Payment Types (top right) */}
                   <div className="absolute top-[8%] -right-[25%] bg-white rounded-lg px-4 py-2.5 shadow-lg border border-gray-200 z-20">

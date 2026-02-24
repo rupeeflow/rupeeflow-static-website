@@ -2,14 +2,14 @@ import Image from 'next/image'
 
 export default function LendingBanner() {
   return (
-    <section className="relative w-full bg-black overflow-hidden min-h-[620px] md:min-h-[690px]">
+    <section className="relative  w-full bg-black overflow-hidden min-h-[690px] md:min-h-[790px]">
 
       {/* Background Image */}
       <Image
-        src="/home/landing-banner.png"
+        src="/home/landing-bannerr.png"
         alt="Smart lending"
         fill
-        className="object-cover"
+        className="object-cover "
         priority
       />
 
@@ -19,7 +19,7 @@ export default function LendingBanner() {
         {/* BLACK GLASS BOX */}
         <div className="bg-black/60 backdrop-blur-xl rounded-[32px] p-6 max-w-[820px] mt-53 ">
 
-          <h2 className="text-white text-5xl font-semibold leading-tight">
+          <h2 className="text-white text-5xl font-semibold leading-tight ">
             Get upto 50L credit instantly <br />
             with our{' '}
             <span className="text-emerald-400">smart lending</span> plans

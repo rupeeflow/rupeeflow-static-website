@@ -138,9 +138,9 @@ export default function UseCaseTabs({ heading, headingHighlight, tabs }: UseCase
               </div>
 
               {/* RIGHT — image panel */}
-              <div className="lg:w-[55%]">
+              <div className="lg:w-[40%]">
                 <motion.div
-                  className="relative w-full h-[420px] md:h-[480px] rounded-3xl overflow-hidden border-2 border-gray-200 shadow-xl"
+                  className="relative w-full h-[520px] md:h-[580px] rounded-2xl overflow-hidden border-2 border-gray-200 shadow-xl"
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}

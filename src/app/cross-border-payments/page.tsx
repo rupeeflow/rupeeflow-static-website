@@ -1,5 +1,6 @@
+'use client'
+
 import Link from 'next/link'
-import Image from 'next/image'
 
 export default function CrossBorderPaymentsPage() {
   return (
@@ -46,13 +47,10 @@ export default function CrossBorderPaymentsPage() {
 
           {/* Map Image */}
           <div className="relative mt-16 max-w-4xl mx-auto">
-            <Image
+            <img
               src="/images/cross-border/map.png"
               alt="Global Payment Network"
-              width={1120}
-              height={500}
               className="w-full h-auto"
-              priority
             />
           </div>
         </div>
@@ -140,12 +138,14 @@ export default function CrossBorderPaymentsPage() {
               </div>
             </div>
 
-            {/* Right: Image placeholder */}
+            {/* Right: Map Image */}
             <div className="flex-1 flex justify-center">
-              <div className="w-full max-w-[460px] h-[480px] bg-gray-100 rounded-2xl border border-gray-200 flex items-center justify-center">
-                <svg className="w-16 h-16 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
+              <div className="w-full max-w-[460px] h-[480px] relative">
+                <img
+                  src="/images/cross-border/map.png"
+                  alt="Cross-Border Payment Flow"
+                  className="w-full h-full object-cover rounded-2xl shadow-lg"
+                />
               </div>
             </div>
           </div>
@@ -163,13 +163,13 @@ export default function CrossBorderPaymentsPage() {
 
           <div className="space-y-24">
 
-            {/* 1. Multi-Currency Support — icon+text left, placeholder right */}
+            {/* 1. Multi-Currency Support — icon+text left, animated image right */}
             <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
+                  <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center animate-pulse">
                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 012 2h1.064M15 20a2 2 0 002-2h3.945a1 1 0 00.95-.682l1.163-2.091A1 1 0 0019.5 16.5c0 1.376.312-2.5 1.5-2.5S20.876 11 19.5 11s-2.5.624-2.5 1.5z" />
                     </svg>
                   </div>
                   <h3 className="fontheading text-xl md:text-2xl text-gray-900">Multi-Currency Support Across 100+ Countries</h3>
@@ -179,7 +179,7 @@ export default function CrossBorderPaymentsPage() {
                 </p>
                 <Link
                   href="#"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-all duration-300 hover:scale-105"
                 >
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -188,19 +188,38 @@ export default function CrossBorderPaymentsPage() {
                 </Link>
               </div>
               <div className="lg:w-[40%] flex justify-center">
-                <div className="w-full max-w-[340px] h-[260px] bg-white rounded-xl border border-gray-200 flex items-center justify-center shadow-sm">
-                  <svg className="w-14 h-14 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+                <div className="w-full max-w-[340px] h-[260px] bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl border border-blue-200 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 relative overflow-hidden">
+                  {/* Animated Currency Background */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="grid grid-cols-4 gap-2 p-4">
+                      {['$', '€', '£', '¥'].map((currency, i) => (
+                        <div key={i} className="text-2xl font-bold text-blue-600/30 animate-spin" style={{ animationDelay: `${i * 0.2}s` }}>
+                          {currency}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Currency Globe Icon */}
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md animate-bounce">
+                      <svg className="w-10 h-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 012 2h1.064M15 20a2 2 0 002-2h3.945a1 1 0 00.95-.682l1.163-2.091A1 1 0 0019.5 16.5c0 1.376.312-2.5 1.5-2.5S20.876 11 19.5 11s-2.5.624-2.5 1.5z" />
+                      </svg>
+                    </div>
+                    <div className="mt-2 text-center">
+                      <p className="text-xs font-semibold text-blue-600">30+ Currencies</p>
+                      <p className="text-xs text-gray-500">100+ Countries</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* 2. Competitive Exchange Rates — placeholder left, icon+text right */}
+            {/* 2. Competitive Exchange Rates — animated chart left, icon+text right */}
             <div className="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16">
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
+                  <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center animate-pulse">
                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
@@ -208,11 +227,11 @@ export default function CrossBorderPaymentsPage() {
                   <h3 className="fontheading text-xl md:text-2xl text-gray-900">Competitive Exchange Rates & Low Fees</h3>
                 </div>
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
-                  Save on every international transaction with our transparent pricing model. Rupeeflow offers real-time exchange rates with minimal markup and no hidden charges, ensuring you always get the best value for your cross-border transfers compared to traditional banking channels.
+                  Save on every international transaction with our transparent pricing model. Rupeeflow offers real-time exchange rates with minimal markup and no hidden charges, ensuring you always get best value for your cross-border transfers compared to traditional banking channels.
                 </p>
                 <Link
                   href="#"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-all duration-300 hover:scale-105"
                 >
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -221,21 +240,38 @@ export default function CrossBorderPaymentsPage() {
                 </Link>
               </div>
               <div className="lg:w-[40%] flex justify-center">
-                <div className="w-full max-w-[340px] h-[260px] bg-white rounded-xl border border-gray-200 flex items-center justify-center shadow-sm">
-                  <svg className="w-14 h-14 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+                <div className="w-full max-w-[340px] h-[260px] bg-gradient-to-br from-green-50 to-emerald-100 rounded-xl border border-green-200 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 relative overflow-hidden">
+                  {/* Animated Chart Background */}
+                  <div className="absolute inset-0 opacity-20">
+                    <div className="grid grid-cols-3 gap-1 p-2">
+                      {[...Array(12)].map((_, i) => (
+                        <div key={i} className="h-8 bg-green-300/40 rounded animate-pulse" style={{ animationDelay: `${i * 0.1}s`, height: `${Math.random() * 100}%` }} />
+                      ))}
+                    </div>
+                  </div>
+                  {/* Exchange Rate Icon */}
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md animate-bounce">
+                      <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                      </svg>
+                    </div>
+                    <div className="mt-2 text-center">
+                      <p className="text-sm font-bold text-green-600">Best Rates</p>
+                      <p className="text-xs text-gray-500">No Hidden Fees</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* 3. Regulatory Compliance — icon+text left, placeholder right */}
+            {/* 3. Regulatory Compliance — shield icon+text left, security animation right */}
             <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
+                  <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center animate-pulse">
                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 01-2 2H5a2 2 0 01-2 2v6a2 2 0 002 2h2a2 2 0 002 2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002 2zm0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                   </div>
                   <h3 className="fontheading text-xl md:text-2xl text-gray-900">Built-in Regulatory Compliance & KYC</h3>
@@ -245,7 +281,7 @@ export default function CrossBorderPaymentsPage() {
                 </p>
                 <Link
                   href="#"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-all duration-300 hover:scale-105"
                 >
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -254,22 +290,41 @@ export default function CrossBorderPaymentsPage() {
                 </Link>
               </div>
               <div className="lg:w-[40%] flex justify-center">
-                <div className="w-full max-w-[340px] h-[260px] bg-white rounded-xl border border-gray-200 flex items-center justify-center shadow-sm">
-                  <svg className="w-14 h-14 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+                <div className="w-full max-w-[340px] h-[260px] bg-gradient-to-br from-purple-50 to-pink-100 rounded-xl border border-purple-200 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 relative overflow-hidden">
+                  {/* Animated Security Background */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="grid grid-cols-2 gap-2 p-4">
+                      {[...Array(8)].map((_, i) => (
+                        <div key={i} className="h-4 bg-purple-300/30 rounded animate-pulse" style={{ animationDelay: `${i * 0.15}s` }} />
+                      ))}
+                    </div>
+                  </div>
+                  {/* Security Shield Icon */}
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md animate-bounce">
+                      <svg className="w-8 h-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4-6 6" />
+                        <circle cx="12" cy="12" r="3" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4-6 6" />
+                      </svg>
+                    </div>
+                    <div className="mt-2 text-center">
+                      <p className="text-sm font-bold text-purple-600">Compliance</p>
+                      <p className="text-xs text-gray-500">RBI & FEMA</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* 4. Real-time Tracking — placeholder left, icon+text right */}
+            {/* 4. Real-time Tracking — tracking animation left, icon+text right */}
             <div className="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16">
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
+                  <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center animate-pulse">
                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 006 0m0 7.544a1.5 1.5 0 000-3 0 3-3 0 00-3 0" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 4.518 7 3.646 7.036 4.518 7 3.646 7.036c0-3.586 0-6.958-3.586-6.958 0 6.958 4.342 4.342 0 6.958-4.342 6.958 0 6.958 4.342 0 6.958-4.342 6.958z" />
                     </svg>
                   </div>
                   <h3 className="fontheading text-xl md:text-2xl text-gray-900">Real-time Payment Tracking & Notifications</h3>
@@ -279,7 +334,7 @@ export default function CrossBorderPaymentsPage() {
                 </p>
                 <Link
                   href="#"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-all duration-300 hover:scale-105"
                 >
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -288,31 +343,50 @@ export default function CrossBorderPaymentsPage() {
                 </Link>
               </div>
               <div className="lg:w-[40%] flex justify-center">
-                <div className="w-full max-w-[340px] h-[260px] bg-white rounded-xl border border-gray-200 flex items-center justify-center shadow-sm">
-                  <svg className="w-14 h-14 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+                <div className="w-full max-w-[340px] h-[260px] bg-gradient-to-br from-orange-50 to-red-100 rounded-xl border border-orange-200 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 relative overflow-hidden">
+                  {/* Animated Tracking Background */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="grid grid-cols-3 gap-2 p-4">
+                      {[...Array(9)].map((_, i) => (
+                        <div key={i} className="h-6 bg-orange-300/30 rounded-full animate-ping" style={{ animationDelay: `${i * 0.2}s` }} />
+                      ))}
+                    </div>
+                  </div>
+                  {/* Tracking Map Icon */}
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md animate-spin">
+                      <svg className="w-8 h-8 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 006 0m0 7.544a1.5 1.5 0 000-3 0 3-3 0 00-3 0" />
+                        <circle cx="12" cy="12" r="3" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 4.518 7 3.646 7.036 4.518 7 3.646 7.036c0-3.586 0-6.958-3.586-6.958 0 6.958 4.342 4.342 0 6.958-4.342 6.958 0 6.958 4.342 0 6.958-4.342 6.958z" />
+                      </svg>
+                    </div>
+                    <div className="mt-2 text-center">
+                      <p className="text-sm font-bold text-orange-600">Live Tracking</p>
+                      <p className="text-xs text-gray-500">24/7 Monitor</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* 5. Seamless API Integration — icon+text left, placeholder right */}
+            {/* 5. Seamless API Integration — code animation left, icon+text right */}
             <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
+                  <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center animate-pulse">
                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4-4-6 6" />
                     </svg>
                   </div>
                   <h3 className="fontheading text-xl md:text-2xl text-gray-900">Seamless API Integration for Your Platform</h3>
                 </div>
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
-                  Integrate cross-border payment capabilities directly into your platform with Rupeeflow&apos;s developer-friendly APIs. Our comprehensive documentation, SDKs, and sandbox environment make it easy to build and test international payment workflows tailored to your business needs.
+                  Integrate cross-border payment capabilities directly into your platform with Rupeeflow's developer-friendly APIs. Our comprehensive documentation, SDKs, and sandbox environment make it easy to build and test international payment workflows tailored to your business needs.
                 </p>
                 <Link
                   href="#"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-all duration-300 hover:scale-105"
                 >
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -321,10 +395,33 @@ export default function CrossBorderPaymentsPage() {
                 </Link>
               </div>
               <div className="lg:w-[40%] flex justify-center">
-                <div className="w-full max-w-[340px] h-[260px] bg-white rounded-xl border border-gray-200 flex items-center justify-center shadow-sm">
-                  <svg className="w-14 h-14 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+                <div className="w-full max-w-[340px] h-[260px] bg-gradient-to-br from-cyan-50 to-blue-100 rounded-xl border border-cyan-200 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 relative overflow-hidden">
+                  {/* Animated Code Background */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="grid grid-cols-4 gap-1 p-2">
+                      {[...Array(16)].map((_, i) => (
+                        <div key={i} className="h-4 bg-cyan-300/40 rounded animate-pulse" style={{ 
+                          animationDelay: `${i * 0.1}s`,
+                          width: `${Math.random() > 0.5 ? '100%' : '20%'}`,
+                          marginLeft: `${Math.random() > 0.5 ? 'auto' : '0'}`
+                        }} />
+                      ))}
+                    </div>
+                  </div>
+                  {/* API Code Icon */}
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md animate-bounce">
+                      <svg className="w-8 h-8 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4-4-6 6" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 3h6m-6 0v6" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 3h6m-6 0v6" />
+                      </svg>
+                    </div>
+                    <div className="mt-2 text-center">
+                      <p className="text-sm font-bold text-cyan-600">API Ready</p>
+                      <p className="text-xs text-gray-500">REST & SDK</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
