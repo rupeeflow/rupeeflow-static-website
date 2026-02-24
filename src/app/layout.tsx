@@ -1,10 +1,18 @@
 import type { Metadata } from 'next'
+import { Nunito_Sans } from 'next/font/google'
 
 import './globals.css'
 import Navbar from '@/components/ui/navbar'
 import Footer from '@/components/ui/footer'
 import SmoothScrollProvider from '@/lib/smoothScrollProvider'
 import Marquee from '@/components/sections/MarqueeSection'
+
+const nunitoSans = Nunito_Sans({
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-nunito-sans',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -57,19 +65,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={nunitoSans.variable}>
       <body className="antialiased background-black text-white">
         <SmoothScrollProvider>
           <Navbar />

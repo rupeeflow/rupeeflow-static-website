@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { motion, useMotionValue, useSpring, useTransform, MotionValue } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -150,8 +150,8 @@ function RealisticHeroImage({
   notificationY,
   isMobile,
 }: {
-  notificationX: any
-  notificationY: any
+  notificationX: MotionValue<number>
+  notificationY: MotionValue<number>
   isMobile: boolean
 }) {
   return (

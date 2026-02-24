@@ -9,7 +9,6 @@ import PaymentRoundedStripIcon from '../../../public/icons/payment-link/PaymentR
 import FooterStripIcon from '../../../public/icons/payment-link/FooterStripIcon'
 import IntegrateSection from '@/components/sections/paymentLinks/IntegrateSection'
 import MerchantUseCases from '@/components/sections/paymentLinks/MerchantUseCases'
-import UseCaseTabs from '@/components/ui/UseCaseTabs'
 
 const ImagePlaceholder = ({ size }: { size?: string }) => (
   <div className="text-center text-gray-400">

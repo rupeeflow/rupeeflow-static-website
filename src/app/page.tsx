@@ -1,4 +1,3 @@
-import { Metadata } from 'next'
 import './globals.css'
 import HeroSection from '@/components/sections/Herosection'
 import CollectMoney from '@/components/sections/CollectMoney'
@@ -6,28 +5,14 @@ import MakePayments from '@/components/sections/MakePayments'
 import GetCredit from '@/components/sections/GetCredit'
 import LendingBanner from '@/components/sections/LendingBanner'
 import PartnershipBanner from '@/components/sections/PartnershipBanner'
-
-// import PartnerShip from '@/components/sections/PartnerShip'
-
-// import FuturePayments from '@/components/ui/FuturePayments'
 import ChooseRupeeFlow from '@/components/sections/ChooseRupeeFlow'
-
-import StatsSection from '@/components/sections/StatsSection'
-
 import LanguageSection from '@/components/sections/RegionalLanguage'
-import BuiltForSection from '@/components/sections/BuiltForSection'
 import FaqSection from '@/components/sections/FAQ'
 import BlogSection from '@/components/sections/BlogSection'
 import BusinessBanking from '@/components/sections/BusinessBanking'
 import ChooseBusinessType from '@/components/sections/ChooseBusinessType'
-
 import blogPosts from '@/data/blogPostsHome.json'
-import VisionSection from '@/components/sections/VisionSection'
-
-
-import FeatureSection from '@/components/sections/FeatureSection'
 import faq from '@/data/top-faqs.json'
-import KiranaPromo from '@/components/sections/KiranaPromo'
 import { FAQSchema, OrganizationSchema, WebPageSchema } from '@/components/StructuredData'
 
 export default function HomePage() {
