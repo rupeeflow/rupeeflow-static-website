@@ -8,7 +8,7 @@ import InstantSettlement from '../../../../public/icons/payment-gateway/InstantS
 
 /* ── Stat strip data ── */
 const stats = [
-  { src: '/uptime.svg', text: '99.9% Uptime', isImg: true },
+  { src: '/home/uptime.svg', text: '99.9% Uptime', isImg: true },
   { src: '/speed.svg', text: '< 2 Sec Processing', isImg: true },
   { Icon: InstantSettlement, text: 'Instant Settlement', isImg: false },
   { src: '/support.svg', text: '24/7 Support', isImg: true },
@@ -108,7 +108,7 @@ export default function HeroSection() {
 
       {/* ── 3-D Dashboard + Phone wrapper ── */}
       <div
-        className="absolute bottom-[60px] left-1/2 -translate-x-1/2 z-20"
+        className="absolute bottom-[30px] left-1/2 -translate-x-1/2 z-20"
         style={{ perspective: 1200 }}
       >
         {/* Dashboard — entry animation + scroll-driven tilt */}

@@ -1,7 +1,271 @@
+'use client'
+
 import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import QrSmallIcon from '../../../public/icons/qr-collections/QrSmallIcon'
 import UPIStripIcon from '../../../public/icons/upi-collections/UpiStripIcon'
+import Image from "next/image"
 
+// Animated QR Code Generator Component
+function AnimatedQRGenerator() {
+  return (
+    <motion.div 
+      className="w-full h-full bg-gradient-to-br from-emerald-50 to-cyan-50 rounded-xl p-6 flex flex-col items-center justify-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      {/* QR Code Image */}
+      <motion.div
+        className="w-32 h-32 bg-white rounded-lg shadow-lg mb-4 flex items-center justify-center border-2 border-gray-200"
+        animate={{ scale: [1, 1.02, 1] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <img src="/home/qr-code.png" alt="QR Code" className="w-full h-full object-contain rounded-lg" />
+      </motion.div>
+      
+      {/* Generate Button Animation */}
+      <motion.button
+        className="px-6 py-2 bg-emerald-500 text-white rounded-full text-sm font-semibold"
+        animate={{ scale: [1, 1.05, 1] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        Generate QR
+      </motion.button>
+      
+      {/* Success Message */}
+      <motion.div
+        className="mt-3 text-xs text-green-600 font-medium"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0, 1, 0] }}
+        transition={{ duration: 3, repeat: Infinity }}
+      >
+        ✓ QR Code Generated Successfully!
+      </motion.div>
+    </motion.div>
+  )
+}
+
+// Animated Brand Showcase Component
+function AnimatedBrandShowcase() {
+  return (
+    <motion.div 
+      className="w-full h-full bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 flex flex-col items-center justify-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      {/* Rupeeflow Logo Animation */}
+      <motion.div
+        className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg"
+        animate={{ 
+          scale: [1, 1.1, 1],
+          rotate: [0, 5, -5, 0]
+        }}
+        transition={{ duration: 3, repeat: Infinity }}
+      >
+        <span className="text-white font-bold text-xl">RF</span>
+      </motion.div>
+      
+      {/* QR Code Image with Brand */}
+      <motion.div
+        className="w-32 h-32 bg-white rounded-lg shadow-md mb-4 flex items-center justify-center border-2 border-gray-200"
+        animate={{ y: [0, -5, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <img src="/home/qr-code.png" alt="Branded QR Code" className="w-full h-full object-contain rounded-lg" />
+      </motion.div>
+      
+      <motion.div
+        className="mt-3 text-xs text-gray-600 font-medium"
+        animate={{ opacity: [0.5, 1, 0.5] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        Rupeeflow + QR Code
+      </motion.div>
+    </motion.div>
+  )
+}
+
+// Animated Amount Types Component
+function AnimatedAmountTypes() {
+  const [showFixed, setShowFixed] = useState(true)
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowFixed(prev => !prev)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
+  
+  return (
+    <motion.div 
+      className="w-full h-full bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 flex flex-col items-center justify-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      {/* Amount Display */}
+      <motion.div
+        className="w-32 h-16 bg-white rounded-lg shadow-md flex items-center justify-center mb-4"
+        key={showFixed ? 'fixed' : 'dynamic'}
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <span className="text-2xl font-bold text-gray-800">
+          {showFixed ? '₹499' : '₹____'}
+        </span>
+      </motion.div>
+      
+      {/* QR Code Placeholder */}
+      <motion.div
+        className="w-32 h-32 bg-white rounded-lg shadow-md mb-4 flex items-center justify-center border-2 border-dashed border-gray-400"
+        animate={{ scale: [1, 1.02, 1] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <div className="text-center">
+          <div className="w-16 h-16 bg-gray-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+            <span className="text-2xl text-gray-400">QR</span>
+          </div>
+          <p className="text-xs text-gray-500 font-medium">Amount QR Code</p>
+          <p className="text-xs text-gray-400">(Add your amount QR image)</p>
+        </div>
+      </motion.div>
+      
+      {/* Type Indicator */}
+      <motion.div
+        className="text-xs text-gray-600 font-medium"
+        animate={{ opacity: [0.5, 1, 0.5] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        {showFixed ? 'Fixed Amount' : 'Dynamic Amount'}
+      </motion.div>
+    </motion.div>
+  )
+}
+
+// Animated Dashboard Component
+function AnimatedDashboard() {
+  return (
+    <motion.div 
+      className="w-full h-full bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      {/* Header */}
+      <div className="mb-3">
+        <div className="h-2 bg-gray-300 rounded w-20 mb-2" />
+        <div className="h-1 bg-gray-200 rounded w-16" />
+      </div>
+      
+      {/* Stats Cards */}
+      <div className="grid grid-cols-2 gap-2 mb-3">
+        <motion.div
+          className="bg-white p-2 rounded-lg shadow-sm"
+          animate={{ scale: [1, 1.02, 1] }}
+          transition={{ duration: 2, repeat: Infinity, delay: 0 }}
+        >
+          <div className="text-xs text-green-600 font-bold">₹12,450</div>
+          <div className="text-xs text-gray-500">Today</div>
+        </motion.div>
+        <motion.div
+          className="bg-white p-2 rounded-lg shadow-sm"
+          animate={{ scale: [1, 1.02, 1] }}
+          transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+        >
+          <div className="text-xs text-blue-600 font-bold">45</div>
+          <div className="text-xs text-gray-500">Transactions</div>
+        </motion.div>
+      </div>
+      
+      {/* Chart Animation */}
+      <div className="bg-white p-2 rounded-lg shadow-sm">
+        <div className="flex items-end justify-between h-12">
+          {[40, 60, 30, 80, 50, 70, 45].map((height, i) => (
+            <motion.div
+              key={i}
+              className="w-2 bg-gradient-to-t from-emerald-500 to-emerald-300 rounded-t"
+              initial={{ height: 0 }}
+              animate={{ height: `${height}%` }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            />
+          ))}
+        </div>
+      </div>
+      
+      {/* Live Indicator */}
+      <motion.div
+        className="mt-2 flex items-center gap-1"
+        animate={{ opacity: [0.5, 1, 0.5] }}
+        transition={{ duration: 1.5, repeat: Infinity }}
+      >
+        <div className="w-2 h-2 bg-green-500 rounded-full" />
+        <span className="text-xs text-gray-600">Rupeeflow Live Tracking</span>
+      </motion.div>
+    </motion.div>
+  )
+}
+
+// Animated Security Shield Component
+function AnimatedSecurityShield() {
+  return (
+    <motion.div 
+      className="w-full h-full bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6 flex flex-col items-center justify-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      {/* Shield Animation */}
+      <motion.div
+        className="w-20 h-24 bg-gradient-to-br from-red-500 to-orange-500 rounded-t-full relative mb-4 shadow-lg"
+        animate={{ 
+          scale: [1, 1.05, 1],
+          rotate: [0, 2, -2, 0]
+        }}
+        transition={{ duration: 3, repeat: Infinity }}
+      >
+        {/* Lock Icon */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-8 h-6 bg-white rounded-t-lg relative">
+            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 border-2 border-white rounded-full" />
+            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-red-500 rounded-full" />
+          </div>
+        </div>
+        
+        {/* Rupeeflow Logo */}
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
+          <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+            <span className="text-red-500 font-bold text-xs">RF</span>
+          </div>
+        </div>
+      </motion.div>
+      
+      {/* Encryption Lines */}
+      <div className="flex gap-1 mb-3">
+        {[0, 1, 2, 3, 4].map((i) => (
+          <motion.div
+            key={i}
+            className="w-1 h-4 bg-gradient-to-t from-red-500 to-orange-500 rounded"
+            animate={{ height: [16, 20, 16] }}
+            transition={{ duration: 1, repeat: Infinity, delay: i * 0.1 }}
+          />
+        ))}
+      </div>
+      
+      {/* Security Badge */}
+      <motion.div
+        className="px-3 py-1 bg-white rounded-full shadow-sm"
+        animate={{ opacity: [0.8, 1, 0.8] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <span className="text-xs font-bold text-red-600">Rupeeflow 256-bit SSL</span>
+      </motion.div>
+    </motion.div>
+  )
+}
 export default function QrCodePage() {
   return (
     <div className="w-full relative">
@@ -25,20 +289,20 @@ export default function QrCodePage() {
         </div>
 
         {/* Left QR icons — large + small, positioned at section level */}
-        <div className="absolute left-[3%] md:left-[5%] top-[28%] z-20 pointer-events-none">
+        {/* <div className="absolute left-[3%] md:left-[5%] top-[28%] z-20 pointer-events-none">
           <QrSmallIcon className="w-[120px] md:w-[160px] h-auto opacity-90" />
-        </div>
-        <div className="absolute left-[8%] md:left-[12%] top-[48%] z-20 pointer-events-none">
+        </div> */}
+        {/* <div className="absolute left-[8%] md:left-[12%] top-[48%] z-20 pointer-events-none">
           <QrSmallIcon className="w-[70px] md:w-[100px] h-auto opacity-70" />
-        </div>
+        </div> */}
 
         {/* Right QR icons — large + small, positioned at section level */}
-        <div className="absolute right-[3%] md:right-[5%] top-[28%] z-20 pointer-events-none">
+        {/* <div className="absolute right-[3%] md:right-[5%] top-[28%] z-20 pointer-events-none">
           <QrSmallIcon className="w-[120px] md:w-[160px] h-auto opacity-90" />
         </div>
         <div className="absolute right-[8%] md:right-[12%] top-[48%] z-20 pointer-events-none">
           <QrSmallIcon className="w-[70px] md:w-[100px] h-auto opacity-70" />
-        </div>
+        </div> */}
 
         {/* Content */}
         <div className="relative z-10 max-w-5xl mx-auto text-center pt-48 px-6">
@@ -66,9 +330,11 @@ export default function QrCodePage() {
             </div>
 
             {/* Browser + Phone mockups */}
-            <div className="relative max-w-4xl mr-auto ml-[-2%] md:ml-[2%]">
+            <div className="relative max-w-5xl mr-auto ml-[-10%] md:ml-[9%]">
+
               {/* Browser window — Payment Details (using actual image), shifted left */}
               <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl w-[85%] md:w-[75%]">
+
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/qr-collections/QrCheckout.png"
@@ -319,13 +585,16 @@ export default function QrCodePage() {
 
             {/* Right: Image placeholder */}
             <div className="flex-1 flex justify-center">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/qr code/qr main.png"
-                alt="QR Code Payment Process"
-                className="w-full max-w-[460px] h-auto rounded-2xl"
-              />
-            </div>
+  <div className="relative w-full max-w-[520px] h-[550px]  border border-gray-200 overflow-hidden bg-gray-100">
+    <Image
+      src="/home/Accept-payment-qr.png"
+      alt="placeholder"
+      fill
+      className="fit-contain "
+      sizes="(max-width: 768px) 90vw, 460px"
+    />
+  </div>
+</div>
           </div>
         </div>
       </section>
@@ -392,20 +661,8 @@ export default function QrCodePage() {
                 </Link>
               </div>
               <div className="lg:w-[40%] flex justify-center">
-                <div className="w-full max-w-[340px] h-[260px] bg-white rounded-xl border border-gray-200 flex items-center justify-center shadow-sm">
-                  <svg
-                    className="w-14 h-14 text-gray-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
+                <div className="w-full max-w-[340px] h-[260px]">
+                  <AnimatedQRGenerator />
                 </div>
               </div>
             </div>
@@ -461,20 +718,8 @@ export default function QrCodePage() {
                 </Link>
               </div>
               <div className="lg:w-[40%] flex justify-center">
-                <div className="w-full max-w-[340px] h-[260px] bg-white rounded-xl border border-gray-200 flex items-center justify-center shadow-sm">
-                  <svg
-                    className="w-14 h-14 text-gray-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
+                <div className="w-full max-w-[340px] h-[260px]">
+                  <AnimatedBrandShowcase />
                 </div>
               </div>
             </div>
@@ -536,20 +781,8 @@ export default function QrCodePage() {
                 </Link>
               </div>
               <div className="lg:w-[40%] flex justify-center">
-                <div className="w-full max-w-[340px] h-[260px] bg-white rounded-xl border border-gray-200 flex items-center justify-center shadow-sm">
-                  <svg
-                    className="w-14 h-14 text-gray-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
+                <div className="w-full max-w-[340px] h-[260px]">
+                  <AnimatedAmountTypes />
                 </div>
               </div>
             </div>
@@ -612,20 +845,8 @@ export default function QrCodePage() {
                 </Link>
               </div>
               <div className="lg:w-[40%] flex justify-center">
-                <div className="w-full max-w-[340px] h-[260px] bg-white rounded-xl border border-gray-200 flex items-center justify-center shadow-sm">
-                  <svg
-                    className="w-14 h-14 text-gray-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
+                <div className="w-full max-w-[340px] h-[260px]">
+                  <AnimatedDashboard />
                 </div>
               </div>
             </div>
@@ -681,20 +902,8 @@ export default function QrCodePage() {
                 </Link>
               </div>
               <div className="lg:w-[40%] flex justify-center">
-                <div className="w-full max-w-[340px] h-[260px] bg-white rounded-xl border border-gray-200 flex items-center justify-center shadow-sm">
-                  <svg
-                    className="w-14 h-14 text-gray-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
+                <div className="w-full max-w-[340px] h-[260px]">
+                  <AnimatedSecurityShield />
                 </div>
               </div>
             </div>

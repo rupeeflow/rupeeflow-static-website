@@ -53,7 +53,7 @@ export default function HomePage() {
       
       
       {/* <StatsSection /> */}
-      <LanguageSection />
+      {/* <LanguageSection /> */}
 
       <BlogSection
         title="News and Articles"

@@ -34,14 +34,14 @@ const floatingCards = [
   {
     title: 'Powerful APIs',
     Icon: CodeSnippetsIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>,
-    style: { top: '4%', left: '2%' },
+    style: { top: '24%', left: '2%' },
     floatDuration: 5,
     floatDelay: 0,
   },
   {
     title: 'Security First',
     Icon: SecurityFirstIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>,
-    style: { top: '22%', right: '-2%' },
+    style: { top: '35%', right: '-2%' },
     floatDuration: 5.5,
     floatDelay: 0.8,
   },

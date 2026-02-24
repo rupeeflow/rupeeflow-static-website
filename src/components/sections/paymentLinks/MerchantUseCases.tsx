@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
 import { FileText, GraduationCap, ShoppingBag, ClipboardList, Plane } from 'lucide-react'
-import UseCaseTabs, { type UseCaseTab } from '@/components/ui/UseCaseTabs'
+import UseCaseTabs, { UseCaseTab } from '@/components/ui/UseCaseTabs'
 
 const tabs: UseCaseTab[] = [
   {
@@ -13,12 +13,12 @@ const tabs: UseCaseTab[] = [
       {
         title: 'Invoice Payments',
         description:
-          'Merchants can embed payment links directly into invoices, making it easy for clients to pay outstanding balances with a single click.',
+          'Merchants can embed payment links directly into invoices.',
       },
       {
         title: 'Recurring Payments',
         description:
-          'Payment links are used to set up recurring payments for subscriptions, memberships, or other recurring services.',
+          'Set up recurring payments for subscriptions.',
       },
     ],
   },
@@ -29,14 +29,12 @@ const tabs: UseCaseTab[] = [
     image: '/images/payment-link/WomenHandyPhone.png',
     subItems: [
       {
-        title: 'Schools and Educational Institutions',
-        description:
-          'Streamline tuition and other fee payments by sending unique payment links to students or parents.',
+        title: 'Schools & Institutions',
+        description: 'Collect tuition & fees easily.',
       },
       {
         title: 'Professional Services',
-        description:
-          'Lawyers, accountants, and consultants can use payment links to collect retainers, invoices, or other professional fees.',
+        description: 'Collect retainers & service fees.',
       },
     ],
   },
@@ -48,13 +46,11 @@ const tabs: UseCaseTab[] = [
     subItems: [
       {
         title: 'Direct Sales',
-        description:
-          'Merchants can easily create and share payment links for individual products or services, enabling customers to purchase directly through a simple link.',
+        description: 'Sell products using payment links.',
       },
       {
         title: 'Social Media Sales',
-        description:
-          'Payment links are ideal for merchants selling through platforms like Instagram or Facebook, where customers can easily click and pay without leaving the platform.',
+        description: 'Collect payments via Instagram & Facebook.',
       },
     ],
   },
@@ -66,13 +62,11 @@ const tabs: UseCaseTab[] = [
     subItems: [
       {
         title: 'Event Tickets',
-        description:
-          'Event organizers can use payment links to sell tickets online, providing a convenient and secure payment option.',
+        description: 'Sell tickets online easily.',
       },
       {
-        title: 'Workshop or Class Registration',
-        description:
-          'Payment links can be used to collect registration fees for workshops, classes, or other events.',
+        title: 'Workshop Registration',
+        description: 'Collect workshop & class fees.',
       },
     ],
   },
@@ -83,14 +77,12 @@ const tabs: UseCaseTab[] = [
     image: '/images/payment-link/travel&booking.jpeg',
     subItems: [
       {
-        title: 'Travel Agents and Operators',
-        description:
-          'Use payment links to collect deposits or full payments for travel packages, flights, accommodations, and other travel-related services. This streamlines the booking process and reduces administrative overhead.',
+        title: 'Travel Operators',
+        description: 'Collect travel package payments.',
       },
       {
-        title: 'Accommodation Providers',
-        description:
-          'Hotels, hostels, and other accommodation providers can use payment links to collect booking deposits or full payments directly from guests. This can be integrated into booking confirmation emails or used for last-minute bookings.',
+        title: 'Hotels & Stays',
+        description: 'Collect booking deposits & payments.',
       },
     ],
   },

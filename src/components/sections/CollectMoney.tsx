@@ -127,13 +127,13 @@ export default function CollectMoney() {
                   className="absolute top-0 right-0 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 transition-transform duration-300 ease-in-out group-hover:scale-110"
                 />
 
-                <h3 className="text-white text-lg md:text-xl font-semibold pr-12 transition-colors duration-300 ease-in-out group-hover:text-[#30f3bc]">
-                  {card.title}
-                </h3>
+              <h3 className="text-white text-2xl font-bold">
+                {card.title}
+              </h3>
 
-                <p className="text-gray-400 text-sm mt-2 leading-relaxed pr-2 md:max-w-[85%] transition-colors duration-300 ease-in-out group-hover:text-gray-300">
-                  {card.desc}
-                </p>
+              <p className="text-gray-100 text-sm mt-5 leading-relaxed max-w-[80%]">
+                {card.desc}
+              </p>
 
                 <div className="mt-auto pt-4">
                   <button className="rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium flex items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:bg-gradient-to-r group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black">

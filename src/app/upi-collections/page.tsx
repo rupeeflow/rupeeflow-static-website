@@ -75,17 +75,17 @@ export default function UpiCollectionsPage() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               {[
-                { Icon: GpayIcon, label: 'Google Pay', bg: 'bg-white' },
-                { Icon: PhonePayIcon, label: 'PhonePe', bg: 'bg-white' },
-                { Icon: PaytmIcon, label: 'Paytm', bg: 'bg-white' },
-                { Icon: BhimUPIIcon, label: 'BHIM', bg: 'bg-white' },
-              ].map(({ Icon, label, bg }) => (
+                { Icon: GpayIcon,   },
+                { Icon: PhonePayIcon,   },
+                { Icon: PaytmIcon,  },
+                { Icon: BhimUPIIcon,  },
+              ].map(({ Icon,  }) => (
                 <div
-                  key={label}
-                  className={`flex items-center gap-2 ${bg} rounded-full px-3 py-2 shadow-md`}
+                  key={Icon.name}
+                  className={`flex items-center gap-2  rounded-full px-3 py-2 shadow-md`}
                 >
-                  <Icon className="w-6 h-6" />
-                  <span className="text-xs font-semibold text-gray-700">{label}</span>
+                  <Icon className="w-12 h-12" />
+                  <span className="text-xs font-semibold text-gray-700"></span>
                 </div>
               ))}
             </motion.div>
@@ -261,7 +261,7 @@ export default function UpiCollectionsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                <div className="relative w-full max-w-[440px] h-[400px] rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg">
+                <div className="relative w-full max-w-[480px] h-[500px] rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg">
                   <motion.div
                     className="absolute inset-0"
                     animate={{ scale: [1, 1.03, 1] }}
@@ -344,7 +344,7 @@ export default function UpiCollectionsPage() {
                       alt={card.title}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 48vw"
+                      sizes="(max-width: 468px) 50vw, 18vw"
                     />
                   </motion.div>
                 </div>

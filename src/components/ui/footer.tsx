@@ -84,10 +84,10 @@ export default function Footer() {
 
       {/* ── PRE-FOOTER CTA BAND ── */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 via-emerald-500/10 to-teal-600/20 pointer-events-none" />
+        <div className="absolute inset-0 bg- #86b99bff pointer-events-none" />
         <div className="relative max-w-6xl mx-auto px-6 py-14 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <p className="text-sm text-emerald-400 font-semibold uppercase tracking-widest mb-2">Get Started Today</p>
+            <p className="text-2xl text-black font-bold uppercase tracking-widest mb-2">Get Started Today</p>
             <h2 className="fontheading text-2xl md:text-3xl text-white leading-snug">
               Scale your business with<br className="hidden md:block" />{' '}
               <span className="text-emerald-400">RupeeFlow</span> payments
@@ -102,7 +102,7 @@ export default function Footer() {
             </Link>
             <Link
               href="#"
-              className="px-7 py-3 rounded-full border border-emerald-500/50 text-white font-semibold text-sm hover:bg-emerald-500/10 transition-colors"
+              className="px-7 py-3 rounded-full border border-emerald-500/80 text-white font-bold text-sm hover:bg-emerald-500/10 transition-colors"
             >
               Talk to Expert →
             </Link>
@@ -246,7 +246,7 @@ export default function Footer() {
 function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
   return (
     <div>
-      <h4 className="text-white text-base font-semibold mb-5 tracking-wide">{title}</h4>
+      <h4 className="text-white text-xl font-bold mb-5 tracking-wide">{title}</h4>
       <ul className="space-y-3.5">
         {links.map(({ label, href }) => (
           <li key={label}>

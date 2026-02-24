@@ -1,168 +1,171 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import CodingIcon from '../../../../public/icons/payment-gateway/CodingIcon'
-import EcommpluginIcon from '../../../../public/icons/payment-gateway/EcommPlugin'
-
-const integrations = [
-  { name: 'WooCommerce', color: '#7F54B3', logo: 'WC' },
-  { name: 'Shopify', color: '#95BF46', logo: 'SH' },
-  { name: 'Magento', color: '#EE672F', logo: 'MG' },
-  { name: 'OpenCart', color: '#23AADF', logo: 'OC' },
-]
-
-const steps = [
-  {
-    step: '01',
-    title: 'Copy API Keys',
-    desc: 'Generate keys from the RupeeFlow dashboard in one click.',
-  },
-  {
-    step: '02',
-    title: 'Install SDK',
-    desc: 'npm install, pip install, or use our REST API directly.',
-  },
-  {
-    step: '03',
-    title: 'Go Live',
-    desc: 'Run a test transaction, flip to production and you are live.',
-  },
-]
+import Image from 'next/image'
+import { Code, Globe, Shield, Zap } from 'lucide-react'
+import React from 'react'
 
 export default function Plugins() {
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Heading */}
+
+        {/* Section Heading */}
         <motion.div
           className="text-center"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.6 }}
         >
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-[#f0fdf9] text-[#029789] border border-[#30F3BC] mb-4">
-            Integrations
+          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 mb-4">
+            Developers
           </span>
+
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
-            Ready-made Plugins
+            Built for Teams That
+            <br className="hidden md:block" />
+            <span className="text-emerald-500">Ship Faster</span>
           </h2>
+
           <p className="text-gray-500 mt-3 text-lg max-w-xl mx-auto">
-            Plug into your existing stack in minutes — no complex setup required
+            Integrate payments with predictable APIs, clear workflows,
+            and infrastructure designed for reliability at scale.
           </p>
         </motion.div>
 
-        {/* SDK / Language strip */}
-        <motion.div
-          className="mt-14 w-full rounded-3xl overflow-hidden shadow-lg border border-gray-100"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
-        >
-          <CodingIcon className="w-full h-auto" />
-        </motion.div>
+        {/* Grid */}
+        <div className="mt-16 grid lg:grid-cols-2 gap-12 items-center">
 
-        {/* E-commerce Plugin Image */}
-        <motion.div
-          className="mt-8 w-full rounded-3xl overflow-hidden shadow-lg border border-gray-100"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
-        >
-          <EcommpluginIcon className="w-full h-auto" />
-        </motion.div>
-
-        {/* E-commerce Integrations */}
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {integrations.map((item, i) => (
-            <motion.div
-              key={item.name}
-              className="flex items-center justify-center gap-3 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: 0.3 + i * 0.07, ease: 'easeOut' }}
-              whileHover={{
-                y: -5,
-                boxShadow: '0 16px 40px rgba(48,243,188,0.14)',
-                borderColor: '#30F3BC',
-              }}
-            >
-              <div
-                className="w-9 h-9 rounded-xl flex items-center justify-center text-white text-xs font-extrabold flex-shrink-0"
-                style={{ backgroundColor: item.color }}
-              >
-                {item.logo}
-              </div>
-              <span className="font-semibold text-gray-700 text-sm">{item.name}</span>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Integration Steps */}
-        <div className="mt-14">
-          <motion.h3
-            className="text-center text-2xl font-bold text-gray-900 mb-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          {/* LEFT VISUAL */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
           >
-            Integrate in 3 steps
-          </motion.h3>
+            <div className="relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-6 border border-emerald-200">
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
-            {/* Connector line (desktop only) */}
-            <div className="hidden md:block absolute top-10 left-[16.5%] right-[16.5%] h-0.5 bg-gradient-to-r from-[#30F3BC] via-[#30F3BC] to-[#30F3BC] opacity-30" />
+              <Image
+                src="/home/plugin-girl.png"
+                alt="Developer Integration"
+                width={280}
+                height={320}
+                className="mx-auto rounded-2xl"
+                priority
+              />
 
-            {steps.map((step, i) => (
+              {/* floating badge */}
               <motion.div
-                key={step.step}
-                className="relative bg-white rounded-2xl border border-gray-100 shadow-sm p-7 text-center"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.4 + i * 0.1, ease: 'easeOut' }}
-                whileHover={{
-                  y: -6,
-                  boxShadow: '0 20px 48px rgba(48,243,188,0.15)',
-                  borderColor: '#30F3BC',
-                }}
+                animate={{ y: [0, -8, 0] }}
+                transition={{ repeat: Infinity, duration: 3 }}
+                className="absolute -top-4 -right-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg"
               >
-                <div className="w-14 h-14 bg-[#235065] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <span className="text-[#30F3BC] font-extrabold text-base">{step.step}</span>
-                </div>
-                <h4 className="font-bold text-gray-900 text-base mb-2">{step.title}</h4>
-                <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
+                24/7 Support
               </motion.div>
-            ))}
-          </div>
-        </div>
 
-        {/* CTA */}
-        <motion.div
-          className="mt-12 text-center flex flex-col sm:flex-row gap-4 justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.55, ease: 'easeOut' }}
-        >
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#30F3BC] text-[#235065] font-bold text-sm shadow-lg hover:shadow-xl hover:bg-[#22e0a8] transition-all"
+              {/* stats */}
+              <div className="mt-6 grid grid-cols-2 gap-3">
+                <div className="bg-white rounded-lg p-3 text-center border border-emerald-200">
+                  <div className="text-lg font-bold text-emerald-600">99.9%</div>
+                  <div className="text-xs text-gray-600">Uptime</div>
+                </div>
+                <div className="bg-white rounded-lg p-3 text-center border border-emerald-200">
+                  <div className="text-lg font-bold text-emerald-600">&lt;2s</div>
+                  <div className="text-xs text-gray-600">Response</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* RIGHT CONTENT */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
           >
-            View Documentation
-          </a>
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-[#235065] text-[#235065] font-bold text-sm hover:bg-[#235065] hover:text-white transition-all"
-          >
-            Start Free Trial
-          </a>
-        </motion.div>
+            <div className="max-w-xl">
+
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                Designed for Real Engineering Workflows
+              </h3>
+
+              <p className="text-gray-600 mt-4 text-lg">
+                From first API call to production traffic, everything is built
+                to reduce surprises, shorten debugging time, and keep systems stable.
+              </p>
+
+              {/* Feature Rows */}
+              <div className="mt-10 space-y-8">
+
+                <FeatureRow
+                  icon={<Code />}
+                  title="Clean Integrations That Stay Maintainable"
+                  desc="Consistent request patterns and predictable responses keep your codebase easy to extend and refactor."
+                />
+
+                <FeatureRow
+                  icon={<Zap />}
+                  title="Performance That Holds Under Load"
+                  desc="Optimized processing and resilient infrastructure ensure stable transaction flow during peak demand."
+                />
+
+                <FeatureRow
+                  icon={<Globe />}
+                  title="Docs Focused on Real Implementation"
+                  desc="Concrete examples, payload references, and error insights help teams debug faster and deploy sooner."
+                />
+
+                <FeatureRow
+                  icon={<Shield />}
+                  title="Test Flows Before Production Traffic"
+                  desc="Validate logic and edge cases in a safe environment that mirrors real payment behavior."
+                />
+
+              </div>
+
+              {/* CTA */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-12 flex items-center gap-3 border-2 border-emerald-500 text-emerald-600 font-semibold px-7 py-3 rounded-xl hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-sm"
+              >
+                Start Building →
+              </motion.button>
+
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
+  )
+}
+
+
+/* Feature Row Component */
+
+type FeatureRowProps = {
+  icon: React.ReactNode
+  title: string
+  desc: string
+}
+
+function FeatureRow({ icon, title, desc }: FeatureRowProps) {
+  return (
+    <div className="flex gap-4">
+      <div className="flex-shrink-0 w-12 h-12 rounded-full border-2 border-emerald-500 flex items-center justify-center text-emerald-600">
+        {icon}
+      </div>
+      <div>
+        <h4 className="text-xl font-semibold text-gray-900">
+          {title}
+        </h4>
+        <p className="text-gray-600 mt-1">
+          {desc}
+        </p>
+      </div>
+    </div>
   )
 }

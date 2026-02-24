@@ -338,7 +338,7 @@ export default function VendorPaymentPage() {
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
             >
               <Image
-                src="/images/vendor-payments/vendorHero.jpeg"
+                src="/images/vendor-payments/vendorHeroo.jpeg"
                 alt="Vendor Payments Dashboard"
                 width={560}
                 height={480}
@@ -356,6 +356,7 @@ export default function VendorPaymentPage() {
       <section className="relative py-24 bg-white overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
             {/* Left: Man holding laptop image */}
             <motion.div
               className="flex-1 flex justify-center"

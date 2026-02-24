@@ -139,13 +139,13 @@ function ShareWithMockup() {
 
 /* ── Card 3: Payment Options ── */
 const payBrands = [
-  { label: 'VISA',    bg: '#1A1F71', fg: '#FFD700' },
-  { label: 'Airtel',  bg: '#EC3237', fg: 'white'   },
-  { label: 'HDFC',    bg: '#003087', fg: '#FFD700' },
-  { label: 'Maestro', bg: '#CC0000', fg: 'white'   },
-  { label: 'RuPay',   bg: '#1A4FA0', fg: '#FF8C00' },
-  { label: 'Paytm',   bg: '#00BAF2', fg: 'white'   },
-  { label: 'Simpl',   bg: '#00C2B2', fg: 'white'   },
+  { label: 'LOGO1', bg: '#f3f4f6', fg: '#6b7280' },
+  { label: 'LOGO2', bg: '#f3f4f6', fg: '#6b7280' },
+  { label: 'LOGO3', bg: '#f3f4f6', fg: '#6b7280' },
+  { label: 'LOGO4', bg: '#f3f4f6', fg: '#6b7280' },
+  { label: 'LOGO5', bg: '#f3f4f6', fg: '#6b7280' },
+  { label: 'LOGO6', bg: '#f3f4f6', fg: '#6b7280' },
+  { label: 'LOGO7', bg: '#f3f4f6', fg: '#6b7280' },
 ]
 
 function PaymentOptionsMockup() {
@@ -353,10 +353,8 @@ export default function PaymentLinksPage() {
               No-code payment collection
             </motion.span>
 
-            <h1 className="fontheading text-4xl sm:text-5xl lg:text-[3.5rem] leading-tight text-white">
-              Accept Payments
-              <br />
-              Instantly with{' '}
+            <h1 className="fontheading text-2xl sm:text-3xl lg:text-[2.6rem] leading-tight text-white">
+              Accept Payments Instantly with{' '}
               <span className="text-emerald-400">Payment Links</span>
             </h1>
 
@@ -407,8 +405,9 @@ export default function PaymentLinksPage() {
           </motion.div>
 
           {/* RIGHT — banner image */}
+
           <motion.div
-            className="flex-1 flex justify-center lg:justify-end relative"
+            className="flex-1  w-full justify-center "
             initial={{ opacity: 0, x: 60, scale: 0.94 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
