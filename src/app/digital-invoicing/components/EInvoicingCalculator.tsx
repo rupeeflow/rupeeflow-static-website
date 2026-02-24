@@ -51,7 +51,7 @@ export default function EInvoicingCalculator() {
             </span>
           </h2>
           <p className="fontbody2 text-lg text-gray-600 max-w-2xl mx-auto">
-            See how much time and money you'll save with automated e-invoicing
+            See how much time and money you&apos;ll save with automated e-invoicing
           </p>
         </motion.div>
 

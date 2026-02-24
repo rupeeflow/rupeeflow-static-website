@@ -143,28 +143,28 @@ export default function VendorManagementCalculator() {
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Monthly Discount Savings</p>
                     <p className="text-4xl font-bold text-emerald-600">
-                      <AnimatedCounter end={results.discountsAvailable} prefix="₹" />
+                      <AnimatedCounter value={results.discountsAvailable} prefix="₹" />
                     </p>
                   </div>
 
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Vendor Relationship Score</p>
                     <p className="text-4xl font-bold text-emerald-600">
-                      <AnimatedCounter end={results.relationshipScore} suffix="/100" />
+                      <AnimatedCounter value={results.relationshipScore} suffix="/100" />
                     </p>
                   </div>
 
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Payment Accuracy</p>
                     <p className="text-4xl font-bold text-emerald-600">
-                      <AnimatedCounter end={results.paymentAccuracy} suffix="%" />
+                      <AnimatedCounter value={results.paymentAccuracy} suffix="%" />
                     </p>
                   </div>
 
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Time Saved (hours/month)</p>
                     <p className="text-4xl font-bold text-emerald-600">
-                      <AnimatedCounter end={results.timeSaved} suffix=" hrs" />
+                      <AnimatedCounter value={results.timeSaved} suffix=" hrs" />
                     </p>
                   </div>
                 </div>

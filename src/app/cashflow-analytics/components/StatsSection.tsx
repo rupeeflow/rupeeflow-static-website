@@ -26,7 +26,7 @@ export default function StatsSection() {
           {stats.map((stat, index) => (
             <motion.div key={index} variants={staggerItem} className="text-center">
               <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2">
-                <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
               <p className="fontbody2 text-gray-300 text-lg">{stat.label}</p>
             </motion.div>

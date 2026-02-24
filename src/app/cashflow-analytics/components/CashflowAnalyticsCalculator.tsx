@@ -89,19 +89,19 @@ export default function CashflowAnalyticsCalculator() {
                 <div className="space-y-6">
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Net Monthly Cashflow</p>
-                    <p className="text-4xl font-bold text-emerald-600"><AnimatedCounter end={results.netCashflow} prefix="₹" /></p>
+                    <p className="text-4xl font-bold text-emerald-600"><AnimatedCounter value={results.netCashflow} prefix="₹" /></p>
                   </div>
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Cash Runway</p>
-                    <p className="text-4xl font-bold text-emerald-600"><AnimatedCounter end={results.runwayDays} suffix=" days" /></p>
+                    <p className="text-4xl font-bold text-emerald-600"><AnimatedCounter value={results.runwayDays} suffix=" days" /></p>
                   </div>
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Liquidity Score</p>
-                    <p className="text-4xl font-bold text-emerald-600"><AnimatedCounter end={results.liquidityScore} suffix="/100" /></p>
+                    <p className="text-4xl font-bold text-emerald-600"><AnimatedCounter value={results.liquidityScore} suffix="/100" /></p>
                   </div>
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Risk Alerts</p>
-                    <p className="text-4xl font-bold text-emerald-600"><AnimatedCounter end={results.riskAlerts} /></p>
+                    <p className="text-4xl font-bold text-emerald-600"><AnimatedCounter value={results.riskAlerts} /></p>
                   </div>
                 </div>
               ) : (

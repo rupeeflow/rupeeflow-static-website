@@ -13,12 +13,11 @@ import BusinessBanking from '@/components/sections/BusinessBanking'
 import ChooseBusinessType from '@/components/sections/ChooseBusinessType'
 import blogPosts from '@/data/blogPostsHome.json'
 import faq from '@/data/top-faqs.json'
-import { FAQSchema, OrganizationSchema, WebPageSchema } from '@/components/StructuredData'
+import { FAQSchema, WebPageSchema } from '@/components/StructuredData'
 
 export default function HomePage() {
   return (
     <div className="w-full relative">
-      <OrganizationSchema />
       <WebPageSchema
         title="RupeeFlow - Modern UPI Payment Infrastructure for India"
         description="Enterprise-grade UPI payment solutions, digital banking APIs, AEPS, DMT, IMPS, and NEFT services"

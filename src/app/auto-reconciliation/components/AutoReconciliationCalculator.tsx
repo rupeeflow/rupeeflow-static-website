@@ -145,28 +145,28 @@ export default function AutoReconciliationCalculator() {
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Time Saved Per Month</p>
                     <p className="text-4xl font-bold text-emerald-600">
-                      <AnimatedCounter end={results.timeSaved} suffix=" hrs" />
+                      <AnimatedCounter value={results.timeSaved} suffix=" hrs" />
                     </p>
                   </div>
 
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Monthly Cost Savings</p>
                     <p className="text-4xl font-bold text-emerald-600">
-                      <AnimatedCounter end={results.costSavings} prefix="₹" />
+                      <AnimatedCounter value={results.costSavings} prefix="₹" />
                     </p>
                   </div>
 
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Accuracy Improvement</p>
                     <p className="text-4xl font-bold text-emerald-600">
-                      <AnimatedCounter end={results.accuracyImprovement} suffix="%" />
+                      <AnimatedCounter value={results.accuracyImprovement} suffix="%" />
                     </p>
                   </div>
 
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Monthly ROI</p>
                     <p className="text-4xl font-bold text-emerald-600">
-                      <AnimatedCounter end={results.monthlyROI} suffix="%" />
+                      <AnimatedCounter value={results.monthlyROI} suffix="%" />
                     </p>
                   </div>
                 </div>

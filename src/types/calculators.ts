@@ -114,7 +114,7 @@ export interface CashflowAnalyticsResult {
 // Generic calculator state wrapper
 export interface CalculatorState<T> {
   inputs: T;
-  result: any | null;
+  result: Record<string, unknown> | null;
   isCalculating: boolean;
   error: string | null;
 }

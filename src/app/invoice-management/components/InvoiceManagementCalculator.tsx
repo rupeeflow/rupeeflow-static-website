@@ -144,28 +144,28 @@ export default function InvoiceManagementCalculator() {
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Approval Time Reduction</p>
                     <p className="text-4xl font-bold text-emerald-600">
-                      <AnimatedCounter end={results.approvalTimeReduction} suffix=" days" />
+                      <AnimatedCounter value={results.approvalTimeReduction} suffix=" days" />
                     </p>
                   </div>
 
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Processing Speed Increase</p>
                     <p className="text-4xl font-bold text-emerald-600">
-                      <AnimatedCounter end={results.processingSpeedUp} suffix="%" />
+                      <AnimatedCounter value={results.processingSpeedUp} suffix="%" />
                     </p>
                   </div>
 
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Visibility Score</p>
                     <p className="text-4xl font-bold text-emerald-600">
-                      <AnimatedCounter end={results.visibilityScore} suffix="%" />
+                      <AnimatedCounter value={results.visibilityScore} suffix="%" />
                     </p>
                   </div>
 
                   <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Compliance Score</p>
                     <p className="text-4xl font-bold text-emerald-600">
-                      <AnimatedCounter end={results.complianceScore} suffix="%" />
+                      <AnimatedCounter value={results.complianceScore} suffix="%" />
                     </p>
                   </div>
                 </div>
