@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import FAQAccordion from '@/components/ui/FAQAccordion'
+import { paymentButtonFAQs } from '@/data/faqs'
 import PaymentButtonRoundedStripIcon from '../../../public/icons/payment-button/PaymentButtonRoundedStrip'
 import CreatePaymentButton from '../../../public/icons/payment-button/CreateButtonIcon'
 import CopyButtonIcon from '../../../public/icons/payment-button/CopyButtonIcon'
@@ -601,6 +603,7 @@ export default function PaymentButtonPage() {
             </div>
           </div>
         </section>
+        <FAQAccordion faqs={paymentButtonFAQs} subtitle="Everything you need to know about RupeeFlow Payment Button." />
       </div>
     </div>
   )

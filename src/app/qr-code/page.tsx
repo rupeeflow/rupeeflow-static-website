@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import FAQAccordion from '@/components/ui/FAQAccordion'
+import { qrCodeFAQs } from '@/data/faqs'
 import QrSmallIcon from '../../../public/icons/qr-collections/QrSmallIcon'
 import UPIStripIcon from '../../../public/icons/upi-collections/UpiStripIcon'
 import Image from "next/image"
@@ -1020,6 +1022,7 @@ export default function QrCodePage() {
           </div>
         </div>
       </section>
+      <FAQAccordion faqs={qrCodeFAQs} subtitle="Everything you need to know about RupeeFlow QR Code Payments." />
     </div>
   )
 }

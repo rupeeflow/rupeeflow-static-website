@@ -62,7 +62,7 @@ export default function ChooseBusinessType() {
         <div className="grid grid-cols-2 gap-10">
 
           {businessCards.map((card, i) => (
-            
+
     <div
   key={i}
   className={`relative rounded-[22px] border p-10 min-h-[260px]

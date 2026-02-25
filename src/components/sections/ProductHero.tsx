@@ -29,13 +29,13 @@ const ProductHero = () => {
       >
         <motion.h1
           variants={content}
-          className="text-3xl md:text-4xl  mb-6 leading-[1] mt-30"
+          className="rf-h1 text-white mb-6 mt-30"
         >
           Innovative UPI Solutions for Every User, Business & NRI
         </motion.h1>
         <motion.p
           variants={content}
-          className="text-gray-400 text-[1rem]  font-regular md:text-md max-w-3xl mx-auto fontbody2"
+          className="rf-lead text-gray-400 max-w-3xl mx-auto"
         >
           From AI-powered bill management to global UPI transfers, RupeeFlow is
           redefining how India pays, saves, and manages finances — all through

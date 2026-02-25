@@ -47,7 +47,7 @@ export default function StatsSection() {
 
         {/* Right content area */}
         <div className="flex-1 text-center lg:text-left">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl fontheading2 text-gray-900 mb-10">
+          <h2 className="rf-h2 text-gray-900 mb-10">
             Trusted by Thousands, Growing Every Day
           </h2>
 
@@ -64,10 +64,10 @@ export default function StatsSection() {
                 variants={cardVariants}
                 className="bg-white shadow-md rounded-2xl py-10 flex flex-col items-center justify-center"
               >
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h3 className="rf-h2 text-gray-900">
                   {stat.value}
                 </h3>
-                <p className="text-gray-500 text-sm md:text-base mt-2 text-center px-3">
+                <p className="rf-caption text-gray-500 mt-2 text-center px-3">
                   {stat.label}
                 </p>
               </motion.div>

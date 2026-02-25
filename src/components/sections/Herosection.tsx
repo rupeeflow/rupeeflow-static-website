@@ -73,7 +73,7 @@ export default function Hero() {
         </div>
 
         {/* Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-[#ffffff] font-bold leading-tight text-center max-w-5xl opacity-0 animate-fade-in-up px-4">
+        <h1 className="rf-h1 text-[#ffffff] text-center max-w-5xl opacity-0 animate-fade-in-up px-4">
           India&apos;s{' '}
           <span className="text-[#30f3bc]">Complete Financial</span>
           <br />
@@ -81,7 +81,7 @@ export default function Hero() {
         </h1>
 
         {/* Subtext */}
-        <p className="mt-4 sm:mt-6 text-gray-400 text-sm sm:text-base lg:text-lg text-center max-w-3xl opacity-0 animate-fade-in-up-delayed px-4">
+        <p className="mt-4 sm:mt-6 rf-lead text-gray-400 text-center max-w-3xl opacity-0 animate-fade-in-up-delayed px-4">
           Accept payments, Make payouts. Get instant credit – All In One App
         </p>
 
@@ -135,10 +135,10 @@ export default function Hero() {
           <div className="group relative overflow-hidden border border-[#029789]/30 bg-gradient-to-br from-[#020506]/80 to-[#029789]/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-1">
             <div className="absolute inset-0 bg-gradient-to-br from-[#30f3bc]/0 to-[#30f3bc]/0 group-hover:from-[#30f3bc]/5 group-hover:to-[#029789]/5 transition-all duration-500" />
             <div className="relative">
-              <h3 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#ffffff] to-[#30f3bc] bg-clip-text text-transparent">
+              <h3 className="rf-h2 bg-gradient-to-r from-[#ffffff] to-[#30f3bc] bg-clip-text text-transparent">
                 100K+
               </h3>
-              <p className="text-gray-400 mt-2 sm:mt-3 text-xs sm:text-sm">
+              <p className="rf-caption text-gray-400 mt-2 sm:mt-3">
                 Businesses Onboard
               </p>
             </div>
@@ -147,10 +147,10 @@ export default function Hero() {
           <div className="group relative overflow-hidden border border-[#029789]/30 bg-gradient-to-br from-[#020506]/80 to-[#029789]/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-2 sm:col-span-2 md:col-span-1">
             <div className="absolute inset-0 bg-gradient-to-br from-[#30f3bc]/0 to-[#30f3bc]/0 group-hover:from-[#30f3bc]/5 group-hover:to-[#029789]/5 transition-all duration-500" />
             <div className="relative">
-              <h3 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#ffffff] to-[#30f3bc] bg-clip-text text-transparent">
+              <h3 className="rf-h2 bg-gradient-to-r from-[#ffffff] to-[#30f3bc] bg-clip-text text-transparent">
                 150 Cr+
               </h3>
-              <p className="text-gray-400 mt-2 sm:mt-3 text-xs sm:text-sm">
+              <p className="rf-caption text-gray-400 mt-2 sm:mt-3">
                 Credit Disbursed
               </p>
             </div>
@@ -159,10 +159,10 @@ export default function Hero() {
           <div className="group relative overflow-hidden border border-[#029789]/30 bg-gradient-to-br from-[#020506]/80 to-[#029789]/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-3 sm:col-span-2 md:col-span-1">
             <div className="absolute inset-0 bg-gradient-to-br from-[#30f3bc]/0 to-[#30f3bc]/0 group-hover:from-[#30f3bc]/5 group-hover:to-[#029789]/5 transition-all duration-500" />
             <div className="relative">
-              <h3 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#ffffff] to-[#30f3bc] bg-clip-text text-transparent">
+              <h3 className="rf-h2 bg-gradient-to-r from-[#ffffff] to-[#30f3bc] bg-clip-text text-transparent">
                 50+
               </h3>
-              <p className="text-gray-400 mt-2 sm:mt-3 text-xs sm:text-sm">
+              <p className="rf-caption text-gray-400 mt-2 sm:mt-3">
                 Partnerships
               </p>
             </div>

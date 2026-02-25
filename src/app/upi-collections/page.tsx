@@ -3,6 +3,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import FAQAccordion from '@/components/ui/FAQAccordion'
+import { upiCollectionsFAQs } from '@/data/faqs'
 import GpayIcon from '../../../public/icons/upi-collections/GpayIcon'
 import PhonePayIcon from '../../../public/icons/upi-collections/PhonePayIcon'
 import PaytmIcon from '../../../public/icons/upi-collections/PaytmIcon'
@@ -380,6 +382,7 @@ export default function UpiCollectionsPage() {
 
       {/* ── POWERFUL UPI PAYMENT SOLUTIONS (Sticky Stacking) ── */}
       <UpiSolutionsStack />
+      <FAQAccordion faqs={upiCollectionsFAQs} subtitle="Everything you need to know about RupeeFlow UPI Collections." />
     </div>
   )
 }

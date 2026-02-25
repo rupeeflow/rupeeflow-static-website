@@ -1,296 +1,229 @@
 import Container from "@/components/ui/Container"
 import MainCTA from "@/components/ui/mainCTA"
-import CardFAQ from "@/components/sections/CardFAQ"
-import Image from "next/image"
+import FAQAccordion from "@/components/ui/FAQAccordion"
 import PartnershipBenefits from "@/components/sections/PartnershipBenefits"
-
-
+import { bankingPartnershipFAQs } from "@/data/faqs"
 import {
   Banknote,
-  ShieldCheck,
-  Network,
-  TrendingUp,
-  Globe,
   Layers,
   CheckCircle2,
+  RefreshCcw,
+  BarChart3,
+  CreditCard,
+  Zap,
 } from "lucide-react"
 
-const bankingFAQs = [
-  {
-    question: "What type of banks can partner with us?",
-    answer:
-      "We collaborate with commercial banks, NBFCs, neo-banks, and regulated financial institutions looking to expand digital payment capabilities.",
-  },
-  {
-    question: "How does integration work?",
-    answer:
-      "Our API-first infrastructure enables fast integration with your core banking systems, enabling seamless deployment of payment and expense solutions.",
-  },
-  {
-    question: "Is the platform compliant and secure?",
-    answer:
-      "Yes. Our infrastructure follows RBI guidelines, data encryption standards, and enterprise-grade fraud protection protocols.",
-  },
-  {
-    question: "What revenue opportunities exist for partner banks?",
-    answer:
-      "Banks can generate new revenue through payment processing, float management, lending enablement, and value-added financial services.",
-  },
-  {
-    question: "Can we customize solutions for our customers?",
-    answer:
-      "Yes. Solutions can be white-labeled and tailored to meet your customer segments and product strategy.",
-  },
-  {
-    question: "How long does onboarding take?",
-    answer:
-      "Most banking partners go live within a few weeks depending on integration scope and compliance approvals.",
-  },
+
+const solutions = [
+  { icon: CreditCard, title: "Expense & Corporate Card Management" },
+  { icon: Zap, title: "Digital Payment Orchestration" },
+  { icon: Banknote, title: "Vendor & Supplier Payouts" },
+  { icon: RefreshCcw, title: "Cashflow & Reconciliation Automation" },
+  { icon: Layers, title: "Embedded Finance & Lending Enablement" },
+  { icon: BarChart3, title: "Advanced Analytics & Risk Monitoring" },
+]
+
+const heroStats = [
+  { value: "99.9%", label: "Platform Uptime" },
+  { value: "RBI", label: "Compliant" },
+  { value: "50+", label: "API Endpoints" },
+  { value: "<50ms", label: "Avg Response" },
 ]
 
 export default function BankingPartnershipsPage() {
   return (
     <>
-      {/* HERO */}
-      <section className="py-24 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
+      {/* ── HERO ── */}
+      <section className="py-24 bg-gradient-to-b from-[#060D0A] to-[#0C1F18]">
         <Container>
           <div className="grid md:grid-cols-2 gap-16 items-center">
 
+            {/* LEFT */}
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+              <span className="inline-block text-emerald-400 rf-label mb-4 border border-emerald-400/30 rounded-full px-4 py-1">
+                Banking Partnerships
+              </span>
+
+              <h1 className="rf-h1 text-white leading-tight mt-2">
                 Banking{" "}
                 <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                   Partnerships
                 </span>
               </h1>
 
-              <p className="text-gray-300 mt-6 text-lg leading-relaxed">
+              <p className="rf-lead text-gray-300 mt-6 max-w-lg">
                 Empower your customers with next-generation payment infrastructure,
                 embedded finance capabilities, and secure digital banking tools.
               </p>
 
-              <ul className="mt-8 space-y-4">
+              <ul className="mt-8 space-y-3">
                 {[
                   "Expand digital banking capabilities",
                   "Launch payment & expense solutions",
                   "Unlock new revenue streams",
                   "Deliver secure & compliant infrastructure",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-gray-300">
-                    <CheckCircle2 className="text-emerald-400" size={15} />
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 rf-body text-gray-300">
+                    <CheckCircle2 className="text-emerald-400 shrink-0" size={16} />
                     {item}
                   </li>
                 ))}
               </ul>
 
               <div className="mt-10">
-                <MainCTA label="Become  Partner" destination="/contact" />
-              </div>
-            </div>
-
-            {/* HERO IMAGE */}
-            <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
-              <Image
-                src="/placeholder-bank.jpg"
-                alt="Banking partnership preview"
-                width={700}
-                height={500}
-                className="object-cover w-full h-full"
-              />
-            </div>
-
-          </div>
-        </Container>
-      </section>
-
-
-
-      
-      {/* SOLUTION PANEL */}
-<section className="py-24 bg-[#0F0F0F]">
-  <Container>
-    <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-12 overflow-hidden">
-
-      {/* subtle glow */}
-      <div className="absolute inset-0 bg-radial-emerald-soft opacity-10 pointer-events-none" />
-
-      <h2 className="text-3xl md:text-4xl font-semibold text-white">
-        Unified Infrastructure {" "}
-        <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
-          for Modern Banks
-        </span>
-      </h2>
-
-      <p className="text-gray-300 mt-4 max-w-2xl leading-relaxed">
-        Deploy a full-stack financial ecosystem built for speed, compliance,
-        and scalability — designed for next-generation banking experiences.
-      </p>
-
-     <div className="grid md:grid-cols-2 gap-6 mt-12">
-  {[
-    {
-      title: "Expense & corporate card management",
-      img: "/placeholders/cards.png",
-    },
-    {
-      title: "Digital payment orchestration",
-      img: "/placeholders/payments.png",
-    },
-    {
-      title: "Vendor & supplier payouts",
-      img: "/placeholders/payouts.png",
-    },
-    {
-      title: "Cashflow & reconciliation automation",
-      img: "/placeholders/reconciliation.png",
-    },
-    {
-      title: "Embedded finance & lending enablement",
-      img: "/placeholders/embedded.png",
-    },
-    {
-      title: "Advanced analytics & risk monitoring",
-      img: "/placeholders/analytics.png",
-    },
-  ].map((item, i) => (
-    <div
-      key={i}
-      className="flex items-center justify-between gap-6
-      bg-white/5 border border-white/10 rounded-2xl
-      p-6 md:p-8
-      hover:border-emerald-400/40
-      hover:shadow-[0_0_25px_rgba(0,239,100,0.15)]
-      transition duration-300"
-    >
-      {/* LEFT TEXT */}
-      <div className="flex items-start gap-3 max-w-xs">
-        <CheckCircle2 size={20} className="text-emerald-400 mt-1" />
-        <p className="text-gray-200 leading-relaxed">
-          {item.title}
-        </p>
-      </div>
-
-      {/* RIGHT IMAGE PLACEHOLDER */}
-      <div className="w-44 h-26 rounded-lg bg-gradient-to-br from-white/10 to-transparent border border-white/10 flex items-center justify-center text-xs text-gray-500">
-        Image
-      </div>
-    </div>
-  ))}
-</div>
-
-
-      <div className="mt-12">
-        <MainCTA
-          label="Explore Integration "
-          destination="/contact"
-        />
-      </div>
-    </div>
-  </Container>
-</section>
-
-     <PartnershipBenefits />
-
-
-      {/* PARTNERSHIP STEPS */}
-     <section className="relative py-28 overflow-hidden">
-
-  {/* 🔹 BACKGROUND IMAGE PLACEHOLDER */}
-  <div className="absolute inset-0">
-    <Image
-      src="/placeholder-partnership-bg.jpg"
-      alt="partnership background"
-      fill
-      className="object-cover opacity-20"
-    />
-  </div>
-
-  {/* 🔹 DARK OVERLAY for readability */}
-  <div className="absolute inset-0 bg-gradient-to-b from-[#0F0F0F]/90 to-[#0C1F18]/95" />
-
-  <Container className="relative z-10">
-
-    {/* TITLE */}
-    <h2 className="text-4xl text-center font-semibold text-white">
-      Partnership Journey
-    </h2>
-
-    {/* STEPS */}
-    <div className="grid md:grid-cols-3 gap-8 mt-14">
-      {[
-        {
-          title: "Connect & Discover",
-          desc: "Discuss strategic goals and integration scope with our partnerships team.",
-        },
-        {
-          title: "Customize & Integrate",
-          desc: "Deploy APIs and tailor financial solutions for your customer segments.",
-        },
-        {
-          title: "Launch & Scale",
-          desc: "Go live and grow adoption with co-marketing and ongoing support.",
-        },
-      ].map((item, i) => (
-        <div
-          key={i}
-          className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl
-          hover:border-emerald-400/40 transition duration-300"
-        >
-          <p className="text-emerald-400 text-sm font-semibold">
-            Step {i + 1}
-          </p>
-
-          <h3 className="text-white text-xl mt-2 font-semibold">
-            {item.title}
-          </h3>
-
-          <p className="text-gray-400 mt-3">
-            {item.desc}
-          </p>
-        </div>
-      ))}
-    </div>
-
-    {/* ✅ BUTTON */}
-    <div className="text-center mt-14">
-      <MainCTA
-        label="Start Partnership Discussion"
-        destination="/contact"
-      />
-    </div>
-
-  </Container>
-</section>
-
-
-      {/* CTA BANNER */}
-      <section className="py-20">
-        <Container>
-          <div className="relative rounded-3xl overflow-hidden border border-white/10">
-            <Image
-              src="/placeholder-partner.jpg"
-              alt="Partner success"
-              width={1200}
-              height={400}
-              className="object-cover w-full h-full opacity-60"
-            />
-            <div className="absolute inset-0 flex flex-col justify-center p-10 bg-black/40">
-              <h3 className="text-3xl text-white font-semibold">
-                Build the future of digital banking
-              </h3>
-              <p className="text-gray-300 mt-2">
-                Partner with us to deliver secure, scalable financial innovation.
-              </p>
-              <div className="mt-6">
                 <MainCTA label="Become a Partner" destination="/contact" />
               </div>
             </div>
+
+            {/* RIGHT — stats visual */}
+            <div className="relative hidden md:flex flex-col gap-4">
+              {/* API pill */}
+              <div className="self-end bg-[#0F2419] border border-emerald-500/30 rounded-2xl px-5 py-3 flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="rf-caption text-emerald-300 font-mono">POST /v1/payments/create</span>
+                <span className="bg-emerald-500/20 text-emerald-400 rf-caption px-2 py-0.5 rounded-full">200 OK</span>
+              </div>
+
+              {/* Stats grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {heroStats.map(({ value, label }) => (
+                  <div
+                    key={label}
+                    className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-1 hover:border-emerald-400/30 transition duration-300"
+                  >
+                    <p className="rf-h2 text-white font-bold">{value}</p>
+                    <p className="rf-caption text-gray-400">{label}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Compliance badges */}
+              <div className="flex flex-wrap gap-2 mt-1">
+                {["PCI DSS", "ISO 27001", "RBI Licensed", "NPCI Certified"].map((b) => (
+                  <span
+                    key={b}
+                    className="flex items-center gap-1.5 bg-white/5 border border-white/10 text-gray-300 rf-caption rounded-full px-3 py-1"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    {b}
+                  </span>
+                ))}
+              </div>
+            </div>
+
           </div>
         </Container>
       </section>
 
-      {/* FAQ */}
-      <CardFAQ faqs={bankingFAQs} />
+      {/* ── SOLUTION PANEL ── */}
+      <section className="py-24 bg-[#0A0F0D]">
+        <Container>
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <h2 className="rf-h2 text-white">
+              Unified Infrastructure{" "}
+              <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
+                for Modern Banks
+              </span>
+            </h2>
+            <p className="rf-lead text-gray-400 mt-4">
+              Deploy a full-stack financial ecosystem built for speed, compliance,
+              and scalability — designed for next-generation banking experiences.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {solutions.map(({ icon: Icon, title }) => (
+              <div
+                key={title}
+                className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6
+                  hover:border-emerald-400/40 hover:shadow-[0_0_25px_rgba(0,239,100,0.1)]
+                  transition duration-300 group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center shrink-0 group-hover:bg-emerald-500/25 transition duration-300">
+                  <Icon size={20} className="text-emerald-400" />
+                </div>
+                <p className="rf-body text-gray-200 leading-snug mt-1">{title}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <MainCTA label="Explore Integration" destination="/contact" />
+          </div>
+        </Container>
+      </section>
+
+      {/* ── WHY PARTNER ── */}
+      <PartnershipBenefits />
+
+      {/* ── PARTNERSHIP JOURNEY ── */}
+      <section className="py-24 bg-[#0A0F0D]">
+        <Container>
+          <div className="text-center mb-14">
+            <h2 className="rf-h2 text-white">Partnership Journey</h2>
+            <p className="rf-lead text-gray-400 mt-4 max-w-xl mx-auto">
+              A structured process designed for fast time-to-value and long-term growth.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                step: "01",
+                title: "Connect & Discover",
+                desc: "Discuss strategic goals and integration scope with our partnerships team.",
+              },
+              {
+                step: "02",
+                title: "Customize & Integrate",
+                desc: "Deploy APIs and tailor financial solutions for your customer segments.",
+              },
+              {
+                step: "03",
+                title: "Launch & Scale",
+                desc: "Go live and grow adoption with co-marketing and ongoing support.",
+              },
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="relative bg-white/5 border border-white/10 rounded-2xl p-8
+                  hover:border-emerald-400/40 hover:shadow-[0_0_30px_rgba(0,239,100,0.1)]
+                  transition duration-300"
+              >
+                <p className="text-5xl font-black text-emerald-400/20 leading-none mb-4">
+                  {item.step}
+                </p>
+                <h3 className="rf-h3 text-white">{item.title}</h3>
+                <p className="rf-body text-gray-400 mt-3">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <MainCTA label="Start Partnership Discussion" destination="/contact" />
+          </div>
+        </Container>
+      </section>
+
+      {/* ── BOTTOM CTA BAND ── */}
+      <section className="py-20 bg-gradient-to-r from-[#0C1F18] to-[#0a1a0f]">
+        <Container>
+          <div className="rounded-3xl border border-emerald-500/20 bg-white/5 p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+              <h3 className="rf-h2 text-white">Build the future of digital banking</h3>
+              <p className="rf-lead text-gray-400 mt-3 max-w-xl">
+                Partner with us to deliver secure, scalable financial innovation to your customers.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <MainCTA label="Become a Partner" destination="/contact" />
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── FAQ ── */}
+      <FAQAccordion faqs={bankingPartnershipFAQs} subtitle="Common questions about partnering with RupeeFlow." />
     </>
   )
 }

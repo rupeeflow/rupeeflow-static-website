@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import FAQAccordion from '@/components/ui/FAQAccordion'
+import { paymentLinksFAQs } from '@/data/faqs'
 import SettingsIcon from '../../../public/icons/payment-link/SettingsIcon'
 import SharingIcon from '../../../public/icons/payment-link/SharingIcon'
 import PaidIcon from '../../../public/icons/payment-link/PaidIcon'
@@ -307,7 +309,7 @@ export default function PaymentLinksPage() {
   return (
     <div className="w-full relative">
       {/* ── HERO SECTION ── */}
-      <section className="relative min-h-screen bg-[#020506] overflow-hidden flex items-center">
+      <section className="relative bg-[#020506] overflow-hidden">
 
         {/* Animated blob 1 — top-left */}
         <motion.div
@@ -334,11 +336,11 @@ export default function PaymentLinksPage() {
         />
 
         {/* ── Content row ── */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-10 lg:gap-16 py-36 lg:py-0 min-h-screen">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 py-32 lg:py-24">
 
           {/* LEFT — text content */}
           <motion.div
-            className="flex-1 text-left max-w-xl"
+            className="lg:w-[46%] w-full text-left"
             initial={{ opacity: 0, x: -48 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -405,9 +407,8 @@ export default function PaymentLinksPage() {
           </motion.div>
 
           {/* RIGHT — banner image */}
-
           <motion.div
-            className="flex-1  w-full justify-center "
+            className="lg:w-[54%] w-full flex items-center justify-center"
             initial={{ opacity: 0, x: 60, scale: 0.94 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -415,22 +416,20 @@ export default function PaymentLinksPage() {
             <motion.div
               animate={{ y: [0, -14, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              className="relative"
+              className="relative w-full"
               style={{
-                /* Radial mask: opaque in the phone/card area, fades to transparent at edges
-                   so the image's own baked-in background disappears into the page bg */
                 WebkitMaskImage:
-                  'radial-gradient(ellipse 72% 80% at 58% 42%, black 38%, rgba(0,0,0,0.6) 58%, transparent 80%)',
+                  'radial-gradient(ellipse 90% 90% at 55% 45%, black 45%, rgba(0,0,0,0.65) 65%, transparent 85%)',
                 maskImage:
-                  'radial-gradient(ellipse 72% 80% at 58% 42%, black 38%, rgba(0,0,0,0.6) 58%, transparent 80%)',
+                  'radial-gradient(ellipse 90% 90% at 55% 45%, black 45%, rgba(0,0,0,0.65) 65%, transparent 85%)',
               }}
             >
               <Image
                 src="/images/payment-link/bannerImg.png"
                 alt="Payment Links preview"
-                width={620}
-                height={620}
-                className="object-contain"
+                width={760}
+                height={760}
+                className="object-contain w-full"
                 priority
               />
             </motion.div>
@@ -804,6 +803,7 @@ export default function PaymentLinksPage() {
           </Link>
         </div>
       </section>
+      <FAQAccordion faqs={paymentLinksFAQs} subtitle="Everything you need to know about RupeeFlow Payment Links." />
     </div>
   )
 }

@@ -56,14 +56,14 @@ export default function WhyChooseSection() {
           viewport={{ once: true }}
           className="flex-1"
         >
-          <h2 className="text-4xl md:text-7xl font-bold mb-4 leading-snug">
+          <h2 className="rf-h2 mb-4">
             Why {' '}
             <span className="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
               <br></br>
               RupeeFlow
             </span>
           </h2>
-          <p className="text-gray-300 mb-10 text-sm md:text-base max-w-md">
+          <p className="rf-lead text-gray-300 mb-10 max-w-md">
             Stay ahead of the money management and transactions
           </p>
 
@@ -98,8 +98,8 @@ export default function WhyChooseSection() {
               className="flex flex-col space-y-3 text-left"
             >
               <div>{feature.icon}</div>
-              <h4 className="text-lg font-semibold">{feature.title}</h4>
-              <p className="text-sm text-gray-400">{feature.desc}</p>
+              <h4 className="rf-h4">{feature.title}</h4>
+              <p className="rf-body text-gray-400">{feature.desc}</p>
             </motion.div>
           ))}
         </motion.div>

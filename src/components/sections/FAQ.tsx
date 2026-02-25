@@ -21,10 +21,10 @@ export default function FaqSection({ faqs = [] }: faqProps) {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left Text Section */}
         <div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-snug">
+          <h2 className="rf-h2 text-gray-900 mb-4">
             Frequently Asked <br /> Questions
           </h2>
-          <p className="text-gray-600 max-w-md">
+          <p className="rf-lead text-gray-600 max-w-md">
             Explore our FAQ section to find answers about RupeeFlow’s financial
             solutions.
           </p>
@@ -36,7 +36,7 @@ export default function FaqSection({ faqs = [] }: faqProps) {
             <div key={index} className="border-b border-gray-300 pb-4">
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex justify-between items-center text-left font-medium text-lg focus:outline-none"
+                className="w-full flex justify-between items-center text-left rf-h4 focus:outline-none"
               >
                 <span>{faq.question}</span>
                 <motion.div
@@ -57,7 +57,7 @@ export default function FaqSection({ faqs = [] }: faqProps) {
                     transition={{ duration: 0.35, ease: 'easeInOut' }}
                     className="overflow-hidden"
                   >
-                    <p className="text-gray-600 mt-3 text-sm md:text-base leading-relaxed">
+                    <p className="rf-body text-gray-600 mt-3">
                       {faq.answer}
                     </p>
                   </motion.div>

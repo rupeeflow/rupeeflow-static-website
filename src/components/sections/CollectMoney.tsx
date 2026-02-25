@@ -66,7 +66,7 @@ export default function CollectMoney() {
       >
         {/* Hero */}
         <div className="relative text-center mb-12 md:mb-20 z-10 px-4">
-          <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight max-w-6xl mx-auto">
+          <h1 className="rf-h1 text-white max-w-6xl mx-auto text-center">
             India&apos;s First Platform with{' '}
             <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
               End-to-End Payments
@@ -78,18 +78,17 @@ export default function CollectMoney() {
             together
           </h1>
 
-          <p className="mt-4 md:mt-6 text-gray-400 text-base md:text-xl">
+          <p className="mt-4 md:mt-6 rf-lead text-gray-400 text-center">
             Everything Your Business Needs In One Place
           </p>
 
-          {/* Man - Hidden on mobile, visible on desktop */}
           <Image
             src="/home/man.svg"
-            alt="woman"
+            alt="man collecting money"
             width={500}
             height={500}
             priority
-            className="hidden lg:block absolute right-[20px] top-[75px] z-0 pointer-events-none"
+            className="hidden lg:block absolute right-[20px] top-32 z-0 pointer-events-none"
           />
         </div>
 
@@ -127,11 +126,11 @@ export default function CollectMoney() {
                   className="absolute top-0 right-0 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 transition-transform duration-300 ease-in-out group-hover:scale-110"
                 />
 
-              <h3 className="text-white text-2xl font-bold">
+              <h3 className="rf-h3 text-white">
                 {card.title}
               </h3>
 
-              <p className="text-gray-100 text-sm mt-5 leading-relaxed max-w-[80%]">
+              <p className="rf-body text-gray-100 mt-5 max-w-[80%]">
                 {card.desc}
               </p>
 

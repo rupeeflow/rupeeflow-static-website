@@ -1,6 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import FAQAccordion from '@/components/ui/FAQAccordion'
+import { crossBorderFAQs } from '@/data/faqs'
 
 export default function CrossBorderPaymentsPage() {
   return (
@@ -486,6 +488,7 @@ export default function CrossBorderPaymentsPage() {
           </div>
         </div>
       </section>
+      <FAQAccordion faqs={crossBorderFAQs} subtitle="Everything you need to know about RupeeFlow Cross-Border Payments." />
     </div>
   )
 }

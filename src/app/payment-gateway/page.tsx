@@ -6,6 +6,7 @@ import {
   FeesComparison,
   PerfectFor,
   Plugins,
+  FAQSection,
 } from '../../components/sections/paymentGateway'
 
 
@@ -19,6 +20,7 @@ export default function PaymentGatewayPage() {
       <FeesComparison />
       <PerfectFor />
       <Plugins />
+      <FAQSection />
     </main>
   )
 }

@@ -2,308 +2,312 @@
 
 import Container from "@/components/ui/Container"
 import MainCTA from "@/components/ui/mainCTA"
-import CardFAQ from "@/components/sections/CardFAQ"
-import Image from "next/image"
-import { CheckCircle2 } from "lucide-react"
+import FAQAccordion from "@/components/ui/FAQAccordion"
+import { affiliatePartnerFAQs } from "@/data/faqs"
+import {
+  CheckCircle2,
+  TrendingUp,
+  Users,
+  Laptop,
+  Briefcase,
+  Globe,
+} from "lucide-react"
 
-const affiliateFAQs = [
+
+const partnerTypes = [
   {
-    question: "Who can join the affiliate partner program?",
-    answer:
-      "Consultants, agencies, fintech influencers, SaaS platforms, and professionals serving business clients can join.",
+    icon: Briefcase,
+    title: "Accounting & Advisory Partners",
+    desc: "Expand services beyond compliance and help clients optimize financial operations.",
   },
   {
-    question: "How do affiliates earn revenue?",
-    answer:
-      "Affiliates earn recurring commissions and referral incentives based on successful client onboarding and usage.",
+    icon: Users,
+    title: "Referral & Network Partners",
+    desc: "Leverage your business network to generate new revenue streams.",
   },
   {
-    question: "Is there a cost to join?",
-    answer:
-      "No. The affiliate partner program is free to join.",
+    icon: Globe,
+    title: "Consulting Partners",
+    desc: "Deliver finance automation and operational efficiency solutions to businesses.",
   },
   {
-    question: "Do you provide marketing support?",
-    answer:
-      "Yes. Partners receive co-branded materials, sales enablement resources, and onboarding support.",
+    icon: Laptop,
+    title: "Technology & SaaS Partners",
+    desc: "Integrate financial workflows directly into your software ecosystem.",
+  },
+]
+
+const whoIsItFor = [
+  "Startups & founders serving SMBs",
+  "Business consultants & CFO networks",
+  "Affiliate marketers with relevant traffic",
+  "Fintech influencers & industry bloggers",
+  "Existing partners expanding service offerings",
+]
+
+const steps = [
+  {
+    step: "01",
+    title: "Join the Partner Network",
+    desc: "Create your partner account and get guided onboarding from our success team.",
   },
   {
-    question: "How quickly can I start referring clients?",
-    answer:
-      "Most partners can begin referring clients immediately after onboarding.",
+    step: "02",
+    title: "Refer & Solve Client Needs",
+    desc: "Introduce businesses to smart spend and payment solutions that simplify operations.",
+  },
+  {
+    step: "03",
+    title: "Earn & Grow",
+    desc: "Generate recurring revenue while helping clients streamline financial workflows.",
   },
 ]
 
 export default function AffiliatePartnersPage() {
   return (
     <>
-      {/* HERO */}
-      <section className="py-29 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
+      {/* ── HERO ── */}
+      <section className="py-24 bg-gradient-to-b from-[#060D0A] to-[#0C1F18]">
         <Container>
           <div className="grid md:grid-cols-2 gap-16 items-center">
 
+            {/* LEFT */}
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                Grow With India’s Leading{" "}
+              <span className="inline-block text-emerald-400 rf-label mb-4 border border-emerald-400/30 rounded-full px-4 py-1">
+                Affiliate Program
+              </span>
+
+              <h1 className="rf-h1 text-white leading-tight mt-2">
+                Grow With India&apos;s Leading{" "}
                 <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
-                   Payments Platform
+                  Payments Platform
                 </span>
               </h1>
 
-              <p className="text-gray-300 mt-6 text-lg leading-relaxed">
+              <p className="rf-lead text-gray-300 mt-6 max-w-lg">
                 Join our affiliate partner network and unlock new revenue
                 opportunities while helping businesses streamline payments,
                 expenses, and financial operations.
               </p>
+
+              <ul className="mt-8 space-y-3">
+                {[
+                  "Industry-leading commissions",
+                  "Fast partner activation",
+                  "Dedicated growth support",
+                  "Free to join — no upfront cost",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 rf-body text-gray-300">
+                    <CheckCircle2 className="text-emerald-400 shrink-0" size={16} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
               <div className="mt-10">
                 <MainCTA label="Become a Partner" destination="/contact" />
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
-              <Image
-                src="/placeholder-affiliate.jpg"
-                alt="Affiliate preview"
-                width={700}
-                height={500}
-                className="object-cover w-full h-full"
-              />
-            </div>
-
-          </div>
-        </Container>
-      </section>
-
-      {/* BUILT FOR BOLD PARTNERS */}
-      <section className="py-20 bg-[#0F0F0F]">
-        <Container>
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-10">
-            <h2 className="text-3xl font-semibold text-white">
-              Built for Bold Partners{" "}
-              <span className="text-emerald-400">with Bigger Goals</span>
-            </h2>
-            
-
-            <div className="mt-8 space-y-4 text-gray-300">
-              
-              {[
-                "Startups & founders serving SMBs",
-                "Business consultants & CFO networks",
-                "Affiliate marketers with relevant traffic",
-                "Fintech influencers & industry bloggers",
-                "Existing partners expanding service offerings",
-              ].map((item, i) => (
-                <div key={i} className="flex gap-3 items-center">
-                  <CheckCircle2 size={18} className="text-emerald-400" />
-                  {item}
+            {/* RIGHT — earnings visual */}
+            <div className="hidden md:flex flex-col gap-4">
+              {/* Earnings card */}
+              <div className="bg-[#0F2419] border border-emerald-500/30 rounded-2xl p-6">
+                <p className="rf-caption text-gray-400 mb-1">Your earnings this month</p>
+                <p className="text-3xl font-bold text-white">₹1,24,500</p>
+                <div className="flex items-center gap-2 mt-2">
+                  <TrendingUp size={14} className="text-emerald-400" />
+                  <span className="text-emerald-400 rf-caption font-semibold">+34% vs last month</span>
                 </div>
-              ))}
+                <div className="mt-4 space-y-2">
+                  {[
+                    { label: "Referral commissions", value: "₹74,500", pct: "60%" },
+                    { label: "Recurring revenue", value: "₹50,000", pct: "40%" },
+                  ].map(({ label, value, pct }) => (
+                    <div key={label}>
+                      <div className="flex justify-between rf-caption text-gray-400 mb-1">
+                        <span>{label}</span><span className="text-white font-semibold">{value}</span>
+                      </div>
+                      <div className="w-full bg-white/10 rounded-full h-1.5">
+                        <div className="h-1.5 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500" style={{ width: pct }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Stat pills */}
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { value: "₹0", label: "Cost to Join" },
+                  { value: "24h", label: "Activation" },
+                  { value: "∞", label: "Earning Potential" },
+                ].map(({ value, label }) => (
+                  <div
+                    key={label}
+                    className="bg-white/5 border border-white/10 rounded-xl p-4 text-center hover:border-emerald-400/30 transition duration-300"
+                  >
+                    <p className="text-xl font-bold text-emerald-400">{value}</p>
+                    <p className="rf-caption text-gray-500 mt-0.5">{label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="mt-8">
-              <MainCTA label="Join the Network" destination="/contact" />
-            </div>
           </div>
         </Container>
       </section>
 
-      {/* TYPES OF PARTNERS */}
-     <section className="py-24 bg-[#0F0F0F]">
-  <Container>
-
-    {/* SECTION TITLE */}
-    <div className="text-center max-w-3xl mx-auto">
-      <h2 className="text-5xl md:text-6xl font-semibold text-white">
-        Types of{" "}
-        <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
-          Partner Programs
-        </span>
-      </h2>
-
-      <p className="text-gray-400 mt-5">
-        Flexible partnership models tailored for different business ecosystems.
-      </p>
-    </div>
-
-    {/* CARDS */}
-    <div className="grid md:grid-cols-2 gap-10 mt-16">
-
-      {[
-        {
-          title: "Accounting & Advisory Partners",
-          desc: "Expand services beyond compliance and help clients optimize financial operations.",
-        },
-        {
-          title: "Referral & Network Partners",
-          desc: "Leverage your business network to generate new revenue streams.",
-        },
-        {
-          title: "Consulting Partners",
-          desc: "Deliver finance automation and operational efficiency solutions.",
-        },
-        {
-          title: "Technology & SaaS Partners",
-          desc: "Integrate financial workflows into your software ecosystem.",
-        },
-      ].map((item, i) => (
-        <div
-          key={i}
-          className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-10 flex gap-8 items-center transition duration-500 hover:-translate-y-1 hover:border-emerald-400/40 hover:shadow-[0_0_40px_rgba(16,185,129,0.15)]"
-        >
-          
-          {/* LARGE IMAGE PLACEHOLDER */}
-          <div className="w-56 h-46 rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-transparent flex items-center justify-center text-gray-500 text-xs tracking-widest uppercase group-hover:scale-105 transition">
-            IMAGE
-          </div>
-
-          {/* TEXT */}
-          <div>
-            <h3 className="text-white text-2xl font-semibold group-hover:text-emerald-300 transition">
-              {item.title}
-            </h3>
-
-            <p className="text-gray-400 mt-3 leading-relaxed">
-              {item.desc}
-            </p>
-          </div>
-
-          {/* subtle glow overlay */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition pointer-events-none bg-gradient-to-r from-emerald-500/10 via-transparent to-transparent" />
-        </div>
-      ))}
-    </div>
-
-  </Container>
-</section>
-
-
-      {/* HOW IT WORKS */}
-
-
-     <section className="py-24 bg-[#0F0F0F]">
-  <Container>
-
-    {/* TITLE */}
-    <div className="text-center max-w-3xl mx-auto">
-      <h2 className="text-4xl md:text-5xl text-white font-semibold">
-        Get Started in{" "}
-        <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
-          3 Easy Steps
-        </span>
-      </h2>
-
-      <p className="text-gray-400 mt-4">
-        A simple journey designed to help you start earning and growing with minimal effort.
-      </p>
-    </div>
-
-    {/* STEPS */}
-    <div className="grid md:grid-cols-3 gap-8 mt-16">
-
-      {[
-        {
-          step: "Step 1",
-          title: "Join the Partner Network",
-          desc: "Create your partner account and get guided onboarding from our success team.",
-          link: "/contact",
-        },
-        {
-          step: "Step 2",
-          title: "Refer & Solve Client Needs",
-          desc: "Introduce businesses to smart spend and payment solutions that simplify operations.",
-          link: "/contact",
-        },
-        {
-          step: "Step 3",
-          title: "Earn & Grow",
-          desc: "Generate recurring revenue while helping clients streamline financial workflows.",
-          link: "/contact",
-        },
-      ].map((item, i) => (
-        <a
-          key={i}
-          href={item.link}
-          className="group relative block rounded-2xl border border-white/10 bg-white/5 p-8 transition duration-500 hover:-translate-y-1 hover:border-emerald-400/40 hover:shadow-[0_0_35px_rgba(16,185,129,0.15)]"
-        >
-          {/* IMAGE PLACEHOLDER */}
-          <div className="w-full h-36 mb-6 rounded-xl border border-white/10 bg-gradient-to-br from-white/10 to-transparent flex items-center justify-center text-gray-500 text-xs tracking-widest uppercase group-hover:scale-[1.02] transition">
-            IMAGE
-          </div>
-
-          <p className="text-emerald-400 text-sm font-semibold">
-            {item.step}
-          </p>
-
-          <h3 className="text-white text-xl font-semibold mt-2 group-hover:text-emerald-300 transition">
-            {item.title}
-          </h3>
-
-          <p className="text-gray-400 mt-3 leading-relaxed">
-            {item.desc}
-          </p>
-
-          {/* subtle glow overlay */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition pointer-events-none bg-gradient-to-r from-emerald-500/10 via-transparent to-transparent" />
-        </a>
-      ))}
-    </div>
-
-    {/* CTA BUTTON */}
-    <div className="text-center mt-14">
-  <a
-    href="/contact"
-    className="group relative inline-flex items-center justify-center
-      rounded-full font-semibold text-black
-    bg-emerald-500 overflow-hidden
-    transition-all duration-300
-    hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(16,185,129,0.35)]"
-  >
-    {/* glow layer */}
-   <div className="text-center ">
-  <MainCTA
-    label="Start Partnership Journey"
-    destination="/contact"
-    size="w-72 h-14"
-    fontSize="text-xl"
-  />
-</div>
-  </a>
-</div>
-
-  </Container>
-</section>
-
-
-
-      {/* CTA + FORM */}
-      <section className="py-24 bg-gradient-to-b from-[#0C1F18] to-[#0F0F0F]">
+      {/* ── WHO IS IT FOR ── */}
+      <section className="py-20 bg-[#0A0F0D]">
         <Container>
           <div className="grid md:grid-cols-2 gap-16 items-center">
 
             <div>
-              <h2 className="text-4xl font-semibold text-white">
-                Ready to Earn More & Grow Faster?
+              <h2 className="rf-h2 text-white">
+                Built for Bold Partners{" "}
+                <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
+                  with Bigger Goals
+                </span>
               </h2>
-
-              <ul className="mt-8 space-y-4 text-gray-300">
-                <li className="flex gap-3"><CheckCircle2 className="text-emerald-400"/> Industry-leading commissions</li>
-                <li className="flex gap-3"><CheckCircle2 className="text-emerald-400"/> Fast partner activation</li>
-                <li className="flex gap-3"><CheckCircle2 className="text-emerald-400"/> Dedicated growth support</li>
-              </ul>
+              <p className="rf-lead text-gray-400 mt-4 max-w-lg">
+                Whether you&apos;re a consultant, influencer, or platform — there&apos;s a
+                place for you in the RupeeFlow partner ecosystem.
+              </p>
+              <div className="mt-10">
+                <MainCTA label="Join the Network" destination="/contact" />
+              </div>
             </div>
 
-            {/* FORM PLACEHOLDER */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-38 mt-23">
-              <p className="text-gray-400">Partner onboarding </p>
+            <div className="space-y-3">
+              {whoIsItFor.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl px-5 py-4
+                    hover:border-emerald-400/30 transition duration-300"
+                >
+                  <CheckCircle2 size={18} className="text-emerald-400 shrink-0" />
+                  <span className="rf-body text-gray-200">{item}</span>
+                </div>
+              ))}
             </div>
 
           </div>
         </Container>
       </section>
 
-      {/* FAQ */}
-      <CardFAQ faqs={affiliateFAQs} />
+      {/* ── PARTNER PROGRAM TYPES ── */}
+      <section className="py-24 bg-[#0A0F0D]">
+        <Container>
+
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <h2 className="rf-h2 text-white">
+              Types of{" "}
+              <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
+                Partner Programs
+              </span>
+            </h2>
+            <p className="rf-lead text-gray-400 mt-4">
+              Flexible partnership models tailored for different business ecosystems.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {partnerTypes.map(({ icon: Icon, title, desc }) => (
+              <div
+                key={title}
+                className="group flex items-start gap-5 bg-white/5 border border-white/10 rounded-2xl p-8
+                  hover:border-emerald-400/40 hover:shadow-[0_0_35px_rgba(0,239,100,0.1)]
+                  hover:-translate-y-1 transition duration-300"
+              >
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/15 flex items-center justify-center shrink-0 group-hover:bg-emerald-500/25 transition duration-300">
+                  <Icon size={22} className="text-emerald-400" />
+                </div>
+                <div>
+                  <h3 className="rf-h3 text-white group-hover:text-emerald-300 transition duration-300">
+                    {title}
+                  </h3>
+                  <p className="rf-body text-gray-400 mt-2">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </Container>
+      </section>
+
+      {/* ── HOW IT WORKS ── */}
+      <section className="py-24 bg-gradient-to-b from-[#0A0F0D] to-[#0C1F18]">
+        <Container>
+
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <h2 className="rf-h2 text-white">
+              Get Started in{" "}
+              <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
+                3 Easy Steps
+              </span>
+            </h2>
+            <p className="rf-lead text-gray-400 mt-4">
+              A simple journey designed to help you start earning and growing with minimal effort.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {steps.map((item) => (
+              <div
+                key={item.step}
+                className="relative bg-white/5 border border-white/10 rounded-2xl p-8
+                  hover:border-emerald-400/40 hover:shadow-[0_0_30px_rgba(0,239,100,0.1)]
+                  hover:-translate-y-1 transition duration-300"
+              >
+                <p className="text-5xl font-black text-emerald-400/20 leading-none mb-4">
+                  {item.step}
+                </p>
+                <h3 className="rf-h3 text-white">{item.title}</h3>
+                <p className="rf-body text-gray-400 mt-3">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <MainCTA label="Start Partnership Journey" destination="/contact" />
+          </div>
+
+        </Container>
+      </section>
+
+      {/* ── BOTTOM CTA BAND ── */}
+      <section className="py-20 bg-[#060D0A]">
+        <Container>
+          <div className="rounded-3xl border border-emerald-500/20 bg-white/5 p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+
+            <div>
+              <h3 className="rf-h2 text-white">Ready to Earn More &amp; Grow Faster?</h3>
+              <ul className="mt-6 space-y-3">
+                {[
+                  "Industry-leading commissions",
+                  "Fast partner activation",
+                  "Dedicated growth support",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 rf-body text-gray-300">
+                    <CheckCircle2 className="text-emerald-400 shrink-0" size={16} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="shrink-0 flex flex-col gap-4 items-center md:items-end">
+              <MainCTA label="Join the Affiliate Program" destination="/contact" />
+              <p className="rf-caption text-gray-500">Free to join. No commitment required.</p>
+            </div>
+
+          </div>
+        </Container>
+      </section>
+
+      {/* ── FAQ ── */}
+      <FAQAccordion faqs={affiliatePartnerFAQs} subtitle="Common questions about the RupeeFlow Affiliate Partner Program." />
     </>
   )
 }
