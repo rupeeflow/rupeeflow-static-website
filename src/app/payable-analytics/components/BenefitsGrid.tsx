@@ -2,6 +2,7 @@
 //test
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { BarChart3, PieChart, Target, TrendingDown, Calendar, AlertTriangle } from 'lucide-react';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 
@@ -84,6 +85,23 @@ export default function BenefitsGrid() {
               </motion.div>
             );
           })}
+        </motion.div>
+
+        {/* Feature Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex justify-center mt-12"
+        >
+          <Image
+            src="/payable-receivable/7.jpeg"
+            alt="Analytics Dashboard"
+            width={900}
+            height={350}
+            className="rounded-3xl shadow-lg"
+          />
         </motion.div>
       </div>
     </section>

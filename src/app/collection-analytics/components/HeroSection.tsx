@@ -40,9 +40,9 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Heading */}
-            <h1 className="fontheading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            <h1 className="fontheading text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight">
               Collection Analytics &{' '}
-              <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
+              <span className="text-emerald-500">
                 Insights Dashboard
               </span>
             </h1>

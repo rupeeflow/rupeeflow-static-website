@@ -121,7 +121,7 @@ export default function HeroSection() {
           >
             <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-white/10 backdrop-blur-md p-8">
               <Image
-                src="/credit/invoicing-financing.svg"
+                src="/invoicing-financing/invoicing-hero.png"
                 alt="Invoice Financing"
                 width={600}
                 height={500}

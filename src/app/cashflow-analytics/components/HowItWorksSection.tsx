@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Link2, Activity, Eye, Lightbulb, Calendar } from 'lucide-react';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 
@@ -21,6 +22,23 @@ export default function HowItWorksSection() {
             How It{' '}
             <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">Works</span>
           </h2>
+        </motion.div>
+
+        {/* Feature Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 rounded-2xl overflow-hidden"
+        >
+          <Image
+            src="/payable-receivable/6.jpeg"
+            alt="Cashflow Forecasting Process"
+            width={800}
+            height={320}
+            className="w-full rounded-2xl shadow-lg"
+          />
         </motion.div>
         <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: true }} className="relative">
           <div className="hidden lg:block">

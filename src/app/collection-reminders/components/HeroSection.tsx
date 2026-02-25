@@ -38,9 +38,9 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Heading */}
-            <h1 className="fontheading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            <h1 className="fontheading text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               Automate Payment Reminders & Boost{' '}
-              <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
+              <span className="text-emerald-500">
                 Collection Rates
               </span>
             </h1>
@@ -85,18 +85,54 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right side - Hero visual with floating elements */}
+          {/* Right side - Reminder Dashboard mockup */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             className="relative hidden lg:block"
           >
-            {/* Placeholder for hero image */}
-            <div className="relative w-full h-[500px] bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-2xl border border-emerald-500/20 flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <Bell className="w-24 h-24 text-emerald-400 mx-auto" />
-                <p className="text-gray-400 text-sm">Hero Image Placeholder</p>
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-emerald-500/30 shadow-2xl">
+              <div className="space-y-4">
+                {/* Header */}
+                <div className="flex items-center justify-between pb-4 border-b border-gray-700">
+                  <h3 className="font-bold text-lg">Reminder Dashboard</h3>
+                  <div className="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded-full">
+                    Active
+                  </div>
+                </div>
+
+                {/* Reminder cards */}
+                {[
+                  { icon: MessageSquare, channel: 'WhatsApp', status: 'Sent', amount: '₹50,000', color: 'emerald' },
+                  { icon: Mail, channel: 'Email', status: 'Delivered', amount: '₹35,000', color: 'blue' },
+                  { icon: Bell, channel: 'SMS', status: 'Pending', amount: '₹25,000', color: 'purple' },
+                ].map((reminder, i) => {
+                  const Icon = reminder.icon;
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5 + i * 0.2 }}
+                      className="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-emerald-500/20"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`w-10 h-10 rounded-lg bg-${reminder.color}-500/20 flex items-center justify-center`}>
+                          <Icon className={`w-5 h-5 text-${reminder.color}-400`} />
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium">{reminder.channel} Reminder</p>
+                          <p className="text-xs text-gray-400">{reminder.status}</p>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-sm font-bold text-emerald-400">{reminder.amount}</p>
+                        <p className="text-xs text-gray-400">Invoice</p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
 
@@ -137,7 +173,7 @@ export default function HeroSection() {
             >
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-green-600" />
+                  <Check className="w-5 h-5 text-green-600" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-gray-900">Payment Received</p>

@@ -122,7 +122,7 @@ export default function HeroSection() {
           >
             <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-white/10 backdrop-blur-md p-8">
               <Image
-                src="/credit/personal-credit-line.svg"
+                src="/personal-credit/personal credit hero.jpeg"
                 alt="Personal Credit Line"
                 width={600}
                 height={500}

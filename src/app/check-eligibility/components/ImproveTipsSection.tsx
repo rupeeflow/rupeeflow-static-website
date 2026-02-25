@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Container from '@/components/ui/Container'
 
 const tips = [
@@ -72,7 +73,7 @@ export default function ImproveTipsSection() {
           </p>
         </motion.div>
 
-        {/* Image Placeholder */}
+        {/* Improve Eligibility Image */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,13 +81,14 @@ export default function ImproveTipsSection() {
           viewport={{ once: true }}
           className="flex justify-center mb-12"
         >
-          <div className="w-full max-w-[800px] h-[320px] bg-gray-100 rounded-3xl flex items-center justify-center border-2 border-gray-200">
-            <div className="text-center text-gray-400">
-              <svg className="w-14 h-14 mx-auto mb-2 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-              </svg>
-              <p className="text-xs">800x320</p>
-            </div>
+          <div className="w-full max-w-[800px] rounded-3xl overflow-hidden border-2 border-gray-200 shadow-xl">
+            <Image
+              src="/check-eligibility/improve-eligi.jpeg"
+              alt="How to Improve Eligibility"
+              width={800}
+              height={320}
+              className="w-full h-auto object-cover"
+            />
           </div>
         </motion.div>
 
