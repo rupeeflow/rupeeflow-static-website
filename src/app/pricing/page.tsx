@@ -1,5 +1,4 @@
 import AddonsSection from '@/components/sections/AddonSection'
-import FaqSection from '@/components/sections/FAQ'
 import PricingSection from '@/components/sections/PricingHero'
 import React from 'react'
 import { Metadata } from 'next'
