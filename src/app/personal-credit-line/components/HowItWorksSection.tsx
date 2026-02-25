@@ -106,7 +106,7 @@ export default function HowItWorksSection() {
           ))}
         </div>
 
-        {/* Image Placeholder */}
+        {/* How It Works Image */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -114,8 +114,14 @@ export default function HowItWorksSection() {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <div className="w-full max-w-5xl h-[400px] md:h-[500px] bg-gray-100 rounded-3xl flex items-center justify-center border-2 border-gray-200">
-            <ImagePlaceholder size="1200x500" />
+          <div className="w-full max-w-5xl rounded-3xl overflow-hidden border-2 border-gray-200 shadow-xl">
+            <Image
+              src="/personal-credit/howitworks.png"
+              alt="How It Works"
+              width={1200}
+              height={500}
+              className="w-full h-auto object-cover"
+            />
           </div>
         </motion.div>
       </Container>

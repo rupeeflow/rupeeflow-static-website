@@ -47,28 +47,5 @@ const faqs = [
 ];
 
 export default function FAQSection() {
-  return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-6 md:px-8 lg:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="fontheading text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Common{' '}
-            <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
-              Questions
-            </span>
-          </h2>
-        </motion.div>
-
-        <div className="max-w-3xl mx-auto">
-          <FAQ faqs={faqs} />
-        </div>
-      </div>
-    </section>
-  );
+  return <FAQ faqs={faqs} />;
 }

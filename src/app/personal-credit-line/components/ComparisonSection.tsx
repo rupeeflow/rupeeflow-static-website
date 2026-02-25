@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Container from '@/components/ui/Container'
 
 const ImagePlaceholder = ({ size }: { size?: string }) => (
@@ -114,7 +115,7 @@ export default function ComparisonSection() {
             </div>
           </motion.div>
 
-          {/* Right: Image Placeholder */}
+          {/* Right: Image */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -122,8 +123,14 @@ export default function ComparisonSection() {
             viewport={{ once: true }}
             className="flex-1 flex justify-center items-center w-full"
           >
-            <div className="w-full max-w-[500px] h-[450px] bg-gray-100 rounded-3xl flex items-center justify-center border-2 border-gray-200">
-              <ImagePlaceholder size="500x450" />
+            <div className="w-full max-w-[500px] rounded-3xl overflow-hidden border-2 border-gray-200 shadow-xl">
+              <Image
+                src="/personal-credit/tradvnew.jpeg"
+                alt="Credit Line vs Personal Loans"
+                width={500}
+                height={450}
+                className="w-full h-auto object-cover"
+              />
             </div>
           </motion.div>
         </div>

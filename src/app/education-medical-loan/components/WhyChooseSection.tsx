@@ -57,8 +57,14 @@ export default function WhyChooseSection() {
             viewport={{ once: true }}
             className="flex-1 w-full"
           >
-            <div className="w-full max-w-[550px] h-[500px] bg-gray-100 rounded-3xl flex items-center justify-center border-2 border-gray-200 mx-auto">
-              <ImagePlaceholder size="550x500" />
+            <div className="w-full max-w-[550px] rounded-3xl overflow-hidden border-2 border-gray-200 shadow-xl mx-auto">
+              <Image
+                src="/edu-medi-loan/why rupeeflowloan.jpeg"
+                alt="Why Choose RupeeFlow"
+                width={550}
+                height={500}
+                className="w-full h-auto object-cover"
+              />
             </div>
           </motion.div>
 

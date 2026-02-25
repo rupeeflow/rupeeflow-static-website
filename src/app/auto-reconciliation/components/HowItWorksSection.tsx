@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Building2, Download, Link2, Eye, CheckCircle } from 'lucide-react';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 
@@ -52,6 +53,23 @@ export default function HowItWorksSection() {
           <p className="fontbody2 text-lg text-gray-600 max-w-2xl mx-auto">
             Reconcile your accounts in 5 simple steps
           </p>
+        </motion.div>
+
+        {/* Feature Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 rounded-2xl overflow-hidden"
+        >
+          <Image
+            src="/payable-receivable/5.jpeg"
+            alt="Reconciliation Process Flow"
+            width={800}
+            height={320}
+            className="w-full rounded-2xl shadow-lg"
+          />
         </motion.div>
 
         <motion.div

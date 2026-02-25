@@ -43,9 +43,9 @@ export default function HeroSection() {
               <span className="text-sm font-medium text-emerald-400">94% Accuracy • Real-time Tracking</span>
             </div>
 
-            <h1 className="fontheading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="fontheading text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               Cashflow Forecasting &{' '}
-              <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
+              <span className="text-emerald-500">
                 Liquidity
               </span>{' '}
               Management

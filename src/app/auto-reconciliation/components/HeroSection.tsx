@@ -28,9 +28,9 @@ export default function HeroSection() {
               <span className="text-sm font-medium text-emerald-400">99.9% Accuracy • 85% Time Saved</span>
             </div>
 
-            <h1 className="fontheading text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="fontheading text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               Automate Bank{' '}
-              <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
+              <span className="text-emerald-500">
                 Reconciliation
               </span>{' '}
               in Minutes
