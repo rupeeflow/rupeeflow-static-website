@@ -505,10 +505,6 @@ export default function PaymentLinksPage() {
                 </div>
               </div>
 
-<<<<<<< HEAD
-              <div className="flex-1 flex justify-center">
-                  <Image src="/images/payment-link/creatingLink.jpeg" alt="How to create payment links" width={500} height={1000} className="object-contain rounded-lg" />
-=======
               {/* Right: Interactive Image */}
               <div className="flex-1 flex justify-center items-center">
                 <div className="relative w-full max-w-[700px] h-[500px] md:h-[648px] group">
@@ -546,7 +542,6 @@ export default function PaymentLinksPage() {
                   {/* Connecting line effect (subtle) */}
                   <div className="absolute top-[45%] right-[35%] w-[80px] h-[2px] bg-gradient-to-r from-emerald-400/0 via-emerald-400/0 to-transparent group-hover:from-emerald-400/30 group-hover:via-emerald-400/20 transition-all duration-500 z-5" />
                 </div>
->>>>>>> feat/figma-design
               </div>
             </div>
           </div>

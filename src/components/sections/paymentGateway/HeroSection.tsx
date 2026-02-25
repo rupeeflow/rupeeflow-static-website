@@ -161,9 +161,6 @@ export default function HeroSection() {
 
       {/* Wave bottom */}
       <div className="absolute bottom-0 left-0 w-full">
-<<<<<<< HEAD
-        <img src="/wave.png" alt="" className="w-full scale-110" />
-=======
         <Image
           src="/wave.png"
           alt="wave"
@@ -171,13 +168,10 @@ export default function HeroSection() {
           height={200}
           className="w-full scale-110"
         />
->>>>>>> feat/figma-design
       </div>
     </section>
   )
 }
-<<<<<<< HEAD
-=======
 
 /* Feature Component */
 function Feature({ icon, text }: { icon: string; text: string }) {
@@ -194,4 +188,3 @@ function Feature({ icon, text }: { icon: string; text: string }) {
     </div>
   )
 }
->>>>>>> feat/figma-design

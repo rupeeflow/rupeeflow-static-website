@@ -41,11 +41,6 @@ const partnershipsnav: navlist[] = [
   },
 ]
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> feat/figma-design
 const cardTypes: navlist[] = [
   { id: 'business', label: 'Business Cards', icon: '/cards/business-cards.svg', href: '/business-cards' },
   { id: 'corporate', label: 'Corporate Cards', icon: '/cards/corporate-cards.svg', href: '/corporate-cards' },

@@ -6,14 +6,6 @@ import MakePayments from '@/components/sections/MakePayments'
 import GetCredit from '@/components/sections/GetCredit'
 import LendingBanner from '@/components/sections/LendingBanner'
 import PartnershipBanner from '@/components/sections/PartnershipBanner'
-<<<<<<< HEAD
-
-
-// import PartnerShip from '@/components/sections/PartnerShip'
-
-// import FuturePayments from '@/components/ui/FuturePayments'
-=======
->>>>>>> feat/figma-design
 import ChooseRupeeFlow from '@/components/sections/ChooseRupeeFlow'
 import LanguageSection from '@/components/sections/RegionalLanguage'
 import FaqSection from '@/components/sections/FAQ'

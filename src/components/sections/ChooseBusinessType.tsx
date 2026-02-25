@@ -36,12 +36,6 @@ export default function ChooseBusinessType() {
    <section className="relative bg-white py-8 overflow-hidden">
 
   {/* BIG WAVE */}
-<<<<<<< HEAD
-  <img
-  src="/wave.png"
-  className="absolute top-[160px] left-0 w-[1500px] z-0 pointer-events-none"
-/>
-=======
   <Image
     src="/wave.png"
     alt="wave"
@@ -49,7 +43,6 @@ export default function ChooseBusinessType() {
     height={200}
     className="absolute top-[160px] left-0 w-[1500px] z-[1] pointer-events-none"
   />
->>>>>>> feat/figma-design
 
   {/* CONTENT */}
   <div className="relative z-[10] max-w-[1200px] mx-auto px-8">

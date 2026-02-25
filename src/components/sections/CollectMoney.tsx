@@ -65,35 +65,6 @@ export default function CollectMoney() {
         className={`relative transition-all duration-600 ${isVisible ? 'animate-fade-in-section' : 'opacity-0'}`}
       >
         {/* Hero */}
-<<<<<<< HEAD
-        <div className="relative text-center mb-32">
-
-          <h1 className="text-white font-semibold leading-[1.15] tracking-[-0.02em]
-                 text-2xl md:text-4xl max-w-5xl mx-auto">
-    
-    India’s First Platform with{" "}
-    <span className="text-emerald-400">
-      End-to-End Payments
-    </span>{" "}
-    &
-
-    <br className="hidden md:block" />
-
-    <span className="text-emerald-400">Lending</span>{" "}
-    together
-  </h1>
-  <p className="mt-6 text-gray-300 text-lg md:text-xl">
-    Everything Your Business Needs In One Place
-  </p>
-
-          {/* Floating Boxes */}
-          {/* <div className="absolute right-[260px] top-[160px] z-10">
-            <div className="absolute top-[5px] left-[10px] w-[210px] h-[105px] border-2 border-emerald-400 rounded-[20px] bg-[#181A1A]" />
-            <div className="absolute top-[140px] left-[80px] w-[110px] h-[55px] border-2 border-emerald-400 rounded-[14px] bg-[#181A1A]" />
-          </div> */}
-
-          {/* Woman */}
-=======
         <div className="relative text-center mb-12 md:mb-20 z-10 px-4">
           <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight max-w-6xl mx-auto">
             India&apos;s First Platform with{' '}
@@ -112,21 +83,13 @@ export default function CollectMoney() {
           </p>
 
           {/* Man - Hidden on mobile, visible on desktop */}
->>>>>>> feat/figma-design
           <Image
             src="/home/man.svg"
             alt="woman"
-<<<<<<< HEAD
-            width={416}
-            height={416}
-            priority
-            className="absolute right-[105px] top-[87px] z-30 pointer-events-none"
-=======
             width={500}
             height={500}
             priority
             className="hidden lg:block absolute right-[20px] top-[75px] z-0 pointer-events-none"
->>>>>>> feat/figma-design
           />
         </div>
 
