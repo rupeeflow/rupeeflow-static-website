@@ -6,11 +6,7 @@ import { motion } from 'framer-motion'
 import CardsIcon from '../../../public/icons/vendor-payments/CardsIcon'
 import CheckIcon from '../../../public/icons/vendor-payments/CheckIcon'
 import ColoredSettingIcon from '../../../public/icons/vendor-payments/ColoredSettingIcon'
-import InstantReconIcon from '../../../public/icons/vendor-payments/InstantReconIcon'
-import InvoicingIcon from '../../../public/icons/vendor-payments/InvoicingIcon'
 import LightingFastIcon from '../../../public/icons/vendor-payments/LightingFastIcon'
-import LiveTrackingIcon from '../../../public/icons/vendor-payments/LiveTrackingIcon'
-import PayInstantIcon from '../../../public/icons/vendor-payments/PayInstantIcon'
 import ReconcileIcon from '../../../public/icons/vendor-payments/ReconcileIcon'
 import ReportsIcon from '../../../public/icons/vendor-payments/ReportsIcon'
 import SafeGuardIcon from '../../../public/icons/vendor-payments/SafeGuardIcon'
@@ -458,10 +454,7 @@ export default function VendorPaymentPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex-1">
-                <div className="flex items-center gap-4 mb-4">
-                  <PayInstantIcon className="w-14 h-14 shrink-0" />
-                  <h3 className="fontheading text-xl md:text-2xl text-gray-900">Pay Instantly via Multiple Channels</h3>
-                </div>
+                <h3 className="fontheading text-xl md:text-2xl text-gray-900 mb-4">Pay Instantly via Multiple Channels</h3>
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
                   Disburse vendor payments through NEFT, RTGS, IMPS, or UPI with just a few clicks.
                   Rupeeflow ensures your payments reach vendors instantly, reducing delays and
@@ -481,17 +474,14 @@ export default function VendorPaymentPage() {
 
             {/* 2. Automated Invoicing & Approvals — mockup left, text right */}
             <motion.div
-              className="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16"
+              className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
               <div className="flex-1">
-                <div className="flex items-center gap-4 mb-4">
-                  <InvoicingIcon className="w-14 h-14 shrink-0" />
-                  <h3 className="fontheading text-xl md:text-2xl text-gray-900">Automated Invoicing & Approvals</h3>
-                </div>
+                <h3 className="fontheading text-xl md:text-2xl text-gray-900 mb-4">Automated Invoicing & Approvals</h3>
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
                   Streamline your accounts payable with automated invoice processing and configurable
                   maker-checker approval workflows. Reduce manual effort and ensure compliance
@@ -518,10 +508,7 @@ export default function VendorPaymentPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex-1">
-                <div className="flex items-center gap-4 mb-4">
-                  <LiveTrackingIcon className="w-14 h-14 shrink-0" />
-                  <h3 className="fontheading text-xl md:text-2xl text-gray-900">Live Payment Tracking</h3>
-                </div>
+                <h3 className="fontheading text-xl md:text-2xl text-gray-900 mb-4">Live Payment Tracking</h3>
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
                   Track every vendor payment in real time from initiation to settlement. Get instant
                   notifications on payment status, failed transactions, and successful settlements
@@ -541,17 +528,14 @@ export default function VendorPaymentPage() {
 
             {/* 4. Instant Reconciliation — mockup left, text right */}
             <motion.div
-              className="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16"
+              className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
               <div className="flex-1">
-                <div className="flex items-center gap-4 mb-4">
-                  <InstantReconIcon className="w-14 h-14 shrink-0" />
-                  <h3 className="fontheading text-xl md:text-2xl text-gray-900">Instant Reconciliation</h3>
-                </div>
+                <h3 className="fontheading text-xl md:text-2xl text-gray-900 mb-4">Instant Reconciliation</h3>
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
                   Automatically match vendor payments with invoices and purchase orders in real time.
                   Eliminate manual reconciliation effort, reduce errors, and close your books faster

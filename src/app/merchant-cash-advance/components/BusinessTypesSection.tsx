@@ -52,7 +52,7 @@ export default function BusinessTypesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="fontheading text-3xl md:text-5xl text-gray-900 mb-4">
             Perfect For{' '}

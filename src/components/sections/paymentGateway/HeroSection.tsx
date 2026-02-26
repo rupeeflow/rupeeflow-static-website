@@ -34,7 +34,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.35),transparent_60%)]" />
 
       {/* ── Text Content ── */}
-      <div className="max-w-6xl mx-auto text-center pt-36 pb-10 px-6 relative z-10">
+      <div className="max-w-6xl mx-auto text-center pt-24 sm:pt-32 lg:pt-36 pb-8 sm:pb-10 px-4 sm:px-6 relative z-10">
 
         {/* Badge */}
         <motion.div
@@ -72,7 +72,7 @@ export default function HeroSection() {
 
         {/* Stats strip */}
         <motion.div
-          className="mt-10 flex flex-wrap justify-center gap-8 md:gap-16"
+          className="mt-8 sm:mt-10 flex flex-wrap justify-center gap-5 sm:gap-8 md:gap-16"
           initial={{ opacity: 0, y: -24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.3, ease: 'easeOut' }}
@@ -125,7 +125,7 @@ export default function HeroSection() {
         - Phone is absolute at bottom-0 right-[8%] — sits in the padding-bottom area
         - No overflow-hidden on section (overflow-x-hidden only) so phone never clips
       */}
-      <div className="relative max-w-5xl mx-auto px-6 z-10 pb-[220px]">
+      <div className="relative max-w-5xl mx-auto px-3 sm:px-6 z-10 pb-[100px] sm:pb-[160px] lg:pb-[220px]">
 
         {/* Dashboard with 3D tilt */}
         <div style={{ perspective: 1200 }}>
@@ -152,9 +152,9 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Phone — absolute to the pb-[220px] container, independent animation */}
+        {/* Phone — absolute to the padded container */}
         <motion.div
-          className="absolute bottom-0 right-[8%] z-30"
+          className="absolute bottom-0 right-[1%] sm:right-[4%] lg:right-[8%] z-30"
           style={{ perspective: 900, transformStyle: 'preserve-3d' }}
           initial={{ opacity: 0, scale: 0.82, rotateY: -18, x: 40 }}
           animate={{ opacity: 1, scale: 1, rotateY: -6, x: 0 }}
@@ -171,7 +171,7 @@ export default function HeroSection() {
               width={220}
               height={440}
               priority
-              className="drop-shadow-2xl"
+              className="drop-shadow-2xl w-[110px] sm:w-[160px] lg:w-[220px] h-auto"
             />
           </motion.div>
         </motion.div>

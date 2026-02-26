@@ -68,8 +68,8 @@ const cardVariants = {
 
 export default function AcceptMethods() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 sm:py-16 lg:py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Heading */}
         <motion.div
           className="text-center"
@@ -78,18 +78,18 @@ export default function AcceptMethods() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
             Accept Every Payment Method
           </h2>
-          <p className="text-gray-500 mt-3 text-lg">
+          <p className="text-gray-500 mt-3 text-base sm:text-lg">
             No matter what app, platform or card you use
           </p>
         </motion.div>
 
         {/* Content Row */}
-        <div className="mt-16 flex flex-col lg:flex-row gap-16 items-center">
+        <div className="mt-8 sm:mt-12 lg:mt-16 flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
           {/* Left: Payment Method Grid */}
-          <div className="flex-1 grid grid-cols-3 gap-4">
+          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
             {methods.map((method, i) => (
               <motion.div
                 key={method.title}
@@ -106,7 +106,7 @@ export default function AcceptMethods() {
                   borderColor: '#30F3BC',
                 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-                className="relative border border-gray-100 rounded-2xl p-5 bg-white shadow-sm cursor-default"
+                className="relative border border-gray-100 rounded-2xl p-3 sm:p-5 bg-white shadow-sm cursor-default"
                 style={{ transformStyle: 'preserve-3d', perspective: 800 }}
               >
                 {/* Icon */}
@@ -133,9 +133,9 @@ export default function AcceptMethods() {
             ))}
           </div>
 
-          {/* Right: Floating Payment Summary UI */}
+          {/* Right: Floating Payment Summary UI - desktop only */}
           <motion.div
-            className="flex-shrink-0 relative"
+            className="hidden lg:block flex-shrink-0 relative"
             initial={{ opacity: 0, x: 70 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

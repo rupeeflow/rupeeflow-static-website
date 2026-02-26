@@ -31,11 +31,11 @@ export default function GetCredit() {
     <section className="relative bg-black pt-10 md:pt-15 pb-16 md:pb-24 overflow-hidden">
       <Container className="relative">
         {/* ================= TOP VISUAL BLOCK ================= */}
-        <div className="relative h-[120px] md:h-[200px] mb-12 md:mb-16 px-4 md:px-0">
+        <div className="relative h-[90px] sm:h-[120px] md:h-[200px] mb-8 sm:mb-12 md:mb-16 px-4 md:px-0">
           {/* GET CREDIT Pill */}
-          <div className="absolute left-0 top-[60px] md:top-40 w-[280px] sm:w-[320px] h-[50px] sm:h-[60px] z-10">
-            <div className="absolute inset-0 rounded-[18px] rounded-tr-[280px] sm:rounded-tr-[320px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
-            <span className="absolute left-6 sm:left-8 top-1/2 -translate-y-1/2 text-white text-[16px] sm:text-[20px] font-semibold">
+          <div className="absolute left-0 top-[40px] sm:top-[60px] md:top-40 w-[260px] sm:w-[320px] h-[46px] sm:h-[60px] z-10">
+            <div className="absolute inset-0 rounded-[18px] rounded-tr-[260px] sm:rounded-tr-[320px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
+            <span className="absolute left-5 sm:left-8 top-1/2 -translate-y-1/2 text-white text-[14px] sm:text-[20px] font-semibold">
               GET CREDIT
             </span>
           </div>

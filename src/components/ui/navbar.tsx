@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, Menu, X } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { navlist } from '@/interface/typesInterfaces'
 import Dropdown from './Dropdown'
 import PaymentsDropdown from './PaymentsDropdown'
@@ -27,18 +28,8 @@ const resourcesnav: navlist[] = [
 ]
 
 const partnershipsnav: navlist[] = [
-  {
-    id: 'bank',
-    label: 'For Banks',
-    icon: '/business/business-current-account.svg',
-    href: '/partnerships/banking',
-  },
-  {
-    id: 'partner',
-    label: 'Affiliate Partners',
-    icon: '/business/api-banking.svg',
-    href: '/partnerships/affiliates',
-  },
+  { id: 'bank', label: 'For Banks', icon: '/business/business-current-account.svg', href: '/partnerships/banking' },
+  { id: 'partner', label: 'Affiliate Partners', icon: '/business/api-banking.svg', href: '/partnerships/affiliates' },
 ]
 
 const cardTypes: navlist[] = [
@@ -50,10 +41,27 @@ const cardTypes: navlist[] = [
   { id: 'rewards', label: 'Rewards Cards', icon: '/cards/rewards-cards.svg', href: '/rewards-cards' },
 ]
 
+const paymentsNav: navlist[] = [
+  { id: 'gateway', label: 'Payment Gateway', icon: '/payments/payment-gateway.svg', href: '/payment-gateway' },
+  { id: 'links', label: 'Payment Links', icon: '/payments/payment-links.svg', href: '/payment-links' },
+  { id: 'upi', label: 'UPI Collections', icon: '/payments/upi-collections.svg', href: '/upi-collections' },
+  { id: 'qr', label: 'QR Code', icon: '/payments/qr-code.svg', href: '/qr-code' },
+  { id: 'button', label: 'Payment Button', icon: '/payments/payment-button.svg', href: '/payment-button' },
+]
+
+const mobileSections = [
+  { key: 'payments', label: 'Payments', items: paymentsNav },
+  { key: 'credit', label: 'Get Credit', items: creditnav },
+  { key: 'cards', label: 'Cards', items: cardTypes },
+  { key: 'partner', label: 'Partnerships', items: partnershipsnav },
+  { key: 'resources', label: 'Resources', items: resourcesnav },
+]
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeMobileSection, setActiveMobileSection] = useState<string | null>(null)
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
@@ -63,57 +71,55 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Lock body scroll when mobile drawer is open
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [mobileMenuOpen])
+
   const handleMouseEnter = (key: string) => {
     if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
     setActiveMenu(key)
   }
 
   const handleMouseLeave = () => {
-    closeTimeoutRef.current = setTimeout(() => {
-      setActiveMenu(null)
-    }, 150)
+    closeTimeoutRef.current = setTimeout(() => setActiveMenu(null), 150)
   }
 
-  const closeMenu = () => {
+  const closeAll = () => {
     setActiveMenu(null)
     setMobileMenuOpen(false)
+    setActiveMobileSection(null)
     if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
   }
 
-  const handleLinkClick = () => {
-    closeMenu()
-  }
+  const toggleMobileSection = (key: string) =>
+    setActiveMobileSection(prev => prev === key ? null : key)
 
   return (
     <>
+      {/* ─────────── HEADER BAR ─────────── */}
       <header className="fixed top-0 z-[99] w-full flex flex-col items-center">
         <div
           className={`flex transition-all duration-500 ease-out ${
             scrolled
               ? 'w-full bg-white/95 shadow-lg backdrop-blur-xl border-b border-gray-200/50'
               : 'w-[95%] lg:w-[90%] bg-white/98 backdrop-blur-md rounded-2xl mt-4 shadow-xl border border-gray-200/50'
-          } items-center justify-between px-4 sm:px-6 relative overflow-hidden`}
+          } items-center justify-between px-4 sm:px-6 relative`}
           style={{ maxWidth: scrolled ? '100%' : '1200px' }}
         >
-          {/* Animated gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 via-transparent to-teal-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-          <Link href="/" className="relative z-10 transform hover:scale-105 transition-transform duration-300">
-            <Image src="/rflogowhitebg.svg" alt="Logo" width={180} height={36} className="h-8 w-auto" />
+          {/* Logo */}
+          <Link href="/" className="relative z-10 shrink-0 transform hover:scale-105 transition-transform duration-300" onClick={closeAll}>
+            <Image src="/rflogowhitebg.svg" alt="RupeeFlow" width={180} height={36} className="h-8 w-auto" />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* ── Desktop Navigation (lg+) ── */}
           <nav className="hidden lg:flex gap-1 text-sm relative z-10">
-            {/* Payments - mega dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter('payments')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button className="group flex items-center h-14 gap-1 px-4 text-gray-700 hover:text-emerald-600 transition-all duration-300 rounded-lg hover:bg-emerald-50/50 relative">
+            <div className="relative" onMouseEnter={() => handleMouseEnter('payments')} onMouseLeave={handleMouseLeave}>
+              <button className="group flex items-center h-14 gap-1 px-4 text-gray-700 hover:text-emerald-600 transition-all duration-300 rounded-lg hover:bg-emerald-50/50">
                 <span className="relative">
                   Payments
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300" />
                 </span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeMenu === 'payments' ? 'rotate-180' : ''}`} />
               </button>
@@ -125,16 +131,11 @@ export default function Navbar() {
               ['partner', 'Partnerships', partnershipsnav],
               ['resources', 'Resources', resourcesnav],
             ] as [string, string, navlist[]][]).map(([key, label]) => (
-              <div
-                key={key}
-                className="relative"
-                onMouseEnter={() => handleMouseEnter(key)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button className="group flex items-center h-14 gap-1 px-4 text-gray-700 hover:text-emerald-600 transition-all duration-300 rounded-lg hover:bg-emerald-50/50 relative">
+              <div key={key} className="relative" onMouseEnter={() => handleMouseEnter(key)} onMouseLeave={handleMouseLeave}>
+                <button className="group flex items-center h-14 gap-1 px-4 text-gray-700 hover:text-emerald-600 transition-all duration-300 rounded-lg hover:bg-emerald-50/50">
                   <span className="relative">
                     {label}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300"></span>
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300" />
                   </span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeMenu === key ? 'rotate-180' : ''}`} />
                 </button>
@@ -142,157 +143,170 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* AUTH Buttons */}
+          {/* ── Desktop CTA (lg+) ── */}
           <div className="hidden lg:flex gap-3 relative z-10">
             <Link
               href="/contact"
               className="group relative bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-emerald-600/30 transition-all duration-300 hover:scale-105 overflow-hidden"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-teal-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              <span className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-teal-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               <span className="relative">CONTACT US</span>
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* ── Mobile Hamburger (below lg) ── */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden relative z-10 p-2 text-gray-700 hover:text-emerald-600 transition-colors duration-300"
-            aria-label="Toggle menu"
+            onClick={() => setMobileMenuOpen(prev => !prev)}
+            className="lg:hidden relative z-10 p-2 rounded-lg text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 transition-colors duration-200"
+            aria-label="Toggle navigation"
           >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6 transition-transform duration-300 rotate-90" />
-            ) : (
-              <Menu className="w-6 h-6 transition-transform duration-300" />
-            )}
+            {mobileMenuOpen
+              ? <X className="w-6 h-6" />
+              : <Menu className="w-6 h-6" />
+            }
           </button>
         </div>
 
-        {/* Payments mega dropdown - rendered below navbar */}
-        {activeMenu === 'payments' && (
-          <div
-            className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200"
-            onMouseEnter={() => handleMouseEnter('payments')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div onClick={handleLinkClick}>
-              <PaymentsDropdown />
+        {/* ── Desktop mega/dropdowns — ONLY rendered on lg+ ── */}
+        <div className="hidden lg:contents">
+          {activeMenu === 'payments' && (
+            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('payments')} onMouseLeave={handleMouseLeave}>
+              <div onClick={closeAll}><PaymentsDropdown /></div>
             </div>
-          </div>
-        )}
-
-        {/* Get Credit dropdown */}
-        {activeMenu === 'credit' && (
-          <div
-            className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200"
-            onMouseEnter={() => handleMouseEnter('credit')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div onClick={handleLinkClick}>
-              <Dropdown navitems={creditnav} />
+          )}
+          {activeMenu === 'credit' && (
+            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('credit')} onMouseLeave={handleMouseLeave}>
+              <div onClick={closeAll}><Dropdown navitems={creditnav} /></div>
             </div>
-          </div>
-        )}
-
-        {/* Cards dropdown */}
-        {activeMenu === 'cards' && (
-          <div
-            className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200"
-            onMouseEnter={() => handleMouseEnter('cards')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div onClick={handleLinkClick}>
-              <Dropdown navitems={cardTypes} />
+          )}
+          {activeMenu === 'cards' && (
+            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('cards')} onMouseLeave={handleMouseLeave}>
+              <div onClick={closeAll}><Dropdown navitems={cardTypes} /></div>
             </div>
-          </div>
-        )}
-
-        {/* Partnerships dropdown */}
-        {activeMenu === 'partner' && (
-          <div
-            className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200"
-            onMouseEnter={() => handleMouseEnter('partner')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div onClick={handleLinkClick}>
-              <Dropdown navitems={partnershipsnav} />
+          )}
+          {activeMenu === 'partner' && (
+            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('partner')} onMouseLeave={handleMouseLeave}>
+              <div onClick={closeAll}><Dropdown navitems={partnershipsnav} /></div>
             </div>
-          </div>
-        )}
-
-        {/* Resources dropdown */}
-        {activeMenu === 'resources' && (
-          <div
-            className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200"
-            onMouseEnter={() => handleMouseEnter('resources')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div onClick={handleLinkClick}>
-              <Dropdown navitems={resourcesnav} />
+          )}
+          {activeMenu === 'resources' && (
+            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('resources')} onMouseLeave={handleMouseLeave}>
+              <div onClick={closeAll}><Dropdown navitems={resourcesnav} /></div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* ─────────── MOBILE DRAWER (below lg) ─────────── */}
+      <AnimatePresence>
       {mobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[98] lg:hidden animate-in fade-in duration-300"
-          onClick={closeMenu}
-        >
-          <div
-            className="absolute top-20 left-4 right-4 bg-white rounded-2xl shadow-2xl p-6 max-h-[80vh] overflow-y-auto animate-in slide-in-from-top duration-300"
-            onClick={(e) => e.stopPropagation()}
+        <>
+          {/* Backdrop */}
+          <motion.div
+            className="fixed inset-0 z-[97] bg-black/50 backdrop-blur-sm lg:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={closeAll}
+          />
+
+          {/* Drawer panel — slides in from the right */}
+          <motion.div
+            className="fixed top-0 right-0 bottom-0 z-[98] w-[280px] bg-white flex flex-col shadow-2xl lg:hidden"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
           >
-            <nav className="flex flex-col gap-2">
-              <Link
-                href="/payments"
-                onClick={closeMenu}
-                className="px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
+            {/* Drawer header */}
+            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+              <Image src="/rflogowhitebg.svg" alt="RupeeFlow" width={140} height={28} className="h-7 w-auto" />
+              <button
+                onClick={closeAll}
+                className="p-1.5 rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors"
+                aria-label="Close menu"
               >
-                Payments
-              </Link>
-              <Link
-                href="/credit"
-                onClick={closeMenu}
-                className="px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
-              >
-                Get Credit
-              </Link>
-              <Link
-                href="/cards"
-                onClick={closeMenu}
-                className="px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
-              >
-                Cards
-              </Link>
-              <Link
-                href="/partnerships"
-                onClick={closeMenu}
-                className="px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
-              >
-                Partnerships
-              </Link>
-              <Link
-                href="/resources"
-                onClick={closeMenu}
-                className="px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
-              >
-                Resources
-              </Link>
+                <X className="w-5 h-5" />
+              </button>
+            </div>
 
-              <div className="border-t border-gray-200 my-4"></div>
+            {/* Scrollable nav links */}
+            <nav className="flex-1 overflow-y-auto py-2">
+              {mobileSections.map(({ key, label, items }) => {
+                const isOpen = activeMobileSection === key
+                return (
+                  <div key={key}>
+                    <button
+                      onClick={() => toggleMobileSection(key)}
+                      className="w-full flex items-center justify-between px-5 py-3.5 text-gray-800 hover:bg-gray-50 transition-colors duration-150"
+                    >
+                      <span className="text-sm font-semibold">{label}</span>
+                      <motion.div
+                        animate={{ rotate: isOpen ? 180 : 0 }}
+                        transition={{ duration: 0.22, ease: 'easeInOut' }}
+                      >
+                        <ChevronDown className={`w-4 h-4 transition-colors duration-200 ${isOpen ? 'text-emerald-500' : 'text-gray-400'}`} />
+                      </motion.div>
+                    </button>
 
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          key="content"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
+                          style={{ overflow: 'hidden' }}
+                        >
+                          <div className="bg-gray-50 px-3 pb-2 pt-1">
+                            {items.map((item, idx) => (
+                              <motion.div
+                                key={item.id}
+                                initial={{ opacity: 0, x: -8 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.18, delay: idx * 0.04, ease: 'easeOut' }}
+                              >
+                                <Link
+                                  href={item.href}
+                                  onClick={closeAll}
+                                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white transition-colors group"
+                                >
+                                  {item.icon && (
+                                    <div className="w-7 h-7 rounded-lg bg-white border border-gray-100 shadow-sm flex items-center justify-center shrink-0">
+                                      <Image src={item.icon} alt="" width={16} height={16} className="w-4 h-4 object-contain" />
+                                    </div>
+                                  )}
+                                  <span className="text-xs text-gray-600 group-hover:text-emerald-600 font-medium leading-tight">
+                                    {item.label}
+                                  </span>
+                                </Link>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                )
+              })}
+            </nav>
+
+            {/* CTA at bottom */}
+            <div className="p-4 border-t border-gray-100">
               <Link
                 href="/contact"
-                onClick={closeMenu}
-                className="px-4 py-3 text-center bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-200"
+                onClick={closeAll}
+                className="block w-full py-3 text-center bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-200"
               >
-                CONTACT US
+                Contact Us
               </Link>
-            </nav>
-          </div>
-        </div>
+            </div>
+          </motion.div>
+        </>
       )}
+      </AnimatePresence>
     </>
   )
 }

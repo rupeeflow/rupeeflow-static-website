@@ -41,7 +41,7 @@ export default function RevenueCalculator() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="fontheading text-3xl md:text-5xl text-gray-900 mb-4">
             Calculate Your{' '}
@@ -62,7 +62,7 @@ export default function RevenueCalculator() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 border-2 border-emerald-200"
+              className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-5 sm:p-8 border-2 border-emerald-200"
             >
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Enter Your Daily Revenue
@@ -122,7 +122,7 @@ export default function RevenueCalculator() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl p-8 border-2 border-gray-100 shadow-xl"
+              className="bg-white rounded-3xl p-5 sm:p-8 border-2 border-gray-100 shadow-xl"
             >
               {result ? (
                 <div className="space-y-6">
@@ -174,7 +174,7 @@ export default function RevenueCalculator() {
                   </a>
                 </div>
               ) : (
-                <div className="flex items-center justify-center h-full min-h-[400px]">
+                <div className="flex items-center justify-center h-full min-h-[200px] sm:min-h-[400px]">
                   <div className="text-center">
                     <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4">
                       <svg className="w-10 h-10 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">

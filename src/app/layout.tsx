@@ -65,8 +65,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={nunitoSans.variable}>
-      <body className="antialiased background-black text-white">
+    <html lang="en" className={`${nunitoSans.variable} overflow-x-hidden`}>
+      <body className="antialiased background-black text-white overflow-x-hidden">
         <SmoothScrollProvider>
           <Navbar />
           <main>{children}</main>

@@ -1,6 +1,5 @@
 'use client';
 import Link from "next/link";
-
 import Image from 'next/image'
 
 const businessCards = [
@@ -35,81 +34,77 @@ export default function ChooseBusinessType() {
   return (
    <section className="relative bg-white py-8 overflow-hidden">
 
-  {/* BIG WAVE */}
+  {/* BIG WAVE — hidden on mobile to avoid overflow */}
   <Image
     src="/wave.png"
     alt="wave"
     width={1500}
     height={200}
-    className="absolute top-[160px] left-0 w-[1500px] z-[1] pointer-events-none"
+    className="absolute top-[160px] left-0 w-[1500px] z-[1] pointer-events-none hidden md:block"
   />
 
   {/* CONTENT */}
-  <div className="relative z-[10] max-w-[1200px] mx-auto px-8">
+  <div className="relative z-[10] max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8">
 
         {/* Heading */}
-        <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold mb-3">
+        <div className="text-center mb-8 sm:mb-14">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
             Choose Your Business Type
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-sm sm:text-base">
             Which option best describe your business?
           </p>
         </div>
 
-        {/* Cards */}
-
-        <div className="grid grid-cols-2 gap-10">
-
+        {/* Cards — single col on mobile, 2 cols on sm+ */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 md:gap-10">
           {businessCards.map((card, i) => (
+            <div
+              key={i}
+              className={`relative rounded-[18px] sm:rounded-[22px] border p-5 sm:p-7 md:p-10 min-h-[200px] sm:min-h-[260px] overflow-hidden
+              ${
+                card.active
+                  ? 'border-emerald-500 border-2 bg-white'
+                  : 'border-gray-300 bg-white/70 backdrop-blur-[12px]'
+              }`}
+            >
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 pr-28 sm:pr-32 md:pr-40">
+                {card.title}
+              </h3>
 
-    <div
-  key={i}
-  className={`relative rounded-[22px] border p-10 min-h-[260px]
-  ${
-    card.active
-      ? 'border-emerald-500 border-2 bg-white'
-      : 'border-gray-300 bg-white/70 backdrop-blur-[12px]'
-  }`}
->
+              <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base pr-28 sm:pr-32 md:pr-40">
+                {card.items.map((item, j) => (
+                  <li key={j} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
-  <h3 className="text-2xl font-semibold mb-6">
-    {card.title}
-  </h3>
+              {/* Card image — repositioned for mobile */}
+              <Image
+                src={card.image}
+                alt={card.title}
+                width={180}
+                height={180}
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-[100px] sm:w-[130px] md:w-[160px] pointer-events-none"
+              />
 
-  <ul className="space-y-3 text-gray-700">
-    {card.items.map((item, j) => (
-      <li key={j}>{item}</li>
-    ))}
-  </ul>
-
-  {/* 👇 ADD THIS IMAGE RIGHT HERE */}
-  <Image
-    src={card.image}
-    alt={card.title}
-    width={180}
-    height={180}
-    className="absolute right-8 top-1/2 -translate-y-1/2 w-[180px] pointer-events-none"
-  />
-
-<Link
-  href={card.link}
-  className="absolute bottom-4 right-8 z-20
-             px-6 py-2 rounded-full
-             bg-gradient-to-r from-[#054C38] to-[#2AB871]
-             text-white text-sm flex items-center gap-2
-             transition-all duration-300
-             hover:scale-105 hover:shadow-lg
-             hover:shadow-black-500/30
-             active:scale-95
-             hover:text-pink/450"
->
-  See Complete Solution →
-</Link>
-</div>
-
+              <Link
+                href={card.link}
+                className="mt-5 sm:mt-0 sm:absolute sm:bottom-4 sm:right-6 z-20
+                           inline-flex items-center gap-2
+                           px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm
+                           bg-gradient-to-r from-[#054C38] to-[#2AB871]
+                           text-white
+                           transition-all duration-300
+                           hover:scale-105 hover:shadow-lg
+                           active:scale-95"
+              >
+                See Solution →
+              </Link>
+            </div>
           ))}
-
         </div>
 
       </div>

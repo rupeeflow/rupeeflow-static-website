@@ -37,7 +37,7 @@ export default function UpiCollectionsPage() {
         </div>
 
         {/* ── Hero content: LEFT text | RIGHT phone mockup ── */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-24 flex flex-col lg:flex-row items-center gap-10 lg:gap-8">
 
           {/* LEFT: Heading + description + UPI badges + CTA */}
           <motion.div
@@ -124,7 +124,7 @@ export default function UpiCollectionsPage() {
               <img
                 src="/images/upi-collections/npci.png"
                 alt="NPCI"
-                className="absolute -left-[55%] -top-[12%] w-[200px] md:w-[240px] h-auto z-20 pointer-events-none"
+                className="hidden sm:block absolute -left-[55%] -top-[12%] w-[180px] md:w-[240px] h-auto z-20 pointer-events-none"
               />
 
               {/* Phone body */}
@@ -172,123 +172,124 @@ export default function UpiCollectionsPage() {
         </div>
       </section>
 
-      {/* ── HOW TO USE + CUTTING EDGE SECTIONS ── */}
-      <div className="relative bg-white overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <UPIStripIcon className="absolute w-full h-full" style={{ opacity: 0.8 }} />
+      {/* ── HOW TO USE UPI PAYMENTS ── */}
+      <section className="relative bg-gray-50 overflow-hidden py-12 sm:py-16 lg:py-24">
+        {/* Decorative strip */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <UPIStripIcon className="absolute w-full h-full" style={{ opacity: 0.5 }} />
         </div>
 
-        {/* ── HOW TO USE UPI PAYMENTS ── */}
-        <section className="relative z-10 py-24">
-          <div className="max-w-6xl mx-auto px-6">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+          <motion.div
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
+              How to use <span className="text-emerald-500">UPI payments</span>
+            </h2>
+            <p className="mt-3 text-gray-500 text-sm md:text-base fontbody2">
+              Follow these simple steps to get paid using links
+            </p>
+          </motion.div>
+
+          <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16">
+            {/* Left: Steps */}
             <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="flex-1 space-y-4 sm:space-y-5 w-full max-w-lg"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
-                How to use <span className="text-emerald-500">UPI payments</span>
-              </h2>
-              <p className="mt-3 text-gray-500 text-sm md:text-base fontbody2">
-                Follow these simple steps to get paid using links
-              </p>
+              {[
+                {
+                  icon: <ProfileIcon className="w-12 h-12 sm:w-14 sm:h-14 shrink-0" />,
+                  title: 'Sign-up',
+                  desc: 'Register with Rupeeflow and integrate the UPI payment gateway on your website or app.',
+                },
+                {
+                  icon: <ProfileSearchIcon className="w-12 h-12 sm:w-14 sm:h-14 shrink-0" />,
+                  title: 'KYC',
+                  desc: 'Ensure compliance and enable secure transactions by completing the simple KYC process.',
+                },
+                {
+                  icon: (
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 bg-emerald-50 rounded-xl flex items-center justify-center">
+                      <svg className="w-6 h-6 sm:w-7 sm:h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      </svg>
+                    </div>
+                  ),
+                  title: 'Collect',
+                  desc: 'Start receiving payments through UPI apps — directly into your bank account.',
+                },
+              ].map((step, i) => (
+                <motion.div
+                  key={step.title}
+                  className="flex items-start gap-4 sm:gap-5 bg-white border border-gray-200 rounded-2xl p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                >
+                  {step.icon}
+                  <div>
+                    <h3 className="fontheading text-base sm:text-lg text-gray-900">{step.title}</h3>
+                    <p className="text-sm text-gray-500 mt-1 fontbody2">{step.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+
+              <div className="pt-2">
+                <Link
+                  href="#"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors"
+                >
+                  <span className="w-2 h-2 rounded-full bg-white/80" />
+                  Get Started
+                </Link>
+              </div>
             </motion.div>
 
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-              {/* Left: Steps */}
-              <motion.div
-                className="flex-1 space-y-5 w-full max-w-lg"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                {[
-                  {
-                    icon: <ProfileIcon className="w-14 h-14 shrink-0" />,
-                    title: 'Sign-up',
-                    desc: 'Register with Rupeeflow and integrate the UPI payment gateway on your website or app.',
-                  },
-                  {
-                    icon: <ProfileSearchIcon className="w-14 h-14 shrink-0" />,
-                    title: 'KYC',
-                    desc: 'Ensure compliance and enable secure transactions by completing the simple KYC process.',
-                  },
-                  {
-                    icon: (
-                      <div className="w-14 h-14 shrink-0 bg-emerald-50 rounded-xl flex items-center justify-center">
-                        <svg className="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                        </svg>
-                      </div>
-                    ),
-                    title: 'Collect',
-                    desc: 'Start receiving payments through UPI apps — directly into your bank account.',
-                  },
-                ].map((step, i) => (
-                  <motion.div
-                    key={step.title}
-                    className="flex items-start gap-5 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                  >
-                    {step.icon}
-                    <div>
-                      <h3 className="fontheading text-lg text-gray-900">{step.title}</h3>
-                      <p className="text-sm text-gray-500 mt-1 fontbody2">{step.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-
-                <div className="pt-2">
-                  <Link
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors"
-                  >
-                    <span className="w-2 h-2 rounded-full bg-white/80" />
-                    Get Started
-                  </Link>
-                </div>
-              </motion.div>
-
-              {/* Right: KYC Image */}
-              <motion.div
-                className="flex-1 flex justify-center"
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.15 }}
-              >
-                <div className="relative w-full max-w-[480px] h-[500px] rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg">
-                  <motion.div
-                    className="absolute inset-0"
-                    animate={{ scale: [1, 1.03, 1] }}
-                    transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-                  >
+            {/* Right: KYC Image */}
+            <motion.div
+              className="flex-1 flex justify-center w-full"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+            >
+              <div className="relative w-full max-w-[480px] h-[280px] sm:h-[380px] lg:h-[480px] rounded-2xl overflow-hidden border border-gray-200 shadow-xl">
+                <motion.div
+                  className="absolute inset-0 overflow-hidden"
+                  animate={{ scale: [1, 1.03, 1] }}
+                  transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  <div className="relative w-full h-full">
                     <Image
                       src="/images/upi-collections/kycImage.jpeg"
                       alt="KYC Process"
                       fill
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 440px"
+                      priority
                     />
-                  </motion.div>
-                </div>
-              </motion.div>
-            </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       {/* ── UPI PAYMENT GATEWAY FOR BUSINESSES ── */}
-      <section className="relative py-24 bg-[#f0f0f0]">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="relative py-12 sm:py-16 lg:py-24 bg-[#f0f0f0]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -335,24 +336,26 @@ export default function UpiCollectionsPage() {
                 transition={{ duration: 0.6, delay: i * 0.08 }}
               >
                 {/* Image panel — fixed height so image is always fully visible */}
-                <div className="relative md:w-[48%] w-full h-[300px] md:h-[360px] shrink-0 overflow-hidden">
+                <div className="relative md:w-[48%] w-full h-[260px] sm:h-[300px] md:h-[360px] shrink-0 overflow-hidden">
                   <motion.div
-                    className="absolute inset-0"
+                    className="absolute inset-0 overflow-hidden"
                     animate={{ scale: [1, 1.04, 1] }}
                     transition={{ duration: 9 + i, repeat: Infinity, ease: 'easeInOut' }}
                   >
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 468px) 50vw, 18vw"
-                    />
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={card.image}
+                        alt={card.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 48vw"
+                      />
+                    </div>
                   </motion.div>
                 </div>
 
                 {/* Text panel */}
-                <div className="flex-1 flex flex-col justify-center p-10 md:p-14">
+                <div className="flex-1 flex flex-col justify-center p-5 sm:p-8 md:p-14">
                   <div className="w-10 h-1 bg-emerald-500 rounded-full mb-5" />
                   <h3 className="fontheading text-2xl md:text-3xl text-gray-900 mb-4">{card.title}</h3>
                   <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed">{card.desc}</p>

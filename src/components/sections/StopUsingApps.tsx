@@ -35,8 +35,8 @@ const borderDelays = ['', 'animate-border-flow-delayed', 'animate-border-flow-de
 
 export default function StopUsingApps() {
   return (
-    <section className="bg-white py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 items-start gap-16">
+    <section className="bg-white py-12 sm:py-16 lg:py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 items-start gap-8 lg:gap-16">
 
         {/* ── LEFT CONTENT ── */}
         <div>

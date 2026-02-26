@@ -44,10 +44,10 @@ const solutions = [
 
 export default function UpiSolutionsStack() {
   return (
-    <section className="relative py-24 bg-[#f0f0f0]">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="relative py-12 sm:py-16 lg:py-24 bg-[#f0f0f0]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -76,7 +76,7 @@ export default function UpiSolutionsStack() {
                 <div className="flex flex-col lg:flex-row items-stretch">
 
                   {/* Left: Text */}
-                  <div className="flex-1 flex flex-col justify-center p-8 md:p-12">
+                  <div className="flex-1 flex flex-col justify-center p-5 sm:p-8 md:p-12">
                     {/* Number badge */}
                     <div className="flex items-center gap-3 mb-5">
                       <span className="w-8 h-8 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center shrink-0">
@@ -85,7 +85,7 @@ export default function UpiSolutionsStack() {
                       <h3 className="fontheading text-xl md:text-2xl text-gray-900">{item.label}</h3>
                     </div>
 
-                    <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-8 max-w-lg">
+                    <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-5 sm:mb-8 max-w-lg">
                       {item.description}
                     </p>
 
@@ -100,30 +100,105 @@ export default function UpiSolutionsStack() {
                     </Link>
                   </div>
 
-                  {/* Right: Real image */}
-                  <div className="lg:w-[45%] relative h-[260px] lg:h-[320px] shrink-0 overflow-hidden">
-                    <motion.div
-                      className="absolute inset-0"
-                      animate={{ scale: [1, 1.04, 1] }}
-                      transition={{ duration: 10 + index, repeat: Infinity, ease: 'easeInOut' }}
-                    >
-                      <Image
-                        src={item.image}
-                        alt={item.label}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 1024px) 100vw, 45vw"
-                      />
-                    </motion.div>
+                  {/* Right: image or JSX visual */}
+                  {item.id === 4 ? (
+                    /* ── Virtual UPI ID — animated card stack ── */
+                    <div className="lg:w-[45%] relative h-[260px] lg:h-[320px] shrink-0 flex items-center justify-center bg-gradient-to-br from-emerald-50 to-gray-100 overflow-hidden">
+                      {/* Soft radial glow */}
+                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.12),transparent_70%)]" />
 
-                    {/* Subtle label badge */}
-                    <div className="absolute bottom-4 left-4 z-10">
-                      <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-sm">
-                        <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                        <span className="text-xs font-semibold text-gray-800">{item.label}</span>
+                      <div className="relative w-[290px] px-2">
+                        {/* Third card — peek from bottom */}
+                        <motion.div
+                          className="absolute -bottom-2 left-6 right-0 h-[68px] bg-white rounded-2xl border border-gray-200 shadow-sm opacity-50"
+                          animate={{ y: [0, -4, 0] }}
+                          transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+                        />
+
+                        {/* Second card */}
+                        <motion.div
+                          className="relative z-10 bg-white rounded-2xl border border-gray-100 shadow-md p-4 mb-3"
+                          animate={{ y: [0, -6, 0] }}
+                          transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.4 }}
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center shrink-0">
+                              <svg className="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.333 0-10 1.667-10 5v1h20v-1c0-3.333-6.667-5-10-5z"/>
+                              </svg>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <p className="text-[10px] text-gray-400 font-medium leading-none mb-0.5">Your Unique UPI ID</p>
+                              <p className="text-sm font-bold text-gray-900 tracking-wider">********1302@ybl</p>
+                              <p className="text-[10px] text-gray-400 mt-0.5">Displayed on home</p>
+                            </div>
+                            <div className="flex items-center gap-1.5 shrink-0">
+                              <div className="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center">
+                                <svg className="w-3.5 h-3.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                              </div>
+                              <span className="text-gray-400 text-xs font-bold tracking-widest">••</span>
+                            </div>
+                          </div>
+                        </motion.div>
+
+                        {/* First card — primary, topmost */}
+                        <motion.div
+                          className="relative z-20 bg-white rounded-2xl border border-gray-100 shadow-xl p-4"
+                          animate={{ y: [0, -8, 0] }}
+                          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center shrink-0">
+                              <svg className="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.333 0-10 1.667-10 5v1h20v-1c0-3.333-6.667-5-10-5z"/>
+                              </svg>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <p className="text-[10px] text-gray-400 font-medium leading-none mb-0.5">Your Unique UPI ID</p>
+                              <p className="text-sm font-bold text-gray-900 tracking-wider">********9241@ybl</p>
+                              <p className="text-[10px] text-gray-400 mt-0.5">Displayed on home</p>
+                            </div>
+                            <div className="flex items-center gap-1.5 shrink-0">
+                              <div className="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center">
+                                <svg className="w-3.5 h-3.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                              </div>
+                              <span className="text-gray-400 text-xs font-bold tracking-widest">••</span>
+                            </div>
+                          </div>
+                        </motion.div>
                       </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="lg:w-[45%] relative h-[220px] sm:h-[260px] lg:h-[320px] shrink-0 overflow-hidden">
+                      <motion.div
+                        className="absolute inset-0 overflow-hidden"
+                        animate={{ scale: [1, 1.04, 1] }}
+                        transition={{ duration: 10 + index, repeat: Infinity, ease: 'easeInOut' }}
+                      >
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={item.image}
+                            alt={item.label}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 1024px) 100vw, 45vw"
+                          />
+                        </div>
+                      </motion.div>
+
+                      {/* Subtle label badge */}
+                      <div className="absolute bottom-4 left-4 z-10">
+                        <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-sm">
+                          <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                          <span className="text-xs font-semibold text-gray-800">{item.label}</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                 </div>
               </motion.div>

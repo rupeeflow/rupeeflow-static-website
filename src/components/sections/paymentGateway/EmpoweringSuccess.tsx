@@ -146,17 +146,17 @@ function ChatBubble({
 
 export default function EmpoweringSuccess() {
   return (
-    <section className="py-24 bg-[#fafafa] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[#fafafa] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Heading */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
             Empowering Your Success
           </h2>
           <p className="text-gray-500 mt-4 text-base max-w-2xl mx-auto leading-relaxed">
@@ -239,8 +239,7 @@ export default function EmpoweringSuccess() {
 
           {/* Right: Chat Card + Woman Image */}
           <motion.div
-            className="flex-shrink-0 relative lg:w-[480px] w-full"
-            style={{ height: 540 }}
+            className="flex-shrink-0 relative w-full lg:w-[480px] h-[420px] lg:h-[540px]"
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -248,7 +247,7 @@ export default function EmpoweringSuccess() {
           >
             {/* Floating Chat Card */}
             <motion.div
-              className="absolute top-0 left-0 w-[310px] bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden z-20"
+              className="absolute top-0 left-0 w-full max-w-[310px] bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden z-20"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
               style={{ boxShadow: '0 32px 64px rgba(0,0,0,0.12), 0 8px 24px rgba(48,243,188,0.08)' }}
@@ -301,10 +300,10 @@ export default function EmpoweringSuccess() {
               </div>
             </motion.div>
 
-            {/* Woman Image (EmpoweringSuccess.png) */}
+            {/* Woman Image (EmpoweringSuccess.png) — desktop only */}
 
             <motion.div
-              className="absolute bottom-10 left-20 w-[460px] h-[890px]"
+              className="hidden lg:block absolute bottom-10 left-20 w-[460px] h-[890px]"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}

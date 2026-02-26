@@ -1,4 +1,8 @@
+'use client'
+
 import Link from 'next/link'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
 import FAQAccordion from '@/components/ui/FAQAccordion'
 import { paymentButtonFAQs } from '@/data/faqs'
 import PaymentButtonRoundedStripIcon from '../../../public/icons/payment-button/PaymentButtonRoundedStrip'
@@ -22,119 +26,188 @@ export default function PaymentButtonPage() {
   return (
     <div className="w-full relative">
       {/* ── HERO SECTION ── */}
-      <section className="relative min-h-screen bg-[#020506] overflow-hidden">
+      <section className="relative bg-[#020506] overflow-hidden">
 
-        {/* Left spotlight glow (same as payment-links) */}
-        <div
-          className="absolute -left-[100px] top-[10%] w-[400px] h-[400px] rounded-full opacity-50 blur-[120px] pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, #109F58 0%, #055949 40%, transparent 70%)',
-          }}
-        />
-        <div
-          className="absolute left-[5%] top-[30%] w-[500px] h-[500px] rounded-full opacity-30 blur-[100px] pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, #109F58 0%, transparent 70%)',
-          }}
-        />
+        {/* Background glows */}
+        <div className="absolute -left-[100px] top-[10%] w-[420px] h-[420px] rounded-full opacity-50 blur-[130px] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #109F58 0%, #055949 40%, transparent 70%)' }} />
+        <div className="absolute left-[5%] top-[40%] w-[480px] h-[480px] rounded-full opacity-25 blur-[110px] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #109F58 0%, transparent 70%)' }} />
+        <div className="absolute right-[10%] top-[20%] w-[300px] h-[300px] rounded-full opacity-10 blur-[90px] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #30F3BC 0%, transparent 65%)' }} />
 
-        {/* Decorative rounded strip — bottom left area */}
-        <div className="absolute bottom-0 left-0 w-full pointer-events-none">
-          <PaymentButtonRoundedStripIcon className="w-full h-auto opacity-60" />
-        </div>
+        {/* ── Two-column content ── */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-10 lg:gap-14 pt-24 pb-10 sm:pt-28 sm:pb-14 lg:pt-24 lg:pb-20">
 
-        {/* Content */}
-        <div className="relative z-10 max-w-5xl mx-auto text-center pt-28 px-6">
-          <h1 className="fontheading text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[4rem] leading-tight text-white">
-            Collect Smarter with Custom
-            <br />
-            <span className="text-emerald-400">Payment Button</span>
-          </h1>
-
-          <p className="mt-8 text-gray-400 max-w-2xl mx-auto text-base md:text-lg fontbody2 leading-relaxed">
-            Create a payment button in minutes and embed it on your website or app to accept fast,
-            seamless, and secure online payments. No complex integrations or coding required.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="mt-12 flex flex-col sm:flex-row justify-center gap-5">
-            <Link
-              href="#"
-              className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/20"
+          {/* LEFT — text */}
+          <motion.div
+            className="lg:w-[46%] w-full text-left"
+            initial={{ opacity: 0, x: -48 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <motion.span
+              className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30"
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
-              Create Your Button
-            </Link>
-            <Link
-              href="#"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-emerald-500 text-white font-semibold text-sm hover:bg-emerald-500/10 transition-all duration-300"
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              No-code embed
+            </motion.span>
+
+            <h1 className="rf-h1 text-white leading-tight">
+              Collect Smarter with{' '}
+              <span className="text-emerald-400">Custom Payment</span>{' '}
+              Button
+            </h1>
+
+            <p className="mt-6 rf-lead text-gray-400 max-w-lg leading-relaxed">
+              Create a payment button in minutes and embed it on any website or app.
+              Accept fast, secure payments — no complex integrations or coding required.
+            </p>
+
+            {/* Stats */}
+            <motion.div
+              className="mt-8 flex items-center gap-8"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Documentation
-            </Link>
-          </div>
-
-          {/* Dashboard + Mobile mockup placeholders */}
-          <div className="relative mt-1 mb-[-2px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/payment-button/payment-button-menn.png"
-              alt="Dashboard"
-              className="w-full h-[743px]"
-            />
-            {/* Browser window mockup */}
-            <div className="max-w-3xl mx-auto bg-[#2a2a2a] rounded-t-xl shadow-2xl overflow-hidden">
-              {/* Browser chrome */}
-              <div className="flex items-center gap-2 px-4 py-3 bg-[#1e1e1e]">
-                <span className="w-3 h-3 rounded-full bg-gray-500" />
-                <span className="w-3 h-3 rounded-full bg-blue-400" />
-                <span className="w-3 h-3 rounded-full bg-red-400" />
-              </div>
-
-              {/* Content area */}
-              {/* <div className="p-8"> */}
-                {/* <h3 className="text-white fontheading text-xl mb-6 text-left">Order Summary</h3> */}
-                {/* Product placeholders */}
-                {/* <div className="flex gap-4 mb-6">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-24 h-20 bg-gray-600 rounded-lg" />
-                  ))}
-                </div> */}
-                {/* Info bars */}
-                {/* <div className="w-48 h-3 bg-gray-500 rounded mb-4" />
-                <div className="w-72 h-3 bg-gray-500 rounded mb-6" /> */}
-                {/* Pay button */}
-                {/* <div className="w-36 py-2.5 bg-emerald-500 rounded-lg text-center text-white text-sm font-semibold">
-                  Pay Here
-                </div> */}
-              {/* </div> */}
-            </div>
-
-            {/* Mobile mockup — overlapping right */}
-            <div className="absolute -right-4 md:right-[10%] bottom-0 w-[180px] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-              <div className="p-4">
-                {/* <p className="text-xs font-semibold text-gray-800 mb-3">Order Summary</p> */}
-                {/* Mini product rows */}
-                <div className="space-y-2 mb-3">
-                  {/* {[1, 2, 3].map((i) => (
-                    <div key={i} className="flex items-center gap-2">
-                      <div className="w-6 h-6 bg-gray-200 rounded" />
-                      <div className="flex-1 space-y-1">
-                        <div className="w-full h-1.5 bg-gray-200 rounded" />
-                        <div className="w-2/3 h-1.5 bg-gray-200 rounded" />
-                      </div>
-                    </div>
-                  ))} */}
+              {[
+                { value: '100+', label: 'Payment modes' },
+                { value: '< 2s', label: 'Load time' },
+                { value: '99.9%', label: 'Uptime' },
+              ].map((s) => (
+                <div key={s.label} className="text-center">
+                  <p className="text-emerald-400 font-bold text-xl">{s.value}</p>
+                  <p className="text-gray-500 text-xs mt-0.5">{s.label}</p>
                 </div>
-                {/* <div className="flex justify-between items-center mb-23">
-                  <span className="text-[10px] text-gray-500">Total :</span>
-                  <span className="text-xs font-bold text-gray-800">&#8377;4030</span>
-                </div> */}
-                {/* <div className="w-full py-1.5 bg-emerald-500 rounded-md text-center text-white text-[10px] font-semibold">
-                  Pay Here
-                </div> */}
+              ))}
+            </motion.div>
+
+            {/* CTAs */}
+            <motion.div
+              className="mt-10 flex flex-wrap gap-4"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+            >
+              <Link
+                href="#"
+                className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/20"
+              >
+                <motion.span
+                  className="w-2.5 h-2.5 rounded-full bg-white/80"
+                  animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+                />
+                Create Your Button
+              </Link>
+              <Link
+                href="#"
+                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-emerald-500/60 text-white font-semibold text-sm hover:bg-emerald-500/10 transition-all duration-300"
+              >
+                Documentation →
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          {/* RIGHT — image + floating dashboard cards */}
+          <motion.div
+            className="lg:w-[54%] w-full flex items-center justify-center"
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="relative w-full max-w-[580px] mx-auto">
+
+              {/* Main image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                <Image
+                  src="/images/payment-button/payment-button.jpeg"
+                  alt="RupeeFlow Payment Button"
+                  width={700}
+                  height={480}
+                  className="w-full object-cover"
+                  priority
+                />
+                {/* Dark overlay to blend into page bg */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute inset-x-0 top-0 h-[20%] bg-gradient-to-b from-[#020506] to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 h-[20%] bg-gradient-to-t from-[#020506] to-transparent" />
+                  <div className="absolute inset-y-0 left-0 w-[12%] bg-gradient-to-r from-[#020506] to-transparent" />
+                  <div className="absolute inset-y-0 right-0 w-[12%] bg-gradient-to-l from-[#020506] to-transparent" />
+                </div>
               </div>
+
+              {/* Floating card 1 — Configure (top-right, above the right edge) */}
+              <motion.div
+                className="hidden sm:block absolute -top-2 right-4 z-20 bg-[#0d1f14] border border-emerald-500/30 rounded-2xl p-4 w-[200px] shadow-xl"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <Image src="/rflogo-darkbg.svg" alt="RupeeFlow" width={80} height={18} />
+                </div>
+                <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-widest mb-2">Step 1 — Configure</p>
+                <div className="space-y-1.5">
+                  <div className="bg-white/5 border border-white/10 rounded-lg px-2.5 py-1.5">
+                    <p className="text-[10px] text-gray-400">Label</p>
+                    <p className="text-xs text-white font-medium">Pay Now</p>
+                  </div>
+                  <div className="bg-white/5 border border-white/10 rounded-lg px-2.5 py-1.5">
+                    <p className="text-[10px] text-gray-400">Amount</p>
+                    <p className="text-xs text-emerald-400 font-bold">₹ 500</p>
+                  </div>
+                </div>
+                <div className="mt-3 w-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg py-1.5 text-center text-[10px] text-white font-semibold">
+                  Generate →
+                </div>
+              </motion.div>
+
+              {/* Floating card 2 — Code snippet (right side, middle) */}
+              <motion.div
+                className="hidden xl:block absolute -right-48 top-[36%] z-20 bg-[#0d1a0f] border border-emerald-500/20 rounded-2xl p-4 w-[210px] shadow-xl"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-6 h-6 rounded-md bg-emerald-500/20 flex items-center justify-center">
+                    <span className="text-emerald-400 text-[10px] font-bold">{`</>`}</span>
+                  </div>
+                  <p className="text-xs text-white font-semibold">Step 2 — Copy Code</p>
+                </div>
+                <div className="bg-black/40 rounded-lg p-2.5 font-mono text-[9px] text-emerald-300 leading-relaxed border border-white/5">
+                  {`<script\n  src="rupeeflow.js"\n  data-key="rf_live_***"\n  data-amount="500"\n/>`}
+                </div>
+                <div className="mt-2.5 flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-lg px-2.5 py-1.5 cursor-pointer">
+                  <span className="text-[10px] text-emerald-400 font-semibold">Copy snippet</span>
+                  <span className="text-emerald-400 text-[10px]">⎘</span>
+                </div>
+              </motion.div>
+
+              {/* Floating card 3 — Live badge (bottom-right) */}
+              <motion.div
+                className="hidden sm:block absolute -bottom-6 right-6 z-20 bg-white rounded-2xl shadow-xl p-4 w-[190px] border border-gray-100"
+                animate={{ y: [0, -7, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <p className="text-xs font-bold text-gray-800">Step 3 — Button Live!</p>
+                </div>
+                <div className="w-full bg-gradient-to-r from-[#054C38] to-[#2AB871] rounded-full py-2 text-center text-white text-xs font-semibold shadow-md">
+                  Pay Now →
+                </div>
+                <div className="mt-2 flex justify-between text-[10px] text-gray-400">
+                  <span>Clicks today</span>
+                  <span className="text-emerald-600 font-bold">127</span>
+                </div>
+              </motion.div>
+
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -149,9 +222,9 @@ export default function PaymentButtonPage() {
           />
         </div>
 
-        <section className="relative z-10 py-24">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-16">
+        <section className="relative z-10 py-12 sm:py-16 lg:py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
                 How to create <span className="text-emerald-500">Payment Button</span>
               </h2>
@@ -233,7 +306,7 @@ export default function PaymentButtonPage() {
                   </div>
 
                   {/* Floating badge: Quick Setup */}
-                  <div className="absolute top-12 -right-4 bg-white rounded-lg px-3 py-1.5 shadow-lg border border-gray-100 text-[11px]">
+                  <div className="hidden sm:block absolute top-12 -right-4 bg-white rounded-lg px-3 py-1.5 shadow-lg border border-gray-100 text-[11px]">
                     <span className="text-gray-600">Quick </span>
                     <span className="text-emerald-500 font-semibold">Setup</span>
                   </div>
@@ -260,9 +333,9 @@ export default function PaymentButtonPage() {
         </section>
 
         {/* ── JUST ONE CLICK IS ENOUGH ── */}
-        <section className="relative z-10 py-24">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-16">
+        <section className="relative z-10 py-12 sm:py-16 lg:py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
                 Just one <span className="text-emerald-500">click</span> is enough.
               </h2>
@@ -270,7 +343,7 @@ export default function PaymentButtonPage() {
 
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
               {/* Left: 3x2 feature cards */}
-              <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-5">
+              <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {/* Quick Setup */}
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:shadow-md transition-shadow">
                   <LightingIcon className="w-10 h-10 mb-3" />
@@ -394,28 +467,28 @@ export default function PaymentButtonPage() {
                   </div>
 
                   {/* Floating badge: Copied */}
-                  <div className="absolute top-[15%] -left-4 bg-white rounded-md px-3 py-1.5 shadow-lg border border-gray-100 text-[11px] font-medium text-gray-700">
+                  <div className="hidden sm:block absolute top-[15%] -left-4 bg-white rounded-md px-3 py-1.5 shadow-lg border border-gray-100 text-[11px] font-medium text-gray-700">
                     Copied
                   </div>
 
                   {/* Floating badge: Approved */}
-                  <div className="absolute top-[15%] -right-4 bg-white rounded-md px-3 py-1.5 shadow-lg border border-gray-100 text-[11px] font-medium text-gray-700">
+                  <div className="hidden sm:block absolute top-[15%] -right-4 bg-white rounded-md px-3 py-1.5 shadow-lg border border-gray-100 text-[11px] font-medium text-gray-700">
                     Approved
                   </div>
 
                   {/* Floating badge: Fits Any Device */}
-                  <div className="absolute top-[35%] -left-8 bg-white rounded-md px-3 py-1.5 shadow-lg border border-gray-100 flex items-center gap-1.5">
+                  <div className="hidden sm:flex absolute top-[35%] -left-8 bg-white rounded-md px-3 py-1.5 shadow-lg border border-gray-100 items-center gap-1.5">
                     <svg className="w-3 h-3 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
                     <span className="text-[11px] font-medium text-gray-700">Fits Any Device</span>
                   </div>
 
                   {/* Floating badge: Active Now */}
-                  <div className="absolute top-[45%] -right-6 bg-white rounded-md px-3 py-1.5 shadow-lg border border-gray-100 text-[11px] font-medium text-gray-700">
+                  <div className="hidden sm:block absolute top-[45%] -right-6 bg-white rounded-md px-3 py-1.5 shadow-lg border border-gray-100 text-[11px] font-medium text-gray-700">
                     Active Now
                   </div>
 
                   {/* Floating badge: Safe And Secure */}
-                  <div className="absolute top-[55%] -left-8 bg-white rounded-md px-3 py-1.5 shadow-lg border border-gray-100 flex items-center gap-1.5">
+                  <div className="hidden sm:flex absolute top-[55%] -left-8 bg-white rounded-md px-3 py-1.5 shadow-lg border border-gray-100 items-center gap-1.5">
                     <svg className="w-3 h-3 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
                     <span className="text-[11px] font-medium text-gray-700">Safe And Secure</span>
                   </div>
@@ -426,9 +499,9 @@ export default function PaymentButtonPage() {
         </section>
 
         {/* ── ONE BUTTON FOR ALL PAYMENT TYPES ── */}
-        <section className="relative z-10 py-24 bg-[#f5f5f5]">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-16">
+        <section className="relative z-10 py-12 sm:py-16 lg:py-24 bg-[#f5f5f5]">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
                 <span className="text-emerald-500">One Button</span> for All Payment Types
               </h2>
@@ -590,12 +663,12 @@ export default function PaymentButtonPage() {
                   </div> */}
 
                   {/* Floating badge: Explore Payment Types (top right) */}
-                  <div className="absolute top-[8%] -right-[25%] bg-white rounded-lg px-4 py-2.5 shadow-lg border border-gray-200 z-20">
+                  <div className="hidden lg:block absolute top-[8%] -right-[25%] bg-white rounded-lg px-4 py-2.5 shadow-lg border border-gray-200 z-20">
                     <span className="text-sm font-semibold text-gray-800">Explore Payment Types</span>
                   </div>
 
                   {/* Floating badge: One Click Pay (right middle) */}
-                  <div className="absolute top-[45%] -right-[20%] bg-white rounded-lg px-4 py-2 shadow-lg border border-gray-200 z-20">
+                  <div className="hidden lg:block absolute top-[45%] -right-[20%] bg-white rounded-lg px-4 py-2 shadow-lg border border-gray-200 z-20">
                     <span className="text-xs font-semibold text-gray-700">One Click Pay</span>
                   </div>
                 </div>

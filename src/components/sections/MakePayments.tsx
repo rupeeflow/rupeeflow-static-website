@@ -31,11 +31,11 @@ export default function MakePayments() {
     <section className="relative bg-black pt-10 md:pt-19 pb-10 md:pb-16 overflow-hidden">
       <Container className="relative">
         {/* ================= HERO AREA ================= */}
-        <div className="relative h-[80px] md:h-[110px] mb-16 md:mb-28 px-4 md:px-0">
+        <div className="relative h-[70px] sm:h-[80px] md:h-[110px] mb-10 sm:mb-16 md:mb-28 px-4 md:px-0">
           {/* Pill RIGHT */}
-          <div className="absolute right-0 md:right-[10px] top-[60px] md:top-[110px] w-[280px] sm:w-[320px] h-[50px] sm:h-[60px] z-10">
-            <div className="absolute inset-0 rounded-[18px] rounded-tl-[280px] sm:rounded-tl-[320px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
-            <span className="absolute right-6 sm:right-8 top-1/2 -translate-y-1/2 text-white text-[16px] sm:text-[20px] font-semibold">
+          <div className="absolute right-0 md:right-[10px] top-[40px] sm:top-[60px] md:top-[110px] w-[260px] sm:w-[320px] h-[46px] sm:h-[60px] z-10">
+            <div className="absolute inset-0 rounded-[18px] rounded-tl-[260px] sm:rounded-tl-[320px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
+            <span className="absolute right-5 sm:right-8 top-1/2 -translate-y-1/2 text-white text-[14px] sm:text-[20px] font-semibold">
               MAKE PAYMENTS
             </span>
           </div>

@@ -3,6 +3,7 @@
 import Container from "@/components/ui/Container"
 import MainCTA from "@/components/ui/mainCTA"
 import FAQAccordion from "@/components/ui/FAQAccordion"
+import PartnershipBenefits from "@/components/sections/PartnershipBenefits"
 import { affiliatePartnerFAQs } from "@/data/faqs"
 import {
   CheckCircle2,
@@ -66,12 +67,12 @@ const steps = [
 export default function AffiliatePartnersPage() {
   return (
     <>
-      {/* ── HERO ── */}
-      <section className="py-24 bg-gradient-to-b from-[#060D0A] to-[#0C1F18]">
+      {/* ── HERO — dark brand ── */}
+      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-[#060D0A] to-[#0C1F18]">
         <Container>
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
-            {/* LEFT */}
+            {/* LEFT — text */}
             <div>
               <span className="inline-block text-emerald-400 rf-label mb-4 border border-emerald-400/30 rounded-full px-4 py-1">
                 Affiliate Program
@@ -109,24 +110,25 @@ export default function AffiliatePartnersPage() {
               </div>
             </div>
 
-            {/* RIGHT — earnings visual */}
-            <div className="hidden md:flex flex-col gap-4">
+            {/* RIGHT — earnings visual (visible all screens) */}
+            <div className="flex flex-col gap-4">
               {/* Earnings card */}
-              <div className="bg-[#0F2419] border border-emerald-500/30 rounded-2xl p-6">
+              <div className="bg-[#0F2419] border border-emerald-500/30 rounded-2xl p-5 sm:p-6">
                 <p className="rf-caption text-gray-400 mb-1">Your earnings this month</p>
-                <p className="text-3xl font-bold text-white">₹1,24,500</p>
+                <p className="text-2xl sm:text-3xl font-bold text-white">₹1,24,500</p>
                 <div className="flex items-center gap-2 mt-2">
                   <TrendingUp size={14} className="text-emerald-400" />
                   <span className="text-emerald-400 rf-caption font-semibold">+34% vs last month</span>
                 </div>
-                <div className="mt-4 space-y-2">
+                <div className="mt-4 space-y-3">
                   {[
                     { label: "Referral commissions", value: "₹74,500", pct: "60%" },
                     { label: "Recurring revenue", value: "₹50,000", pct: "40%" },
                   ].map(({ label, value, pct }) => (
                     <div key={label}>
                       <div className="flex justify-between rf-caption text-gray-400 mb-1">
-                        <span>{label}</span><span className="text-white font-semibold">{value}</span>
+                        <span>{label}</span>
+                        <span className="text-white font-semibold">{value}</span>
                       </div>
                       <div className="w-full bg-white/10 rounded-full h-1.5">
                         <div className="h-1.5 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500" style={{ width: pct }} />
@@ -145,10 +147,10 @@ export default function AffiliatePartnersPage() {
                 ].map(({ value, label }) => (
                   <div
                     key={label}
-                    className="bg-white/5 border border-white/10 rounded-xl p-4 text-center hover:border-emerald-400/30 transition duration-300"
+                    className="bg-white/5 border border-white/10 rounded-xl p-3 sm:p-4 text-center hover:border-emerald-400/30 transition duration-300"
                   >
-                    <p className="text-xl font-bold text-emerald-400">{value}</p>
-                    <p className="rf-caption text-gray-500 mt-0.5">{label}</p>
+                    <p className="text-lg sm:text-xl font-bold text-emerald-400">{value}</p>
+                    <p className="rf-caption text-gray-500 mt-0.5 text-[11px] sm:text-xs">{label}</p>
                   </div>
                 ))}
               </div>
@@ -158,23 +160,26 @@ export default function AffiliatePartnersPage() {
         </Container>
       </section>
 
-      {/* ── WHO IS IT FOR ── */}
-      <section className="py-20 bg-[#0A0F0D]">
+      {/* ── WHO IS IT FOR — white bg ── */}
+      <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <Container>
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
             <div>
-              <h2 className="rf-h2 text-white">
+              <span className="inline-block text-emerald-600 text-xs font-semibold tracking-widest uppercase border border-emerald-500/30 rounded-full px-4 py-1 mb-4">
+                Who Is It For
+              </span>
+              <h2 className="rf-h2 text-gray-900 mt-2">
                 Built for Bold Partners{" "}
-                <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                   with Bigger Goals
                 </span>
               </h2>
-              <p className="rf-lead text-gray-400 mt-4 max-w-lg">
+              <p className="rf-lead text-gray-500 mt-4 max-w-lg">
                 Whether you&apos;re a consultant, influencer, or platform — there&apos;s a
                 place for you in the RupeeFlow partner ecosystem.
               </p>
-              <div className="mt-10">
+              <div className="mt-8">
                 <MainCTA label="Join the Network" destination="/contact" />
               </div>
             </div>
@@ -183,11 +188,11 @@ export default function AffiliatePartnersPage() {
               {whoIsItFor.map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl px-5 py-4
-                    hover:border-emerald-400/30 transition duration-300"
+                  className="flex items-center gap-4 bg-gray-50 border border-gray-200 rounded-xl px-5 py-4
+                    hover:border-emerald-500 hover:shadow-md hover:shadow-emerald-500/10 transition duration-300"
                 >
-                  <CheckCircle2 size={18} className="text-emerald-400 shrink-0" />
-                  <span className="rf-body text-gray-200">{item}</span>
+                  <CheckCircle2 size={18} className="text-emerald-500 shrink-0" />
+                  <span className="rf-body text-gray-700">{item}</span>
                 </div>
               ))}
             </div>
@@ -196,38 +201,38 @@ export default function AffiliatePartnersPage() {
         </Container>
       </section>
 
-      {/* ── PARTNER PROGRAM TYPES ── */}
-      <section className="py-24 bg-[#0A0F0D]">
+      {/* ── PARTNER PROGRAM TYPES — gray-50 bg ── */}
+      <section className="py-12 sm:py-16 lg:py-24 bg-gray-50">
         <Container>
 
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="rf-h2 text-white">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-14">
+            <h2 className="rf-h2 text-gray-900">
               Types of{" "}
-              <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                 Partner Programs
               </span>
             </h2>
-            <p className="rf-lead text-gray-400 mt-4">
+            <p className="rf-lead text-gray-500 mt-4">
               Flexible partnership models tailored for different business ecosystems.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
             {partnerTypes.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="group flex items-start gap-5 bg-white/5 border border-white/10 rounded-2xl p-8
-                  hover:border-emerald-400/40 hover:shadow-[0_0_35px_rgba(0,239,100,0.1)]
-                  hover:-translate-y-1 transition duration-300"
+                className="group flex items-start gap-5 bg-white border border-gray-200 rounded-2xl p-5 sm:p-7
+                  hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/10
+                  hover:-translate-y-0.5 transition duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/15 flex items-center justify-center shrink-0 group-hover:bg-emerald-500/25 transition duration-300">
-                  <Icon size={22} className="text-emerald-400" />
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0 group-hover:bg-emerald-500/20 transition duration-300">
+                  <Icon size={22} className="text-emerald-600" />
                 </div>
                 <div>
-                  <h3 className="rf-h3 text-white group-hover:text-emerald-300 transition duration-300">
+                  <h3 className="rf-h3 text-gray-900 group-hover:text-emerald-600 transition duration-300">
                     {title}
                   </h3>
-                  <p className="rf-body text-gray-400 mt-2">{desc}</p>
+                  <p className="rf-body text-gray-500 mt-2">{desc}</p>
                 </div>
               </div>
             ))}
@@ -236,54 +241,63 @@ export default function AffiliatePartnersPage() {
         </Container>
       </section>
 
-      {/* ── HOW IT WORKS ── */}
-      <section className="py-24 bg-gradient-to-b from-[#0A0F0D] to-[#0C1F18]">
+      {/* ── WHY PARTNER ── */}
+      <PartnershipBenefits />
+
+      {/* ── HOW IT WORKS — white bg ── */}
+      <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <Container>
 
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="rf-h2 text-white">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-14">
+            <h2 className="rf-h2 text-gray-900">
               Get Started in{" "}
-              <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                 3 Easy Steps
               </span>
             </h2>
-            <p className="rf-lead text-gray-400 mt-4">
+            <p className="rf-lead text-gray-500 mt-4">
               A simple journey designed to help you start earning and growing with minimal effort.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
             {steps.map((item) => (
               <div
                 key={item.step}
-                className="relative bg-white/5 border border-white/10 rounded-2xl p-8
-                  hover:border-emerald-400/40 hover:shadow-[0_0_30px_rgba(0,239,100,0.1)]
-                  hover:-translate-y-1 transition duration-300"
+                className="relative bg-gray-50 border border-gray-200 rounded-2xl p-6 sm:p-8
+                  hover:border-emerald-500 hover:shadow-xl hover:shadow-emerald-500/10
+                  hover:-translate-y-0.5 transition duration-300 group"
               >
-                <p className="text-5xl font-black text-emerald-400/20 leading-none mb-4">
+                <p className="text-5xl font-black text-emerald-500/20 group-hover:text-emerald-500/30 leading-none mb-4 transition duration-300">
                   {item.step}
                 </p>
-                <h3 className="rf-h3 text-white">{item.title}</h3>
-                <p className="rf-body text-gray-400 mt-3">{item.desc}</p>
+                <h3 className="rf-h3 text-gray-900">{item.title}</h3>
+                <p className="rf-body text-gray-500 mt-3">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          {/* CTA row */}
+          <div className="mt-10 sm:mt-14 flex flex-col sm:flex-row items-center justify-between gap-5 border-t border-gray-200 pt-10 sm:pt-12">
+            <p className="text-gray-500 text-sm sm:text-base max-w-md text-center sm:text-left">
+              Our team typically responds within{" "}
+              <span className="text-gray-900 font-semibold">24 hours</span>{" "}
+              to get your account activated.
+            </p>
             <MainCTA label="Start Partnership Journey" destination="/contact" />
           </div>
 
         </Container>
       </section>
 
-      {/* ── BOTTOM CTA BAND ── */}
-      <section className="py-20 bg-[#060D0A]">
+      {/* ── BOTTOM CTA BAND — dark ── */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-[#0C1F18] to-[#0a1a0f]">
         <Container>
-          <div className="rounded-3xl border border-emerald-500/20 bg-white/5 p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="rounded-3xl border border-emerald-500/20 bg-white/5 p-6 sm:p-8 lg:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
 
             <div>
               <h3 className="rf-h2 text-white">Ready to Earn More &amp; Grow Faster?</h3>
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-5 space-y-3">
                 {[
                   "Industry-leading commissions",
                   "Fast partner activation",
@@ -297,7 +311,7 @@ export default function AffiliatePartnersPage() {
               </ul>
             </div>
 
-            <div className="shrink-0 flex flex-col gap-4 items-center md:items-end">
+            <div className="shrink-0 flex flex-col gap-3 items-start md:items-end">
               <MainCTA label="Join the Affiliate Program" destination="/contact" />
               <p className="rf-caption text-gray-500">Free to join. No commitment required.</p>
             </div>

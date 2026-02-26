@@ -52,7 +52,7 @@ export default function HeroSection() {
       <div className="absolute top-[-150px] left-[-150px] w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(3,151,137,0.06),transparent_60%)] pointer-events-none" />
       <div className="absolute bottom-[-100px] right-[5%] w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,rgba(48,243,188,0.04),transparent_60%)] pointer-events-none" />
 
-      <div className="relative z-20 max-w-7xl mx-auto px-6 py-20 md:py-32">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div
@@ -181,7 +181,7 @@ function RealisticHeroImage({
             delay: 1.3,
             ease: [0.22, 1, 0.36, 1]
           }}
-          className="absolute top-[30%] left-1/2 -translate-x-1/2 md:left-[10%] md:-translate-x-1/2 z-30"
+          className="hidden sm:block absolute top-[30%] left-1/2 -translate-x-1/2 md:left-[10%] md:-translate-x-1/2 z-30"
         >
           {/* Continuous subtle floating animation */}
           <motion.div
@@ -253,7 +253,7 @@ function RealisticHeroImage({
             delay: 1.8,
             ease: [0.34, 1.56, 0.64, 1]
           }}
-          className="absolute top-[50%] left-[5%] md:left-[10%] z-20"
+          className="hidden sm:block absolute top-[50%] left-[5%] md:left-[10%] z-20"
         >
           <motion.div
             animate={{ 
@@ -332,7 +332,7 @@ function RealisticHeroImage({
             delay: 2.1,
             ease: [0.22, 1, 0.36, 1]
           }}
-          className="absolute bottom-[25%] right-[8%] md:right-[15%] z-20"
+          className="hidden sm:block absolute bottom-[25%] right-[8%] md:right-[15%] z-20"
         >
           <motion.div
             animate={{ 
@@ -363,7 +363,7 @@ function RealisticHeroImage({
             stiffness: 200,
             damping: 12
           }}
-          className="absolute top-[40%] left-[15%] md:left-[20%] z-10"
+          className="hidden sm:block absolute top-[40%] left-[15%] md:left-[20%] z-10"
         >
           <motion.div
             animate={{ 

@@ -23,7 +23,7 @@ export default function BusinessBanking() {
     <section className="relative bg-black pt-10 md:pt-18 pb-16 md:pb-24 overflow-hidden">
       <Container className="relative">
         {/* ================= TOP VISUAL ================= */}
-        <div className="relative h-[100px] md:h-[190px] mb-8 px-4 md:px-0">
+        <div className="relative h-[80px] sm:h-[100px] md:h-[190px] mb-6 sm:mb-8 px-4 md:px-0">
           {/* Man LEFT - Hidden on mobile */}
           <Image
             src="/home/businessmen.png"
@@ -35,9 +35,9 @@ export default function BusinessBanking() {
           />
 
           {/* BUSINESS BANKING Pill RIGHT */}
-          <div className="absolute right-0 top-[50px] md:top-28 w-[300px] sm:w-[360px] h-[50px] sm:h-[60px] z-10">
-            <div className="absolute inset-0 rounded-[18px] rounded-tl-[300px] sm:rounded-tl-[360px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
-            <span className="absolute right-6 sm:right-8 top-1/2 -translate-y-1/2 text-white text-[14px] sm:text-[20px] font-semibold">
+          <div className="absolute right-0 top-[36px] sm:top-[50px] md:top-28 w-[270px] sm:w-[340px] md:w-[360px] h-[46px] sm:h-[60px] z-10">
+            <div className="absolute inset-0 rounded-[18px] rounded-tl-[270px] sm:rounded-tl-[340px] md:rounded-tl-[360px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
+            <span className="absolute right-5 sm:right-8 top-1/2 -translate-y-1/2 text-white text-[12px] sm:text-[18px] md:text-[20px] font-semibold">
               BUSINESS BANKING
             </span>
           </div>

@@ -243,8 +243,8 @@ export default function IntegrateSection() {
   const active = features[activeIndex]
 
   return (
-    <section className="bg-[#f4f6f9] py-28 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="bg-[#f4f6f9] py-12 sm:py-16 lg:py-28 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
         {/* Heading */}
         <motion.div
@@ -252,7 +252,7 @@ export default function IntegrateSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="mb-16"
+          className="mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="fontheading text-3xl md:text-4xl lg:text-5xl text-gray-900">
             Integrate with Ease.{' '}
@@ -331,7 +331,7 @@ export default function IntegrateSection() {
 
           {/* ── RIGHT: Animated panel ── */}
           <div className="lg:w-[42%] lg:sticky lg:top-44">
-            <div className="relative w-full rounded-3xl overflow-hidden h-[540px] border-2 border-gray-200 shadow-lg">
+            <div className="relative w-full rounded-3xl overflow-hidden h-[380px] sm:h-[460px] lg:h-[540px] border-2 border-gray-200 shadow-lg">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active.id}
@@ -346,18 +346,20 @@ export default function IntegrateSection() {
                   {active.type === 'image' ? (
                     /* Real image — covers the entire panel edge-to-edge, floats gently */
                     <motion.div
-                      className="absolute inset-0"
+                      className="absolute inset-0 overflow-hidden"
                       animate={{ scale: [1, 1.025, 1] }}
                       transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
                     >
-                      <Image
-                        src={(active as { src: string }).src}
-                        alt={active.label}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 1024px) 100vw, 56vw"
-                        priority
-                      />
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={(active as { src: string }).src}
+                          alt={active.label}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 56vw"
+                          priority
+                        />
+                      </div>
                     </motion.div>
                   ) : (
                     /* Animated JSX mockup */

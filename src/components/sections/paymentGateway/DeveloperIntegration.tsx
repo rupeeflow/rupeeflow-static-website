@@ -80,8 +80,8 @@ function GreenCheck() {
 
 export default function DeveloperIntegration() {
   return (
-    <section className="py-24 bg-[#fafafa] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[#fafafa] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Heading */}
         <motion.div
           className="text-center"
@@ -90,16 +90,16 @@ export default function DeveloperIntegration() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
             Developer-Friendly Integration
           </h2>
-          <p className="text-gray-500 mt-3 text-lg">
+          <p className="text-gray-500 mt-3 text-base sm:text-lg">
             Easy and secure to integrate with any platform
           </p>
         </motion.div>
 
         {/* Content Row */}
-        <div className="mt-16 flex flex-col lg:flex-row gap-12 items-center">
+        <div className="mt-8 sm:mt-12 lg:mt-16 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
           {/* Left: 2x2 Feature Cards */}
           <div className="flex-1 grid grid-cols-2 gap-5">
             {features.map((feature, i) => (
@@ -149,9 +149,9 @@ export default function DeveloperIntegration() {
             ))}
           </div>
 
-          {/* Right: Woman Image + Floating Cards */}
+          {/* Right: Woman Image + Floating Cards - desktop only */}
           <motion.div
-            className="flex-shrink-0 relative"
+            className="hidden lg:block flex-shrink-0 relative"
             style={{ width: 440, height: 560 }}
             initial={{ opacity: 0, x: 70 }}
             whileInView={{ opacity: 1, x: 0 }}

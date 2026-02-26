@@ -13,10 +13,10 @@ interface CTAProps {
 const MainCTA: React.FC<CTAProps> = ({
   label,
   destination,
-  size = 'w-56 h-11',
-  fontSize = 'text-lg',
+  size = 'h-11',
+  fontSize = 'text-sm',
   bullet = 'w-3 h-3',
-  icon = 22,
+  icon = 18,
 }) => {
   const isExternal = destination.startsWith('http')
 
@@ -25,8 +25,8 @@ const MainCTA: React.FC<CTAProps> = ({
       href={destination}
       target={isExternal ? '_blank' : '_self'}
       rel={isExternal ? 'noopener noreferrer' : ''}
-      className={`${size} group relative flex items-center justify-center overflow-hidden
-      rounded-full px-4
+      className={`${size} group relative inline-flex items-center justify-center overflow-hidden
+      rounded-full px-7
       bg-[#0F0F0F]
       border border-white/10
       hover:border-emerald-400/60

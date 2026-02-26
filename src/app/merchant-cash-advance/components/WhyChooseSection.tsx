@@ -32,7 +32,7 @@ export default function WhyChooseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="fontheading text-3xl md:text-5xl text-gray-900 mb-4">
             Why Choose{' '}
@@ -48,7 +48,7 @@ export default function WhyChooseSection() {
         {/* Two Column Layout: Features + Animated Visual */}
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Left: Feature List */}
-          <div className="flex-1 space-y-6 w-full">
+          <div className="flex-1 space-y-6 w-full pl-5 lg:pl-0">
             {features.map((feature, index) => (
               <motion.div
                 key={index}

@@ -1,162 +1,278 @@
 'use client'
 
-import { motion, Variants } from 'framer-motion'
-import { Check, ArrowRight } from 'lucide-react'
+import { useState } from 'react'
 import Link from 'next/link'
+import Container from '@/components/ui/Container'
+import {
+  CheckCircle2,
+  Zap,
+  ArrowRight,
+  Shield,
+  Headphones,
+  BarChart3,
+  CreditCard,
+  RefreshCcw,
+} from 'lucide-react'
+
+const plans = [
+  {
+    name: 'Starter',
+    badge: null,
+    monthlyPrice: '₹0',
+    annualPrice: '₹0',
+    period: '/month',
+    desc: 'Pay-as-you-go for early-stage businesses. No setup fee, no monthly commitment.',
+    cta: 'Get Started Free',
+    ctaHref: '/contact',
+    highlight: false,
+    features: [
+      'UPI Collections at 0.90% per txn',
+      'Payouts at ₹5 per transaction',
+      'Payment Links & QR Code',
+      'Virtual Cards (up to 2)',
+      'Standard API access',
+      'Email & chat support',
+      'Basic analytics dashboard',
+    ],
+  },
+  {
+    name: 'Growth',
+    badge: 'Most Popular',
+    monthlyPrice: '₹2,499',
+    annualPrice: '₹1,999',
+    period: '/month',
+    desc: 'Built for scaling teams that need lower rates, cards, and advanced tooling.',
+    cta: 'Start Growth Plan',
+    ctaHref: '/contact',
+    highlight: true,
+    features: [
+      'UPI Collections at 0.65% per txn',
+      'Payouts at ₹3 per transaction',
+      'All Payment Methods (Card, NB, Wallet)',
+      'Prepaid & Virtual Cards (up to 50)',
+      'Bulk Payouts & Salary Disbursements',
+      'Advanced analytics + reconciliation',
+      'Priority support (4-hr response)',
+      'Dedicated onboarding manager',
+    ],
+  },
+  {
+    name: 'Enterprise',
+    badge: 'Custom',
+    monthlyPrice: 'Custom',
+    annualPrice: 'Custom',
+    period: '',
+    desc: 'Custom rates, white-label options, and embedded lending for high-volume operations.',
+    cta: 'Talk to Sales',
+    ctaHref: '/contact',
+    highlight: false,
+    features: [
+      'Negotiated transaction rates',
+      'Unlimited cards issuance',
+      'Embedded Lending & B2B BNPL',
+      'White-label payment infrastructure',
+      'Multi-entity & marketplace support',
+      'Custom API SLA & 99.9% uptime SLA',
+      '24×7 dedicated account manager',
+      'Custom compliance & reporting',
+    ],
+  },
+]
+
+const baseline = [
+  { icon: Shield, label: 'RBI & PCI DSS Compliant' },
+  { icon: Zap, label: '99.9% Platform Uptime' },
+  { icon: RefreshCcw, label: 'Real-time Webhooks' },
+  { icon: BarChart3, label: 'Unified Dashboard' },
+  { icon: CreditCard, label: 'Multi-mode Collections' },
+  { icon: Headphones, label: 'Onboarding Support' },
+]
 
 export default function PricingSection() {
-  const plans = [
-    {
-      name: 'Free',
-      price: '₹0',
-      period: '/month',
-      desc: 'Perfect for individuals who want effortless UPI payments.',
-      features: [
-        'Unlimited UPI payments',
-        'Automated bill reminders & insights',
-        'Voice UPI (payments in multiple languages)',
-        'RBI & NPCI-compliant security features',
-        'Basic financial insights dashboard',
-      ],
-      buttonText: 'Download The App',
-      buttonHref: '#',
-      highlight: false,
-    },
-    {
-      name: 'Plus',
-      price: '₹199',
-      period: '/month',
-      desc: 'Great for advanced users and NRIs managing family payments.',
-      features: [
-        'All Free Plan features',
-        'Cross-border utility payments for NRIs',
-        'Real-time forex conversions (0.5–1% fee)',
-        'Family accounts & delegated payments',
-        'Premium AI bill insights & personalized rewards',
-        'Priority customer support',
-      ],
-      buttonText: 'Get Plus',
-      buttonHref: '#',
-      highlight: true,
-    },
-    {
-      name: 'Business',
-      price: '₹499',
-      period: '/month',
-      desc: 'Designed for small businesses and MSMEs that need advanced tools.',
-      features: [
-        'All Plus Plan features',
-        'Bulk payments & payroll in one tap',
-        'Instant invoice UPI with low fees',
-        'Vendor verification insights',
-        'Data-driven analytics for cash management',
-        'Dedicated account manager + priority onboarding',
-      ],
-      buttonText: 'Get Business',
-      buttonHref: '#',
-      highlight: false,
-    },
-  ]
-
-  const container: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.2 },
-    },
-  }
-
-  const content: Variants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  }
-
-  const card: Variants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  }
+  const [annual, setAnnual] = useState(false)
 
   return (
-    <section className="relative w-full bg-black text-white py-36 px-6 overflow-hidden">
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="max-w-7xl mx-auto text-center mb-16"
-      >
-        <motion.h2
-          variants={content}
-          className="text-3xl md:text-5xl font-bold mb-4"
-        >
-          Simple, Transparent{' '}
-          <span className="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
-            Pricing
-          </span>{' '}
-          for Everyone
-        </motion.h2>
-        <motion.p
-          variants={content}
-          className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base"
-        >
-          Enjoy unlimited UPI payments, voice support, and bill reminders — all
-          at no cost.
-        </motion.p>
-      </motion.div>
+    <>
+      {/* ── HERO — dark ── */}
+      <section className="relative py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-[#060D0A] to-[#0C1F18] overflow-hidden">
+        {/* grid overlay */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+        />
 
-      {/* Cards */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="relative z-30 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
-      >
-        {plans.map(plan => (
-          <motion.div
-            key={plan.name}
-            variants={card}
-            whileHover={{ scale: 1.04 }}
-            className={`relative backdrop-blur-lg  border ${
-              plan.highlight
-                ? 'bg-neutral-600/30 backdrop-blur-lg shadow-[0_0_25px_rgba(34,197,94,0.3)]'
-                : 'border-white/10 '
-            } rounded-2xl p-8 flex flex-col justify-between transition-all duration-300`}
-          >
-            <div>
-              <h3 className="text-2xl font-bold mb-1">{plan.name}</h3>
-              <p className="text-gray-400 text-sm mb-4">{plan.desc}</p>
+        <Container>
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="inline-block text-emerald-400 text-xs font-semibold tracking-widest uppercase border border-emerald-400/30 rounded-full px-4 py-1 mb-5">
+              Pricing
+            </span>
 
-              <div className="text-4xl font-bold mb-6">
-                {plan.price}
-                <span className="text-base text-gray-400">{plan.period}</span>
-              </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight">
+              Built for Scale.{' '}
+              <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
+                Priced for Growth.
+              </span>
+            </h1>
 
-              <ul className="text-sm space-y-3 mb-8">
-                {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-2 text-gray-300">
-                    <Check className="w-4 h-4 text-green-400 mt-0.5" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+            <p className="text-gray-400 mt-5 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+              Transparent, usage-based pricing across collections, payouts, cards,
+              and credit — with zero hidden fees.
+            </p>
+
+            {/* trust pills */}
+            <div className="flex flex-wrap items-center justify-center gap-2 mt-7">
+              {['No setup fee', 'No lock-in', 'Cancel anytime', 'RBI Licensed'].map((t) => (
+                <span
+                  key={t}
+                  className="flex items-center gap-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-full px-3 py-1"
+                >
+                  <CheckCircle2 size={11} className="text-emerald-400" />
+                  {t}
+                </span>
+              ))}
             </div>
 
-            {/* CTA Button */}
-            <Link
-              href={plan.buttonHref}
-              className={`mt-30 inline-flex items-center justify-center gap-2 font-semibold rounded-md px-6 py-3 transition ${
-                plan.highlight
-                  ? 'bg-teal-emerald hover:bg-emerald-600 text-black'
-                  : 'border border-teal-500 hover:bg-teal-emerald hover:text-white text-teal-400'
-              }`}
-            >
-              <ArrowRight className="w-4 h-4" />
-              {plan.buttonText}
-            </Link>
-          </motion.div>
-        ))}
-      </motion.div>
-      <div className="absolute opacity-70 top-[5%] left-[15%] w-100 h-100 bg-radial-teal-soft "></div>
-      <div className="absolute opacity-70 bottom-[-10%] right-[10%] w-150 h-150 bg-radial-emerald-soft "></div>
-    </section>
+            {/* billing toggle */}
+            <div className="flex items-center justify-center gap-3 mt-8">
+              <span className={`text-sm font-medium transition ${!annual ? 'text-white' : 'text-gray-500'}`}>Monthly</span>
+              <button
+                onClick={() => setAnnual((v) => !v)}
+                className={`relative w-12 h-6 rounded-full transition-colors duration-300 focus:outline-none ${
+                  annual ? 'bg-emerald-500' : 'bg-white/20'
+                }`}
+                aria-label="Toggle annual billing"
+              >
+                <span
+                  className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white shadow transition-transform duration-300 ${
+                    annual ? 'translate-x-6' : 'translate-x-0'
+                  }`}
+                />
+              </button>
+              <span className={`text-sm font-medium transition ${annual ? 'text-white' : 'text-gray-500'}`}>
+                Annual
+                <span className="ml-1.5 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold rounded-full px-2 py-0.5 border border-emerald-500/30">
+                  Save 20%
+                </span>
+              </span>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── PLAN CARDS — white ── */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 -mt-10 sm:-mt-16 relative z-10">
+            {plans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`relative flex flex-col rounded-2xl border transition duration-300 ${
+                  plan.highlight
+                    ? 'bg-gradient-to-b from-[#060D0A] to-[#0C1F18] border-emerald-500/40 shadow-2xl shadow-emerald-500/15 ring-1 ring-emerald-500/20'
+                    : 'bg-white border-gray-200 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/10'
+                }`}
+              >
+                {/* badge */}
+                {plan.badge && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                    <span
+                      className={`text-[11px] font-bold uppercase tracking-wider rounded-full px-3.5 py-1 ${
+                        plan.highlight
+                          ? 'bg-gradient-to-r from-[#00EF64] to-[#53BEC2] text-black'
+                          : 'bg-gray-900 text-white'
+                      }`}
+                    >
+                      {plan.badge}
+                    </span>
+                  </div>
+                )}
+
+                <div className="p-6 sm:p-8 flex flex-col flex-1">
+                  {/* plan name */}
+                  <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${plan.highlight ? 'text-emerald-400' : 'text-gray-400'}`}>
+                    {plan.name}
+                  </p>
+
+                  {/* price */}
+                  <div className="mb-2">
+                    <span className={`text-4xl sm:text-5xl font-black ${plan.highlight ? 'text-white' : 'text-gray-900'}`}>
+                      {annual ? plan.annualPrice : plan.monthlyPrice}
+                    </span>
+                    {plan.period && (
+                      <span className={`text-sm ml-1 ${plan.highlight ? 'text-gray-400' : 'text-gray-500'}`}>
+                        {plan.period}
+                      </span>
+                    )}
+                  </div>
+
+                  {plan.name === 'Growth' && annual && (
+                    <p className="text-emerald-400 text-xs font-semibold mb-1">Billed ₹23,988/year · Save ₹6,000</p>
+                  )}
+
+                  <p className={`text-sm leading-relaxed mb-6 ${plan.highlight ? 'text-gray-400' : 'text-gray-500'}`}>
+                    {plan.desc}
+                  </p>
+
+                  {/* features */}
+                  <ul className="space-y-2.5 flex-1 mb-8">
+                    {plan.features.map((f) => (
+                      <li key={f} className={`flex items-start gap-2.5 text-sm ${plan.highlight ? 'text-gray-300' : 'text-gray-600'}`}>
+                        <CheckCircle2 size={15} className="text-emerald-500 shrink-0 mt-0.5" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA */}
+                  {plan.highlight ? (
+                    <Link
+                      href={plan.ctaHref}
+                      className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-[#00EF64] to-[#53BEC2] text-black hover:opacity-90 transition duration-200"
+                    >
+                      {plan.cta}
+                      <ArrowRight size={15} />
+                    </Link>
+                  ) : (
+                    <Link
+                      href={plan.ctaHref}
+                      className={`inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl font-bold text-sm border transition duration-200 ${
+                        plan.name === 'Enterprise'
+                          ? 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
+                          : 'border-emerald-500 text-emerald-600 hover:bg-emerald-50'
+                      }`}
+                    >
+                      {plan.cta}
+                      <ArrowRight size={15} />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* baseline features strip */}
+          <div className="mt-12 sm:mt-16 border border-gray-200 rounded-2xl p-6 sm:p-8">
+            <p className="text-center text-gray-400 text-xs font-bold uppercase tracking-widest mb-6">
+              All plans include
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+              {baseline.map(({ icon: Icon, label }) => (
+                <div key={label} className="flex flex-col items-center text-center gap-2">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center">
+                    <Icon size={18} className="text-emerald-600" />
+                  </div>
+                  <p className="text-gray-600 text-xs font-medium leading-snug">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
   )
 }

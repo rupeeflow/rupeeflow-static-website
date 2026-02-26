@@ -59,7 +59,7 @@ export default function CollectMoney() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-black pt-10 pb-10 overflow-hidden min-h-screen flex items-center"
+      className="relative bg-black pt-8 sm:pt-10 pb-8 sm:pb-10 overflow-hidden min-h-screen flex items-center"
     >
       <Container
         className={`relative transition-all duration-600 ${isVisible ? 'animate-fade-in-section' : 'opacity-0'}`}
@@ -93,9 +93,9 @@ export default function CollectMoney() {
         </div>
 
         {/* Collect Money Pill */}
-        <div className="relative w-[280px] sm:w-[320px] h-[50px] sm:h-[60px] mt-20 md:mt-40 z-10 mx-4 md:mx-0">
-          <div className="absolute inset-0 rounded-[18px] rounded-tr-[280px] sm:rounded-tr-[320px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
-          <span className="absolute left-6 sm:left-8 top-1/2 -translate-y-1/2 text-white text-[16px] sm:text-[20px] font-semibold tracking-wide">
+        <div className="relative w-[260px] sm:w-[320px] h-[46px] sm:h-[60px] mt-8 sm:mt-16 md:mt-40 z-10 mx-4 md:mx-0">
+          <div className="absolute inset-0 rounded-[18px] rounded-tr-[260px] sm:rounded-tr-[320px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
+          <span className="absolute left-5 sm:left-8 top-1/2 -translate-y-1/2 text-white text-[14px] sm:text-[20px] font-semibold tracking-wide">
             COLLECT MONEY
           </span>
         </div>

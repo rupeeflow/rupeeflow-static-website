@@ -120,13 +120,13 @@ export default function MerchantAdvanceVisual() {
   }, [mouseX, mouseY, prefersReducedMotion])
 
   return (
-    <div className="relative w-full h-full min-h-[500px]">
+    <div className="relative w-full h-full min-h-[320px] sm:min-h-[500px]">
       {/* Background Image - Full Width with rounded corners */}
       <motion.div
         initial={{ opacity: 0, scale: 1.05 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="w-full h-full min-h-[500px] rounded-3xl overflow-hidden relative"
+        className="w-full h-full min-h-[320px] sm:min-h-[500px] rounded-3xl overflow-hidden relative"
       >
         <Image
           src="/merchant-cash-advance/Why Choose.jpeg"
@@ -142,7 +142,7 @@ export default function MerchantAdvanceVisual() {
         initial={{ opacity: 0, x: -50, rotateY: -15 }}
         animate={{ opacity: 1, x: 0, rotateY: 0 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className={`absolute ${PHONE_CONFIG.leftPosition} ${PHONE_CONFIG.verticalPosition} z-20`}
+        className={`hidden lg:block absolute ${PHONE_CONFIG.leftPosition} ${PHONE_CONFIG.verticalPosition} z-20`}
       >
         {/* 3D perspective container with mouse parallax */}
         <motion.div 

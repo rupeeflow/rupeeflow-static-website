@@ -59,7 +59,7 @@ export default function Hero() {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-[100vh] px-4 sm:px-6 pt-16 sm:pt-20 sm:pb-32">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-[100vh] px-4 sm:px-6 pt-24 sm:pt-28 pb-12 sm:pb-32">
         {/* Pills */}
         <div className="flex justify-center gap-2 sm:gap-3 mb-4 sm:mb-6 flex-wrap opacity-0 animate-fade-in mt-6">
           {['Payment Gateway', 'Credits', 'Lending'].map(item => (
@@ -86,7 +86,7 @@ export default function Hero() {
         </p>
 
         {/* Decorative Frame */}
-        <div className="w-full max-w-[98vw] -mt-4 sm:-mt-6 lg:-mt-36 mb-6 sm:mb-8 opacity-0 animate-scale-in">
+        <div className="w-full max-w-[98vw] mt-4 sm:mt-2 lg:-mt-36 mb-6 sm:mb-8 opacity-0 animate-scale-in">
           <Image
             src="/Frame.svg"
             alt="decorative wave"
@@ -131,8 +131,8 @@ export default function Hero() {
         </div>
 
         {/* Stats Cards - Modern Design */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl w-full mb-12 sm:mb-16 px-4">
-          <div className="group relative overflow-hidden border border-[#029789]/30 bg-gradient-to-br from-[#020506]/80 to-[#029789]/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-1">
+        <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-4xl w-full mb-10 sm:mb-16 px-4">
+          <div className="group relative overflow-hidden border border-[#029789]/30 bg-gradient-to-br from-[#020506]/80 to-[#029789]/5 backdrop-blur-sm rounded-2xl p-4 sm:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-1">
             <div className="absolute inset-0 bg-gradient-to-br from-[#30f3bc]/0 to-[#30f3bc]/0 group-hover:from-[#30f3bc]/5 group-hover:to-[#029789]/5 transition-all duration-500" />
             <div className="relative">
               <h3 className="rf-h2 bg-gradient-to-r from-[#ffffff] to-[#30f3bc] bg-clip-text text-transparent">
@@ -144,7 +144,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="group relative overflow-hidden border border-[#029789]/30 bg-gradient-to-br from-[#020506]/80 to-[#029789]/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-2 sm:col-span-2 md:col-span-1">
+          <div className="group relative overflow-hidden border border-[#029789]/30 bg-gradient-to-br from-[#020506]/80 to-[#029789]/5 backdrop-blur-sm rounded-2xl p-4 sm:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-2">
             <div className="absolute inset-0 bg-gradient-to-br from-[#30f3bc]/0 to-[#30f3bc]/0 group-hover:from-[#30f3bc]/5 group-hover:to-[#029789]/5 transition-all duration-500" />
             <div className="relative">
               <h3 className="rf-h2 bg-gradient-to-r from-[#ffffff] to-[#30f3bc] bg-clip-text text-transparent">
@@ -156,7 +156,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="group relative overflow-hidden border border-[#029789]/30 bg-gradient-to-br from-[#020506]/80 to-[#029789]/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-3 sm:col-span-2 md:col-span-1">
+          <div className="group relative overflow-hidden border border-[#029789]/30 bg-gradient-to-br from-[#020506]/80 to-[#029789]/5 backdrop-blur-sm rounded-2xl p-4 sm:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-3">
             <div className="absolute inset-0 bg-gradient-to-br from-[#30f3bc]/0 to-[#30f3bc]/0 group-hover:from-[#30f3bc]/5 group-hover:to-[#029789]/5 transition-all duration-500" />
             <div className="relative">
               <h3 className="rf-h2 bg-gradient-to-r from-[#ffffff] to-[#30f3bc] bg-clip-text text-transparent">

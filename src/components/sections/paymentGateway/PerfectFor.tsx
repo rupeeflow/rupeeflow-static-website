@@ -58,8 +58,8 @@ const cardVariants = {
 
 export default function PerfectFor() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 sm:py-16 lg:py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Heading */}
         <motion.div
           className="text-center"
@@ -68,14 +68,14 @@ export default function PerfectFor() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
             Perfect For
           </h2>
-          <p className="text-gray-500 mt-3 text-lg">No matter what app, platform or card you use</p>
+          <p className="text-gray-500 mt-3 text-base sm:text-lg">No matter what app, platform or card you use</p>
         </motion.div>
 
         {/* Industry Cards Grid */}
-        <div className="mt-14 grid grid-cols-3 gap-5">
+        <div className="mt-8 sm:mt-10 lg:mt-14 grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-5">
           {industries.map((item, i) => (
             <motion.div
               key={item.title}
@@ -92,7 +92,7 @@ export default function PerfectFor() {
                 borderColor: '#30F3BC',
               }}
               transition={{ type: 'spring', stiffness: 260, damping: 22 }}
-              className="relative group bg-white rounded-3xl border border-gray-150 p-8 flex flex-col items-start justify-between min-h-[240px] cursor-default overflow-hidden"
+              className="relative group bg-white rounded-3xl border border-gray-150 p-4 sm:p-6 md:p-8 flex flex-col items-start justify-between min-h-[160px] sm:min-h-[200px] md:min-h-[240px] cursor-default overflow-hidden"
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: 900,
@@ -107,19 +107,20 @@ export default function PerfectFor() {
                 <motion.div
                   whileHover={{ scale: 1.06, rotate: 2 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 18 }}
+                  className="scale-75 sm:scale-90 md:scale-100"
                 >
                   <item.Icon style={{ width: item.iconW, height: item.iconH }} />
                 </motion.div>
               </div>
 
               {/* Title at bottom */}
-              <div className="mt-6 relative z-10">
+              <div className="mt-3 sm:mt-5 md:mt-6 relative z-10">
                 {item.title.includes('\n') ? (
-                  <h4 className="font-bold text-gray-900 text-xl leading-snug whitespace-pre-line">
+                  <h4 className="font-bold text-gray-900 text-sm sm:text-base md:text-xl leading-snug whitespace-pre-line">
                     {item.title}
                   </h4>
                 ) : (
-                  <h4 className="font-bold text-gray-900 text-xl leading-snug">{item.title}</h4>
+                  <h4 className="font-bold text-gray-900 text-sm sm:text-base md:text-xl leading-snug">{item.title}</h4>
                 )}
               </div>
 

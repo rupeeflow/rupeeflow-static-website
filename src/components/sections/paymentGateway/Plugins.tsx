@@ -7,8 +7,8 @@ import React from 'react'
 
 export default function Plugins() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 sm:py-16 lg:py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Section Heading */}
         <motion.div
@@ -35,7 +35,7 @@ export default function Plugins() {
         </motion.div>
 
         {/* Grid */}
-        <div className="mt-16 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="mt-8 sm:mt-12 lg:mt-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
           {/* LEFT VISUAL */}
           <motion.div
@@ -97,7 +97,7 @@ export default function Plugins() {
               </p>
 
               {/* Feature Rows */}
-              <div className="mt-10 space-y-8">
+              <div className="mt-6 sm:mt-8 lg:mt-10 space-y-6 sm:space-y-8">
 
                 <FeatureRow
                   icon={<Code />}
@@ -129,7 +129,7 @@ export default function Plugins() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-12 flex items-center gap-3 border-2 border-emerald-500 text-emerald-600 font-semibold px-7 py-3 rounded-xl hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-sm"
+                className="mt-8 sm:mt-10 lg:mt-12 flex items-center gap-3 border-2 border-emerald-500 text-emerald-600 font-semibold px-7 py-3 rounded-xl hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-sm"
               >
                 Start Building →
               </motion.button>
@@ -154,15 +154,15 @@ type FeatureRowProps = {
 
 function FeatureRow({ icon, title, desc }: FeatureRowProps) {
   return (
-    <div className="flex gap-4">
-      <div className="flex-shrink-0 w-12 h-12 rounded-full border-2 border-emerald-500 flex items-center justify-center text-emerald-600">
+    <div className="flex gap-3 sm:gap-4">
+      <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-emerald-500 flex items-center justify-center text-emerald-600">
         {icon}
       </div>
       <div>
-        <h4 className="text-xl font-semibold text-gray-900">
+        <h4 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900">
           {title}
         </h4>
-        <p className="text-gray-600 mt-1">
+        <p className="text-gray-600 mt-1 text-sm sm:text-base">
           {desc}
         </p>
       </div>
