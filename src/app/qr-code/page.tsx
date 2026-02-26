@@ -70,7 +70,7 @@ function AnimatedBrandShowcase() {
       
       {/* QR Code Image with Brand */}
       <motion.div
-        className="w-32 h-32 bg-white rounded-lg shadow-md mb-4 flex items-center justify-center border-2 border-gray-200"
+        className="w-32 h-62 bg-white rounded-lg shadow-md mb-4 flex items-center justify-center border-2 border-gray-200"
         animate={{ y: [0, -5, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
@@ -501,15 +501,16 @@ export default function QrCodePage() {
 
             {/* Right: Image placeholder */}
             <div className="flex-1 flex justify-center">
-  <div className="relative w-full max-w-[520px] h-[550px]  border border-gray-200 overflow-hidden bg-gray-100">
-    <Image
-      src="/home/Accept-payment-qr.png"
-      alt="placeholder"
-      fill
-      className="fit-contain "
-      sizes="(max-width: 768px) 90vw, 460px"
-    />
-  </div>
+ <div className="relative w-full max-w-[520px] h-[550px] border border-gray-200 overflow-hidden bg-white rounded-xl">
+  <Image
+    src="/home/Accept-payment-qr.png"
+    alt="Scan to pay"
+    fill
+    className="object-cover"
+    sizes="(max-width: 768px) 90vw, 460px"
+    priority
+  />
+</div>
 </div>
           </div>
         </div>
@@ -603,28 +604,52 @@ export default function QrCodePage() {
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
                   Whether you need a QR code for a fixed price or a flexible amount that customers can fill in, Rupeeflow has you covered. Easily create static or dynamic QR codes tailored to your business needs, giving your customers a seamless payment experience.
                 </p>
-                <Link
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  Get Started
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Link
+                      href="#"
+                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
+                    >
+                      Get Started
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </Link>
+                  </motion.div>
+                </motion.div>
               </div>
               <div className="lg:w-[40%] flex justify-center">
-                <div className="w-full max-w-[340px] h-[260px] bg-white rounded-xl shadow-lg p-6 flex items-center justify-center">
+                <motion.div 
+                  className="w-full max-w-[340px] h-[260px] rounded-xl shadow-lg p-6 flex items-center justify-center"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                  }}
+                >
                   <div className="text-center">
 
                     {/* QR Code Image */}
-                    <div className="w-32 h-32 bg-white rounded-lg mx-auto mb-4 flex items-center justify-center border-2 border-gray-200 shadow-md">
-                      <img src="/home/qr-code.png" alt="QR Code" className="w-full h-full object-contain rounded-lg" />
-                    </div>
+                    <motion.div 
+                      className="w-32 h-32 mx-auto mb-4 flex items-center justify-center"
+                      whileHover={{ rotate: [0, -5, 5, 0] }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <img src="/home/qr-code.png" alt="QR Code" className="w-full h-full object-contain" />
+                    </motion.div>
                     <p className="text-sm text-gray-600 font-medium">Scan to Pay</p>
                     <p className="text-xs text-gray-500 mt-1">Fixed or Dynamic Amount</p>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
 

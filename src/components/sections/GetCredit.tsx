@@ -82,14 +82,14 @@ export default function GetCredit() {
 />
 
 
-              <h3 className="text-white text-[28px] font-semibold leading-tight">
+              <h3 className="text-white text-2xl leading-[115%] font-bold font-[Nunito] mb-3">
                 {card.title}
               </h3>
 
-              <p className="text-gray-300 text-[15px] leading-relaxed mt-2 flex-grow max-w-[520px]">
+              <p className="text-gray-300 text-[18px] leading-[170%] max-w-[525px] font-[DM Sans]">
                 {card.desc}
               </p>
-
+              
               <Button className="absolute bottom-6 right-6">
   Apply now →
 </Button>

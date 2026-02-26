@@ -1,9 +1,12 @@
+'use client'
+
 import Container from "@/components/ui/Container"
 import MainCTA from "@/components/ui/mainCTA"
 import CardFAQ from "@/components/sections/CardFAQ"
 import Image from "next/image"
 import PartnershipBenefits from "@/components/sections/PartnershipBenefits"
-
+import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 import {
   Banknote,
@@ -49,6 +52,96 @@ const bankingFAQs = [
 ]
 
 export default function BankingPartnershipsPage() {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+
+  // Enhanced infrastructure features with bullet points
+  const infrastructureFeatures = [
+    {
+      id: 1,
+      title: "Expense & corporate card management",
+      description: "Complete corporate expense solution with smart card controls",
+      icon: Banknote,
+      color: "emerald",
+      features: [
+        "Real-time expense tracking & approval",
+        "Smart corporate cards with spending limits",
+        "Automated receipt capture & categorization",
+        "Integration with accounting systems"
+      ],
+      image: "/images/banking/corporate-cards.png"
+    },
+    {
+      id: 2,
+      title: "Digital payment orchestration",
+      description: "Unified payment processing across all channels",
+      icon: Network,
+      color: "blue",
+      features: [
+        "UPI, IMPS, NEFT, RTGS integration",
+        "Real-time payment processing",
+        "Multi-bank connectivity",
+        "Advanced fraud detection engine"
+      ],
+      image: "/images/banking/payment-orchestration.png"
+    },
+    {
+      id: 3,
+      title: "Vendor & supplier payouts",
+      description: "Automated bulk payment processing for businesses",
+      icon: TrendingUp,
+      color: "purple",
+      features: [
+        "Bulk payout processing",
+        "Automated invoice matching",
+        "Multi-currency support",
+        "Real-time status tracking"
+      ],
+      image: "/images/banking/vendor-payouts.png"
+    },
+    {
+      id: 4,
+      title: "Cashflow & reconciliation automation",
+      description: "Intelligent financial reconciliation and reporting",
+      icon: Layers,
+      color: "orange",
+      features: [
+        "Automated bank reconciliation",
+        "Cash flow forecasting",
+        "Real-time financial insights",
+        "Regulatory reporting automation"
+      ],
+      image: "/images/banking/cashflow-automation.png"
+    },
+    {
+      id: 5,
+      title: "Embedded finance & lending enablement",
+      description: "Seamless lending and credit facilities integration",
+      icon: Globe,
+      color: "cyan",
+      features: [
+        "API-first lending platform",
+        "Credit scoring & underwriting",
+        "Digital loan disbursement",
+        "Automated EMI processing"
+      ],
+      image: "/images/banking/embedded-finance.png"
+    },
+    {
+      id: 6,
+      title: "Advanced analytics & risk monitoring",
+      description: "AI-powered risk assessment and business intelligence",
+      icon: ShieldCheck,
+      color: "red",
+      features: [
+        "Real-time risk monitoring",
+        "AI-powered fraud detection",
+        "Business intelligence dashboard",
+        "Compliance reporting tools"
+      ],
+      image: "/images/banking/analytics-risk.png"
+    }
+  ]
+
   return (
     <>
       {/* HERO */}
@@ -106,88 +199,133 @@ export default function BankingPartnershipsPage() {
 
 
       
-      {/* SOLUTION PANEL */}
-<section className="py-24 bg-[#0F0F0F]">
-  <Container>
-    <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-12 overflow-hidden">
+      {/* SOLUTION PANEL - ENHANCED */}
+      <section className="py-24 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
+        <Container>
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-semibold text-white">
+              Unified Infrastructure{" "}
+              <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
+                for Modern Banks
+              </span>
+            </h2>
 
-      {/* subtle glow */}
-      <div className="absolute inset-0 bg-radial-emerald-soft opacity-10 pointer-events-none" />
+            <p className="text-gray-300 mt-4 max-w-3xl mx-auto leading-relaxed">
+              Deploy a full-stack financial ecosystem built for speed, compliance,
+              and scalability — designed for next-generation banking experiences.
+            </p>
+          </motion.div>
 
-      <h2 className="text-3xl md:text-4xl font-semibold text-white">
-        Unified Infrastructure {" "}
-        <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
-          for Modern Banks
-        </span>
-      </h2>
+          {/* Enhanced Infrastructure Cards Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {infrastructureFeatures.map((feature, index) => (
+              <motion.div
+                key={feature.id}
+                className={`group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-${feature.color}-400/40 hover:shadow-[0_0_30px_rgba(0,239,100,0.2)] transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden`}
+                onMouseEnter={() => setHoveredCard(feature.id)}
+                onMouseLeave={() => setHoveredCard(null)}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                {/* Animated background gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br from-${feature.color}-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <motion.div
+                    className={`w-14 h-14 bg-${feature.color}-500/20 rounded-xl flex items-center justify-center text-${feature.color}-400 mb-4 group-hover:scale-110 transition-transform duration-300`}
+                    whileHover={{ rotate: [0, -5, 5, 0] }}
+                  >
+                    <feature.icon size={24} />
+                  </motion.div>
 
-      <p className="text-gray-300 mt-4 max-w-2xl leading-relaxed">
-        Deploy a full-stack financial ecosystem built for speed, compliance,
-        and scalability — designed for next-generation banking experiences.
-      </p>
+                  {/* Title */}
+                  <h3 className={`text-white text-lg font-bold mb-2 group-hover:text-${feature.color}-400 transition-colors duration-300`}>
+                    {feature.title}
+                  </h3>
 
-     <div className="grid md:grid-cols-2 gap-6 mt-12">
-  {[
-    {
-      title: "Expense & corporate card management",
-      img: "/placeholders/cards.png",
-    },
-    {
-      title: "Digital payment orchestration",
-      img: "/placeholders/payments.png",
-    },
-    {
-      title: "Vendor & supplier payouts",
-      img: "/placeholders/payouts.png",
-    },
-    {
-      title: "Cashflow & reconciliation automation",
-      img: "/placeholders/reconciliation.png",
-    },
-    {
-      title: "Embedded finance & lending enablement",
-      img: "/placeholders/embedded.png",
-    },
-    {
-      title: "Advanced analytics & risk monitoring",
-      img: "/placeholders/analytics.png",
-    },
-  ].map((item, i) => (
-    <div
-      key={i}
-      className="flex items-center justify-between gap-6
-      bg-white/5 border border-white/10 rounded-2xl
-      p-6 md:p-8
-      hover:border-emerald-400/40
-      hover:shadow-[0_0_25px_rgba(0,239,100,0.15)]
-      transition duration-300"
-    >
-      {/* LEFT TEXT */}
-      <div className="flex items-start gap-3 max-w-xs">
-        <CheckCircle2 size={20} className="text-emerald-400 mt-1" />
-        <p className="text-gray-200 leading-relaxed">
-          {item.title}
-        </p>
-      </div>
+                  {/* Description */}
+                  <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                    {feature.description}
+                  </p>
 
-      {/* RIGHT IMAGE PLACEHOLDER */}
-      <div className="w-44 h-26 rounded-lg bg-gradient-to-br from-white/10 to-transparent border border-white/10 flex items-center justify-center text-xs text-gray-500">
-        Image
-      </div>
-    </div>
-  ))}
-</div>
+                  {/* Features list */}
+                  <ul className="space-y-2 mb-4">
+                    {feature.features.map((item, itemIndex) => (
+                      <motion.li
+                        key={itemIndex}
+                        className="flex items-start gap-2 text-xs text-gray-300"
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ 
+                          opacity: hoveredCard === feature.id ? 1 : 0.6, 
+                          x: hoveredCard === feature.id ? 0 : -10 
+                        }}
+                        transition={{ duration: 0.2, delay: itemIndex * 0.05 }}
+                      >
+                        <CheckCircle2 
+                          size={8} 
+                          className={`text-${feature.color}-400 mt-1 flex-shrink-0`} 
+                        />
+                        <span className="leading-relaxed">{item}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
 
+                  {/* Image placeholder with animation */}
+                  <motion.div
+                    className="w-full h-32 rounded-lg bg-gradient-to-br from-white/10 to-transparent border border-white/10 flex items-center justify-center overflow-hidden"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="text-center">
+                      <div className={`w-12 h-12 bg-${feature.color}-500/20 rounded-lg flex items-center justify-center mx-auto mb-2`}>
+                        <feature.icon size={20} className={`text-${feature.color}-400`} />
+                      </div>
+                      <p className="text-xs text-gray-400">Feature Preview</p>
+                    </div>
+                  </motion.div>
 
-      <div className="mt-12">
-        <MainCTA
-          label="Explore Integration "
-          destination="/contact"
-        />
-      </div>
-    </div>
-  </Container>
-</section>
+                  {/* Hover indicator */}
+                  <motion.div
+                    className={`absolute bottom-0 left-0 h-1 bg-${feature.color}-400 rounded-full`}
+                    initial={{ width: 0 }}
+                    animate={{ width: hoveredCard === feature.id ? '100%' : 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Enhanced CTA Button */}
+          <motion.div
+            className="text-center mt-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <MainCTA
+                label="Explore Integration"
+                destination="/contact"
+              />
+            </motion.div>
+          </motion.div>
+        </Container>
+      </section>
 
      <PartnershipBenefits />
 

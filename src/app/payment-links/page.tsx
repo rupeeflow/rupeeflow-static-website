@@ -139,13 +139,13 @@ function ShareWithMockup() {
 
 /* ── Card 3: Payment Options ── */
 const payBrands = [
-  { label: 'LOGO1', bg: '#f3f4f6', fg: '#6b7280' },
-  { label: 'LOGO2', bg: '#f3f4f6', fg: '#6b7280' },
-  { label: 'LOGO3', bg: '#f3f4f6', fg: '#6b7280' },
-  { label: 'LOGO4', bg: '#f3f4f6', fg: '#6b7280' },
-  { label: 'LOGO5', bg: '#f3f4f6', fg: '#6b7280' },
-  { label: 'LOGO6', bg: '#f3f4f6', fg: '#6b7280' },
-  { label: 'LOGO7', bg: '#f3f4f6', fg: '#6b7280' },
+  { label: 'mastercard', bg: '#f3f4f6', fg: '#6b7280' },
+  { label: 'visa', bg: '#f3f4f6', fg: '#6b7280' },
+  { label: 'rupay', bg: '#f3f4f6', fg: '#6b7280' },
+  { label: 'upi', bg: '#f3f4f6', fg: '#6b7280' },
+  { label: 'paytm', bg: '#f3f4f6', fg: '#6b7280' },
+  { label: 'phone-pay', bg: '#f3f4f6', fg: '#6b7280' },
+  { label: 'gpay', bg: '#f3f4f6', fg: '#6b7280' },
 ]
 
 function PaymentOptionsMockup() {
@@ -183,12 +183,21 @@ function PaymentOptionsMockup() {
         {payBrands.map((b, i) => (
           <motion.div
             key={b.label}
-            className="w-10 h-10 rounded-full shadow-sm flex items-center justify-center text-[7px] font-extrabold"
-            style={{ backgroundColor: b.bg, color: b.fg }}
+            className="w-10 h-10 rounded-full shadow-sm flex items-center justify-center overflow-hidden bg-white"
             animate={{ y: [0, -3, 0] }}
             transition={{ duration: 3 + i * 0.3, repeat: Infinity, ease: 'easeInOut', delay: i * 0.12 }}
           >
-            {b.label}
+            <img
+              src={`/images/payment-link/${b.label}.png`}
+              alt={b.label}
+              className="w-full h-full object-contain p-1"
+              onError={(e) => {
+                // Fallback to placeholder if image not found
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                target.parentElement!.innerHTML = `<span class="text-xs font-bold text-gray-400">${b.label.toUpperCase()}</span>`;
+              }}
+            />
           </motion.div>
         ))}
         <div className="w-10 h-10 rounded-full bg-gray-100 shadow-sm opacity-20" />

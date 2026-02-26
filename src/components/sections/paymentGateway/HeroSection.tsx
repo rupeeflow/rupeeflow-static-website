@@ -28,7 +28,7 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[1000px] bg-gradient-to-b from-[#020506] via-black to-black overflow-hidden"
+      className="relative min-h-[1000px] bg-gradient-to-b from-[#020506] via-black to-black "
     >
       {/* Background radial glow */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.35),transparent_60%)]" />
@@ -86,14 +86,14 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <motion.div
-          className="mt-12 flex justify-center gap-6"
+          className="mt-2 flex justify-center gap-6"
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55, ease: 'easeOut' }}
         >
           <Link
             href="#"
-            className="px-12 py-3 mt-6 rounded-full bg-emerald-500 text-black font-semibold hover:opacity-90 transition"
+            className="px-2 py-3 mt-6 rounded-full bg-emerald-500 text-black font-semibold hover:opacity-90 transition"
           >
             Start Accepting Payments
           </Link>
@@ -108,7 +108,7 @@ export default function HeroSection() {
 
       {/* ── 3-D Dashboard + Phone wrapper ── */}
       <div
-        className="absolute bottom-[30px] left-1/2 -translate-x-1/2 z-20"
+        className="absolute bottom-[10px] left-1/2 -translate-x-1/2 z-20"
         style={{ perspective: 1200 }}
       >
         {/* Dashboard — entry animation + scroll-driven tilt */}
@@ -137,7 +137,7 @@ export default function HeroSection() {
 
         {/* Mobile phone — independent 3-D entry + float, offset timing */}
         <motion.div
-          className="absolute -bottom-[130px] right-[18%] z-30"
+          className="absolute -bottom-[110px] right-[-1%] z-30"
           style={{ perspective: 900, transformStyle: 'preserve-3d' }}
           initial={{ opacity: 0, scale: 0.82, rotateY: -18, x: 40 }}
           animate={{ opacity: 1, scale: 1, rotateY: -6, x: 0 }}
@@ -151,8 +151,8 @@ export default function HeroSection() {
             <Image
               src="/image 11.svg"
               alt="RupeeFlow mobile app"
-              width={280}
-              height={600}
+              width={230}
+              height={400}
               priority
             />
           </motion.div>

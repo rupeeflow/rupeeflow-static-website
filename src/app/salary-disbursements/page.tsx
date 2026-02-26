@@ -254,13 +254,14 @@ export default function SalaryDisbursementPage() {
           className="absolute right-[-50px] top-[25%] w-[500px] h-[500px] rounded-full opacity-30 blur-[100px] pointer-events-none"
           style={{ background: 'radial-gradient(circle, #109F58 0%, transparent 70%)' }}
         />
+
         {/* Green swooshes */}
-        <div className="absolute left-[-60px] bottom-[20%] w-[180px] h-[300px] pointer-events-none z-[5]">
+        {/* <div className="absolute left-[-60px] bottom-[20%] w-[180px] h-[300px] pointer-events-none z-[5]">
           <div className="w-full h-full rounded-[50%] border-[3px] border-emerald-500/60" style={{ transform: 'rotate(-20deg)' }} />
         </div>
         <div className="absolute right-[-40px] bottom-[8%] w-[200px] h-[350px] pointer-events-none z-[5]">
           <div className="w-full h-full rounded-[50%] border-[3px] border-emerald-500/40" style={{ transform: 'rotate(25deg)' }} />
-        </div>
+        </div> */}
 
         {/* Content — text LEFT, image RIGHT */}
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -339,11 +340,11 @@ export default function SalaryDisbursementPage() {
             className="flex-1 flex justify-center lg:justify-end"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <motion.div
               animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
               className="relative w-full max-w-[480px]"
             >
               <Image
