@@ -11,7 +11,8 @@ interface FAQItem {
 }
 
 interface FAQProps {
-  faqs: FAQItem[]
+  faqs?: FAQItem[]
+  searchQuery?: string
 }
 
 function FAQItemComponent({
@@ -71,7 +72,7 @@ function FAQItemComponent({
   )
 }
 
-export default function FAQSection({ faqs }: FAQProps) {
+export default function FAQSection({ faqs = [] }: FAQProps) {
   const [openId, setOpenId] = useState<string | null>(null)
 
   return (

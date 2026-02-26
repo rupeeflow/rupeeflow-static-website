@@ -58,7 +58,7 @@ export default function InvoiceSimulator() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-8 border-2 border-indigo-200"
+              className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 border-2 border-emerald-200"
             >
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Enter Invoice Details
@@ -74,7 +74,7 @@ export default function InvoiceSimulator() {
                     value={invoiceAmount}
                     onChange={(e) => setInvoiceAmount(e.target.value)}
                     placeholder="e.g., 500000"
-                    className="w-full px-4 py-4 rounded-xl border-2 border-indigo-300 focus:border-indigo-500 focus:outline-none transition-colors text-gray-900 text-lg font-semibold"
+                    className="w-full px-4 py-4 rounded-xl border-2 border-emerald-300 focus:border-emerald-500 focus:outline-none transition-colors text-gray-900 text-lg font-semibold"
                   />
                 </div>
 
@@ -85,7 +85,7 @@ export default function InvoiceSimulator() {
                   <select
                     value={paymentTerms}
                     onChange={(e) => setPaymentTerms(e.target.value)}
-                    className="w-full px-4 py-4 rounded-xl border-2 border-indigo-300 focus:border-indigo-500 focus:outline-none transition-colors text-gray-900"
+                    className="w-full px-4 py-4 rounded-xl border-2 border-emerald-300 focus:border-emerald-500 focus:outline-none transition-colors text-gray-900"
                   >
                     <option value="30">30 Days</option>
                     <option value="45">45 Days</option>

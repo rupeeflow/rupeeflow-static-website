@@ -170,11 +170,13 @@ export default function Navbar() {
         {/* Payments mega dropdown - rendered below navbar */}
         {activeMenu === 'payments' && (
           <div
-            className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200"
+            className={`flex justify-center animate-in fade-in slide-in-from-top-2 duration-200 ${
+              scrolled ? 'w-full' : 'w-[95%] lg:w-[90%] max-w-[1200px]'
+            }`}
             onMouseEnter={() => handleMouseEnter('payments')}
             onMouseLeave={handleMouseLeave}
           >
-            <div onClick={handleLinkClick}>
+            <div onClick={handleLinkClick} className="w-full">
               <PaymentsDropdown />
             </div>
           </div>
@@ -183,12 +185,15 @@ export default function Navbar() {
         {/* Get Credit dropdown */}
         {activeMenu === 'credit' && (
           <div
-            className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200"
+            className={`flex justify-center animate-in fade-in slide-in-from-top-2 duration-200 ${
+              scrolled ? 'w-full' : 'w-[95%] lg:w-[90%] mx-auto'
+            }`}
+            style={{ maxWidth: scrolled ? 'none' : '1200px' }}
             onMouseEnter={() => handleMouseEnter('credit')}
             onMouseLeave={handleMouseLeave}
           >
-            <div onClick={handleLinkClick}>
-              <Dropdown navitems={creditnav} />
+            <div onClick={handleLinkClick} className="w-full">
+              <Dropdown navitems={creditnav} scrolled={scrolled} />
             </div>
           </div>
         )}
@@ -196,12 +201,15 @@ export default function Navbar() {
         {/* Cards dropdown */}
         {activeMenu === 'cards' && (
           <div
-            className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200"
+            className={`flex justify-center animate-in fade-in slide-in-from-top-2 duration-200 ${
+              scrolled ? 'w-full' : 'w-[95%] lg:w-[90%] mx-auto'
+            }`}
+            style={{ maxWidth: scrolled ? 'none' : '1200px' }}
             onMouseEnter={() => handleMouseEnter('cards')}
             onMouseLeave={handleMouseLeave}
           >
-            <div onClick={handleLinkClick}>
-              <Dropdown navitems={cardTypes} />
+            <div onClick={handleLinkClick} className="w-full">
+              <Dropdown navitems={cardTypes} scrolled={scrolled} />
             </div>
           </div>
         )}
@@ -209,12 +217,15 @@ export default function Navbar() {
         {/* Partnerships dropdown */}
         {activeMenu === 'partner' && (
           <div
-            className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200"
+            className={`flex justify-center animate-in fade-in slide-in-from-top-2 duration-200 ${
+              scrolled ? 'w-full' : 'w-[95%] lg:w-[90%] mx-auto'
+            }`}
+            style={{ maxWidth: scrolled ? 'none' : '1200px' }}
             onMouseEnter={() => handleMouseEnter('partner')}
             onMouseLeave={handleMouseLeave}
           >
-            <div onClick={handleLinkClick}>
-              <Dropdown navitems={partnershipsnav} />
+            <div onClick={handleLinkClick} className="w-full">
+              <Dropdown navitems={partnershipsnav} scrolled={scrolled} />
             </div>
           </div>
         )}
@@ -222,12 +233,15 @@ export default function Navbar() {
         {/* Resources dropdown */}
         {activeMenu === 'resources' && (
           <div
-            className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200"
+            className={`flex justify-center animate-in fade-in slide-in-from-top-2 duration-200 ${
+              scrolled ? 'w-full' : 'w-[95%] lg:w-[90%] mx-auto'
+            }`}
+            style={{ maxWidth: scrolled ? 'none' : '1200px' }}
             onMouseEnter={() => handleMouseEnter('resources')}
             onMouseLeave={handleMouseLeave}
           >
-            <div onClick={handleLinkClick}>
-              <Dropdown navitems={resourcesnav} />
+            <div onClick={handleLinkClick} className="w-full">
+              <Dropdown navitems={resourcesnav} scrolled={scrolled} />
             </div>
           </div>
         )}

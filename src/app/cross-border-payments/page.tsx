@@ -384,7 +384,7 @@ export default function CrossBorderPaymentsPage() {
                   <h3 className="fontheading text-xl md:text-2xl text-gray-900">Seamless API Integration for Your Platform</h3>
                 </div>
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
-                  Integrate cross-border payment capabilities directly into your platform with Rupeeflow's developer-friendly APIs. Our comprehensive documentation, SDKs, and sandbox environment make it easy to build and test international payment workflows tailored to your business needs.
+                  Integrate cross-border payment capabilities directly into your platform with Rupeeflow&apos;s developer-friendly APIs. Our comprehensive documentation, SDKs, and sandbox environment make it easy to build and test international payment workflows tailored to your business needs.
                 </p>
                 <Link
                   href="#"

@@ -73,13 +73,13 @@ export default function IndustryFocusSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10 hover:-translate-y-1 group"
+              className="bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1 group"
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                 <Image src={industry.icon} alt={industry.name} width={24} height={24} />
               </div>
 
-              <h3 className="text-gray-900 text-xl font-bold mb-2 group-hover:text-indigo-600 transition-colors">
+              <h3 className="text-gray-900 text-xl font-bold mb-2 group-hover:text-emerald-600 transition-colors">
                 {industry.name}
               </h3>
               
@@ -88,7 +88,7 @@ export default function IndustryFocusSection() {
               </p>
 
               <div className="pt-4 border-t border-gray-100">
-                <div className="text-indigo-600 font-bold text-lg">{industry.avgFinancing}</div>
+                <div className="text-emerald-600 font-bold text-lg">{industry.avgFinancing}</div>
                 <div className="text-gray-500 text-xs">Avg. Financing</div>
               </div>
             </motion.div>

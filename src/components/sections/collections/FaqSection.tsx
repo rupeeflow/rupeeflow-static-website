@@ -1,7 +1,4 @@
-'use client'
-
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import FAQAccordion from '@/components/ui/FAQAccordion'
 
 const faqs = [
   {
@@ -47,85 +44,11 @@ const faqs = [
 ]
 
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-
   return (
-    <section className="relative py-24 bg-white">
-      <div className="max-w-4xl mx-auto px-6">
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
-            Frequently Asked <span className="text-emerald-500">Questions</span>
-          </h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Everything you need to know about RupeeFlow's payment solutions
-          </p>
-        </motion.div>
-
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              onHoverStart={() => setHoveredIndex(index)}
-              onHoverEnd={() => setHoveredIndex(null)}
-              className="border border-gray-200 rounded-xl overflow-hidden hover:border-emerald-300 hover:shadow-lg transition-all duration-300"
-            >
-              <button
-                onClick={() =>
-                  setOpenIndex(openIndex === index ? null : index)
-                }
-                className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-all duration-300 group"
-              >
-                <span className="fontheading text-base md:text-lg text-gray-900 pr-4 group-hover:text-emerald-600 transition-colors">
-                  {faq.question}
-                </span>
-                <motion.div
-                  animate={{ 
-                    rotate: openIndex === index ? 180 : 0,
-                    scale: hoveredIndex === index ? 1.2 : 1
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="shrink-0"
-                >
-                  <svg
-                    className="w-5 h-5 text-emerald-500 transition-colors"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </motion.div>
-              </button>
-              <motion.div
-                animate={{ 
-                  height: openIndex === index || hoveredIndex === index ? 'auto' : 0,
-                  opacity: openIndex === index || hoveredIndex === index ? 1 : 0
-                }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden"
-              >
-                <p className="px-6 pb-5 text-sm md:text-base text-gray-600 fontbody2 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <FAQAccordion 
+      faqs={faqs} 
+      title="Frequently Asked Questions"
+      subtitle="Everything you need to know about RupeeFlow's payment solutions"
+    />
   )
 }

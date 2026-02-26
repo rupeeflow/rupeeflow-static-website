@@ -41,10 +41,10 @@ export default function PaymentsDropdown() {
   const router = useRouter()
 
   return (
-    <div className="max-w-[1200px] w-full mx-auto bg-white rounded-b-2xl shadow-2xl overflow-hidden">
+    <div className="w-full bg-white rounded-b-2xl shadow-2xl overflow-hidden">
       <div className="h-1 bg-emerald-500" />
 
-      <div className="flex min-h-[420px]">
+      <div className="flex min-h-[420px] max-w-[1200px] mx-auto px-4">
         <div className="flex-[2.5] p-6 pr-5">
           <h3 className="text-[11px] font-bold text-emerald-600 tracking-widest uppercase mb-5">
             Collect Payments
@@ -110,7 +110,7 @@ export default function PaymentsDropdown() {
             ))}
           </div>
           <div className="mt-6 pt-3 border-t border-gray-200">
-            <a href="/products/make-payments" className="text-xs font-semibold text-emerald-500 hover:text-emerald-700 transition-colors">
+            <a href="/products/make-payments/explore" className="text-xs font-semibold text-emerald-500 hover:text-emerald-700 transition-colors">
               Explore Make Payments →
             </a>
           </div>
