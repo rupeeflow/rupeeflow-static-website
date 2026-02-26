@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     keywords: ['UPI payments', 'payment gateway', 'fintech API', 'digital banking', 'AEPS',
   'DMT', 'IMPS', 'NEFT'],
     authors: [{ name: 'RupeeFlow' }],
+    viewport: {
+      width: 'device-width',
+      initialScale: 1,
+      maximumScale: 5,
+    },
     openGraph: {
       type: 'website',
       locale: 'en_IN',

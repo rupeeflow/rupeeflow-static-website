@@ -31,74 +31,76 @@ const businessCards = [
 
 export default function ChooseBusinessType() {
   return (
-   <section className="relative bg-white py-8 overflow-hidden">
+   <section className="relative bg-white py-8 sm:py-12 md:py-16 overflow-hidden">
 
-  {/* BIG WAVE */}
+  {/* BIG WAVE - Hidden on mobile */}
   <img
-  src="/wave.png"
-  className="absolute top-[160px] left-0 w-[1500px] z-0 pointer-events-none"
-/>
+    src="/wave.png"
+    className="hidden md:block absolute top-[160px] left-0 w-[1500px] z-0 pointer-events-none opacity-50"
+    alt="decorative wave"
+  />
 
   {/* CONTENT */}
-  <div className="relative z-[10] max-w-[1200px] mx-auto px-8">
+  <div className="relative z-[10] w-full max-w-full sm:max-w-[1200px] mx-auto px-3 sm:px-6 md:px-8">
 
         {/* Heading */}
-        <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold mb-3">
+        <div className="text-center mb-8 sm:mb-10 md:mb-14">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 px-4">
             Choose Your Business Type
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-sm sm:text-base px-4">
             Which option best describe your business?
           </p>
         </div>
 
-        {/* Cards */}
+        {/* Cards - Stack vertically on mobile, 2 columns on tablet+ */}
 
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
 
           {businessCards.map((card, i) => (
             
     <div
-  key={i}
-  className={`relative rounded-[22px] border p-10 min-h-[260px]
-  ${
-    card.active
-      ? 'border-emerald-500 border-2 bg-white'
-      : 'border-gray-300 bg-white/70 backdrop-blur-[12px]'
-  }`}
->
+      key={i}
+      className={`relative rounded-2xl sm:rounded-[22px] border p-5 sm:p-8 md:p-10 min-h-[280px] sm:min-h-[300px] md:min-h-[320px]
+      ${
+        card.active
+          ? 'border-emerald-500 border-2 bg-white'
+          : 'border-gray-300 bg-white/70 backdrop-blur-[12px]'
+      }`}
+    >
 
-  <h3 className="text-2xl font-semibold mb-6">
-    {card.title}
-  </h3>
+      <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 pr-4">
+        {card.title}
+      </h3>
 
-  <ul className="space-y-3 text-gray-700">
-    {card.items.map((item, j) => (
-      <li key={j}>{item}</li>
-    ))}
-  </ul>
+      <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base mb-16 sm:mb-0">
+        {card.items.map((item, j) => (
+          <li key={j} className="leading-relaxed">{item}</li>
+        ))}
+      </ul>
 
-  {/* 👇 ADD THIS IMAGE RIGHT HERE */}
-  <img
-    src={card.image}
-    className="absolute right-8 top-1/2 -translate-y-1/2 w-[180px] pointer-events-none"
-  />
+      {/* Image - Positioned differently on mobile vs desktop */}
+      <img
+        src={card.image}
+        alt={card.title}
+        className="absolute right-4 sm:right-6 md:right-8 bottom-16 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] pointer-events-none opacity-80 sm:opacity-100"
+      />
 
-<Link
-  href={card.link}
-  className="absolute bottom-4 right-8 z-20
-             px-6 py-2 rounded-full
-             bg-gradient-to-r from-[#054C38] to-[#2AB871]
-             text-white text-sm flex items-center gap-2
-             transition-all duration-300
-             hover:scale-105 hover:shadow-lg
-             hover:shadow-black-500/30
-             active:scale-95
-             hover:text-pink/450"
->
-  See Complete Solution →
-</Link>
-</div>
+      <Link
+        href={card.link}
+        className="absolute bottom-3 sm:bottom-4 left-5 sm:left-8 md:left-10 right-5 sm:right-auto z-20
+                   px-4 sm:px-6 py-2 sm:py-2.5 rounded-full
+                   bg-gradient-to-r from-[#054C38] to-[#2AB871]
+                   text-white text-xs sm:text-sm flex items-center justify-center sm:justify-start gap-2
+                   transition-all duration-300
+                   hover:scale-105 hover:shadow-lg
+                   hover:shadow-black-500/30
+                   active:scale-95
+                   whitespace-nowrap"
+      >
+        See Complete Solution →
+      </Link>
+    </div>
 
           ))}
 

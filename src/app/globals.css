@@ -201,6 +201,17 @@ body {
   background: #0F0F0F;
   color: var(--foreground);
   font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .fontheading {
