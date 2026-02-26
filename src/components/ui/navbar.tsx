@@ -7,6 +7,10 @@ import { ChevronDown, Menu, X } from 'lucide-react'
 import { navlist } from '@/interface/typesInterfaces'
 import Dropdown from './Dropdown'
 import PaymentsDropdown from './PaymentsDropdown'
+import CreditDropdown from './CreditDropdown'
+import CardsDropdown from './CardsDropdown'
+import PartnershipsDropdown from './PartnershipsDropdown'
+import ResourcesDropdown from './ResourcesDropdown'
 
 const creditnav: navlist[] = [
   { id: 'merchant', label: 'Merchant Cash Advance', icon: '/credit/merchant-cash-advance.svg', href: '/merchant-cash-advance' },
@@ -54,6 +58,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileExpandedSection, setMobileExpandedSection] = useState<string | null>(null)
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
@@ -77,6 +82,7 @@ export default function Navbar() {
   const closeMenu = () => {
     setActiveMenu(null)
     setMobileMenuOpen(false)
+    setMobileExpandedSection(null)
     if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
   }
 
@@ -193,7 +199,7 @@ export default function Navbar() {
             onMouseLeave={handleMouseLeave}
           >
             <div onClick={handleLinkClick} className="w-full">
-              <Dropdown navitems={creditnav} scrolled={scrolled} />
+              <CreditDropdown navitems={creditnav} scrolled={scrolled} />
             </div>
           </div>
         )}
@@ -209,7 +215,7 @@ export default function Navbar() {
             onMouseLeave={handleMouseLeave}
           >
             <div onClick={handleLinkClick} className="w-full">
-              <Dropdown navitems={cardTypes} scrolled={scrolled} />
+              <CardsDropdown navitems={cardTypes} scrolled={scrolled} />
             </div>
           </div>
         )}
@@ -225,7 +231,7 @@ export default function Navbar() {
             onMouseLeave={handleMouseLeave}
           >
             <div onClick={handleLinkClick} className="w-full">
-              <Dropdown navitems={partnershipsnav} scrolled={scrolled} />
+              <PartnershipsDropdown navitems={partnershipsnav} scrolled={scrolled} />
             </div>
           </div>
         )}
@@ -241,7 +247,7 @@ export default function Navbar() {
             onMouseLeave={handleMouseLeave}
           >
             <div onClick={handleLinkClick} className="w-full">
-              <Dropdown navitems={resourcesnav} scrolled={scrolled} />
+              <ResourcesDropdown navitems={resourcesnav} scrolled={scrolled} />
             </div>
           </div>
         )}
@@ -258,41 +264,228 @@ export default function Navbar() {
             onClick={(e) => e.stopPropagation()}
           >
             <nav className="flex flex-col gap-2">
-              <Link
-                href="/payments"
-                onClick={closeMenu}
-                className="px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
-              >
-                Payments
-              </Link>
-              <Link
-                href="/credit"
-                onClick={closeMenu}
-                className="px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
-              >
-                Get Credit
-              </Link>
-              <Link
-                href="/cards"
-                onClick={closeMenu}
-                className="px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
-              >
-                Cards
-              </Link>
-              <Link
-                href="/partnerships"
-                onClick={closeMenu}
-                className="px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
-              >
-                Partnerships
-              </Link>
-              <Link
-                href="/resources"
-                onClick={closeMenu}
-                className="px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
-              >
-                Resources
-              </Link>
+              {/* Payments Section */}
+              <div>
+                <button
+                  onClick={() => setMobileExpandedSection(mobileExpandedSection === 'payments' ? null : 'payments')}
+                  className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
+                >
+                  <span className="font-medium">Payments</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpandedSection === 'payments' ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileExpandedSection === 'payments' && (
+                  <div className="mt-2 ml-4 space-y-3 animate-in slide-in-from-top-2 duration-200">
+                    {/* Collect Payments */}
+                    <div>
+                      <p className="text-xs font-bold text-emerald-600 uppercase tracking-wide px-4 mb-2">Collect Payments</p>
+                      <div className="space-y-1">
+                        <Link href="/payment-gateway" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payments/payment-gateway.svg" alt="" width={20} height={20} />
+                          Payment Gateway
+                        </Link>
+                        <Link href="/payment-links" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payments/payment-links.svg" alt="" width={20} height={20} />
+                          Payment Links
+                        </Link>
+                        <Link href="/payment-button" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payments/payment-button.svg" alt="" width={20} height={20} />
+                          Payment Button
+                        </Link>
+                        <Link href="/upi-collections" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payments/upi-collections.svg" alt="" width={20} height={20} />
+                          UPI Collections
+                        </Link>
+                        <Link href="/qr-code" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payments/qr-code.svg" alt="" width={20} height={20} />
+                          QR Code
+                        </Link>
+                        <Link href="/cross-border-payments" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payments/cross-border-payments.svg" alt="" width={20} height={20} />
+                          Cross-border Payments
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Make Payments */}
+                    <div>
+                      <p className="text-xs font-bold text-emerald-600 uppercase tracking-wide px-4 mb-2 mt-3">Make Payments</p>
+                      <div className="space-y-1">
+                        <Link href="/bulk-payouts" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payouts/bulk-payouts.svg" alt="" width={20} height={20} />
+                          Bulk Payouts
+                        </Link>
+                        <Link href="/vendor-payments" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payouts/vendor-payments.svg" alt="" width={20} height={20} />
+                          Vendor Payments
+                        </Link>
+                        <Link href="/bill-payments" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payouts/bill-payments.svg" alt="" width={20} height={20} />
+                          Bill Payments
+                        </Link>
+                        <Link href="/salary-disbursements" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payouts/salary-disbursements.svg" alt="" width={20} height={20} />
+                          Salary Disbursements
+                        </Link>
+                        <Link href="/tax-payments" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payouts/tax-payments.svg" alt="" width={20} height={20} />
+                          Tax Payments
+                        </Link>
+                        <Link href="/invoicing" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payouts/invoicing.svg" alt="" width={20} height={20} />
+                          Invoicing
+                        </Link>
+                        <Link href="/rental-payments" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payouts/rental-payments.svg" alt="" width={20} height={20} />
+                          Rental Payments
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Payable & Receivable+ */}
+                    <div>
+                      <p className="text-xs font-bold text-emerald-600 uppercase tracking-wide px-4 mb-2 mt-3">Payable & Receivable+</p>
+                      <div className="space-y-1">
+                        <Link href="/payment-reminders" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/features/clock.svg" alt="" width={20} height={20} />
+                          Payment Reminders
+                        </Link>
+                        <Link href="/e-invoicing" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payouts/invoicing.svg" alt="" width={20} height={20} />
+                          E-Invoicing
+                        </Link>
+                        <Link href="/analytics" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/resources/case-studies.svg" alt="" width={20} height={20} />
+                          Analytics
+                        </Link>
+                        <Link href="/auto-reconciliation" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/features/bill.svg" alt="" width={20} height={20} />
+                          Auto Reconciliation
+                        </Link>
+                        <Link href="/invoice-management" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payouts/invoicing.svg" alt="" width={20} height={20} />
+                          Invoice Management
+                        </Link>
+                        <Link href="/vendor-management" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/payouts/vendor-payments.svg" alt="" width={20} height={20} />
+                          Vendor Management
+                        </Link>
+                        <Link href="/payable-analytics" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/resources/pricing.svg" alt="" width={20} height={20} />
+                          Payable Analytics
+                        </Link>
+                        <Link href="/cashflow-analytics" onClick={closeMenu} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all">
+                          <Image src="/home/wallet.svg" alt="" width={20} height={20} />
+                          Cashflow Analytics
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Get Credit Section */}
+              <div>
+                <button
+                  onClick={() => setMobileExpandedSection(mobileExpandedSection === 'credit' ? null : 'credit')}
+                  className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
+                >
+                  <span className="font-medium">Get Credit</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpandedSection === 'credit' ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileExpandedSection === 'credit' && (
+                  <div className="mt-2 ml-4 space-y-1 animate-in slide-in-from-top-2 duration-200">
+                    {creditnav.map((item) => (
+                      <Link 
+                        key={item.id}
+                        href={item.href} 
+                        onClick={closeMenu} 
+                        className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
+                      >
+                        <Image src={item.icon} alt="" width={20} height={20} />
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Cards Section */}
+              <div>
+                <button
+                  onClick={() => setMobileExpandedSection(mobileExpandedSection === 'cards' ? null : 'cards')}
+                  className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
+                >
+                  <span className="font-medium">Cards</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpandedSection === 'cards' ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileExpandedSection === 'cards' && (
+                  <div className="mt-2 ml-4 space-y-1 animate-in slide-in-from-top-2 duration-200">
+                    {cardTypes.map((item) => (
+                      <Link 
+                        key={item.id}
+                        href={item.href} 
+                        onClick={closeMenu} 
+                        className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
+                      >
+                        <Image src={item.icon} alt="" width={20} height={20} />
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Partnerships Section */}
+              <div>
+                <button
+                  onClick={() => setMobileExpandedSection(mobileExpandedSection === 'partnerships' ? null : 'partnerships')}
+                  className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
+                >
+                  <span className="font-medium">Partnerships</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpandedSection === 'partnerships' ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileExpandedSection === 'partnerships' && (
+                  <div className="mt-2 ml-4 space-y-1 animate-in slide-in-from-top-2 duration-200">
+                    {partnershipsnav.map((item) => (
+                      <Link 
+                        key={item.id}
+                        href={item.href} 
+                        onClick={closeMenu} 
+                        className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
+                      >
+                        <Image src={item.icon} alt="" width={20} height={20} />
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Resources Section */}
+              <div>
+                <button
+                  onClick={() => setMobileExpandedSection(mobileExpandedSection === 'resources' ? null : 'resources')}
+                  className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200"
+                >
+                  <span className="font-medium">Resources</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpandedSection === 'resources' ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileExpandedSection === 'resources' && (
+                  <div className="mt-2 ml-4 space-y-1 animate-in slide-in-from-top-2 duration-200">
+                    {resourcesnav.map((item) => (
+                      <Link 
+                        key={item.id}
+                        href={item.href} 
+                        onClick={closeMenu} 
+                        className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
+                      >
+                        <Image src={item.icon} alt="" width={20} height={20} />
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               <div className="border-t border-gray-200 my-4"></div>
 
