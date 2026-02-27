@@ -172,7 +172,7 @@ export default function AddonsSection() {
               </span>
             </h2>
             <p className="rf-lead text-gray-500 mt-4">
-              See exactly what's included at every tier — no surprises.
+              See exactly what&apos;s included at every tier — no surprises.
             </p>
           </div>
 
