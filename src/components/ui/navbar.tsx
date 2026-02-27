@@ -8,6 +8,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { navlist } from '@/interface/typesInterfaces'
 import Dropdown from './Dropdown'
 import PaymentsDropdown from './PaymentsDropdown'
+import CreditDropdown from './CreditDropdown'
+import CardsDropdown from './CardsDropdown'
+import PartnershipsDropdown from './PartnershipsDropdown'
+import ResourcesDropdown from './ResourcesDropdown'
 
 const creditnav: navlist[] = [
   { id: 'merchant', label: 'Merchant Cash Advance', icon: '/credit/merchant-cash-advance.svg', href: '/merchant-cash-advance' },
@@ -32,14 +36,6 @@ const partnershipsnav: navlist[] = [
   { id: 'partner', label: 'Affiliate Partners', icon: '/business/api-banking.svg', href: '/partnerships/affiliates' },
 ]
 
-const cardTypes: navlist[] = [
-  { id: 'business', label: 'Business Cards', icon: '/cards/business-cards.svg', href: '/business-cards' },
-  { id: 'corporate', label: 'Corporate Cards', icon: '/cards/corporate-cards.svg', href: '/corporate-cards' },
-  { id: 'prepaid', label: 'Prepaid Cards', icon: '/cards/prepaid-cards.svg', href: '/prepaid-cards' },
-  { id: 'virtual', label: 'Virtual Cards', icon: '/cards/virtual-cards.svg', href: '/virtual-cards' },
-  { id: 'expense', label: 'Expense Management Cards', icon: '/cards/expense-management-cards.svg', href: '/expense-management-cards' },
-  { id: 'rewards', label: 'Rewards Cards', icon: '/cards/rewards-cards.svg', href: '/rewards-cards' },
-]
 
 const paymentsNav: navlist[] = [
   { id: 'gateway', label: 'Payment Gateway', icon: '/payments/payment-gateway.svg', href: '/payment-gateway' },
@@ -52,7 +48,6 @@ const paymentsNav: navlist[] = [
 const mobileSections = [
   { key: 'payments', label: 'Payments', items: paymentsNav },
   { key: 'credit', label: 'Get Credit', items: creditnav },
-  { key: 'cards', label: 'Cards', items: cardTypes },
   { key: 'partner', label: 'Partnerships', items: partnershipsnav },
   { key: 'resources', label: 'Resources', items: resourcesnav },
 ]
@@ -127,7 +122,6 @@ export default function Navbar() {
 
             {([
               ['credit', 'Get Credit', creditnav],
-              ['cards', 'Cards', cardTypes],
               ['partner', 'Partnerships', partnershipsnav],
               ['resources', 'Resources', resourcesnav],
             ] as [string, string, navlist[]][]).map(([key, label]) => (
@@ -179,11 +173,6 @@ export default function Navbar() {
               <div onClick={closeAll}><Dropdown navitems={creditnav} /></div>
             </div>
           )}
-          {activeMenu === 'cards' && (
-            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('cards')} onMouseLeave={handleMouseLeave}>
-              <div onClick={closeAll}><Dropdown navitems={cardTypes} /></div>
-            </div>
-          )}
           {activeMenu === 'partner' && (
             <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('partner')} onMouseLeave={handleMouseLeave}>
               <div onClick={closeAll}><Dropdown navitems={partnershipsnav} /></div>
@@ -203,7 +192,7 @@ export default function Navbar() {
         <>
           {/* Backdrop */}
           <motion.div
-            className="fixed inset-0 z-[97] bg-black/50 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -213,7 +202,7 @@ export default function Navbar() {
 
           {/* Drawer panel — slides in from the right */}
           <motion.div
-            className="fixed top-0 right-0 bottom-0 z-[98] w-[280px] bg-white flex flex-col shadow-2xl lg:hidden"
+            className="fixed top-0 right-0 bottom-0 z-[101] w-[280px] bg-white flex flex-col shadow-2xl lg:hidden"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}

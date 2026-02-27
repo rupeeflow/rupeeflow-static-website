@@ -7,9 +7,10 @@ import Image from 'next/image'
 
 interface DropdownProps {
   navitems: navlist[]
+  scrolled?: boolean
 }
 
-export default function Dropdown({ navitems }: DropdownProps) {
+export default function Dropdown({ navitems, scrolled = false }: DropdownProps) {
   const router = useRouter()
   const pathname = usePathname()
   
@@ -39,10 +40,10 @@ export default function Dropdown({ navitems }: DropdownProps) {
   }, [pathname, navitems, getActiveItem])
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl border border-gray-100 p-4 w-[760px] flex gap-2 mt-2">
-
-      {/* LEFT LIST */}
-      <div className="w-[260px] space-y-2 max-h-[380px] overflow-y-auto">
+    <div className={`bg-white rounded-xl shadow-2xl border border-gray-100 w-full mt-2 ${scrolled ? '' : 'max-w-[760px] mx-auto'}`}>
+      <div className={`flex gap-2 p-4 ${scrolled ? 'max-w-[900px] mx-auto' : ''}`}>
+        {/* LEFT LIST */}
+        <div className="w-[260px] space-y-2 max-h-[380px] overflow-y-auto">
         {navitems.map((item) => (
           <button
             key={item.id}
@@ -91,6 +92,7 @@ export default function Dropdown({ navitems }: DropdownProps) {
             Learn More
           </button>
         </div>
+      </div>
       </div>
     </div>
   )

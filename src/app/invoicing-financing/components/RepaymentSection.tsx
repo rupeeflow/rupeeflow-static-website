@@ -20,7 +20,6 @@ const financingOptions = [
     advance: '80%',
     frequency: 'Per Invoice',
     icon: '/payouts/invoicing.svg',
-    color: 'from-emerald-500 to-teal-500',
   },
   {
     title: 'Selective Invoicing',
@@ -28,7 +27,6 @@ const financingOptions = [
     advance: '80%',
     frequency: 'As Needed',
     icon: '/payments/payment-gateway.svg',
-    color: 'from-teal-500 to-cyan-500',
   },
   {
     title: 'Revolving Facility',
@@ -36,7 +34,6 @@ const financingOptions = [
     advance: '80%',
     frequency: 'Continuous',
     icon: '/home/wallet.svg',
-    color: 'from-cyan-500 to-blue-500',
   },
 ]
 
@@ -77,7 +74,7 @@ export default function RepaymentSection() {
               >
                 <div className="relative bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 overflow-hidden hover:-translate-y-1">
                   {/* Gradient Overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${option.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-teal-500/0 group-hover:from-emerald-500/5 group-hover:to-teal-500/5 transition-all duration-500" />
 
                   <div className="relative flex items-center gap-6">
                     {/* Icon */}

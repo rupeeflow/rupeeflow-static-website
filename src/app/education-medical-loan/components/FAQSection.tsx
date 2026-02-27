@@ -1,8 +1,4 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import Container from '@/components/ui/Container'
-import { useState } from 'react'
+import FAQAccordion from '@/components/ui/FAQAccordion'
 
 const faqs = [
   {
@@ -32,92 +28,11 @@ const faqs = [
 ]
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
-
   return (
-    <section className="relative bg-white py-20 md:py-28 overflow-hidden">
-      <Container>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="fontheading text-3xl md:text-5xl text-gray-900 mb-4">
-            Frequently Asked{' '}
-            <span className="bg-gradient-to-r from-[#10b981] to-[#14b8a6] bg-clip-text text-transparent">
-              Questions
-            </span>
-          </h2>
-          <p className="fontbody2 text-gray-600 text-lg max-w-3xl mx-auto">
-            Everything you need to know about our loans
-          </p>
-        </motion.div>
-
-        <div className="max-w-3xl mx-auto space-y-4">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-500/30 transition-all duration-300 overflow-hidden"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-6 text-left"
-              >
-                <span className="text-gray-900 font-bold text-base md:text-lg pr-4">
-                  {faq.question}
-                </span>
-                <svg
-                  className={`w-6 h-6 text-emerald-600 flex-shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'max-h-96' : 'max-h-0'
-                }`}
-              >
-                <div className="px-6 pb-6">
-                  <p className="text-gray-600 fontbody2 text-sm md:text-base leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Contact Support */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <p className="text-gray-600 fontbody2 mb-4">
-            Still have questions?
-          </p>
-          <a
-            href="/support"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-emerald-500 text-emerald-600 font-semibold text-sm hover:bg-emerald-50 transition-all duration-300"
-          >
-            Contact Support
-          </a>
-        </motion.div>
-      </Container>
-    </section>
+    <FAQAccordion 
+      faqs={faqs} 
+      title="Frequently Asked Questions"
+      subtitle="Everything you need to know about our loans"
+    />
   )
 }
