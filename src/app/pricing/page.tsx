@@ -6,7 +6,7 @@ import { WebPageSchema } from '@/components/StructuredData'
 
 export const metadata: Metadata = {
   title: 'Pricing - Transparent Payment Solutions Pricing | RupeeFlow',
-  description: 'Simple, transparent pricing for UPI, AEPS, DMT, IMPS, and NEFT payment solutions. No hidden fees. Scale as you grow with RupeeFlow\'s flexible payment infrastructure.',
+  description: 'Simple, transparent pricing for Payment Gateway, UPI Collections, Payment Links, QR Code, Vendor Payouts, Bulk Transfers, Salary Disbursements, and Business Credit. No hidden fees. Scale as you grow with RupeeFlow.',
   keywords: ['payment pricing', 'UPI pricing', 'fintech pricing', 'payment gateway cost', 'transaction fees'],
   openGraph: {
     title: 'Pricing - Transparent Payment Solutions | RupeeFlow',
@@ -30,7 +30,7 @@ const PricingPage = () => {
     <div>
       <WebPageSchema
         title="Pricing - Transparent Payment Solutions Pricing"
-        description="Simple, transparent pricing for UPI, AEPS, DMT, IMPS, and NEFT payment solutions. No hidden fees. Scale as you grow."
+        description="Simple, transparent pricing for Payment Gateway, UPI Collections, Payment Links, Vendor Payouts, Bulk Transfers, Salary Disbursements & Business Credit. No hidden fees."
         url="/pricing"
       />
       <PricingSection />

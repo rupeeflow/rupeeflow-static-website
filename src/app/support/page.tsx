@@ -10,7 +10,7 @@ import { WebPageSchema, FAQSchema } from '@/components/StructuredData'
 export const metadata: Metadata = {
   title: 'Support - Get Help with RupeeFlow Payment Solutions',
   description:
-    'Expert support for RupeeFlow payment infrastructure. Access documentation, FAQs, API guides, and contact our technical team for assistance with UPI, AEPS, DMT, and more.',
+    'Expert support for RupeeFlow payment infrastructure. Access documentation, FAQs, API guides, and contact our team for help with Payment Gateway, UPI Collections, Vendor Payouts, Business Credit, and all RupeeFlow products.',
   keywords: [
     'payment support',
     'API documentation',

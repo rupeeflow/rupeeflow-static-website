@@ -16,9 +16,9 @@ export default function SolutionPage() {
   return (
     <>
       <WebPageSchema
-        title="Products - Payment Solutions for Modern Businesses"
-        description="Comprehensive suite of payment products including UPI Switch, verification APIs, AEPS, DMT, IMPS, and NEFT solutions."
-        url="/product"
+        title="Products — Collect, Pay & Get Credit | RupeeFlow"
+        description="RupeeFlow's complete product suite: Payment Gateway, UPI Collections, Payment Links, QR Code, Payment Button, Vendor Payments, Salary Disbursements, Bulk Payouts, Invoice Management, Bill Payments, Tax Payments, Merchant Cash Advance, Invoice Financing, and NRI Loans."
+        url="/products"
       />
       <FAQSchema faqs={faq.map(f => ({ question: f.question, answer: f.answer }))} />
       <ProductHero />

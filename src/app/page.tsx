@@ -20,8 +20,8 @@ export default function HomePage() {
   return (
     <div className="w-full relative">
       <WebPageSchema
-        title="RupeeFlow - Modern UPI Payment Infrastructure for India"
-        description="Enterprise-grade UPI payment solutions, digital banking APIs, AEPS, DMT, IMPS, and NEFT services"
+        title="RupeeFlow — Payments, Payouts & Business Credit for India"
+        description="RupeeFlow is India's all-in-one fintech platform. Accept payments via Payment Gateway, UPI Collections, Payment Links, QR Code & Payment Button. Send money with Vendor Payouts, Salary Disbursements, Bulk Transfers & Bill Payments. Get business credit with Merchant Cash Advance, Invoice Financing & NRI Loans."
         url="/"
       />
       <FAQSchema faqs={faq.map(f => ({ question: f.question, answer: f.answer }))} />
