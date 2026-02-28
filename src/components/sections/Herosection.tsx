@@ -148,7 +148,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-br from-[#30f3bc]/0 to-[#30f3bc]/0 group-hover:from-[#30f3bc]/5 group-hover:to-[#029789]/5 transition-all duration-500" />
             <div className="relative">
               <h3 className="rf-h2 bg-gradient-to-r from-[#ffffff] to-[#30f3bc] bg-clip-text text-transparent">
-                150 Cr+
+                10 Cr+
               </h3>
               <p className="rf-caption text-gray-400 mt-2 sm:mt-3">
                 Credit Disbursed
@@ -160,7 +160,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-br from-[#30f3bc]/0 to-[#30f3bc]/0 group-hover:from-[#30f3bc]/5 group-hover:to-[#029789]/5 transition-all duration-500" />
             <div className="relative">
               <h3 className="rf-h2 bg-gradient-to-r from-[#ffffff] to-[#30f3bc] bg-clip-text text-transparent">
-                50+
+                20+
               </h3>
               <p className="rf-caption text-gray-400 mt-2 sm:mt-3">
                 Partnerships

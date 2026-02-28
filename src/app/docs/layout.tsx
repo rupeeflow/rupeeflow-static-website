@@ -32,17 +32,5 @@ export default function DocsLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <div className="bg-black-emerald min-h-screen pt-24">
-      <div className="flex max-w-[1400px] mx-auto">
-        {/* Sidebar */}
-        <DocsSidebar />
-
-        {/* Main Content */}
-        <main className="flex-1 py-8 px-8 max-w-4xl">
-          {children}
-        </main>
-      </div>
-    </div>
-  )
+  return <>{children}</>
 }

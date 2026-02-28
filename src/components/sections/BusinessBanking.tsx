@@ -1,7 +1,12 @@
 'use client'
 
+import { useRef } from 'react'
 import Image from 'next/image'
 import Container from '@/components/ui/Container'
+import { useGSAP } from '@gsap/react'
+import { gsap, ScrollTrigger } from '@/lib/gsap'
+
+gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const bankingCards = [
   {
@@ -19,8 +24,39 @@ const bankingCards = [
 ]
 
 export default function BusinessBanking() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  // useGSAP(() => {
+  //   // Pill slides in from the right
+  //   gsap.from('.bb-pill', {
+  //     x: 60,
+  //     opacity: 0,
+  //     duration: 0.75,
+  //     ease: 'power3.out',
+  //     scrollTrigger: {
+  //       trigger: '.bb-pill',
+  //       start: 'top 90%',
+  //       once: true,
+  //     },
+  //   })
+
+  //   // Cards stagger up
+  //   gsap.from('.bb-card', {
+  //     y: 50,
+  //     opacity: 0,
+  //     duration: 0.65,
+  //     stagger: 0.15,
+  //     ease: 'power2.out',
+  //     scrollTrigger: {
+  //       trigger: '.bb-cards',
+  //       start: 'top 85%',
+  //       once: true,
+  //     },
+  //   })
+  // }, { scope: sectionRef })
+
   return (
-    <section className="relative bg-black pt-10 md:pt-18 pb-16 md:pb-24 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-black pt-10 md:pt-18 pb-16 md:pb-24 overflow-hidden">
       <Container className="relative">
         {/* ================= TOP VISUAL ================= */}
         <div className="relative h-[80px] sm:h-[100px] md:h-[190px] mb-6 sm:mb-8 px-4 md:px-0">
@@ -35,7 +71,7 @@ export default function BusinessBanking() {
           />
 
           {/* BUSINESS BANKING Pill RIGHT */}
-          <div className="absolute right-0 top-[36px] sm:top-[50px] md:top-28 w-[270px] sm:w-[340px] md:w-[360px] h-[46px] sm:h-[60px] z-10">
+          <div className="bb-pill absolute right-0 top-[36px] sm:top-[50px] md:top-28 w-[270px] sm:w-[340px] md:w-[360px] h-[46px] sm:h-[60px] z-10">
             <div className="absolute inset-0 rounded-[18px] rounded-tl-[270px] sm:rounded-tl-[340px] md:rounded-tl-[360px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
             <span className="absolute right-5 sm:right-8 top-1/2 -translate-y-1/2 text-white text-[12px] sm:text-[18px] md:text-[20px] font-semibold">
               BUSINESS BANKING
@@ -44,11 +80,11 @@ export default function BusinessBanking() {
         </div>
 
         {/* ================= CARDS ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-10 relative z-50 px-4 md:px-0">
+        <div className="bb-cards grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-10 relative z-50 px-4 md:px-0">
           {bankingCards.map((card, i) => (
             <div
               key={i}
-              className="group relative min-h-[200px] md:h-[240px] flex flex-col backdrop-blur-sm rounded-2xl p-5 md:p-6 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[0_0_40px_rgba(83,190,194,0.3)] hover:-translate-y-1"
+              className="bb-card group relative min-h-[200px] md:h-[240px] flex flex-col backdrop-blur-sm rounded-2xl p-5 md:p-6 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[0_0_40px_rgba(83,190,194,0.3)] hover:-translate-y-1"
               style={{ background: '#122427BF' }}
             >
               {/* White border that becomes gradient on hover */}

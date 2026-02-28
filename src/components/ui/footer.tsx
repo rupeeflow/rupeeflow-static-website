@@ -13,8 +13,8 @@ const collectLinks = [
   { label: 'UPI Payments', href: '/upi-collections' },
   { label: 'QR Code', href: '/qr-code' },
   { label: 'Auto Collect', href: '/payment-reminders' },
-  { label: 'e-NACH', href: '#' },
-  { label: 'Instant Settlements', href: '#' },
+  { label: 'e-NACH', href: '/comingsoon' },
+  { label: 'Instant Settlements', href: '/comingsoon' },
 ]
 
 const payLinks = [
@@ -40,33 +40,33 @@ const creditLinks = [
 const partnerLinks = [
   { label: 'For Banks', href: '/partnerships/banking' },
   { label: 'Affiliate Program', href: '/partnerships/affiliates' },
-  { label: 'Co-branded Cards', href: '/business-cards' },
-  { label: 'Co-branded Digital Wallet', href: '#' },
+  // { label: 'Co-branded Cards', href: '/business-cards' },
+  // { label: 'Co-branded Digital Wallet', href: '/comingsoon' },
   { label: 'Payment Gateway', href: '/payment-gateway' },
-  { label: 'Bharat Connect', href: '#' },
+  // { label: 'Bharat Connect', href: '/comingsoon' },
 ]
 
 const resourceLinks = [
   { label: 'Blogs', href: '/blog' },
-  { label: 'Case Studies', href: '#' },
+  { label: 'Case Studies', href: '/case-studies' },
   { label: 'API Docs', href: '/docs' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Help Center', href: '/support' },
 ]
 
 const companyLinks = [
-  { label: 'About Us', href: '#' },
+  { label: 'About Us', href: '/comingsoon' },
   { label: 'Careers', href: '/careers' },
-  { label: 'Media Coverage', href: '#' },
+  { label: 'Media Coverage', href: '/comingsoon' },
   { label: 'Contact Us', href: '/support' },
-  { label: 'Corporate Information', href: '#' },
+  { label: 'Corporate Information', href: '/comingsoon' },
 ]
 
 const legalLinks = [
   { label: 'Terms & Conditions', href: '/legal/terms' },
   { label: 'Privacy Policy', href: '/legal/privacy' },
   { label: 'Refund Policy', href: '/legal/refund' },
-  { label: 'Fair Practices', href: '#' },
+  { label: 'Fair Practices', href: '/comingsoon' },
 ]
 
 const socials = [
@@ -246,7 +246,7 @@ export default function Footer() {
 
         <p className="text-xs text-gray-400">
           © {new Date().getFullYear()} RupeeFlow Finance Pvt Ltd. All Rights Reserved.
-          <span className="hidden md:inline ml-4 text-gray-500">CIN: U65999KA2024PTC188XXX</span>
+          <span className="hidden md:inline ml-4 text-gray-500">CIN: U64990KA2025PTC209485</span>
         </p>
 
         <div className="flex items-center gap-4 text-xs text-gray-400">

@@ -1,7 +1,12 @@
 'use client'
 
+import { useRef } from 'react'
 import Image from 'next/image'
 import Container from '@/components/ui/Container'
+import { useGSAP } from '@gsap/react'
+import { gsap, ScrollTrigger } from '@/lib/gsap'
+
+gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const creditCards = [
   {
@@ -27,13 +32,44 @@ const creditCards = [
 ]
 
 export default function GetCredit() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  // useGSAP(() => {
+  //   // Pill slides in from the left
+  //   gsap.from('.gc-pill', {
+  //     x: -60,
+  //     opacity: 0,
+  //     duration: 0.75,
+  //     ease: 'power3.out',
+  //     scrollTrigger: {
+  //       trigger: '.gc-pill',
+  //       start: 'top 90%',
+  //       once: true,
+  //     },
+  //   })
+
+  //   // Cards stagger up
+  //   gsap.from('.gc-card', {
+  //     y: 50,
+  //     opacity: 0,
+  //     duration: 0.65,
+  //     stagger: 0.12,
+  //     ease: 'power2.out',
+  //     scrollTrigger: {
+  //       trigger: '.gc-cards',
+  //       start: 'top 85%',
+  //       once: true,
+  //     },
+  //   })
+  // }, { scope: sectionRef })
+
   return (
-    <section className="relative bg-black pt-10 md:pt-15 pb-16 md:pb-24 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-black pt-10 md:pt-15 pb-16 md:pb-24 overflow-hidden">
       <Container className="relative">
         {/* ================= TOP VISUAL BLOCK ================= */}
         <div className="relative h-[90px] sm:h-[120px] md:h-[200px] mb-8 sm:mb-12 md:mb-16 px-4 md:px-0">
           {/* GET CREDIT Pill */}
-          <div className="absolute left-0 top-[40px] sm:top-[60px] md:top-40 w-[260px] sm:w-[320px] h-[46px] sm:h-[60px] z-10">
+          <div className="gc-pill absolute left-0 top-[40px] sm:top-[60px] md:top-40 w-[260px] sm:w-[320px] h-[46px] sm:h-[60px] z-10">
             <div className="absolute inset-0 rounded-[18px] rounded-tr-[260px] sm:rounded-tr-[320px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
             <span className="absolute left-5 sm:left-8 top-1/2 -translate-y-1/2 text-white text-[14px] sm:text-[20px] font-semibold">
               GET CREDIT
@@ -52,11 +88,11 @@ export default function GetCredit() {
         </div>
 
         {/* ================= CARDS ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-10 md:gap-y-12 relative z-50 px-4 md:px-0">
+        <div className="gc-cards grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-10 md:gap-y-12 relative z-50 px-4 md:px-0">
           {creditCards.map((card, i) => (
             <div
               key={i}
-              className="group relative min-h-[200px] md:h-[240px] flex flex-col backdrop-blur-sm rounded-2xl p-5 md:p-6 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[0_0_40px_rgba(83,190,194,0.3)] hover:-translate-y-1"
+              className="gc-card group relative min-h-[200px] md:h-[240px] flex flex-col backdrop-blur-sm rounded-2xl p-5 md:p-6 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[0_0_40px_rgba(83,190,194,0.3)] hover:-translate-y-1"
               style={{ background: '#122427BF' }}
             >
               {/* White border that becomes gradient on hover */}

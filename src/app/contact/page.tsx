@@ -37,8 +37,8 @@ const contactInfo = [
       </svg>
     ),
     label: 'Call us',
-    value: '+91 98765 43210',
-    href: 'tel:+919876543210',
+    value: '+91 7411374848',
+    href: 'tel:+917411374848',
   },
   {
     icon: (
@@ -141,7 +141,7 @@ export default function ContactPage() {
             </div>
 
             {/* Trust badges */}
-            <motion.div
+            {/* <motion.div
               className="flex flex-wrap gap-3"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -155,7 +155,7 @@ export default function ContactPage() {
                   {badge}
                 </span>
               ))}
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* ── RIGHT: Form Card ── */}

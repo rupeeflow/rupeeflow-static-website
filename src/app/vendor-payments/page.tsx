@@ -246,13 +246,6 @@ export default function VendorPaymentPage() {
           style={{ background: 'radial-gradient(circle, #109F58 0%, transparent 70%)' }}
         />
 
-        {/* Swoosh decorations */}
-        <div className="absolute left-[-60px] bottom-[25%] w-[180px] h-[300px] pointer-events-none z-[5]">
-          <div className="w-full h-full rounded-[50%] border-[3px] border-emerald-500/40" style={{ transform: 'rotate(-20deg)' }} />
-        </div>
-        <div className="absolute right-[-40px] bottom-[5%] w-[200px] h-[350px] pointer-events-none z-[5]">
-          <div className="w-full h-full rounded-[50%] border-[3px] border-emerald-500/25" style={{ transform: 'rotate(25deg)' }} />
-        </div>
 
         {/* ── LEFT content | RIGHT hero image ── */}
         <div className="relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-10">

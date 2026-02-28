@@ -1,7 +1,12 @@
 "use client"
 
+import { useRef } from 'react'
 import { Globe, Network, ShieldCheck, TrendingUp } from "lucide-react"
 import MainCTA from "@/components/ui/mainCTA"
+import { useGSAP } from '@gsap/react'
+import { gsap, ScrollTrigger } from '@/lib/gsap'
+
+gsap.registerPlugin(useGSAP)
 
 const benefits = [
   {
@@ -27,12 +32,45 @@ const benefits = [
 ]
 
 export default function PartnershipBenefits() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useGSAP(() => {
+    // Header fades up
+    gsap.fromTo('.pbf-header',
+      { y: 40, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.7, ease: 'power2.out',
+        scrollTrigger: { trigger: '.pbf-header', start: 'top 92%', once: true },
+      }
+    )
+
+    // Benefit cards stagger up
+    gsap.fromTo('.pbf-card',
+      { y: 50, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.65, stagger: 0.12, ease: 'power2.out',
+        scrollTrigger: { trigger: '.pbf-cards', start: 'top 92%', once: true },
+      }
+    )
+
+    // CTA row fades up
+    gsap.fromTo('.pbf-cta',
+      { y: 30, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.6, ease: 'power2.out',
+        scrollTrigger: { trigger: '.pbf-cta', start: 'top 95%', once: true },
+      }
+    )
+
+    ScrollTrigger.refresh()
+  }, { scope: sectionRef })
+
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-[#060D0A] to-[#0C1F18]">
+    <section ref={sectionRef} className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-[#060D0A] to-[#0C1F18]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+        <div className="pbf-header text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <span className="inline-block text-emerald-400 text-xs font-semibold tracking-widest uppercase border border-emerald-400/30 rounded-full px-4 py-1 mb-4">
             Why Partner With Us
           </span>
@@ -49,13 +87,13 @@ export default function PartnershipBenefits() {
         </div>
 
         {/* 2×2 Benefits Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        <div className="pbf-cards grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {benefits.map((item, i) => {
             const Icon = item.icon
             return (
               <div
                 key={i}
-                className="group flex gap-5 bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8
+                className="pbf-card group flex gap-5 bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8
                   hover:border-emerald-400/40 hover:bg-white/[0.07]
                   hover:shadow-[0_0_30px_rgba(0,239,100,0.08)]
                   transition duration-300"
@@ -80,7 +118,7 @@ export default function PartnershipBenefits() {
         </div>
 
         {/* CTA row */}
-        <div className="mt-10 sm:mt-14 flex flex-col sm:flex-row items-center justify-between gap-5 border-t border-white/10 pt-10 sm:pt-12">
+        <div className="pbf-cta mt-10 sm:mt-14 flex flex-col sm:flex-row items-center justify-between gap-5 border-t border-white/10 pt-10 sm:pt-12">
           <p className="text-gray-400 text-sm sm:text-base max-w-md text-center sm:text-left">
             Ready to build the future of financial services together?{" "}
             <span className="text-white font-medium">Join our partner ecosystem.</span>

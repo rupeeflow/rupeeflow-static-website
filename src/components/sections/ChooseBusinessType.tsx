@@ -1,11 +1,17 @@
-'use client';
-import Link from "next/link";
+'use client'
+
+import { useRef } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
+import { useGSAP } from '@gsap/react'
+import { gsap, ScrollTrigger } from '@/lib/gsap'
+
+gsap.registerPlugin(useGSAP)
 
 const businessCards = [
   {
     title: 'MSME / SMBs',
-    items: [ 'Payment Gateway', 'Bulk Payouts', 'Invoice Financing', 'Business Current Account', ],
+    items: ['Payment Gateway', 'Bulk Payouts', 'Invoice Financing', 'Business Current Account'],
     image: '/business/msme.svg',
     active: true,
     link: '/solutions/msme',
@@ -18,36 +24,60 @@ const businessCards = [
   },
   {
     title: 'NRI / Overseas Indian',
-    items: [ 'Cross-border Remittance', 'NRI Emergency Loans', 'Direct bill Payments to India', 'Multi-currency support', ],
+    items: ['Cross-border Remittance', 'NRI Emergency Loans', 'Direct bill Payments to India', 'Multi-currency support'],
     image: '/business/nri.svg',
     link: '/solutions/nri',
   },
   {
     title: 'Developer / Platform',
-    items: [ 'Payment Gateway APIs', 'Payouts APIs', 'Verification APIs', 'Banking-as-a-Service', ],
+    items: ['Payment Gateway APIs', 'Payouts APIs', 'Verification APIs', 'Banking-as-a-Service'],
     image: '/business/developer.svg',
     link: '/solutions/developer',
   },
-];
+]
 
 export default function ChooseBusinessType() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useGSAP(() => {
+    // Heading fades up
+    gsap.fromTo('.cbt-heading',
+      { y: 40, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.65, ease: 'power2.out',
+        scrollTrigger: { trigger: '.cbt-heading', start: 'top 92%', once: true },
+      }
+    )
+
+    // Cards stagger up
+    gsap.fromTo('.cbt-card',
+      { y: 50, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power2.out',
+        scrollTrigger: { trigger: '.cbt-cards', start: 'top 92%', once: true },
+      }
+    )
+
+    ScrollTrigger.refresh()
+  }, { scope: sectionRef })
+
   return (
-   <section className="relative bg-white py-8 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-white py-8 overflow-hidden">
 
-  {/* BIG WAVE — hidden on mobile to avoid overflow */}
-  <Image
-    src="/wave.png"
-    alt="wave"
-    width={1500}
-    height={200}
-    className="absolute top-[160px] left-0 w-[1500px] z-[1] pointer-events-none hidden md:block"
-  />
+      {/* BIG WAVE — hidden on mobile to avoid overflow */}
+      <Image
+        src="/wave.png"
+        alt="wave"
+        width={1500}
+        height={200}
+        className="absolute top-[160px] left-0 w-[1500px] z-[1] pointer-events-none hidden md:block"
+      />
 
-  {/* CONTENT */}
-  <div className="relative z-[10] max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8">
+      {/* CONTENT */}
+      <div className="relative z-[10] max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8">
 
         {/* Heading */}
-        <div className="text-center mb-8 sm:mb-14">
+        <div className="cbt-heading text-center mb-8 sm:mb-14">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
             Choose Your Business Type
           </h2>
@@ -57,11 +87,11 @@ export default function ChooseBusinessType() {
         </div>
 
         {/* Cards — single col on mobile, 2 cols on sm+ */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 md:gap-10">
+        <div className="cbt-cards grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 md:gap-10">
           {businessCards.map((card, i) => (
             <div
               key={i}
-              className={`relative rounded-[18px] sm:rounded-[22px] border p-5 sm:p-7 md:p-10 min-h-[200px] sm:min-h-[260px] overflow-hidden
+              className={`cbt-card relative rounded-[18px] sm:rounded-[22px] border p-5 sm:p-7 md:p-10 min-h-[200px] sm:min-h-[260px] overflow-hidden
               ${
                 card.active
                   ? 'border-emerald-500 border-2 bg-white'
@@ -109,5 +139,5 @@ export default function ChooseBusinessType() {
 
       </div>
     </section>
-  );
+  )
 }

@@ -125,7 +125,7 @@ export default function HeroSection() {
         - Phone is absolute at bottom-0 right-[8%] — sits in the padding-bottom area
         - No overflow-hidden on section (overflow-x-hidden only) so phone never clips
       */}
-      <div className="relative max-w-5xl mx-auto px-3 sm:px-6 z-10 pb-[100px] sm:pb-[160px] lg:pb-[220px]">
+      <div className="relative max-w-5xl mx-auto px-3 sm:px-6 z-10 pb-[10px] sm:pb-[16px] lg:pb-[24px]">
 
         {/* Dashboard with 3D tilt */}
         <div style={{ perspective: 1200 }}>
@@ -154,7 +154,7 @@ export default function HeroSection() {
 
         {/* Phone — absolute to the padded container */}
         <motion.div
-          className="absolute bottom-0 right-[1%] sm:right-[4%] lg:right-[8%] z-30"
+          className="absolute bottom-[10px] sm:bottom-[16px] lg:bottom-[24px] right-[1%] sm:right-[4%] lg:right-[8%] z-30"
           style={{ perspective: 900, transformStyle: 'preserve-3d' }}
           initial={{ opacity: 0, scale: 0.82, rotateY: -18, x: 40 }}
           animate={{ opacity: 1, scale: 1, rotateY: -6, x: 0 }}
@@ -177,14 +177,14 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Wave bottom — sits below the padded container naturally */}
-      <div className="relative z-0">
+      {/* Wave — pulled up to sit under the dashboard/phone */}
+      <div className="relative z-0 -mt-[120px] sm:-mt-[160px] lg:-mt-[200px]">
         <Image
           src="/wave.png"
           alt="wave"
           width={1920}
           height={200}
-          className="w-full scale-110"
+          className="w-full"
         />
       </div>
     </section>

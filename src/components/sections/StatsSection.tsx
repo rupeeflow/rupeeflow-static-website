@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const stats = [
   { value: '1M+', label: 'Transactions Processed' },
-  { value: '100K+', label: 'Active Users' },
+  { value: '10K+', label: 'Active Users' },
   { value: '1000+', label: 'Businesses Onboard' },
   { value: '12+', label: 'Regional Languages Supported' },
 ]

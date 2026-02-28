@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Link from 'next/link'
 import Container from '@/components/ui/Container'
 import {
@@ -13,6 +13,10 @@ import {
   CreditCard,
   RefreshCcw,
 } from 'lucide-react'
+import { useGSAP } from '@gsap/react'
+import { gsap, ScrollTrigger } from '@/lib/gsap'
+
+gsap.registerPlugin(useGSAP)
 
 const plans = [
   {
@@ -90,11 +94,45 @@ const baseline = [
 
 export default function PricingSection() {
   const [annual, setAnnual] = useState(false)
+  const heroRef = useRef<HTMLElement>(null)
+  const cardsRef = useRef<HTMLElement>(null)
+
+  // Hero section — animate on mount (above the fold)
+  useGSAP(() => {
+    const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
+
+    tl.fromTo('.ph-badge',   { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 })
+      .fromTo('.ph-heading', { y: 35, opacity: 0 }, { y: 0, opacity: 1, duration: 0.65 }, '-=0.3')
+      .fromTo('.ph-subtext', { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, '-=0.35')
+      .fromTo('.ph-pill',    { y: 15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, stagger: 0.07 }, '-=0.3')
+      .fromTo('.ph-toggle',  { y: 15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45 }, '-=0.25')
+  }, { scope: heroRef })
+
+  // Cards section — ScrollTrigger (below fold)
+  useGSAP(() => {
+    gsap.fromTo('.ph-plan-card',
+      { y: 55, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.7, stagger: 0.14, ease: 'power2.out',
+        scrollTrigger: { trigger: '.ph-cards-grid', start: 'top 92%', once: true },
+      }
+    )
+
+    gsap.fromTo('.ph-baseline-item',
+      { y: 30, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power2.out',
+        scrollTrigger: { trigger: '.ph-baseline', start: 'top 92%', once: true },
+      }
+    )
+
+    ScrollTrigger.refresh()
+  }, { scope: cardsRef })
 
   return (
     <>
       {/* ── HERO — dark ── */}
-      <section className="relative py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-[#060D0A] to-[#0C1F18] overflow-hidden">
+      <section ref={heroRef} className="relative py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-[#060D0A] to-[#0C1F18] overflow-hidden">
         {/* grid overlay */}
         <div
           aria-hidden="true"
@@ -108,18 +146,18 @@ export default function PricingSection() {
 
         <Container>
           <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-block text-emerald-400 text-xs font-semibold tracking-widest uppercase border border-emerald-400/30 rounded-full px-4 py-1 mb-5">
+            <span className="ph-badge inline-block text-emerald-400 text-xs font-semibold tracking-widest uppercase border border-emerald-400/30 rounded-full px-4 py-1 mb-5">
               Pricing
             </span>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight">
+            <h1 className="ph-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight">
               Built for Scale.{' '}
               <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                 Priced for Growth.
               </span>
             </h1>
 
-            <p className="text-gray-400 mt-5 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+            <p className="ph-subtext text-gray-400 mt-5 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
               Transparent, usage-based pricing across collections, payouts, cards,
               and credit — with zero hidden fees.
             </p>
@@ -129,7 +167,7 @@ export default function PricingSection() {
               {['No setup fee', 'No lock-in', 'Cancel anytime', 'RBI Licensed'].map((t) => (
                 <span
                   key={t}
-                  className="flex items-center gap-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-full px-3 py-1"
+                  className="ph-pill flex items-center gap-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-full px-3 py-1"
                 >
                   <CheckCircle2 size={11} className="text-emerald-400" />
                   {t}
@@ -138,7 +176,7 @@ export default function PricingSection() {
             </div>
 
             {/* billing toggle */}
-            <div className="flex items-center justify-center gap-3 mt-8">
+            <div className="ph-toggle flex items-center justify-center gap-3 mt-8">
               <span className={`text-sm font-medium transition ${!annual ? 'text-white' : 'text-gray-500'}`}>Monthly</span>
               <button
                 onClick={() => setAnnual((v) => !v)}
@@ -165,13 +203,13 @@ export default function PricingSection() {
       </section>
 
       {/* ── PLAN CARDS — white ── */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      <section ref={cardsRef} className="py-12 sm:py-16 lg:py-20 bg-white">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 -mt-10 sm:-mt-16 relative z-10">
+          <div className="ph-cards-grid grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 -mt-10 sm:-mt-16 relative z-10">
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative flex flex-col rounded-2xl border transition duration-300 ${
+                className={`ph-plan-card relative flex flex-col rounded-2xl border transition duration-300 ${
                   plan.highlight
                     ? 'bg-gradient-to-b from-[#060D0A] to-[#0C1F18] border-emerald-500/40 shadow-2xl shadow-emerald-500/15 ring-1 ring-emerald-500/20'
                     : 'bg-white border-gray-200 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/10'
@@ -256,13 +294,13 @@ export default function PricingSection() {
           </div>
 
           {/* baseline features strip */}
-          <div className="mt-12 sm:mt-16 border border-gray-200 rounded-2xl p-6 sm:p-8">
+          <div className="ph-baseline mt-12 sm:mt-16 border border-gray-200 rounded-2xl p-6 sm:p-8">
             <p className="text-center text-gray-400 text-xs font-bold uppercase tracking-widest mb-6">
               All plans include
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
               {baseline.map(({ icon: Icon, label }) => (
-                <div key={label} className="flex flex-col items-center text-center gap-2">
+                <div key={label} className="ph-baseline-item flex flex-col items-center text-center gap-2">
                   <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center">
                     <Icon size={18} className="text-emerald-600" />
                   </div>

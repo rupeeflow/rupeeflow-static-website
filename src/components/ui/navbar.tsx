@@ -8,10 +8,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { navlist } from '@/interface/typesInterfaces'
 import Dropdown from './Dropdown'
 import PaymentsDropdown from './PaymentsDropdown'
-import CreditDropdown from './CreditDropdown'
-import CardsDropdown from './CardsDropdown'
-import PartnershipsDropdown from './PartnershipsDropdown'
-import ResourcesDropdown from './ResourcesDropdown'
 
 const creditnav: navlist[] = [
   { id: 'merchant', label: 'Merchant Cash Advance', icon: '/credit/merchant-cash-advance.svg', href: '/merchant-cash-advance' },
@@ -35,7 +31,6 @@ const partnershipsnav: navlist[] = [
   { id: 'bank', label: 'For Banks', icon: '/business/business-current-account.svg', href: '/partnerships/banking' },
   { id: 'partner', label: 'Affiliate Partners', icon: '/business/api-banking.svg', href: '/partnerships/affiliates' },
 ]
-
 
 const paymentsNav: navlist[] = [
   { id: 'gateway', label: 'Payment Gateway', icon: '/payments/payment-gateway.svg', href: '/payment-gateway' },
@@ -66,7 +61,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Lock body scroll when mobile drawer is open
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -188,113 +182,113 @@ export default function Navbar() {
 
       {/* ─────────── MOBILE DRAWER (below lg) ─────────── */}
       <AnimatePresence>
-      {mobileMenuOpen && (
-        <>
-          {/* Backdrop */}
-          <motion.div
-            className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm lg:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={closeAll}
-          />
+        {mobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm lg:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={closeAll}
+            />
 
-          {/* Drawer panel — slides in from the right */}
-          <motion.div
-            className="fixed top-0 right-0 bottom-0 z-[101] w-[280px] bg-white flex flex-col shadow-2xl lg:hidden"
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
-          >
-            {/* Drawer header */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-              <Image src="/rflogowhitebg.svg" alt="RupeeFlow" width={140} height={28} className="h-7 w-auto" />
-              <button
-                onClick={closeAll}
-                className="p-1.5 rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors"
-                aria-label="Close menu"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+            {/* Drawer panel — slides in from the right */}
+            <motion.div
+              className="fixed top-0 right-0 bottom-0 z-[101] w-[280px] bg-white flex flex-col shadow-2xl lg:hidden"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
+            >
+              {/* Drawer header */}
+              <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+                <Image src="/rflogowhitebg.svg" alt="RupeeFlow" width={140} height={28} className="h-7 w-auto" />
+                <button
+                  onClick={closeAll}
+                  className="p-1.5 rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors"
+                  aria-label="Close menu"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
 
-            {/* Scrollable nav links */}
-            <nav className="flex-1 overflow-y-auto py-2">
-              {mobileSections.map(({ key, label, items }) => {
-                const isOpen = activeMobileSection === key
-                return (
-                  <div key={key}>
-                    <button
-                      onClick={() => toggleMobileSection(key)}
-                      className="w-full flex items-center justify-between px-5 py-3.5 text-gray-800 hover:bg-gray-50 transition-colors duration-150"
-                    >
-                      <span className="text-sm font-semibold">{label}</span>
-                      <motion.div
-                        animate={{ rotate: isOpen ? 180 : 0 }}
-                        transition={{ duration: 0.22, ease: 'easeInOut' }}
+              {/* Scrollable nav links */}
+              <nav className="flex-1 overflow-y-auto py-2">
+                {mobileSections.map(({ key, label, items }) => {
+                  const isOpen = activeMobileSection === key
+                  return (
+                    <div key={key}>
+                      <button
+                        onClick={() => toggleMobileSection(key)}
+                        className="w-full flex items-center justify-between px-5 py-3.5 text-gray-800 hover:bg-gray-50 transition-colors duration-150"
                       >
-                        <ChevronDown className={`w-4 h-4 transition-colors duration-200 ${isOpen ? 'text-emerald-500' : 'text-gray-400'}`} />
-                      </motion.div>
-                    </button>
-
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
+                        <span className="text-sm font-semibold">{label}</span>
                         <motion.div
-                          key="content"
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
-                          style={{ overflow: 'hidden' }}
+                          animate={{ rotate: isOpen ? 180 : 0 }}
+                          transition={{ duration: 0.22, ease: 'easeInOut' }}
                         >
-                          <div className="bg-gray-50 px-3 pb-2 pt-1">
-                            {items.map((item, idx) => (
-                              <motion.div
-                                key={item.id}
-                                initial={{ opacity: 0, x: -8 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.18, delay: idx * 0.04, ease: 'easeOut' }}
-                              >
-                                <Link
-                                  href={item.href}
-                                  onClick={closeAll}
-                                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white transition-colors group"
-                                >
-                                  {item.icon && (
-                                    <div className="w-7 h-7 rounded-lg bg-white border border-gray-100 shadow-sm flex items-center justify-center shrink-0">
-                                      <Image src={item.icon} alt="" width={16} height={16} className="w-4 h-4 object-contain" />
-                                    </div>
-                                  )}
-                                  <span className="text-xs text-gray-600 group-hover:text-emerald-600 font-medium leading-tight">
-                                    {item.label}
-                                  </span>
-                                </Link>
-                              </motion.div>
-                            ))}
-                          </div>
+                          <ChevronDown className={`w-4 h-4 transition-colors duration-200 ${isOpen ? 'text-emerald-500' : 'text-gray-400'}`} />
                         </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                )
-              })}
-            </nav>
+                      </button>
 
-            {/* CTA at bottom */}
-            <div className="p-4 border-t border-gray-100">
-              <Link
-                href="/contact"
-                onClick={closeAll}
-                className="block w-full py-3 text-center bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-200"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </motion.div>
-        </>
-      )}
+                      <AnimatePresence initial={false}>
+                        {isOpen && (
+                          <motion.div
+                            key="content"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
+                            style={{ overflow: 'hidden' }}
+                          >
+                            <div className="bg-gray-50 px-3 pb-2 pt-1">
+                              {items.map((item, idx) => (
+                                <motion.div
+                                  key={item.id}
+                                  initial={{ opacity: 0, x: -8 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.18, delay: idx * 0.04, ease: 'easeOut' }}
+                                >
+                                  <Link
+                                    href={item.href}
+                                    onClick={closeAll}
+                                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white transition-colors group"
+                                  >
+                                    {item.icon && (
+                                      <div className="w-7 h-7 rounded-lg bg-white border border-gray-100 shadow-sm flex items-center justify-center shrink-0">
+                                        <Image src={item.icon} alt="" width={16} height={16} className="w-4 h-4 object-contain" />
+                                      </div>
+                                    )}
+                                    <span className="text-xs text-gray-600 group-hover:text-emerald-600 font-medium leading-tight">
+                                      {item.label}
+                                    </span>
+                                  </Link>
+                                </motion.div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  )
+                })}
+              </nav>
+
+              {/* CTA at bottom */}
+              <div className="p-4 border-t border-gray-100">
+                <Link
+                  href="/contact"
+                  onClick={closeAll}
+                  className="block w-full py-3 text-center bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-200"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </motion.div>
+          </>
+        )}
       </AnimatePresence>
     </>
   )

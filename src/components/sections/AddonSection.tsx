@@ -1,5 +1,6 @@
 'use client'
 
+import { useRef } from 'react'
 import Container from '@/components/ui/Container'
 import MainCTA from '@/components/ui/mainCTA'
 import {
@@ -10,6 +11,10 @@ import {
   Banknote,
   X,
 } from 'lucide-react'
+import { useGSAP } from '@gsap/react'
+import { gsap, ScrollTrigger } from '@/lib/gsap'
+
+gsap.registerPlugin(useGSAP)
 
 const serviceRates = [
   {
@@ -93,12 +98,61 @@ const comparison = [
 ]
 
 export default function AddonsSection() {
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useGSAP(() => {
+    // ── Service Rates section ──
+    gsap.fromTo('.as-rates-header',
+      { y: 40, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.65, ease: 'power2.out',
+        scrollTrigger: { trigger: '.as-rates-header', start: 'top 92%', once: true },
+      }
+    )
+
+    gsap.fromTo('.as-rate-card',
+      { y: 50, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power2.out',
+        scrollTrigger: { trigger: '.as-rate-grid', start: 'top 92%', once: true },
+      }
+    )
+
+    // ── Comparison table section ──
+    gsap.fromTo('.as-comp-header',
+      { y: 40, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.65, ease: 'power2.out',
+        scrollTrigger: { trigger: '.as-comp-header', start: 'top 92%', once: true },
+      }
+    )
+
+    gsap.fromTo('.as-table-row',
+      { x: -20, opacity: 0 },
+      {
+        x: 0, opacity: 1, duration: 0.4, stagger: 0.045, ease: 'power2.out',
+        scrollTrigger: { trigger: '.as-table', start: 'top 92%', once: true },
+      }
+    )
+
+    // ── CTA section ──
+    gsap.fromTo('.as-cta-inner',
+      { y: 35, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.7, ease: 'power2.out',
+        scrollTrigger: { trigger: '.as-cta-inner', start: 'top 92%', once: true },
+      }
+    )
+
+    ScrollTrigger.refresh()
+  }, { scope: sectionRef })
+
   return (
-    <>
+    <div ref={sectionRef}>
       {/* ── SERVICE RATES — gray-50 ── */}
       <section className="py-12 sm:py-16 lg:py-24 bg-gray-50">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <div className="as-rates-header text-center max-w-2xl mx-auto mb-10 sm:mb-14">
             <span className="inline-block text-emerald-600 text-xs font-semibold tracking-widest uppercase border border-emerald-200 rounded-full px-4 py-1 mb-4 bg-white">
               Service Rates
             </span>
@@ -113,11 +167,11 @@ export default function AddonsSection() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
+          <div className="as-rate-grid grid sm:grid-cols-2 gap-5 sm:gap-6">
             {serviceRates.map(({ category, desc, icon: Icon, iconColor, bgColor, color, services }) => (
               <div
                 key={category}
-                className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-500/10 transition duration-300"
+                className="as-rate-card bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-500/10 transition duration-300"
               >
                 {/* card header */}
                 <div className={`flex items-center gap-4 px-6 py-5 border-b border-gray-100`}>
@@ -164,7 +218,7 @@ export default function AddonsSection() {
       {/* ── COMPARISON TABLE — white ── */}
       <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <div className="as-comp-header text-center max-w-2xl mx-auto mb-10 sm:mb-14">
             <h2 className="rf-h2 text-gray-900">
               Compare{' '}
               <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
@@ -176,7 +230,7 @@ export default function AddonsSection() {
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+          <div className="as-table overflow-x-auto rounded-2xl border border-gray-200">
             <table className="w-full min-w-[600px]">
               <thead>
                 <tr className="border-b border-gray-200">
@@ -206,7 +260,7 @@ export default function AddonsSection() {
 
               <tbody>
                 {comparison.map((row, i) => (
-                  <tr key={row.feature} className={`border-b border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
+                  <tr key={row.feature} className={`as-table-row border-b border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
                     <td className="px-6 py-3.5 text-gray-700 text-sm font-medium">{row.feature}</td>
 
                     {/* Starter */}
@@ -253,7 +307,7 @@ export default function AddonsSection() {
       {/* ── BOTTOM CTA — dark ── */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-[#0C1F18] to-[#0a1a0f]">
         <Container>
-          <div className="rounded-3xl border border-emerald-500/20 bg-white/5 p-6 sm:p-8 lg:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+          <div className="as-cta-inner rounded-3xl border border-emerald-500/20 bg-white/5 p-6 sm:p-8 lg:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
 
             <div className="max-w-xl">
               <p className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">
@@ -295,6 +349,6 @@ export default function AddonsSection() {
           </div>
         </Container>
       </section>
-    </>
+    </div>
   )
 }
