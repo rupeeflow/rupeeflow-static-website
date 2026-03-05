@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import Container from '@/components/ui/Container'
 import { useGSAP } from '@gsap/react'
 import { gsap, ScrollTrigger } from '@/lib/gsap'
@@ -14,12 +15,14 @@ const bankingCards = [
     desc: 'Open Account in 10 min, Zero balance. Free NEFT/RTGS, virtual accounts',
     cta: 'Open Account →',
     icon: '/business/business-current-account.svg',
+    href: '/contact-sales?product=business-current-account',
   },
   {
     title: 'API Banking',
     desc: 'Build financial products on our platform. Collections, Payouts, Credit, Verification APIs.',
     cta: 'Read Docs →',
     icon: '/business/api-banking.svg',
+    href: '/docs',
   },
 ]
 
@@ -114,9 +117,12 @@ export default function BusinessBanking() {
                 </p>
 
                 <div className="mt-auto pt-4">
-                  <button className="rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium flex items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:bg-gradient-to-r group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black">
-                    <span className="flex items-center gap-2">{card.cta}</span>
-                  </button>
+                  <Link 
+                    href={card.href}
+                    className="inline-flex rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:bg-gradient-to-r group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black"
+                  >
+                    {card.cta}
+                  </Link>
                 </div>
               </div>
             </div>

@@ -141,13 +141,13 @@ function ShareWithMockup() {
 
 /* ── Card 3: Payment Options ── */
 const payBrands = [
-  { label: 'LOGO1', bg: '#f3f4f6', fg: '#6b7280' },
-  { label: 'LOGO2', bg: '#f3f4f6', fg: '#6b7280' },
-  { label: 'LOGO3', bg: '#f3f4f6', fg: '#6b7280' },
-  { label: 'LOGO4', bg: '#f3f4f6', fg: '#6b7280' },
-  { label: 'LOGO5', bg: '#f3f4f6', fg: '#6b7280' },
-  { label: 'LOGO6', bg: '#f3f4f6', fg: '#6b7280' },
-  { label: 'LOGO7', bg: '#f3f4f6', fg: '#6b7280' },
+  { logo: '/home/upi.png', alt: 'UPI' },
+  { logo: '/home/google-pay-icon.webp', alt: 'Google Pay' },
+  { logo: '/home/phone-pay.jpg', alt: 'PhonePe' },
+  { logo: '/home/paytm (1).png', alt: 'Paytm' },
+  { logo: '/home/visa (1).png', alt: 'Visa' },
+  { logo: '/home/mastercard.png', alt: 'Mastercard' },
+  { logo: '/home/rupay.png', alt: 'RuPay' },
 ]
 
 function PaymentOptionsMockup() {
@@ -184,13 +184,18 @@ function PaymentOptionsMockup() {
       <div className="flex gap-1.5 mt-1">
         {payBrands.map((b, i) => (
           <motion.div
-            key={b.label}
-            className="w-10 h-10 rounded-full shadow-sm flex items-center justify-center text-[7px] font-extrabold"
-            style={{ backgroundColor: b.bg, color: b.fg }}
+            key={b.alt}
+            className="w-10 h-10 rounded-full shadow-sm flex items-center justify-center  border  overflow-hidden"
             animate={{ y: [0, -3, 0] }}
             transition={{ duration: 3 + i * 0.3, repeat: Infinity, ease: 'easeInOut', delay: i * 0.12 }}
           >
-            {b.label}
+            <Image
+              src={b.logo}
+              alt={b.alt}
+              width={32}
+              height={32}
+              className="w-7 h-7 object-contain"
+            />
           </motion.div>
         ))}
         <div className="w-10 h-10 rounded-full bg-gray-100 shadow-sm opacity-20" />

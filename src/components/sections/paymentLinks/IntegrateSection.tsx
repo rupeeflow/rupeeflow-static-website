@@ -330,8 +330,8 @@ export default function IntegrateSection() {
           </div>
 
           {/* ── RIGHT: Animated panel ── */}
-          <div className="lg:w-[42%] lg:sticky lg:top-44">
-            <div className="relative w-full rounded-3xl overflow-hidden h-[380px] sm:h-[460px] lg:h-[540px] border-2 border-gray-200 shadow-lg">
+          <div className="w-full lg:w-[42%] lg:sticky lg:top-44">
+            <div className="relative w-full rounded-3xl overflow-hidden h-[320px] sm:h-[460px] lg:h-[540px] border-2 border-gray-200 shadow-lg">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active.id}

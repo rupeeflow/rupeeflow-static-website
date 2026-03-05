@@ -71,22 +71,22 @@ export default function ContactPage() {
 
   return (
     <div className="w-full relative">
-      <section className="relative min-h-screen bg-[#020506] overflow-hidden flex items-center">
+      <section className="relative min-h-screen bg-white overflow-hidden flex items-center">
 
         {/* Spotlights */}
         <div
-          className="absolute -left-[80px] top-[10%] w-[450px] h-[450px] rounded-full opacity-50 blur-[130px] pointer-events-none"
+          className="absolute -left-[80px] top-[10%] w-[450px] h-[450px] rounded-full opacity-20 blur-[130px] pointer-events-none"
           style={{ background: 'radial-gradient(circle, #109F58 0%, #055949 40%, transparent 70%)' }}
         />
         <div
-          className="absolute right-[-60px] bottom-[15%] w-[380px] h-[380px] rounded-full opacity-25 blur-[110px] pointer-events-none"
+          className="absolute right-[-60px] bottom-[15%] w-[380px] h-[380px] rounded-full opacity-15 blur-[110px] pointer-events-none"
           style={{ background: 'radial-gradient(circle, #109F58 0%, transparent 70%)' }}
         />
 
         {/* Dot grid */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-[0.025]"
-          style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }}
+          className="absolute inset-0 pointer-events-none opacity-[0.03]"
+          style={{ backgroundImage: 'radial-gradient(circle, #000000 1px, transparent 1px)', backgroundSize: '32px 32px' }}
         />
 
         <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-20 flex flex-col lg:flex-row items-center gap-14 lg:gap-20">
@@ -108,12 +108,12 @@ export default function ContactPage() {
               <span className="text-emerald-400 text-xs font-semibold tracking-wide uppercase">Get in Touch</span>
             </motion.div>
 
-            <h1 className="fontheading text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.15] text-white mb-5">
+            <h1 className="fontheading text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.15] text-gray-900 mb-5">
               Let&apos;s Build Something{' '}
-              <span className="text-emerald-400">Great Together</span>
+              <span className="text-emerald-600">Great Together</span>
             </h1>
 
-            <p className="text-gray-400 max-w-md text-base md:text-lg fontbody2 leading-relaxed mb-10">
+            <p className="text-gray-600 max-w-md text-base md:text-lg fontbody2 leading-relaxed mb-10">
               Tell us about your business and our team will get back to you within one business day
               with a tailored solution for your payment needs.
             </p>
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-[11px] text-gray-500 font-medium uppercase tracking-wide">{item.label}</p>
-                    <p className="text-sm text-gray-300 font-medium group-hover:text-emerald-400 transition-colors">{item.value}</p>
+                    <p className="text-sm text-gray-700 font-medium group-hover:text-emerald-600 transition-colors">{item.value}</p>
                   </div>
                 </motion.a>
               ))}
@@ -165,12 +165,12 @@ export default function ContactPage() {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.75, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl shadow-black/40">
+            <div className="bg-white backdrop-blur-md border border-gray-200 rounded-3xl p-8 md:p-10 shadow-2xl">
               {!submitted ? (
                 <>
                   <div className="mb-8">
-                    <h2 className="fontheading text-xl text-white mb-1.5">Send us a message</h2>
-                    <p className="text-sm text-gray-400 fontbody2">We typically respond within 24 hours.</p>
+                    <h2 className="fontheading text-xl text-gray-900 mb-1.5">Send us a message</h2>
+                    <p className="text-sm text-gray-600 fontbody2">We typically respond within 24 hours.</p>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-5">
@@ -180,8 +180,8 @@ export default function ContactPage() {
                       <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
                         Full Name <span className="text-emerald-400">*</span>
                       </label>
-                      <div className={`relative rounded-xl border transition-all duration-200 ${focused === 'name' ? 'border-emerald-500 bg-emerald-500/5' : 'border-white/10 bg-white/5'}`}>
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                      <div className={`relative rounded-xl border-2 transition-all duration-200 ${focused === 'name' ? 'border-emerald-500 bg-emerald-50' : 'border-emerald-400 bg-gray-50'}`}>
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
@@ -190,7 +190,7 @@ export default function ContactPage() {
                           type="text" name="name" value={form.name}
                           onChange={handleChange} onFocus={() => setFocused('name')} onBlur={() => setFocused(null)}
                           placeholder="Rahul Sharma" required
-                          className="w-full bg-transparent pl-10 pr-4 py-3.5 text-sm text-white placeholder-gray-600 outline-none rounded-xl"
+                          className="w-full bg-transparent pl-10 pr-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 outline-none rounded-xl"
                         />
                       </div>
                     </div>
@@ -200,8 +200,8 @@ export default function ContactPage() {
                       <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
                         Organisation Name <span className="text-emerald-400">*</span>
                       </label>
-                      <div className={`relative rounded-xl border transition-all duration-200 ${focused === 'organisation' ? 'border-emerald-500 bg-emerald-500/5' : 'border-white/10 bg-white/5'}`}>
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                      <div className={`relative rounded-xl border-2 transition-all duration-200 ${focused === 'organisation' ? 'border-emerald-500 bg-emerald-50' : 'border-emerald-400 bg-gray-50'}`}>
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                           </svg>
@@ -210,7 +210,7 @@ export default function ContactPage() {
                           type="text" name="organisation" value={form.organisation}
                           onChange={handleChange} onFocus={() => setFocused('organisation')} onBlur={() => setFocused(null)}
                           placeholder="Acme Pvt. Ltd." required
-                          className="w-full bg-transparent pl-10 pr-4 py-3.5 text-sm text-white placeholder-gray-600 outline-none rounded-xl"
+                          className="w-full bg-transparent pl-10 pr-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 outline-none rounded-xl"
                         />
                       </div>
                     </div>
@@ -220,8 +220,8 @@ export default function ContactPage() {
                       <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
                         Type of Business <span className="text-emerald-400">*</span>
                       </label>
-                      <div className={`relative rounded-xl border transition-all duration-200 ${focused === 'businessType' ? 'border-emerald-500 bg-emerald-500/5' : 'border-white/10 bg-white/5'}`}>
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">
+                      <div className={`relative rounded-xl border-2 transition-all duration-200 ${focused === 'businessType' ? 'border-emerald-500 bg-emerald-50' : 'border-emerald-400 bg-gray-50'}`}>
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
@@ -230,15 +230,14 @@ export default function ContactPage() {
                           name="businessType" value={form.businessType}
                           onChange={handleChange} onFocus={() => setFocused('businessType')} onBlur={() => setFocused(null)}
                           required
-                          className="w-full bg-transparent pl-10 pr-10 py-3.5 text-sm text-white outline-none rounded-xl appearance-none cursor-pointer"
-                          style={{ colorScheme: 'dark' }}
+                          className="w-full bg-transparent pl-10 pr-10 py-3.5 text-sm text-gray-900 outline-none rounded-xl appearance-none cursor-pointer"
                         >
-                          <option value="" disabled className="bg-[#0d1a14] text-gray-400">Select business type</option>
+                          <option value="" disabled className="bg-white text-gray-400">Select business type</option>
                           {businessTypes.map((type) => (
-                            <option key={type} value={type} className="bg-[#0d1a14] text-white">{type}</option>
+                            <option key={type} value={type} className="bg-white text-gray-900">{type}</option>
                           ))}
                         </select>
-                        <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                           </svg>
@@ -251,8 +250,8 @@ export default function ContactPage() {
                       <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
                         Company Email <span className="text-emerald-400">*</span>
                       </label>
-                      <div className={`relative rounded-xl border transition-all duration-200 ${focused === 'email' ? 'border-emerald-500 bg-emerald-500/5' : 'border-white/10 bg-white/5'}`}>
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                      <div className={`relative rounded-xl border-2 transition-all duration-200 ${focused === 'email' ? 'border-emerald-500 bg-emerald-50' : 'border-emerald-400 bg-gray-50'}`}>
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
@@ -261,7 +260,7 @@ export default function ContactPage() {
                           type="email" name="email" value={form.email}
                           onChange={handleChange} onFocus={() => setFocused('email')} onBlur={() => setFocused(null)}
                           placeholder="you@company.com" required
-                          className="w-full bg-transparent pl-10 pr-4 py-3.5 text-sm text-white placeholder-gray-600 outline-none rounded-xl"
+                          className="w-full bg-transparent pl-10 pr-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 outline-none rounded-xl"
                         />
                       </div>
                     </div>
@@ -273,7 +272,7 @@ export default function ContactPage() {
                       className={`w-full py-4 rounded-xl text-sm font-bold tracking-wide transition-all duration-300 flex items-center justify-center gap-2.5 ${
                         isComplete
                           ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/25 hover:from-emerald-600 hover:to-emerald-700 cursor-pointer'
-                          : 'bg-white/5 text-gray-600 border border-white/10 cursor-not-allowed'
+                          : 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed'
                       }`}
                       whileTap={isComplete ? { scale: 0.97 } : {}}
                     >
@@ -309,10 +308,10 @@ export default function ContactPage() {
                   >
                     <CrossCheckSVG width={64} height={64} />
                   </motion.div>
-                  <h3 className="fontheading text-2xl text-white mb-3">Request Received!</h3>
-                  <p className="text-sm text-gray-400 fontbody2 leading-relaxed max-w-xs mb-8">
-                    Thanks, <span className="text-emerald-400">{form.name}</span>. Our team will reach out to{' '}
-                    <span className="text-emerald-400">{form.email}</span> within one business day.
+                  <h3 className="fontheading text-2xl text-gray-900 mb-3">Request Received!</h3>
+                  <p className="text-sm text-gray-600 fontbody2 leading-relaxed max-w-xs mb-8">
+                    Thanks, <span className="text-emerald-600">{form.name}</span>. Our team will reach out to{' '}
+                    <span className="text-emerald-600">{form.email}</span> within one business day.
                   </p>
                   <button
                     onClick={() => { setSubmitted(false); setForm({ name: '', organisation: '', businessType: '', email: '' }) }}

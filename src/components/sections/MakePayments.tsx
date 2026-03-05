@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import Container from '@/components/ui/Container'
 import { useGSAP } from '@gsap/react'
 import { gsap, ScrollTrigger } from '@/lib/gsap'
@@ -13,21 +14,25 @@ const cards = [
     title: 'Bulk Payouts',
     desc: 'Pay 100+ vendors/employees in one click. CSV upload or API. No daily limits.',
     icon: '/payouts/bulk-payouts.svg',
+    href: '/bulk-payouts',
   },
   {
     title: 'Vendor Payments',
     desc: 'Automated supplier payments with approval. Multi-level workflows, auto-reconciliation',
     icon: '/payouts/vendor-payments.svg',
+    href: '/vendor-payments',
   },
   {
     title: 'Salary Disbursements',
     desc: 'Process monthly salaries via UPI/NEFT. Bulk upload, instant processing',
     icon: '/payouts/salary-disbursements.svg',
+    href: '/salary-disbursements',
   },
   {
     title: 'Bill Payments',
     desc: 'Pay electricity, water, telecom, GST bills. Set reminders, schedule recurring.',
     icon: '/payouts/bill-payments.svg',
+    href: '/bill-payments',
   },
 ]
 
@@ -122,11 +127,12 @@ export default function MakePayments() {
                 </p>
 
                 <div className="mt-auto pt-4">
-                  <button className="rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium flex items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:bg-gradient-to-r group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black">
-                    <span className="flex items-center gap-2">
-                      Learn more →
-                    </span>
-                  </button>
+                  <Link 
+                    href={card.href}
+                    className="inline-flex rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:bg-gradient-to-r group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black"
+                  >
+                    Learn more →
+                  </Link>
                 </div>
               </div>
             </div>

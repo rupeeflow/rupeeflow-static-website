@@ -79,12 +79,12 @@ export default function CrossBorderPaymentsPage() {
 
           {/* Right: Map + floating transaction cards */}
           <motion.div
-            className="flex-1 relative flex justify-center"
+            className="w-full lg:flex-1 relative flex justify-center"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
-            <div className="relative w-full max-w-[500px] h-[420px]">
+            <div className="relative w-full max-w-[500px] h-[320px] sm:h-[380px] lg:h-[420px]">
               {/* Map image — fixed height, centered */}
               <motion.div
                 className="absolute inset-0 flex items-center justify-center"
@@ -234,13 +234,13 @@ export default function CrossBorderPaymentsPage() {
 
             {/* Right: payment-button.jpeg with gradient blends */}
             <motion.div
-              className="flex-1 flex justify-center"
+              className="w-full lg:flex-1 flex justify-center"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.15 }}
             >
-              <div className="relative w-full max-w-[480px] h-[500px] rounded-2xl overflow-hidden shadow-xl">
+              <div className="relative w-full max-w-[480px] h-[380px] sm:h-[440px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/images/payment-button/payment-button.jpeg"
                   alt="Cross-Border Payment Process"
