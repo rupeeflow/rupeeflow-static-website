@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import Container from '@/components/ui/Container'
 
 const cards = [
@@ -153,9 +154,12 @@ export default function CollectMoney() {
                 </p>
 
                 <div className="mt-auto pt-4">
-                  <button className="rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium flex items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black">
+                  <Link 
+                    href={card.href}
+                    className="inline-flex rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black"
+                  >
                     Learn more →
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

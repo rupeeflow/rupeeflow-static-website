@@ -98,7 +98,7 @@ export default function ChooseBusinessType() {
                   : 'border-gray-300 bg-white/70 backdrop-blur-[12px]'
               }`}
             >
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 pr-28 sm:pr-32 md:pr-40">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 pr-28 sm:pr-32 md:pr-40 text-black">
                 {card.title}
               </h3>
 

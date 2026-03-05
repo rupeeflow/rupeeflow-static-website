@@ -38,10 +38,34 @@ const paymentsNav: navlist[] = [
   { id: 'upi', label: 'UPI Collections', icon: '/payments/upi-collections.svg', href: '/upi-collections' },
   { id: 'qr', label: 'QR Code', icon: '/payments/qr-code.svg', href: '/qr-code' },
   { id: 'button', label: 'Payment Button', icon: '/payments/payment-button.svg', href: '/payment-button' },
+  { id: 'cross', label: 'Cross-border Payments', icon: '/payments/cross-border-payments.svg', href: '/cross-border-payments' },
+]
+
+const makePaymentsNav: navlist[] = [
+  { id: 'bulk', label: 'Bulk Payouts', icon: '/payouts/bulk-payouts.svg', href: '/bulk-payouts' },
+  { id: 'vendor', label: 'Vendor Payments', icon: '/payouts/vendor-payments.svg', href: '/vendor-payments' },
+  { id: 'bill', label: 'Bill Payments', icon: '/payouts/bill-payments.svg', href: '/bill-payments' },
+  { id: 'salary', label: 'Salary Disbursements', icon: '/payouts/salary-disbursements.svg', href: '/salary-disbursements' },
+  { id: 'tax', label: 'Tax Payments', icon: '/payouts/tax-payments.svg', href: '/tax-payments' },
+  { id: 'invoice', label: 'Invoicing', icon: '/payouts/invoicing.svg', href: '/invoicing' },
+  { id: 'rental', label: 'Rental Payments', icon: '/payouts/rental-payments.svg', href: '/rental-payments' },
+]
+
+const payableReceivableNav: navlist[] = [
+  { id: 'payment-reminders', label: 'Payment Reminders', icon: '/features/clock.svg', href: '/payment-reminders' },
+  { id: 'e-invoicing', label: 'E-Invoicing', icon: '/payouts/invoicing.svg', href: '/e-invoicing' },
+  { id: 'analytics', label: 'Analytics', icon: '/resources/case-studies.svg', href: '/analytics' },
+  { id: 'auto-reconciliation', label: 'Auto Reconciliation', icon: '/features/bill.svg', href: '/auto-reconciliation' },
+  { id: 'invoice-management', label: 'Invoice Management', icon: '/payouts/invoicing.svg', href: '/invoice-management' },
+  { id: 'vendor-management', label: 'Vendor Management', icon: '/payouts/vendor-payments.svg', href: '/vendor-management' },
+  { id: 'payable-analytics', label: 'Payable Analytics', icon: '/resources/pricing.svg', href: '/payable-analytics' },
+  { id: 'cashflow-analytics', label: 'Cashflow Analytics', icon: '/home/wallet.svg', href: '/cashflow-analytics' },
 ]
 
 const mobileSections = [
-  { key: 'payments', label: 'Payments', items: paymentsNav },
+  { key: 'collect-payments', label: 'Collect Payments', items: paymentsNav },
+  { key: 'make-payments', label: 'Make Payments', items: makePaymentsNav },
+  { key: 'payable-receivable', label: 'Payable & Receivable+', items: payableReceivableNav },
   { key: 'credit', label: 'Get Credit', items: creditnav },
   { key: 'partner', label: 'Partnerships', items: partnershipsnav },
   { key: 'resources', label: 'Resources', items: resourcesnav },

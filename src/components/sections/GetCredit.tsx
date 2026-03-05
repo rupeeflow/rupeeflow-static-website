@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import Container from '@/components/ui/Container'
 import { useGSAP } from '@gsap/react'
 import { gsap, ScrollTrigger } from '@/lib/gsap'
@@ -13,21 +14,25 @@ const creditCards = [
     title: 'Merchant Cash Advance',
     desc: '10k–5L based on daily UPI collections. 3 minute approval, auto-repay from sales.',
     icon: '/credit/merchant-cash-advance.svg',
+    href: '/merchant-cash-advance',
   },
   {
     title: 'Invoice Financing',
     desc: '1L–50L for unpaid B2B invoices. Get 80% upfront, 24 hour approval.',
     icon: '/credit/invoicing-financing.svg',
+    href: '/invoicing-financing',
   },
   {
     title: 'NRI Emergency Loans',
     desc: '50K–10L for family in India. Apply in 12 languages, pay only when used.',
     icon: '/credit/nri-emergency-loans.svg',
+    href: '/nri-emergency-loans',
   },
   {
     title: 'Personal Credit Line',
     desc: '5k–50K revolving credit, voice-enabled. Apply in 12 languages.',
     icon: '/credit/personal-credit-line.svg',
+    href: '/personal-credit-line',
   },
 ]
 
@@ -122,9 +127,12 @@ export default function GetCredit() {
                 </p>
 
                 <div className="mt-auto pt-4">
-                  <button className="rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium flex items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:bg-gradient-to-r group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black">
-                    <span className="flex items-center gap-2">Apply now →</span>
-                  </button>
+                  <Link 
+                    href={card.href}
+                    className="inline-flex rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:bg-gradient-to-r group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black"
+                  >
+                    Apply now →
+                  </Link>
                 </div>
               </div>
             </div>
