@@ -239,7 +239,7 @@ export default function TermsContent() {
           </p>
           <p className="text-gray-600 text-sm mb-3">
             Phone:{' '}
-            <a href="tel:+917411374848" className="text-emerald-600 hover:underline">+91 7411374848</a>
+            {/* <a href="tel:+917411374848" className="text-emerald-600 hover:underline">+91 7411374848</a> */}
             {' '}| Website: www.rupeeflow.co
           </p>
           <p className="text-gray-400 text-xs mt-4">

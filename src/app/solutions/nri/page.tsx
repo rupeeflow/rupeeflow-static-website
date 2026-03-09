@@ -160,15 +160,16 @@ export default function NRISolutionsPage() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              className="relative flex justify-center"
             >
-              <Image
-                src="/business/nri.svg"
-                alt="NRI Solutions"
-                width={500}
-                height={500}
-                className="w-full max-w-md mx-auto"
-              />
+              <div className="relative w-80 h-80 md:w-[420px] md:h-[420px] rounded-3xl overflow-hidden">
+                <Image
+                  src="/images/nri/nri.png"
+                  alt="NRI Solutions"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
             </motion.div>
           </div>
         </div>

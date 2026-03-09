@@ -109,7 +109,7 @@ export default function Hero() {
           <div className="group relative border border-[#029789]/30 bg-[#020506]/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-3">
             <div className="relative z-10">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
-                20<span className="text-[#30f3bc]">+</span>
+                5<span className="text-[#30f3bc]">+</span>
               </h3>
               <p className="text-xs sm:text-sm lg:text-base text-gray-400 mt-1 sm:mt-2 lg:mt-3 leading-snug">
                 Partnerships

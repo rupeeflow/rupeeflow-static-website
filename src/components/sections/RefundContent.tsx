@@ -374,7 +374,7 @@ export default function RefundContent() {
               <p className="text-gray-600 text-sm">
                 <a href="mailto:support@rupeeflow.co" className="text-emerald-600 hover:underline">support@rupeeflow.co</a><br />
                 <a href="mailto:refunds@rupeeflow.co" className="text-emerald-600 hover:underline">refunds@rupeeflow.co</a><br />
-                <a href="tel:+917411374848" className="text-emerald-600 hover:underline">+91 7411374848</a> (24/7)<br />
+                {/* <a href="tel:+917411374848" className="text-emerald-600 hover:underline">+91 7411374848</a> (24/7)<br /> */}
                 Response: 24–48 hours
               </p>
             </div>
@@ -383,14 +383,6 @@ export default function RefundContent() {
               <p className="text-gray-600 text-sm">
                 <a href="mailto:grievances@rupeeflow.co" className="text-emerald-600 hover:underline">grievances@rupeeflow.co</a><br />
                 Resolution: 15–30 days
-              </p>
-            </div>
-            <div>
-              <p className="text-gray-800 text-sm font-semibold mb-1">Level 3 — Regulatory</p>
-              <p className="text-gray-600 text-sm">
-                Banking Ombudsman: rbi.org.in<br />
-                NPCI Ombudsman: ombudsman@npci.org.in<br />
-                Consumer Helpline: 1800-11-4000
               </p>
             </div>
           </div>

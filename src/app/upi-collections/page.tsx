@@ -9,7 +9,6 @@ import GpayIcon from '../../../public/icons/upi-collections/GpayIcon'
 import PhonePayIcon from '../../../public/icons/upi-collections/PhonePayIcon'
 import PaytmIcon from '../../../public/icons/upi-collections/PaytmIcon'
 import BhimUPIIcon from '../../../public/icons/upi-collections/Bhimupi'
-import UPIStripIcon from '../../../public/icons/upi-collections/UpiStripIcon'
 import ProfileIcon from '../../../public/icons/upi-collections/ProfileIcon'
 import ProfileSearchIcon from '../../../public/icons/upi-collections/ProfileSerachIcon'
 import UpiSolutionsStack from '../../components/sections/upiCollections/UpiSolutionsStack'
@@ -30,11 +29,6 @@ export default function UpiCollectionsPage() {
           className="absolute right-[5%] top-[20%] w-[350px] h-[350px] rounded-full opacity-20 blur-[100px] pointer-events-none"
           style={{ background: 'radial-gradient(circle, #109F58 0%, transparent 70%)' }}
         />
-
-        {/* Decorative UPI strip */}
-        <div className="absolute bottom-0 left-0 w-full pointer-events-none z-[5]">
-          <UPIStripIcon className="w-full h-auto opacity-70" />
-        </div>
 
         {/* ── Hero content: LEFT text | RIGHT phone mockup ── */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-24 flex flex-col lg:flex-row items-center gap-10 lg:gap-8">
@@ -173,11 +167,6 @@ export default function UpiCollectionsPage() {
 
       {/* ── HOW TO USE UPI PAYMENTS ── */}
       <section className="relative bg-gray-50 overflow-hidden py-12 sm:py-16 lg:py-24">
-        {/* Decorative strip */}
-        <div className="absolute inset-0 pointer-events-none z-0">
-          <UPIStripIcon className="absolute w-full h-full" style={{ opacity: 0.5 }} />
-        </div>
-
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             className="text-center mb-8 sm:mb-12 lg:mb-16"

@@ -274,10 +274,10 @@ export default function PrivacyContent() {
             {' '}|{' '}
             <a href="mailto:support@rupeeflow.co" className="text-emerald-600 hover:underline">support@rupeeflow.co</a>
           </p>
-          <p className="text-gray-600 text-sm mb-1">
+          {/* <p className="text-gray-600 text-sm mb-1">
             Phone:{' '}
             <a href="tel:+917411374848" className="text-emerald-600 hover:underline">+91 7411374848</a>
-          </p>
+          </p> */}
           <p className="text-gray-600 text-sm mb-3">Website: www.rupeeflow.co</p>
 
           <p className="text-gray-600 text-sm font-medium mb-1">For regulatory complaints:</p>

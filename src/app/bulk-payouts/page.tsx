@@ -373,7 +373,7 @@ export default function BulkPayoutsPage() {
     <div className="w-full relative">
 
       {/* ── HERO SECTION ── */}
-      <section className="relative py-24 md:py-32 bg-[#f4f8fb] overflow-hidden">
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-[#f4f8fb] overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
