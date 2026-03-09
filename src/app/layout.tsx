@@ -16,6 +16,7 @@ const nunitoSans = Nunito_Sans({
 })
 
 export const metadata: Metadata = {
+  applicationName: 'RupeeFlow',
   title: {
     default: 'RupeeFlow — Payments, Payouts & Business Credit for India',
     template: '%s | RupeeFlow',
@@ -86,6 +87,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${nunitoSans.variable} overflow-x-hidden`}>
       <head>
+        {/* WebSite structured data — tells Google the site name is "RupeeFlow" */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'RupeeFlow',
+              alternateName: 'RupeeFlow',
+              url: 'https://rupeeflow.co',
+            }),
+          }}
+        />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4B37EK5RBC"
