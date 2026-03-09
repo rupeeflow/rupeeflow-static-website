@@ -113,7 +113,8 @@ export default function FeesComparison() {
                 </div>
 
                 {/* Learn More */}
-                <a
+                
+                {/* <a
                   href="#"
                   className="flex items-center gap-1 text-[#029789] text-sm font-semibold mt-auto hover:gap-2 transition-all"
                 >
@@ -127,7 +128,8 @@ export default function FeesComparison() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                </a>
+                </a> */}
+
               </motion.div>
             ))}
           </div>

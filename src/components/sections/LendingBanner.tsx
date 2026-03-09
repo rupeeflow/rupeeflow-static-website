@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Calculator } from 'lucide-react'
 import CheckMarkIcon from '../../../public/icons/payment-button/CheckMarkIcon'
@@ -32,14 +33,14 @@ export default function LendingBanner() {
             Whether you are a NRI, SMB or a vendor — apply in minutes.
           </p>
 
-          <button className="relative overflow-hidden px-8 py-3 rounded-full font-semibold text-black group">
+          <Link href="/contact" className="inline-block relative overflow-hidden px-8 py-3 rounded-full font-semibold text-black group">
             <span className="absolute inset-0 bg-white -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
             <span className="absolute inset-0 bg-gradient-to-r from-[#0bbf7d] to-[#4ade80] group-hover:opacity-0 transition-opacity duration-300" />
             <span className="relative z-10 flex items-center gap-2">
               <span className="w-2.5 h-2.5 bg-white rounded-full" />
               Apply Now
             </span>
-          </button>
+          </Link>
         </div>
 
         {/* ── Mini loan cards (horizontal scroll) ── */}
@@ -147,14 +148,14 @@ export default function LendingBanner() {
             <p className="mt-6 text-gray-300 text-lg">
               Whether you are a NRI, SMB or a vendor
             </p>
-            <button className="mt-10 relative overflow-hidden px-10 py-4 rounded-full font-semibold text-black group">
+            <Link href="/contact" className="mt-10 inline-block relative overflow-hidden px-10 py-4 rounded-full font-semibold text-black group">
               <span className="absolute inset-0 bg-white -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
               <span className="absolute inset-0 bg-gradient-to-r from-[#0bbf7d] to-[#4ade80] group-hover:opacity-0 transition-opacity duration-300" />
               <span className="relative z-10 flex items-center gap-2 transition-all duration-300 group-hover:-translate-x-2">
                 <span className="w-3 h-3 bg-white rounded-full" />
                 Apply Now
               </span>
-            </button>
+            </Link>
           </div>
 
           {/* RIGHT: Floating loan cards */}

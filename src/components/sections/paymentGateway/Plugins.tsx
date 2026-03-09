@@ -126,13 +126,13 @@ export default function Plugins() {
               </div>
 
               {/* CTA */}
-              <motion.button
+              {/* <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="mt-8 sm:mt-10 lg:mt-12 flex items-center gap-3 border-2 border-emerald-500 text-emerald-600 font-semibold px-7 py-3 rounded-xl hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-sm"
               >
                 Start Building →
-              </motion.button>
+              </motion.button> */}
 
             </div>
           </motion.div>

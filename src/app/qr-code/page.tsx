@@ -315,12 +315,14 @@ export default function QrCodePage() {
               </div>
 
               <div className="pt-2">
-                <Link
+
+                {/* <Link
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
                 >
                   Get started
-                </Link>
+                </Link> */}
+
               </div>
             </div>
 
@@ -378,7 +380,8 @@ export default function QrCodePage() {
                   times—just a few clicks, and you&apos;re ready to accept
                   payments, boosting efficiency for your business operations.
                 </p>
-                <Link
+
+                {/* <Link
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
                 >
@@ -396,7 +399,8 @@ export default function QrCodePage() {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </Link>
+                </Link> */}
+
               </div>
               <div className="w-full lg:w-[45%] relative h-[260px] sm:h-[300px] lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
                 <motion.div
@@ -445,7 +449,7 @@ export default function QrCodePage() {
                   It&apos;s a simple yet powerful way to make your business
                   memorable.
                 </p>
-                <Link
+                {/* <Link
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
                 >
@@ -463,7 +467,7 @@ export default function QrCodePage() {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               <div className="w-full lg:w-[45%] relative h-[260px] sm:h-[300px] lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
                 <motion.div
@@ -518,7 +522,7 @@ export default function QrCodePage() {
                   business needs, giving your customers a seamless payment
                   experience.
                 </p>
-                <Link
+                {/* <Link
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
                 >
@@ -536,7 +540,7 @@ export default function QrCodePage() {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               <div className="w-full lg:w-[45%] relative h-[260px] sm:h-[300px] lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
                 <motion.div
@@ -592,7 +596,7 @@ export default function QrCodePage() {
                   reconciliation tools, ensuring you always have clear insights
                   into your revenue streams for efficient financial management.
                 </p>
-                <Link
+                {/* <Link
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
                 >
@@ -610,7 +614,7 @@ export default function QrCodePage() {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               <div className="w-full lg:w-[45%] relative h-[260px] sm:h-[300px] lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
                 <motion.div
@@ -659,7 +663,7 @@ export default function QrCodePage() {
                   giving you peace of mind and ensuring every transaction is
                   safe, reliable, and trustworthy.
                 </p>
-                <Link
+                {/* <Link
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
                 >
@@ -677,7 +681,7 @@ export default function QrCodePage() {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               <div className="w-full lg:w-[45%] relative h-[260px] sm:h-[300px] lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
                 <motion.div

@@ -84,10 +84,9 @@ export default function UpiCollectionsPage() {
               ].map(({ Icon,  }) => (
                 <div
                   key={Icon.name}
-                  className={`flex items-center gap-2  rounded-full px-3 py-2 shadow-md`}
+                  className="flex items-center justify-center bg-white rounded-full p-2 shadow-lg w-13 h-13"
                 >
-                  <Icon className="w-12 h-12" />
-                  <span className="text-xs font-semibold text-gray-700"></span>
+                  <Icon className="w-10 h-10" />
                 </div>
               ))}
             </motion.div>
@@ -244,13 +243,15 @@ export default function UpiCollectionsPage() {
               ))}
 
               <div className="pt-2">
-                <Link
+
+                {/* <Link
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors"
                 >
                   <span className="w-2 h-2 rounded-full bg-white/80" />
                   Get Started
-                </Link>
+                </Link> */}
+
               </div>
             </motion.div>
 
@@ -372,13 +373,15 @@ export default function UpiCollectionsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Link
+
+            {/* <Link
               href="#"
               className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
               Get Started
-            </Link>
+            </Link> */}
+            
           </motion.div>
         </div>
       </section>

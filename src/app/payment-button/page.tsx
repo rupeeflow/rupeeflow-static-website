@@ -56,7 +56,7 @@ export default function PaymentButtonPage() {
               No-code embed
             </motion.span>
 
-            <h1 className="rf-h1 text-white leading-tight">
+            <h1 className="text-[46px] text-white leading-tight">
               Collect Smarter with{' '}
               <span className="text-emerald-400">Custom Payment</span>{' '}
               Button
@@ -93,7 +93,7 @@ export default function PaymentButtonPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.55 }}
             >
-              <Link
+              {/* <Link
                 href="#"
                 className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/20"
               >
@@ -103,13 +103,13 @@ export default function PaymentButtonPage() {
                   transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
                 />
                 Create Your Button
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 href="#"
                 className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-emerald-500/60 text-white font-semibold text-sm hover:bg-emerald-500/10 transition-all duration-300"
               >
                 Documentation →
-              </Link>
+              </Link> */}
             </motion.div>
           </motion.div>
 
@@ -267,13 +267,15 @@ export default function PaymentButtonPage() {
                 </div>
 
                 <div className="pt-2">
-                  <Link
+
+                  {/* <Link
                     href="#"
                     className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors"
                   >
                     <span className="w-2 h-2 rounded-full bg-white/80" />
                     Get Started
-                  </Link>
+                  </Link> */}
+
                 </div>
               </div>
 
@@ -531,10 +533,12 @@ export default function PaymentButtonPage() {
                       Fast checkout experience.
                     </li>
                   </ul>
-                  <button className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-500 text-white text-xs font-semibold hover:bg-emerald-600 transition-colors">
+
+                  {/* <button className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-500 text-white text-xs font-semibold hover:bg-emerald-600 transition-colors">
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                     Pay Now
-                  </button>
+                  </button> */}
+
                 </div>
 
                 {/* Checkout Button */}
@@ -555,10 +559,12 @@ export default function PaymentButtonPage() {
                       Great for e-commerce stores.
                     </li>
                   </ul>
-                  <button className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-500 text-white text-xs font-semibold hover:bg-emerald-600 transition-colors">
+
+                  {/* <button className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-500 text-white text-xs font-semibold hover:bg-emerald-600 transition-colors">
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7.2 14.6l.1-.1L8.5 12h7.2c.7 0 1.4-.4 1.7-1l3.9-7-1.7-1-3.9 7H8.5L4.3 2H1v2h2l3.6 7.6L5.2 14c-.1.3-.2.6-.2 1 0 1.1.9 2 2 2h12v-2H7.4c-.1 0-.2-.1-.2-.2v-.2z" /></svg>
                     Checkout
-                  </button>
+                  </button> */}
+
                 </div>
 
                 {/* Donate Button */}
@@ -579,10 +585,12 @@ export default function PaymentButtonPage() {
                       Perfect for NGOs &amp; causes.
                     </li>
                   </ul>
-                  <button className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-500 text-white text-xs font-semibold hover:bg-emerald-600 transition-colors">
+
+                  {/* <button className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-500 text-white text-xs font-semibold hover:bg-emerald-600 transition-colors">
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
                     Donate
-                  </button>
+                  </button> */}
+
                 </div>
 
                 {/* Custom Button */}
@@ -603,10 +611,12 @@ export default function PaymentButtonPage() {
                       Tailored for your workflow.
                     </li>
                   </ul>
-                  <button className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-500 text-white text-xs font-semibold hover:bg-emerald-600 transition-colors">
+
+                  {/* <button className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-500 text-white text-xs font-semibold hover:bg-emerald-600 transition-colors">
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.49.49 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.49.49 0 00-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1112 8.4a3.6 3.6 0 010 7.2z" /></svg>
                     Custom Pay
-                  </button>
+                  </button> */}
+
                 </div>
               </div>
 

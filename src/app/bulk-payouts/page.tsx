@@ -408,13 +408,15 @@ export default function BulkPayoutsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                <Link
+
+                {/* <Link
                   href="#"
                   className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/20 border border-emerald-400/30"
                 >
                   <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
                   Get Started
-                </Link>
+                </Link> */}
+
               </motion.div>
             </motion.div>
 
@@ -564,7 +566,8 @@ export default function BulkPayoutsPage() {
                   <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
                     {f.desc}
                   </p>
-                  <Link
+
+                  {/* <Link
                     href="#"
                     className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
                   >
@@ -572,7 +575,8 @@ export default function BulkPayoutsPage() {
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
-                  </Link>
+                  </Link> */}
+                  
                 </div>
                 <div className="lg:w-[45%] flex justify-center">
                   {f.mockup}

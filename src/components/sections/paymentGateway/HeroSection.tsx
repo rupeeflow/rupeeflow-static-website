@@ -34,7 +34,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.35),transparent_60%)]" />
 
       {/* ── Text Content ── */}
-      <div className="max-w-6xl mx-auto text-center pt-24 sm:pt-32 lg:pt-36 pb-8 sm:pb-10 px-4 sm:px-6 relative z-10">
+      <div className="max-w-6xl mx-auto text-center pt-24 sm:pt-26 lg:pt-28 pb-4 sm:pb-6 px-4 sm:px-6 relative z-10">
 
         {/* Badge */}
         <motion.div
@@ -61,7 +61,7 @@ export default function HeroSection() {
 
         {/* Sub text */}
         <motion.p
-          className="mt-5 rf-lead text-gray-400 max-w-2xl mx-auto"
+          className="mt-4 rf-lead text-gray-400 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
@@ -72,7 +72,7 @@ export default function HeroSection() {
 
         {/* Stats strip */}
         <motion.div
-          className="mt-8 sm:mt-10 flex flex-wrap justify-center gap-5 sm:gap-8 md:gap-16"
+          className="mt-5 sm:mt-6 lg:mt-7 flex flex-wrap justify-center gap-5 sm:gap-8 md:gap-16"
           initial={{ opacity: 0, y: -24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.3, ease: 'easeOut' }}
@@ -97,7 +97,7 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <motion.div
-          className="mt-10 flex flex-wrap justify-center gap-4"
+          className="mt-6 sm:mt-7 flex flex-wrap justify-center gap-4"
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55, ease: 'easeOut' }}
@@ -108,14 +108,15 @@ export default function HeroSection() {
           >
             Start Accepting Payments
           </Link>
-          <Link
+          {/* <Link
             href="#"
             className="px-8 py-3 rounded-full border border-emerald-500/60 text-white hover:bg-emerald-500/10 transition duration-300"
           >
             Documentation →
-          </Link>
+          </Link> */}
         </motion.div>
       </div>
+
 
       {/* ── Dashboard + Phone image area ── */}
       {/*
@@ -125,7 +126,9 @@ export default function HeroSection() {
         - Phone is absolute at bottom-0 right-[8%] — sits in the padding-bottom area
         - No overflow-hidden on section (overflow-x-hidden only) so phone never clips
       */}
-      <div className="relative max-w-5xl mx-auto px-3 sm:px-6 z-10 pb-[10px] sm:pb-[16px] lg:pb-[24px]">
+
+
+      <div className="relative max-w-5xl mx-auto px-3 sm:px-6 z-10 pb-[10px] sm:pb-[12px] lg:pb-[14px]">
 
         {/* Dashboard with 3D tilt */}
         <div style={{ perspective: 1200 }}>
@@ -154,7 +157,7 @@ export default function HeroSection() {
 
         {/* Phone — absolute to the padded container */}
         <motion.div
-          className="absolute bottom-[10px] sm:bottom-[16px] lg:bottom-[24px] right-[1%] sm:right-[4%] lg:right-[8%] z-30"
+          className="absolute bottom-[10px] sm:bottom-[12px] lg:bottom-[14px] right-[1%] sm:right-[4%] lg:right-[8%] z-30"
           style={{ perspective: 900, transformStyle: 'preserve-3d' }}
           initial={{ opacity: 0, scale: 0.82, rotateY: -18, x: 40 }}
           animate={{ opacity: 1, scale: 1, rotateY: -6, x: 0 }}
@@ -178,7 +181,7 @@ export default function HeroSection() {
       </div>
 
       {/* Wave — pulled up to sit under the dashboard/phone */}
-      <div className="relative z-0 -mt-[120px] sm:-mt-[160px] lg:-mt-[200px]">
+      <div className="relative z-0 -mt-[150px] sm:-mt-[180px] lg:-mt-[220px]">
         <Image
           src="/wave.png"
           alt="wave"

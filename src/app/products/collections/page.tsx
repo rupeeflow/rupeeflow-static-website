@@ -85,7 +85,7 @@ export default function CollectPayments() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Link
-              href="#"
+              href="/contact"
               className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/20 border border-emerald-400/30"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
@@ -319,12 +319,12 @@ export default function CollectPayments() {
                   multiple methods such as credit cards, debit cards, UPI, net banking, and digital wallets,
                   ensuring seamless transactions with exceptional success rates and security.
                 </p>
-                <Link href="/payment-gateway" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="/payment-gateway" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Learn more
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               {/* Payment Gateway Card */}
               <div className="lg:w-[45%] flex justify-center">
@@ -382,12 +382,12 @@ export default function CollectPayments() {
                   media, allowing merchants to collect payments from customers without requiring a
                   website, ensuring quick and hassle-free transactions.
                 </p>
-                <Link href="/payment-links" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="/payment-links" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Learn more
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               {/* Payment Links Card */}
               <div className="lg:w-[45%] flex justify-center">
@@ -471,12 +471,12 @@ export default function CollectPayments() {
                   customers with a seamless checkout experience that enhances conversions while
                   simplifying payment collection for merchants of all sizes.
                 </p>
-                <Link href="/payment-button" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="/payment-button" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Learn more
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               {/* Payment Button Card */}
               <div className="lg:w-[45%] flex justify-center">
@@ -546,12 +546,12 @@ export default function CollectPayments() {
                   without a website to collect online payments efficiently while providing customers with
                   a secure and user-friendly payment experience.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Learn more
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               {/* Payment Page Card */}
               <div className="lg:w-[45%] flex justify-center">
@@ -616,12 +616,14 @@ export default function CollectPayments() {
                   seamless checkout process that reduces transaction friction and improves the overall
                   user experience for both merchants and consumers alike.
                 </p>
-                <Link href="/upi-collections" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+
+                {/* <Link href="/upi-collections" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Learn more
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
+
               </div>
               {/* UPI Card */}
               <div className="lg:w-[45%] flex justify-center">
@@ -689,12 +691,14 @@ export default function CollectPayments() {
                   instantly in retail stores, restaurants, and events, allowing customers to make secure
                   and contactless payments with ease.
                 </p>
-                <Link href="/qr-code" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+
+                {/* <Link href="/qr-code" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Learn more
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
+
               </div>
               {/* QR Card */}
               <div className="lg:w-[45%] flex justify-center">
@@ -769,12 +773,14 @@ export default function CollectPayments() {
                 flow delays, improving business liquidity, and ensuring better financial
                 planning while enabling seamless operations with real-time settlement capabilities.
               </p>
-              <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+
+              {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                 Learn more
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </Link>
+              </Link> */}
+
             </motion.div>
 
             {/* Instant Settlement Card */}
@@ -853,12 +859,14 @@ export default function CollectPayments() {
                 making high-value transactions more accessible while improving purchasing power and
                 boosting sales for businesses.
               </p>
-              <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+
+              {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                 Learn more
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </Link>
+              </Link> */}
+
             </motion.div>
 
             {/* Affordability Suite Card */}

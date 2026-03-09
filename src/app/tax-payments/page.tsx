@@ -24,7 +24,7 @@ export default function TaxPaymentsPage() {
               <span className="text-emerald-500 text-sm fontheading tracking-wide">
                 GST Challan Payment
               </span>
-              <h1 className="fontheading text-3xl sm:text-4xl md:text-[2.8rem] lg:text-[3.2rem] leading-tight text-gray-900 mt-4">
+              <h1 className="fontheading text-2xl sm:text-3xl md:text-[2.3rem] lg:text-[2.8rem] leading-tight text-gray-900 mt-4">
                 Pay Your GST On Time
                 <br />
                 with Confidence
@@ -51,13 +51,13 @@ export default function TaxPaymentsPage() {
 
               {/* CTA */}
               <div className="mt-8">
-                <Link
+                {/* <Link
                   href="#"
                   className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/20 border border-emerald-400/30"
                 >
                   <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
                   Get Started
-                </Link>
+                </Link> */}
               </div>
             </motion.div>
 
@@ -194,12 +194,12 @@ export default function TaxPaymentsPage() {
               </div>
 
               <div className="pt-2">
-                <Link
+                {/* <Link
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
                 >
                   Get started
-                </Link>
+                </Link> */}
               </div>
             </div>
 
@@ -321,12 +321,12 @@ export default function TaxPaymentsPage() {
                   always paid on time. Avoid late fees, penalties, and interest charges with Rupeeflow&apos;s
                   smart scheduling and notification system.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </motion.div>
 
               {/* Calendar reminder card */}
@@ -410,12 +410,12 @@ export default function TaxPaymentsPage() {
                   supports all major payment methods so you can choose the most convenient option for
                   your business without any restrictions.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </motion.div>
 
               {/* Payment methods card */}
@@ -476,12 +476,12 @@ export default function TaxPaymentsPage() {
                   Download digital receipts and maintain a complete audit trail for all your GST
                   transactions directly from the Rupeeflow dashboard.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </motion.div>
 
               {/* CIN receipt card */}
@@ -554,12 +554,12 @@ export default function TaxPaymentsPage() {
                   processed through RBI-authorized payment channels. Your financial data stays secure
                   with PCI DSS compliance and multi-factor authentication.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </motion.div>
 
               {/* Security compliance card */}

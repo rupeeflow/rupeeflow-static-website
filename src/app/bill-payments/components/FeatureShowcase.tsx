@@ -61,30 +61,6 @@ export default function FeatureShowcase({
                   <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                     {feature.description}
                   </p>
-
-                  {/* CTA Link */}
-                  {feature.link && (
-                    <motion.a
-                      href={feature.link}
-                      whileHover={{ x: 5 }}
-                      className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors"
-                    >
-                      Learn more
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    </motion.a>
-                  )}
                 </motion.div>
 
                 {/* Mockup Component */}

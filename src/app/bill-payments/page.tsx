@@ -27,11 +27,6 @@ export default function BillPaymentsPage() {
           href: '/contact',
           variant: 'primary' as const,
         }}
-        secondaryCTA={{
-          text: 'See How It Works',
-          href: '#features',
-          variant: 'secondary' as const,
-        }}
         stats={[
           { value: '< 30s', label: 'Payment time' },
           { value: '99.9%', label: 'Success rate' },

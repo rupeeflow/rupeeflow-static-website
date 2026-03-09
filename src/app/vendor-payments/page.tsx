@@ -304,13 +304,13 @@ export default function VendorPaymentPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <Link
+              {/* <Link
                 href="#"
                 className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/25"
               >
                 <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
                 Start Paying Today
-              </Link>
+              </Link> */}
             </motion.div>
           </motion.div>
 
@@ -406,7 +406,7 @@ export default function VendorPaymentPage() {
               </div>
 
               <div className="mt-8">
-                <Link
+                {/* <Link
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
                 >
@@ -414,7 +414,7 @@ export default function VendorPaymentPage() {
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
             </motion.div>
           </div>
@@ -453,12 +453,12 @@ export default function VendorPaymentPage() {
                   Rupeeflow ensures your payments reach vendors instantly, reducing delays and
                   strengthening business relationships.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               <div className="lg:w-[45%] flex justify-center">
                 <PayChannelsMockup />
@@ -480,12 +480,12 @@ export default function VendorPaymentPage() {
                   maker-checker approval workflows. Reduce manual effort and ensure compliance
                   with every vendor payment.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               <div className="lg:w-[45%] flex justify-center">
                 <InvoiceApprovalMockup />
@@ -507,12 +507,12 @@ export default function VendorPaymentPage() {
                   notifications on payment status, failed transactions, and successful settlements
                   to maintain complete visibility over your outflows.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               <div className="lg:w-[45%] flex justify-center">
                 <LiveTrackingMockup />
@@ -534,12 +534,12 @@ export default function VendorPaymentPage() {
                   Eliminate manual reconciliation effort, reduce errors, and close your books faster
                   with Rupeeflow&apos;s smart reconciliation engine.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               <div className="lg:w-[45%] flex justify-center">
                 <ReconciliationMockup />

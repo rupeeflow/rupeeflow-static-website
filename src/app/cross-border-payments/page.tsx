@@ -223,12 +223,12 @@ export default function CrossBorderPaymentsPage() {
               </motion.div>
 
               <div className="pt-2">
-                <Link
+                {/* <Link
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
                 >
                   Get started
-                </Link>
+                </Link> */}
               </div>
             </div>
 
@@ -309,12 +309,12 @@ export default function CrossBorderPaymentsPage() {
                   currency conversion automatically with competitive exchange rates, eliminating the complexity
                   of managing multiple foreign accounts.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </motion.div>
 
               {/* Live forex rates card */}
@@ -375,12 +375,12 @@ export default function CrossBorderPaymentsPage() {
                   offers real-time exchange rates with minimal markup and no hidden charges, ensuring you
                   always get best value compared to traditional banking channels.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </motion.div>
 
               {/* Fee comparison card */}
@@ -447,12 +447,12 @@ export default function CrossBorderPaymentsPage() {
                   fully compliant with RBI guidelines, FEMA regulations, and global AML/KYC standards,
                   ensuring every cross-border transaction meets all legal requirements.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </motion.div>
 
               {/* Compliance badges card */}
@@ -516,12 +516,12 @@ export default function CrossBorderPaymentsPage() {
                   into your cross-border transactions with real-time status updates, instant notifications
                   on settlement, and detailed audit trails.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </motion.div>
 
               {/* Payment tracking timeline card */}
@@ -604,12 +604,12 @@ export default function CrossBorderPaymentsPage() {
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
                   Integrate cross-border payment capabilities directly into your platform with Rupeeflow&apos;s developer-friendly APIs. Our comprehensive documentation, SDKs, and sandbox environment make it easy to build and test international payment workflows tailored to your business needs.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </motion.div>
 
               {/* API snippet card */}

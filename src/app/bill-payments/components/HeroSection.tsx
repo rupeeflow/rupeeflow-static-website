@@ -25,7 +25,7 @@ interface HeroSectionProps {
   headingAccent: string;
   description: string;
   primaryCTA: CTAButton;
-  secondaryCTA: CTAButton;
+  secondaryCTA?: CTAButton;
   stats: StatItem[];
   mockupComponent: React.ComponentType;
 }
@@ -142,14 +142,16 @@ export default function HeroSection({
               </motion.a>
 
               {/* Secondary CTA */}
-              <motion.a
-                href={secondaryCTA.href}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 rounded-xl border-2 border-emerald-500/30 text-white font-semibold hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all"
-              >
-                {secondaryCTA.text}
-              </motion.a>
+              {secondaryCTA && (
+                <motion.a
+                  href={secondaryCTA.href}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-8 py-4 rounded-xl border-2 border-emerald-500/30 text-white font-semibold hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all"
+                >
+                  {secondaryCTA.text}
+                </motion.a>
+              )}
             </div>
 
             {/* Stats row */}

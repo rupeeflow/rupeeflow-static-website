@@ -254,13 +254,6 @@ export default function SalaryDisbursementPage() {
           className="absolute right-[-50px] top-[25%] w-[500px] h-[500px] rounded-full opacity-30 blur-[100px] pointer-events-none"
           style={{ background: 'radial-gradient(circle, #109F58 0%, transparent 70%)' }}
         />
-        {/* Green swooshes */}
-        <div className="absolute left-[-60px] bottom-[20%] w-[180px] h-[300px] pointer-events-none z-[5]">
-          <div className="w-full h-full rounded-[50%] border-[3px] border-emerald-500/60" style={{ transform: 'rotate(-20deg)' }} />
-        </div>
-        <div className="absolute right-[-40px] bottom-[8%] w-[200px] h-[350px] pointer-events-none z-[5]">
-          <div className="w-full h-full rounded-[50%] border-[3px] border-emerald-500/40" style={{ transform: 'rotate(25deg)' }} />
-        </div>
 
         {/* Content — text LEFT, image RIGHT */}
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -282,7 +275,7 @@ export default function SalaryDisbursementPage() {
               <span className="text-emerald-400 text-xs font-semibold tracking-widest uppercase">Salary Disbursements</span>
             </motion.div>
 
-            <h1 className="fontheading text-4xl sm:text-5xl lg:text-[3.4rem] leading-tight text-white mb-6">
+            <h1 className="fontheading text-2xl sm:text-5xl lg:text-[2.2rem] leading-tight text-white mb-6">
               Bulk <span className="text-emerald-400">Salary Disbursement</span>
               <br />in One Click
             </h1>
@@ -325,12 +318,12 @@ export default function SalaryDisbursementPage() {
                 <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
                 Pay Your Employees
               </Link>
-              <Link
+              {/* <Link
                 href="#"
                 className="px-8 py-3.5 rounded-full border border-emerald-500/50 text-white font-semibold text-sm hover:bg-emerald-500/10 transition-colors"
               >
                 See a Demo →
-              </Link>
+              </Link> */}
             </motion.div>
           </motion.div>
 
@@ -411,12 +404,12 @@ export default function SalaryDisbursementPage() {
                   use our API to automate monthly payroll runs. Rupeeflow handles NEFT, RTGS, IMPS,
                   and UPI transfers seamlessly.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               <div className="lg:w-[45%]"><BulkUploadMockup /></div>
             </motion.div>
@@ -439,12 +432,12 @@ export default function SalaryDisbursementPage() {
                   every disbursement is verified by authorized personnel before execution, maintaining
                   compliance and preventing unauthorized payouts.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               <div className="lg:w-[45%]"><ApprovalFlowMockup /></div>
             </motion.div>
@@ -466,12 +459,12 @@ export default function SalaryDisbursementPage() {
                   Monitor every salary payment in real time from initiation to completion. Get instant
                   notifications for successful transfers, failed transactions, and pending approvals.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
               <div className="lg:w-[45%]"><TrackingMockup /></div>
             </motion.div>
@@ -493,12 +486,14 @@ export default function SalaryDisbursementPage() {
                   Connect Rupeeflow with your existing ERP, HRMS, or accounting software effortlessly.
                   Sync employee data, automate payroll runs, and eliminate manual data entry.
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
+
+                {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </Link> */}
+
               </div>
               <div className="lg:w-[45%]"><IntegrationsMockup /></div>
             </motion.div>

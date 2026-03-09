@@ -89,7 +89,7 @@ export default function UpiSolutionsStack() {
                       {item.description}
                     </p>
 
-                    <Link
+                    {/* <Link
                       href="#"
                       className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors self-start"
                     >
@@ -97,7 +97,7 @@ export default function UpiSolutionsStack() {
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
-                    </Link>
+                    </Link> */}
                   </div>
 
                   {/* Right: image or JSX visual */}

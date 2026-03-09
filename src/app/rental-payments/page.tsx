@@ -299,7 +299,7 @@ export default function RentalPaymentsPage() {
                 Rent Payments
               </motion.span>
 
-              <h1 className="fontheading text-3xl sm:text-4xl md:text-[2.8rem] lg:text-[3.2rem] leading-tight text-gray-900 mb-6">
+              <h1 className="fontheading text-2xl sm:text-3xl md:text-[2.4rem] lg:text-[2.8rem] leading-tight text-gray-900 mb-6">
                 Hassle-Free Rent Payments
                 <br />
                 with <span className="text-emerald-500">Rupeeflow</span>

@@ -397,7 +397,7 @@ export default function PaymentLinksPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.55 }}
             >
-              <Link
+              {/* <Link
                 href="#"
                 className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/25"
               >
@@ -407,7 +407,7 @@ export default function PaymentLinksPage() {
                   transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
                 />
                 Set Up Your Link
-              </Link>
+              </Link> */}
             </motion.div>
           </motion.div>
 
@@ -504,13 +504,13 @@ export default function PaymentLinksPage() {
                 </div>
 
                 <div className="pt-2">
-                  <Link
+                  {/* <Link
                     href="#"
                     className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors"
                   >
                     <span className="w-2 h-2 rounded-full bg-white/80" />
                     Get Started
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
 
@@ -768,13 +768,14 @@ export default function PaymentLinksPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.25, ease: 'easeOut' }}
           >
-            <Link
+            {/* <Link
               href="#"
               className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors shadow-lg shadow-emerald-500/20"
             >
               <span className="w-2 h-2 rounded-full bg-white/80" />
               Get Started
-            </Link>
+            </Link> */}
+            
           </motion.div>
         </div>
       </section>
