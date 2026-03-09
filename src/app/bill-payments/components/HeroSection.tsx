@@ -24,7 +24,7 @@ interface HeroSectionProps {
   heading: string;
   headingAccent: string;
   description: string;
-  primaryCTA: CTAButton;
+  primaryCTA?: CTAButton;
   secondaryCTA?: CTAButton;
   stats: StatItem[];
   mockupComponent: React.ComponentType;
@@ -130,29 +130,33 @@ export default function HeroSection({
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-              {/* Primary CTA */}
-              <motion.a
-                href={primaryCTA.href}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-shadow"
-              >
-                {primaryCTA.text}
-              </motion.a>
+            {(primaryCTA || secondaryCTA) && (
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                {/* Primary CTA */}
+                {primaryCTA && (
+                  <motion.a
+                    href={primaryCTA.href}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-shadow"
+                  >
+                    {primaryCTA.text}
+                  </motion.a>
+                )}
 
-              {/* Secondary CTA */}
-              {secondaryCTA && (
-                <motion.a
-                  href={secondaryCTA.href}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="px-8 py-4 rounded-xl border-2 border-emerald-500/30 text-white font-semibold hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all"
-                >
-                  {secondaryCTA.text}
-                </motion.a>
-              )}
-            </div>
+                {/* Secondary CTA */}
+                {secondaryCTA && (
+                  <motion.a
+                    href={secondaryCTA.href}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="px-8 py-4 rounded-xl border-2 border-emerald-500/30 text-white font-semibold hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all"
+                  >
+                    {secondaryCTA.text}
+                  </motion.a>
+                )}
+              </div>
+            )}
 
             {/* Stats row */}
             <div className="flex flex-wrap gap-8 justify-center lg:justify-start">

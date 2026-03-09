@@ -5,93 +5,120 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import QrSmallIcon from '../../../../public/icons/qr-collections/QrSmallIcon'
-import CheckMarkIcon from '../../../../public/icons/payment-button/CheckMarkIcon'
-import SettingsIcon from '../../../../public/icons/payment-link/SettingsIcon'
-import ProfileIcon from '../../../../public/icons/upi-collections/ProfileIcon'
-import SmartDashboardIcon from '../../../../public/icons/payment-gateway/SmartDashboardIcon'
+import CreditCardsIcon from '../../../../public/icons/payment-gateway/CreditCard'
+import CardsIcon from '../../../../public/icons/vendor-payments/CardsIcon'
+import CheckIcon from '../../../../public/icons/vendor-payments/CheckIcon'
+import SecurityIcon from '../../../../public/icons/vendor-payments/SecurityIcon'
+import CodingIcon from '../../../../public/icons/payment-gateway/CodingIcon'
 import LightingIcon from '../../../../public/icons/payment-button/LightingIcon'
+import SmartDashboardIcon from '../../../../public/icons/payment-gateway/SmartDashboardIcon'
 import SecurityFirstIcon from '../../../../public/icons/payment-gateway/SecurityFirstIcon'
 
 const solutions = [
   {
-    title: 'Kirana POS',
-    description: 'Modern point-of-sale system designed for small retail stores with inventory management.',
+    title: 'Payment Gateway APIs',
+    description: 'Integrate payment acceptance into your platform with our robust and scalable APIs.',
     features: [
-      'Accept all payment methods (UPI, Cards, Cash)',
-      'Real-time inventory tracking',
-      'Customer billing and invoicing',
-      'Sales reports and analytics',
-      'Offline mode support',
+      'RESTful APIs with webhooks',
+      'Support for all payment methods',
+      'ISO 27001 compliant infrastructure',
+      'Sandbox environment for testing',
+      'Comprehensive documentation',
     ],
-    Icon: QrSmallIcon,
-    link: '/qr-code',
+    Icon: CreditCardsIcon,
+    link: '/payment-gateway',
   },
   {
-    title: 'Merchant Cash Advance',
-    description: 'Get instant business loans based on your daily sales without collateral.',
+    title: 'Payouts APIs',
+    description: 'Automate bulk payments to vendors, partners, and customers with our payout APIs.',
     features: [
-      '₹10,000 to ₹5,00,000 funding',
-      'Approval in 3 minutes',
-      'Flexible daily repayment',
-      'No collateral required',
-      'Based on UPI transaction history',
+      'Instant and scheduled payouts',
+      'Support for NEFT, RTGS, IMPS, UPI',
+      'Batch processing capabilities',
+      'Real-time status updates',
+      'Automatic retry mechanism',
     ],
-    Icon: CheckMarkIcon,
-    link: '/merchant-cash-advance',
+    Icon: CardsIcon,
+    link: '/bulk-payouts',
   },
   {
-    title: 'Bill Payments',
-    description: 'Offer bill payment services to customers and earn commission on every transaction.',
+    title: 'Verification APIs',
+    description: 'Verify bank accounts, PAN, Aadhaar, and GST details instantly with our APIs.',
     features: [
-      'Electricity, water, gas bills',
-      'Mobile and DTH recharge',
-      'Insurance premium payments',
-      'Earn commission on each bill',
-      'Instant payment confirmation',
+      'Bank account verification',
+      'PAN and Aadhaar validation',
+      'GST verification',
+      'Penny drop verification',
+      'Real-time response',
     ],
-    Icon: SettingsIcon,
-    link: '/bill-payments',
+    Icon: CheckIcon,
+    link: '/docs',
   },
   {
-    title: 'Voice Payments',
-    description: 'Accept payments through voice commands in local languages for easier transactions.',
+    title: 'Banking-as-a-Service',
+    description: 'Build complete financial products on our banking infrastructure.',
     features: [
-      'Support for 10+ Indian languages',
-      'Voice-activated UPI payments',
-      'No typing required',
-      'Perfect for elderly customers',
-      'Hands-free operation',
+      'Virtual account creation',
+      'Ledger management',
+      'Transaction processing',
+      'Compliance and KYC',
+      'White-label solutions',
     ],
-    Icon: ProfileIcon,
-    link: '/voice-payments',
+    Icon: SecurityIcon,
+    link: '/business-current-account',
   },
 ]
 
 const benefits = [
   {
-    title: 'Easy to Use',
-    description: 'Simple interface designed for shopkeepers with minimal training required.',
-    Icon: CheckMarkIcon,
+    title: 'Developer First',
+    description: 'Clean APIs, detailed docs, and SDKs in multiple languages.',
+    Icon: CodingIcon,
   },
   {
-    title: 'Low Cost',
-    description: 'Affordable pricing with no setup fees or monthly charges.',
+    title: 'Fast Integration',
+    description: 'Go live in hours with our plug-and-play SDKs and plugins.',
+    Icon: LightingIcon,
+  },
+  {
+    title: 'Scalable',
+    description: 'Built to handle millions of transactions with 99.9% uptime.',
     Icon: SmartDashboardIcon,
   },
   {
-    title: 'Local Language',
-    description: 'Available in Hindi, Tamil, Telugu, and other regional languages.',
-    Icon: ProfileIcon,
-  },
-  {
-    title: 'Instant Settlement',
-    description: 'Get your money in your account within minutes of transaction.',
-    Icon: LightingIcon,
+    title: 'Dedicated Support',
+    description: 'Technical support team available 24/7 for integration help.',
+    Icon: SecurityFirstIcon,
   },
 ]
 
-export default function KiranaSolutionsPage() {
+const codeExample = `// Initialize RupeeFlow SDK
+const rupeeflow = require('rupeeflow')({
+  apiKey: 'your_api_key',
+  apiSecret: 'your_api_secret'
+});
+
+// Create a payment
+const payment = await rupeeflow.payments.create({
+  amount: 50000, // Amount in paise
+  currency: 'INR',
+  receipt: 'order_rcptid_11',
+  notes: {
+    order_id: 'order_123'
+  }
+});
+
+// Process payout
+const payout = await rupeeflow.payouts.create({
+  account_number: '1234567890',
+  fund_account_id: 'fa_123',
+  amount: 10000,
+  currency: 'INR',
+  mode: 'IMPS',
+  purpose: 'refund'
+});`
+
+export default function DeveloperSolutionsPage() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -131,26 +158,26 @@ export default function KiranaSolutionsPage() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-block mb-4 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/30">
-                <span className="text-emerald-400 text-sm font-semibold">Kirana Store Solutions</span>
+                <span className="text-emerald-400 text-sm font-semibold">Developer Platform</span>
               </div>
               <h1 className="text-3xl md:text-5xl font-bold mb-6">
-                Digital Solutions for Your Neighborhood Store
+                Build Financial Products with Our APIs
               </h1>
               <p className="text-xl text-gray-300 mb-8">
-                Accept payments, manage inventory, offer bill payments, and grow your kirana business with modern technology.
+                Powerful, developer-friendly APIs to integrate payments, payouts, and banking services into your platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/contact"
+                  href="/docs"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:scale-105"
                 >
-                  Get Started
+                  View Documentation
                 </Link>
                 <Link
                   href="#solutions"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white/30 text-white font-semibold hover:bg-white/10 transition-all duration-300"
                 >
-                  Explore Solutions
+                  Explore APIs
                 </Link>
               </div>
             </motion.div>
@@ -162,14 +189,42 @@ export default function KiranaSolutionsPage() {
               className="relative"
             >
               <Image
-                src="/business/kirana.svg"
-                alt="Kirana Store Solutions"
+                src="/business/developer.svg"
+                alt="Developer Solutions"
                 width={500}
                 height={500}
                 className="w-full max-w-md mx-auto"
               />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Code Example Section */}
+      <section className="py-16 md:py-24 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Simple, Powerful APIs
+            </h2>
+            <p className="text-lg text-gray-400">
+              Get started with just a few lines of code
+            </p>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="bg-gray-800 rounded-2xl p-6 md:p-8 border border-gray-700 overflow-x-auto">
+              <pre className="text-sm md:text-base text-emerald-400 font-mono">
+                <code>{codeExample}</code>
+              </pre>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -183,10 +238,10 @@ export default function KiranaSolutionsPage() {
             className="text-center mb-12 md:mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Solutions for Kirana Stores
+              Our API Solutions
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Everything you need to run a modern retail store and serve your customers better
+              Complete suite of financial APIs for developers and platforms
             </p>
           </motion.div>
 
@@ -220,7 +275,7 @@ export default function KiranaSolutionsPage() {
                   href={solution.link}
                   className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:gap-3 transition-all duration-300"
                 >
-                  Learn More
+                  View Documentation
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -236,10 +291,10 @@ export default function KiranaSolutionsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Kirana Stores Love RupeeFlow
+              Why Developers Choose RupeeFlow
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Designed specifically for small retail businesses in India
+              Built by developers, for developers
             </p>
           </div>
 
@@ -270,23 +325,23 @@ export default function KiranaSolutionsPage() {
       <section className="py-16 md:py-24 bg-gradient-to-br from-emerald-600 to-emerald-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Digitize Your Kirana Store?
+            Ready to Start Building?
           </h2>
           <p className="text-xl text-emerald-50 mb-8">
-            Join thousands of kirana stores across India using RupeeFlow
+            Get API keys and start integrating in minutes
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href="/docs"
               className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white text-emerald-600 font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:scale-105"
             >
-              Get Started Now
+              View Documentation
             </Link>
             <Link
-              href="/contact"
+              href="/support"
               className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all duration-300"
             >
-              Request Demo
+              Contact Sales
             </Link>
           </div>
         </div>

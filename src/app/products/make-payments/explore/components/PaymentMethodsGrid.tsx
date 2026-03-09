@@ -23,7 +23,7 @@ export default function PaymentMethodsGrid() {
       title: 'Payment Gateway',
       description: 'Accept online payments with our secure payment gateway. Support for cards, UPI, wallets, and net banking.',
       href: '/payment-gateway',
-      features: ['Multiple payment modes', 'PCI DSS compliant', 'Instant settlements', 'Fraud detection'],
+      features: ['Multiple payment modes', 'ISO 27001 compliant', 'Instant settlements', 'Fraud detection'],
     },
     {
       icon: QrCode,
@@ -116,7 +116,7 @@ export default function PaymentMethodsGrid() {
                   </p>
 
                   {/* Features */}
-                  <ul className="space-y-2 mb-4">
+                  <ul className="space-y-2">
                     {method.features.slice(0, 3).map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-xs text-gray-500">
                         <svg className="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -126,14 +126,6 @@ export default function PaymentMethodsGrid() {
                       </li>
                     ))}
                   </ul>
-
-                  {/* Learn More Link */}
-                  <div className="flex items-center gap-2 text-sm font-semibold text-emerald-600 group-hover:gap-3 transition-all">
-                    Learn more
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
                 </div>
               </Link>
             </motion.div>

@@ -5,93 +5,95 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import QrSmallIcon from '../../../../public/icons/qr-collections/QrSmallIcon'
-import CheckMarkIcon from '../../../../public/icons/payment-button/CheckMarkIcon'
-import SettingsIcon from '../../../../public/icons/payment-link/SettingsIcon'
-import ProfileIcon from '../../../../public/icons/upi-collections/ProfileIcon'
-import SmartDashboardIcon from '../../../../public/icons/payment-gateway/SmartDashboardIcon'
-import LightingIcon from '../../../../public/icons/payment-button/LightingIcon'
-import SecurityFirstIcon from '../../../../public/icons/payment-gateway/SecurityFirstIcon'
+import CreditCardsIcon from '../../../../public/icons/payment-gateway/CreditCard'
+import CardsIcon from '../../../../public/icons/vendor-payments/CardsIcon'
+import ReconcileIcon from '../../../../public/icons/vendor-payments/ReconcileIcon'
+import SecurityIcon from '../../../../public/icons/vendor-payments/SecurityIcon'
 
 const solutions = [
   {
-    title: 'Kirana POS',
-    description: 'Modern point-of-sale system designed for small retail stores with inventory management.',
+    title: 'Payment Gateway',
+    description: 'Accept payments from customers across all channels with our secure, reliable payment gateway.',
     features: [
-      'Accept all payment methods (UPI, Cards, Cash)',
-      'Real-time inventory tracking',
-      'Customer billing and invoicing',
-      'Sales reports and analytics',
-      'Offline mode support',
+      'Accept UPI, Cards, Net Banking, and Wallets',
+      'Industry-leading 99.9% uptime',
+      'Instant settlement options',
+      'Advanced fraud detection',
+      'Easy integration with APIs',
     ],
-    Icon: QrSmallIcon,
-    link: '/qr-code',
+    Icon: CreditCardsIcon,
+    link: '/payment-gateway',
   },
   {
-    title: 'Merchant Cash Advance',
-    description: 'Get instant business loans based on your daily sales without collateral.',
+    title: 'Bulk Payouts',
+    description: 'Automate vendor payments, salaries, and refunds with our bulk payout solution.',
     features: [
-      '₹10,000 to ₹5,00,000 funding',
-      'Approval in 3 minutes',
-      'Flexible daily repayment',
+      'Pay thousands of beneficiaries instantly',
+      'Support for NEFT, RTGS, IMPS, and UPI',
+      'Automated reconciliation',
+      'Scheduled and recurring payouts',
+      'Real-time status tracking',
+    ],
+    Icon: CardsIcon,
+    link: '/bulk-payouts',
+  },
+  {
+    title: 'Invoice Financing',
+    description: 'Get instant working capital against your unpaid invoices to maintain healthy cash flow.',
+    features: [
+      'Up to 80% advance on invoices',
+      'Approval in 24 hours',
+      'Flexible repayment terms',
       'No collateral required',
-      'Based on UPI transaction history',
+      'Digital documentation',
     ],
-    Icon: CheckMarkIcon,
-    link: '/merchant-cash-advance',
+    Icon: ReconcileIcon,
+    link: '/invoicing-financing',
   },
   {
-    title: 'Bill Payments',
-    description: 'Offer bill payment services to customers and earn commission on every transaction.',
+    title: 'Business Current Account',
+    description: 'Open a zero-balance current account with free transactions and virtual accounts.',
     features: [
-      'Electricity, water, gas bills',
-      'Mobile and DTH recharge',
-      'Insurance premium payments',
-      'Earn commission on each bill',
-      'Instant payment confirmation',
+      'Open account in 10 minutes',
+      'Zero minimum balance',
+      'Free NEFT/RTGS transactions',
+      'Unlimited virtual accounts',
+      'API integration for automation',
     ],
-    Icon: SettingsIcon,
-    link: '/bill-payments',
-  },
-  {
-    title: 'Voice Payments',
-    description: 'Accept payments through voice commands in local languages for easier transactions.',
-    features: [
-      'Support for 10+ Indian languages',
-      'Voice-activated UPI payments',
-      'No typing required',
-      'Perfect for elderly customers',
-      'Hands-free operation',
-    ],
-    Icon: ProfileIcon,
-    link: '/voice-payments',
+    Icon: SecurityIcon,
+    link: '/business-current-account',
   },
 ]
+
+import SmartDashboardIcon from '../../../../public/icons/payment-gateway/SmartDashboardIcon'
+import LightingIcon from '../../../../public/icons/payment-button/LightingIcon'
+import SecurityFirstIcon from '../../../../public/icons/payment-gateway/SecurityFirstIcon'
+import CheckMarkIcon from '../../../../public/icons/payment-button/CheckMarkIcon'
 
 const benefits = [
   {
-    title: 'Easy to Use',
-    description: 'Simple interface designed for shopkeepers with minimal training required.',
-    Icon: CheckMarkIcon,
-  },
-  {
-    title: 'Low Cost',
-    description: 'Affordable pricing with no setup fees or monthly charges.',
+    title: 'All-in-One Platform',
+    description: 'Manage collections, payouts, credit, and banking from a single dashboard.',
     Icon: SmartDashboardIcon,
   },
   {
-    title: 'Local Language',
-    description: 'Available in Hindi, Tamil, Telugu, and other regional languages.',
-    Icon: ProfileIcon,
+    title: 'Cost Effective',
+    description: 'Competitive pricing with transparent fees and no hidden charges.',
+    Icon: CheckMarkIcon,
   },
   {
-    title: 'Instant Settlement',
-    description: 'Get your money in your account within minutes of transaction.',
+    title: 'Fast Integration',
+    description: 'Get started in minutes with our developer-friendly APIs and plugins.',
     Icon: LightingIcon,
+  },
+  {
+    title: '24/7 Support',
+    description: 'Dedicated relationship manager and round-the-clock customer support.',
+    Icon: SecurityFirstIcon,
   },
 ]
 
-export default function KiranaSolutionsPage() {
+export default function MSMESolutionsPage() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -131,13 +133,13 @@ export default function KiranaSolutionsPage() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-block mb-4 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/30">
-                <span className="text-emerald-400 text-sm font-semibold">Kirana Store Solutions</span>
+                <span className="text-emerald-400 text-sm font-semibold">MSME / SMB Solutions</span>
               </div>
               <h1 className="text-3xl md:text-5xl font-bold mb-6">
-                Digital Solutions for Your Neighborhood Store
+                Complete Financial Solutions for Growing Businesses
               </h1>
               <p className="text-xl text-gray-300 mb-8">
-                Accept payments, manage inventory, offer bill payments, and grow your kirana business with modern technology.
+                Everything your MSME needs - from accepting payments to managing cash flow, all in one platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -162,8 +164,8 @@ export default function KiranaSolutionsPage() {
               className="relative"
             >
               <Image
-                src="/business/kirana.svg"
-                alt="Kirana Store Solutions"
+                src="/business/msme.svg"
+                alt="MSME Solutions"
                 width={500}
                 height={500}
                 className="w-full max-w-md mx-auto"
@@ -183,10 +185,10 @@ export default function KiranaSolutionsPage() {
             className="text-center mb-12 md:mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Solutions for Kirana Stores
+              Our Solutions for MSMEs
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Everything you need to run a modern retail store and serve your customers better
+              Comprehensive financial tools designed specifically for small and medium businesses
             </p>
           </motion.div>
 
@@ -236,10 +238,10 @@ export default function KiranaSolutionsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Kirana Stores Love RupeeFlow
+              Why MSMEs Choose RupeeFlow
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Designed specifically for small retail businesses in India
+              Built specifically for the needs of growing businesses in India
             </p>
           </div>
 
@@ -270,10 +272,10 @@ export default function KiranaSolutionsPage() {
       <section className="py-16 md:py-24 bg-gradient-to-br from-emerald-600 to-emerald-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Digitize Your Kirana Store?
+            Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-emerald-50 mb-8">
-            Join thousands of kirana stores across India using RupeeFlow
+            Join thousands of MSMEs that trust RupeeFlow for their financial needs
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -283,10 +285,10 @@ export default function KiranaSolutionsPage() {
               Get Started Now
             </Link>
             <Link
-              href="/contact"
+              href="/support"
               className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all duration-300"
             >
-              Request Demo
+              Talk to an Expert
             </Link>
           </div>
         </div>

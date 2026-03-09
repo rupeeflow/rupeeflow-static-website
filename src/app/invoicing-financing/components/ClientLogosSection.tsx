@@ -6,7 +6,7 @@ import Container from '@/components/ui/Container'
 
 const stats = [
   { number: '500+', label: 'B2B Companies Funded' },
-  { number: '₹1000Cr+', label: 'Invoices Financed' },
+  { number: '₹100Cr+', label: 'Invoices Financed' },
   { number: '24hrs', label: 'Average Approval' },
   { number: '99%', label: 'Collection Rate' },
 ]

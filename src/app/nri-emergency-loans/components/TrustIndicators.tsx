@@ -80,7 +80,7 @@ export default function TrustIndicators() {
         >
           {[
             { number: '25K+', label: 'NRIs Served' },
-            { number: '₹500Cr+', label: 'Disbursed' },
+            { number: '₹30Cr+', label: 'Disbursed' },
             { number: '99.5%', label: 'Success Rate' },
           ].map((stat, index) => (
             <div key={index} className="text-center">

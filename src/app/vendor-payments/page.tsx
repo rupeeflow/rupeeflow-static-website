@@ -386,7 +386,7 @@ export default function VendorPaymentPage() {
                 {[
                   { Icon: CheckIcon, title: 'One-Click Bulk Payments', desc: 'Pay hundreds of vendors simultaneously with a single upload.' },
                   { Icon: LightingFastIcon, title: 'Lightning-Fast Transfers', desc: 'Process payments via IMPS, NEFT, RTGS, or UPI in seconds.' },
-                  { Icon: SafeGuardIcon, title: 'Enterprise-Grade Security', desc: 'PCI DSS compliant with multi-layer encryption and fraud protection.' },
+                  { Icon: SafeGuardIcon, title: 'Enterprise-Grade Security', desc: 'ISO 27001 compliant with multi-layer encryption and fraud protection.' },
                 ].map(({ Icon, title, desc }, i) => (
                   <motion.div
                     key={title}
@@ -570,7 +570,7 @@ export default function VendorPaymentPage() {
               { Icon: CardsIcon, title: 'Card Payments', desc: 'Pay vendors via credit or debit cards with secure tokenized transactions.' },
               { Icon: LightingFastIcon, title: 'Lightning-Fast Payouts', desc: 'Process vendor payments in under 2 seconds via IMPS for instant settlements.' },
               { Icon: ReconcileIcon, title: 'Smart Reconciliation', desc: 'Auto-match payments with invoices and generate settlement reports instantly.' },
-              { Icon: SecurityIcon, title: 'Advanced Security', desc: '256-bit encryption, PCI DSS compliance, and multi-layer fraud protection.' },
+              { Icon: SecurityIcon, title: 'Advanced Security', desc: '256-bit encryption, ISO 27001 compliance, and multi-layer fraud protection.' },
               { Icon: ReportsIcon, title: 'Detailed Reports', desc: 'Generate comprehensive payout reports with transaction-level detail and analytics.' },
               { Icon: ColoredSettingIcon, title: 'Customizable Workflows', desc: 'Configure approval hierarchies, payment schedules, and notification rules.' },
               { Icon: WebIcon, title: 'Global Payouts', desc: 'Pay international vendors with multi-currency support and competitive FX rates.' },

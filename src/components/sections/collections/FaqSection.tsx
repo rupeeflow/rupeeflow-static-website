@@ -19,7 +19,7 @@ const faqs = [
   {
     question: 'How secure are payments processed through RupeeFlow?',
     answer:
-      'RupeeFlow is PCI DSS Level 1 certified, RBI compliant, and uses 256-bit SSL encryption. We implement 3D Secure authentication, tokenization, and real-time fraud detection powered by machine learning. All transactions are monitored 24/7, and we offer 100% money-back guarantee for unauthorized transactions.',
+      'RupeeFlow is ISO 27001 certified, RBI compliant, and uses 256-bit SSL encryption. We implement 3D Secure authentication, tokenization, and real-time fraud detection powered by machine learning. All transactions are monitored 24/7, and we offer 100% money-back guarantee for unauthorized transactions.',
   },
   {
     question: 'Can RupeeFlow handle international payments and multiple currencies?',

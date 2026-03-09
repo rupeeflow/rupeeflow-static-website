@@ -21,16 +21,6 @@ export default function ExploreMorePaymentsPage() {
         heading="Explore All"
         headingAccent="Payment Methods"
         description="Discover our comprehensive suite of payment solutions. From simple payment links to complex bulk payouts, we have everything you need to manage payments efficiently."
-        primaryCTA={{
-          text: 'Get Started',
-          href: '/contact',
-          variant: 'primary' as const,
-        }}
-        secondaryCTA={{
-          text: 'View Documentation',
-          href: '/docs',
-          variant: 'secondary' as const,
-        }}
         stats={[
           { value: '8+', label: 'Payment methods' },
           { value: '50+', label: 'Integrations' },

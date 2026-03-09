@@ -597,7 +597,7 @@ export default function CaseStudyPage() {
                     'No integration backlog required',
                     'Live in as fast as 2 weeks',
                     'Dedicated onboarding team',
-                    'RBI-compliant & PCI DSS',
+                    'RBI-compliant & ISO 27001',
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5 text-gray-300 text-sm">
                       <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />

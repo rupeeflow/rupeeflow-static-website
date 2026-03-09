@@ -552,7 +552,7 @@ export default function TaxPaymentsPage() {
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
                   Every GST payment through Rupeeflow is protected with bank-grade encryption and
                   processed through RBI-authorized payment channels. Your financial data stays secure
-                  with PCI DSS compliance and multi-factor authentication.
+                  with ISO 27001 compliance and multi-factor authentication.
                 </p>
                 {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
@@ -585,7 +585,7 @@ export default function TaxPaymentsPage() {
 
                   <div className="grid grid-cols-2 gap-3 mb-4">
                     {[
-                      { badge: 'PCI DSS', level: 'Level 1 Certified', color: 'bg-blue-50 border-blue-200', badge_color: 'text-blue-700' },
+                      { badge: 'ISO 27001', level: 'Certified', color: 'bg-blue-50 border-blue-200', badge_color: 'text-blue-700' },
                       { badge: 'RBI Authorized', level: 'Payment Gateway', color: 'bg-emerald-50 border-emerald-200', badge_color: 'text-emerald-700' },
                       { badge: '256-bit SSL', level: 'End-to-End Encrypted', color: 'bg-purple-50 border-purple-200', badge_color: 'text-purple-700' },
                       { badge: 'ISO 27001', level: 'Info Security Mgmt', color: 'bg-orange-50 border-orange-200', badge_color: 'text-orange-700' },
@@ -668,7 +668,7 @@ export default function TaxPaymentsPage() {
               </svg>
               <h3 className="fontheading text-lg text-gray-900 mb-3">Bank-Grade Security</h3>
               <p className="text-sm text-gray-500 fontbody2 leading-relaxed">
-                256-bit encryption with PCI DSS compliance for every tax transaction.
+                256-bit encryption with ISO 27001 compliance for every tax transaction.
               </p>
             </div>
           </div>

@@ -137,7 +137,7 @@ export default function Footer() {
             Start for Free
           </Link>
           <Link
-            href="#"
+            href="/support"
             className="px-6 py-2.5 rounded-full border border-emerald-500/70 text-white font-semibold text-sm hover:bg-emerald-500/10 transition-colors"
           >
             Talk to Expert →

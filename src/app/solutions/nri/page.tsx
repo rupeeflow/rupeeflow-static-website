@@ -5,93 +5,94 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import QrSmallIcon from '../../../../public/icons/qr-collections/QrSmallIcon'
+import WebIcon from '../../../../public/icons/vendor-payments/WebIcon'
 import CheckMarkIcon from '../../../../public/icons/payment-button/CheckMarkIcon'
 import SettingsIcon from '../../../../public/icons/payment-link/SettingsIcon'
-import ProfileIcon from '../../../../public/icons/upi-collections/ProfileIcon'
-import SmartDashboardIcon from '../../../../public/icons/payment-gateway/SmartDashboardIcon'
+import CardsIcon from '../../../../public/icons/vendor-payments/CardsIcon'
 import LightingIcon from '../../../../public/icons/payment-button/LightingIcon'
 import SecurityFirstIcon from '../../../../public/icons/payment-gateway/SecurityFirstIcon'
+import SmartDashboardIcon from '../../../../public/icons/payment-gateway/SmartDashboardIcon'
+import ProfileIcon from '../../../../public/icons/upi-collections/ProfileIcon'
 
 const solutions = [
   {
-    title: 'Kirana POS',
-    description: 'Modern point-of-sale system designed for small retail stores with inventory management.',
+    title: 'Cross-Border Remittance',
+    description: 'Send money to India instantly with competitive exchange rates and low fees.',
     features: [
-      'Accept all payment methods (UPI, Cards, Cash)',
-      'Real-time inventory tracking',
-      'Customer billing and invoicing',
-      'Sales reports and analytics',
-      'Offline mode support',
+      'Instant transfers to any Indian bank',
+      'Competitive forex rates',
+      'Support for 50+ currencies',
+      'Track transfers in real-time',
+      'Secure and RBI compliant',
     ],
-    Icon: QrSmallIcon,
-    link: '/qr-code',
+    Icon: WebIcon,
+    link: '/cross-border-payments',
   },
   {
-    title: 'Merchant Cash Advance',
-    description: 'Get instant business loans based on your daily sales without collateral.',
+    title: 'NRI Emergency Loans',
+    description: 'Quick access to funds for family emergencies in India without lengthy paperwork.',
     features: [
-      '₹10,000 to ₹5,00,000 funding',
-      'Approval in 3 minutes',
-      'Flexible daily repayment',
-      'No collateral required',
-      'Based on UPI transaction history',
+      'Loans up to ₹30 lakhs',
+      'Approval within 24 hours',
+      'Minimal documentation',
+      'Flexible repayment options',
+      'Competitive interest rates',
     ],
     Icon: CheckMarkIcon,
-    link: '/merchant-cash-advance',
+    link: '/nri-emergency-loans',
   },
   {
-    title: 'Bill Payments',
-    description: 'Offer bill payment services to customers and earn commission on every transaction.',
+    title: 'Direct Bill Payments to India',
+    description: 'Pay utility bills, insurance premiums, and other bills in India from anywhere.',
     features: [
-      'Electricity, water, gas bills',
-      'Mobile and DTH recharge',
-      'Insurance premium payments',
-      'Earn commission on each bill',
+      'Pay electricity, water, gas bills',
+      'Insurance and loan EMI payments',
+      'Property tax and maintenance',
+      'School fees and donations',
       'Instant payment confirmation',
     ],
     Icon: SettingsIcon,
     link: '/bill-payments',
   },
   {
-    title: 'Voice Payments',
-    description: 'Accept payments through voice commands in local languages for easier transactions.',
+    title: 'Multi-Currency Support',
+    description: 'Hold and transact in multiple currencies with a single account.',
     features: [
-      'Support for 10+ Indian languages',
-      'Voice-activated UPI payments',
-      'No typing required',
-      'Perfect for elderly customers',
-      'Hands-free operation',
+      'Support for USD, EUR, GBP, AED, SGD',
+      'Real-time currency conversion',
+      'Lock exchange rates in advance',
+      'Virtual cards in multiple currencies',
+      'Transparent fee structure',
     ],
-    Icon: ProfileIcon,
-    link: '/voice-payments',
+    Icon: CardsIcon,
+    link: '/cross-border-payments',
   },
 ]
 
 const benefits = [
   {
-    title: 'Easy to Use',
-    description: 'Simple interface designed for shopkeepers with minimal training required.',
+    title: 'Fast Transfers',
+    description: 'Money reaches India in minutes, not days. Perfect for urgent needs.',
+    Icon: LightingIcon,
+  },
+  {
+    title: 'Best Rates',
+    description: 'Competitive exchange rates with transparent fees and no hidden charges.',
     Icon: CheckMarkIcon,
   },
   {
-    title: 'Low Cost',
-    description: 'Affordable pricing with no setup fees or monthly charges.',
-    Icon: SmartDashboardIcon,
+    title: 'Secure & Compliant',
+    description: 'RBI approved and fully compliant with international regulations.',
+    Icon: SecurityFirstIcon,
   },
   {
-    title: 'Local Language',
-    description: 'Available in Hindi, Tamil, Telugu, and other regional languages.',
+    title: '24/7 Support',
+    description: 'Round-the-clock customer support in multiple languages.',
     Icon: ProfileIcon,
-  },
-  {
-    title: 'Instant Settlement',
-    description: 'Get your money in your account within minutes of transaction.',
-    Icon: LightingIcon,
   },
 ]
 
-export default function KiranaSolutionsPage() {
+export default function NRISolutionsPage() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -131,13 +132,13 @@ export default function KiranaSolutionsPage() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-block mb-4 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/30">
-                <span className="text-emerald-400 text-sm font-semibold">Kirana Store Solutions</span>
+                <span className="text-emerald-400 text-sm font-semibold">NRI Solutions</span>
               </div>
               <h1 className="text-3xl md:text-5xl font-bold mb-6">
-                Digital Solutions for Your Neighborhood Store
+                Stay Connected to India, Financially
               </h1>
               <p className="text-xl text-gray-300 mb-8">
-                Accept payments, manage inventory, offer bill payments, and grow your kirana business with modern technology.
+                Send money, pay bills, and manage finances in India seamlessly from anywhere in the world.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -162,8 +163,8 @@ export default function KiranaSolutionsPage() {
               className="relative"
             >
               <Image
-                src="/business/kirana.svg"
-                alt="Kirana Store Solutions"
+                src="/business/nri.svg"
+                alt="NRI Solutions"
                 width={500}
                 height={500}
                 className="w-full max-w-md mx-auto"
@@ -183,10 +184,10 @@ export default function KiranaSolutionsPage() {
             className="text-center mb-12 md:mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Solutions for Kirana Stores
+              Solutions for NRIs & Overseas Indians
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Everything you need to run a modern retail store and serve your customers better
+              Comprehensive financial services to manage your India connections effortlessly
             </p>
           </motion.div>
 
@@ -236,10 +237,10 @@ export default function KiranaSolutionsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Kirana Stores Love RupeeFlow
+              Why NRIs Trust RupeeFlow
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Designed specifically for small retail businesses in India
+              Trusted by thousands of Indians living abroad
             </p>
           </div>
 
@@ -270,10 +271,10 @@ export default function KiranaSolutionsPage() {
       <section className="py-16 md:py-24 bg-gradient-to-br from-emerald-600 to-emerald-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Digitize Your Kirana Store?
+            Ready to Simplify Your India Transactions?
           </h2>
           <p className="text-xl text-emerald-50 mb-8">
-            Join thousands of kirana stores across India using RupeeFlow
+            Join thousands of NRIs managing their India finances with RupeeFlow
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -283,10 +284,10 @@ export default function KiranaSolutionsPage() {
               Get Started Now
             </Link>
             <Link
-              href="/contact"
+              href="/support"
               className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all duration-300"
             >
-              Request Demo
+              Talk to an Expert
             </Link>
           </div>
         </div>

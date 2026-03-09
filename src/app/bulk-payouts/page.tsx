@@ -195,7 +195,7 @@ function IntegrationsMockup() {
 function SecurityMockup() {
   const checks = [
     '256-bit AES Encryption',
-    'PCI DSS Compliant',
+    'ISO 27001 Compliant',
     'Multi-factor Auth',
     'Real-time Fraud Detection',
     '99.9% Uptime SLA',
@@ -576,7 +576,7 @@ export default function BulkPayoutsPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </Link> */}
-                  
+
                 </div>
                 <div className="lg:w-[45%] flex justify-center">
                   {f.mockup}

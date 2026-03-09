@@ -132,7 +132,7 @@ export default function ComparisonSection() {
         >
           <p className="text-gray-600">
             Not sure which one to choose?{' '}
-            <a href="/contact" className="text-emerald-600 font-semibold hover:text-emerald-700">
+            <a href="/support" className="text-emerald-600 font-semibold hover:text-emerald-700">
               Talk to our experts →
             </a>
           </p>

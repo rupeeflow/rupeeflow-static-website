@@ -99,7 +99,7 @@ export default function BankingPartnershipsPage() {
 
               {/* Compliance badges */}
               <div className="flex flex-wrap gap-2 mt-1">
-                {["PCI DSS", "ISO 27001", "RBI Licensed", "NPCI Certified"].map((b) => (
+                {["ISO 27001"].map((b) => (
                   <span
                     key={b}
                     className="flex items-center gap-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-full px-3 py-1"

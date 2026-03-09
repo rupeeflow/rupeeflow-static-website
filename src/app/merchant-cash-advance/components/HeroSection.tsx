@@ -72,7 +72,7 @@ export default function HeroSection() {
               </span>
             </motion.div>
 
-            <h1 className="fontheading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-6">
+            <h1 className="fontheading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
               Get Instant Cash for Your{' '}
               <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
                 Business Growth
@@ -97,12 +97,12 @@ export default function HeroSection() {
                 <span className="w-2.5 h-2.5 rounded-full bg-white/90 animate-pulse" />
                 Apply Now
               </Link>
-              <Link
+              {/* <Link
                 href="#how-it-works"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-emerald-500/50 text-white font-semibold text-base hover:bg-emerald-500/10 transition-all duration-300"
               >
                 How It Works
-              </Link>
+              </Link> */}
             </motion.div>
 
             {/* Trust Indicators */}
@@ -113,10 +113,10 @@ export default function HeroSection() {
               className="mt-10 flex flex-wrap items-center gap-6 justify-center lg:justify-start text-sm text-gray-400"
             >
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                {/* <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>RBI Compliant</span>
+                </svg> */}
+                {/* <span>RBI Compliant</span> */}
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">

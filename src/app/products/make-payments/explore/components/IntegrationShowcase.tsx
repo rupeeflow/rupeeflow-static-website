@@ -24,7 +24,7 @@ export default function IntegrationShowcase() {
     {
       icon: Shield,
       title: 'Secure & Compliant',
-      description: 'PCI DSS Level 1 certified with 256-bit encryption and fraud detection',
+      description: 'ISO 27001 certified with 256-bit encryption and fraud detection',
     },
     {
       icon: Smartphone,

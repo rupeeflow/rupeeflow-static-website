@@ -179,7 +179,7 @@ export default function PrivacyContent() {
             <li>Access controls and role-based permissions</li>
             <li>Employee training on data protection and confidentiality</li>
             <li>Non-disclosure agreements with vendors and partners</li>
-            <li>Annual third-party security certifications — ISO 27001, PCI-DSS</li>
+            <li>Annual third-party security certifications — ISO 27001</li>
             <li>Secure data centers with biometric access controls and 24/7 monitoring</li>
             <li>Disaster recovery and business continuity plans</li>
           </ul>

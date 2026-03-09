@@ -164,7 +164,7 @@ export default function PricingSection() {
 
             {/* trust pills */}
             <div className="flex flex-wrap items-center justify-center gap-2 mt-7">
-              {['No setup fee', 'No lock-in', 'Cancel anytime', 'RBI Licensed'].map((t) => (
+              {['No setup fee', 'No lock-in', 'Cancel anytime'].map((t) => (
                 <span
                   key={t}
                   className="ph-pill flex items-center gap-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-full px-3 py-1"

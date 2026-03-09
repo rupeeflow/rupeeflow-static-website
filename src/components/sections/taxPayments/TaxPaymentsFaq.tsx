@@ -29,7 +29,7 @@ const faqs = [
   {
     question: 'Is it safe to make tax payments through Rupeeflow?',
     answer:
-      'Absolutely. Rupeeflow is PCI DSS Level 1 compliant with 256-bit SSL encryption. All payments are processed through RBI-authorized channels with multi-factor authentication for maximum security.',
+      'Absolutely. Rupeeflow is ISO 27001 compliant with 256-bit SSL encryption. All payments are processed through RBI-authorized channels with multi-factor authentication for maximum security.',
   },
 ]
 

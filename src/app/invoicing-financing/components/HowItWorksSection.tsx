@@ -33,7 +33,7 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="relative bg-white py-20 md:py-28 overflow-hidden">
+    <section id="how-it-works" className="relative bg-white py-20 md:py-28 overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}

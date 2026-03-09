@@ -7,13 +7,13 @@ import Image from 'next/image'
 
 const stats = [
   {
-    number: 10000,
+    number: 100,
     suffix: '+',
     label: 'Businesses Funded',
     icon: '/business/msme.svg',
   },
   {
-    number: 250,
+    number: 30,
     prefix: '₹',
     suffix: 'Cr+',
     label: 'Total Disbursed',
@@ -120,7 +120,7 @@ export default function QuickStatsSection() {
           >
             Trusted by{' '}
             <span className="bg-gradient-to-r from-[#10b981] to-[#14b8a6] bg-clip-text text-transparent">
-              Thousands
+              Hundreds
             </span>
           </motion.h2>
           <p className="fontbody2 text-gray-600 text-lg max-w-3xl mx-auto">

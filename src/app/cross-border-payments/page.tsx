@@ -470,7 +470,7 @@ export default function CrossBorderPaymentsPage() {
                       { badge: 'RBI Authorized', sub: 'Payment Gateway', color: 'bg-emerald-50 border-emerald-200 text-emerald-700' },
                       { badge: 'FEMA Compliant', sub: 'Cross-Border Payments', color: 'bg-blue-50 border-blue-200 text-blue-700' },
                       { badge: 'AML / KYC', sub: 'Global Standards', color: 'bg-purple-50 border-purple-200 text-purple-700' },
-                      { badge: 'PCI DSS L1', sub: 'Security Certified', color: 'bg-orange-50 border-orange-200 text-orange-700' },
+                      { badge: 'ISO 27001', sub: 'Security Certified', color: 'bg-orange-50 border-orange-200 text-orange-700' },
                     ].map((c) => (
                       <div key={c.badge} className={`border rounded-xl p-3.5 ${c.color}`}>
                         <div className="flex items-center gap-1.5 mb-1">

@@ -16,9 +16,9 @@ export const paymentGatewayFAQs: FAQItem[] = [
       'We offer T+1 standard settlements with Instant Settlement available for eligible merchants — funds reach your bank account within minutes of transaction completion.',
   },
   {
-    question: 'Is RupeeFlow PCI-DSS compliant?',
+    question: 'Is RupeeFlow ISO 27001 compliant?',
     answer:
-      'Yes. RupeeFlow is PCI-DSS Level 1 certified, the highest level of payment security compliance. All card data is encrypted end-to-end and we are also ISO 27001 certified.',
+      'Yes. RupeeFlow is ISO 27001 certified, ensuring the highest level of information security management. All data is encrypted end-to-end and we maintain strict security protocols.',
   },
   {
     question: 'What is the integration process?',
@@ -101,7 +101,7 @@ export const paymentButtonFAQs: FAQItem[] = [
   {
     question: 'Are payments via the button secure?',
     answer:
-      'Absolutely. All transactions are encrypted end-to-end, processed over a PCI-DSS Level 1 certified infrastructure with built-in fraud detection.',
+      'Absolutely. All transactions are encrypted end-to-end, processed over an ISO 27001 certified infrastructure with built-in fraud detection.',
   },
   {
     question: 'Can I track conversions and payments?',

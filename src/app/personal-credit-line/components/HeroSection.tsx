@@ -13,31 +13,7 @@ export default function HeroSection() {
 
       {/* Floating Icons */}
       <div className="absolute inset-0 pointer-events-none z-10 hidden lg:block">
-        <div className="absolute left-[6%] top-[35%] opacity-0 animate-slide-in-left">
-          <div className="relative group">
-            <div className="absolute inset-0 bg-[#30f3bc] blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 scale-150" />
-            <Image
-              src="/home/wallet.svg"
-              alt="Wallet"
-              width={70}
-              height={70}
-              className="relative drop-shadow-[0_0_15px_rgba(48,243,188,0.5)] transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500"
-            />
-          </div>
-        </div>
-
-        <div className="absolute right-[6%] top-[40%] opacity-0 animate-slide-in-right">
-          <div className="relative group">
-            <div className="absolute inset-0 bg-[#029789] blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 scale-150" />
-            <Image
-              src="/features/mic.png"
-              alt="Voice"
-              width={80}
-              height={80}
-              className="relative drop-shadow-[0_0_20px_rgba(2,151,137,0.6)] transform group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500"
-            />
-          </div>
-        </div>
+        {/* Icons removed */}
       </div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-6 py-32 md:py-40">
@@ -118,9 +94,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative w-full"
           >
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-white/10 backdrop-blur-md p-8">
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-white/10 backdrop-blur-md">
               <Image
                 src="/personal-credit/personal credit hero.jpeg"
                 alt="Personal Credit Line"

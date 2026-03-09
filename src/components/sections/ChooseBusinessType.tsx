@@ -77,7 +77,7 @@ export default function ChooseBusinessType() {
       <div className="relative z-[10] max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8">
 
         {/* Heading */}
-        <div className="cbt-heading text-center mb-8 sm:mb-14">
+        <div className="cbt-heading text-center text-black mb-8 sm:mb-14">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
             Choose Your Business Type
           </h2>

@@ -14,7 +14,7 @@ export default function WhyChooseSection() {
     {
       icon: <ShieldCheck className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-neutral-300" />,
       title: 'Payments you can trust.',
-      desc: 'Bank-grade security with 256-bit encryption, PCI DSS Level 1 compliance, and multi-factor authentication. Every transaction is protected by advanced fraud detection systems and real-time monitoring.',
+      desc: 'Bank-grade security with 256-bit encryption, ISO 27001 compliance, and multi-factor authentication. Every transaction is protected by advanced fraud detection systems and real-time monitoring.',
     },
     {
       icon: <Clock className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-neutral-300" />,

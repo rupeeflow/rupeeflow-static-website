@@ -750,7 +750,7 @@ export default function PaymentLinksPage() {
                 <div className="md:w-[55%] p-5 sm:p-7 md:p-10 flex flex-col justify-center">
                   <h3 className="fontheading text-2xl md:text-3xl text-gray-900">Secure Transactions</h3>
                   <p className="mt-4 text-gray-500 fontbody2 text-sm md:text-base leading-relaxed">
-                    Built on PCI DSS compliance and advanced encryption, Rupeeflow Payment Links
+                    Built on ISO 27001 compliance and advanced encryption, Rupeeflow Payment Links
                     ensure every transaction is safe and secure. Protect sensitive customer data while
                     delivering a trustworthy payment experience.
                   </p>
@@ -775,7 +775,7 @@ export default function PaymentLinksPage() {
               <span className="w-2 h-2 rounded-full bg-white/80" />
               Get Started
             </Link> */}
-            
+
           </motion.div>
         </div>
       </section>

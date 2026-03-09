@@ -45,25 +45,24 @@ export default function PartnershipBanner() {
               alt="Partnership"
               fill
               priority
-              className="object-cover object-center"
+              className="object-cover object-[70%_center] brightness-25"
             />
 
-            {/* Strong gradient overlay — bottom-heavy for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/20" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
+            {/* Minimal gradient overlay - only at bottom for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
           </div>
 
           {/* Content pinned to bottom */}
           <div className="absolute inset-0 flex flex-col justify-end p-6 pb-8">
 
             {/* Badge */}
-            <div className="pb-content inline-flex items-center gap-2 text-emerald-400 text-xs font-semibold uppercase tracking-widest border border-emerald-400/30 rounded-full px-4 py-1.5 mb-5 self-start">
+            <div className="pb-content inline-flex items-center gap-2 text-emerald-400 text-xs font-semibold uppercase tracking-widest border border-emerald-400/30 rounded-full px-4 py-1.5 mb-5 self-start bg-black/40 backdrop-blur-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               Partnerships
             </div>
 
             {/* Heading */}
-            <h2 className="pb-content text-3xl sm:text-4xl font-black text-white leading-tight mb-3">
+            <h2 className="pb-content text-3xl sm:text-4xl font-black text-white leading-tight mb-3 drop-shadow-lg">
               Want to do a{' '}
               <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                 Partnership?
@@ -71,7 +70,7 @@ export default function PartnershipBanner() {
             </h2>
 
             {/* Subtext */}
-            <p className="pb-content text-gray-300 text-sm leading-relaxed mb-5 max-w-xs">
+            <p className="pb-content text-gray-200 text-sm leading-relaxed mb-5 max-w-xs drop-shadow-md">
               Co-build, co-market, and grow together with RupeeFlow&apos;s financial infrastructure. Unlock new revenue streams with embedded finance.
             </p>
 
@@ -82,7 +81,7 @@ export default function PartnershipBanner() {
                 'Ready-to-deploy APIs with full sandbox',
                 'RBI-licensed & enterprise-grade security',
               ].map(item => (
-                <li key={item} className="flex items-start gap-2 text-gray-300 text-xs">
+                <li key={item} className="flex items-start gap-2 text-gray-200 text-xs drop-shadow-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
                   {item}
                 </li>
@@ -92,9 +91,9 @@ export default function PartnershipBanner() {
             {/* Stats */}
             <div className="pb-content grid grid-cols-3 gap-2 mb-6">
               {stats.map(s => (
-                <div key={s.label} className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-3 text-center">
+                <div key={s.label} className="bg-black/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 text-center">
                   <p className="text-white font-black text-lg">{s.val}</p>
-                  <p className="text-gray-400 text-xs mt-0.5">{s.label}</p>
+                  <p className="text-gray-300 text-xs mt-0.5">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -121,21 +120,21 @@ export default function PartnershipBanner() {
       <section className="hidden lg:block relative w-full py-6 px-6">
         <div className="relative max-w-[1400px] mx-auto h-[600px] xl:h-[680px] rounded-2xl overflow-hidden">
 
-          {/* Background Image */}
+          {/* Background Image - person visible on right */}
           <Image
             src="/home/partnership-banner.png"
             alt="Partnership"
             fill
             priority
-            className="object-cover"
+            className="object-cover object-center brightness-125"
           />
 
-          {/* Gradient overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
+          {/* Minimal gradient overlay - only on left 40% for text box */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent via-40% to-transparent" />
 
-          {/* Content — bottom left glass box */}
-          <div className="absolute inset-0 flex items-end pb-12 pl-12">
-            <div className="pb-content bg-black/50 backdrop-blur-xl rounded-3xl p-8 xl:p-10 max-w-lg border border-white/10">
+          {/* Content — left side, narrower to not cover the person */}
+          <div className="absolute inset-0 flex items-center pl-12">
+            <div className="pb-content bg-black/75 backdrop-blur-9xl rounded-3xl p-8 xl:p-10 max-w-md border border-white/30 shadow-2xl">
 
               {/* Badge */}
               <div className="inline-flex items-center gap-1.5 text-emerald-400 text-xs font-semibold uppercase tracking-widest mb-5">
@@ -144,12 +143,12 @@ export default function PartnershipBanner() {
               </div>
 
               {/* Heading */}
-              <h2 className="text-4xl xl:text-5xl font-black text-white leading-tight mb-3">
+              <h2 className="text-3xl xl:text-4xl font-black text-white leading-tight mb-3">
                 Want to do a Partnership?
               </h2>
 
               {/* Subtext */}
-              <p className="text-gray-300 text-base mb-5">
+              <p className="text-gray-200 text-sm mb-5">
                 Co-build, co-market, and grow together with RupeeFlow&apos;s financial infrastructure. Unlock new revenue streams with embedded finance.
               </p>
 
@@ -160,7 +159,7 @@ export default function PartnershipBanner() {
                   'Ready-to-deploy APIs with full sandbox',
                   'RBI-licensed & enterprise-grade security',
                 ].map(item => (
-                  <li key={item} className="flex items-start gap-2 text-gray-300 text-sm">
+                  <li key={item} className="flex items-start gap-2 text-gray-200 text-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
                     {item}
                   </li>
@@ -168,11 +167,11 @@ export default function PartnershipBanner() {
               </ul>
 
               {/* Stats row */}
-              <div className="flex gap-6 mb-7 border-t border-white/10 pt-5">
+              <div className="flex gap-6 mb-7 border-t border-white/20 pt-5">
                 {stats.map(s => (
                   <div key={s.label}>
                     <p className="text-white font-black text-xl">{s.val}</p>
-                    <p className="text-gray-400 text-xs mt-0.5">{s.label}</p>
+                    <p className="text-gray-300 text-xs mt-0.5">{s.label}</p>
                   </div>
                 ))}
               </div>

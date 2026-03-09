@@ -138,7 +138,7 @@ const faqs = [
   { q: 'Can I schedule recurring payments automatically?', a: 'Yes. RupeeFlow lets you set up recurring payment schedules for rent, utilities, salaries, and vendor retainers. Payments go out automatically on the configured date.' },
   { q: 'What payment modes are supported for outgoing payments?', a: 'We support NEFT, RTGS, IMPS, and UPI for all outgoing payments. You can choose the mode based on urgency, amount threshold, or your banking partner preferences.' },
   { q: 'Is reconciliation automated?', a: 'Yes. RupeeFlow automatically matches payments with corresponding invoices and purchase orders. This eliminates manual reconciliation effort and ensures your books are always accurate.' },
-  { q: 'How secure is RupeeFlow for business payments?', a: 'RupeeFlow is PCI DSS compliant with 256-bit AES encryption, real-time fraud detection, and multi-factor authentication. All payment operations are logged with a full audit trail.' },
+  { q: 'How secure is RupeeFlow for business payments?', a: 'RupeeFlow is ISO 27001 compliant with 256-bit AES encryption, real-time fraud detection, and multi-factor authentication. All payment operations are logged with a full audit trail.' },
   { q: 'Can I integrate RupeeFlow with my existing ERP or accounting software?', a: 'Yes. RupeeFlow provides REST APIs and native integrations with popular ERPs like SAP, Tally, Zoho Books, and QuickBooks.' },
 ];
 

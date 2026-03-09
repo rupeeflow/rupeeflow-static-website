@@ -24,7 +24,7 @@ const faqs = [
   {
     question: 'Is Rupeeflow secure for vendor payments?',
     answer:
-      'Absolutely. Rupeeflow is PCI DSS Level 1 compliant with 256-bit encryption, multi-factor authentication, IP whitelisting, and AI-powered fraud detection. Every transaction goes through our multi-layer security framework.',
+      'Absolutely. Rupeeflow is ISO 27001 compliant with 256-bit encryption, multi-factor authentication, IP whitelisting, and AI-powered fraud detection. Every transaction goes through our multi-layer security framework.',
   },
   {
     question: 'Can I integrate Rupeeflow with my ERP or accounting software?',

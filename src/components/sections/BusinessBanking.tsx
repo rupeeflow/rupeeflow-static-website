@@ -15,7 +15,7 @@ const bankingCards = [
     desc: 'Open Account in 10 min, Zero balance. Free NEFT/RTGS, virtual accounts',
     cta: 'Open Account →',
     icon: '/business/business-current-account.svg',
-    href: '/contact-sales?product=business-current-account',
+    href: '/business-current-account',
   },
   {
     title: 'API Banking',

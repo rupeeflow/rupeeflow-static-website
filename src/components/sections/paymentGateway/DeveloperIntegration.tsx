@@ -21,7 +21,7 @@ const features = [
   {
     Icon: SecurityFirstIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>,
     title: 'Security First',
-    points: ['PCI DSS compliant', '256-bit encryption', 'Fraud detection built-in'],
+    points: ['ISO 27001 compliant', '256-bit encryption', 'Fraud detection built-in'],
   },
   {
     Icon: SmartDashboardIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>,
