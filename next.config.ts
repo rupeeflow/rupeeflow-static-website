@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export',
+  output: 'export',      // ← uncomment this line
   trailingSlash: true,
   images: {
-    unoptimized: true,
+    unoptimized: true,   // required for static export
   },
   eslint: {
     ignoreDuringBuilds: true,
