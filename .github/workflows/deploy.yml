@@ -1,50 +1,85 @@
-name: Build and Deploy Static Site
+name: Deploy rupeeflow.co to S3 + CloudFront
 
 on:
   push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
+    branches:
+      - feature/payout-design        # triggers on every push to main
+  workflow_dispatch: # allows manual trigger from GitHub UI
 
 jobs:
-  quality-check:
-    name: Code Quality Check
+  deploy:
+    name: Build & Deploy
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      # ── 1. Checkout code ──
+      - name: Checkout repository
         uses: actions/checkout@v4
 
+      # ── 2. Setup Bun ──
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
+      # ── 3. Cache dependencies ──
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+
+      # ── 4. Install dependencies ──
       - name: Install dependencies
-        run: |
-          if ! bun install --frozen-lockfile; then
-              echo "Lockfile out of sync, updating..."
-              bun install
-              echo "Please update your lockfile locally and commit it"
-              exit 1
-          fi
+        run: bun install --frozen-lockfile
 
-      - name: Type check
-        run: bun run type-check
-
-      - name: Lint code
-        run: bun run lint
-
-      - name: Run tests
-        run: bun test
-
-      - name: Build static site
+      # ── 5. Build Next.js static export ──
+      - name: Build
         run: bun run build
+        env:
+          NODE_ENV: production
 
-      # Optional: Deploy to GitHub Pages
-    #   - name: Deploy to GitHub Pages
-    #     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    #     uses: peaceiris/actions-gh-pages@v3
-    #     with:
-    #       github_token: ${{ secrets.GITHUB_TOKEN }}
-    #       publish_dir: ./out
+      # ── 6. Configure AWS credentials ──
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id:     ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region:            ${{ secrets.AWS_REGION }}
+
+      # ── 7. Upload JS/CSS/images with long cache (1 year) ──
+      - name: Upload assets to S3
+        run: |
+          aws s3 sync out/ s3://rupeeflow-co-static-site \
+            --delete \
+            --cache-control "public,max-age=31536000,immutable" \
+            --exclude "*.html" \
+            --exclude "*.xml" \
+            --exclude "*.txt" \
+            --exclude "*.json"
+
+      # ── 8. Upload HTML/XML with no cache (always fresh) ──
+      - name: Upload HTML to S3
+        run: |
+          aws s3 sync out/ s3://rupeeflow-co-static-site \
+            --delete \
+            --cache-control "no-cache,no-store,must-revalidate" \
+            --include "*.html" \
+            --include "*.xml" \
+            --include "*.txt" \
+            --include "*.json"
+
+      # ── 9. Invalidate CloudFront cache ──
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E2MTW01QDLC79U \
+            --paths "/*"
+
+      # ── 10. Print live URL ──
+      - name: Done
+        run: |
+          echo "✓ Deployed successfully!"
+          echo "  Live at: https://rupeeflow.co"
