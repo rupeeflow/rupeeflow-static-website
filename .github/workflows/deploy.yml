@@ -3,7 +3,7 @@ name: Deploy rupeeflow.co to S3 + CloudFront
 on:
   push:
     branches:
-      - main
+      - feature/payout-design
   workflow_dispatch:
 
 jobs:
