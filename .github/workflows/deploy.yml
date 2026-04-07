@@ -6,6 +6,9 @@ on:
       - feature/payout-design
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     name: Build & Deploy
@@ -16,38 +19,30 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ── 2. Setup Node.js ──
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      # ── 3. Setup pnpm ──
+      # ── 2. Setup pnpm ──
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: latest
 
-      # ── 4. Cache pnpm store ──
-      - name: Cache pnpm store
-        uses: actions/cache@v4
+      # ── 3. Setup Node.js 24 ──
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-
+          node-version: '24'
+          cache: 'pnpm'
 
-      # ── 5. Install dependencies ──
+      # ── 4. Install dependencies ──
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # ── 6. Build Next.js static export ──
+      # ── 5. Build Next.js static export ──
       - name: Build
         run: pnpm run build
         env:
           NODE_ENV: production
 
-      # ── 7. Configure AWS credentials ──
+      # ── 6. Configure AWS credentials ──
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -55,7 +50,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region:            ${{ secrets.AWS_REGION }}
 
-      # ── 8. Upload JS/CSS/images with long cache (1 year) ──
+      # ── 7. Upload JS/CSS/images with long cache (1 year) ──
       - name: Upload assets to S3
         run: |
           aws s3 sync out/ s3://rupeeflow-co-static-site \
@@ -66,7 +61,7 @@ jobs:
             --exclude "*.txt" \
             --exclude "*.json"
 
-      # ── 9. Upload HTML/XML with no cache (always fresh) ──
+      # ── 8. Upload HTML/XML with no cache (always fresh) ──
       - name: Upload HTML to S3
         run: |
           aws s3 sync out/ s3://rupeeflow-co-static-site \
@@ -77,14 +72,14 @@ jobs:
             --include "*.txt" \
             --include "*.json"
 
-      # ── 10. Invalidate CloudFront cache ──
+      # ── 9. Invalidate CloudFront cache ──
       - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation \
             --distribution-id E2MTW01QDLC79U \
             --paths "/*"
 
-      # ── 11. Done ──
+      # ── 10. Done ──
       - name: Done
         run: |
           echo "✓ Deployed successfully!"
