@@ -13,7 +13,7 @@ export const paymentGatewayFAQs: FAQItem[] = [
   {
     question: 'How long does settlement take?',
     answer:
-      'We offer T+1 standard settlements with Instant Settlement available for eligible merchants — funds reach your bank account within minutes of transaction completion.',
+      'We offer T+1 standard settlements with Instant Settlement available for eligible merchants. Funds reach your bank account within minutes of transaction completion.',
   },
   {
     question: 'Is RupeeFlow ISO 27001 compliant?',
@@ -23,7 +23,7 @@ export const paymentGatewayFAQs: FAQItem[] = [
   {
     question: 'What is the integration process?',
     answer:
-      'Integration is simple — use our REST APIs, SDKs for iOS/Android, or no-code plugins for Shopify, WooCommerce, and more. Most developers go live in under a day.',
+      'Integration is simple. Use our REST APIs, SDKs for iOS/Android, or no-code plugins for Shopify, WooCommerce, and more. Most developers go live in under a day.',
   },
   {
     question: 'How does RupeeFlow handle failed transactions?',
@@ -57,12 +57,12 @@ export const paymentLinksFAQs: FAQItem[] = [
   {
     question: 'What payment methods can customers use?',
     answer:
-      'Customers can pay via UPI, credit/debit cards, net banking, and all major wallets — no app download required on their end.',
+      'Customers can pay via UPI, credit/debit cards, net banking, and all major wallets. No app download required on their end.',
   },
   {
     question: 'Can I create payment links in bulk?',
     answer:
-      'Yes. Use our bulk link creation feature or API to generate thousands of unique payment links at once — ideal for invoicing multiple clients.',
+      'Yes. Use our bulk link creation feature or API to generate thousands of unique payment links at once. Ideal for invoicing multiple clients.',
   },
   {
     question: 'How do I track payments made via links?',
@@ -96,7 +96,7 @@ export const paymentButtonFAQs: FAQItem[] = [
   {
     question: 'Which platforms support the Payment Button?',
     answer:
-      'Our Payment Button works on any website — WordPress, Webflow, Squarespace, custom HTML sites, and more.',
+      'Our Payment Button works on any website. WordPress, Webflow, Squarespace, custom HTML sites, and more.',
   },
   {
     question: 'Are payments via the button secure?',
@@ -125,7 +125,7 @@ export const upiCollectionsFAQs: FAQItem[] = [
   {
     question: 'Can I collect recurring UPI payments?',
     answer:
-      'Yes. UPI AutoPay allows customers to authorize recurring mandates for subscriptions, EMIs, or standing instructions — all managed from your RupeeFlow dashboard.',
+      'Yes. UPI AutoPay allows customers to authorize recurring mandates for subscriptions, EMIs, or standing instructions. All managed from your RupeeFlow dashboard.',
   },
   {
     question: 'What is the UPI transaction limit?',
@@ -164,7 +164,7 @@ export const qrCodeFAQs: FAQItem[] = [
   {
     question: 'Can QR codes be branded with my logo?',
     answer:
-      'Yes. RupeeFlow offers white-labeled QR codes with your business logo embedded at the center — ideal for professional invoices and point-of-sale displays.',
+      'Yes. RupeeFlow offers white-labeled QR codes with your business logo embedded at the center. Ideal for professional invoices and point-of-sale displays.',
   },
   {
     question: 'What happens if a QR code expires?',

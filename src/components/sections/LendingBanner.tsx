@@ -27,19 +27,14 @@ export default function LendingBanner() {
           </span>
 
           <h2 className="text-white text-2xl font-semibold leading-snug mb-3">
-            Get upto <span className="text-emerald-400">₹50L credit</span> instantly with our smart lending plans
+            Get up to <span className="text-emerald-400">₹50L Credit</span> Instantly with our smart lending plans
           </h2>
           <p className="text-gray-400 text-sm mb-6">
             Whether you are a NRI, SMB or a vendor — apply in minutes.
           </p>
 
-          <Link href="/contact" className="inline-block relative overflow-hidden px-8 py-3 rounded-full font-semibold text-black group">
-            <span className="absolute inset-0 bg-white -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-            <span className="absolute inset-0 bg-gradient-to-r from-[#0bbf7d] to-[#4ade80] group-hover:opacity-0 transition-opacity duration-300" />
-            <span className="relative z-10 flex items-center gap-2">
-              <span className="w-2.5 h-2.5 bg-white rounded-full" />
-              Apply Now
-            </span>
+          <Link href="https://wa.me/your-number?text=I+want+to+apply+for+a+business+loan" target="_blank" rel="noopener noreferrer" className="inline-block relative overflow-hidden px-8 py-3 rounded-full font-semibold text-white group animate-bounce-cta" style={{ background: '#25D366' }}>
+            Apply on WhatsApp →
           </Link>
         </div>
 
@@ -69,9 +64,10 @@ export default function LendingBanner() {
               </div>
               <div className="text-right">
                 <p className="text-[9px] text-gray-400">RATE</p>
-                <p className="text-xs font-bold text-emerald-600">4.5%</p>
+                <p className="text-xs font-bold text-emerald-600">From 4.5%*</p>
               </div>
             </div>
+            <p className="text-[8px] text-gray-400 mt-1">*Interest rate varies based on credit profile and loan type. Subject to credit assessment and approval.</p>
           </div>
 
           {/* Check Eligibility card */}
@@ -141,25 +137,20 @@ export default function LendingBanner() {
           {/* LEFT: Glass box */}
           <div className="bg-black/60 backdrop-blur-xl rounded-[32px] p-6 max-w-[480px] mt-96 shrink-0">
             <h2 className="text-white text-4xl md:text-5xl font-semibold leading-tight">
-              Get upto 50L credit instantly
+              Get up to ₹50L Credit Instantly
               with our{' '}
               <span className="text-emerald-400">smart lending</span> plans
             </h2>
             <p className="mt-6 text-gray-300 text-lg">
               Whether you are a NRI, SMB or a vendor
             </p>
-            <Link href="/contact" className="mt-10 inline-block relative overflow-hidden px-10 py-4 rounded-full font-semibold text-black group">
-              <span className="absolute inset-0 bg-white -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-              <span className="absolute inset-0 bg-gradient-to-r from-[#0bbf7d] to-[#4ade80] group-hover:opacity-0 transition-opacity duration-300" />
-              <span className="relative z-10 flex items-center gap-2 transition-all duration-300 group-hover:-translate-x-2">
-                <span className="w-3 h-3 bg-white rounded-full" />
-                Apply Now
-              </span>
+            <Link href="https://wa.me/your-number?text=I+want+to+apply+for+a+business+loan" target="_blank" rel="noopener noreferrer" className="mt-10 inline-block px-10 py-4 rounded-full font-semibold text-white animate-bounce-cta" style={{ background: '#25D366' }}>
+              Apply on WhatsApp →
             </Link>
           </div>
 
           {/* RIGHT: Floating loan cards */}
-          <div className="relative flex-1 flex flex-col items-center gap-5 pb-10">
+          <div className="relative flex-1 flex flex-col items-end gap-5 pb-10 pr-8">
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -192,9 +183,10 @@ export default function LendingBanner() {
                   </div>
                   <div className="text-right">
                     <p className="text-[10px] text-gray-400">INTEREST RATE</p>
-                    <p className="text-sm font-bold text-emerald-600">From 4.5%</p>
+                    <p className="text-sm font-bold text-emerald-600">From 4.5%*</p>
                   </div>
                 </div>
+                <p className="text-[9px] text-gray-400 mt-1">*Interest rate varies based on credit profile and loan type. Subject to credit assessment and approval.</p>
               </div>
             </motion.div>
 
@@ -244,6 +236,33 @@ export default function LendingBanner() {
               </div>
             </motion.div>
           </div>
+        </div>
+
+        {/* Social Proof Cards */}
+        <div className="relative z-10 max-w-[1200px] mx-auto px-10 pb-12 grid grid-cols-3 gap-4">
+          {[
+            { initials: 'PK', name: 'Priya K.', city: 'Hyderabad', amount: '₹15,000', type: 'approved in 47 minutes' },
+            { initials: 'RS', name: 'Rajan S.', city: 'Surat', amount: '₹2,00,000', type: 'invoice financing approved' },
+            { initials: 'AM', name: 'Ahmed M.', city: 'Chennai', amount: '₹5,000', type: 'Merchant Cash Advance' },
+          ].map((card, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.15 }}
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 flex items-start gap-3"
+            >
+              <div className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
+                {card.initials}
+              </div>
+              <div>
+                <p className="text-white font-semibold text-sm">{card.name}, {card.city}</p>
+                <p className="text-emerald-300 text-xs mt-0.5">{card.amount} {card.type}</p>
+              </div>
+              <div className="ml-auto text-emerald-400">✓</div>
+            </motion.div>
+          ))}
         </div>
       </section>
     </>

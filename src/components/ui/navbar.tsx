@@ -64,11 +64,12 @@ const payableReceivableNav: navlist[] = [
 
 const mobileSections = [
   { key: 'collect-payments', label: 'Collect Payments', items: paymentsNav },
+  { key: 'whatsapp-banking', label: 'WhatsApp Banking', items: [] },
   { key: 'make-payments', label: 'Make Payments', items: makePaymentsNav },
   { key: 'payable-receivable', label: 'Payable & Receivable+', items: payableReceivableNav },
   { key: 'credit', label: 'Get Credit', items: creditnav },
   { key: 'partner', label: 'Partnerships', items: partnershipsnav },
-  { key: 'resources', label: 'Resources', items: resourcesnav },
+  { key: 'developers', label: 'Developers', items: resourcesnav },
 ]
 
 export default function Navbar() {
@@ -138,10 +139,20 @@ export default function Navbar() {
               </button>
             </div>
 
+            <Link
+              href="/whatsapp-banking"
+              className="group flex items-center h-14 px-4 text-gray-700 hover:text-emerald-600 transition-all duration-300 rounded-lg hover:bg-emerald-50/50"
+            >
+              <span className="relative">
+                WhatsApp Banking
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300" />
+              </span>
+            </Link>
+
             {([
               ['credit', 'Get Credit', creditnav],
               ['partner', 'Partnerships', partnershipsnav],
-              ['resources', 'Resources', resourcesnav],
+              ['developers', 'Developers', resourcesnav],
             ] as [string, string, navlist[]][]).map(([key, label]) => (
               <div key={key} className="relative" onMouseEnter={() => handleMouseEnter(key)} onMouseLeave={handleMouseLeave}>
                 <button className="group flex items-center h-14 gap-1 px-4 text-gray-700 hover:text-emerald-600 transition-all duration-300 rounded-lg hover:bg-emerald-50/50">
@@ -158,11 +169,13 @@ export default function Navbar() {
           {/* ── Desktop CTA (lg+) ── */}
           <div className="hidden lg:flex gap-3 relative z-10">
             <Link
-              href="/contact"
-              className="group relative bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-emerald-600/30 transition-all duration-300 hover:scale-105 overflow-hidden"
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-[#25D366] text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-[#25D366]/30 transition-all duration-300 hover:scale-105 overflow-hidden animate-pulse"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-teal-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-              <span className="relative">CONTACT US</span>
+              <span className="absolute inset-0 bg-[#128C7E] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <span className="relative">Try on WhatsApp →</span>
             </Link>
           </div>
 
@@ -196,8 +209,8 @@ export default function Navbar() {
               <div onClick={closeAll}><Dropdown navitems={partnershipsnav} /></div>
             </div>
           )}
-          {activeMenu === 'resources' && (
-            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('resources')} onMouseLeave={handleMouseLeave}>
+          {activeMenu === 'developers' && (
+            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('developers')} onMouseLeave={handleMouseLeave}>
               <div onClick={closeAll}><Dropdown navitems={resourcesnav} /></div>
             </div>
           )}
@@ -242,6 +255,21 @@ export default function Navbar() {
               <nav className="flex-1 overflow-y-auto py-2">
                 {mobileSections.map(({ key, label, items }) => {
                   const isOpen = activeMobileSection === key
+                  
+                  // Handle WhatsApp Banking as a direct link
+                  if (key === 'whatsapp-banking') {
+                    return (
+                      <Link
+                        key={key}
+                        href="/whatsapp-banking"
+                        onClick={closeAll}
+                        className="w-full flex items-center px-5 py-3.5 text-gray-800 hover:bg-gray-50 transition-colors duration-150"
+                      >
+                        <span className="text-sm font-semibold">{label}</span>
+                      </Link>
+                    )
+                  }
+                  
                   return (
                     <div key={key}>
                       <button
@@ -303,11 +331,13 @@ export default function Navbar() {
               {/* CTA at bottom */}
               <div className="p-4 border-t border-gray-100">
                 <Link
-                  href="/contact"
+                  href="https://wa.me/919876543210"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={closeAll}
-                  className="block w-full py-3 text-center bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-200"
+                  className="block w-full py-3 text-center bg-[#25D366] text-white rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-200"
                 >
-                  Contact Us
+                  Try on WhatsApp →
                 </Link>
               </div>
             </motion.div>

@@ -277,7 +277,7 @@ export default function VendorPaymentPage() {
 
             <p className="text-gray-400 max-w-xl text-base md:text-lg fontbody2 leading-relaxed mb-10">
               Transform your vendor payments with a single click and get complete
-              control with real-time updates. NEFT, RTGS, IMPS, UPI — all in one place.
+              control with real-time updates. NEFT, RTGS, IMPS, UPI, all in one place.
             </p>
 
             {/* Stats row */}

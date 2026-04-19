@@ -4,14 +4,14 @@ export const CollectPaymentConstants = [
         label: 'Payment Gateway',
         icon: '/payments/payment-gateway.svg',
         href: '/payment-gateway',
-        desc: 'One integration to manage all payment modes—cards, UPI, net banking, and wallets—built for reliability, speed, and enterprise-grade security at scale.',
+        desc: 'One integration to manage all payment modes: cards, UPI, net banking, and wallets. Built for reliability, speed, and enterprise-grade security at scale.',
     },
     {
         id: 'payment-links',
         label: 'Payment Links',
         icon: '/payments/payment-links.svg',
         href: '/payment-links',
-        desc: 'Collect payments on the go by sharing a single secure link. Perfect for remote sales, invoicing, and quick follow-ups—no technical setup needed.',
+        desc: 'Collect payments on the go by sharing a single secure link. Perfect for remote sales, invoicing, and quick follow-ups. No technical setup needed.',
     },
     {
         id: 'payment-button',

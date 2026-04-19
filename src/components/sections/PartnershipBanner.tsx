@@ -79,7 +79,7 @@ export default function PartnershipBanner() {
               {[
                 'Revenue-share partnership models',
                 'Ready-to-deploy APIs with full sandbox',
-                'RBI-licensed & enterprise-grade security',
+                'RBI-compliant & enterprise-grade security',
               ].map(item => (
                 <li key={item} className="flex items-start gap-2 text-gray-200 text-xs drop-shadow-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
@@ -157,7 +157,7 @@ export default function PartnershipBanner() {
                 {[
                   'Revenue-share partnership models',
                   'Ready-to-deploy APIs with full sandbox',
-                  'RBI-licensed & enterprise-grade security',
+                  'RBI-compliant & enterprise-grade security',
                 ].map(item => (
                   <li key={item} className="flex items-start gap-2 text-gray-200 text-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />

@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useGSAP } from '@gsap/react'
@@ -11,33 +11,38 @@ gsap.registerPlugin(useGSAP)
 const businessCards = [
   {
     title: 'MSME / SMBs',
-    items: ['Payment Gateway', 'Bulk Payouts', 'Invoice Financing', 'Business Current Account'],
+    items: ['Payment Gateway', 'Bulk Payouts', 'Invoice Financing', 'Business Current Account', 'WhatsApp Vendor Payments'],
     image: '/business/msme.svg',
     active: true,
     link: '/solutions/msme',
+    accentColor: '#12A05C',
   },
   {
     title: 'Kirana Store / Small Merchant',
-    items: ['Kirana POS', 'Merchant Cash', 'Bill Payments', 'Voice Payments'],
+    items: ['Kirana POS', 'Merchant Cash', 'Bill Payments', 'Voice Payments', 'WhatsApp Payments & Voice Credit'],
     image: '/business/kirana.svg',
     link: '/solutions/kirana',
+    accentColor: '#F5A623',
   },
   {
     title: 'NRI / Overseas Indian',
-    items: ['Cross-border Remittance', 'NRI Emergency Loans', 'Direct bill Payments to India', 'Multi-currency support'],
+    items: ['Cross-border Remittance', 'NRI Emergency Loans', 'Direct bill Payments to India', 'Multi-currency support', 'WhatsApp Family Finance Management'],
     image: '/business/nri.svg',
     link: '/solutions/nri',
+    accentColor: '#25D366',
   },
   {
     title: 'Developer / Platform',
-    items: ['Payment Gateway APIs', 'Payouts APIs', 'Verification APIs', 'Banking-as-a-Service'],
+    items: ['Payment Gateway APIs', 'Payouts APIs', 'Verification APIs', 'Banking-as-a-Service', 'WhatsApp Banking API'],
     image: '/business/developer.svg',
     link: '/solutions/developer',
+    accentColor: '#0A2E1F',
   },
 ]
 
 export default function ChooseBusinessType() {
   const sectionRef = useRef<HTMLElement>(null)
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
   useGSAP(() => {
     // Heading fades up
@@ -91,21 +96,35 @@ export default function ChooseBusinessType() {
           {businessCards.map((card, i) => (
             <div
               key={i}
-              className={`cbt-card relative rounded-[18px] sm:rounded-[22px] border p-5 sm:p-7 md:p-10 min-h-[200px] sm:min-h-[260px] overflow-hidden
-              ${
-                card.active
-                  ? 'border-emerald-500 border-2 bg-white'
-                  : 'border-gray-300 bg-white/70 backdrop-blur-[12px]'
-              }`}
+              onMouseEnter={() => setHoveredCard(i)}
+              onMouseLeave={() => setHoveredCard(null)}
+              className="cbt-card relative rounded-[18px] sm:rounded-[22px] border-2 p-5 sm:p-7 md:p-10 min-h-[200px] sm:min-h-[260px] overflow-hidden bg-white transition-all duration-300 ease-out group"
+              style={{
+                borderColor: hoveredCard === i ? card.accentColor : '#E0E0DC'
+              }}
             >
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 pr-28 sm:pr-32 md:pr-40 text-black">
+              {/* Animated accent strip at top */}
+              <div 
+                className="absolute top-0 left-0 h-1 transition-all duration-300 ease-out"
+                style={{
+                  width: hoveredCard === i ? '100%' : '0%',
+                  backgroundColor: card.accentColor
+                }}
+              />
+
+              <h3 className="font-jakarta text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 pr-28 sm:pr-32 md:pr-40 text-black">
                 {card.title}
               </h3>
 
-              <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base pr-28 sm:pr-32 md:pr-40">
+              <ul className="space-y-2 sm:space-y-3 text-gray-700 font-inter text-sm sm:text-base pr-28 sm:pr-32 md:pr-40">
                 {card.items.map((item, j) => (
                   <li key={j} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+                    <span 
+                      className="w-1.5 h-1.5 rounded-full shrink-0 transition-colors duration-300"
+                      style={{
+                        backgroundColor: hoveredCard === i ? card.accentColor : '#10B981'
+                      }}
+                    />
                     {item}
                   </li>
                 ))}
@@ -124,12 +143,15 @@ export default function ChooseBusinessType() {
                 href={card.link}
                 className="mt-5 sm:mt-0 sm:absolute sm:bottom-4 sm:right-6 z-20
                            inline-flex items-center gap-2
-                           px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm
+                           px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-jakarta font-semibold
                            bg-gradient-to-r from-[#054C38] to-[#2AB871]
                            text-white
                            transition-all duration-300
                            hover:scale-105 hover:shadow-lg
                            active:scale-95"
+                style={{
+                  backgroundColor: hoveredCard === i ? card.accentColor : undefined
+                }}
               >
                 See Solution →
               </Link>

@@ -1,0 +1,6 @@
+export { default as WhatsAppBankingHero } from './WhatsAppBankingHero'
+export { default as WhatsAppBankingHowItWorks } from './WhatsAppBankingHowItWorks'
+export { default as WhatsAppBankingFeatures } from './WhatsAppBankingFeatures'
+export { default as WhatsAppBankingDemo } from './WhatsAppBankingDemo'
+export { default as WhatsAppBankingSecurity } from './WhatsAppBankingSecurity'
+export { default as WhatsAppBankingCTA } from './WhatsAppBankingCTA'

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Nunito_Sans } from 'next/font/google'
+import { Nunito_Sans, Plus_Jakarta_Sans, Inter } from 'next/font/google'
 import Script from 'next/script'
 
 import './globals.css'
@@ -15,14 +15,28 @@ const nunitoSans = Nunito_Sans({
   display: 'swap',
 })
 
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-plus-jakarta-sans',
+  display: 'swap',
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   applicationName: 'RupeeFlow',
   title: {
-    default: 'RupeeFlow — Payments, Payouts & Business Credit for India',
+    default: 'RupeeFlow — Bank on WhatsApp | Payments, Credit & Payouts for Indian Businesses',
     template: '%s | RupeeFlow',
   },
   description:
-    'RupeeFlow is India\'s all-in-one fintech platform. Accept payments via Payment Gateway, UPI, Payment Links, QR Code & Payment Button. Send money with Vendor Payouts, Salary Disbursements, Bulk Transfers, Bill Payments & Invoice Management. Get business credit with Merchant Cash Advance, Invoice Financing & NRI Loans.',
+    'India\'s first WhatsApp-native banking platform. Send money, pay bills, get instant credit in Hindi & 11 other languages. Zero app download needed. Trusted by 100,000+ businesses.',
   keywords: [
     'payment gateway India',
     'UPI collections',
@@ -53,17 +67,17 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: 'https://rupeeflow.co',
     siteName: 'RupeeFlow',
-    title: 'RupeeFlow — Payments, Payouts & Business Credit for India',
+    title: 'RupeeFlow — Bank on WhatsApp',
     description:
-      'Accept payments via Payment Gateway, UPI & QR Code. Send payouts for vendors, salary & bulk transfers. Get business credit with Merchant Cash Advance & Invoice Financing.',
+      'Send money, get credit, pay bills — just type in Hindi',
   },
   twitter: {
     card: 'summary_large_image',
     site: '@rupeeflow',
     creator: '@rupeeflow',
-    title: 'RupeeFlow — Payments, Payouts & Business Credit for India',
+    title: 'RupeeFlow — Bank on WhatsApp | Payments, Credit & Payouts for Indian Businesses',
     description:
-      'India\'s all-in-one fintech platform for payment collection, vendor payouts, salary disbursements, and business credit.',
+      'India\'s first WhatsApp-native banking platform. Send money, pay bills, get instant credit in Hindi & 11 other languages. Zero app download needed. Trusted by 100,000+ businesses.',
   },
   robots: {
     index: true,
@@ -85,7 +99,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${nunitoSans.variable} overflow-x-hidden`}>
+    <html lang="en" className={`${nunitoSans.variable} ${plusJakartaSans.variable} ${inter.variable} overflow-x-hidden`}>
       <head>
         {/* WebSite structured data — tells Google the site name is "RupeeFlow" */}
         <script
@@ -114,7 +128,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="antialiased background-black text-white overflow-x-hidden">
+      <body className="antialiased  text-white overflow-x-hidden">
         <SmoothScrollProvider>
           <Navbar />
           <main>{children}</main>

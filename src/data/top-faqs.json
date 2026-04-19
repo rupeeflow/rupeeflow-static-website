@@ -1,15 +1,15 @@
 [
   {
     "question": "What is RupeeFlow?",
-    "answer": "RupeeFlow is a unified UPI platform that enables users and businesses to send, receive, and manage payments seamlessly — across borders and languages."
+    "answer": "RupeeFlow is a unified UPI platform that enables users and businesses to send, receive, and manage payments seamlessly across borders and languages."
   },
   {
     "question": "Is RupeeFlow free?",
     "answer": "Yes! Basic UPI transactions and core features are completely free. Premium features like AI Insights and international transfers may have small fees."
   },
   {
-    "question": "How is RupeeFlow different from other UPI apps?",
-    "answer": "RupeeFlow supports voice-enabled payments, cross-border transactions, and AI-powered analytics — offering a smarter and more inclusive experience."
+    "question": "How is RupeeFlow different from Razorpay or Cashfree?",
+    "answer": "RupeeFlow is a B2B fintech platform competing with payment gateways like Razorpay and Cashfree. We offer WhatsApp Banking, voice payments in 12 languages, and instant credit approval. These are features that traditional payment gateways don't provide."
   },
   {
     "question": "Is RupeeFlow Safe?",
@@ -21,6 +21,18 @@
   },
   {
     "question": "How to do bulk invoice payments?",
-    "answer": "With RupeeFlow Business, you can upload invoices in bulk and process all payments in one go — saving time while maintaining full payment tracking."
+    "answer": "With RupeeFlow Business, you can upload invoices in bulk and process all payments in one go, saving time while maintaining full payment tracking."
+  },
+  {
+    "question": "How do I start banking with RupeeFlow on WhatsApp?",
+    "answer": "Save +91-XXXXXXXX in your contacts and send 'Hi' to get started. No app download, no registration form. Takes 30 seconds."
+  },
+  {
+    "question": "Which languages can I use for WhatsApp banking?",
+    "answer": "Hindi, English, Telugu, Marathi, Tamil, Kannada, Bengali, Gujarati, Punjabi, Malayalam, Odia, and Assamese. 12 languages total. Just type or speak in your preferred language."
+  },
+  {
+    "question": "Is WhatsApp banking secure?",
+    "answer": "Yes. Every transaction requires a 4-digit PIN. Transactions above ₹5,000 require OTP verification. We use 256-bit encryption and bank-grade fraud detection."
   }
 ]

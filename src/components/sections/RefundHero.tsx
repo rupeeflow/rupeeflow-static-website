@@ -40,20 +40,18 @@ export default function RefundHero() {
           </motion.h1>
 
           <motion.p variants={content} className="fontbody2 text-gray-300 mb-2">
-            RupeeFlow Finance Private Limited
+            Rupeeflow Finance Private Limited | CIN: U64990KA2025PTC209485
           </motion.p>
 
           <motion.p variants={content} className="fontbody2 text-gray-400 mb-8">
-            Effective Date: October 27, 2025 | Last Updated: October 27, 2025
+            Last Updated: January 2025
           </motion.p>
 
           <motion.p
             variants={content}
             className="fontbody2 text-gray-400 max-w-3xl mx-auto text-lg"
           >
-            This policy outlines the terms and conditions for refunds, cancellations,
-            reversals, and chargebacks related to RupeeFlow&apos;s payment services,
-            in compliance with RBI guidelines and consumer protection laws.
+            This policy sets out the terms and conditions governing cancellations, refunds, reversals, and related processes in respect of transactions facilitated through the Rupeeflow Platform.
           </motion.p>
         </motion.div>
       </div>

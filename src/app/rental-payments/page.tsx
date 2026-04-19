@@ -9,9 +9,9 @@ import RentalFaq from '@/components/sections/rentalPayments/RentalFaq'
 /* ── Mockup 1: Eliminate Late Payment Penalties ── */
 function AutoReminderMockup() {
   const reminders = [
-    { label: 'Rent Due — 1st Nov', status: 'Paid', days: '2 days early' },
-    { label: 'Rent Due — 1st Dec', status: 'Paid', days: 'On time' },
-    { label: 'Rent Due — 1st Jan', status: 'Scheduled', days: 'Auto-pay on' },
+    { label: 'Rent Due: 1st Nov', status: 'Paid', days: '2 days early' },
+    { label: 'Rent Due: 1st Dec', status: 'Paid', days: 'On time' },
+    { label: 'Rent Due: 1st Jan', status: 'Scheduled', days: 'Auto-pay on' },
   ]
   return (
     <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
@@ -242,21 +242,21 @@ const features = [
   {
     icon: <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>,
     title: 'Multiple Payment Modes',
-    desc: 'Pay your rent your way. Choose from UPI, NEFT, RTGS, credit cards, or digital wallets to make your rental payments. Whether you want instant processing or flexibility in managing funds, Rupeeflow has a payment mode that works for you — and your landlord will thank you for it!',
+    desc: 'Pay your rent your way. Choose from UPI, NEFT, RTGS, credit cards, or digital wallets to make your rental payments. Whether you want instant processing or flexibility in managing funds, Rupeeflow has a payment mode that works for you, and your landlord will thank you for it!',
     mockup: <PaymentModesMockup />,
     reverse: true,
   },
   {
     icon: <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>,
     title: 'Streamlined Payment Tracking',
-    desc: "Say goodbye to messy spreadsheets and fragmented payment records. Rupeeflow's centralized dashboard gives you a real-time view of all your rent transactions. Know what's paid, what's pending, and what's overdue — all in one intuitive platform.",
+    desc: "Say goodbye to messy spreadsheets and fragmented payment records. Rupeeflow's centralized dashboard gives you a real-time view of all your rent transactions. Know what's paid, what's pending, and what's overdue, all in one intuitive platform.",
     mockup: <TrackingMockup />,
     reverse: false,
   },
   {
     icon: <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>,
     title: 'Instant Reconciliation',
-    desc: "Save hours of effort with automatic reconciliation. Rupeeflow links your payments to corresponding invoices seamlessly, so you can track rent settlements without lifting a finger. No more manual matching, no more errors — just accurate records and peace of mind.",
+    desc: "Save hours of effort with automatic reconciliation. Rupeeflow links your payments to corresponding invoices seamlessly, so you can track rent settlements without lifting a finger. No more manual matching, no more errors. Just accurate records and peace of mind.",
     mockup: <ReconciliationMockup />,
     reverse: true,
   },
@@ -540,7 +540,7 @@ export default function RentalPaymentsPage() {
               <span className="text-emerald-500">Rupeeflow</span>
             </h2>
             <p className="mt-4 text-gray-500 text-sm md:text-base fontbody2 max-w-xl mx-auto">
-              From automated scheduling to instant reconciliation — we handle the complexity so you don&apos;t have to.
+              From automated scheduling to instant reconciliation, we handle the complexity so you don&apos;t have to.
             </p>
           </motion.div>
 

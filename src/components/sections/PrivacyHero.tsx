@@ -40,20 +40,22 @@ export default function PrivacyHero() {
           </motion.h1>
 
           <motion.p variants={content} className="fontbody2 text-gray-300 mb-2">
-            RupeeFlow Finance Private Limited
+            Rupeeflow Finance Private Limited
+          </motion.p>
+
+          <motion.p variants={content} className="fontbody2 text-gray-400 mb-2">
+            CIN: U64990KA2025PTC209485
           </motion.p>
 
           <motion.p variants={content} className="fontbody2 text-gray-400 mb-8">
-            Effective Date: October 27, 2025 | Last Updated: October 27, 2025
+            Effective Date: January 1, 2025 | Last Updated: January 1, 2025
           </motion.p>
 
           <motion.p
             variants={content}
             className="fontbody2 text-gray-400 max-w-3xl mx-auto text-lg"
           >
-            We are committed to protecting your privacy and security. This policy
-            explains how we collect, use, disclose, and protect your information
-            when you use RupeeFlow&apos;s payment services.
+            We are committed to protecting your privacy and ensuring the security of your personal data. This policy explains how we collect, use, disclose, and protect your information in compliance with the Digital Personal Data Protection Act, 2023 and applicable regulations.
           </motion.p>
         </motion.div>
       </div>

@@ -32,7 +32,7 @@ export default function VirtualCardsPage() {
 
             <p className="mt-6 text-gray-300 text-lg leading-relaxed">
               Issue secure, instantly deployable virtual cards for online payments,
-              subscriptions, and vendor transactions — eliminating fraud risks
+              subscriptions, and vendor transactions, eliminating fraud risks
               while maintaining full spending control.
             </p>
 

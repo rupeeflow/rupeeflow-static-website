@@ -1,13 +1,12 @@
 import './globals.css'
 import HeroSection from '@/components/sections/Herosection'
+// import StopUsing5Apps from '@/components/sections/StopUsing5Apps'
 import StopUsingApps from '@/components/sections/StopUsingApps'
 import CollectMoney from '@/components/sections/CollectMoney'
 import MakePayments from '@/components/sections/MakePayments'
-import GetCredit from '@/components/sections/GetCredit'
 import LendingBanner from '@/components/sections/LendingBanner'
 import PartnershipBanner from '@/components/sections/PartnershipBanner'
 import ChooseRupeeFlow from '@/components/sections/ChooseRupeeFlow'
-import LanguageSection from '@/components/sections/RegionalLanguage'
 import FaqSection from '@/components/sections/FAQ'
 import BlogSection from '@/components/sections/BlogSection'
 import BusinessBanking from '@/components/sections/BusinessBanking'
@@ -20,19 +19,19 @@ export default function HomePage() {
   return (
     <div className="w-full relative">
       <WebPageSchema
-        title="RupeeFlow — Payments, Payouts & Business Credit for India"
-        description="RupeeFlow is India's all-in-one fintech platform. Accept payments via Payment Gateway, UPI Collections, Payment Links, QR Code & Payment Button. Send money with Vendor Payouts, Salary Disbursements, Bulk Transfers & Bill Payments. Get business credit with Merchant Cash Advance, Invoice Financing & NRI Loans."
+        title="RupeeFlow: Bank on WhatsApp | Payments, Credit & Payouts for Indian Businesses"
+        description="India's first WhatsApp-native banking platform. Send money, pay bills, get instant credit in Hindi & 11 other languages. Zero app download needed. Trusted by 100,000+ businesses."
         url="/"
       />
       <FAQSchema faqs={faq.map(f => ({ question: f.question, answer: f.answer }))} />
 
       <HeroSection />
-     <StopUsingApps />
+      {/* <StopUsing5Apps /> */}
+      <StopUsingApps />
       <LendingBanner />
       <CollectMoney />
       <MakePayments />
       
-      <GetCredit />
       <BusinessBanking />
       
       <ChooseBusinessType />
