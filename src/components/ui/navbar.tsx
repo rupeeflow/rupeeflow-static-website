@@ -8,6 +8,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { navlist } from '@/interface/typesInterfaces'
 import Dropdown from './Dropdown'
 import PaymentsDropdown from './PaymentsDropdown'
+import dynamic from 'next/dynamic'
+
+// Dynamically import ThemeToggle to avoid SSR issues
+const ThemeToggle = dynamic(() => import('./ThemeToggle'), { ssr: false })
 
 const creditnav: navlist[] = [
   { id: 'merchant', label: 'Merchant Cash Advance', icon: '/credit/merchant-cash-advance.svg', href: '/merchant-cash-advance' },
@@ -35,6 +39,7 @@ const partnershipsnav: navlist[] = [
 const paymentsNav: navlist[] = [
   { id: 'gateway', label: 'Payment Gateway', icon: '/payments/payment-gateway.svg', href: '/payment-gateway' },
   { id: 'links', label: 'Payment Links', icon: '/payments/payment-links.svg', href: '/payment-links' },
+  { id: 'pos', label: 'Smart POS', icon: '/payments/qr-code.svg', href: '/smart-pos', desc: 'Accept payments anywhere — card, UPI & QR' },
   { id: 'upi', label: 'UPI Collections', icon: '/payments/upi-collections.svg', href: '/upi-collections' },
   { id: 'qr', label: 'QR Code', icon: '/payments/qr-code.svg', href: '/qr-code' },
   { id: 'button', label: 'Payment Button', icon: '/payments/payment-button.svg', href: '/payment-button' },
@@ -116,8 +121,8 @@ export default function Navbar() {
         <div
           className={`flex transition-all duration-500 ease-out ${
             scrolled
-              ? 'w-full bg-white/95 shadow-lg backdrop-blur-xl border-b border-gray-200/50'
-              : 'w-[95%] lg:w-[90%] bg-white/98 backdrop-blur-md rounded-2xl mt-4 shadow-xl border border-gray-200/50'
+              ? 'w-full bg-white/95 dark:bg-gray-900/95 shadow-lg backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50'
+              : 'w-[95%] lg:w-[90%] bg-white/98 dark:bg-gray-900/98 backdrop-blur-md rounded-2xl mt-4 shadow-xl border border-gray-200/50 dark:border-gray-700/50'
           } items-center justify-between px-4 sm:px-6 relative`}
           style={{ maxWidth: scrolled ? '100%' : '1200px' }}
         >
@@ -129,10 +134,10 @@ export default function Navbar() {
           {/* ── Desktop Navigation (lg+) ── */}
           <nav className="hidden lg:flex gap-1 text-sm relative z-10">
             <div className="relative" onMouseEnter={() => handleMouseEnter('payments')} onMouseLeave={handleMouseLeave}>
-              <button className="group flex items-center h-14 gap-1 px-4 text-gray-700 hover:text-emerald-600 transition-all duration-300 rounded-lg hover:bg-emerald-50/50">
+              <button className="group flex items-center h-14 gap-1 px-4 text-gray-700 dark:text-gray-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 rounded-lg hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20">
                 <span className="relative">
                   Payments
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 dark:bg-emerald-400 group-hover:w-full transition-all duration-300" />
                 </span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeMenu === 'payments' ? 'rotate-180' : ''}`} />
               </button>
@@ -144,10 +149,10 @@ export default function Navbar() {
               ['resources', 'Resources', resourcesnav],
             ] as [string, string, navlist[]][]).map(([key, label]) => (
               <div key={key} className="relative" onMouseEnter={() => handleMouseEnter(key)} onMouseLeave={handleMouseLeave}>
-                <button className="group flex items-center h-14 gap-1 px-4 text-gray-700 hover:text-emerald-600 transition-all duration-300 rounded-lg hover:bg-emerald-50/50">
+                <button className="group flex items-center h-14 gap-1 px-4 text-gray-700 dark:text-gray-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 rounded-lg hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20">
                   <span className="relative">
                     {label}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300" />
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 dark:bg-emerald-400 group-hover:w-full transition-all duration-300" />
                   </span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeMenu === key ? 'rotate-180' : ''}`} />
                 </button>
@@ -156,7 +161,8 @@ export default function Navbar() {
           </nav>
 
           {/* ── Desktop CTA (lg+) ── */}
-          <div className="hidden lg:flex gap-3 relative z-10">
+          <div className="hidden lg:flex gap-3 items-center relative z-10">
+            <ThemeToggle />
             <Link
               href="/contact"
               className="group relative bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-emerald-600/30 transition-all duration-300 hover:scale-105 overflow-hidden"
@@ -169,7 +175,7 @@ export default function Navbar() {
           {/* ── Mobile Hamburger (below lg) ── */}
           <button
             onClick={() => setMobileMenuOpen(prev => !prev)}
-            className="lg:hidden relative z-10 p-2 rounded-lg text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 transition-colors duration-200"
+            className="lg:hidden relative z-10 p-2 rounded-lg text-gray-700 dark:text-gray-200 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors duration-200"
             aria-label="Toggle navigation"
           >
             {mobileMenuOpen
@@ -220,18 +226,18 @@ export default function Navbar() {
 
             {/* Drawer panel — slides in from the right */}
             <motion.div
-              className="fixed top-0 right-0 bottom-0 z-[101] w-[280px] bg-white flex flex-col shadow-2xl lg:hidden"
+              className="fixed top-0 right-0 bottom-0 z-[101] w-[280px] bg-white dark:bg-gray-900 flex flex-col shadow-2xl lg:hidden"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
             >
               {/* Drawer header */}
-              <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+              <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 dark:border-gray-800">
                 <Image src="/rflogowhitebg.svg" alt="RupeeFlow" width={140} height={28} className="h-7 w-auto" />
                 <button
                   onClick={closeAll}
-                  className="p-1.5 rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors"
+                  className="p-1.5 rounded-lg text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                   aria-label="Close menu"
                 >
                   <X className="w-5 h-5" />
@@ -246,14 +252,14 @@ export default function Navbar() {
                     <div key={key}>
                       <button
                         onClick={() => toggleMobileSection(key)}
-                        className="w-full flex items-center justify-between px-5 py-3.5 text-gray-800 hover:bg-gray-50 transition-colors duration-150"
+                        className="w-full flex items-center justify-between px-5 py-3.5 text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-150"
                       >
                         <span className="text-sm font-semibold">{label}</span>
                         <motion.div
                           animate={{ rotate: isOpen ? 180 : 0 }}
                           transition={{ duration: 0.22, ease: 'easeInOut' }}
                         >
-                          <ChevronDown className={`w-4 h-4 transition-colors duration-200 ${isOpen ? 'text-emerald-500' : 'text-gray-400'}`} />
+                          <ChevronDown className={`w-4 h-4 transition-colors duration-200 ${isOpen ? 'text-emerald-500 dark:text-emerald-400' : 'text-gray-400 dark:text-gray-500'}`} />
                         </motion.div>
                       </button>
 
@@ -267,7 +273,7 @@ export default function Navbar() {
                             transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
                             style={{ overflow: 'hidden' }}
                           >
-                            <div className="bg-gray-50 px-3 pb-2 pt-1">
+                            <div className="bg-gray-50 dark:bg-gray-800/50 px-3 pb-2 pt-1">
                               {items.map((item, idx) => (
                                 <motion.div
                                   key={item.id}
@@ -278,14 +284,14 @@ export default function Navbar() {
                                   <Link
                                     href={item.href}
                                     onClick={closeAll}
-                                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white transition-colors group"
+                                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white dark:hover:bg-gray-700 transition-colors group"
                                   >
                                     {item.icon && (
-                                      <div className="w-7 h-7 rounded-lg bg-white border border-gray-100 shadow-sm flex items-center justify-center shrink-0">
+                                      <div className="w-7 h-7 rounded-lg bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm flex items-center justify-center shrink-0">
                                         <Image src={item.icon} alt="" width={16} height={16} className="w-4 h-4 object-contain" />
                                       </div>
                                     )}
-                                    <span className="text-xs text-gray-600 group-hover:text-emerald-600 font-medium leading-tight">
+                                    <span className="text-xs text-gray-600 dark:text-gray-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 font-medium leading-tight">
                                       {item.label}
                                     </span>
                                   </Link>
@@ -301,7 +307,7 @@ export default function Navbar() {
               </nav>
 
               {/* CTA at bottom */}
-              <div className="p-4 border-t border-gray-100">
+              <div className="p-4 border-t border-gray-100 dark:border-gray-800">
                 <Link
                   href="/contact"
                   onClick={closeAll}

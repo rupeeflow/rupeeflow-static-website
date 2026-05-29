@@ -9,6 +9,7 @@ const collectPayments: navlist[] = [
   { id: 'gateway', label: 'Payment Gateway', desc: 'Fast, secure payment collection', icon: '/payments/payment-gateway.svg', href: '/payment-gateway' },
   { id: 'links', label: 'Payment Links', desc: 'Create & send links to get paid', icon: '/payments/payment-links.svg', href: '/payment-links' },
   { id: 'button', label: 'Payment Button', desc: 'Custom payment buttons', icon: '/payments/payment-button.svg', href: '/payment-button' },
+  { id: 'pos', label: 'Smart POS', desc: 'Accept payments anywhere — card, UPI & QR', icon: '/payments/qr-code.svg', href: '/smart-pos' },
   { id: 'upi', label: 'UPI Collections', desc: 'Accept UPI payments with ease', icon: '/payments/upi-collections.svg', href: '/upi-collections' },
   { id: 'qr', label: 'QR Code', desc: 'Multiple QRs for payment collection', icon: '/payments/qr-code.svg', href: '/qr-code' },
   { id: 'cross', label: 'Cross-border Payments', desc: 'International payment solutions', icon: '/payments/cross-border-payments.svg', href: '/cross-border-payments' },
@@ -41,12 +42,12 @@ export default function PaymentsDropdown() {
   const router = useRouter()
 
   return (
-    <div className="w-full bg-white rounded-b-2xl shadow-2xl overflow-hidden">
-      <div className="h-1 bg-emerald-500" />
+    <div className="w-full bg-white dark:bg-gray-800 rounded-b-2xl shadow-2xl dark:shadow-gray-900/50 overflow-hidden">
+      <div className="h-1 bg-emerald-500 dark:bg-emerald-400" />
 
       <div className="flex min-h-[420px] max-w-[1200px] mx-auto px-4">
         <div className="flex-[2.5] p-6 pr-5">
-          <h3 className="text-[11px] font-bold text-emerald-600 tracking-widest uppercase mb-5">
+          <h3 className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 tracking-widest uppercase mb-5">
             Collect Payments
           </h3>
           <div className="grid grid-cols-2 gap-x-5 gap-y-4">
@@ -61,11 +62,11 @@ export default function PaymentsDropdown() {
                   <Image src={item.icon} alt="" width={20} height={20} className="w-full h-full" />
                 </div>
                 <div>
-                  <span className="text-[13px] font-bold text-gray-900 group-hover:text-emerald-600 transition-colors leading-tight">
+                  <span className="text-[13px] font-bold text-gray-900 dark:text-gray-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors leading-tight">
                     {item.label}
                   </span>
                   {item.desc && (
-                    <p className="text-[11px] text-gray-400 mt-0.5 leading-snug">
+                    <p className="text-[11px] text-gray-400 dark:text-gray-500 mt-0.5 leading-snug">
                       {item.desc}
                     </p>
                   )}
@@ -73,16 +74,16 @@ export default function PaymentsDropdown() {
               </button>
             ))}
           </div>
-          <div className="mt-6 pt-3 border-t border-gray-100">
-            <a href="/products/collections" className="text-xs font-semibold text-emerald-500 hover:text-emerald-700 transition-colors">
+          <div className="mt-6 pt-3 border-t border-gray-100 dark:border-gray-700">
+            <a href="/products/collections" className="text-xs font-semibold text-emerald-500 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">
               Explore Collect Payments →
             </a>
           </div>
         </div>
 
         {/* MAKE PAYMENTS */}
-        <div className="flex-[1.5] px-5 py-6 border-x border-gray-100 bg-gray-50/70">
-          <h3 className="text-[11px] font-bold text-emerald-600 tracking-widest uppercase mb-5">
+        <div className="flex-[1.5] px-5 py-6 border-x border-gray-100 dark:border-gray-700 bg-gray-50/70 dark:bg-gray-900/30">
+          <h3 className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 tracking-widest uppercase mb-5">
             Make Payments
           </h3>
           <div className="space-y-3.5">
@@ -97,11 +98,11 @@ export default function PaymentsDropdown() {
                   <Image src={item.icon} alt="" width={20} height={20} className="w-full h-full" />
                 </div>
                 <div>
-                  <span className="text-[13px] font-bold text-gray-900 group-hover:text-emerald-600 transition-colors leading-tight">
+                  <span className="text-[13px] font-bold text-gray-900 dark:text-gray-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors leading-tight">
                     {item.label}
                   </span>
                   {item.desc && (
-                    <p className="text-[11px] text-gray-400 mt-0.5 leading-snug">
+                    <p className="text-[11px] text-gray-400 dark:text-gray-500 mt-0.5 leading-snug">
                       {item.desc}
                     </p>
                   )}
@@ -109,8 +110,8 @@ export default function PaymentsDropdown() {
               </button>
             ))}
           </div>
-          <div className="mt-6 pt-3 border-t border-gray-200">
-            <a href="/products/make-payments/explore" className="text-xs font-semibold text-emerald-500 hover:text-emerald-700 transition-colors">
+          <div className="mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">
+            <a href="/products/make-payments/explore" className="text-xs font-semibold text-emerald-500 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">
               Explore Make Payments →
             </a>
           </div>
@@ -118,7 +119,7 @@ export default function PaymentsDropdown() {
 
         {/* PAYABLE & RECEIVABLE+ */}
         <div className="flex-[2.5] p-6 pl-5 flex flex-col">
-          <h3 className="text-[11px] font-bold text-emerald-600 tracking-widest uppercase mb-5">
+          <h3 className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 tracking-widest uppercase mb-5">
             Payable & Receivable+
           </h3>
           <div className="grid grid-cols-2 gap-x-5 gap-y-8 ">
@@ -132,7 +133,7 @@ export default function PaymentsDropdown() {
                 <div className="w-5 h-5 shrink-0 relative opacity-70 group-hover:opacity-100 transition-opacity">
                   <Image src={item.icon} alt="" width={20} height={20} className="w-full h-full" />
                 </div>
-                <span className="text-[13px] font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                <span className="text-[13px] font-bold text-gray-900 dark:text-gray-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                   {item.label}
                 </span>
               </button>
@@ -142,21 +143,21 @@ export default function PaymentsDropdown() {
       </div>
 
       {/* Bottom preview strip - changes on hover */}
-      <div className="border-t border-gray-100 bg-gray-50/50 px-6 py-4 flex items-center gap-4 min-h-[60px]">
+      <div className="border-t border-gray-100 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-900/30 px-6 py-4 flex items-center gap-4 min-h-[60px]">
         {hoveredItem ? (
           <>
             <div className="w-8 h-8 relative opacity-80">
               <Image src={hoveredItem.icon} alt={hoveredItem.label} width={32} height={32} className="w-full h-full" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-gray-800">{hoveredItem.label}</p>
+              <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">{hoveredItem.label}</p>
               {hoveredItem.desc && (
-                <p className="text-xs text-gray-400">{hoveredItem.desc}</p>
+                <p className="text-xs text-gray-400 dark:text-gray-500">{hoveredItem.desc}</p>
               )}
             </div>
           </>
         ) : (
-          <p className="text-xs text-gray-400">Hover over a product to learn more</p>
+          <p className="text-xs text-gray-400 dark:text-gray-500">Hover over a product to learn more</p>
         )}
       </div>
     </div>

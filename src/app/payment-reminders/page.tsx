@@ -135,7 +135,7 @@ export default function PaymentRemindersPage() {
       {/* COLLECTION REMINDERS */}
       <section className="py-28 bg-gray-50">
         <Container>
-          <h2 className="text-4xl font-semibold text-center">
+          <h2 className="text-4xl font-semibold text-center text-black">
             Collection Reminders for <span className="text-emerald-600">All Business Types</span>
           </h2>
 
@@ -145,7 +145,7 @@ export default function PaymentRemindersPage() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
 
               <div>
-                <h3 className="flex items-center gap-2 text-xl font-semibold">
+                <h3 className="flex items-center gap-2 text-xl font-semibold ">
                   <Eye className="text-emerald-600" /> Absolute Visibility
                 </h3>
 
@@ -260,9 +260,11 @@ export default function PaymentRemindersPage() {
               </motion.div>
 
               <div>
-                <h3 className="flex items-center gap-2 text-xl font-semibold">
-                  <LinkIcon className="text-emerald-600" />
+                <h3 className="flex items-center gap-2 text-xl font-semibold text-black">
+                  <LinkIcon className="text-emerald-600 " />
                   Embedded Payment Links
+
+
                 </h3>
 
                 <ul className="mt-4 space-y-2 text-sm text-gray-700">

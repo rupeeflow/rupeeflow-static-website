@@ -18,7 +18,7 @@ const businessCards = [
   },
   {
     title: 'Kirana Store / Small Merchant',
-    items: ['Kirana POS', 'Merchant Cash', 'Bill Payments', 'Voice Payments'],
+    items: ['Smart POS + Free QR Code', 'T+1 Daily Settlement', 'Merchant Cash Advance', 'Voice Payments in 12 Languages', 'WhatsApp Daily Reports'],
     image: '/business/kirana.svg',
     link: '/solutions/kirana',
   },
@@ -62,7 +62,7 @@ export default function ChooseBusinessType() {
   }, { scope: sectionRef })
 
   return (
-    <section ref={sectionRef} className="relative bg-white py-8 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-white dark:bg-gray-900 py-8 overflow-hidden transition-colors duration-300">
 
       {/* BIG WAVE — hidden on mobile to avoid overflow */}
       <Image
@@ -77,11 +77,11 @@ export default function ChooseBusinessType() {
       <div className="relative z-[10] max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8">
 
         {/* Heading */}
-        <div className="cbt-heading text-center text-black mb-8 sm:mb-14">
+        <div className="cbt-heading text-center text-black dark:text-white mb-8 sm:mb-14 transition-colors duration-300">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
             Choose Your Business Type
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base">
+          <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base transition-colors duration-300">
             Which option best describe your business?
           </p>
         </div>
@@ -91,21 +91,21 @@ export default function ChooseBusinessType() {
           {businessCards.map((card, i) => (
             <div
               key={i}
-              className={`cbt-card relative rounded-[18px] sm:rounded-[22px] border p-5 sm:p-7 md:p-10 min-h-[200px] sm:min-h-[260px] overflow-hidden
+              className={`cbt-card relative rounded-[18px] sm:rounded-[22px] border p-5 sm:p-7 md:p-10 min-h-[200px] sm:min-h-[260px] overflow-hidden transition-colors duration-300
               ${
                 card.active
-                  ? 'border-emerald-500 border-2 bg-white'
-                  : 'border-gray-300 bg-white/70 backdrop-blur-[12px]'
+                  ? 'border-emerald-500 border-2 bg-white dark:bg-gray-800'
+                  : 'border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-800/70 backdrop-blur-[12px]'
               }`}
             >
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 pr-28 sm:pr-32 md:pr-40 text-black">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 pr-28 sm:pr-32 md:pr-40 text-black dark:text-white transition-colors duration-300">
                 {card.title}
               </h3>
 
-              <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base pr-28 sm:pr-32 md:pr-40">
+              <ul className="space-y-2 sm:space-y-3 text-gray-700 dark:text-gray-300 text-sm sm:text-base pr-28 sm:pr-32 md:pr-40 transition-colors duration-300">
                 {card.items.map((item, j) => (
                   <li key={j} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 shrink-0" />
                     {item}
                   </li>
                 ))}

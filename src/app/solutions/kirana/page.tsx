@@ -15,17 +15,17 @@ import SecurityFirstIcon from '../../../../public/icons/payment-gateway/Security
 
 const solutions = [
   {
-    title: 'Kirana POS',
-    description: 'Modern point-of-sale system designed for small retail stores with inventory management.',
+    title: 'Smart POS + Free QR Code',
+    description: 'Accept card, UPI, and contactless payments at your store with T+1 settlement and daily WhatsApp reports.',
     features: [
-      'Accept all payment methods (UPI, Cards, Cash)',
-      'Real-time inventory tracking',
-      'Customer billing and invoicing',
-      'Sales reports and analytics',
-      'Offline mode support',
+      'Accept UPI, Visa, Mastercard, RuPay, Amex',
+      'T+1 Daily Settlement by 9 AM',
+      'Zero MDR on UPI transactions',
+      'Daily WhatsApp reports at 7 PM',
+      'Build credit score with every transaction',
     ],
     Icon: QrSmallIcon,
-    link: '/qr-code',
+    link: '/smart-pos',
   },
   {
     title: 'Merchant Cash Advance',
@@ -54,10 +54,10 @@ const solutions = [
     link: '/bill-payments',
   },
   {
-    title: 'Voice Payments',
+    title: 'Voice Payments in 12 Languages',
     description: 'Accept payments through voice commands in local languages for easier transactions.',
     features: [
-      'Support for 10+ Indian languages',
+      'Support for 12+ Indian languages',
       'Voice-activated UPI payments',
       'No typing required',
       'Perfect for elderly customers',

@@ -669,6 +669,84 @@ export default function CollectPayments() {
               </div>
             </motion.div>
 
+            {/* 5. Smart POS */}
+            <motion.div
+              className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="flex-1">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-100 border-2 border-emerald-500 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                  </div>
+                  <h3 className="fontheading text-xl md:text-2xl text-gray-900">Smart POS</h3>
+                </div>
+                <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
+                  Accept card, UPI, and contactless payments at your physical store with RupeeFlow Smart POS. 
+                  Works offline, settles next day, and helps build your business credit score with every transaction.
+                </p>
+              </div>
+              {/* Smart POS Card */}
+              <div className="lg:w-[45%] flex justify-center">
+                <div className="w-full max-w-[360px] bg-white rounded-2xl border border-gray-200 shadow-lg p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
+                        <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold text-gray-900">RupeeFlow POS</p>
+                        <p className="text-[9px] text-gray-400">Terminal #RF-1234</p>
+                      </div>
+                    </div>
+                    <span className="text-[9px] bg-emerald-100 text-emerald-600 font-semibold px-2 py-0.5 rounded-full">Online</span>
+                  </div>
+                  
+                  <div className="bg-gray-50 rounded-xl p-3 mb-4">
+                    <p className="text-[10px] text-gray-400 mb-1">Amount to Collect</p>
+                    <p className="fontheading text-2xl text-gray-900">₹1,250.00</p>
+                  </div>
+
+                  <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-wide mb-3">Payment Method</p>
+                  <div className="grid grid-cols-3 gap-2 mb-4">
+                    {[
+                      { label: 'Card', icon: '💳', active: true },
+                      { label: 'UPI', icon: '⚡', active: false },
+                      { label: 'NFC', icon: '📱', active: false },
+                    ].map(({ label, icon, active }) => (
+                      <div key={label} className={`border-2 rounded-lg p-2 flex flex-col items-center gap-1 ${active ? 'border-emerald-500 bg-emerald-50' : 'border-gray-100 bg-gray-50'}`}>
+                        <span className="text-base leading-none">{icon}</span>
+                        <span className={`text-[9px] font-semibold ${active ? 'text-emerald-600' : 'text-gray-500'}`}>{label}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <motion.div
+                    className="w-full py-2.5 rounded-xl bg-emerald-500 text-white text-xs font-bold text-center mb-3"
+                    animate={{ scale: [1, 1.02, 1] }}
+                    transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+                  >
+                    Tap / Insert / Swipe Card
+                  </motion.div>
+
+                  <div className="flex items-center justify-between text-[10px] text-gray-500">
+                    <span>T+1 Settlement</span>
+                    <span className="flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      Secure
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
             {/* 6. QR Code Payments */}
             <motion.div
               className="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16"
