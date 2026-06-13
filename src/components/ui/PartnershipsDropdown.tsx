@@ -67,7 +67,7 @@ export default function PartnershipsDropdown({ navitems, scrolled = false }: Par
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
-      className={`bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100/50 w-full mt-2 ${scrolled ? '' : 'max-w-[920px] mx-auto'}`}
+      className={`bg-[var(--card)] rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100/50 w-full mt-2 ${scrolled ? '' : 'max-w-[920px] mx-auto'}`}
     >
       <div className={`flex gap-0 ${scrolled ? 'max-w-[1100px] mx-auto' : ''}`}>
         {/* LEFT SIDEBAR */}
@@ -138,7 +138,7 @@ export default function PartnershipsDropdown({ navitems, scrolled = false }: Par
                 <div className="mb-6">
                   {/* Product Icon - Minimal */}
                   <div className="mb-5">
-                    <div className="w-11 h-11 rounded-xl bg-white shadow-sm border border-gray-100/50 flex items-center justify-center">
+                    <div className="w-11 h-11 rounded-xl bg-[var(--card)] shadow-sm border border-gray-100/50 flex items-center justify-center">
                       <Image src={active.icon} alt={active.label} width={22} height={22} />
                     </div>
                   </div>
@@ -161,7 +161,7 @@ export default function PartnershipsDropdown({ navitems, scrolled = false }: Par
                   >
                     <div className="relative">
                       {/* Partnership Card - Premium Design */}
-                      <div className="bg-white/90 backdrop-blur-md rounded-lg p-4 shadow-[0_8px_24px_rgba(0,0,0,0.08)] border border-gray-200/50">
+                      <div className="bg-[var(--card)] backdrop-blur-md rounded-lg p-4 shadow-[0_8px_24px_rgba(0,0,0,0.08)] border border-gray-200/50">
                         <div className="flex items-start justify-between mb-3">
                           <div>
                             <div className="flex items-center gap-1.5 mb-1">
@@ -227,7 +227,7 @@ export default function PartnershipsDropdown({ navitems, scrolled = false }: Par
                     }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-lg text-[13px] font-medium shadow-sm hover:shadow-md transition-all duration-200"
+                    className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-[var(--foreground)] rounded-lg text-[13px] font-medium shadow-sm hover:shadow-md transition-all duration-200"
                   >
                     <span>Explore {active.label}</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />

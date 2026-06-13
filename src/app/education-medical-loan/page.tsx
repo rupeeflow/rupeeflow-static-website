@@ -10,7 +10,7 @@ import CTASection from './components/CTASection'
 
 export default function EducationMedicalLoanPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[var(--card)]">
       <HeroSection />
       <LoanTypesSection />
       <WhyChooseSection />

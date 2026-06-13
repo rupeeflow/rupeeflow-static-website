@@ -45,7 +45,7 @@ const benefits = [
 
 export default function BenefitsGrid() {
   return (
-    <section className="relative bg-white py-20 md:py-28 overflow-hidden">
+    <section className="relative bg-[var(--card)] py-20 md:py-28 overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -92,7 +92,7 @@ export default function BenefitsGrid() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative bg-white rounded-3xl p-8 border-2 border-gray-100 hover:border-transparent transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden"
+              className="group relative bg-[var(--card)] rounded-3xl p-8 border-2 border-gray-100 hover:border-transparent transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden"
             >
               {/* Gradient Background on Hover */}
               <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
@@ -100,7 +100,7 @@ export default function BenefitsGrid() {
               {/* Content */}
               <div className="relative z-10">
                 {/* Icon */}
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 group-hover:bg-white/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 group-hover:bg-[var(--card)] flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
                   <Image 
                     src={benefit.icon} 
                     alt={benefit.title} 
@@ -111,12 +111,12 @@ export default function BenefitsGrid() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-gray-900 group-hover:text-white text-xl font-bold mb-3 transition-colors duration-300">
+                <h3 className="text-gray-900 group-hover:text-[var(--foreground)] text-xl font-bold mb-3 transition-colors duration-300">
                   {benefit.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 group-hover:text-white/90 fontbody2 text-sm leading-relaxed transition-colors duration-300">
+                <p className="text-gray-600 group-hover:text-[var(--foreground)] fontbody2 text-sm leading-relaxed transition-colors duration-300">
                   {benefit.desc}
                 </p>
               </div>

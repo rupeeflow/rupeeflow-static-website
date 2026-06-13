@@ -54,7 +54,7 @@ function BulkUploadMockup() {
         {rows.map((row, i) => (
           <motion.div
             key={row.name}
-            className="flex items-center gap-3 bg-white rounded-xl p-3 shadow-sm border border-gray-100"
+            className="flex items-center gap-3 bg-[var(--card)] rounded-xl p-3 shadow-sm border border-gray-100"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: 0.3 + i * 0.15 }}
@@ -112,7 +112,7 @@ function WebhooksMockup() {
         {events.map((e, i) => (
           <motion.div
             key={e.type}
-            className="flex items-center gap-3 bg-white rounded-xl px-3 py-2.5 shadow-sm border border-gray-100"
+            className="flex items-center gap-3 bg-[var(--card)] rounded-xl px-3 py-2.5 shadow-sm border border-gray-100"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: 0.3 + i * 0.15 }}
@@ -153,7 +153,7 @@ function DashboardMockup() {
 
       {/* Mini bar chart */}
       <motion.div
-        className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100"
+        className="bg-[var(--card)] rounded-2xl p-4 shadow-sm border border-gray-100"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.35 }}
@@ -281,12 +281,12 @@ export default function IntegrateSection() {
                     {/* Circle indicator */}
                     <span
                       className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 shadow-sm transition-all duration-300 ${
-                        isActive ? 'bg-emerald-500 shadow-emerald-500/30' : 'bg-white'
+                        isActive ? 'bg-emerald-500 shadow-emerald-500/30' : 'bg-[var(--card)]'
                       }`}
                     >
                       <ChevronUp
                         className={`w-5 h-5 transition-all duration-300 ${
-                          isActive ? 'text-white rotate-0' : 'text-emerald-500 rotate-180'
+                          isActive ? 'text-[var(--foreground)] rotate-0' : 'text-emerald-500 rotate-180'
                         }`}
                       />
                     </span>

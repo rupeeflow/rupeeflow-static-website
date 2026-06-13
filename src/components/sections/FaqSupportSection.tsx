@@ -38,7 +38,7 @@ export default function FaqSupportSection() {
           {faqs.map((faq, i) => (
             <div
               key={faq.id}
-              className={`border rounded-2xl overflow-hidden transition-all duration-300 bg-white ${
+              className={`border rounded-2xl overflow-hidden transition-all duration-300 bg-[var(--card)] ${
                 active === i
                   ? 'border-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.12)]'
                   : 'border-gray-200 hover:border-gray-300'
@@ -95,7 +95,7 @@ export default function FaqSupportSection() {
           ></textarea>
           <button
             type="submit"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-teal-emerald hover:bg-emerald-700 text-white font-semibold rounded-full transition cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-teal-emerald hover:bg-emerald-700 text-[var(--foreground)] font-semibold rounded-full transition cursor-pointer"
           >
             SUBMIT →
           </button>

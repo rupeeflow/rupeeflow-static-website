@@ -28,7 +28,7 @@ const features = [
 
 export default function WhyTrustSection() {
   return (
-    <section className="relative z-10 py-24 px-6 bg-black border-t border-white/10">
+    <section className="relative z-10 py-24 px-6 bg-[var(--background)] border-t border-[var(--border)]">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.7 }}
@@ -42,7 +42,7 @@ export default function WhyTrustSection() {
         className="absolute bottom-[0%] right-[25%] blur-3xl w-96 h-96 bg-radial-teal-soft"
       ></motion.div>
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="fontheadingthin text-5xl md:text-6xl text-white mb-16">
+        <h2 className="fontheadingthin text-5xl md:text-6xl text-[var(--foreground)] mb-16">
           Why 10,000+ Shops Trust RupeeFlow
         </h2>
 
@@ -52,7 +52,7 @@ export default function WhyTrustSection() {
               key={i}
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-              className="p-8 bg-gray-700/30 rounded-2xl border border-white/70 backdrop-blur-md text-left hover:bg-white/15 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)]"
+              className="p-8 bg-gray-700/30 rounded-2xl border border-white/70 backdrop-blur-md text-left hover:bg-[var(--card)] hover:shadow-[0_0_20px_rgba(34,197,94,0.2)]"
             >
               <f.icon
                 className="w-10 h-10 text-emerald-400 mb-4"

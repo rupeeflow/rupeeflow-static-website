@@ -104,7 +104,7 @@ export default function FAQPage() {
                 <HelpCircle className={`w-5 h-5 ${openIndex === index ? 'text-teal-400' : 'text-gray-500'}`} />
               </div>
               <div className="flex-1">
-                <h3 className={`text-lg fontheading ${openIndex === index ? 'text-teal-400' : 'text-white'}`}>
+                <h3 className={`text-lg fontheading ${openIndex === index ? 'text-teal-400' : 'text-[var(--foreground)]'}`}>
                   {faq.question}
                 </h3>
               </div>
@@ -131,13 +131,13 @@ export default function FAQPage() {
 
       {/* Need More Help */}
       <div className="mt-12 bg-gradient-to-br from-teal-500/10 to-emerald-500/10 border border-teal-500/30 rounded-xl p-8">
-        <h3 className="text-2xl fontheading text-white mb-3">Still have questions?</h3>
+        <h3 className="text-2xl fontheading text-[var(--foreground)] mb-3">Still have questions?</h3>
         <p className="text-gray-300 fontbody2 mb-4">
           Can&apos;t find the answer you&apos;re looking for? Our support team is here to help you.
         </p>
         <a
           href="/support"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-600 to-emerald-600 text-white fontheading rounded-xl hover:from-teal-500 hover:to-emerald-500 transition-all"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-600 to-emerald-600 text-[var(--foreground)] fontheading rounded-xl hover:from-teal-500 hover:to-emerald-500 transition-all"
         >
           Contact Support
         </a>

@@ -44,12 +44,12 @@ export default function ScheduledPaymentMockup({ className = '' }: MockupProps) 
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 blur-2xl rounded-3xl" />
       
       {/* Calendar card */}
-      <div className="relative bg-white rounded-2xl shadow-xl border border-gray-200 p-6 max-w-sm mx-auto">
+      <div className="relative bg-[var(--card)] rounded-2xl shadow-xl border border-gray-200 p-6 max-w-sm mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
-              <Calendar className="w-5 h-5 text-white" />
+              <Calendar className="w-5 h-5 text-[var(--foreground)]" />
             </div>
             <div>
               <p className="text-sm font-semibold text-gray-900">Scheduled Payments</p>
@@ -88,7 +88,7 @@ export default function ScheduledPaymentMockup({ className = '' }: MockupProps) 
                     ${!isValidDate ? 'text-gray-300' : ''}
                     ${isToday && !isScheduled ? 'bg-gray-100 font-semibold text-gray-900' : ''}
                     ${isScheduled?.status === 'completed' ? 'bg-emerald-100 text-emerald-700 font-semibold' : ''}
-                    ${isScheduled?.status === 'today' ? 'bg-gradient-to-br from-emerald-500 to-teal-600 text-white font-bold' : ''}
+                    ${isScheduled?.status === 'today' ? 'bg-gradient-to-br from-emerald-500 to-teal-600 text-[var(--foreground)] font-bold' : ''}
                     ${isScheduled?.status === 'upcoming' ? 'bg-blue-100 text-blue-700 font-semibold' : ''}
                     ${!isScheduled && isValidDate && !isToday ? 'text-gray-700' : ''}
                   `}
@@ -120,7 +120,7 @@ export default function ScheduledPaymentMockup({ className = '' }: MockupProps) 
                 ${payment.status === 'today' ? 'bg-gradient-to-br from-emerald-500 to-teal-600' : 'bg-blue-100'}
               `}>
                 {payment.status === 'today' ? (
-                  <Clock className="w-4 h-4 text-white" />
+                  <Clock className="w-4 h-4 text-[var(--foreground)]" />
                 ) : (
                   <span className="text-xs font-bold text-blue-700">{payment.date}</span>
                 )}

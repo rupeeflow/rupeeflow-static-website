@@ -1,9 +1,10 @@
-"use client"
+'use client'
 
-import Container from "@/components/ui/Container"
-import MainCTA from "@/components/ui/mainCTA"
-import CardFAQ from "@/components/sections/CardFAQ"
-import { motion } from "framer-motion"
+import Container from '@/components/ui/Container'
+import MainCTA from '@/components/ui/mainCTA'
+import CardFAQ from '@/components/sections/CardFAQ'
+import { motion } from 'framer-motion'
+import Button from '@/components/ui/Button'
 
 import {
   BarChart3,
@@ -13,16 +14,15 @@ import {
   TrendingUp,
   Eye,
   Zap,
-  Database
-} from "lucide-react"
-
+  Database,
+} from 'lucide-react'
 
 /* ---------------- REAL-TIME REVENUE CARD ---------------- */
 
 function RevenueCard() {
   return (
     <motion.div
-      className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md"
+      className="bg-[var(--card)] rounded-2xl shadow-xl p-6 w-full max-w-md"
       animate={{ y: [0, -10, 0] }}
       transition={{ duration: 6, repeat: Infinity }}
     >
@@ -37,7 +37,7 @@ function RevenueCard() {
         <motion.div
           className="h-full bg-emerald-500"
           initial={{ width: 0 }}
-          whileInView={{ width: "70%" }}
+          whileInView={{ width: '70%' }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         />
@@ -46,7 +46,6 @@ function RevenueCard() {
   )
 }
 
-
 /* ---------------- TREND CHART ---------------- */
 
 function TrendChart() {
@@ -54,7 +53,7 @@ function TrendChart() {
 
   return (
     <motion.div
-      className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md"
+      className="bg-[var(--card)] rounded-2xl shadow-xl p-6 w-full max-w-md"
       animate={{ y: [0, -8, 0] }}
       transition={{ duration: 6, repeat: Infinity }}
     >
@@ -77,20 +76,19 @@ function TrendChart() {
   )
 }
 
-
 /* ---------------- CUSTOMER INSIGHTS ---------------- */
 
 function CustomerInsightsCard() {
   return (
     <motion.div
-      className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md space-y-4"
+      className="bg-[var(--card)] rounded-2xl shadow-xl p-6 w-full max-w-md space-y-4"
       animate={{ y: [0, -9, 0] }}
       transition={{ duration: 6, repeat: Infinity }}
     >
       {[
-        { label: "Reliable Customers", value: "82%", color: "bg-emerald-500" },
-        { label: "Late Payments", value: "11%", color: "bg-yellow-400" },
-        { label: "High Risk", value: "7%", color: "bg-red-400" },
+        { label: 'Reliable Customers', value: '82%', color: 'bg-emerald-500' },
+        { label: 'Late Payments', value: '11%', color: 'bg-yellow-400' },
+        { label: 'High Risk', value: '7%', color: 'bg-red-400' },
       ].map((item, i) => (
         <div key={i}>
           <div className="flex justify-between text-sm text-gray-600">
@@ -98,7 +96,10 @@ function CustomerInsightsCard() {
             <span>{item.value}</span>
           </div>
           <div className="h-2 bg-gray-200 rounded mt-1 overflow-hidden">
-            <div className={`h-full ${item.color}`} style={{ width: item.value }} />
+            <div
+              className={`h-full ${item.color}`}
+              style={{ width: item.value }}
+            />
           </div>
         </div>
       ))}
@@ -106,13 +107,12 @@ function CustomerInsightsCard() {
   )
 }
 
-
 /* ---------------- REPORT SUMMARY ---------------- */
 
 function ReportCard() {
   return (
     <motion.div
-      className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md"
+      className="bg-[var(--card)] rounded-2xl shadow-xl p-6 w-full max-w-md"
       animate={{ y: [0, -7, 0] }}
       transition={{ duration: 6, repeat: Infinity }}
     >
@@ -136,65 +136,62 @@ function ReportCard() {
   )
 }
 
-
 /* ================= PAGE ================= */
 
 export default function AnalyticsPage() {
-
   const faqs = [
     {
-      question: "What insights can I track with analytics?",
+      question: 'What insights can I track with analytics?',
       answer:
-        "Monitor payment trends, customer behavior, cash flow performance, and operational efficiency in real time."
+        'Monitor payment trends, customer behavior, cash flow performance, and operational efficiency in real time.',
     },
     {
-      question: "Can I generate financial reports?",
+      question: 'Can I generate financial reports?',
       answer:
-        "Yes. Export detailed reports for reconciliation, audits, and strategic planning."
+        'Yes. Export detailed reports for reconciliation, audits, and strategic planning.',
     },
     {
-      question: "Does analytics help improve cash flow?",
+      question: 'Does analytics help improve cash flow?',
       answer:
-        "Advanced insights help identify delays, optimize collections, and predict incoming revenue."
+        'Advanced insights help identify delays, optimize collections, and predict incoming revenue.',
     },
     {
-      question: "Can I track customer payment behavior?",
+      question: 'Can I track customer payment behavior?',
       answer:
-        "Yes. Identify reliable customers, late payers, and risk patterns to improve decision-making."
+        'Yes. Identify reliable customers, late payers, and risk patterns to improve decision-making.',
     },
     {
-      question: "Is my financial data secure?",
+      question: 'Is my financial data secure?',
       answer:
-        "All analytics data is encrypted and protected with enterprise-grade security standards."
+        'All analytics data is encrypted and protected with enterprise-grade security standards.',
     },
   ]
 
   return (
     <>
       {/* HERO */}
-      <section className="bg-[#020506] text-white">
+      <section className="bg-[var(--background)] text-[var(--foreground)]">
         <Container className="py-28">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-
             <div>
               <h1 className="text-6xl font-bold leading-tight">
-                Payment{" "}
+                Payment{' '}
                 <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                   Analytics
                 </span>
               </h1>
 
               <p className="mt-6 text-gray-400 text-lg leading-relaxed">
-                Transform financial data into actionable insights and make smarter
-                decisions with real-time payment intelligence.
+                Transform financial data into actionable insights and make
+                smarter decisions with real-time payment intelligence.
               </p>
 
               <ul className="mt-8 space-y-4">
                 {[
-                  { icon: BarChart3, text: "Real-time financial dashboards" },
-                  { icon: LineChart, text: "Trend & performance tracking" },
-                  { icon: PieChart, text: "Visual insights & reporting" },
-                  { icon: ShieldCheck, text: "Secure & reliable data access" },
+                  { icon: BarChart3, text: 'Real-time financial dashboards' },
+                  { icon: LineChart, text: 'Trend & performance tracking' },
+                  { icon: PieChart, text: 'Visual insights & reporting' },
+                  { icon: ShieldCheck, text: 'Secure & reliable data access' },
                 ].map((item, i) => {
                   const Icon = item.icon
                   return (
@@ -213,39 +210,38 @@ export default function AnalyticsPage() {
               </div>
             </div>
 
-           <div className="flex justify-center lg:justify-end">
-  <div className="
+            <div className="flex justify-center lg:justify-end">
+              <div
+                className="
     w-full max-w-lg
-    bg-white
+    bg-[var(--card)]
     rounded-2xl
     shadow-2xl
     border border-gray-100
     aspect-video
     flex items-center justify-center
     overflow-hidden
-  ">
-    
-    {/* Placeholder text — remove later */}
-    <span className="text-gray-400 text-sm">
-      Analytics Preview Image
-    </span>
-
-  </div>
-</div>
-
+  "
+              >
+                {/* Placeholder text — remove later */}
+                <span className="text-gray-400 text-sm">
+                  Analytics Preview Image
+                </span>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
       {/* FINANCIAL INSIGHTS */}
-      <section className="py-8 bg-white">
+      <section className="py-8 bg-[var(--card)]">
         <Container>
           <h2 className="text-4xl font-semibold text-center">
-            Financial Insights for <span className="text-emerald-600">Smarter Decisions</span>
+            Financial Insights for{' '}
+            <span className="text-emerald-600">Smarter Decisions</span>
           </h2>
 
           <div className="mt-20 space-y-28">
-
             {/* Real Time */}
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <RevenueCard />
@@ -253,9 +249,9 @@ export default function AnalyticsPage() {
                 title="Real-Time Dashboards"
                 desc="Monitor payments and revenue from a unified dashboard updated instantly."
                 bullets={[
-                  "Live revenue tracking",
-                  "Instant payment updates",
-                  "Multi-device access"
+                  'Live revenue tracking',
+                  'Instant payment updates',
+                  'Multi-device access',
                 ]}
               />
             </div>
@@ -266,9 +262,9 @@ export default function AnalyticsPage() {
                 title="Trend Analysis"
                 desc="Identify patterns and forecast future revenue."
                 bullets={[
-                  "Seasonal trend insights",
-                  "Predict future inflows",
-                  "Performance comparisons"
+                  'Seasonal trend insights',
+                  'Predict future inflows',
+                  'Performance comparisons',
                 ]}
               />
               <TrendChart />
@@ -281,9 +277,9 @@ export default function AnalyticsPage() {
                 title="Customer Insights"
                 desc="Understand behavior and detect risk early."
                 bullets={[
-                  "Reliable vs risky users",
-                  "Late payment detection",
-                  "Behavior analytics"
+                  'Reliable vs risky users',
+                  'Late payment detection',
+                  'Behavior analytics',
                 ]}
               />
             </div>
@@ -294,14 +290,13 @@ export default function AnalyticsPage() {
                 title="Performance Reports"
                 desc="Generate financial reports for planning & audits."
                 bullets={[
-                  "Exportable reports",
-                  "Audit-ready statements",
-                  "Cash flow summaries"
+                  'Exportable reports',
+                  'Audit-ready statements',
+                  'Cash flow summaries',
                 ]}
               />
               <ReportCard />
             </div>
-
           </div>
         </Container>
       </section>
@@ -314,40 +309,38 @@ export default function AnalyticsPage() {
           </h2>
 
           <p className="mt-4 text-gray-600">
-            AI-powered insights anticipate cash flow gaps and growth opportunities.
+            AI-powered insights anticipate cash flow gaps and growth
+            opportunities.
           </p>
 
           <div className="mt-12 grid md:grid-cols-3 gap-6">
-
-  {[
-    "Forecast revenue trends",
-    "Detect payment slowdowns",
-    "Identify growth opportunities"
-  ].map((text, i) => (
-    
-    <div
-      key={i}
-      className="
+            {[
+              'Forecast revenue trends',
+              'Detect payment slowdowns',
+              'Identify growth opportunities',
+            ].map((text, i) => (
+              <div
+                key={i}
+                className="
       group relative overflow-hidden rounded-xl p-6 text-center
-      bg-white shadow-md cursor-pointer
+      bg-[var(--card)] shadow-md cursor-pointer
       transition-all duration-500 ease-out
       hover:-translate-y-2
       "
-    >
-
-      {/* Emerald glow background */}
-      <div
-        className="
+              >
+                {/* Emerald glow background */}
+                <div
+                  className="
         absolute inset-0 opacity-0
         bg-gradient-to-br from-emerald-400/25 via-emerald-300/10 to-transparent
         blur-2xl transition duration-500
         group-hover:opacity-100
         "
-      />
+                />
 
-      {/* animated highlight sweep */}
-      <div
-        className="
+                {/* animated highlight sweep */}
+                <div
+                  className="
         absolute inset-0 opacity-0
         bg-gradient-to-r from-transparent via-emerald-300/40 to-transparent
         translate-x-[-120%]
@@ -355,69 +348,67 @@ export default function AnalyticsPage() {
         group-hover:opacity-100
         transition-all duration-700 ease-out
         "
-      />
+                />
 
-      {/* content */}
-      <div className="relative z-10 font-medium text-gray-800 group-hover:text-emerald-700 transition">
-        {text}
-      </div>
-
-    </div>
-  ))}
-
-</div>
+                {/* content */}
+                <div className="relative z-10 font-medium text-gray-800 group-hover:text-emerald-700 transition">
+                  {text}
+                </div>
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
 
       {/* SMART ANALYTICS */}
       <section className="py-28 bg-gray-200">
-  <Container>
-    <h2 className="text-4xl font-bold text-center text-black">
-      Smart Analytics Intelligence
-    </h2>
+        <Container>
+          <h2 className="text-4xl font-bold text-center text-black">
+            Smart Analytics Intelligence
+          </h2>
 
-    <div className="mt-16 grid md:grid-cols-3 gap-8">
-      {[
-        { icon: TrendingUp, title: "Revenue Forecasting" },
-        { icon: Eye, title: "Risk Detection" },
-        { icon: Database, title: "Performance Metrics" },
-        { icon: PieChart, title: "Customer Segmentation" },
-        { icon: Zap, title: "Growth Insights" },
-      ].map((item, i) => {
-        const Icon = item.icon
+          <div className="mt-16 grid md:grid-cols-3 gap-8">
+            {[
+              { icon: TrendingUp, title: 'Revenue Forecasting' },
+              { icon: Eye, title: 'Risk Detection' },
+              { icon: Database, title: 'Performance Metrics' },
+              { icon: PieChart, title: 'Customer Segmentation' },
+              { icon: Zap, title: 'Growth Insights' },
+            ].map((item, i) => {
+              const Icon = item.icon
 
-        return (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.08, duration: 0.5 }}
-            animate={{ y: [0, -6, 0] }}
-            className="
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08, duration: 0.5 }}
+                  animate={{ y: [0, -6, 0] }}
+                  className="
               group relative overflow-hidden rounded-xl p-7
               bg-gray-800
-              border border-white/10
+              border border-[var(--border)]
               cursor-pointer
               transition-all duration-500 ease-out
               hover:-translate-y-2
               hover:border-emerald-400/40
               hover:shadow-[0_0_35px_rgba(16,185,129,0.35)]
             "
-          >
-            {/* emerald glow bloom */}
-            <div
-              className="
+                >
+                  {/* emerald glow bloom */}
+                  <div
+                    className="
               absolute inset-0 opacity-0
               bg-gradient-to-br from-emerald-400/20 via-emerald-300/10 to-transparent
               blur-2xl transition duration-500
               group-hover:opacity-100
               "
-            />
+                  />
 
-            {/* light sweep animation */}
-            <div
-              className="
+                  {/* light sweep animation */}
+                  <div
+                    className="
               absolute inset-0 opacity-0
               bg-gradient-to-r from-transparent via-emerald-300/40 to-transparent
               translate-x-[-120%]
@@ -425,28 +416,32 @@ export default function AnalyticsPage() {
               group-hover:opacity-100
               transition-all duration-700 ease-out
               "
-            />
+                  />
 
-            {/* content */}
-            <div className="relative z-10">
-              <motion.div
-                whileHover={{ scale: 1.15 }}
-                transition={{ type: "spring", stiffness: 260, damping: 15 }}
-                className="mb-4 text-emerald-400"
-              >
-                <Icon size={26} />
-              </motion.div>
+                  {/* content */}
+                  <div className="relative z-10">
+                    <motion.div
+                      whileHover={{ scale: 1.15 }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 260,
+                        damping: 15,
+                      }}
+                      className="mb-4 text-emerald-400"
+                    >
+                      <Icon size={26} />
+                    </motion.div>
 
-              <h3 className="font-semibold text-gray-200 group-hover:text-white transition">
-                {item.title}
-              </h3>
-            </div>
-          </motion.div>
-        )
-      })}
-    </div>
-  </Container>
-</section>
+                    <h3 className="font-semibold text-gray-200 group-hover:text-[var(--foreground)] transition">
+                      {item.title}
+                    </h3>
+                  </div>
+                </motion.div>
+              )
+            })}
+          </div>
+        </Container>
+      </section>
 
       {/* FAQ */}
       <section className="bg-gray-200 py-24">
@@ -457,7 +452,6 @@ export default function AnalyticsPage() {
     </>
   )
 }
-
 
 /* ---------- reusable feature text block ---------- */
 type FeatureContentProps = {
@@ -481,9 +475,7 @@ function FeatureContent({ title, desc, bullets }: FeatureContentProps) {
         ))}
       </ul>
 
-      <button className="mt-6 border border-emerald-500 text-emerald-600 px-5 py-2 rounded-lg text-sm font-bold hover:bg-emerald-50 transition">
-        Learn More →
-      </button>
+      <Button className="mt-6 px-5 py-2 text-sm font-bold">Learn More →</Button>
     </div>
   )
 }

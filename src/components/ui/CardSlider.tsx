@@ -106,15 +106,15 @@ export default function CardSlider() {
       {/* Navigation Arrows */}
       <button
         onClick={prevCard}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 p-3 bg-[var(--card)] rounded-full hover:bg-[var(--card)] transition"
       >
-        <ChevronLeft className="w-6 h-6 text-white" />
+        <ChevronLeft className="w-6 h-6 text-[var(--foreground)]" />
       </button>
       <button
         onClick={nextCard}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 p-3 bg-[var(--card)] rounded-full hover:bg-[var(--card)] transition"
       >
-        <ChevronRight className="w-6 h-6 text-white" />
+        <ChevronRight className="w-6 h-6 text-[var(--foreground)]" />
       </button>
 
       {/* Page Indicators */}
@@ -124,7 +124,7 @@ export default function CardSlider() {
             key={i}
             onClick={() => setIndex(i)}
             className={`transition-all h-2 rounded-full ${
-              i === index ? 'w-12 bg-white/70' : 'w-2 bg-white/30'
+              i === index ? 'w-12 bg-[var(--card)]' : 'w-2 bg-[var(--card)]'
             }`}
           />
         ))}

@@ -23,7 +23,7 @@ const CtaButtons = () => {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="w-full bg-black-emerald z-10 mx-auto gap-10 flex flex-col items-center text-center"
+      className="w-full bg-[var(--background)] z-10 mx-auto gap-10 flex flex-col items-center text-center"
     >
       {/* CTA Buttons */}
       <motion.div
@@ -49,7 +49,7 @@ const CtaButtons = () => {
             width={24}
             height={24}
           />
-          <span className="text-sm font-semibold text-white">
+          <span className="text-sm font-semibold text-[var(--foreground)]">
             DOWNLOAD THE APP
           </span>
         </Link>

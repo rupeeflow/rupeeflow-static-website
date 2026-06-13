@@ -14,6 +14,7 @@ import {
   CheckCircle,
   TrendingUp
 } from "lucide-react"
+import Button from '@/components/ui/Button'
 
 // Animated Invoice Preview Component
 function InvoiceAnimation() {
@@ -37,7 +38,7 @@ function InvoiceAnimation() {
       transition={{ duration: 0.9, delay: 0.3 }}
       className="relative"
     >
-      <div className="relative bg-white rounded-2xl shadow-2xl p-8 border-2 border-emerald-500/20">
+      <div className="relative bg-[var(--card)] rounded-2xl shadow-2xl p-8 border-2 border-emerald-500/20">
         {/* Invoice Header */}
         <div className="flex items-start justify-between mb-6">
           <div>
@@ -163,7 +164,7 @@ function GSTComplianceAnimation() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="flex items-center gap-4 p-4 bg-white rounded-lg border border-emerald-100"
+              className="flex items-center gap-4 p-4 bg-[var(--card)] rounded-lg border border-emerald-100"
             >
               <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center">
                 <item.icon className="w-5 h-5 text-emerald-600" />
@@ -179,7 +180,7 @@ function GSTComplianceAnimation() {
         <motion.div
           animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="mt-6 p-4 bg-emerald-500 text-white rounded-lg text-center font-semibold"
+          className="mt-6 p-4 bg-emerald-500 text-[var(--foreground)] rounded-lg text-center font-semibold"
         >
           Auto-synced with GST Portal
         </motion.div>
@@ -206,7 +207,7 @@ function PaymentTrackingAnimation() {
       viewport={{ once: true }}
       className="order-2 md:order-1"
     >
-      <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-200">
+      <div className="bg-[var(--card)] rounded-2xl shadow-xl p-8 border-2 border-gray-200">
         <div className="text-lg font-bold text-gray-900 mb-6">Payment Status</div>
 
         <div className="space-y-4">
@@ -227,7 +228,7 @@ function PaymentTrackingAnimation() {
                 }}
                 className="w-8 h-8 rounded-full flex items-center justify-center"
               >
-                {item.status && <CheckCircle className="w-5 h-5 text-white" />}
+                {item.status && <CheckCircle className="w-5 h-5 text-[var(--foreground)]" />}
               </motion.div>
               <div className={`flex-1 ${item.status ? 'text-gray-900' : 'text-gray-400'}`}>
                 {item.label}
@@ -270,7 +271,7 @@ function TemplateAnimation() {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
     >
-      <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-200">
+      <div className="bg-[var(--card)] rounded-2xl shadow-xl p-8 border-2 border-gray-200">
         <div className="flex items-center justify-between mb-6">
           <div className="text-lg font-bold text-gray-900">Invoice Templates</div>
           <div className="flex gap-2">
@@ -349,7 +350,7 @@ export default function EInvoicingPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-[#020506] text-white">
+      <section className="bg-[var(--background)] text-[var(--foreground)]">
         <Container className="py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -423,7 +424,7 @@ export default function EInvoicingPage() {
       </section>
 
       {/* E-INVOICING FEATURES */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[var(--card)]">
         <Container>
           <div className="max-w-6xl mx-auto px-6">
 
@@ -584,10 +585,10 @@ export default function EInvoicingPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: i * 0.1 }}
-          className="group bg-white border border-gray-200 p-7 rounded-xl text-left transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400/40 hover:shadow-xl"
+          className="group bg-[var(--card)] border border-gray-200 p-7 rounded-xl text-left transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400/40 hover:shadow-xl"
         >
           <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center mb-4 group-hover:bg-emerald-500 transition-colors">
-            <item.icon className="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors" />
+            <item.icon className="w-6 h-6 text-emerald-600 group-hover:text-[var(--foreground)] transition-colors" />
           </div>
           <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-emerald-600 transition">
             {item.title}
@@ -629,19 +630,17 @@ export default function EInvoicingPage() {
             timely notifications that improve collection efficiency and cash flow.
           </p>
 
-          <button className="mt-6 border border-emerald-500 text-emerald-500 px-6 py-2 rounded-lg text-sm font-bold hover:bg-emerald-500/10 transition">
-            Get Started →
-          </button>
+          <Button className="mt-6 px-6 py-2 text-sm font-bold">Get Started →</Button>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 aspect-video flex items-center justify-center">
+        <div className="bg-[var(--card)] rounded-2xl shadow-lg border border-gray-200 aspect-video flex items-center justify-center">
           <span className="text-gray-400 text-sm">Preview</span>
         </div>
       </div>
 
       {/* ROW 2 */}
       <div className="grid md:grid-cols-2 gap-14 items-center">
-        <div className="order-2 md:order-1 bg-white rounded-2xl shadow-lg border border-gray-200 aspect-video flex items-center justify-center">
+        <div className="order-2 md:order-1 bg-[var(--card)] rounded-2xl shadow-lg border border-gray-200 aspect-video flex items-center justify-center">
           <span className="text-gray-400 text-sm">Preview</span>
         </div>
 
@@ -652,9 +651,7 @@ export default function EInvoicingPage() {
             instant customer payments and faster settlements.
           </p>
 
-          <button className="mt-6 border border-emerald-500 text-emerald-500 px-6 py-2 rounded-lg text-sm font-bold hover:bg-emerald-500/10 transition">
-            Learn More →
-          </button>
+          <Button className="mt-6 px-6 py-2 text-sm font-bold">Learn More →</Button>
         </div>
       </div>
 
@@ -667,19 +664,17 @@ export default function EInvoicingPage() {
             payment experiences that encourage faster settlements.
           </p>
 
-          <button className="mt-6 border border-emerald-500 text-emerald-500 px-6 py-2 rounded-lg text-sm font-bold hover:bg-emerald-500/10 transition">
-            Get Started →
-          </button>
+          <Button className="mt-6 px-6 py-2 text-sm font-bold">Get Started →</Button>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 aspect-video flex items-center justify-center">
+        <div className="bg-[var(--card)] rounded-2xl shadow-lg border border-gray-200 aspect-video flex items-center justify-center">
           <span className="text-gray-400 text-sm">Preview</span>
         </div>
       </div>
 
       {/* ROW 4 */}
       <div className="grid md:grid-cols-2 gap-14 items-center">
-        <div className="order-2 md:order-1 bg-white rounded-2xl shadow-lg border border-gray-200 aspect-video flex items-center justify-center">
+        <div className="order-2 md:order-1 bg-[var(--card)] rounded-2xl shadow-lg border border-gray-200 aspect-video flex items-center justify-center">
           <span className="text-gray-500 text-sm">Preview</span>
         </div>
 
@@ -690,9 +685,7 @@ export default function EInvoicingPage() {
             maintaining professional, compliant communication.
           </p>
 
-          <button className="mt-6 border border-emerald-500 text-emerald-500 px-6 py-2 rounded-lg text-sm font-bold hover:bg-emerald-500/10 transition">
-            Learn More →
-          </button>
+          <Button className="mt-6 px-6 py-2 text-sm font-bold">Learn More →</Button>
         </div>
       </div>
 
@@ -705,12 +698,10 @@ export default function EInvoicingPage() {
             from a centralized, audit-ready dashboard.
           </p>
 
-          <button className="mt-6 border border-emerald-500 text-emerald-500 px-6 py-2 rounded-lg text-sm font-bold hover:bg-emerald-500/10 transition">
-            Get Started →
-          </button>
+          <Button className="mt-6 px-6 py-2 text-sm font-bold">Get Started →</Button>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 aspect-video flex items-center justify-center">
+        <div className="bg-[var(--card)] rounded-2xl shadow-lg border border-gray-200 aspect-video flex items-center justify-center">
           <span className="text-gray-400 text-sm">Preview</span>
         </div>
       </div>

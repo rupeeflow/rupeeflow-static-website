@@ -67,7 +67,7 @@ export default function UpiSolutionsStack() {
               style={{ top: `${96 + index * 28}px` }}
             >
               <motion.div
-                className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden"
+                className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-sm overflow-hidden"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -79,7 +79,7 @@ export default function UpiSolutionsStack() {
                   <div className="flex-1 flex flex-col justify-center p-5 sm:p-8 md:p-12">
                     {/* Number badge */}
                     <div className="flex items-center gap-3 mb-5">
-                      <span className="w-8 h-8 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center shrink-0">
+                      <span className="w-8 h-8 rounded-full bg-emerald-500 text-[var(--foreground)] text-xs font-bold flex items-center justify-center shrink-0">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                       <h3 className="fontheading text-xl md:text-2xl text-gray-900">{item.label}</h3>
@@ -110,14 +110,14 @@ export default function UpiSolutionsStack() {
                       <div className="relative w-[290px] px-2">
                         {/* Third card — peek from bottom */}
                         <motion.div
-                          className="absolute -bottom-2 left-6 right-0 h-[68px] bg-white rounded-2xl border border-gray-200 shadow-sm opacity-50"
+                          className="absolute -bottom-2 left-6 right-0 h-[68px] bg-[var(--card)] rounded-2xl border border-gray-200 shadow-sm opacity-50"
                           animate={{ y: [0, -4, 0] }}
                           transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
                         />
 
                         {/* Second card */}
                         <motion.div
-                          className="relative z-10 bg-white rounded-2xl border border-gray-100 shadow-md p-4 mb-3"
+                          className="relative z-10 bg-[var(--card)] rounded-2xl border border-gray-100 shadow-md p-4 mb-3"
                           animate={{ y: [0, -6, 0] }}
                           transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.4 }}
                         >
@@ -145,7 +145,7 @@ export default function UpiSolutionsStack() {
 
                         {/* First card — primary, topmost */}
                         <motion.div
-                          className="relative z-20 bg-white rounded-2xl border border-gray-100 shadow-xl p-4"
+                          className="relative z-20 bg-[var(--card)] rounded-2xl border border-gray-100 shadow-xl p-4"
                           animate={{ y: [0, -8, 0] }}
                           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                         >
@@ -192,7 +192,7 @@ export default function UpiSolutionsStack() {
 
                       {/* Subtle label badge */}
                       <div className="absolute bottom-4 left-4 z-10">
-                        <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-sm">
+                        <div className="flex items-center gap-2 bg-[var(--card)] backdrop-blur-sm rounded-full px-3 py-1.5 shadow-sm">
                           <span className="w-2 h-2 rounded-full bg-emerald-500" />
                           <span className="text-xs font-semibold text-gray-800">{item.label}</span>
                         </div>

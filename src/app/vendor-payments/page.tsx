@@ -18,7 +18,7 @@ import VendorPaymentsFaq from '@/components/sections/vendorPayments/VendorPaymen
 function PayChannelsMockup() {
   const methods = ['NEFT', 'RTGS', 'IMPS', 'UPI']
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-lg p-6 w-full max-w-[360px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg p-6 w-full max-w-[360px]">
       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-4">Select Payment Channel</p>
 
       <div className="grid grid-cols-2 gap-3 mb-6">
@@ -54,7 +54,7 @@ function PayChannelsMockup() {
       </div>
 
       <motion.div
-        className="w-full py-2.5 rounded-full bg-emerald-500 text-white text-sm font-semibold text-center flex items-center justify-center gap-2"
+        className="w-full py-2.5 rounded-full bg-emerald-500 text-[var(--foreground)] text-sm font-semibold text-center flex items-center justify-center gap-2"
         animate={{ scale: [1, 1.03, 1] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
       >
@@ -81,7 +81,7 @@ function InvoiceApprovalMockup() {
     { label: 'Payment Initiated', done: false, time: 'In progress…' },
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-lg p-6 w-full max-w-[360px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg p-6 w-full max-w-[360px]">
       <div className="flex items-center justify-between mb-5">
         <div>
           <p className="text-xs text-gray-400 font-medium">Invoice</p>
@@ -100,7 +100,7 @@ function InvoiceApprovalMockup() {
             transition={{ delay: 0.15 + i * 0.15, duration: 0.4 }}
           >
             <div className="flex flex-col items-center shrink-0">
-              <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step.done ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400 animate-pulse'}`}>
+              <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step.done ? 'bg-emerald-500 text-[var(--foreground)]' : 'bg-gray-200 text-gray-400 animate-pulse'}`}>
                 {step.done ? '✓' : '…'}
               </div>
               {i < steps.length - 1 && <div className="w-px h-6 bg-gray-200 mt-1" />}
@@ -130,7 +130,7 @@ function LiveTrackingMockup() {
     { label: 'Settled', ts: '10:01:24 AM', done: true },
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-lg p-6 w-full max-w-[360px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg p-6 w-full max-w-[360px]">
       <div className="flex items-center gap-2 mb-5">
         <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping absolute" />
         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 relative" />
@@ -162,7 +162,7 @@ function LiveTrackingMockup() {
             transition={{ delay: 0.2 + i * 0.2, duration: 0.4 }}
           >
             <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-              <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-3 h-3 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
               </svg>
             </div>
@@ -174,7 +174,7 @@ function LiveTrackingMockup() {
         ))}
       </div>
 
-      <div className="mt-5 bg-emerald-500 text-white text-xs font-semibold rounded-lg px-4 py-2.5 text-center">
+      <div className="mt-5 bg-emerald-500 text-[var(--foreground)] text-xs font-semibold rounded-lg px-4 py-2.5 text-center">
         ✓ Settlement Complete · 1.2 seconds
       </div>
     </div>
@@ -190,7 +190,7 @@ function ReconciliationMockup() {
     { inv: 'INV-004', vendor: 'QuickParts', amount: '₹9,800', status: 'Matched' },
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-lg p-6 w-full max-w-[380px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg p-6 w-full max-w-[380px]">
       <div className="flex items-center justify-between mb-4">
         <p className="fontheading text-gray-900 text-base">Auto-Reconciliation</p>
         <span className="text-xs bg-emerald-100 text-emerald-700 font-semibold px-3 py-1 rounded-full">4/4 Matched</span>
@@ -212,7 +212,7 @@ function ReconciliationMockup() {
             <span className="text-xs font-bold text-gray-900">{row.amount}</span>
             <div className="flex items-center gap-1">
               <div className="w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-                <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-2.5 h-2.5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -235,7 +235,7 @@ export default function VendorPaymentPage() {
     <div className="w-full relative">
 
       {/* ── HERO SECTION ── */}
-      <section className="relative min-h-screen bg-[#020506] overflow-hidden">
+      <section className="relative min-h-screen bg-[var(--background)] overflow-hidden">
         {/* Spotlights */}
         <div
           className="absolute -left-[100px] top-[10%] w-[400px] h-[400px] rounded-full opacity-50 blur-[120px] pointer-events-none"
@@ -268,7 +268,7 @@ export default function VendorPaymentPage() {
               <span className="text-emerald-400 text-xs font-semibold tracking-wide uppercase">Vendor Payments</span>
             </motion.div>
 
-            <h1 className="fontheading text-4xl sm:text-5xl lg:text-[3.5rem] leading-tight text-white mb-6">
+            <h1 className="fontheading text-4xl sm:text-5xl lg:text-[3.5rem] leading-tight text-[var(--foreground)] mb-6">
               Efficient{' '}
               <span className="text-emerald-400">Vendor Payments</span>
               <br />
@@ -304,13 +304,8 @@ export default function VendorPaymentPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              {/* <Link
-                href="#"
-                className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/25"
-              >
-                <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
-                Start Paying Today
-              </Link> */}
+              {/* CTA replaced with Button for consistent global styling */}
+              {/* <Button href="#" className="px-8 py-3.5 text-sm font-semibold inline-flex items-center gap-3"><span className="w-2.5 h-2.5 rounded-full bg-[var(--card)]"/>Start Paying Today</Button> */}
             </motion.div>
           </motion.div>
 
@@ -342,7 +337,7 @@ export default function VendorPaymentPage() {
       </section>
 
       {/* ── WHY RUPEEFLOW FOR VENDOR PAYMENTS ── */}
-      <section className="relative py-24 bg-white overflow-hidden">
+      <section className="relative py-24 bg-[var(--card)] overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
@@ -551,7 +546,7 @@ export default function VendorPaymentPage() {
       </section>
 
       {/* ── EVERYTHING YOU NEED — Feature Grid ── */}
-      <section className="relative py-24 bg-white">
+      <section className="relative py-24 bg-[var(--card)]">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             className="text-center mb-16"
@@ -578,7 +573,7 @@ export default function VendorPaymentPage() {
             ].map(({ Icon, title, desc }, i) => (
               <motion.div
                 key={title}
-                className="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                className="bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

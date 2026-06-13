@@ -72,7 +72,7 @@ export default function RepaymentSection() {
                 viewport={{ once: true }}
                 className="relative group"
               >
-                <div className="relative bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 overflow-hidden hover:-translate-y-1">
+                <div className="relative bg-[var(--card)] rounded-3xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 overflow-hidden hover:-translate-y-1">
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-teal-500/0 group-hover:from-emerald-500/5 group-hover:to-teal-500/5 transition-all duration-500" />
 
@@ -143,7 +143,7 @@ export default function RepaymentSection() {
           className="bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-3xl p-6 md:p-8"
         >
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 rounded-2xl bg-[var(--card)] flex items-center justify-center flex-shrink-0">
               <Image
                 src="/features/shield.svg"
                 alt="How Payment Works"

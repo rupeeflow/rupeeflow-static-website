@@ -29,7 +29,7 @@ export default function FeatureCard({
       whileHover={{ y: -5 }}
       transition={{ type: 'spring', stiffness: 200, damping: 15 }}
       className="relative z-20 flex flex-col justify-between backdrop-blur-lg  bg-neutral-600/30
-      rounded-3xl p-6 text-white  border border-white/60 hover:border-white
+      rounded-3xl p-6 text-[var(--foreground)]  border border-white/60 hover:border-white
       w-full max-w-sm h-[56vh] group hover:shadow-[0_0_10px_rgba(34,197,94,0.3)]"
     >
       <div>
@@ -69,7 +69,7 @@ export default function FeatureCard({
       >
         <Link
           href="/product"
-          className="cursor-pointer bg-teal-emerald hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-2 transition"
+          className="cursor-pointer bg-teal-emerald hover:bg-green-600 text-[var(--foreground)] font-semibold rounded-xl px-6 py-2 transition"
         >
           EXPLORE MORE
         </Link>

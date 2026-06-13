@@ -379,9 +379,9 @@ function AccordionItem({
     <div className="border-b border-gray-700/50">
       <button
         onClick={onToggle}
-        className="w-full py-6 px-6 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+        className="w-full py-6 px-6 flex items-center justify-between text-left hover:bg-[var(--card)] transition-colors"
       >
-        <h3 className="fontbody text-lg md:text-xl text-white">
+        <h3 className="fontbody text-lg md:text-xl text-[var(--foreground)]">
           {section.title}
         </h3>
         <ChevronDown
@@ -463,7 +463,7 @@ export default function CookieContent() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 overflow-hidden"
+          className="bg-[var(--card)] backdrop-blur-lg rounded-2xl border border-[var(--border)] overflow-hidden"
         >
           {sections.map((section) => (
             <AccordionItem
@@ -487,7 +487,7 @@ export default function CookieContent() {
           </p>
           <a
             href="/support"
-            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-teal-emerald-dark hover:bg-teal-emerald text-white font-semibold transition-all"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-teal-emerald-dark hover:bg-teal-emerald text-[var(--foreground)] font-semibold transition-all"
           >
             Contact Support
           </a>

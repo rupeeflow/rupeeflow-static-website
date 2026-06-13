@@ -24,8 +24,8 @@ export default function InfoCard({
       animate={{ scale: isActive ? 1 : 1 }}
       transition={{ duration: 0.4 }}
       className={`w-full mx-auto rounded-[32px] border ${
-        isActive ? 'border-emerald-200/50' : 'border-white/10'
-      } bg-neutral-600/30 backdrop-blur-lg text-white p-2 md:p-4 flex portrait:flex-col landscape:flex-row justify-center items-center gap-8 portrait:h-[80vh] landscape:h-auto `}
+        isActive ? 'border-emerald-200/50' : 'border-[var(--border)]'
+      } bg-neutral-600/30 backdrop-blur-lg text-[var(--foreground)] p-2 md:p-4 flex portrait:flex-col landscape:flex-row justify-center items-center gap-8 portrait:h-[80vh] landscape:h-auto `}
     >
       {/* left Side */}
       <div className="portrait:w-full portrait:h-[35%] landscape:w-[50%] landscape:h-full flex relative overflow-hidden rounded-3xl">

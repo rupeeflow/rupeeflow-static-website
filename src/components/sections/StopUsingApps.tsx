@@ -35,7 +35,7 @@ const borderDelays = ['', 'animate-border-flow-delayed', 'animate-border-flow-de
 
 export default function StopUsingApps() {
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-24 overflow-hidden">
+    <section className="bg-[var(--card)] py-12 sm:py-16 lg:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 items-start gap-8 lg:gap-16">
 
         {/* ── LEFT CONTENT ── */}
@@ -66,8 +66,8 @@ export default function StopUsingApps() {
                 className="relative group"
               >
                 <div className={`absolute inset-0 rounded-2xl p-[1.5px] bg-gradient-to-r from-emerald-400 via-teal-300 to-green-400 bg-[length:200%_100%] animate-border-flow ${borderDelays[i]}`} />
-                <div className="relative bg-white rounded-[calc(1rem-1.5px)] p-5 z-10 h-full">
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-br from-emerald-500 to-teal-600 text-white mb-3 shadow-sm shadow-emerald-100 group-hover:scale-110 transition-transform duration-300">
+                <div className="relative bg-[var(--card)] rounded-[calc(1rem-1.5px)] p-5 z-10 h-full">
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-br from-emerald-500 to-teal-600 text-[var(--foreground)] mb-3 shadow-sm shadow-emerald-100 group-hover:scale-110 transition-transform duration-300">
                     <feat.icon size={17} />
                   </div>
                   <h4 className="rf-h4 text-gray-900">{feat.title}</h4>

@@ -25,7 +25,7 @@ export default function CareersHero() {
   }
 
   return (
-    <section className="py-32 px-6 bg-black-emerald text-white relative overflow-hidden">
+    <section className="py-32 px-6 bg-[var(--background)] text-[var(--foreground)] relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-radial-teal-soft opacity-30 pointer-events-none" />
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-radial-emerald-soft opacity-20 pointer-events-none" />
@@ -54,7 +54,7 @@ export default function CareersHero() {
 
           <motion.p
             variants={content}
-            className="fontbody text-xl md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto"
+            className="fontbody text-xl md:text-2xl text-gray-700 mb-4 max-w-3xl mx-auto"
           >
             Join our mission to democratize financial services across India
           </motion.p>
@@ -74,14 +74,14 @@ export default function CareersHero() {
           >
             <button
               onClick={scrollToPositions}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-teal-emerald-dark hover:bg-teal-emerald text-white font-semibold transition-all transform hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-teal-emerald-dark hover:bg-teal-emerald text-[var(--foreground)] font-semibold transition-all transform hover:scale-105"
             >
               View Open Positions
               <ArrowRight className="w-5 h-5" />
             </button>
             <a
               href="#life-at-rupeeflow"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold transition-all border border-white/20"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[var(--card)] hover:bg-[var(--card)] text-[var(--foreground)] font-semibold transition-all border border-white/20"
             >
               Life at RupeeFlow
             </a>

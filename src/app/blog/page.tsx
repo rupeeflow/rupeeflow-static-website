@@ -6,7 +6,7 @@ import blogPosts from '@/data/blogPosts.json'
 export default function BlogPage() {
   return (
     <main className="min-h-screen text-gray-900">
-      <section className="relative bg-black-emerald text-white py-24 px-6 text-center">
+      <section className="relative bg-[var(--background)] text-[var(--foreground)] py-24 px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl lg:text-[6vw] fontheadingthin mb-8">
             Insights, Innovation & UPI Intelligence

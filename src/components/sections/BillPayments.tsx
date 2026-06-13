@@ -36,9 +36,9 @@ export default function BillPayments() {
               Adopted by 1000+ users
             </p>
 
-            <button className="flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-[#044141] to-[#13DE72] text-white font-bold text-lg rounded-xl hover:from-[#13DE72] hover:to-[#044141] transition-all duration-300 group">
+            <button className="flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-[#044141] to-[#13DE72] text-[var(--foreground)] font-bold text-lg rounded-xl hover:from-[#13DE72] hover:to-[#044141] transition-all duration-300 group">
               <span>SEE ALL THE FEATURES</span>
-              <ArrowImgsvg width={20} height={20} className="text-white" />
+              <ArrowImgsvg width={20} height={20} className="text-[var(--foreground)]" />
             </button>
           </div>
 
@@ -70,7 +70,7 @@ export default function BillPayments() {
                   </p>
                 </div>
               </div>
-              <button className="flex items-center gap-3 px-6 py-3 border-2 bg-gradient-to-r border-[#044141] text-[#113a24] font-bold text-base rounded-xl hover:bg-[#13DE72] hover:text-white transition-all duration-300 group">
+              <button className="flex items-center gap-3 px-6 py-3 border-2 bg-gradient-to-r border-[#044141] text-[#113a24] font-bold text-base rounded-xl hover:bg-[#13DE72] hover:text-[var(--foreground)] transition-all duration-300 group">
                 <span>LEARN MORE</span>
                 <RightArrowSVG height={24} width={24} />
               </button>

@@ -78,7 +78,7 @@ const cards = [
 
 export default function RentalMarquee() {
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
+    <section className="relative py-24 bg-[var(--card)] overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 mb-12">
         <h2 className="fontheading text-3xl md:text-4xl text-gray-900 text-center">
           <span className="text-emerald-500">One Platform</span> for All Your Rental Payment Needs
@@ -96,7 +96,7 @@ export default function RentalMarquee() {
           {[...cards, ...cards].map((card, index) => (
             <div
               key={index}
-              className="w-[280px] shrink-0 bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow"
+              className="w-[280px] shrink-0 bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow"
             >
               <div className="mb-4">{card.icon}</div>
               <h3 className="fontheading text-base text-gray-900 mb-2">{card.title}</h3>

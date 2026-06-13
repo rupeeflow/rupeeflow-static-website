@@ -1,27 +1,29 @@
 'use client'
 
 import Link from 'next/link'
+import Button from '@/components/ui/Button'
 import { motion } from 'framer-motion'
 import FAQAccordion from '@/components/ui/FAQAccordion'
 import { qrCodeFAQs } from '@/data/faqs'
 import UPIStripIcon from '../../../public/icons/upi-collections/UpiStripIcon'
-import Image from "next/image"
+import Image from 'next/image'
 
 export default function QrCodePage() {
   return (
     <div className="w-full relative">
-      <section className="relative min-h-screen bg-[#020506] overflow-hidden">
+      <section className="relative min-h-screen bg-[var(--background)] overflow-hidden">
         <div
-          className="absolute -left-[100px] top-[10%] w-[400px] h-[400px] rounded-full opacity-50 blur-[120px] pointer-events-none"
+          className="absolute -left-[100px] top-[10%] w-[400px] h-[400px] rounded-full opacity-36 blur-[120px] pointer-events-none"
           style={{
             background:
-              'radial-gradient(circle, #109F58 0%, #055949 40%, transparent 70%)',
+              'radial-gradient(circle, rgba(0,135,90,0.12) 0%, rgba(0,107,79,0.06) 40%, transparent 70%)',
           }}
         />
         <div
-          className="absolute left-[5%] top-[30%] w-[500px] h-[500px] rounded-full opacity-30 blur-[100px] pointer-events-none"
+          className="absolute left-[5%] top-[30%] w-[500px] h-[500px] rounded-full opacity-20 blur-[100px] pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, #109F58 0%, transparent 70%)',
+            background:
+              'radial-gradient(circle, rgba(0,135,90,0.08) 0%, transparent 70%)',
           }}
         />
 
@@ -47,13 +49,13 @@ export default function QrCodePage() {
 
         {/* Content */}
         <div className="relative z-10 max-w-5xl mx-auto text-center pt-24 sm:pt-28 lg:pt-48 px-4 sm:px-6">
-          <h1 className="fontheading text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[4rem] leading-tight text-white">
+          <h1 className="fontheading text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[4rem] leading-tight text-[var(--foreground)]">
             Seamless Payments with
             <br />
-            <span className="text-emerald-400">UPI QR Code</span>
+            <span className="text-[var(--primary)]">UPI QR Code</span>
           </h1>
 
-          <p className="mt-8 text-gray-400 max-w-2xl mx-auto text-base md:text-lg fontbody2 leading-relaxed">
+          <p className="mt-8 text-[var(--muted)] max-w-2xl mx-auto text-base md:text-lg fontbody2 leading-relaxed">
             Generate unique QR codes to collect payments via any UPI app while
             tracking each transaction for your business.
           </p>
@@ -61,21 +63,16 @@ export default function QrCodePage() {
           <div className="relative mt-12 pb-8">
             {/* CTA Button */}
             <div className="flex justify-center mb-12 relative z-30">
-              <Link
-                href="#"
-                className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/20 border border-emerald-400/30"
-              >
-                <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
+              <Button href="#" className="px-8 py-3.5 text-sm font-semibold">
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--surface)]/90" />
                 Start Accepting Payments
-              </Link>
+              </Button>
             </div>
 
             {/* Browser + Phone mockups */}
             <div className="relative max-w-5xl mr-auto ml-0 md:ml-[-5%] lg:ml-[9%]">
-
               {/* Browser window — Payment Details (using actual image), shifted left */}
               <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl w-[85%] md:w-[75%]">
-
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/qr-collections/QrCheckout.png"
@@ -103,7 +100,7 @@ export default function QrCodePage() {
                               <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
                             </svg>
                           </div>
-                          <div className="bg-white rounded-lg px-3 py-1.5 max-w-[140px]">
+                          <div className="bg-[var(--card)] rounded-lg px-3 py-1.5 max-w-[140px]">
                             <p className="text-[8px] md:text-[9px] text-gray-700">
                               Thank you for your service greatly satisfied!
                             </p>
@@ -114,7 +111,7 @@ export default function QrCodePage() {
                       {/* Customer message 2 */}
                       <div className="flex justify-start">
                         <div className="ml-6">
-                          <div className="bg-white rounded-lg px-3 py-1.5">
+                          <div className="bg-[var(--card)] rounded-lg px-3 py-1.5">
                             <p className="text-[8px] md:text-[9px] text-gray-700">
                               How can I pay?
                             </p>
@@ -125,7 +122,7 @@ export default function QrCodePage() {
                       {/* Business reply */}
                       <div className="flex justify-end">
                         <div className="flex items-start gap-1.5">
-                          <div className="bg-white rounded-lg px-3 py-1.5 max-w-[140px]">
+                          <div className="bg-[var(--card)] rounded-lg px-3 py-1.5 max-w-[140px]">
                             <p className="text-[8px] md:text-[9px] text-gray-700">
                               Glad you liked our work.
                             </p>
@@ -157,7 +154,7 @@ export default function QrCodePage() {
                       {/* Business reply with QR */}
                       <div className="flex justify-end pb-2">
                         <div className="flex items-start gap-1.5">
-                          <div className="bg-white rounded-lg px-3 py-1.5">
+                          <div className="bg-[var(--card)] rounded-lg px-3 py-1.5">
                             <p className="text-[8px] md:text-[9px] text-gray-700">
                               Here&apos;s my QR
                             </p>
@@ -183,7 +180,7 @@ export default function QrCodePage() {
       </section>
 
       {/* ── ACCEPTING PAYMENTS VIA QR CODES ── */}
-      <section className="relative py-12 sm:py-16 lg:py-24 bg-white overflow-hidden">
+      <section className="relative py-12 sm:py-16 lg:py-24 bg-[var(--card)] overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
@@ -315,14 +312,12 @@ export default function QrCodePage() {
               </div>
 
               <div className="pt-2">
-
                 {/* <Link
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
                 >
                   Get started
                 </Link> */}
-
               </div>
             </div>
 
@@ -356,7 +351,7 @@ export default function QrCodePage() {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
                     <svg
-                      className="w-5 h-5 text-white"
+                      className="w-5 h-5 text-[var(--foreground)]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -400,13 +395,16 @@ export default function QrCodePage() {
                     />
                   </svg>
                 </Link> */}
-
               </div>
               <div className="w-full lg:w-[45%] relative h-[260px] sm:h-[300px] lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
                 <motion.div
                   className="relative w-full h-full"
                   animate={{ scale: [1, 1.03, 1] }}
-                  transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 9,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 >
                   <Image
                     src="/images/qr-collections/QrCheckout.png"
@@ -425,7 +423,7 @@ export default function QrCodePage() {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
                     <svg
-                      className="w-5 h-5 text-white"
+                      className="w-5 h-5 text-[var(--foreground)]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -473,7 +471,11 @@ export default function QrCodePage() {
                 <motion.div
                   className="relative w-full h-full"
                   animate={{ scale: [1, 1.03, 1] }}
-                  transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 >
                   <Image
                     src="/home/Accept-payment-qr.png"
@@ -492,7 +494,7 @@ export default function QrCodePage() {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
                     <svg
-                      className="w-5 h-5 text-white"
+                      className="w-5 h-5 text-[var(--foreground)]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -546,7 +548,11 @@ export default function QrCodePage() {
                 <motion.div
                   className="relative w-full h-full"
                   animate={{ scale: [1, 1.03, 1] }}
-                  transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 11,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 >
                   <Image
                     src="/images/upi-collections/staticqr.png"
@@ -565,7 +571,7 @@ export default function QrCodePage() {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
                     <svg
-                      className="w-5 h-5 text-white"
+                      className="w-5 h-5 text-[var(--foreground)]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -620,7 +626,11 @@ export default function QrCodePage() {
                 <motion.div
                   className="relative w-full h-full"
                   animate={{ scale: [1, 1.03, 1] }}
-                  transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 12,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 >
                   <Image
                     src="/images/Dashboard.png"
@@ -639,7 +649,7 @@ export default function QrCodePage() {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
                     <svg
-                      className="w-5 h-5 text-white"
+                      className="w-5 h-5 text-[var(--foreground)]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -687,7 +697,11 @@ export default function QrCodePage() {
                 <motion.div
                   className="relative w-full h-full"
                   animate={{ scale: [1, 1.03, 1] }}
-                  transition={{ duration: 13, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 13,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 >
                   <Image
                     src="/images/upi-collections/securetransactions.jpeg"
@@ -715,7 +729,7 @@ export default function QrCodePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Bulk QR Code Generation */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+            <div className="bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
               <svg
                 className="w-10 h-10 text-emerald-500 mb-5"
                 fill="none"
@@ -739,7 +753,7 @@ export default function QrCodePage() {
             </div>
 
             {/* Custom Split Settlements */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+            <div className="bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
               <svg
                 className="w-10 h-10 text-emerald-500 mb-5"
                 fill="none"
@@ -763,7 +777,7 @@ export default function QrCodePage() {
             </div>
 
             {/* Real-Time Notifications */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+            <div className="bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
               <svg
                 className="w-10 h-10 text-emerald-500 mb-5"
                 fill="none"
@@ -787,7 +801,7 @@ export default function QrCodePage() {
             </div>
 
             {/* Advanced Analytics */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+            <div className="bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
               <svg
                 className="w-10 h-10 text-emerald-500 mb-5"
                 fill="none"
@@ -812,7 +826,10 @@ export default function QrCodePage() {
           </div>
         </div>
       </section>
-      <FAQAccordion faqs={qrCodeFAQs} subtitle="Everything you need to know about RupeeFlow QR Code Payments." />
+      <FAQAccordion
+        faqs={qrCodeFAQs}
+        subtitle="Everything you need to know about RupeeFlow QR Code Payments."
+      />
     </div>
   )
 }

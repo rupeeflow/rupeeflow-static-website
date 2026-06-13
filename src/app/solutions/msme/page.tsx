@@ -98,9 +98,9 @@ export default function MSMESolutionsPage() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <main className="relative min-h-screen bg-white">
+    <main className="relative min-h-screen bg-[var(--card)]">
       {/* Hero Section */}
-      <section className="relative bg-[#020506] text-white py-20 md:py-32 overflow-hidden">
+      <section className="relative bg-[var(--background)] text-[var(--foreground)] py-20 md:py-32 overflow-hidden">
         {/* Animated blob 1 — top-left */}
         <motion.div
           className="absolute -left-[100px] top-[10%] w-[420px] h-[420px] rounded-full blur-[130px] pointer-events-none"
@@ -144,13 +144,13 @@ export default function MSMESolutionsPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:scale-105"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:scale-105"
                 >
                   Get Started
                 </Link>
                 <Link
                   href="#solutions"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white/30 text-white font-semibold hover:bg-white/10 transition-all duration-300"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white/30 text-[var(--foreground)] font-semibold hover:bg-[var(--card)] transition-all duration-300"
                 >
                   Explore Solutions
                 </Link>
@@ -199,7 +199,7 @@ export default function MSMESolutionsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-emerald-500"
+                className="bg-[var(--card)] rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-emerald-500"
               >
                 <solution.Icon className="w-20 h-20 mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
@@ -234,7 +234,7 @@ export default function MSMESolutionsPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-[var(--card)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -271,7 +271,7 @@ export default function MSMESolutionsPage() {
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-emerald-600 to-emerald-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-6">
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-emerald-50 mb-8">
@@ -280,13 +280,13 @@ export default function MSMESolutionsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white text-emerald-600 font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:scale-105"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[var(--card)] text-emerald-600 font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:scale-105"
             >
               Get Started Now
             </Link>
             <Link
               href="/support"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white text-[var(--foreground)] font-semibold hover:bg-[var(--card)] transition-all duration-300"
             >
               Talk to an Expert
             </Link>

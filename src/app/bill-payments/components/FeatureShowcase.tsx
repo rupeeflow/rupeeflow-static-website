@@ -49,7 +49,7 @@ export default function FeatureShowcase({
                 >
                   {/* Icon with emerald gradient background */}
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/25">
-                    <Icon className="w-8 h-8 text-white" />
+                    <Icon className="w-8 h-8 text-[var(--foreground)]" />
                   </div>
 
                   {/* Title */}
@@ -72,7 +72,7 @@ export default function FeatureShowcase({
                     <div className="relative w-full max-w-md lg:max-w-lg">
                       {/* Border styling with emerald accent */}
                       <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-3xl blur-xl" />
-                      <div className="relative bg-white rounded-3xl border-2 border-emerald-100 p-6 shadow-xl">
+                      <div className="relative bg-[var(--card)] rounded-3xl border-2 border-emerald-100 p-6 shadow-xl">
                         <MockupComponent />
                       </div>
                     </div>

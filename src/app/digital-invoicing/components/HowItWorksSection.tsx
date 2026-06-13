@@ -75,7 +75,7 @@ export default function HowItWorksSection() {
                   className="relative"
                 >
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center text-xl font-bold mb-4 relative z-10 shadow-lg">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-[var(--foreground)] flex items-center justify-center text-xl font-bold mb-4 relative z-10 shadow-lg">
                       {step.number}
                     </div>
                     <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-3">
@@ -100,10 +100,10 @@ export default function HowItWorksSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="flex gap-4 bg-white rounded-xl p-6 shadow-sm border border-emerald-100"
+                className="flex gap-4 bg-[var(--card)] rounded-xl p-6 shadow-sm border border-emerald-100"
               >
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center text-lg font-bold">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-[var(--foreground)] flex items-center justify-center text-lg font-bold">
                     {step.number}
                   </div>
                 </div>

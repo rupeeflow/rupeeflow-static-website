@@ -118,10 +118,10 @@ export default function BenefitsGrid() {
                 key={index}
                 variants={staggerItem}
                 whileHover={{ y: -8, transition: { duration: 0.2 } }}
-                className="bg-white rounded-2xl p-6 md:p-8 border-2 border-gray-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300"
+                className="bg-[var(--card)] rounded-2xl p-6 md:p-8 border-2 border-gray-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-4 shadow-lg">
-                  <Icon className="w-7 h-7 text-white" />
+                  <Icon className="w-7 h-7 text-[var(--foreground)]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
                 <p className="fontbody2 text-gray-600 leading-relaxed">{benefit.description}</p>
@@ -153,7 +153,7 @@ export default function BenefitsGrid() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute left-[2%] top-[8%] w-56 bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl border-2 border-blue-100 p-4 hidden lg:block"
+              className="absolute left-[2%] top-[8%] w-56 bg-[var(--card)] backdrop-blur-sm rounded-xl shadow-2xl border-2 border-blue-100 p-4 hidden lg:block"
             >
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-sm font-bold text-gray-900">Invoice Queue</h3>
@@ -212,7 +212,7 @@ export default function BenefitsGrid() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="absolute left-1/2 -translate-x-1/2 top-[25%] hidden lg:block"
             >
-              <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl border-2 border-emerald-100 p-4 w-[400px]">
+              <div className="bg-[var(--card)] backdrop-blur-sm rounded-xl shadow-2xl border-2 border-emerald-100 p-4 w-[400px]">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-sm font-bold text-gray-900">Approval Workflow</h3>
                   <AnimatePresence mode="wait">
@@ -268,7 +268,7 @@ export default function BenefitsGrid() {
                             }}
                             className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg relative z-10"
                           >
-                            <StageIcon className={`w-5 h-5 ${isActive ? 'text-white' : 'text-gray-400'}`} />
+                            <StageIcon className={`w-5 h-5 ${isActive ? 'text-[var(--foreground)]' : 'text-gray-400'}`} />
                           </motion.div>
                           <motion.p
                             animate={{ 
@@ -320,7 +320,7 @@ export default function BenefitsGrid() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute right-[2%] top-[8%] w-60 bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl border-2 border-purple-100 p-4 hidden lg:block"
+              className="absolute right-[2%] top-[8%] w-60 bg-[var(--card)] backdrop-blur-sm rounded-xl shadow-2xl border-2 border-purple-100 p-4 hidden lg:block"
             >
               <div className="flex items-center gap-2 mb-3">
                 <Bell className="w-4 h-4 text-purple-600" />
@@ -367,7 +367,7 @@ export default function BenefitsGrid() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="absolute bottom-[5%] left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-6 bg-white/95 backdrop-blur-sm rounded-full px-8 py-3 shadow-2xl border-2 border-gray-100"
+              className="absolute bottom-[5%] left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-6 bg-[var(--card)] backdrop-blur-sm rounded-full px-8 py-3 shadow-2xl border-2 border-gray-100"
             >
               <div className="flex items-center gap-2">
                 <motion.div
@@ -375,7 +375,7 @@ export default function BenefitsGrid() {
                   transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                   className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center"
                 >
-                  <FileCheck className="w-4 h-4 text-white" />
+                  <FileCheck className="w-4 h-4 text-[var(--foreground)]" />
                 </motion.div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">60% Faster</p>
@@ -389,7 +389,7 @@ export default function BenefitsGrid() {
                   transition={{ duration: 2, repeat: Infinity }}
                   className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center"
                 >
-                  <CheckCircle className="w-4 h-4 text-white" />
+                  <CheckCircle className="w-4 h-4 text-[var(--foreground)]" />
                 </motion.div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">100% Audit</p>

@@ -56,7 +56,7 @@ export default function BillPaymentHeroMockup({ className = '' }: MockupProps) {
                 stiffness: 100,
               }}
               whileHover={{ scale: 1.05, x: -5 }}
-              className="flex items-center gap-3 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg border border-emerald-100 min-w-[220px]"
+              className="flex items-center gap-3 bg-[var(--card)] backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg border border-emerald-100 min-w-[220px]"
             >
               <motion.div
                 animate={{
@@ -69,7 +69,7 @@ export default function BillPaymentHeroMockup({ className = '' }: MockupProps) {
                 }}
                 className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shrink-0"
               >
-                <feature.icon className="w-5 h-5 text-white" />
+                <feature.icon className="w-5 h-5 text-[var(--foreground)]" />
               </motion.div>
               <span className="text-sm font-semibold text-gray-800">{feature.text}</span>
               
@@ -92,7 +92,7 @@ export default function BillPaymentHeroMockup({ className = '' }: MockupProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.5 }}
-          className="absolute -bottom-6 -left-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-6 py-3 rounded-full shadow-xl flex items-center gap-2"
+          className="absolute -bottom-6 -left-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-[var(--foreground)] px-6 py-3 rounded-full shadow-xl flex items-center gap-2"
         >
           <motion.div
             animate={{ scale: [1, 1.2, 1] }}

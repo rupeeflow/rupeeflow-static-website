@@ -99,7 +99,7 @@ function BenefitCardItem({ benefit }: { benefit: BenefitCard }) {
         scale: 1.02,
         transition: { duration: 0.2 },
       }}
-      className="bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 h-full flex flex-col"
+      className="bg-[var(--card)] rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 h-full flex flex-col"
     >
       {/* Icon */}
       <div className="mb-4">

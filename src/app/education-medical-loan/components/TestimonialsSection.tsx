@@ -57,7 +57,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl p-8 border-2 border-gray-100 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1"
+              className="bg-[var(--card)] rounded-3xl p-8 border-2 border-gray-100 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1"
             >
               {/* Rating Stars */}
               <div className="flex gap-1 mb-4">
@@ -77,7 +77,7 @@ export default function TestimonialsSection() {
               <div className="border-t border-gray-100 pt-6">
                 <div className="flex items-center gap-4">
                   {/* Avatar */}
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-[var(--foreground)] font-bold text-lg flex-shrink-0">
                     {testimonial.name.charAt(0)}
                   </div>
                   
@@ -111,7 +111,7 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border-2 border-emerald-200">
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--card)] border-2 border-emerald-200">
             <svg className="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>

@@ -55,7 +55,7 @@ export default function DocsSidebar() {
   return (
     <aside className="w-64 border-r border-gray-800 h-[calc(100vh-96px)] sticky top-24 overflow-y-auto">
       <div className="p-6">
-        <h2 className="fontheading text-xl text-white mb-4">API Documentation</h2>
+        <h2 className="fontheading text-xl text-[var(--foreground)] mb-4">API Documentation</h2>
         <nav className="space-y-1">
           {navItems.map((item) => {
             const Icon = item.icon
@@ -68,7 +68,7 @@ export default function DocsSidebar() {
                   className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all fontbody2 ${
                     active
                       ? 'bg-gradient-to-r from-teal-500/20 to-emerald-500/20 text-teal-400 border border-teal-500/30'
-                      : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
+                      : 'text-gray-400 hover:text-[var(--foreground)] hover:bg-gray-800/50'
                   }`}
                 >
                   <Icon className="w-4 h-4" />

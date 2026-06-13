@@ -68,7 +68,7 @@ const cardVariants = {
 
 export default function AcceptMethods() {
   return (
-    <section className="pt-8 pb-12 sm:pt-12 sm:pb-16 lg:pt-12 lg:pb-24 bg-white overflow-hidden">
+    <section className="pt-8 pb-12 sm:pt-12 sm:pb-16 lg:pt-12 lg:pb-24 bg-[var(--card)] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Heading */}
         <motion.div
@@ -106,7 +106,7 @@ export default function AcceptMethods() {
                   borderColor: '#30F3BC',
                 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-                className="relative border border-gray-100 rounded-2xl p-3 sm:p-5 bg-white shadow-sm cursor-default"
+                className="relative border border-gray-100 rounded-2xl p-3 sm:p-5 bg-[var(--card)] shadow-sm cursor-default"
                 style={{ transformStyle: 'preserve-3d', perspective: 800 }}
               >
                 {/* Icon */}
@@ -154,7 +154,7 @@ function PaymentSummaryMockup() {
     <div className="relative" style={{ width: 340, height: 420 }}>
       {/* Main Payment Summary Card */}
       <motion.div
-        className="absolute top-0 left-0 w-full bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 z-10"
+        className="absolute top-0 left-0 w-full bg-[var(--card)] rounded-3xl shadow-2xl border border-gray-100 p-6 z-10"
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
         style={{
@@ -202,7 +202,7 @@ function PaymentSummaryMockup() {
 
       {/* Select Payment Method Card */}
       <motion.div
-        className="absolute bottom-0 left-6 right-0 bg-white rounded-2xl border border-gray-100 p-4 z-20"
+        className="absolute bottom-0 left-6 right-0 bg-[var(--card)] rounded-2xl border border-gray-100 p-4 z-20"
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
         style={{

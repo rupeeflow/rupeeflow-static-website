@@ -99,7 +99,7 @@ export default function CardsDropdown({ navitems, scrolled = false }: CardsDropd
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
-      className={`bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100/50 w-full mt-2 ${scrolled ? '' : 'max-w-[920px] mx-auto'}`}
+      className={`bg-[var(--card)] rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100/50 w-full mt-2 ${scrolled ? '' : 'max-w-[920px] mx-auto'}`}
     >
       <div className={`flex gap-0 ${scrolled ? 'max-w-[1100px] mx-auto' : ''}`}>
         {/* LEFT SIDEBAR */}
@@ -171,7 +171,7 @@ export default function CardsDropdown({ navitems, scrolled = false }: CardsDropd
                   <div className="flex-1">
                     {/* Product Icon - Minimal */}
                     <div className="mb-5">
-                      <div className="w-11 h-11 rounded-xl bg-white shadow-sm border border-gray-100/50 flex items-center justify-center">
+                      <div className="w-11 h-11 rounded-xl bg-[var(--card)] shadow-sm border border-gray-100/50 flex items-center justify-center">
                         <Image src={active.icon} alt={active.label} width={22} height={22} />
                       </div>
                     </div>
@@ -193,7 +193,7 @@ export default function CardsDropdown({ navitems, scrolled = false }: CardsDropd
                   >
                     <div className="relative">
                       {/* Card UI - Premium Design */}
-                      <div className="bg-gradient-to-br from-gray-900 to-gray-800 backdrop-blur-md rounded-xl p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] border border-gray-700/50 text-white">
+                      <div className="bg-gradient-to-br from-gray-900 to-gray-800 backdrop-blur-md rounded-xl p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] border border-gray-700/50 text-[var(--foreground)]">
                         {/* Card Header */}
                         <div className="flex items-start justify-between mb-6">
                           <div>
@@ -210,7 +210,7 @@ export default function CardsDropdown({ navitems, scrolled = false }: CardsDropd
                         {/* Card Limit */}
                         <div className="mb-4">
                           <div className="text-[9px] text-gray-400 mb-1">Credit Limit</div>
-                          <div className="text-[18px] font-semibold text-white">
+                          <div className="text-[18px] font-semibold text-[var(--foreground)]">
                             {productContent.limit}
                           </div>
                         </div>
@@ -252,7 +252,7 @@ export default function CardsDropdown({ navitems, scrolled = false }: CardsDropd
                     }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-lg text-[13px] font-medium shadow-sm hover:shadow-md transition-all duration-200"
+                    className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-[var(--foreground)] rounded-lg text-[13px] font-medium shadow-sm hover:shadow-md transition-all duration-200"
                   >
                     <span>Explore {active.label}</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />

@@ -53,9 +53,9 @@ export default function TaxPaymentsPage() {
               <div className="mt-8">
                 {/* <Link
                   href="#"
-                  className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/20 border border-emerald-400/30"
+                  className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/20 border border-emerald-400/30"
                 >
-                  <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[var(--card)]" />
                   Get Started
                 </Link> */}
               </div>
@@ -86,7 +86,7 @@ export default function TaxPaymentsPage() {
 
                 {/* Floating card: Processing Amount */}
                 <motion.div
-                  className="absolute top-4 right-[-10px] bg-white rounded-xl shadow-lg px-4 py-3 flex items-center gap-3"
+                  className="absolute top-4 right-[-10px] bg-[var(--card)] rounded-xl shadow-lg px-4 py-3 flex items-center gap-3"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
                 >
@@ -103,7 +103,7 @@ export default function TaxPaymentsPage() {
 
                 {/* Floating card: GST Challan */}
                 <motion.div
-                  className="absolute top-20 right-[-20px] bg-white rounded-xl shadow-lg px-4 py-3 w-[200px]"
+                  className="absolute top-20 right-[-20px] bg-[var(--card)] rounded-xl shadow-lg px-4 py-3 w-[200px]"
                   animate={{ y: [0, -6, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
                 >
@@ -122,7 +122,7 @@ export default function TaxPaymentsPage() {
 
                 {/* Floating card: Payment Options */}
                 <motion.div
-                  className="absolute bottom-12 left-[-20px] bg-white rounded-xl shadow-lg px-5 py-4 w-[240px]"
+                  className="absolute bottom-12 left-[-20px] bg-[var(--card)] rounded-xl shadow-lg px-5 py-4 w-[240px]"
                   animate={{ y: [0, -7, 0] }}
                   transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
                 >
@@ -154,7 +154,7 @@ export default function TaxPaymentsPage() {
       </section>
 
       {/* ── HOW GST PAYMENT WORKS ── */}
-      <section className="relative py-24 bg-white overflow-hidden">
+      <section className="relative py-24 bg-[var(--card)] overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
@@ -211,17 +211,17 @@ export default function TaxPaymentsPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              <div className="w-full max-w-[420px] bg-white rounded-2xl border border-gray-200 shadow-xl overflow-hidden">
+              <div className="w-full max-w-[420px] bg-[var(--card)] rounded-2xl border border-gray-200 shadow-xl overflow-hidden">
 
                 {/* Challan header */}
                 <div className="bg-emerald-600 px-6 py-5">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-emerald-200 text-[10px] fontbody2 uppercase tracking-wider">GST Payment Receipt</p>
-                      <p className="text-white fontheading text-base mt-0.5">Challan #GST-2026-0142</p>
+                      <p className="text-[var(--foreground)] fontheading text-base mt-0.5">Challan #GST-2026-0142</p>
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-10 h-10 rounded-full bg-[var(--card)] flex items-center justify-center">
+                      <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
                     </div>
@@ -269,7 +269,7 @@ export default function TaxPaymentsPage() {
                   {/* CIN confirmation */}
                   <div className="bg-emerald-50 rounded-xl px-4 py-3 flex items-center gap-3">
                     <div className="w-7 h-7 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-4 h-4 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -310,7 +310,7 @@ export default function TaxPaymentsPage() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -337,7 +337,7 @@ export default function TaxPaymentsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                <div className="w-full max-w-[380px] bg-white rounded-2xl border border-gray-200 shadow-lg p-6">
+                <div className="w-full max-w-[380px] bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg p-6">
                   {/* Calendar header */}
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="text-sm fontheading text-gray-800">February 2026</h4>
@@ -355,8 +355,8 @@ export default function TaxPaymentsPage() {
                       <div
                         key={i}
                         className={`h-7 flex items-center justify-center rounded-full text-[11px] font-medium
-                          ${d === 20 ? 'bg-red-500 text-white font-bold' : ''}
-                          ${d === 26 ? 'bg-emerald-500 text-white font-bold' : ''}
+                          ${d === 20 ? 'bg-red-500 text-[var(--foreground)] font-bold' : ''}
+                          ${d === 26 ? 'bg-emerald-500 text-[var(--foreground)] font-bold' : ''}
                           ${d && d !== 20 && d !== 26 ? 'text-gray-600 hover:bg-gray-100' : ''}
                           ${!d ? '' : ''}
                         `}
@@ -399,7 +399,7 @@ export default function TaxPaymentsPage() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                     </svg>
                   </div>
@@ -426,7 +426,7 @@ export default function TaxPaymentsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                <div className="w-full max-w-[380px] bg-white rounded-2xl border border-gray-200 shadow-lg p-6">
+                <div className="w-full max-w-[380px] bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg p-6">
                   <p className="text-xs text-gray-500 fontbody2 mb-4">Choose Payment Method</p>
                   <div className="grid grid-cols-2 gap-3 mb-4">
                     {[
@@ -465,7 +465,7 @@ export default function TaxPaymentsPage() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -492,16 +492,16 @@ export default function TaxPaymentsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                <div className="w-full max-w-[380px] bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
+                <div className="w-full max-w-[380px] bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
                   {/* Status bar */}
                   <div className="bg-emerald-500 px-5 py-3 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-8 h-8 rounded-full bg-[var(--card)] flex items-center justify-center">
+                      <svg className="w-4 h-4 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <div>
-                      <p className="text-white font-bold text-sm fontheading">Payment Successful</p>
+                      <p className="text-[var(--foreground)] font-bold text-sm fontheading">Payment Successful</p>
                       <p className="text-emerald-100 text-[10px] fontbody2">Feb 26, 2026 · 11:42 AM</p>
                     </div>
                   </div>
@@ -521,7 +521,7 @@ export default function TaxPaymentsPage() {
                         <span className="text-xs font-semibold text-gray-800 fontheading">{row.value}</span>
                       </div>
                     ))}
-                    <button className="w-full mt-2 flex items-center justify-center gap-2 bg-gray-900 text-white text-xs font-semibold py-2.5 rounded-xl hover:bg-gray-800 transition-colors">
+                    <button className="w-full mt-2 flex items-center justify-center gap-2 bg-gray-900 text-[var(--foreground)] text-xs font-semibold py-2.5 rounded-xl hover:bg-gray-800 transition-colors">
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                       </svg>
@@ -543,7 +543,7 @@ export default function TaxPaymentsPage() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
@@ -570,7 +570,7 @@ export default function TaxPaymentsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                <div className="w-full max-w-[380px] bg-white rounded-2xl border border-gray-200 shadow-lg p-6">
+                <div className="w-full max-w-[380px] bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg p-6">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
                       <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -603,7 +603,7 @@ export default function TaxPaymentsPage() {
                       {[1, 2, 3, 4, 5, 6].map((n) => (
                         <div
                           key={n}
-                          className={`w-6 h-8 rounded flex items-center justify-center text-xs font-bold ${n <= 4 ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400'}`}
+                          className={`w-6 h-8 rounded flex items-center justify-center text-xs font-bold ${n <= 4 ? 'bg-emerald-500 text-[var(--foreground)]' : 'bg-gray-200 text-gray-400'}`}
                         >
                           {n <= 4 ? '•' : '_'}
                         </div>
@@ -623,7 +623,7 @@ export default function TaxPaymentsPage() {
       </section>
 
       {/* ── GST PAYMENT FEATURES GRID ── */}
-      <section className="relative py-24 bg-white">
+      <section className="relative py-24 bg-[var(--card)]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
@@ -632,7 +632,7 @@ export default function TaxPaymentsPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+            <div className="bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
               <svg className="w-10 h-10 text-emerald-500 mb-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
@@ -642,7 +642,7 @@ export default function TaxPaymentsPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+            <div className="bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
               <svg className="w-10 h-10 text-emerald-500 mb-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
@@ -652,7 +652,7 @@ export default function TaxPaymentsPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+            <div className="bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
               <svg className="w-10 h-10 text-emerald-500 mb-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
@@ -662,7 +662,7 @@ export default function TaxPaymentsPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+            <div className="bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
               <svg className="w-10 h-10 text-emerald-500 mb-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>

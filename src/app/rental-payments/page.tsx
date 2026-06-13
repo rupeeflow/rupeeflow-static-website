@@ -14,7 +14,7 @@ function AutoReminderMockup() {
     { label: 'Rent Due — 1st Jan', status: 'Scheduled', days: 'Auto-pay on' },
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
       <div className="flex items-center justify-between mb-5">
         <p className="fontheading text-gray-900 text-base">Auto-Payment Schedule</p>
         <span className="text-[10px] bg-emerald-100 text-emerald-700 font-semibold px-3 py-1 rounded-full">Active</span>
@@ -55,7 +55,7 @@ function PaymentModesMockup() {
     { label: 'Wallet', sub: 'Instant', active: false, color: 'bg-gray-50 border-gray-200' },
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
       <p className="fontheading text-gray-900 text-base mb-1">Pay Rent Via</p>
       <p className="text-xs text-gray-400 mb-5">Choose your preferred payment mode</p>
       <div className="grid grid-cols-2 gap-3 mb-5">
@@ -78,7 +78,7 @@ function PaymentModesMockup() {
           <p className="text-lg font-bold text-gray-900">₹25,000</p>
         </div>
         <motion.div
-          className="bg-emerald-500 text-white text-xs font-semibold px-4 py-2 rounded-full"
+          className="bg-emerald-500 text-[var(--foreground)] text-xs font-semibold px-4 py-2 rounded-full"
           animate={{ scale: [1, 1.04, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
@@ -98,7 +98,7 @@ function TrackingMockup() {
     { prop: 'Skyline Office 7B', date: '05 Nov', amount: '₹31,000', status: 'Pending' },
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[380px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[380px]">
       <div className="flex items-center justify-between mb-4">
         <p className="fontheading text-gray-900 text-base">Rent Tracker</p>
         <span className="text-[10px] text-emerald-600 font-semibold bg-emerald-50 px-3 py-1 rounded-full">Nov 2024</span>
@@ -146,7 +146,7 @@ function ReconciliationMockup() {
     { inv: 'INV-NOV-03', tenant: 'Amit Corp.', amount: '₹42,000', match: 'Matched' },
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[380px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[380px]">
       <div className="flex items-center justify-between mb-4">
         <p className="fontheading text-gray-900 text-base">Auto-Reconciliation</p>
         <span className="text-xs bg-emerald-100 text-emerald-700 font-semibold px-3 py-1 rounded-full">3/3 Matched</span>
@@ -167,7 +167,7 @@ function ReconciliationMockup() {
             <span className="text-xs font-bold text-gray-900">{r.amount}</span>
             <div className="flex items-center gap-1">
               <div className="w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-                <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-2.5 h-2.5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -194,10 +194,10 @@ function SecurityMockup() {
     'End-to-End Data Protection',
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
       <div className="flex items-center gap-3 mb-5">
         <div className="w-11 h-11 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-          <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
           </svg>
         </div>
@@ -216,7 +216,7 @@ function SecurityMockup() {
             transition={{ delay: 0.1 + i * 0.1, duration: 0.4 }}
           >
             <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-              <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-3 h-3 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
               </svg>
             </div>
@@ -233,35 +233,35 @@ function SecurityMockup() {
 
 const features = [
   {
-    icon: <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+    icon: <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
     title: 'Eliminate Late Payment Penalties',
     desc: "Avoid the stress and cost of missing due dates. Rupeeflow's automated reminders and recurring payment options ensure your rent is paid on time, every time. Say goodbye to late fees and improve your cash flow with a solution designed to keep you punctual without constant follow-ups.",
     mockup: <AutoReminderMockup />,
     reverse: false,
   },
   {
-    icon: <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>,
+    icon: <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>,
     title: 'Multiple Payment Modes',
     desc: 'Pay your rent your way. Choose from UPI, NEFT, RTGS, credit cards, or digital wallets to make your rental payments. Whether you want instant processing or flexibility in managing funds, Rupeeflow has a payment mode that works for you — and your landlord will thank you for it!',
     mockup: <PaymentModesMockup />,
     reverse: true,
   },
   {
-    icon: <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>,
+    icon: <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>,
     title: 'Streamlined Payment Tracking',
     desc: "Say goodbye to messy spreadsheets and fragmented payment records. Rupeeflow's centralized dashboard gives you a real-time view of all your rent transactions. Know what's paid, what's pending, and what's overdue — all in one intuitive platform.",
     mockup: <TrackingMockup />,
     reverse: false,
   },
   {
-    icon: <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>,
+    icon: <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>,
     title: 'Instant Reconciliation',
     desc: "Save hours of effort with automatic reconciliation. Rupeeflow links your payments to corresponding invoices seamlessly, so you can track rent settlements without lifting a finger. No more manual matching, no more errors — just accurate records and peace of mind.",
     mockup: <ReconciliationMockup />,
     reverse: true,
   },
   {
-    icon: <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
+    icon: <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
     title: 'Secure Transactions',
     desc: 'Your security is our priority. Rupeeflow uses multi-layered encryption, fraud detection, and bank-grade protocols to safeguard every transaction. Whether you pay rent via credit card, UPI, or any other method, you can trust that your data and funds are protected.',
     mockup: <SecurityMockup />,
@@ -336,9 +336,9 @@ export default function RentalPaymentsPage() {
               >
                 {/* <Link
                   href="#"
-                  className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/20"
+                  className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/20"
                 >
-                  <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[var(--card)]" />
                   Get Started Free
                 </Link> */}
               </motion.div>
@@ -368,7 +368,7 @@ export default function RentalPaymentsPage() {
 
                 {/* Floating: Rent Payment badge */}
                 <motion.div
-                  className="absolute top-[35%] left-[-16px] bg-white rounded-xl shadow-lg px-4 py-3 flex items-center gap-2.5"
+                  className="absolute top-[35%] left-[-16px] bg-[var(--card)] rounded-xl shadow-lg px-4 py-3 flex items-center gap-2.5"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.7 }}
@@ -386,7 +386,7 @@ export default function RentalPaymentsPage() {
 
                 {/* Floating: Amount Disbursed */}
                 <motion.div
-                  className="absolute bottom-12 right-[-16px] bg-white rounded-xl shadow-lg px-5 py-3.5 flex items-center gap-3"
+                  className="absolute bottom-12 right-[-16px] bg-[var(--card)] rounded-xl shadow-lg px-5 py-3.5 flex items-center gap-3"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.85 }}
@@ -408,8 +408,8 @@ export default function RentalPaymentsPage() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 1.0 }}
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/80 animate-pulse" />
-                  <span className="text-xs text-white fontheading">Auto-Pay Active</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--card)] animate-pulse" />
+                  <span className="text-xs text-[var(--foreground)] fontheading">Auto-Pay Active</span>
                 </motion.div>
               </div>
             </motion.div>
@@ -419,7 +419,7 @@ export default function RentalPaymentsPage() {
       </section>
 
       {/* ── HOW TO SETUP RENT PAYMENTS AUTOMATION ── */}
-      <section className="relative py-24 bg-white overflow-hidden">
+      <section className="relative py-24 bg-[var(--card)] overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             className="text-center mb-16"
@@ -474,7 +474,7 @@ export default function RentalPaymentsPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.12 }}
                 >
-                  <div className={`w-12 h-12 shrink-0 rounded-full flex items-center justify-center text-sm font-bold ${step.active ? 'bg-emerald-500 text-white' : 'bg-white border-2 border-emerald-300 text-emerald-600'}`}>
+                  <div className={`w-12 h-12 shrink-0 rounded-full flex items-center justify-center text-sm font-bold ${step.active ? 'bg-emerald-500 text-[var(--foreground)]' : 'bg-[var(--card)] border-2 border-emerald-300 text-emerald-600'}`}>
                     {step.num}
                   </div>
                   <div>

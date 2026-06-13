@@ -46,7 +46,7 @@ const faqs = [
 
 export default function BusinessCurrentAccountPage() {
   return (
-    <main className="relative min-h-screen bg-white text-gray-900 overflow-hidden">
+    <main className="relative min-h-screen bg-[var(--card)] text-gray-900 overflow-hidden">
       <WebPageSchema
         title="Business Current Account - Open in 10 Minutes | Zero Balance"
         description="Open a Business Current Account in 10 minutes with zero balance requirement. Get free NEFT/RTGS, virtual accounts, and seamless API integration for your business."

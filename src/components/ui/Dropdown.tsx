@@ -4,6 +4,8 @@ import { navlist } from '@/interface/typesInterfaces'
 import { useState, useEffect, useCallback } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+import Button from '@/components/ui/Button'
 
 interface DropdownProps {
   navitems: navlist[]
@@ -34,18 +36,28 @@ export default function Dropdown({ navitems, scrolled = false }: DropdownProps) 
   
   const [active, setActive] = useState<navlist>(getActiveItem())
 
+  const container = {
+    hidden: { opacity: 0, y: -6 },
+    show: { opacity: 1, y: 0, transition: { staggerChildren: 0.02 } },
+  }
+
+  const itemVariant = {
+    hidden: { opacity: 0, x: -8 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.18 } },
+  }
+
   // Update active item when pathname changes
   useEffect(() => {
     setActive(getActiveItem())
   }, [pathname, navitems, getActiveItem])
 
   return (
-    <div className={`bg-white dark:bg-gray-800 rounded-xl shadow-2xl dark:shadow-gray-900/50 border border-gray-100 dark:border-gray-700 w-full mt-2 ${scrolled ? '' : 'max-w-[760px] mx-auto'}`}>
+    <motion.div initial="hidden" animate="show" variants={container} className={`bg-[var(--card)] dark:bg-gray-800 rounded-xl shadow-2xl dark:shadow-gray-900/50 border border-gray-100 dark:border-gray-700 w-full mt-2 ${scrolled ? '' : 'max-w-[760px] mx-auto'}`}>
       <div className={`flex gap-2 p-4 ${scrolled ? 'max-w-[900px] mx-auto' : ''}`}>
         {/* LEFT LIST */}
-        <div className="w-[260px] space-y-2 max-h-[380px] overflow-y-auto">
+        <motion.div className="w-[260px] space-y-2 max-h-[380px] overflow-y-auto" variants={container} initial="hidden" animate="show">
         {navitems.map((item) => (
-          <button
+          <motion.button
             key={item.id}
             onClick={() => {
               setActive(item)
@@ -60,19 +72,20 @@ export default function Dropdown({ navitems, scrolled = false }: DropdownProps) 
                   : 'border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 text-gray-700 dark:text-gray-200'
               }
             `}
+            variants={itemVariant}
           >
             <div className="w-6 h-6 relative">
               <Image src={item.icon} alt={item.label} width={24} height={24} className="w-full h-full" />
             </div>
             <span className="text-sm font-medium">{item.label}</span>
-          </button>
+          </motion.button>
         ))}
-      </div>
+      </motion.div>
 
       {/* RIGHT PREVIEW */}
       <div className="flex-1 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl flex items-center justify-center min-h-[380px]">
         <div className="text-center p-8">
-          <div className="w-16 h-16 mx-auto mb-4 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center shadow-lg dark:shadow-gray-900/50">
+          <div className="w-16 h-16 mx-auto mb-4 bg-[var(--card)] dark:bg-gray-700 rounded-full flex items-center justify-center shadow-lg dark:shadow-gray-900/50">
             <div className="w-10 h-10 relative">
               <Image src={active.icon} alt={active.label} width={40} height={40} className="w-full h-full" />
             </div>
@@ -81,19 +94,12 @@ export default function Dropdown({ navitems, scrolled = false }: DropdownProps) 
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
             Explore our {active.label.toLowerCase()} solutions
           </p>
-          <button
-            onClick={() => {
-              if (active.href) {
-                router.push(active.href)
-              }
-            }}
-            className="px-6 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-200"
-          >
+          <Button onClick={() => { if (active.href) router.push(active.href) }} className="px-6 py-2 rounded-full text-sm font-semibold">
             Learn More
-          </button>
+          </Button>
         </div>
       </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

@@ -61,9 +61,9 @@ export default function UPISwitchSection() {
   ]
 
   return (
-    <section className="relative w-full bg-black text-white pt-20 pb-32 px-6 overflow-hidden">
+    <section className="relative w-full bg-[var(--background)] text-[var(--foreground)] pt-20 pb-32 px-6 overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(20,184,166,0.15),transparent_70%)] blur-3xl" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(42,184,113,0.08),transparent_70%)] blur-3xl" />
 
       <motion.div
         variants={container}
@@ -84,7 +84,7 @@ export default function UPISwitchSection() {
             </span>
           </h2>
 
-          <p className="fontbody2 text-gray-300 text-lg max-w-lg mx-auto md:mx-0 ">
+          <p className="fontbody2 text-[var(--muted)] text-lg max-w-lg mx-auto md:mx-0 ">
             RupeeFlow’s UPI Switch is designed to handle high-volume
             transactions with intelligent routing, real-time monitoring, and
             AI-powered optimization, ensuring every payment succeeds, instantly.
@@ -92,7 +92,7 @@ export default function UPISwitchSection() {
 
           <Link
             href="/solutions/upi-switch"
-            className="inline-flex items-center justify-center px-8 py-3 mt-4 bg-gradient-to-r from-cyan-400 to-emerald-400 text-black font-semibold rounded-full hover:scale-[1.02] transition"
+            className="inline-flex items-center justify-center px-8 py-3 mt-4 rounded-full hover:scale-[1.02] transition"
           >
             Explore UPI Switch
           </Link>
@@ -101,7 +101,7 @@ export default function UPISwitchSection() {
         {/* Right Image Animation */}
         <motion.div
           variants={imageReveal}
-          className="flex-1 relative w-full max-w-lg rounded-3xl overflow-hidden  border border-white"
+          className="flex-1 relative w-full max-w-lg rounded-3xl overflow-hidden border border-[var(--border)] bg-[var(--card)]"
         >
           <Image
             src="/images/upi-switch.png"
@@ -126,14 +126,16 @@ export default function UPISwitchSection() {
           <motion.div
             key={i}
             variants={content}
-            className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition text-left"
+            className="p-8 rounded-2xl bg-[var(--card)] border border-[var(--border)] backdrop-blur-md hover:shadow-lg transition text-left"
           >
             <b.icon
               className="w-10 h-10 text-emerald-400 mb-4"
               strokeWidth={1.5}
             />
-            <h3 className="fontheading2 text-xl mb-2">{b.title}</h3>
-            <p className="fontbody2 text-gray-400 text-sm">{b.desc}</p>
+            <h3 className="fontheading2 text-xl mb-2 text-[var(--foreground)]">
+              {b.title}
+            </h3>
+            <p className="fontbody2 text-[var(--muted)] text-sm">{b.desc}</p>
           </motion.div>
         ))}
       </motion.div>

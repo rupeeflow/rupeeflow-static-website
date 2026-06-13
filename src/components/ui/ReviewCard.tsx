@@ -16,7 +16,7 @@ export default function ReviewCard({
   image = '/defaultaccount.svg',
 }: ReviewCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center text-center max-w-5xl mx-auto transition-all duration-300">
+    <div className="bg-[var(--card)] rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center text-center max-w-5xl mx-auto transition-all duration-300">
       {/* Quote */}
       <p className="text-3xl fontheading2 text-gray-800 mb-6">
         &quot;{quote}&quot;

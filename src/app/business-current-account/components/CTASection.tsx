@@ -13,8 +13,8 @@ export default function CTASection() {
     <section ref={ref} className="relative py-16 md:py-24 bg-gradient-to-br from-emerald-600 to-emerald-700 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[var(--card)] rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[var(--card)] rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -23,7 +23,7 @@ export default function CTASection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] mb-6">
             Ready to Transform Your Business Banking?
           </h2>
           <p className="text-lg md:text-xl text-emerald-50 mb-8 max-w-2xl mx-auto">
@@ -38,7 +38,7 @@ export default function CTASection() {
           >
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-emerald-600 font-semibold text-base hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[var(--card)] text-emerald-600 font-semibold text-base hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               Open Account Now
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,7 @@ export default function CTASection() {
             </Link>
             <Link
               href="/support"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white/10 transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white text-[var(--foreground)] font-semibold text-base hover:bg-[var(--card)] transition-all duration-300"
             >
               Talk to an Expert
             </Link>
@@ -61,15 +61,15 @@ export default function CTASection() {
             className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8"
           >
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">10 Min</div>
+              <div className="text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-2">10 Min</div>
               <div className="text-emerald-50">Account Opening</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">₹0</div>
+              <div className="text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-2">₹0</div>
               <div className="text-emerald-50">Minimum Balance</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">24/7</div>
+              <div className="text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-2">24/7</div>
               <div className="text-emerald-50">Customer Support</div>
             </div>
           </motion.div>

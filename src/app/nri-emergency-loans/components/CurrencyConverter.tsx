@@ -24,7 +24,7 @@ export default function CurrencyConverter() {
   }
 
   return (
-    <section className="relative bg-white py-20 md:py-28 overflow-hidden">
+    <section className="relative bg-[var(--card)] py-20 md:py-28 overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -83,10 +83,10 @@ export default function CurrencyConverter() {
                 <label className="block text-gray-700 font-semibold mb-3 text-sm">
                   Amount in India (INR)
                 </label>
-                <div className="w-full px-4 py-3 rounded-xl bg-white border-2 border-gray-200 mb-4 text-gray-500">
+                <div className="w-full px-4 py-3 rounded-xl bg-[var(--card)] border-2 border-gray-200 mb-4 text-gray-500">
                   🇮🇳 INR (₹)
                 </div>
-                <div className="w-full px-4 py-4 rounded-xl bg-white border-2 border-emerald-300 text-emerald-600 text-lg font-bold flex items-center justify-between">
+                <div className="w-full px-4 py-4 rounded-xl bg-[var(--card)] border-2 border-emerald-300 text-emerald-600 text-lg font-bold flex items-center justify-between">
                   <span>₹ {inrAmount || '0'}</span>
                   {inrAmount && (
                     <span className="text-xs text-gray-500">
@@ -99,7 +99,7 @@ export default function CurrencyConverter() {
 
             <button
               onClick={handleConvert}
-              className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-cyan-500/30"
+              className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-[var(--foreground)] font-bold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-cyan-500/30"
             >
               Convert & Check Eligibility
             </button>

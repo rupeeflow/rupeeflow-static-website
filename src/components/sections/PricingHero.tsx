@@ -150,7 +150,7 @@ export default function PricingSection() {
               Pricing
             </span>
 
-            <h1 className="ph-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight">
+            <h1 className="ph-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-[var(--foreground)] leading-tight">
               Built for Scale.{' '}
               <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                 Priced for Growth.
@@ -167,7 +167,7 @@ export default function PricingSection() {
               {['No setup fee', 'No lock-in', 'Cancel anytime'].map((t) => (
                 <span
                   key={t}
-                  className="ph-pill flex items-center gap-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-full px-3 py-1"
+                  className="ph-pill flex items-center gap-1.5 bg-[var(--card)] border border-[var(--border)] text-gray-300 text-xs rounded-full px-3 py-1"
                 >
                   <CheckCircle2 size={11} className="text-emerald-400" />
                   {t}
@@ -177,21 +177,21 @@ export default function PricingSection() {
 
             {/* billing toggle */}
             <div className="ph-toggle flex items-center justify-center gap-3 mt-8">
-              <span className={`text-sm font-medium transition ${!annual ? 'text-white' : 'text-gray-500'}`}>Monthly</span>
+              <span className={`text-sm font-medium transition ${!annual ? 'text-[var(--foreground)]' : 'text-gray-500'}`}>Monthly</span>
               <button
                 onClick={() => setAnnual((v) => !v)}
                 className={`relative w-12 h-6 rounded-full transition-colors duration-300 focus:outline-none ${
-                  annual ? 'bg-emerald-500' : 'bg-white/20'
+                  annual ? 'bg-emerald-500' : 'bg-[var(--card)]'
                 }`}
                 aria-label="Toggle annual billing"
               >
                 <span
-                  className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white shadow transition-transform duration-300 ${
+                  className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-[var(--card)] shadow transition-transform duration-300 ${
                     annual ? 'translate-x-6' : 'translate-x-0'
                   }`}
                 />
               </button>
-              <span className={`text-sm font-medium transition ${annual ? 'text-white' : 'text-gray-500'}`}>
+              <span className={`text-sm font-medium transition ${annual ? 'text-[var(--foreground)]' : 'text-gray-500'}`}>
                 Annual
                 <span className="ml-1.5 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold rounded-full px-2 py-0.5 border border-emerald-500/30">
                   Save 20%
@@ -203,7 +203,7 @@ export default function PricingSection() {
       </section>
 
       {/* ── PLAN CARDS — white ── */}
-      <section ref={cardsRef} className="py-12 sm:py-16 lg:py-20 bg-white">
+      <section ref={cardsRef} className="py-12 sm:py-16 lg:py-20 bg-[var(--card)]">
         <Container>
           <div className="ph-cards-grid grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 -mt-10 sm:-mt-16 relative z-10">
             {plans.map((plan) => (
@@ -212,7 +212,7 @@ export default function PricingSection() {
                 className={`ph-plan-card relative flex flex-col rounded-2xl border transition duration-300 ${
                   plan.highlight
                     ? 'bg-gradient-to-b from-[#060D0A] to-[#0C1F18] border-emerald-500/40 shadow-2xl shadow-emerald-500/15 ring-1 ring-emerald-500/20'
-                    : 'bg-white border-gray-200 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/10'
+                    : 'bg-[var(--card)] border-gray-200 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/10'
                 }`}
               >
                 {/* badge */}
@@ -222,7 +222,7 @@ export default function PricingSection() {
                       className={`text-[11px] font-bold uppercase tracking-wider rounded-full px-3.5 py-1 ${
                         plan.highlight
                           ? 'bg-gradient-to-r from-[#00EF64] to-[#53BEC2] text-black'
-                          : 'bg-gray-900 text-white'
+                          : 'bg-gray-900 text-[var(--foreground)]'
                       }`}
                     >
                       {plan.badge}
@@ -238,7 +238,7 @@ export default function PricingSection() {
 
                   {/* price */}
                   <div className="mb-2">
-                    <span className={`text-4xl sm:text-5xl font-black ${plan.highlight ? 'text-white' : 'text-gray-900'}`}>
+                    <span className={`text-4xl sm:text-5xl font-black ${plan.highlight ? 'text-[var(--foreground)]' : 'text-gray-900'}`}>
                       {annual ? plan.annualPrice : plan.monthlyPrice}
                     </span>
                     {plan.period && (
@@ -280,7 +280,7 @@ export default function PricingSection() {
                       href={plan.ctaHref}
                       className={`inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl font-bold text-sm border transition duration-200 ${
                         plan.name === 'Enterprise'
-                          ? 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
+                          ? 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-[var(--foreground)]'
                           : 'border-emerald-500 text-emerald-600 hover:bg-emerald-50'
                       }`}
                     >

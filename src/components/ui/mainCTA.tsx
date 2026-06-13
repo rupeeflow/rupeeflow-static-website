@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Button from '@/components/ui/Button'
 import { MoveRight } from 'lucide-react'
 
 interface CTAProps {
@@ -21,50 +21,27 @@ const MainCTA: React.FC<CTAProps> = ({
   const isExternal = destination.startsWith('http')
 
   return (
-    <Link
-      href={destination}
-      target={isExternal ? '_blank' : '_self'}
-      rel={isExternal ? 'noopener noreferrer' : ''}
-      className={`${size} group relative inline-flex items-center justify-center overflow-hidden
-      rounded-full px-7
-      bg-[#0F0F0F]
-      border border-white/10
-      hover:border-emerald-400/60
-      transition-all duration-300 ease-in-out
-      hover:shadow-[0_0_22px_rgba(0,239,100,0.25)]`}
-    >
-      {/* expanding gradient bubble */}
+    <Button href={destination} className={`${size} group relative inline-flex items-center justify-center overflow-hidden rounded-full px-7 border border-emerald-800/40 shadow-lg`}>
       <span
         aria-hidden="true"
         className={`${bullet} absolute left-[6%] rounded-full
         bg-gradient-to-r from-[#00EF64] to-[#53BEC2]
         transition-all duration-500 ease-out
         group-hover:w-[140%] group-hover:h-[140%]
-        group-hover:-translate-x-12`}
+        group-hover:-translate-x-12 opacity-80`}
       />
 
-      {/* label */}
       <span
-        className={`${fontSize} relative z-10 font-semibold tracking-wide
-        text-white
-        transition-all duration-300
-        group-hover:text-black
-        group-hover:-translate-x-2`}
+        className={`${fontSize} relative z-10 font-semibold tracking-wide text-white transition-all duration-300 group-hover:text-black`}
       >
         {label}
       </span>
 
-      {/* arrow icon */}
       <MoveRight
         size={icon}
-        className="absolute right-3 opacity-0 translate-x-4
-        text-white
-        transition-all duration-300 ease-out
-        group-hover:opacity-100
-        group-hover:translate-x-0
-        group-hover:text-black"
+        className="absolute right-3 opacity-0 translate-x-4 text-white transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-black"
       />
-    </Link>
+    </Button>
   )
 }
 

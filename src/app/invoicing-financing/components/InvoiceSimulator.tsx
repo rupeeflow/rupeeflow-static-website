@@ -30,7 +30,7 @@ export default function InvoiceSimulator() {
   }
 
   return (
-    <section className="relative bg-white py-20 md:py-28 overflow-hidden">
+    <section className="relative bg-[var(--card)] py-20 md:py-28 overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -96,7 +96,7 @@ export default function InvoiceSimulator() {
 
                 <button
                   onClick={handleCalculate}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-bold text-lg hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 shadow-lg shadow-indigo-500/30"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-[var(--foreground)] font-bold text-lg hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 shadow-lg shadow-indigo-500/30"
                 >
                   Calculate Financing
                 </button>
@@ -124,7 +124,7 @@ export default function InvoiceSimulator() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl p-8 border-2 border-gray-100 shadow-xl"
+              className="bg-[var(--card)] rounded-3xl p-8 border-2 border-gray-100 shadow-xl"
             >
               {result ? (
                 <div className="space-y-6">
@@ -171,7 +171,7 @@ export default function InvoiceSimulator() {
 
                   <a
                     href="#apply"
-                    className="block w-full py-3 rounded-xl bg-gray-900 text-white font-semibold text-center hover:bg-gray-800 transition-colors"
+                    className="block w-full py-3 rounded-xl bg-gray-900 text-[var(--foreground)] font-semibold text-center hover:bg-gray-800 transition-colors"
                   >
                     Apply for Financing
                   </a>

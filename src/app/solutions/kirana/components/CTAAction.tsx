@@ -13,7 +13,7 @@ export default function CTASection() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-neutral-900 transition">
+          <button className="px-8 py-3 bg-[var(--background)] text-[var(--foreground)] rounded-full font-semibold hover:bg-neutral-900 transition">
             Join via WhatsApp (Free)
           </button>
           <p className="fontbody2 text-base">

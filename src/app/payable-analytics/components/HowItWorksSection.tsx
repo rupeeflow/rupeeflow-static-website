@@ -15,7 +15,7 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-[var(--card)]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export default function HowItWorksSection() {
                 const Icon = step.icon;
                 return (
                   <motion.div key={index} variants={staggerItem} className="relative text-center">
-                    <div className="relative z-10 w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                    <div className="relative z-10 w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-[var(--foreground)] font-bold text-xl shadow-lg">
                       <Icon className="w-8 h-8" />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
@@ -55,7 +55,7 @@ export default function HowItWorksSection() {
               const Icon = step.icon;
               return (
                 <motion.div key={index} variants={staggerItem} className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold shadow-lg">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-[var(--foreground)] font-bold shadow-lg">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>

@@ -73,7 +73,7 @@ function CounterBlock({
       <p className="text-4xl sm:text-5xl lg:text-6xl font-black bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent leading-none tracking-tight">
         {prefix}{value}{suffix}
       </p>
-      <p className="text-white font-semibold mt-3 text-sm sm:text-base">{label}</p>
+      <p className="text-[var(--foreground)] font-semibold mt-3 text-sm sm:text-base">{label}</p>
       {sublabel && <p className="text-gray-500 text-xs sm:text-sm mt-1">{sublabel}</p>}
     </div>
   )
@@ -111,13 +111,13 @@ export default function CaseStudyPage() {
             <span className="inline-block bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-semibold rounded-full px-3 py-1">
               B2B Marketplace
             </span>
-            <span className="inline-block bg-white/5 border border-white/10 text-gray-400 text-xs rounded-full px-3 py-1">
+            <span className="inline-block bg-[var(--card)] border border-[var(--border)] text-gray-400 text-xs rounded-full px-3 py-1">
               Collections · Payouts · Prepaid Cards · Lending
             </span>
           </div>
 
           <div className="max-w-4xl">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-[1.12] tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-[var(--foreground)] leading-[1.12] tracking-tight">
               From 79% to{' '}
               <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                 97% Collection Rate
@@ -144,10 +144,10 @@ export default function CaseStudyPage() {
                 key={label}
                 className={`rounded-2xl border p-4 sm:p-5 ${accent
                   ? 'bg-emerald-500/10 border-emerald-500/30'
-                  : 'bg-white/5 border-white/10'
+                  : 'bg-[var(--card)] border-[var(--border)]'
                   }`}
               >
-                <p className={`text-xl sm:text-2xl font-black ${accent ? 'text-emerald-400' : 'text-white'}`}>
+                <p className={`text-xl sm:text-2xl font-black ${accent ? 'text-emerald-400' : 'text-[var(--foreground)]'}`}>
                   {value}
                 </p>
                 <p className="text-gray-400 text-xs mt-1 leading-snug">{label}</p>
@@ -159,7 +159,7 @@ export default function CaseStudyPage() {
             <MainCTA label="Book a Demo" destination="/contact" />
             <a
               href="#results"
-              className="inline-flex items-center gap-2 h-11 px-7 rounded-full border border-white/20 text-gray-300 text-sm font-semibold hover:border-white/40 hover:text-white transition duration-200"
+              className="inline-flex items-center gap-2 h-11 px-7 rounded-full border border-white/20 text-gray-300 text-sm font-semibold hover:border-white/40 hover:text-[var(--foreground)] transition duration-200"
             >
               See Full Results
               <ArrowRight size={15} />
@@ -172,7 +172,7 @@ export default function CaseStudyPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           2. CLIENT SNAPSHOT — white
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="py-10 sm:py-12 bg-white border-b border-gray-100">
+      <section className="py-10 sm:py-12 bg-[var(--card)] border-b border-gray-100">
         <Container>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
 
@@ -265,7 +265,7 @@ export default function CaseStudyPage() {
             ].map(({ icon: Icon, color, iconColor, title, desc }) => (
               <div
                 key={title}
-                className={`flex items-start gap-5 rounded-2xl border p-6 sm:p-7 bg-white ${color} hover:shadow-md transition duration-300`}
+                className={`flex items-start gap-5 rounded-2xl border p-6 sm:p-7 bg-[var(--card)] ${color} hover:shadow-md transition duration-300`}
               >
                 <div className={`w-11 h-11 rounded-xl ${color} border flex items-center justify-center shrink-0`}>
                   <Icon size={20} className={iconColor} />
@@ -287,7 +287,7 @@ export default function CaseStudyPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           4. THE SOLUTION — white
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-[var(--card)]">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
             <span className="inline-block text-emerald-600 text-xs font-semibold tracking-widest uppercase border border-emerald-200 rounded-full px-4 py-1 mb-4 bg-emerald-50">
@@ -367,7 +367,7 @@ export default function CaseStudyPage() {
             ].map(({ icon: Icon, module, tag, desc, features, gradient }) => (
               <div
                 key={module}
-                className="group relative bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/10 transition duration-300 overflow-hidden"
+                className="group relative bg-[var(--card)] border border-gray-200 rounded-2xl p-6 sm:p-8 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/10 transition duration-300 overflow-hidden"
               >
                 {/* subtle gradient bg on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500 pointer-events-none`} />
@@ -376,7 +376,7 @@ export default function CaseStudyPage() {
                   {/* header */}
                   <div className="flex items-start justify-between mb-5">
                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center shrink-0`}>
-                      <Icon size={22} className="text-white" />
+                      <Icon size={22} className="text-[var(--foreground)]" />
                     </div>
                     <span className="text-[10px] font-semibold text-emerald-600 bg-emerald-50 border border-emerald-200 rounded-full px-2.5 py-1 uppercase tracking-wide">
                       {tag}
@@ -412,7 +412,7 @@ export default function CaseStudyPage() {
             <span className="inline-block text-emerald-400 text-xs font-semibold tracking-widest uppercase border border-emerald-400/30 rounded-full px-4 py-1 mb-4">
               Results & Impact
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[var(--foreground)] leading-tight">
               Numbers That{' '}
               <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                 Speak for Themselves
@@ -424,7 +424,7 @@ export default function CaseStudyPage() {
           </div>
 
           {/* animated counters */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-white/10 border border-white/10 rounded-2xl overflow-hidden mb-12 sm:mb-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-white/10 border border-[var(--border)] rounded-2xl overflow-hidden mb-12 sm:mb-16">
             <CounterBlock target={97} suffix="%" label="Collection Success Rate" sublabel="Up from 79%" />
             <CounterBlock prefix="₹" target={12} suffix="Cr+" label="Monthly GMV Processed" sublabel="Up from ₹3.2Cr" />
             <CounterBlock target={18} suffix=" Min" label="Average Payout Time" sublabel="Down from 4+ hours" />
@@ -438,7 +438,7 @@ export default function CaseStudyPage() {
             </p>
 
             {/* header row */}
-            <div className="grid grid-cols-[1fr_1fr_1fr] gap-px bg-white/10 rounded-t-2xl overflow-hidden text-xs font-bold uppercase tracking-widest">
+            <div className="grid grid-cols-[1fr_1fr_1fr] gap-px bg-[var(--card)] rounded-t-2xl overflow-hidden text-xs font-bold uppercase tracking-widest">
               <div className="bg-[#0a1a0f] px-4 sm:px-6 py-3 text-gray-500">Metric</div>
               <div className="bg-[#0a1a0f] px-4 sm:px-6 py-3 text-gray-500 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0" />
@@ -491,7 +491,7 @@ export default function CaseStudyPage() {
             ].map((row, i) => (
               <div
                 key={row.metric}
-                className={`grid grid-cols-[1fr_1fr_1fr] gap-px ${i % 2 === 0 ? 'bg-white/[0.04]' : 'bg-white/[0.02]'}`}
+                className={`grid grid-cols-[1fr_1fr_1fr] gap-px ${i % 2 === 0 ? 'bg-[var(--card)]/[0.04]' : 'bg-[var(--card)]/[0.02]'}`}
               >
                 <div className="px-4 sm:px-6 py-4 text-gray-300 text-sm font-medium border-t border-white/5">{row.metric}</div>
                 <div className="px-4 sm:px-6 py-4 text-rose-400 text-sm border-t border-white/5">{row.before}</div>
@@ -513,7 +513,7 @@ export default function CaseStudyPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           6. TESTIMONIAL — white
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-[var(--card)]">
         <Container>
           <div className="max-w-3xl mx-auto">
             <div className="relative bg-gray-50 border border-gray-200 rounded-3xl p-8 sm:p-12 overflow-hidden">
@@ -534,7 +534,7 @@ export default function CaseStudyPage() {
 
                 <div className="flex items-center gap-4">
                   {/* avatar placeholder */}
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shrink-0 text-white font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shrink-0 text-[var(--foreground)] font-bold text-lg">
                     R
                   </div>
                   <div>
@@ -543,7 +543,7 @@ export default function CaseStudyPage() {
                   </div>
 
                   {/* company logo placeholder */}
-                  <div className="ml-auto hidden sm:flex items-center gap-2 bg-white border border-gray-200 rounded-xl px-4 py-2.5">
+                  <div className="ml-auto hidden sm:flex items-center gap-2 bg-[var(--card)] border border-gray-200 rounded-xl px-4 py-2.5">
                     <Building2 size={16} className="text-gray-400" />
                     <span className="text-gray-600 text-sm font-semibold">NexaCommerce</span>
                   </div>
@@ -574,14 +574,14 @@ export default function CaseStudyPage() {
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-[#0C1F18] to-[#0a1a0f]">
         <Container>
-          <div className="rounded-3xl border border-emerald-500/20 bg-white/5 p-6 sm:p-10 lg:p-14">
+          <div className="rounded-3xl border border-emerald-500/20 bg-[var(--card)] p-6 sm:p-10 lg:p-14">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
 
               <div className="max-w-xl">
                 <p className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">
                   Ready to scale your financial stack?
                 </p>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[var(--foreground)] leading-tight">
                   Get the Same Results for{' '}
                   <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                     Your Business

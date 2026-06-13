@@ -37,9 +37,9 @@ function FAQItemComponent({
       {/* QUESTION */}
       <button
         onClick={onToggle}   // mobile support
-        className="w-full py-5 px-6 flex justify-between items-start text-left hover:bg-white/5 transition-colors group"
+        className="w-full py-5 px-6 flex justify-between items-start text-left hover:bg-[var(--card)] transition-colors group"
       >
-        <h3 className="text-base md:text-lg text-white pr-4 group-hover:text-emerald-400 transition-colors">
+        <h3 className="text-base md:text-lg text-[var(--foreground)] pr-4 group-hover:text-emerald-400 transition-colors">
           {faq.question}
         </h3>
 
@@ -81,7 +81,7 @@ export default function FAQSection({ faqs = [] }: FAQProps) {
 
         {/* HEADER */}
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white">
+          <h2 className="text-3xl md:text-5xl font-bold text-[var(--foreground)]">
             Frequently Asked Questions
           </h2>
           <p className="text-gray-400 mt-4">
@@ -90,7 +90,7 @@ export default function FAQSection({ faqs = [] }: FAQProps) {
         </div>
 
         {/* FAQ BOX */}
-        <div className="bg-white backdrop-blur-lg rounded-2xl border border-white/10 overflow-hidden">
+        <div className="bg-[var(--card)] backdrop-blur-lg rounded-2xl border border-[var(--border)] overflow-hidden">
           {faqs.map((faq) => (
             <FAQItemComponent
               key={faq.id}

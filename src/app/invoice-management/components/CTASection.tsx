@@ -6,7 +6,7 @@ import { Check, ArrowRight, FileText } from 'lucide-react';
 
 export default function CTASection() {
   return (
-    <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#020506] via-gray-900 to-[#020506] text-white overflow-hidden">
+    <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#020506] via-gray-900 to-[#020506] text-[var(--foreground)] overflow-hidden">
       <div className="absolute inset-0 overflow-hidden opacity-20">
         <div className="absolute inset-0" style={{
           backgroundImage: 'radial-gradient(circle, #10b981 1px, transparent 1px)',
@@ -41,14 +41,14 @@ export default function CTASection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link
               href="/contact"
-              className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 inline-flex items-center justify-center gap-2"
+              className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 inline-flex items-center justify-center gap-2"
             >
               Start Free Trial
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/demo"
-              className="px-8 py-4 border-2 border-emerald-500/50 text-white font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200"
+              className="px-8 py-4 border-2 border-emerald-500/50 text-[var(--foreground)] font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200"
             >
               Book a Demo
             </Link>

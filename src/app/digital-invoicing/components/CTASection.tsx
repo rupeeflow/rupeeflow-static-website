@@ -14,7 +14,7 @@ const features = [
 
 export default function CTASection() {
   return (
-    <section className="relative py-20 md:py-28 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white overflow-hidden">
+    <section className="relative py-20 md:py-28 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-[var(--foreground)] overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]" />
@@ -28,7 +28,7 @@ export default function CTASection() {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+          className="absolute top-0 right-0 w-96 h-96 bg-[var(--card)] rounded-full blur-3xl"
         />
       </div>
 
@@ -40,7 +40,7 @@ export default function CTASection() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--card)] backdrop-blur-sm rounded-full mb-6">
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">Start Your Free Trial Today</span>
           </div>
@@ -59,14 +59,14 @@ export default function CTASection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link
               href="/contact"
-              className="group px-8 py-4 bg-white text-emerald-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-200 inline-flex items-center justify-center gap-2"
+              className="group px-8 py-4 bg-[var(--card)] text-emerald-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-200 inline-flex items-center justify-center gap-2"
             >
               Start Free Trial
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/demo"
-              className="px-8 py-4 border-2 border-white/50 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-white transition-all duration-200"
+              className="px-8 py-4 border-2 border-white/50 text-[var(--foreground)] font-semibold rounded-xl hover:bg-[var(--card)] hover:border-white transition-all duration-200"
             >
               Watch Demo
             </Link>

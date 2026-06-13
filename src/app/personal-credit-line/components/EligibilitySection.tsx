@@ -33,7 +33,7 @@ const eligibilityCriteria = [
 
 export default function EligibilitySection() {
   return (
-    <section className="relative bg-white py-20 md:py-28 overflow-hidden">
+    <section className="relative bg-[var(--card)] py-20 md:py-28 overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -61,7 +61,7 @@ export default function EligibilitySection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="relative bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 group hover:-translate-y-1"
+              className="relative bg-[var(--card)] rounded-3xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 group hover:-translate-y-1"
             >
               {/* Icon */}
               <div className="mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -104,9 +104,9 @@ export default function EligibilitySection() {
         >
           <a
             href="#apply"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-base hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold text-base hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
           >
-            <span className="w-2.5 h-2.5 rounded-full bg-white/90 animate-pulse" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[var(--card)] animate-pulse" />
             Check Your Eligibility
           </a>
         </motion.div>

@@ -70,7 +70,7 @@ export default function PaymentMethodsGrid() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-[var(--card)]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         {/* Section Header */}
         <motion.div
@@ -99,10 +99,10 @@ export default function PaymentMethodsGrid() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link href={method.href}>
-                <div className="group relative h-full bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-emerald-200 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                <div className="group relative h-full bg-[var(--card)] rounded-2xl p-6 border-2 border-gray-100 hover:border-emerald-200 transition-all duration-300 hover:shadow-xl cursor-pointer">
                   {/* Icon */}
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <method.icon className="w-7 h-7 text-white" />
+                    <method.icon className="w-7 h-7 text-[var(--foreground)]" />
                   </div>
 
                   {/* Title */}

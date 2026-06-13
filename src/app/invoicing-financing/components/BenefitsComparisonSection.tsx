@@ -39,7 +39,7 @@ const comparison = [
 
 export default function BenefitsComparisonSection() {
   return (
-    <section className="relative bg-white py-20 md:py-28 overflow-hidden">
+    <section className="relative bg-[var(--card)] py-20 md:py-28 overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -99,7 +99,7 @@ export default function BenefitsComparisonSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="grid grid-cols-3 gap-4 bg-white rounded-2xl p-5 border-2 border-gray-100 hover:border-indigo-500/30 transition-all duration-300 hover:shadow-lg"
+                className="grid grid-cols-3 gap-4 bg-[var(--card)] rounded-2xl p-5 border-2 border-gray-100 hover:border-indigo-500/30 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="text-gray-900 font-semibold flex items-center">
                   {row.feature}

@@ -37,7 +37,7 @@ export default function VerificationSection() {
   ]
 
   return (
-    <section className="relative w-full bg-black text-white py-24 px-6 overflow-hidden">
+    <section className="relative w-full bg-[var(--background)] text-[var(--foreground)] py-24 px-6 overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(16,185,129,0.2),transparent_70%)] blur-3xl" />
 
@@ -73,7 +73,7 @@ export default function VerificationSection() {
             <motion.div
               key={i}
               variants={content}
-              className="p-8 rounded-2xl bg-white/5 border border-white/80 backdrop-blur-md hover:bg-white/10 hover:shadow-[0_0_20px_rgba(34,197,94,0.25)] transition flex flex-col items-center text-center"
+              className="p-8 rounded-2xl bg-[var(--card)] border border-white/80 backdrop-blur-md hover:bg-[var(--card)] hover:shadow-[0_0_20px_rgba(34,197,94,0.25)] transition flex flex-col items-center text-center"
             >
               <card.icon
                 className="w-12 h-12 text-emerald-400 mb-4"

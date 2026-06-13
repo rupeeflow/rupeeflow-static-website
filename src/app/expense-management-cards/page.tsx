@@ -22,7 +22,7 @@ export default function ExpenseManagementCardsPage() {
 
           {/* LEFT */}
           <div>
-            <h1 className="text-6xl font-bold text-white leading-tight">
+            <h1 className="text-6xl font-bold text-[var(--foreground)] leading-tight">
               Expense Management{" "}
               <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                 Cards
@@ -61,7 +61,7 @@ export default function ExpenseManagementCardsPage() {
           </div>
 
           {/* HERO IMAGE */}
-          <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+          <div className="relative rounded-2xl overflow-hidden border border-[var(--border)] shadow-xl">
             <Image
               src="/expense-management-hero.png"
               alt="Expense management dashboard preview"
@@ -77,7 +77,7 @@ export default function ExpenseManagementCardsPage() {
       {/* WHY CHOOSE */}
       <div className="py-20 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
         <div className="text-center max-w-3xl mx-auto px-6">
-          <h2 className="text-5xl font-semibold text-white">
+          <h2 className="text-5xl font-semibold text-[var(--foreground)]">
             Why Choose{" "}
             <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
               Expense Cards
@@ -107,12 +107,12 @@ export default function ExpenseManagementCardsPage() {
           ].map((item, i) => (
             <div
               key={i}
-              className="p-7 rounded-2xl border border-white/10 bg-[#0F0F0F]
+              className="p-7 rounded-2xl border border-[var(--border)] bg-[#0F0F0F]
               hover:-translate-y-1 transition
               hover:border-emerald-400/40
               hover:shadow-[0_0_25px_rgba(0,239,100,0.15)]"
             >
-              <h3 className="text-white font-semibold text-lg">{item.title}</h3>
+              <h3 className="text-[var(--foreground)] font-semibold text-lg">{item.title}</h3>
               <p className="text-gray-400 mt-3">{item.desc}</p>
             </div>
           ))}
@@ -152,13 +152,13 @@ export default function ExpenseManagementCardsPage() {
             <div key={i} className="grid md:grid-cols-2 gap-14 items-center">
 
               {/* IMAGE */}
-              <div className={`${i % 2 ? "md:order-2" : ""} bg-white/5 border border-white/10 rounded-2xl aspect-video flex items-center justify-center text-gray-500`}>
+              <div className={`${i % 2 ? "md:order-2" : ""} bg-[var(--card)] border border-[var(--border)] rounded-2xl aspect-video flex items-center justify-center text-gray-500`}>
                 {item.image}
               </div>
 
               {/* TEXT */}
               <div className={`${i % 2 ? "md:order-1" : ""}`}>
-                <h3 className="text-2xl font-semibold text-white">
+                <h3 className="text-2xl font-semibold text-[var(--foreground)]">
                   {item.title.split(" ").slice(0, -1).join(" ")}{" "}
                   <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                     {item.title.split(" ").slice(-1)}
@@ -188,7 +188,7 @@ export default function ExpenseManagementCardsPage() {
       </div>
 
       {/* TRUST STRIP */}
-      <div className="py-14 border-y border-white/10 text-center">
+      <div className="py-14 border-y border-[var(--border)] text-center">
         <p className="text-lg font-medium bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
           Built for finance teams seeking control, compliance, and efficiency.
         </p>
@@ -199,7 +199,7 @@ export default function ExpenseManagementCardsPage() {
 
       {/* FINAL CTA */}
       <div className="py-28 text-center">
-        <h3 className="text-4xl text-white font-semibold">
+        <h3 className="text-4xl text-[var(--foreground)] font-semibold">
           Transform your expense management today
         </h3>
         <p className="text-gray-400 mt-4">

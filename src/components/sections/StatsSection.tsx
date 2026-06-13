@@ -62,7 +62,7 @@ export default function StatsSection() {
               <motion.div
                 key={idx}
                 variants={cardVariants}
-                className="bg-white shadow-md rounded-2xl py-10 flex flex-col items-center justify-center"
+                className="bg-[var(--card)] shadow-md rounded-2xl py-10 flex flex-col items-center justify-center"
               >
                 <h3 className="rf-h2 text-gray-900">
                   {stat.value}

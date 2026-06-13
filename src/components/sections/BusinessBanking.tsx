@@ -59,7 +59,7 @@ export default function BusinessBanking() {
   // }, { scope: sectionRef })
 
   return (
-    <section ref={sectionRef} className="relative bg-black pt-10 md:pt-18 pb-16 md:pb-24 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-[var(--background)] pt-10 md:pt-18 pb-16 md:pb-24 overflow-hidden">
       <Container className="relative">
         {/* ================= TOP VISUAL ================= */}
         <div className="relative h-[80px] sm:h-[100px] md:h-[190px] mb-6 sm:mb-8 px-4 md:px-0">
@@ -74,9 +74,9 @@ export default function BusinessBanking() {
           />
 
           {/* BUSINESS BANKING Pill RIGHT */}
-          <div className="bb-pill absolute right-0 top-[36px] sm:top-[50px] md:top-28 w-[270px] sm:w-[340px] md:w-[360px] h-[46px] sm:h-[60px] z-10">
+            <div className="bb-pill absolute right-0 top-[36px] sm:top-[50px] md:top-28 w-[270px] sm:w-[340px] md:w-[360px] h-[46px] sm:h-[60px] z-10">
             <div className="absolute inset-0 rounded-[18px] rounded-tl-[270px] sm:rounded-tl-[340px] md:rounded-tl-[360px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
-            <span className="absolute right-5 sm:right-8 top-1/2 -translate-y-1/2 text-white text-[12px] sm:text-[18px] md:text-[20px] font-semibold">
+            <span className="absolute right-5 sm:right-8 top-1/2 -translate-y-1/2 text-black text-[12px] sm:text-[18px] md:text-[20px] font-semibold">
               BUSINESS BANKING
             </span>
           </div>
@@ -87,15 +87,11 @@ export default function BusinessBanking() {
           {bankingCards.map((card, i) => (
             <div
               key={i}
-              className="bb-card group relative min-h-[200px] md:h-[240px] flex flex-col backdrop-blur-sm rounded-2xl p-5 md:p-6 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[0_0_40px_rgba(83,190,194,0.3)] hover:-translate-y-1"
-              style={{ background: '#122427BF' }}
+              className="bb-card group relative min-h-[200px] md:h-[240px] flex flex-col rounded-2xl p-5 md:p-6 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 bg-[var(--card)]"
             >
               {/* White border that becomes gradient on hover */}
-              <div className="absolute inset-0 rounded-2xl p-[2px] transition-all duration-300 ease-in-out bg-gradient-to-r from-white/20 via-white/20 to-white/20 group-hover:from-[#53BEC2] group-hover:via-[#00EF64] group-hover:to-[#53BEC2]">
-                <div
-                  className="h-full w-full rounded-2xl transition-all duration-300 ease-in-out"
-                  style={{ background: '#122427BF' }}
-                />
+              <div className="absolute inset-0 rounded-2xl p-[2px] transition-all duration-300 ease-in-out bg-[var(--card)] group-hover:from-[#53BEC2] group-hover:via-[#00EF64] group-hover:to-[#53BEC2]">
+                <div className="h-full w-full rounded-2xl transition-all duration-300 ease-in-out bg-[var(--card)]" />
               </div>
 
               {/* Content */}
@@ -108,18 +104,18 @@ export default function BusinessBanking() {
                   className="absolute top-0 right-0 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 transition-transform duration-300 ease-in-out group-hover:scale-110"
                 />
 
-                <h3 className="text-white text-lg md:text-xl font-semibold pr-12 transition-colors duration-300 ease-in-out group-hover:text-[#30f3bc]">
+                <h3 className="text-[var(--foreground)] text-lg md:text-xl font-semibold pr-12 transition-colors duration-300 ease-in-out group-hover:text-[var(--primary)]">
                   {card.title}
                 </h3>
 
-                <p className="text-gray-400 text-sm mt-2 leading-relaxed pr-2 md:max-w-[85%] transition-colors duration-300 ease-in-out group-hover:text-gray-300">
+                <p className="text-gray-700 text-sm mt-2 leading-relaxed pr-2 md:max-w-[85%] transition-colors duration-300 ease-in-out">
                   {card.desc}
                 </p>
 
                 <div className="mt-auto pt-4">
                   <Link 
                     href={card.href}
-                    className="inline-flex rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:bg-gradient-to-r group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black"
+                    className="inline-flex rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium items-center gap-2 bg-gradient-to-r from-[#53BEC2] to-[#00EF64] text-white border border-transparent transition transform duration-200 ease-in-out hover:shadow-md hover:bg-gradient-to-r hover:from-[#6ed3cf] hover:to-[#00ef64] hover:text-black"
                   >
                     {card.cta}
                   </Link>

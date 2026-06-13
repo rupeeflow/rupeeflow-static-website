@@ -29,7 +29,7 @@ const complianceFeatures = [
 
 export default function ComplianceSection() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-emerald-900 to-teal-900 text-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-emerald-900 to-teal-900 text-[var(--foreground)] relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff20_1px,transparent_1px),linear-gradient(to_bottom,#ffffff20_1px,transparent_1px)] bg-[size:3rem_3rem]" />
@@ -64,7 +64,7 @@ export default function ComplianceSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
+                className="bg-[var(--card)] backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-[var(--card)] transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-xl bg-emerald-400/20 flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-emerald-300" />

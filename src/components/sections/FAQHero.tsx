@@ -31,7 +31,7 @@ export default function FAQHero({ onSearch }: FAQHeroProps) {
   }
 
   return (
-    <section className="py-32 px-6 bg-black-emerald text-white relative overflow-hidden">
+    <section className="py-32 px-6 bg-[var(--background)] text-[var(--foreground)] relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-radial-teal-soft opacity-30 pointer-events-none" />
 
@@ -71,7 +71,7 @@ export default function FAQHero({ onSearch }: FAQHeroProps) {
                 value={searchQuery}
                 onChange={handleSearch}
                 placeholder="Search for answers... (e.g., 'refund', 'KYC', 'fees')"
-                className="w-full pl-12 pr-4 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent fontbody2"
+                className="w-full pl-12 pr-4 py-4 rounded-full bg-[var(--card)] border border-white/20 text-[var(--foreground)] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent fontbody2"
               />
             </div>
             <p className="fontbody2 text-gray-400 text-sm mt-4">

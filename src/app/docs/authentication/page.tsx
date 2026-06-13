@@ -41,7 +41,7 @@ export default function AuthenticationPage() {
 
       {/* Step 1: Generate Credentials */}
       <div className="mb-12">
-        <h2 className="text-3xl fontheading text-white mb-6">Step 1: Generate API Credentials</h2>
+        <h2 className="text-3xl fontheading text-[var(--foreground)] mb-6">Step 1: Generate API Credentials</h2>
 
         <div className="bg-gradient-to-br from-teal-500/10 to-emerald-500/10 border border-teal-500/30 rounded-xl p-6 mb-6">
           <div className="flex items-start gap-4">
@@ -49,7 +49,7 @@ export default function AuthenticationPage() {
               <Key className="w-5 h-5 text-teal-400" />
             </div>
             <div className="flex-1">
-              <h3 className="text-xl fontheading text-white mb-3">Generate from Dashboard</h3>
+              <h3 className="text-xl fontheading text-[var(--foreground)] mb-3">Generate from Dashboard</h3>
               <p className="text-gray-300 fontbody2 mb-4">
                 Follow these steps to generate your Client ID and Secret Key from your RupeeFlow dashboard:
               </p>
@@ -57,7 +57,7 @@ export default function AuthenticationPage() {
               {/* Steps */}
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-sm font-bold">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-[var(--foreground)] text-sm font-bold">
                     1
                   </div>
                   <div className="flex-1">
@@ -68,7 +68,7 @@ export default function AuthenticationPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-sm font-bold">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-[var(--foreground)] text-sm font-bold">
                     2
                   </div>
                   <div className="flex-1">
@@ -82,7 +82,7 @@ export default function AuthenticationPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-sm font-bold">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-[var(--foreground)] text-sm font-bold">
                     3
                   </div>
                   <div className="flex-1">
@@ -93,7 +93,7 @@ export default function AuthenticationPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-sm font-bold">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-[var(--foreground)] text-sm font-bold">
                     4
                   </div>
                   <div className="flex-1">
@@ -104,7 +104,7 @@ export default function AuthenticationPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-sm font-bold">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-[var(--foreground)] text-sm font-bold">
                     5
                   </div>
                   <div className="flex-1">
@@ -204,7 +204,7 @@ export default function AuthenticationPage() {
 
       {/* Step 2: Use in API Calls */}
       <div className="mb-12">
-        <h2 className="text-3xl fontheading text-white mb-6">Step 2: Using Basic Authentication</h2>
+        <h2 className="text-3xl fontheading text-[var(--foreground)] mb-6">Step 2: Using Basic Authentication</h2>
 
         <p className="text-gray-300 fontbody2 mb-6">
           RupeeFlow APIs use <strong>Basic Authentication</strong>. You need to encode your Client ID and Secret Key in Base64 format.
@@ -331,7 +331,7 @@ response = requests.post('https://api.rupeeflow.co/api/v1/payments/payin/create'
 
       {/* Security Best Practices */}
       <div className="mb-12">
-        <h2 className="text-3xl fontheading text-white mb-6">Security Best Practices</h2>
+        <h2 className="text-3xl fontheading text-[var(--foreground)] mb-6">Security Best Practices</h2>
 
         <div className="grid md:grid-cols-2 gap-4">
           <div className="bg-gradient-to-br from-red-500/10 to-orange-500/10 border border-red-500/30 rounded-xl p-6">
@@ -396,7 +396,7 @@ response = requests.post('https://api.rupeeflow.co/api/v1/payments/payin/create'
 
       {/* IP Whitelisting */}
       <div className="mb-12">
-        <h2 className="text-3xl fontheading text-white mb-6">IP Whitelisting</h2>
+        <h2 className="text-3xl fontheading text-[var(--foreground)] mb-6">IP Whitelisting</h2>
 
         <div className="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/30 rounded-xl p-6">
           <h3 className="text-xl fontheading text-purple-400 mb-3">Additional Security Layer</h3>
@@ -406,7 +406,7 @@ response = requests.post('https://api.rupeeflow.co/api/v1/payments/payin/create'
 
           <div className="space-y-3">
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center text-white text-sm font-bold">
+              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center text-[var(--foreground)] text-sm font-bold">
                 1
               </div>
               <div className="flex-1">
@@ -417,7 +417,7 @@ response = requests.post('https://api.rupeeflow.co/api/v1/payments/payin/create'
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center text-white text-sm font-bold">
+              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center text-[var(--foreground)] text-sm font-bold">
                 2
               </div>
               <div className="flex-1">
@@ -428,7 +428,7 @@ response = requests.post('https://api.rupeeflow.co/api/v1/payments/payin/create'
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center text-white text-sm font-bold">
+              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center text-[var(--foreground)] text-sm font-bold">
                 3
               </div>
               <div className="flex-1">
@@ -439,7 +439,7 @@ response = requests.post('https://api.rupeeflow.co/api/v1/payments/payin/create'
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center text-white text-sm font-bold">
+              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center text-[var(--foreground)] text-sm font-bold">
                 4
               </div>
               <div className="flex-1">
@@ -460,7 +460,7 @@ response = requests.post('https://api.rupeeflow.co/api/v1/payments/payin/create'
 
       {/* Troubleshooting */}
       <div className="mb-12">
-        <h2 className="text-3xl fontheading text-white mb-6">Troubleshooting</h2>
+        <h2 className="text-3xl fontheading text-[var(--foreground)] mb-6">Troubleshooting</h2>
 
         <div className="space-y-4">
           {/* 401 Error */}
@@ -470,7 +470,7 @@ response = requests.post('https://api.rupeeflow.co/api/v1/payments/payin/create'
                 <span className="text-red-400 font-bold text-lg">401</span>
               </div>
               <div className="flex-1">
-                <h3 className="text-lg fontheading text-white mb-2">Unauthorized Error</h3>
+                <h3 className="text-lg fontheading text-[var(--foreground)] mb-2">Unauthorized Error</h3>
                 <p className="text-gray-400 fontbody2 mb-3">
                   This error occurs when your credentials are invalid or incorrectly formatted.
                 </p>
@@ -494,7 +494,7 @@ response = requests.post('https://api.rupeeflow.co/api/v1/payments/payin/create'
                 <span className="text-orange-400 font-bold text-lg">403</span>
               </div>
               <div className="flex-1">
-                <h3 className="text-lg fontheading text-white mb-2">IP Not Whitelisted</h3>
+                <h3 className="text-lg fontheading text-[var(--foreground)] mb-2">IP Not Whitelisted</h3>
                 <p className="text-gray-400 fontbody2 mb-3">
                   This error occurs when your server IP is not whitelisted.
                 </p>
@@ -515,20 +515,20 @@ response = requests.post('https://api.rupeeflow.co/api/v1/payments/payin/create'
 
       {/* Next Steps */}
       <div className="bg-gradient-to-br from-teal-500/10 to-emerald-500/10 border border-teal-500/30 rounded-xl p-8">
-        <h3 className="text-2xl fontheading text-white mb-3">Ready to Start?</h3>
+        <h3 className="text-2xl fontheading text-[var(--foreground)] mb-3">Ready to Start?</h3>
         <p className="text-gray-300 fontbody2 mb-6">
           Now that you have your credentials set up, you&apos;re ready to start making API calls!
         </p>
         <div className="flex flex-wrap gap-4">
           <a
             href="/docs/payin"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-600 to-emerald-600 text-white fontheading rounded-xl hover:from-teal-500 hover:to-emerald-500 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-600 to-emerald-600 text-[var(--foreground)] fontheading rounded-xl hover:from-teal-500 hover:to-emerald-500 transition-all"
           >
             Explore Pay-In API
           </a>
           <a
             href="/docs/payout"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white fontheading rounded-xl border border-white/20 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--card)] hover:bg-[var(--card)] text-[var(--foreground)] fontheading rounded-xl border border-white/20 transition-all"
           >
             Explore Pay-Out API
           </a>

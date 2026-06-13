@@ -28,46 +28,47 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-gradient-to-b from-[#020506] via-black to-black overflow-x-hidden"
+      className="relative bg-[var(--background)] overflow-x-hidden"
     >
       {/* Background radial glow */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.35),transparent_60%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(0,135,90,0.12),transparent_60%)]" />
 
       {/* ── Text Content ── */}
       <div className="max-w-6xl mx-auto text-center pt-24 sm:pt-26 lg:pt-28 pb-4 sm:pb-6 px-4 sm:px-6 relative z-10">
-
         {/* Badge */}
         <motion.div
-          className="inline-flex items-center gap-2 border border-emerald-500/30 rounded-full px-4 py-1.5 mb-6"
+          className="inline-flex items-center gap-2 border border-[var(--border)] rounded-full px-4 py-1.5 mb-6"
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="rf-caption text-emerald-400 font-semibold">India&apos;s Fastest Payment Gateway</span>
+          <span className="rf-caption text-[var(--primary)] font-semibold">
+            India&apos;s Fastest Payment Gateway
+          </span>
         </motion.div>
 
         {/* Heading */}
         <motion.h1
-          className="rf-h1 text-white max-w-4xl mx-auto"
+          className="rf-h1 text-[var(--foreground)] max-w-4xl mx-auto"
           initial={{ opacity: 0, y: -32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
           Accept Payments with a{' '}
-          <span className="text-emerald-400">Cutting-Edge</span>{' '}
-          Payment Gateway
+          <span className="text-[var(--primary)]">Cutting-Edge</span> Payment
+          Gateway
         </motion.h1>
 
         {/* Sub text */}
         <motion.p
-          className="mt-4 rf-lead text-gray-400 max-w-2xl mx-auto"
+          className="mt-4 rf-lead text-[var(--muted)] max-w-2xl mx-auto"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
         >
-          Accept online payments via Web, iOS, Android or APIs.
-          UPI, Net Banking, Debit Cards, Wallets — anytime, anywhere.
+          Accept online payments via Web, iOS, Android or APIs. UPI, Net
+          Banking, Debit Cards, Wallets — anytime, anywhere.
         </motion.p>
 
         {/* Stats strip */}
@@ -83,14 +84,27 @@ export default function HeroSection() {
               className="flex flex-col items-center gap-2"
               initial={{ opacity: 0, y: -16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 + i * 0.08, ease: 'easeOut' }}
+              transition={{
+                duration: 0.5,
+                delay: 0.35 + i * 0.08,
+                ease: 'easeOut',
+              }}
             >
               {s.isImg ? (
-                <img src={s.src} alt={s.text} className="w-9 h-9 object-contain" />
+                <img
+                  src={s.src}
+                  alt={s.text}
+                  className="w-9 h-9 object-contain"
+                />
               ) : (
-                s.Icon && <s.Icon style={{ width: 24, height: 36 }} className="text-[#53C2B7]" />
+                s.Icon && (
+                  <s.Icon
+                    style={{ width: 24, height: 36 }}
+                    className="text-[var(--accent)]"
+                  />
+                )
               )}
-              <p className="rf-caption text-gray-400">{s.text}</p>
+              <p className="rf-caption text-[var(--muted)]">{s.text}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -104,19 +118,18 @@ export default function HeroSection() {
         >
           <Link
             href="#"
-            className="px-8 py-3 rounded-full bg-emerald-500 text-black font-semibold hover:bg-emerald-400 transition duration-300 shadow-lg shadow-emerald-500/25"
+            className="px-8 py-3 rounded-full bg-[var(--primary)] text-[var(--surface)] font-semibold hover:opacity-95 transition duration-300 shadow-lg"
           >
             Start Accepting Payments
           </Link>
           {/* <Link
             href="#"
-            className="px-8 py-3 rounded-full border border-emerald-500/60 text-white hover:bg-emerald-500/10 transition duration-300"
+            className="px-8 py-3 rounded-full border border-emerald-500/60 text-[var(--foreground)] hover:bg-emerald-500/10 transition duration-300"
           >
             Documentation →
           </Link> */}
         </motion.div>
       </div>
-
 
       {/* ── Dashboard + Phone image area ── */}
       {/*
@@ -127,13 +140,15 @@ export default function HeroSection() {
         - No overflow-hidden on section (overflow-x-hidden only) so phone never clips
       */}
 
-
       <div className="relative max-w-5xl mx-auto px-3 sm:px-6 z-10 pb-[10px] sm:pb-[12px] lg:pb-[14px]">
-
         {/* Dashboard with 3D tilt */}
         <div style={{ perspective: 1200 }}>
           <motion.div
-            style={{ rotateX: dashRotateX, y: dashY, transformStyle: 'preserve-3d' }}
+            style={{
+              rotateX: dashRotateX,
+              y: dashY,
+              transformStyle: 'preserve-3d',
+            }}
             initial={{ opacity: 0, scale: 0.88, rotateX: 16, y: 60 }}
             animate={{ opacity: 1, scale: 1, rotateX: 4, y: 0 }}
             transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -166,7 +181,12 @@ export default function HeroSection() {
         >
           <motion.div
             animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+            transition={{
+              duration: 5.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: 1,
+            }}
           >
             <Image
               src="/image 11.svg"

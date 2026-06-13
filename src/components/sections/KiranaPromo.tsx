@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 export default function KiranaPromo() {
   return (
-    <section className="relative bg-black text-white py-24 px-6 overflow-hidden">
+    <section className="relative bg-[var(--background)] text-[var(--foreground)] py-24 px-6 overflow-hidden">
       {/* Gradient glow background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(16,185,129,0.2),transparent_70%)] blur-3xl" />
 
@@ -26,7 +26,7 @@ export default function KiranaPromo() {
             </span>
           </h2>
 
-          <p className=" text-gray-300  text-md text-center  max-w-4xl mx-auto lg:mx-0">
+          <p className=" text-gray-700  text-md text-center  max-w-4xl mx-auto lg:mx-0">
             The first offline-first <strong>UPI POS Lite</strong> app for small
             merchants, kirana stores, and tea stalls. Accept payments anytime
             even without internet, with voice, QR, and NFC. Built for Bharat’s
@@ -42,7 +42,7 @@ export default function KiranaPromo() {
           viewport={{ once: true }}
           className="flex-1 w-full lg:w-1/2 relative"
         >
-          <div className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 backdrop-blur-md shadow-lg">
+          <div className="rounded-[2rem] overflow-hidden bg-[var(--card)] border border-[var(--border)] backdrop-blur-md shadow-lg">
             <Image
               src="/images/kirana-promo.png"
               alt="Shopkeeper using RupeeFlow Kirana UPI POS"
@@ -55,7 +55,7 @@ export default function KiranaPromo() {
         </motion.div>
         <Link
           href="/solutions/kirana"
-          className="inline-block px-8 py-3 rounded-full bg-teal-emerald-dark text-white font-semibold text-md md:text-base md:text-lg transition"
+          className="inline-block px-8 py-3 rounded-full bg-teal-emerald-dark text-[var(--foreground)] font-semibold text-md md:text-base md:text-lg transition"
         >
           Know More About Kirana →
         </Link>

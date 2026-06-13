@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Globe, Wifi, Mic, ShieldCheck, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import Button from '@/components/ui/Button'
 
 export default function FeatureSection() {
   const features = [
@@ -45,7 +46,7 @@ export default function FeatureSection() {
   ]
 
   return (
-    <section className="relative bg-black text-center py-32 px-6 overflow-hidden">
+    <section className="relative bg-[var(--background)] text-center py-32 px-6 overflow-hidden">
       {/* Background gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(16,185,129,0.15),transparent_70%)] blur-3xl" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(45,212,191,0.15),transparent_70%)] blur-3xl" />
@@ -56,7 +57,7 @@ export default function FeatureSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-6xl fontheadingthin text-white mb-3"
+          className="text-4xl md:text-6xl fontheadingthin text-[var(--foreground)] mb-3"
         >
           The Future of UPI, Built for You
         </motion.h2>
@@ -94,7 +95,7 @@ export default function FeatureSection() {
               <div className="mb-6">{f.icon}</div>
 
               {/* Title */}
-              <h3 className="fontheading2 text-xl text-white mb-3">
+              <h3 className="fontheading2 text-xl text-[var(--foreground)] mb-3">
                 {f.title}
               </h3>
 
@@ -111,13 +112,10 @@ export default function FeatureSection() {
               </ul>
 
               {/* Button */}
-              <Link
-                href="/product"
-                className="flex items-center justify-center gap-2 px-5 py-2 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition mt-auto"
-              >
+              <Button href="/product" className="mt-auto px-5 py-2 inline-flex items-center gap-2">
                 Learn More
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </Button>
             </motion.div>
           ))}
         </div>

@@ -71,11 +71,11 @@ export default function UseCasesSection() {
               <motion.div
                 key={index}
                 variants={staggerItem}
-                className="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-emerald-100 hover:shadow-lg transition-all duration-300"
+                className="bg-[var(--card)] rounded-2xl p-8 border-2 border-gray-100 hover:border-emerald-100 hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
-                    <Icon className="w-7 h-7 text-white" />
+                    <Icon className="w-7 h-7 text-[var(--foreground)]" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">{useCase.industry}</h3>
                 </div>

@@ -7,7 +7,7 @@ import React from 'react'
 
 export default function Plugins() {
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-white overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[var(--card)] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Section Heading */}
@@ -59,18 +59,18 @@ export default function Plugins() {
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ repeat: Infinity, duration: 3 }}
-                className="absolute -top-4 -right-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg"
+                className="absolute -top-4 -right-4 bg-emerald-500 text-[var(--foreground)] px-3 py-1 rounded-full text-xs font-semibold shadow-lg"
               >
                 24/7 Support
               </motion.div>
 
               {/* stats */}
               <div className="mt-6 grid grid-cols-2 gap-3">
-                <div className="bg-white rounded-lg p-3 text-center border border-emerald-200">
+                <div className="bg-[var(--card)] rounded-lg p-3 text-center border border-emerald-200">
                   <div className="text-lg font-bold text-emerald-600">99.9%</div>
                   <div className="text-xs text-gray-600">Uptime</div>
                 </div>
-                <div className="bg-white rounded-lg p-3 text-center border border-emerald-200">
+                <div className="bg-[var(--card)] rounded-lg p-3 text-center border border-emerald-200">
                   <div className="text-lg font-bold text-emerald-600">&lt;2s</div>
                   <div className="text-xs text-gray-600">Response</div>
                 </div>
@@ -129,7 +129,7 @@ export default function Plugins() {
               {/* <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-8 sm:mt-10 lg:mt-12 flex items-center gap-3 border-2 border-emerald-500 text-emerald-600 font-semibold px-7 py-3 rounded-xl hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-sm"
+                className="mt-8 sm:mt-10 lg:mt-12 flex items-center gap-3 border-2 border-emerald-500 text-emerald-600 font-semibold px-7 py-3 rounded-xl hover:bg-emerald-500 hover:text-[var(--foreground)] transition-all duration-300 shadow-sm"
               >
                 Start Building →
               </motion.button> */}

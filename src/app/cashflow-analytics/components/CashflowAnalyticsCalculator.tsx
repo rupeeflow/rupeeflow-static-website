@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, TrendingUp } from 'lucide-react';
+import Button from '@/components/ui/Button';
 import AnimatedCounter from '@/components/AnimatedCounter';
 
 export default function CashflowAnalyticsCalculator() {
@@ -45,7 +46,7 @@ export default function CashflowAnalyticsCalculator() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-[var(--card)]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 rounded-full mb-4">
@@ -76,10 +77,10 @@ export default function CashflowAnalyticsCalculator() {
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Current Cash Reserve (₹)</label>
                   <input type="number" value={inputs.currentCashReserve} onChange={(e) => handleInputChange('currentCashReserve', e.target.value)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors" min="0" />
                 </div>
-                <button onClick={calculateMetrics} className="w-full px-6 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2">
+                <Button onClick={calculateMetrics} className="w-full px-6 py-4 text-sm font-semibold flex items-center justify-center gap-2">
                   <TrendingUp className="w-5 h-5" />
                   Calculate Metrics
-                </button>
+                </Button>
               </div>
             </motion.div>
 
@@ -87,19 +88,19 @@ export default function CashflowAnalyticsCalculator() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Your Metrics</h3>
               {showResults ? (
                 <div className="space-y-6">
-                  <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
+                  <div className="bg-[var(--card)] rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Net Monthly Cashflow</p>
                     <p className="text-4xl font-bold text-emerald-600"><AnimatedCounter value={results.netCashflow} prefix="₹" /></p>
                   </div>
-                  <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
+                  <div className="bg-[var(--card)] rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Cash Runway</p>
                     <p className="text-4xl font-bold text-emerald-600"><AnimatedCounter value={results.runwayDays} suffix=" days" /></p>
                   </div>
-                  <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
+                  <div className="bg-[var(--card)] rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Liquidity Score</p>
                     <p className="text-4xl font-bold text-emerald-600"><AnimatedCounter value={results.liquidityScore} suffix="/100" /></p>
                   </div>
-                  <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
+                  <div className="bg-[var(--card)] rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Risk Alerts</p>
                     <p className="text-4xl font-bold text-emerald-600"><AnimatedCounter value={results.riskAlerts} /></p>
                   </div>

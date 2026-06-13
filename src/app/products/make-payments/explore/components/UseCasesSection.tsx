@@ -76,11 +76,11 @@ export default function UseCasesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300 group`}
+              className={`bg-[var(--card)] rounded-2xl p-8 border-2 border-gray-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300 group`}
             >
               {/* Icon */}
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <useCase.icon className="w-8 h-8 text-white" />
+                <useCase.icon className="w-8 h-8 text-[var(--foreground)]" />
               </div>
 
               {/* Industry Name */}
@@ -96,7 +96,7 @@ export default function UseCasesSection() {
                   {useCase.recommendedMethods.map((method) => (
                     <span
                       key={method}
-                      className="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-700 border border-gray-200"
+                      className="px-3 py-1 bg-[var(--card)] rounded-full text-xs font-medium text-gray-700 border border-gray-200"
                     >
                       {method}
                     </span>
@@ -115,7 +115,7 @@ export default function UseCasesSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl p-12 text-white">
+          <div className="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl p-12 text-[var(--foreground)]">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Transform Your Payments?
             </h3>
@@ -123,10 +123,10 @@ export default function UseCasesSection() {
               Join thousands of businesses that trust RupeeFlow for their payment needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-emerald-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg">
+              <button className="px-8 py-4 bg-[var(--card)] text-emerald-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg">
                 Start Free Trial
               </button>
-              <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition-colors">
+              <button className="px-8 py-4 bg-transparent border-2 border-white text-[var(--foreground)] rounded-xl font-semibold hover:bg-[var(--card)] transition-colors">
                 Schedule Demo
               </button>
             </div>

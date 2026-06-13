@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Button from '@/components/ui/Button'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import FAQAccordion from '@/components/ui/FAQAccordion'
@@ -11,7 +12,7 @@ export default function CrossBorderPaymentsPage() {
     <div className="w-full relative">
 
       {/* ── HERO SECTION ── */}
-      <section className="relative bg-[#020506] overflow-hidden">
+      <section className="relative bg-[var(--background)] overflow-hidden">
         {/* Spotlights */}
         <div
           className="absolute -left-[100px] top-[10%] w-[500px] h-[500px] rounded-full opacity-40 blur-[130px] pointer-events-none"
@@ -42,7 +43,7 @@ export default function CrossBorderPaymentsPage() {
               <span className="text-emerald-400 text-xs font-semibold tracking-wide uppercase">Cross-Border Payments</span>
             </motion.div>
 
-            <h1 className="fontheading text-3xl sm:text-4xl lg:text-[2.8rem] leading-[1.2] text-white mb-5">
+            <h1 className="fontheading text-3xl sm:text-4xl lg:text-[2.8rem] leading-[1.2] text-[var(--foreground)] mb-5">
               Seamless{' '}
               <span className="text-emerald-400">Cross-Border</span>{' '}
               Payments, Simplified
@@ -68,13 +69,10 @@ export default function CrossBorderPaymentsPage() {
               ))}
             </div>
 
-            <Link
-              href="#"
-              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/25 border border-emerald-400/30"
-            >
-              <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
+            <Button href="#" className="inline-flex items-center gap-3 px-8 py-3.5 text-sm font-semibold">
+              <span className="w-2.5 h-2.5 rounded-full bg-[var(--card)]" />
               Get Started
-            </Link>
+            </Button>
           </motion.div>
 
           {/* Right: Map + floating transaction cards */}
@@ -100,27 +98,27 @@ export default function CrossBorderPaymentsPage() {
 
               {/* Floating: Sent from India */}
               <motion.div
-                className="absolute top-[10%] left-[-10px] bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3 flex items-center gap-3"
+                className="absolute top-[10%] left-[-10px] bg-[var(--card)] backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3 flex items-center gap-3"
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
                 <span className="text-2xl">🇮🇳</span>
                 <div>
                   <p className="text-[10px] text-gray-400 fontbody2">Sent from India</p>
-                  <p className="text-sm font-bold text-white fontheading">₹4,15,000</p>
+                  <p className="text-sm font-bold text-[var(--foreground)] fontheading">₹4,15,000</p>
                 </div>
               </motion.div>
 
               {/* Floating: Received in USA */}
               <motion.div
-                className="absolute top-[15%] right-[-10px] bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3 flex items-center gap-3"
+                className="absolute top-[15%] right-[-10px] bg-[var(--card)] backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3 flex items-center gap-3"
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
               >
                 <span className="text-2xl">🇺🇸</span>
                 <div>
                   <p className="text-[10px] text-gray-400 fontbody2">Received in USA</p>
-                  <p className="text-sm font-bold text-white fontheading">$5,000</p>
+                  <p className="text-sm font-bold text-[var(--foreground)] fontheading">$5,000</p>
                 </div>
               </motion.div>
 
@@ -131,22 +129,22 @@ export default function CrossBorderPaymentsPage() {
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
               >
                 <p className="text-[10px] text-emerald-300 fontbody2 mb-0.5">Live Rate</p>
-                <p className="text-sm font-bold text-white fontheading">1 USD = ₹83.21</p>
+                <p className="text-sm font-bold text-[var(--foreground)] fontheading">1 USD = ₹83.21</p>
                 <p className="text-[10px] text-emerald-400 mt-0.5">↑ 0.12% today</p>
               </motion.div>
 
               {/* Floating: Settlement status */}
               <motion.div
-                className="absolute bottom-[10%] right-[5%] bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-3 py-2 flex items-center gap-2"
+                className="absolute bottom-[10%] right-[5%] bg-[var(--card)] backdrop-blur-md border border-white/20 rounded-xl px-3 py-2 flex items-center gap-2"
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.7 }}
               >
                 <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center">
-                  <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-3 h-3 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <p className="text-xs font-semibold text-white fontheading">Settled</p>
+                <p className="text-xs font-semibold text-[var(--foreground)] fontheading">Settled</p>
               </motion.div>
             </div>
           </motion.div>
@@ -154,7 +152,7 @@ export default function CrossBorderPaymentsPage() {
       </section>
 
       {/* ── HOW CROSS-BORDER PAYMENTS WORK ── */}
-      <section className="relative py-24 bg-white overflow-hidden">
+      <section className="relative py-24 bg-[var(--card)] overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
@@ -255,7 +253,7 @@ export default function CrossBorderPaymentsPage() {
                 <div className="absolute inset-y-0 right-0 w-[18%] bg-gradient-to-l from-white to-transparent" />
 
                 {/* Floating transfer badge */}
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-xl px-5 py-3 flex items-center gap-4 z-10">
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-[var(--card)] rounded-2xl shadow-xl px-5 py-3 flex items-center gap-4 z-10">
                   <span className="text-xl">🇮🇳</span>
                   <div className="flex items-center gap-2">
                     <div className="h-0.5 w-10 bg-emerald-400" />
@@ -298,7 +296,7 @@ export default function CrossBorderPaymentsPage() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -325,7 +323,7 @@ export default function CrossBorderPaymentsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                <div className="w-full max-w-[380px] bg-white rounded-2xl border border-gray-200 shadow-lg p-5">
+                <div className="w-full max-w-[380px] bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg p-5">
                   <div className="flex items-center justify-between mb-4">
                     <p className="text-sm fontheading text-gray-800">Live Exchange Rates</p>
                     <span className="flex items-center gap-1.5 text-[10px] text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full font-semibold">
@@ -364,7 +362,7 @@ export default function CrossBorderPaymentsPage() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
                   </div>
@@ -391,7 +389,7 @@ export default function CrossBorderPaymentsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                <div className="w-full max-w-[380px] bg-white rounded-2xl border border-gray-200 shadow-lg p-5">
+                <div className="w-full max-w-[380px] bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg p-5">
                   <p className="text-xs text-gray-500 fontbody2 mb-4">Fee Comparison — $1,000 transfer</p>
                   <div className="space-y-3">
                     {[
@@ -412,7 +410,7 @@ export default function CrossBorderPaymentsPage() {
                         </div>
                         {row.highlight && (
                           <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-                            <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg className="w-3.5 h-3.5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                             </svg>
                           </div>
@@ -436,7 +434,7 @@ export default function CrossBorderPaymentsPage() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
@@ -463,7 +461,7 @@ export default function CrossBorderPaymentsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                <div className="w-full max-w-[380px] bg-white rounded-2xl border border-gray-200 shadow-lg p-5">
+                <div className="w-full max-w-[380px] bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg p-5">
                   <p className="text-xs text-gray-500 fontbody2 mb-4">Compliance & Certifications</p>
                   <div className="grid grid-cols-2 gap-3 mb-4">
                     {[
@@ -504,7 +502,7 @@ export default function CrossBorderPaymentsPage() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
@@ -532,7 +530,7 @@ export default function CrossBorderPaymentsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                <div className="w-full max-w-[380px] bg-white rounded-2xl border border-gray-200 shadow-lg p-5">
+                <div className="w-full max-w-[380px] bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg p-5">
                   <div className="flex items-center justify-between mb-4">
                     <p className="text-sm fontheading text-gray-800">Transfer #TXN-78432</p>
                     <span className="text-[10px] bg-emerald-50 text-emerald-600 border border-emerald-200 px-2.5 py-0.5 rounded-full font-semibold">Settled</span>
@@ -564,7 +562,7 @@ export default function CrossBorderPaymentsPage() {
                         <div className="flex flex-col items-center">
                           <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${step.done ? 'bg-emerald-500' : 'bg-gray-200'}`}>
                             {step.done && (
-                              <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <svg className="w-3 h-3 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                               </svg>
                             )}
@@ -595,7 +593,7 @@ export default function CrossBorderPaymentsPage() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4m-8-8L2 12l4 4" />
                     </svg>
                   </div>
@@ -633,39 +631,39 @@ export default function CrossBorderPaymentsPage() {
                     <p className="text-gray-500">{'// Initiate cross-border transfer'}</p>
                     <p className="mt-2">
                       <span className="text-purple-400">const</span>
-                      <span className="text-white"> transfer </span>
+                      <span className="text-[var(--foreground)]"> transfer </span>
                       <span className="text-purple-400">= await</span>
                       <span className="text-emerald-400"> rupeeflow</span>
-                      <span className="text-white">.</span>
+                      <span className="text-[var(--foreground)]">.</span>
                       <span className="text-blue-400">transfers</span>
-                      <span className="text-white">.</span>
+                      <span className="text-[var(--foreground)]">.</span>
                       <span className="text-yellow-400">create</span>
-                      <span className="text-white">{'({'}</span>
+                      <span className="text-[var(--foreground)]">{'({'}</span>
                     </p>
-                    <p className="ml-4 text-white">
+                    <p className="ml-4 text-[var(--foreground)]">
                       <span className="text-blue-300">amount</span>
                       <span className="text-gray-400">: </span>
                       <span className="text-orange-300">500000</span>
                       <span className="text-gray-400">,</span>
                     </p>
-                    <p className="ml-4 text-white">
+                    <p className="ml-4 text-[var(--foreground)]">
                       <span className="text-blue-300">currency</span>
                       <span className="text-gray-400">: </span>
                       <span className="text-green-300">&apos;USD&apos;</span>
                       <span className="text-gray-400">,</span>
                     </p>
-                    <p className="ml-4 text-white">
+                    <p className="ml-4 text-[var(--foreground)]">
                       <span className="text-blue-300">recipient</span>
                       <span className="text-gray-400">: </span>
                       <span className="text-green-300">&apos;rec_8Xk2mNp3&apos;</span>
                       <span className="text-gray-400">,</span>
                     </p>
-                    <p className="ml-4 text-white">
+                    <p className="ml-4 text-[var(--foreground)]">
                       <span className="text-blue-300">purpose</span>
                       <span className="text-gray-400">: </span>
                       <span className="text-green-300">&apos;EXPORT_SERVICES&apos;</span>
                     </p>
-                    <p className="text-white">{'})'}</p>
+                    <p className="text-[var(--foreground)]">{'})'}</p>
                     <p className="mt-3 text-gray-500">{'// Response'}</p>
                     <p className="text-emerald-400">{'{ status: "initiated",'}</p>
                     <p className="text-emerald-400 ml-2">{'txn_id: "TXN-78432",'}</p>
@@ -686,7 +684,7 @@ export default function CrossBorderPaymentsPage() {
       </section>
 
       {/* ── CROSS-BORDER PAYMENT FEATURES ── */}
-      <section className="relative py-24 bg-white">
+      <section className="relative py-24 bg-[var(--card)]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
@@ -695,7 +693,7 @@ export default function CrossBorderPaymentsPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+            <div className="bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
               <svg className="w-10 h-10 text-emerald-500 mb-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
@@ -705,7 +703,7 @@ export default function CrossBorderPaymentsPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+            <div className="bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
               <svg className="w-10 h-10 text-emerald-500 mb-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
               </svg>
@@ -715,7 +713,7 @@ export default function CrossBorderPaymentsPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+            <div className="bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
               <svg className="w-10 h-10 text-emerald-500 mb-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7" />
               </svg>
@@ -725,7 +723,7 @@ export default function CrossBorderPaymentsPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+            <div className="bg-[var(--card)] border border-gray-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
               <svg className="w-10 h-10 text-emerald-500 mb-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>

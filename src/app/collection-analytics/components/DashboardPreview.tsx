@@ -69,7 +69,7 @@ export default function DashboardPreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100"
+            className="bg-[var(--card)] rounded-2xl p-6 shadow-lg border-2 border-gray-100"
           >
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
@@ -101,7 +101,7 @@ export default function DashboardPreview() {
                       className="w-full bg-gradient-to-t from-blue-500 to-blue-400 rounded-t-lg relative group cursor-pointer hover:from-blue-600 hover:to-blue-500 transition-colors"
                     >
                       {/* Tooltip on hover */}
-                      <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+                      <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-[var(--foreground)] text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
                         {item.label}
                       </div>
                     </motion.div>
@@ -118,7 +118,7 @@ export default function DashboardPreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100"
+            className="bg-[var(--card)] rounded-2xl p-6 shadow-lg border-2 border-gray-100"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center">
@@ -205,7 +205,7 @@ export default function DashboardPreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100"
+            className="bg-[var(--card)] rounded-2xl p-6 shadow-lg border-2 border-gray-100"
           >
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
@@ -313,7 +313,7 @@ export default function DashboardPreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100"
+            className="bg-[var(--card)] rounded-2xl p-6 shadow-lg border-2 border-gray-100"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">

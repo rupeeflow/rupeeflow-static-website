@@ -79,10 +79,10 @@ export default function SuccessMetrics() {
               animate={{ y: [0, -10, 0], rotate: [0, 2, 0] }}
               style={{ animationDuration: '3s', animationIterationCount: 'infinite' }}
             >
-              <div className="bg-white rounded-2xl shadow-2xl border-2 border-emerald-500/30 p-4 backdrop-blur-sm">
+              <div className="bg-[var(--card)] rounded-2xl shadow-2xl border-2 border-emerald-500/30 p-4 backdrop-blur-sm">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-6 h-6 text-[var(--foreground)]" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   </div>
@@ -103,10 +103,10 @@ export default function SuccessMetrics() {
               animate={{ y: [0, 10, 0], rotate: [0, -2, 0] }}
               style={{ animationDuration: '4s', animationIterationCount: 'infinite' }}
             >
-              <div className="bg-white rounded-2xl shadow-2xl border-2 border-teal-500/30 p-4 backdrop-blur-sm">
+              <div className="bg-[var(--card)] rounded-2xl shadow-2xl border-2 border-teal-500/30 p-4 backdrop-blur-sm">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-6 h-6 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
                   </div>
@@ -128,7 +128,7 @@ export default function SuccessMetrics() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl p-8 border-2 border-gray-100 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
+              className="bg-[var(--card)] rounded-3xl p-8 border-2 border-gray-100 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
             >
               {/* Before/After */}
               <div className="flex items-center justify-center gap-6 mb-6">
@@ -180,9 +180,9 @@ export default function SuccessMetrics() {
           </p>
           <a
             href="#apply"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-base hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold text-base hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
           >
-            <span className="w-2.5 h-2.5 rounded-full bg-white/90 animate-pulse" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[var(--card)] animate-pulse" />
             Get Funded Now
           </a>
         </motion.div>

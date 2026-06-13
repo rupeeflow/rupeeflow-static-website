@@ -25,7 +25,7 @@ export default function HowItWorksSection() {
   return (
     <section className="relative z-10 py-24 px-6 text-center">
       <div className="max-w-6xl mx-auto">
-        <h2 className="fontheadingthin text-5xl md:text-6xl text-white mb-16">
+        <h2 className="fontheadingthin text-5xl md:text-6xl text-[var(--foreground)] mb-16">
           How It Works (3 Simple Steps)
         </h2>
 
@@ -35,7 +35,7 @@ export default function HowItWorksSection() {
               key={i}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-              className="p-8 rounded-2xl bg-gray-700/20 border border-white/70 backdrop-blur-md hover:bg-white/15"
+              className="p-8 rounded-2xl bg-gray-700/20 border border-white/70 backdrop-blur-md hover:bg-[var(--card)]"
             >
               <s.icon className="w-12 h-12 text-emerald-400 mb-4 mx-auto" />
               <h3 className="fontheadingthin text-2xl mb-2">{s.title}</h3>

@@ -13,7 +13,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#020506] via-gray-900 to-[#020506] text-white">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-[#020506] via-gray-900 to-[#020506] text-[var(--foreground)]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-12">
           <h2 className="fontheading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">

@@ -29,7 +29,7 @@ export default function Marquee() {
                 height={60}
                 className="object-contain"
               />
-              <span className="absolute right-0 top-1/2 -translate-y-1/2 h-12 w-[1px] bg-white/70"></span>
+              <span className="absolute right-0 top-1/2 -translate-y-1/2 h-12 w-[1px] bg-[var(--card)]"></span>
             </div>
           ))}
 
@@ -46,7 +46,7 @@ export default function Marquee() {
                 height={60}
                 className="object-contain"
               />
-              <span className="absolute right-0 top-1/2 -translate-y-1/2 h-12 w-[1px] bg-white/70"></span>
+              <span className="absolute right-0 top-1/2 -translate-y-1/2 h-12 w-[1px] bg-[var(--card)]"></span>
             </div>
           ))}
 
@@ -63,7 +63,7 @@ export default function Marquee() {
                 height={60}
                 className="object-contain"
               />
-              <span className="absolute right-0 top-1/2 -translate-y-1/2 h-12 w-[1px] bg-white/70"></span>
+              <span className="absolute right-0 top-1/2 -translate-y-1/2 h-12 w-[1px] bg-[var(--card)]"></span>
             </div>
           ))}
         </div>

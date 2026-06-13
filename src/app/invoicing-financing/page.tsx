@@ -40,7 +40,7 @@ const faqs = [
 
 export default function InvoicingFinancingPage() {
   return (
-    <main className="relative min-h-screen bg-white text-gray-900 overflow-hidden">
+    <main className="relative min-h-screen bg-[var(--card)] text-gray-900 overflow-hidden">
       <WebPageSchema
         title="Invoice Financing - Get 80% Upfront Against B2B Invoices"
         description="Convert pending invoices to instant cash. ₹1L-₹50L financing, 24hr approval, no debt, no EMI. Perfect for B2B businesses."

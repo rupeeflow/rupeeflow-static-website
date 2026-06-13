@@ -30,7 +30,7 @@ export default function BlogLayout({
   return (
     <section className="min-h-screen bg-gray-50 text-gray-900">
       {/* Top Banner */}
-      <div className="border-b bg-white sticky top-0 z-20 shadow-sm">
+      <div className="border-b bg-[var(--card)] sticky top-0 z-20 shadow-sm">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="text-xl font-semibold text-emerald-700">
             RupeeFlow

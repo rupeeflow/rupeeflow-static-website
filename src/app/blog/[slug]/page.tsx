@@ -25,7 +25,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const { content, data } = matter(source)
 
   return (
-    <div className="max-w-4xl mx-auto py-16 px-6 text-white">
+    <div className="max-w-4xl mx-auto py-16 px-6 text-[var(--foreground)]">
       <h1 className="text-4xl font-bold mb-6">{data.title}</h1>
       <MDXRemote source={content} />
     </div>

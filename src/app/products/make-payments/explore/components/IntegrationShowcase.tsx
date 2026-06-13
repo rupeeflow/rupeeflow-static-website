@@ -43,7 +43,7 @@ export default function IntegrationShowcase() {
   ];
 
   return (
-    <section className="py-20 bg-[#020506] relative overflow-hidden">
+    <section className="py-20 bg-[var(--background)] relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <motion.div
@@ -82,7 +82,7 @@ export default function IntegrationShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--foreground)] mb-4">
             Integrate in <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Minutes</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
@@ -107,13 +107,13 @@ export default function IntegrationShowcase() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                className="flex gap-4 p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] hover:bg-[var(--card)] transition-colors"
               >
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shrink-0">
-                  <feature.icon className="w-6 h-6 text-white" />
+                  <feature.icon className="w-6 h-6 text-[var(--foreground)]" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-1">{feature.title}</h3>
+                  <h3 className="text-lg font-bold text-[var(--foreground)] mb-1">{feature.title}</h3>
                   <p className="text-sm text-gray-400">{feature.description}</p>
                 </div>
               </motion.div>
@@ -150,7 +150,7 @@ export default function IntegrationShowcase() {
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 className="flex flex-col items-center gap-2"
               >
-                <div className={`w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center ${logo.color} hover:bg-white/20 transition-colors`}>
+                <div className={`w-12 h-12 rounded-xl bg-[var(--card)] border border-white/20 flex items-center justify-center ${logo.color} hover:bg-[var(--card)] transition-colors`}>
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="10" />
                   </svg>

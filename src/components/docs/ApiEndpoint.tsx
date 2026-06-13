@@ -48,7 +48,7 @@ export default function ApiEndpoint({
     <div className="mb-12 scroll-mt-24" id={title.toLowerCase().replace(/\s+/g, '-')}>
       {/* Header */}
       <div className="mb-6">
-        <h2 className="text-3xl fontheading text-white mb-3">{title}</h2>
+        <h2 className="text-3xl fontheading text-[var(--foreground)] mb-3">{title}</h2>
         <p className="text-gray-400 fontbody mb-4">{description}</p>
 
         {/* Method and Endpoint */}

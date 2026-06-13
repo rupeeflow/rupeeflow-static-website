@@ -93,7 +93,7 @@ function TransactionsDashboard() {
           <div className="flex items-center justify-between mb-6">
             <div>
               <div className="text-emerald-400/70 text-sm">Total Transactions</div>
-              <div className="text-white text-3xl font-bold">2,847</div>
+              <div className="text-[var(--foreground)] text-3xl font-bold">2,847</div>
             </div>
             <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30">
               <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,7 +124,7 @@ function TransactionsDashboard() {
                       </span>
                     </div>
                     <div>
-                      <div className="text-white font-semibold">{tx.amount}</div>
+                      <div className="text-[var(--foreground)] font-semibold">{tx.amount}</div>
                       <div className="text-gray-400 text-xs capitalize">{tx.status}</div>
                     </div>
                   </div>
@@ -184,7 +184,7 @@ function MultiUserAccess() {
           className="relative w-32 h-32 mx-auto"
         >
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-2xl flex items-center justify-center border-4 border-emerald-400/30">
-            <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-16 h-16 text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
           </div>
@@ -245,13 +245,13 @@ function MultiUserAccess() {
                 </svg>
 
                 {/* User Card */}
-                <div className="bg-white rounded-2xl shadow-xl p-4 w-32 border-2 border-emerald-100">
+                <div className="bg-[var(--card)] rounded-2xl shadow-xl p-4 w-32 border-2 border-emerald-100">
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2 shadow-lg`}
                     style={{
                       backgroundColor: idx === 0 ? '#10b981' : idx === 1 ? '#14b8a6' : '#22c55e'
                     }}
                   >
-                    <span className="text-white font-bold text-sm">{user.avatar}</span>
+                    <span className="text-[var(--foreground)] font-bold text-sm">{user.avatar}</span>
                   </div>
                   <div className="text-center">
                     <div className="text-gray-900 font-semibold text-sm">{user.name}</div>
@@ -306,7 +306,7 @@ function NotificationsAnimation() {
           {/* Screen */}
           <div className="w-full h-full bg-gradient-to-b from-gray-100 to-gray-200 rounded-[2.5rem] overflow-hidden relative">
             {/* Status Bar */}
-            <div className="bg-white px-6 py-3 flex items-center justify-between">
+            <div className="bg-[var(--card)] px-6 py-3 flex items-center justify-between">
               <span className="text-xs font-semibold">9:41</span>
               <div className="flex gap-1">
                 <div className="w-4 h-3 bg-gray-900 rounded-sm" />
@@ -324,7 +324,7 @@ function NotificationsAnimation() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, x: 100 }}
                   transition={{ duration: 0.5, type: 'spring' }}
-                  className={`bg-white rounded-2xl p-4 shadow-lg border-l-4 ${
+                  className={`bg-[var(--card)] rounded-2xl p-4 shadow-lg border-l-4 ${
                     notif.type === 'success' ? 'border-emerald-500' :
                     notif.type === 'warning' ? 'border-emerald-400' : 'border-emerald-600'
                   }`}
@@ -350,7 +350,7 @@ function NotificationsAnimation() {
           <motion.div
             animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="absolute -top-2 -right-2 w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg"
+            className="absolute -top-2 -right-2 w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-[var(--foreground)] text-xs font-bold shadow-lg"
           >
             {notifications.length}
           </motion.div>
@@ -389,8 +389,8 @@ function ReconciliationAnimation() {
                   matched === idx ? 'ring-4 ring-teal-400' : ''
                 }`}
               >
-                <div className="text-white text-xs mb-1">INV-{1000 + item}</div>
-                <div className="text-white font-bold">₹{(item * 10000).toLocaleString()}</div>
+                <div className="text-[var(--foreground)] text-xs mb-1">INV-{1000 + item}</div>
+                <div className="text-[var(--foreground)] font-bold">₹{(item * 10000).toLocaleString()}</div>
               </motion.div>
             ))}
           </div>
@@ -408,8 +408,8 @@ function ReconciliationAnimation() {
                   matched === idx ? 'ring-4 ring-emerald-400' : ''
                 }`}
               >
-                <div className="text-white text-xs mb-1">PAY-{2000 + item}</div>
-                <div className="text-white font-bold">₹{(item * 10000).toLocaleString()}</div>
+                <div className="text-[var(--foreground)] text-xs mb-1">PAY-{2000 + item}</div>
+                <div className="text-[var(--foreground)] font-bold">₹{(item * 10000).toLocaleString()}</div>
               </motion.div>
             ))}
           </div>
@@ -428,7 +428,7 @@ function ReconciliationAnimation() {
             transition={{ duration: 1, ease: 'linear' }}
             className="w-16 h-16 rounded-full bg-emerald-500 flex items-center justify-center shadow-2xl"
           >
-            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-8 h-8 text-[var(--foreground)]" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
           </motion.div>
@@ -439,7 +439,7 @@ function ReconciliationAnimation() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
-          className="mt-8 text-center bg-white rounded-2xl shadow-lg p-4"
+          className="mt-8 text-center bg-[var(--card)] rounded-2xl shadow-lg p-4"
         >
           <div className="text-2xl font-bold text-emerald-600">98.5%</div>
           <div className="text-sm text-gray-600">Auto-matched</div>
@@ -469,7 +469,7 @@ export default function BenefitsSection() {
   }
 
   return (
-    <section ref={ref} className="relative py-16 md:py-24 bg-white">
+    <section ref={ref} className="relative py-16 md:py-24 bg-[var(--card)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

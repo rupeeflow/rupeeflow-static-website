@@ -47,7 +47,7 @@ export default function DMTSection() {
   }
 
   return (
-    <section className="relative w-full overflow-hidden bg-black text-white py-24 px-6">
+    <section className="relative w-full overflow-hidden bg-[var(--background)] text-[var(--foreground)] py-24 px-6">
       {/* Background Glows */}
       <motion.div
         variants={flareGlow}
@@ -106,7 +106,7 @@ export default function DMTSection() {
                 className="w-12 h-12 text-emerald-400 mb-4"
                 strokeWidth={1.5}
               />
-              <h3 className="text-xl font-normal text-white mb-2">{f.title}</h3>
+              <h3 className="text-xl font-normal text-[var(--foreground)] mb-2">{f.title}</h3>
               <p className="text-gray-400 text-sm">{f.desc}</p>
             </motion.div>
           ))}
@@ -115,7 +115,7 @@ export default function DMTSection() {
         {/* Integration Highlight */}
         <motion.div
           variants={content}
-          className="mt-12 bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-10 max-w-5xl text-center"
+          className="mt-12 bg-[var(--card)] backdrop-blur-md border border-[var(--border)] rounded-3xl p-10 max-w-5xl text-center"
         >
           <h3 className="text-2xl fontheading2 mb-3 text-gradient-teal-emerald">
             Expand your reach with instant DMT services
@@ -127,7 +127,7 @@ export default function DMTSection() {
 
           <Link
             href="/solutions/dmt"
-            className="inline-flex items-center gap-2 bg-teal-emerald-dark text-white font-semibold px-8 py-3 rounded-full hover:scale-105 transition"
+            className="inline-flex items-center gap-2 bg-teal-emerald-dark text-[var(--foreground)] font-semibold px-8 py-3 rounded-full hover:scale-105 transition"
           >
             Learn More About DMT <ArrowRight className="w-5 h-5" />
           </Link>

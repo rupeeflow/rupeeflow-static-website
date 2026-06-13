@@ -94,7 +94,7 @@ export default function WhyChooseSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-4 bg-white rounded-2xl p-5 border-2 border-gray-100 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg group"
+                  className="flex items-start gap-4 bg-[var(--card)] rounded-2xl p-5 border-2 border-gray-100 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg group"
                 >
                   {/* Icon */}
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">

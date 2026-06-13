@@ -99,7 +99,7 @@ export default function ComparisonSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="grid grid-cols-3 gap-4 bg-white rounded-2xl p-5 border-2 border-gray-100 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg"
+                  className="grid grid-cols-3 gap-4 bg-[var(--card)] rounded-2xl p-5 border-2 border-gray-100 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg"
                 >
                   <div className="text-gray-900 font-semibold flex items-center">
                     {row.feature}
@@ -148,9 +148,9 @@ export default function ComparisonSection() {
           </p>
           <a
             href="#apply"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-base hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold text-base hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
           >
-            <span className="w-2.5 h-2.5 rounded-full bg-white/90 animate-pulse" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[var(--card)] animate-pulse" />
             Get Started Now
           </a>
         </motion.div>

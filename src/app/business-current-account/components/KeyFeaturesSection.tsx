@@ -89,9 +89,9 @@ export default function KeyFeaturesSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 group"
+              className="bg-[var(--card)] rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="w-14 h-14 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+              <div className="w-14 h-14 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-[var(--foreground)] transition-all duration-300">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">

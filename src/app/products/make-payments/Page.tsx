@@ -9,6 +9,7 @@ import PaymentMethodsGrid from './explore/components/PaymentMethodsGrid';
 import ComparisonSection from './explore/components/ComparisonSection';
 import IntegrationShowcase from './explore/components/IntegrationShowcase';
 import UseCasesSection from './explore/components/UseCasesSection';
+import Button from '@/components/ui/Button';
 
 /* ─────────────────────────────────────────────
    HERO DASHBOARD COMPONENTS (from original page)
@@ -26,15 +27,15 @@ function SendPaymentCard() {
     <motion.div className="bg-[#1a2b1f] border border-white/[0.07] rounded-2xl p-6 h-full" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
       <div className="flex items-center gap-3 mb-5">
         <p className="text-emerald-400 font-bold text-base">Send Payment</p>
-        <div className="flex-1 h-px bg-white/10" />
+        <div className="flex-1 h-px bg-[var(--card)]" />
       </div>
       <p className="text-gray-500 text-[11px] mb-0.5">Buyer Detail</p>
-      <p className="text-white font-semibold text-sm">Sun Private Limited</p>
+      <p className="text-[var(--foreground)] font-semibold text-sm">Sun Private Limited</p>
       <p className="text-emerald-400 font-bold text-2xl mt-0.5 mb-5">₹48,560.00</p>
       <p className="text-gray-500 text-[11px] mb-3">Select Payment Method</p>
       <div className="flex gap-2">
         {modes.map(({ label, icon }) => (
-          <div key={label} className="bg-white rounded-xl p-3 flex flex-col items-center gap-1.5 flex-1 cursor-pointer hover:shadow-sm transition-shadow">
+          <div key={label} className="bg-[var(--card)] rounded-xl p-3 flex flex-col items-center gap-1.5 flex-1 cursor-pointer hover:shadow-sm transition-shadow">
             {icon}
             <span className="text-[9px] font-bold text-gray-600">{label}</span>
           </div>
@@ -71,7 +72,7 @@ function HeroDashboard() {
             <div className="w-14 h-14 rounded-full bg-[#233028] border border-emerald-900/50 flex items-center justify-center">
               <svg className="w-7 h-7 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
             </div>
-            <p className="text-white font-semibold text-sm">Secure Payout</p>
+            <p className="text-[var(--foreground)] font-semibold text-sm">Secure Payout</p>
           </motion.div>
         </div>
         <div className="relative min-h-[280px]">
@@ -85,11 +86,11 @@ function HeroDashboard() {
             <div className="w-14 h-14 rounded-full bg-[#233028] border border-emerald-900/50 flex items-center justify-center">
               <svg className="w-7 h-7 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
             </div>
-            <p className="text-white font-semibold text-sm text-center">Bulk<br/>Transfers</p>
+            <p className="text-[var(--foreground)] font-semibold text-sm text-center">Bulk<br/>Transfers</p>
           </motion.div>
           <motion.div className="bg-[#1a2b1f] border border-white/[0.07] rounded-2xl p-4 flex-1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
             <div className="flex items-center justify-between mb-3">
-              <p className="text-white font-semibold text-xs">Payout Mode</p>
+              <p className="text-[var(--foreground)] font-semibold text-xs">Payout Mode</p>
               <div className="flex gap-1">
                 <span className="w-2 h-2 rounded-full bg-red-400" />
                 <span className="w-2 h-2 rounded-full bg-amber-400" />
@@ -104,7 +105,7 @@ function HeroDashboard() {
               </svg>
               <div>
                 <p className="text-[10px] text-gray-500">RTGS</p>
-                <p className="text-white text-sm font-bold">₹40,000</p>
+                <p className="text-[var(--foreground)] text-sm font-bold">₹40,000</p>
                 <div className="mt-2 space-y-0.5">
                   <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /><span className="text-[9px] text-gray-400">NEFT</span></div>
                   <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-blue-500" /><span className="text-[9px] text-gray-400">IMPS</span></div>
@@ -147,7 +148,7 @@ function FaqItem({ q, a, open, onToggle }: { q: string; a: string; open: boolean
     <div className="border border-gray-200 rounded-2xl overflow-hidden">
       <button className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors" onClick={onToggle}>
         <span className="fontheading text-base text-gray-900 pr-8">{q}</span>
-        <span className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors ${open ? 'bg-emerald-500 text-white' : 'bg-gray-100 text-gray-500'}`}>
+        <span className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors ${open ? 'bg-emerald-500 text-[var(--foreground)]' : 'bg-gray-100 text-gray-500'}`}>
           <svg className={`w-4 h-4 transition-transform duration-300 ${open ? 'rotate-45' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
         </span>
       </button>
@@ -171,7 +172,7 @@ export default function MakePaymentsPage() {
   return (
     <main className="w-full relative">
       {/* HERO */}
-      <section className="relative bg-[#020506] overflow-hidden pb-16">
+      <section className="relative bg-[var(--background)] overflow-hidden pb-16">
         <div className="absolute -left-[100px] top-[10%] w-[500px] h-[500px] rounded-full opacity-35 blur-[130px] pointer-events-none" style={{ background: 'radial-gradient(circle, #109F58 0%, #055949 40%, transparent 70%)' }} />
         <div className="absolute right-[5%] top-[30%] w-[300px] h-[300px] rounded-full opacity-20 blur-[100px] pointer-events-none" style={{ background: 'radial-gradient(circle, #109F58 0%, transparent 70%)' }} />
         
@@ -181,7 +182,7 @@ export default function MakePaymentsPage() {
             <span className="text-emerald-400 text-xs font-semibold tracking-widest uppercase">Make Payments</span>
           </motion.div>
           
-          <motion.h1 className="fontheading text-4xl sm:text-5xl lg:text-[3.4rem] leading-tight text-white mb-5" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}>
+          <motion.h1 className="fontheading text-4xl sm:text-5xl lg:text-[3.4rem] leading-tight text-[var(--foreground)] mb-5" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}>
             The Control Tower for<br />All Your <span className="text-emerald-400">Business Payments</span>
           </motion.h1>
           
@@ -190,12 +191,8 @@ export default function MakePaymentsPage() {
           </motion.p>
           
           <motion.div className="flex flex-wrap gap-4 justify-center" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
-            <Link href="/contact" className="px-8 py-3.5 rounded-full bg-emerald-500 text-black font-semibold text-sm hover:bg-emerald-400 transition-colors shadow-lg shadow-emerald-500/20">
-              Get Started Free
-            </Link>
-            <Link href="/contact" className="px-8 py-3.5 rounded-full border border-emerald-500/50 text-white font-semibold text-sm hover:bg-emerald-500/10 transition-colors">
-              Talk to Us →
-            </Link>
+            <Button href="/contact" className="px-8 py-3.5 text-sm font-semibold">Get Started Free</Button>
+            <Button href="/contact" className="px-8 py-3.5 text-sm font-semibold bg-[var(--card)] text-[var(--foreground)] border border-[var(--border)] hover:bg-[var(--card)]">Talk to Us →</Button>
           </motion.div>
         </div>
         
@@ -215,7 +212,7 @@ export default function MakePaymentsPage() {
       <UseCasesSection />
 
       {/* TRUST STRIP */}
-      <section className="bg-white py-14 border-y border-gray-100">
+      <section className="bg-[var(--card)] py-14 border-y border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div className="flex flex-wrap items-center justify-center gap-10 lg:gap-16" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             {[
@@ -235,7 +232,7 @@ export default function MakePaymentsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="relative py-24 bg-white">
+      <section className="relative py-24 bg-[var(--card)]">
         <div className="max-w-3xl mx-auto px-6">
           <motion.div className="text-center mb-14" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 text-emerald-600 text-xs font-semibold tracking-widest uppercase bg-emerald-50 rounded-full px-4 py-1.5 mb-4">
@@ -256,7 +253,7 @@ export default function MakePaymentsPage() {
           
           <motion.div className="text-center mt-12" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
             <p className="text-sm text-gray-400 mb-4">Still have questions?</p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-500 text-[var(--foreground)] text-sm font-semibold hover:bg-emerald-600 transition-colors">
               Talk to our team
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
             </Link>

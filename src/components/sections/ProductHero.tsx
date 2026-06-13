@@ -19,7 +19,7 @@ const ProductHero = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   }
   return (
-    <section className="relative w-full min-h-screen bg-black text-white  flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen bg-[var(--background)] text-[var(--foreground)]  flex flex-col items-center justify-center overflow-hidden">
       {/* Header */}
       <motion.div
         variants={container}
@@ -29,7 +29,7 @@ const ProductHero = () => {
       >
         <motion.h1
           variants={content}
-          className="rf-h1 text-white mb-6 mt-30"
+          className="rf-h1 text-[var(--foreground)] mb-6 mt-30"
         >
           Innovative UPI Solutions for Every User, Business & NRI
         </motion.h1>
@@ -72,7 +72,7 @@ const ProductHero = () => {
             width={24}
             height={24}
           />
-          <span className="text-sm font-semibold text-white">
+          <span className="text-sm font-semibold text-[var(--foreground)]">
             DOWNLOAD THE APP
           </span>
         </Link>

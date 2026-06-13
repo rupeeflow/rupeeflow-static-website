@@ -159,7 +159,7 @@ export default function PayinDocsPage() {
 
       {/* Status Codes */}
       <div className="mb-12">
-        <h2 className="text-3xl fontheading text-white mb-6">Status Codes</h2>
+        <h2 className="text-3xl fontheading text-[var(--foreground)] mb-6">Status Codes</h2>
         <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
           <table className="w-full">
             <thead className="bg-gray-950">
@@ -200,7 +200,7 @@ export default function PayinDocsPage() {
 
       {/* Error Codes */}
       <div className="mb-12">
-        <h2 className="text-3xl fontheading text-white mb-6">Common Error Codes</h2>
+        <h2 className="text-3xl fontheading text-[var(--foreground)] mb-6">Common Error Codes</h2>
         <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
           <table className="w-full">
             <thead className="bg-gray-950">

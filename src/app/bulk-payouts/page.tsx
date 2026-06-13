@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import BulkPayoutsFaq from '@/components/sections/bulkPayouts/BulkPayoutsFaq'
+import Button from '@/components/ui/Button'
 
 /* ── Mockup: Save Time & Boost Efficiency ── */
 function AutomationMockup() {
@@ -13,7 +14,7 @@ function AutomationMockup() {
     { label: 'Commission Payouts', status: 'Running', count: '85 / 200' },
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
       <div className="flex items-center justify-between mb-5">
         <p className="fontheading text-gray-900 text-base">Automated Batch</p>
         <span className="text-xs bg-emerald-100 text-emerald-700 font-semibold px-3 py-1 rounded-full">Today</span>
@@ -53,7 +54,7 @@ function VendorRelationMockup() {
     { name: 'FastSupply Inc.', tag: 'On Time', streak: '6 months' },
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
       <div className="flex items-center gap-2 mb-5">
         <div className="w-2 h-2 rounded-full bg-emerald-500" />
         <p className="fontheading text-gray-900 text-base">Vendor Trust Score</p>
@@ -97,7 +98,7 @@ function FinancialControlMockup() {
     { label: 'Payment Released', done: false },
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
       <div className="flex items-center justify-between mb-5">
         <p className="fontheading text-gray-900 text-base">Approval Workflow</p>
         <span className="text-xs bg-blue-100 text-blue-700 font-semibold px-3 py-1 rounded-full">In Progress</span>
@@ -111,7 +112,7 @@ function FinancialControlMockup() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1 + i * 0.15, duration: 0.4 }}
           >
-            <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs font-bold ${s.done ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400 animate-pulse'}`}>
+            <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs font-bold ${s.done ? 'bg-emerald-500 text-[var(--foreground)]' : 'bg-gray-200 text-gray-400 animate-pulse'}`}>
               {s.done ? '✓' : '…'}
             </div>
             <p className={`text-sm font-medium ${s.done ? 'text-gray-900' : 'text-gray-400'}`}>{s.label}</p>
@@ -131,7 +132,7 @@ function CashFlowMockup() {
   const bars = [60, 80, 55, 90, 70, 95, 75]
   const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
       <div className="flex items-center justify-between mb-2">
         <p className="fontheading text-gray-900 text-base">Cash Flow</p>
         <span className="text-xs text-emerald-600 font-semibold">This Week</span>
@@ -167,7 +168,7 @@ function IntegrationsMockup() {
     { name: 'REST API', color: 'bg-gray-100 text-gray-700' },
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
       <p className="fontheading text-gray-900 text-base mb-2">Connected Platforms</p>
       <p className="text-xs text-gray-400 fontbody2 mb-5">Plug into your existing stack in minutes</p>
       <div className="grid grid-cols-3 gap-3 mb-5">
@@ -201,10 +202,10 @@ function SecurityMockup() {
     '99.9% Uptime SLA',
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
       <div className="flex items-center gap-3 mb-5">
         <div className="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-          <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
           </svg>
         </div>
@@ -223,7 +224,7 @@ function SecurityMockup() {
             transition={{ delay: 0.1 + i * 0.1, duration: 0.4 }}
           >
             <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-              <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-3 h-3 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
               </svg>
             </div>
@@ -244,7 +245,7 @@ function CustomizationMockup() {
     { label: 'Currency', value: 'INR / USD', active: false },
   ]
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
+    <div className="bg-[var(--card)] rounded-2xl border border-gray-200 shadow-md p-6 w-full max-w-[360px]">
       <p className="fontheading text-gray-900 text-base mb-5">Workflow Settings</p>
       <div className="space-y-3 mb-5">
         {options.map((o, i) => (
@@ -260,14 +261,12 @@ function CustomizationMockup() {
               <p className="text-sm font-semibold text-gray-900">{o.value}</p>
             </div>
             <div className={`w-10 h-5 rounded-full transition-colors ${o.active ? 'bg-emerald-500' : 'bg-gray-300'} relative`}>
-              <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-white shadow transition-all ${o.active ? 'right-0.5' : 'left-0.5'}`} />
+              <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-[var(--card)] shadow transition-all ${o.active ? 'right-0.5' : 'left-0.5'}`} />
             </div>
           </motion.div>
         ))}
       </div>
-      <button className="w-full py-2 rounded-full bg-emerald-500 text-white text-xs font-semibold">
-        Save Configuration
-      </button>
+      <Button className="w-full py-2 rounded-full text-xs font-semibold">Save Configuration</Button>
     </div>
   )
 }
@@ -276,7 +275,7 @@ const features = [
   {
     icon: (
       <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       </div>
@@ -289,7 +288,7 @@ const features = [
   {
     icon: (
       <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
         </svg>
       </div>
@@ -302,7 +301,7 @@ const features = [
   {
     icon: (
       <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
         </svg>
@@ -316,7 +315,7 @@ const features = [
   {
     icon: (
       <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       </div>
@@ -329,7 +328,7 @@ const features = [
   {
     icon: (
       <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       </div>
@@ -342,7 +341,7 @@ const features = [
   {
     icon: (
       <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       </div>
@@ -355,7 +354,7 @@ const features = [
   {
     icon: (
       <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center">
-        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
@@ -409,13 +408,10 @@ export default function BulkPayoutsPage() {
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
 
-                {/* <Link
-                  href="#"
-                  className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/20 border border-emerald-400/30"
-                >
-                  <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
+                <Button href="#" className="inline-flex items-center gap-3 px-8 py-3.5 text-sm font-semibold">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[var(--card)]" />
                   Get Started
-                </Link> */}
+                </Button>
 
               </motion.div>
             </motion.div>
@@ -446,7 +442,7 @@ export default function BulkPayoutsPage() {
 
                 {/* Floating card: Maker Approved */}
                 <motion.div
-                  className="absolute top-4 right-[-20px] bg-white rounded-lg shadow-md px-4 py-2.5 flex items-center gap-2"
+                  className="absolute top-4 right-[-20px] bg-[var(--card)] rounded-lg shadow-md px-4 py-2.5 flex items-center gap-2"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
@@ -461,7 +457,7 @@ export default function BulkPayoutsPage() {
 
                 {/* Floating card: Checker Approved */}
                 <motion.div
-                  className="absolute top-20 right-[-30px] bg-white rounded-lg shadow-md px-4 py-2.5"
+                  className="absolute top-20 right-[-30px] bg-[var(--card)] rounded-lg shadow-md px-4 py-2.5"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.75 }}
@@ -476,15 +472,15 @@ export default function BulkPayoutsPage() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.9 }}
                 >
-                  <span className="text-xs text-white fontheading">Payment Done</span>
-                  <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span className="text-xs text-[var(--foreground)] fontheading">Payment Done</span>
+                  <svg className="w-4 h-4 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </motion.div>
 
                 {/* Floating card: Automated Invoice */}
                 <motion.div
-                  className="absolute bottom-40 left-[-30px] bg-white rounded-lg shadow-md px-4 py-2.5 flex items-center gap-2"
+                  className="absolute bottom-40 left-[-30px] bg-[var(--card)] rounded-lg shadow-md px-4 py-2.5 flex items-center gap-2"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.7 }}
@@ -497,7 +493,7 @@ export default function BulkPayoutsPage() {
 
                 {/* Floating card: 2 Sec Transfer */}
                 <motion.div
-                  className="absolute bottom-28 left-[-20px] bg-white rounded-lg shadow-md px-4 py-2.5 flex items-center gap-2"
+                  className="absolute bottom-28 left-[-20px] bg-[var(--card)] rounded-lg shadow-md px-4 py-2.5 flex items-center gap-2"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.85 }}
@@ -515,7 +511,7 @@ export default function BulkPayoutsPage() {
 
                 {/* Floating card: Bulk Transfers */}
                 <motion.div
-                  className="absolute bottom-16 right-[-10px] bg-white rounded-lg shadow-md px-4 py-2.5 flex items-center gap-2"
+                  className="absolute bottom-16 right-[-10px] bg-[var(--card)] rounded-lg shadow-md px-4 py-2.5 flex items-center gap-2"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 1.0 }}

@@ -49,7 +49,7 @@ const faqs = [
 
 export default function PersonalCreditLinePage() {
   return (
-    <main className="relative min-h-screen bg-white text-gray-900 overflow-hidden">
+    <main className="relative min-h-screen bg-[var(--card)] text-gray-900 overflow-hidden">
       <WebPageSchema
         title="Personal Credit Line - Revolving Credit with Voice Support"
         description="Get ₹5K-₹50K revolving credit line. Voice-enabled in 12 languages, pay only for what you use, instant withdrawals 24/7."

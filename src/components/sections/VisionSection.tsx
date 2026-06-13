@@ -37,7 +37,7 @@ export default function VisionSection() {
   }
 
   return (
-    <section className=" relative w-full  lg:h-[90vh] p-4 bg-black text-white py-2 px-6 overflow-hidden">
+    <section className=" relative w-full  lg:h-[90vh] p-4 bg-[var(--background)] text-[var(--foreground)] py-2 px-6 overflow-hidden">
       {/* Background Glow */}
       <div className="relative inset-0 bg-[radial-gradient(circle_at_10%_30%,rgba(16,185,129,0.15),transparent_70%)] blur-3xl" />
       <motion.div
@@ -57,7 +57,7 @@ export default function VisionSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        className="group p-6 lg:p-0 relative h-full w-full z-10 overflow-hidden  mx-auto rounded-2xl border border-white/10 hover:border-teal-200/70 bg-gray-600/30 flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-16 transition-all duration-300 ease-in"
+        className="group p-6 lg:p-0 relative h-full w-full z-10 overflow-hidden  mx-auto rounded-2xl border border-[var(--border)] hover:border-teal-200/70 bg-gray-600/30 flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-16 transition-all duration-300 ease-in"
       >
         {/* Left Content */}
         <motion.div

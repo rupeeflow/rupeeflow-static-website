@@ -134,7 +134,7 @@ function ChatBubble({
         className={`max-w-[75%] px-4 py-3 rounded-2xl text-sm leading-snug ${
           isUser
             ? 'bg-[#30F3BC] text-[#235065] font-medium rounded-br-sm'
-            : 'bg-[#3a3a3a] text-white rounded-bl-sm'
+            : 'bg-[#3a3a3a] text-[var(--foreground)] rounded-bl-sm'
         }`}
       >
         {message}
@@ -159,7 +159,7 @@ export default function EmpoweringSuccess() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
             Empowering Your Success
           </h2>
-          <p className="text-gray-500 mt-4 text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-700 mt-4 text-base max-w-2xl mx-auto leading-relaxed">
             Experience seamless operations with Rupee flow&apos;s expert support. We offer dedicated
             teams that prioritize your business and respond with speed and precision.
           </p>
@@ -183,7 +183,7 @@ export default function EmpoweringSuccess() {
                   borderColor: '#30F3BC',
                 }}
                 transition={{ type: 'spring', stiffness: 280, damping: 22 }}
-                className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col gap-3 cursor-default"
+                className="bg-[var(--card)] rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col gap-3 cursor-default"
                 style={{ transformStyle: 'preserve-3d', perspective: 800 }}
               >
                 {/* Icon */}
@@ -193,7 +193,7 @@ export default function EmpoweringSuccess() {
                 <h4 className="font-bold text-gray-900 text-base leading-snug">{feature.title}</h4>
 
                 {/* Description */}
-                <p className="text-gray-500 text-sm leading-relaxed">{feature.desc}</p>
+                <p className="text-gray-700 text-sm leading-relaxed">{feature.desc}</p>
 
                 {/* Placeholder checkmarks */}
                 <div className="flex flex-col gap-1.5 mt-1">
@@ -247,13 +247,13 @@ export default function EmpoweringSuccess() {
           >
             {/* Floating Chat Card */}
             <motion.div
-              className="absolute top-0 left-0 w-full max-w-[310px] bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden z-20"
+              className="absolute top-0 left-0 w-full max-w-[310px] bg-[var(--card)] rounded-3xl shadow-2xl border border-gray-100 overflow-hidden z-20"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
               style={{ boxShadow: '0 32px 64px rgba(0,0,0,0.12), 0 8px 24px rgba(48,243,188,0.08)' }}
             >
               {/* Chat Header */}
-              <div className="flex items-center gap-3 px-5 py-4 border-b border-gray-100 bg-white">
+              <div className="flex items-center gap-3 px-5 py-4 border-b border-gray-100 bg-[var(--card)]">
                 <div className="relative flex-shrink-0">
                   <div className="w-10 h-10 rounded-full bg-[#30F3BC] flex items-center justify-center font-bold text-[#235065] text-sm">
                     JD
@@ -267,7 +267,7 @@ export default function EmpoweringSuccess() {
               </div>
 
               {/* Chat Messages */}
-              <div className="px-5 py-4 bg-white min-h-[200px]">
+              <div className="px-5 py-4 bg-[var(--card)] min-h-[200px]">
                 <ChatBubble
                   message="Hi! I'm Jaydev  How can I help your merchant account today?"
                   time="10:24 AM"
@@ -285,7 +285,7 @@ export default function EmpoweringSuccess() {
                   <input
                     type="text"
                     placeholder="Type your message..."
-                    className="flex-1 bg-transparent text-sm text-gray-500 outline-none placeholder:text-gray-400"
+                    className="flex-1 bg-transparent text-sm text-gray-700 outline-none placeholder:text-gray-500"
                     readOnly
                   />
                   <button className="w-9 h-9 rounded-xl bg-[#30F3BC] flex items-center justify-center flex-shrink-0 hover:bg-[#22e0a8] transition-colors shadow-sm">
@@ -301,7 +301,32 @@ export default function EmpoweringSuccess() {
             </motion.div>
 
             {/* Woman Image (EmpoweringSuccess.png) — desktop only */}
+            {/* Right-side overlay with icon list (replaces embedded white text in image) */}
+            <motion.div
+              className="hidden lg:flex absolute right-8 top-16 w-[360px] h-[420px] items-center justify-center z-30"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.35, ease: 'easeOut' }}
+            >
+              <div className="w-full h-full rounded-3xl border-2 border-gray-300 p-6 bg-transparent flex flex-col justify-center gap-6">
+                {[
+                  { icon: '/payments/payment-gateway.svg', label: 'Payment Gateway' },
+                  { icon: '/payments/payment-links.svg', label: 'Payment Links' },
+                  { icon: '/payments/upi-collections.svg', label: 'UPI Collection' },
+                  { icon: '/payments/cross-border-payments.svg', label: 'Cross-border' },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-center gap-4">
+                    <div className="w-10 h-10 flex-shrink-0">
+                      <Image src={item.icon} alt="" width={40} height={40} />
+                    </div>
+                    <div className="text-black font-medium text-lg">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
+            {/* Woman Image (EmpoweringSuccess.png) — desktop only */}
             <motion.div
               className="hidden lg:block absolute bottom-10 left-20 w-[460px] h-[890px]"
               initial={{ opacity: 0, scale: 0.95 }}

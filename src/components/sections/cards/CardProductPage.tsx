@@ -66,7 +66,7 @@ export default function CardProductPage({
       <div className="mt-24 py-24 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
         <div className="max-w-6xl mx-auto px-6">
 
-          <h2 className="text-3xl font-semibold text-center text-white mb-12">
+          <h2 className="text-3xl font-semibold text-center text-[var(--foreground)] mb-12">
             Why Businesses Choose This
           </h2>
 
@@ -74,7 +74,7 @@ export default function CardProductPage({
             {benefits.map((b, i) => (
               <div
                 key={i}
-                className={`p-7 rounded-2xl border border-white/10
+                className={`p-7 rounded-2xl border border-[var(--border)]
                 transition-all duration-300 hover:-translate-y-1
                 ${
                   i === 1
@@ -82,7 +82,7 @@ export default function CardProductPage({
                     : "bg-[#0F0F0F] hover:bg-[#0C1F18]"
                 }`}
               >
-                <h3 className="font-semibold text-white text-lg">
+                <h3 className="font-semibold text-[var(--foreground)] text-lg">
                   {b.title}
                 </h3>
                 <p className="text-gray-400 mt-3 leading-relaxed">

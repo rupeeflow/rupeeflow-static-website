@@ -175,7 +175,7 @@ export default function CompareProductsPage() {
             <span className="inline-block text-emerald-400 text-xs font-semibold tracking-widest uppercase border border-emerald-400/30 rounded-full px-4 py-1 mb-5">
               Compare Products
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-[var(--foreground)] leading-tight">
               Why Businesses{' '}
               <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                 Switch to RupeeFlow
@@ -208,7 +208,7 @@ export default function CompareProductsPage() {
       </section>
 
       {/* ── CATEGORY TABS + TABLE — white ── */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-[var(--card)]">
         <Container>
 
           {/* Tab switcher */}
@@ -219,8 +219,8 @@ export default function CompareProductsPage() {
                 onClick={() => setActiveTab(id)}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border transition duration-200 ${
                   activeTab === id
-                    ? 'bg-gradient-to-b from-[#060D0A] to-[#0C1F18] text-white border-emerald-500/40 shadow-lg shadow-emerald-500/10'
-                    : 'bg-white text-gray-600 border-gray-200 hover:border-emerald-400 hover:text-emerald-600'
+                    ? 'bg-gradient-to-b from-[#060D0A] to-[#0C1F18] text-[var(--foreground)] border-emerald-500/40 shadow-lg shadow-emerald-500/10'
+                    : 'bg-[var(--card)] text-gray-600 border-gray-200 hover:border-emerald-400 hover:text-emerald-600'
                 }`}
               >
                 <Icon size={15} />
@@ -245,13 +245,13 @@ export default function CompareProductsPage() {
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   <span className="text-emerald-400 text-[10px] font-bold uppercase tracking-wider">You are here</span>
                 </div>
-                <p className="text-white font-black text-base">RupeeFlow</p>
+                <p className="text-[var(--foreground)] font-black text-base">RupeeFlow</p>
                 <p className="text-gray-400 text-xs mt-0.5">Full-stack fintech</p>
               </div>
 
               {/* Competitor headers */}
               {cat.competitors.map((c) => (
-                <div key={c.id} className="bg-white px-4 py-4 text-center">
+                <div key={c.id} className="bg-[var(--card)] px-4 py-4 text-center">
                   <p className="text-gray-900 font-bold text-base">{c.name}</p>
                   <p className="text-gray-400 text-xs mt-0.5">{c.tagline}</p>
                 </div>
@@ -288,7 +288,7 @@ export default function CompareProductsPage() {
                       )}
                       <tr
                         key={row.feature}
-                        className={`border-t border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/30'}`}
+                        className={`border-t border-gray-100 ${i % 2 === 0 ? 'bg-[var(--card)]' : 'bg-gray-50/30'}`}
                       >
                         {/* Feature name */}
                         <td className="px-5 py-3.5 text-gray-700 text-sm font-medium w-[220px] sm:w-[260px]">
@@ -324,7 +324,7 @@ export default function CompareProductsPage() {
       <section className="py-12 sm:py-16 lg:py-24 bg-gray-50">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-            <span className="inline-block text-emerald-600 text-xs font-semibold tracking-widest uppercase border border-emerald-200 rounded-full px-4 py-1 mb-4 bg-white">
+            <span className="inline-block text-emerald-600 text-xs font-semibold tracking-widest uppercase border border-emerald-200 rounded-full px-4 py-1 mb-4 bg-[var(--card)]">
               Where RupeeFlow Wins
             </span>
             <h2 className="rf-h2 text-gray-900">
@@ -342,7 +342,7 @@ export default function CompareProductsPage() {
             {cat.wins.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="group flex items-start gap-5 bg-white border border-gray-200 rounded-2xl p-6 sm:p-7
+                className="group flex items-start gap-5 bg-[var(--card)] border border-gray-200 rounded-2xl p-6 sm:p-7
                   hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/10 transition duration-300"
               >
                 <div className="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 group-hover:bg-emerald-100 transition duration-300">
@@ -359,7 +359,7 @@ export default function CompareProductsPage() {
       </section>
 
       {/* ── QUICK LINKS — white ── */}
-      <section className="py-12 sm:py-16 bg-white border-y border-gray-100">
+      <section className="py-12 sm:py-16 bg-[var(--card)] border-y border-gray-100">
         <Container>
           <p className="text-center text-gray-400 text-xs font-bold uppercase tracking-widest mb-8">
             Explore Our Products
@@ -393,12 +393,12 @@ export default function CompareProductsPage() {
       {/* ── CTA — dark ── */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-[#0C1F18] to-[#0a1a0f]">
         <Container>
-          <div className="rounded-3xl border border-emerald-500/20 bg-white/5 p-6 sm:p-8 lg:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+          <div className="rounded-3xl border border-emerald-500/20 bg-[var(--card)] p-6 sm:p-8 lg:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="max-w-xl">
               <p className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">
                 Ready to switch?
               </p>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[var(--foreground)] leading-tight">
                 Get Lower Rates &{' '}
                 <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                   More Products

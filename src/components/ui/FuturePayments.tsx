@@ -5,7 +5,7 @@ export default function FuturePayments() {
     <section
       data-section
       data-theme="dark"
-      className="flex w-full h-full items-center min-h-screen bg-white overflow-hidden mb-10 md:mb-0 "
+      className="flex w-full h-full items-center min-h-screen bg-[var(--card)] overflow-hidden mb-10 md:mb-0 "
     >
       <div className="flex mx-auto px-6 items-center">
         <div className="flex portrait:flex-col landscape:flex-row gap-5 lg:gap-30 items-center px-2 lg:px-20">

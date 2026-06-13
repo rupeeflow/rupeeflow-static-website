@@ -29,7 +29,7 @@ export default function UseCaseTabs({ heading, headingHighlight, tabs }: UseCase
   const current = tabs[activeTab]
 
   return (
-    <section className="bg-white py-24 overflow-hidden">
+    <section className="bg-[var(--card)] py-24 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Heading */}
@@ -85,7 +85,7 @@ export default function UseCaseTabs({ heading, headingHighlight, tabs }: UseCase
               <div className="lg:w-[45%] flex flex-col justify-center">
                 {/* Icon + title */}
                 <div className="flex items-center gap-4 mb-8">
-                  <span className="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center text-white shrink-0 shadow-md shadow-emerald-500/25">
+                  <span className="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center text-[var(--foreground)] shrink-0 shadow-md shadow-emerald-500/25">
                     {current.icon}
                   </span>
                   <h3 className="fontheading text-2xl md:text-3xl text-gray-900">
@@ -127,7 +127,7 @@ export default function UseCaseTabs({ heading, headingHighlight, tabs }: UseCase
                 >
                   <Link
                     href="#"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 font-semibold text-sm hover:bg-emerald-500 hover:text-white transition-all duration-300"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 font-semibold text-sm hover:bg-emerald-500 hover:text-[var(--foreground)] transition-all duration-300"
                   >
                     Get Started
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -179,7 +179,7 @@ export default function UseCaseTabs({ heading, headingHighlight, tabs }: UseCase
 
                   {/* Bottom label badge */}
                   <div className="absolute bottom-4 left-4 z-20">
-                    <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-sm">
+                    <div className="flex items-center gap-2 bg-[var(--card)] backdrop-blur-sm rounded-full px-4 py-2 shadow-sm">
                       <span className="text-emerald-500">{current.icon}</span>
                       <span className="text-xs font-semibold text-gray-800">{current.label}</span>
                     </div>

@@ -78,7 +78,7 @@ export default function AffiliatePartnersPage() {
                 Affiliate Program
               </span>
 
-              <h1 className="rf-h1 text-white leading-tight mt-2">
+              <h1 className="rf-h1 text-[var(--foreground)] leading-tight mt-2">
                 Grow With India&apos;s Leading{" "}
                 <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                   Payments Platform
@@ -115,7 +115,7 @@ export default function AffiliatePartnersPage() {
               {/* Earnings card */}
               <div className="bg-[#0F2419] border border-emerald-500/30 rounded-2xl p-5 sm:p-6">
                 <p className="rf-caption text-gray-400 mb-1">Your earnings this month</p>
-                <p className="text-2xl sm:text-3xl font-bold text-white">₹1,24,500</p>
+                <p className="text-2xl sm:text-3xl font-bold text-[var(--foreground)]">₹1,24,500</p>
                 <div className="flex items-center gap-2 mt-2">
                   <TrendingUp size={14} className="text-emerald-400" />
                   <span className="text-emerald-400 rf-caption font-semibold">+34% vs last month</span>
@@ -128,9 +128,9 @@ export default function AffiliatePartnersPage() {
                     <div key={label}>
                       <div className="flex justify-between rf-caption text-gray-400 mb-1">
                         <span>{label}</span>
-                        <span className="text-white font-semibold">{value}</span>
+                        <span className="text-[var(--foreground)] font-semibold">{value}</span>
                       </div>
-                      <div className="w-full bg-white/10 rounded-full h-1.5">
+                      <div className="w-full bg-[var(--card)] rounded-full h-1.5">
                         <div className="h-1.5 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500" style={{ width: pct }} />
                       </div>
                     </div>
@@ -147,7 +147,7 @@ export default function AffiliatePartnersPage() {
                 ].map(({ value, label }) => (
                   <div
                     key={label}
-                    className="bg-white/5 border border-white/10 rounded-xl p-3 sm:p-4 text-center hover:border-emerald-400/30 transition duration-300"
+                    className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 sm:p-4 text-center hover:border-emerald-400/30 transition duration-300"
                   >
                     <p className="text-lg sm:text-xl font-bold text-emerald-400">{value}</p>
                     <p className="rf-caption text-gray-500 mt-0.5 text-[11px] sm:text-xs">{label}</p>
@@ -161,7 +161,7 @@ export default function AffiliatePartnersPage() {
       </section>
 
       {/* ── WHO IS IT FOR — white bg ── */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-[var(--card)]">
         <Container>
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
@@ -221,7 +221,7 @@ export default function AffiliatePartnersPage() {
             {partnerTypes.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="group flex items-start gap-5 bg-white border border-gray-200 rounded-2xl p-5 sm:p-7
+                className="group flex items-start gap-5 bg-[var(--card)] border border-gray-200 rounded-2xl p-5 sm:p-7
                   hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/10
                   hover:-translate-y-0.5 transition duration-300"
               >
@@ -245,7 +245,7 @@ export default function AffiliatePartnersPage() {
       <PartnershipBenefits />
 
       {/* ── HOW IT WORKS — white bg ── */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-[var(--card)]">
         <Container>
 
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-14">
@@ -293,10 +293,10 @@ export default function AffiliatePartnersPage() {
       {/* ── BOTTOM CTA BAND — dark ── */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-[#0C1F18] to-[#0a1a0f]">
         <Container>
-          <div className="rounded-3xl border border-emerald-500/20 bg-white/5 p-6 sm:p-8 lg:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
+          <div className="rounded-3xl border border-emerald-500/20 bg-[var(--card)] p-6 sm:p-8 lg:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
 
             <div>
-              <h3 className="rf-h2 text-white">Ready to Earn More &amp; Grow Faster?</h3>
+              <h3 className="rf-h2 text-[var(--foreground)]">Ready to Earn More &amp; Grow Faster?</h3>
               <ul className="mt-5 space-y-3">
                 {[
                   "Industry-leading commissions",

@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import Container from "@/components/ui/Container"
-import MainCTA from "@/components/ui/mainCTA"
-import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+import Container from '@/components/ui/Container'
+import MainCTA from '@/components/ui/mainCTA'
+import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import {
   Code,
   Book,
@@ -13,14 +13,14 @@ import {
   FileCode,
   CheckCircle,
   Copy,
-  Play
-} from "lucide-react"
+  Play,
+} from 'lucide-react'
 
 // Animated Code Editor Component
 function CodeEditorAnimation() {
   const [activeTab, setActiveTab] = useState(0)
   const tabs = ['Node.js', 'Python', 'PHP']
-  
+
   const codeExamples = [
     `const rupeeflow = require('rupeeflow')('sk_test_...');
 
@@ -58,7 +58,7 @@ $payment = $api->payment->create([
 ]);
 
 echo $payment->id;
-?>`
+?>`,
   ]
 
   useEffect(() => {
@@ -90,7 +90,7 @@ echo $payment->id;
                 onClick={() => setActiveTab(idx)}
                 className={`px-4 py-1 rounded text-sm font-medium transition-colors ${
                   activeTab === idx
-                    ? 'bg-emerald-600 text-white'
+                    ? 'bg-emerald-600 text-[var(--foreground)]'
                     : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                 }`}
               >
@@ -98,7 +98,7 @@ echo $payment->id;
               </button>
             ))}
           </div>
-          <button className="text-gray-400 hover:text-white">
+          <button className="text-gray-400 hover:text-[var(--foreground)]">
             <Copy size={16} />
           </button>
         </div>
@@ -121,7 +121,7 @@ echo $payment->id;
             <CheckCircle size={16} />
             <span>Ready to execute</span>
           </div>
-          <button className="flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors">
+          <button className="flex items-center gap-2 px-4 py-2 bg-emerald-600 text-[var(--foreground)] rounded-lg hover:bg-emerald-700 transition-colors">
             <Play size={16} />
             Run Code
           </button>
@@ -143,7 +143,7 @@ echo $payment->id;
 // API Endpoint Animation
 function APIEndpointAnimation() {
   const [activeEndpoint, setActiveEndpoint] = useState(0)
-  
+
   const endpoints = [
     { method: 'POST', path: '/v1/payments', status: 200 },
     { method: 'GET', path: '/v1/payments/:id', status: 200 },
@@ -163,7 +163,7 @@ function APIEndpointAnimation() {
       initial={{ opacity: 0, x: -30 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      className="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-200"
+      className="bg-[var(--card)] rounded-2xl shadow-xl p-8 border-2 border-gray-200"
     >
       <div className="flex items-center gap-3 mb-6">
         <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center">
@@ -181,25 +181,33 @@ function APIEndpointAnimation() {
             key={idx}
             animate={{
               scale: activeEndpoint === idx ? 1.02 : 1,
-              backgroundColor: activeEndpoint === idx ? '#f0fdf4' : '#ffffff'
+              backgroundColor: activeEndpoint === idx ? '#f0fdf4' : '#ffffff',
             }}
             className="p-4 rounded-lg border-2 transition-colors"
             style={{
-              borderColor: activeEndpoint === idx ? '#10b981' : '#e5e7eb'
+              borderColor: activeEndpoint === idx ? '#10b981' : '#e5e7eb',
             }}
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                  endpoint.method === 'POST' ? 'bg-blue-100 text-blue-700' :
-                  endpoint.method === 'GET' ? 'bg-green-100 text-green-700' :
-                  'bg-purple-100 text-purple-700'
-                }`}>
+                <span
+                  className={`px-3 py-1 rounded-full text-xs font-bold ${
+                    endpoint.method === 'POST'
+                      ? 'bg-blue-100 text-blue-700'
+                      : endpoint.method === 'GET'
+                        ? 'bg-green-100 text-green-700'
+                        : 'bg-purple-100 text-purple-700'
+                  }`}
+                >
                   {endpoint.method}
                 </span>
-                <code className="text-sm text-gray-700 font-mono">{endpoint.path}</code>
+                <code className="text-sm text-gray-700 font-mono">
+                  {endpoint.path}
+                </code>
               </div>
-              <span className="text-emerald-600 font-semibold text-sm">{endpoint.status}</span>
+              <span className="text-emerald-600 font-semibold text-sm">
+                {endpoint.status}
+              </span>
             </div>
           </motion.div>
         ))}
@@ -233,7 +241,9 @@ function SDKAnimation() {
       className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-8 border-2 border-gray-200"
     >
       <div className="text-center mb-8">
-        <div className="text-2xl font-bold text-gray-900 mb-2">Official SDKs</div>
+        <div className="text-2xl font-bold text-gray-900 mb-2">
+          Official SDKs
+        </div>
         <div className="text-gray-600">Available in 6+ languages</div>
       </div>
 
@@ -246,11 +256,17 @@ function SDKAnimation() {
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
             whileHover={{ scale: 1.05, y: -5 }}
-            className="p-6 bg-white rounded-xl border-2 border-gray-200 hover:border-emerald-500 transition-all cursor-pointer text-center"
+            className="p-6 bg-[var(--card)] rounded-xl border-2 border-gray-200 hover:border-emerald-500 transition-all cursor-pointer text-center"
             style={{ backgroundColor: sdk.bgColor }}
           >
-            <div className="w-16 h-16 mx-auto mb-3 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'white' }}>
-              <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-2xl" style={{ color: sdk.color }}>
+            <div
+              className="w-16 h-16 mx-auto mb-3 rounded-lg flex items-center justify-center"
+              style={{ backgroundColor: 'white' }}
+            >
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-2xl"
+                style={{ color: sdk.color }}
+              >
                 {sdk.name === 'Node.js' && '⬢'}
                 {sdk.name === 'Python' && '🐍'}
                 {sdk.name === 'PHP' && '🐘'}
@@ -278,10 +294,9 @@ export default function DocsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-[#020506] text-white">
+      <section className="bg-[var(--background)] text-[var(--foreground)]">
         <Container className="py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -291,30 +306,32 @@ export default function DocsPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-block mb-6 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30"
+                className="inline-block mb-6 px-4 py-2 rounded-full bg-[var(--card)]/70 border border-[var(--border)]"
               >
-                <span className="text-emerald-400 text-sm font-semibold">
+                <span className="text-[var(--primary)] text-sm font-semibold">
                   Developer-First • RESTful APIs • Comprehensive Docs
                 </span>
               </motion.div>
 
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                API{" "}
+                API{' '}
                 <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                   Documentation
                 </span>
               </h1>
 
-              <p className="mt-6 text-gray-400 text-lg leading-relaxed">
-                Everything you need to integrate RupeeFlow's payment infrastructure. Simple, powerful APIs with comprehensive documentation, SDKs, and sandbox environment.
+              <p className="mt-6 text-[var(--muted)] text-lg leading-relaxed">
+                Everything you need to integrate RupeeFlow's payment
+                infrastructure. Simple, powerful APIs with comprehensive
+                documentation, SDKs, and sandbox environment.
               </p>
 
               <ul className="mt-8 space-y-4">
                 {[
-                  { icon: Code, text: "RESTful APIs with JSON" },
-                  { icon: Book, text: "Comprehensive documentation" },
-                  { icon: Zap, text: "Quick integration in minutes" },
-                  { icon: Shield, text: "Secure & ISO 27001 compliant" },
+                  { icon: Code, text: 'RESTful APIs with JSON' },
+                  { icon: Book, text: 'Comprehensive documentation' },
+                  { icon: Zap, text: 'Quick integration in minutes' },
+                  { icon: Shield, text: 'Secure & ISO 27001 compliant' },
                 ].map((item, i) => {
                   const Icon = item.icon
                   return (
@@ -325,10 +342,10 @@ export default function DocsPage() {
                       transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
                       className="flex items-center gap-4"
                     >
-                      <div className="w-9 h-9 rounded-lg bg-emerald-500/15 flex items-center justify-center">
-                        <Icon size={18} className="text-emerald-400" />
+                      <div className="w-9 h-9 rounded-lg bg-[var(--primary)]/10 flex items-center justify-center">
+                        <Icon size={18} className="text-[var(--primary)]" />
                       </div>
-                      <span className="text-gray-300">{item.text}</span>
+                      <span className="text-[var(--muted)]">{item.text}</span>
                     </motion.li>
                   )
                 })}
@@ -341,7 +358,7 @@ export default function DocsPage() {
                 className="mt-10 flex flex-col sm:flex-row gap-4"
               >
                 <MainCTA label="Get API Keys" destination="/contact" />
-                <button className="px-8 py-4 rounded-full border-2 border-emerald-500/50 text-white font-semibold hover:bg-emerald-500/10 transition-all duration-300">
+                <button className="px-8 py-4 rounded-full border-2 border-[var(--primary)]/50 text-[var(--surface)] font-semibold hover:opacity-95 transition-all duration-300">
                   View Docs
                 </button>
               </motion.div>
@@ -349,28 +366,25 @@ export default function DocsPage() {
 
             {/* ANIMATED CODE EDITOR */}
             <CodeEditorAnimation />
-
           </div>
         </Container>
       </section>
 
       {/* API FEATURES */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[var(--card)]">
         <Container>
           <div className="max-w-6xl mx-auto px-6">
-
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-4xl font-semibold text-center mb-4"
             >
-              <span className="text-gray-900">Powerful APIs for</span>{" "}
+              <span className="text-gray-900">Powerful APIs for</span>{' '}
               <span className="text-emerald-600">Every Use Case</span>
             </motion.h2>
 
             <div className="mt-20 space-y-24">
-
               {/* API Endpoints */}
               <div className="grid md:grid-cols-2 gap-14 items-center">
                 <motion.div
@@ -378,18 +392,25 @@ export default function DocsPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                 >
-                  <h3 className="text-2xl font-bold text-gray-900">RESTful API Endpoints</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    RESTful API Endpoints
+                  </h3>
                   <p className="mt-4 text-gray-600 leading-relaxed">
-                    Simple, intuitive REST APIs that follow industry standards. All endpoints support JSON request/response format with comprehensive error handling.
+                    Simple, intuitive REST APIs that follow industry standards.
+                    All endpoints support JSON request/response format with
+                    comprehensive error handling.
                   </p>
                   <ul className="mt-6 space-y-3">
                     {[
                       'Payment Gateway APIs',
                       'Payout & Transfer APIs',
                       'Verification APIs',
-                      'Webhook notifications'
+                      'Webhook notifications',
                     ].map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-gray-700">
+                      <li
+                        key={idx}
+                        className="flex items-center gap-3 text-gray-700"
+                      >
                         <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
                         {item}
                       </li>
@@ -409,18 +430,25 @@ export default function DocsPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                 >
-                  <h3 className="text-2xl font-bold text-gray-900">Official SDKs & Libraries</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    Official SDKs & Libraries
+                  </h3>
                   <p className="mt-4 text-gray-600 leading-relaxed">
-                    Pre-built SDKs for popular programming languages. Get started in minutes with our well-documented libraries and code examples.
+                    Pre-built SDKs for popular programming languages. Get
+                    started in minutes with our well-documented libraries and
+                    code examples.
                   </p>
                   <ul className="mt-6 space-y-3">
                     {[
                       'Node.js, Python, PHP, Java',
                       'Mobile SDKs for iOS & Android',
                       'Regular updates & maintenance',
-                      'Open source on GitHub'
+                      'Open source on GitHub',
                     ].map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-gray-700">
+                      <li
+                        key={idx}
+                        className="flex items-center gap-3 text-gray-700"
+                      >
                         <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
                         {item}
                       </li>
@@ -428,7 +456,6 @@ export default function DocsPage() {
                   </ul>
                 </motion.div>
               </div>
-
             </div>
           </div>
         </Container>
@@ -438,7 +465,6 @@ export default function DocsPage() {
       <section className="py-24 bg-gray-50">
         <Container>
           <div className="max-w-6xl mx-auto px-6 text-center">
-
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -455,33 +481,33 @@ export default function DocsPage() {
               {[
                 {
                   icon: Terminal,
-                  title: "Sandbox Environment",
-                  desc: "Test your integration with our full-featured sandbox before going live.",
+                  title: 'Sandbox Environment',
+                  desc: 'Test your integration with our full-featured sandbox before going live.',
                 },
                 {
                   icon: FileCode,
-                  title: "Code Examples",
-                  desc: "Ready-to-use code snippets in multiple languages to speed up development.",
+                  title: 'Code Examples',
+                  desc: 'Ready-to-use code snippets in multiple languages to speed up development.',
                 },
                 {
                   icon: Book,
-                  title: "Interactive Docs",
-                  desc: "Try API calls directly from documentation with live request/response examples.",
+                  title: 'Interactive Docs',
+                  desc: 'Try API calls directly from documentation with live request/response examples.',
                 },
                 {
                   icon: Zap,
-                  title: "Webhooks",
-                  desc: "Real-time notifications for payment events sent directly to your server.",
+                  title: 'Webhooks',
+                  desc: 'Real-time notifications for payment events sent directly to your server.',
                 },
                 {
                   icon: Shield,
-                  title: "Security First",
-                  desc: "ISO 27001 certified with encryption, tokenization, and fraud detection.",
+                  title: 'Security First',
+                  desc: 'ISO 27001 certified with encryption, tokenization, and fraud detection.',
                 },
                 {
                   icon: CheckCircle,
-                  title: "99.9% Uptime",
-                  desc: "Reliable infrastructure with redundancy and automatic failover.",
+                  title: '99.9% Uptime',
+                  desc: 'Reliable infrastructure with redundancy and automatic failover.',
                 },
               ].map((item, i) => (
                 <motion.div
@@ -490,10 +516,10 @@ export default function DocsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="group bg-white border border-gray-200 p-7 rounded-xl text-left transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400/40 hover:shadow-xl"
+                  className="group bg-[var(--card)] border border-gray-200 p-7 rounded-xl text-left transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400/40 hover:shadow-xl"
                 >
                   <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center mb-4 group-hover:bg-emerald-500 transition-colors">
-                    <item.icon className="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors" />
+                    <item.icon className="w-6 h-6 text-emerald-600 group-hover:text-[var(--foreground)] transition-colors" />
                   </div>
                   <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-emerald-600 transition">
                     {item.title}
@@ -516,7 +542,7 @@ export default function DocsPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-white mb-6"
+              className="text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-6"
             >
               Ready to Start Building?
             </motion.h2>
@@ -524,17 +550,16 @@ export default function DocsPage() {
               Get your API keys and start integrating in minutes
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 rounded-full bg-white text-emerald-600 font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:scale-105">
+              <button className="px-8 py-4 rounded-full bg-[var(--card)] text-emerald-600 font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:scale-105">
                 Get Started Free
               </button>
-              <button className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all duration-300">
+              <button className="px-8 py-4 rounded-full border-2 border-white text-[var(--foreground)] font-semibold hover:bg-[var(--card)] transition-all duration-300">
                 View Documentation
               </button>
             </div>
           </div>
         </Container>
       </section>
-
     </>
   )
 }

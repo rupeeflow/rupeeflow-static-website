@@ -70,7 +70,7 @@ export default function PaymentRemindersCalculator() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-100"
+              className="bg-[var(--card)] rounded-2xl p-8 shadow-lg border-2 border-gray-100"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center">
@@ -122,7 +122,7 @@ export default function PaymentRemindersCalculator() {
 
                 <button
                   onClick={handleCalculate}
-                  className="w-full px-6 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200"
                 >
                   Calculate Savings
                 </button>
@@ -141,7 +141,7 @@ export default function PaymentRemindersCalculator() {
 
               {result ? (
                 <div className="space-y-6">
-                  <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
+                  <div className="bg-[var(--card)] rounded-xl p-6 border-2 border-emerald-100">
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0">
                         <TrendingUp className="w-5 h-5 text-emerald-600" />
@@ -156,7 +156,7 @@ export default function PaymentRemindersCalculator() {
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
+                  <div className="bg-[var(--card)] rounded-xl p-6 border-2 border-emerald-100">
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
                         <Clock className="w-5 h-5 text-blue-600" />
@@ -172,7 +172,7 @@ export default function PaymentRemindersCalculator() {
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
+                  <div className="bg-[var(--card)] rounded-xl p-6 border-2 border-emerald-100">
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
                         <Target className="w-5 h-5 text-purple-600" />

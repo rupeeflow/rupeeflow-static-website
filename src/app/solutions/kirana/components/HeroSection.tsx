@@ -27,7 +27,7 @@ export default function HeroSection() {
         viewport={{ once: true }}
         className="flex-1 w-full lg:w-1/2 relative"
       >
-        <div className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 backdrop-blur-md shadow-lg">
+        <div className="rounded-[2rem] overflow-hidden bg-[var(--card)] border border-[var(--border)] backdrop-blur-md shadow-lg">
           <Image
             src="/images/kirana-promo.png"
             alt="Shopkeeper using RupeeFlow Kirana UPI POS"
@@ -40,7 +40,7 @@ export default function HeroSection() {
       </motion.div>
 
       <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <button className="px-8 py-3 bg-teal-emerald text-white rounded-full font-semibold hover:bg-emerald-700 transition">
+        <button className="px-8 py-3 bg-teal-emerald text-[var(--foreground)] rounded-full font-semibold hover:bg-emerald-700 transition">
           Join Free Beta (0% Fee for 3 Months)
         </button>
         <p className="text-sm text-gray-400 fontbody2">

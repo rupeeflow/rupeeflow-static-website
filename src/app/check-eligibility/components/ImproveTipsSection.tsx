@@ -102,10 +102,10 @@ export default function ImproveTipsSection() {
               animate={{ y: [0, -10, 0] }}
               style={{ animationDuration: '3s', animationIterationCount: 'infinite' }}
             >
-              <div className="bg-white rounded-2xl shadow-2xl border-2 border-emerald-500/30 p-4 backdrop-blur-sm">
+              <div className="bg-[var(--card)] rounded-2xl shadow-2xl border-2 border-emerald-500/30 p-4 backdrop-blur-sm">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-6 h-6 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -126,10 +126,10 @@ export default function ImproveTipsSection() {
               animate={{ y: [0, 10, 0] }}
               style={{ animationDuration: '4s', animationIterationCount: 'infinite' }}
             >
-              <div className="bg-white rounded-2xl shadow-2xl border-2 border-teal-500/30 p-4 backdrop-blur-sm">
+              <div className="bg-[var(--card)] rounded-2xl shadow-2xl border-2 border-teal-500/30 p-4 backdrop-blur-sm">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-6 h-6 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -150,10 +150,10 @@ export default function ImproveTipsSection() {
               animate={{ x: [0, -8, 0] }}
               style={{ animationDuration: '3.5s', animationIterationCount: 'infinite' }}
             >
-              <div className="bg-white rounded-2xl shadow-2xl border-2 border-emerald-500/30 p-3 backdrop-blur-sm">
+              <div className="bg-[var(--card)] rounded-2xl shadow-2xl border-2 border-emerald-500/30 p-3 backdrop-blur-sm">
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
                   </div>
@@ -174,10 +174,10 @@ export default function ImproveTipsSection() {
               animate={{ x: [0, 8, 0] }}
               style={{ animationDuration: '4s', animationIterationCount: 'infinite' }}
             >
-              <div className="bg-white rounded-2xl shadow-2xl border-2 border-teal-500/30 p-3 backdrop-blur-sm">
+              <div className="bg-[var(--card)] rounded-2xl shadow-2xl border-2 border-teal-500/30 p-3 backdrop-blur-sm">
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   </div>
@@ -199,10 +199,10 @@ export default function ImproveTipsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="relative bg-white rounded-3xl p-8 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
+              className="relative bg-[var(--card)] rounded-3xl p-8 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
             >
               {/* Step Number */}
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-[var(--foreground)] font-bold text-xl shadow-lg">
                 {tip.step}
               </div>
 
@@ -244,7 +244,7 @@ export default function ImproveTipsSection() {
           className="mt-12 bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-3xl p-6 md:p-8"
         >
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 rounded-2xl bg-[var(--card)] flex items-center justify-center flex-shrink-0">
               <svg className="w-6 h-6 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
@@ -259,7 +259,7 @@ export default function ImproveTipsSection() {
               </p>
               <a
                 href="/support"
-                className="inline-block px-6 py-2.5 rounded-xl bg-white text-emerald-600 font-semibold text-sm hover:bg-emerald-50 transition-all duration-300 border border-emerald-200 hover:border-emerald-300"
+                className="inline-block px-6 py-2.5 rounded-xl bg-[var(--card)] text-emerald-600 font-semibold text-sm hover:bg-emerald-50 transition-all duration-300 border border-emerald-200 hover:border-emerald-300"
               >
                 Talk to Expert
               </a>

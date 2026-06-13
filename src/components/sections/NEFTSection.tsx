@@ -47,7 +47,7 @@ export default function NEFTInfoSection() {
   ]
 
   return (
-    <section className="relative w-full bg-black text-white pb-24 px-6 overflow-hidden">
+    <section className="relative w-full bg-[var(--background)] text-[var(--foreground)] pb-24 px-6 overflow-hidden">
       {/* Background gradient & glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(16,185,129,0.25),transparent_70%)] blur-3xl" />
 
@@ -92,13 +92,13 @@ export default function NEFTInfoSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="backdrop-blur-md bg-white/5 border border-white/60 rounded-2xl p-8 flex flex-col items-center text-center hover:bg-white/10 hover:shadow-[0_0_15px_rgba(34,197,94,0.2)] transition"
+              className="backdrop-blur-md bg-[var(--card)] border border-white/60 rounded-2xl p-8 flex flex-col items-center text-center hover:bg-[var(--card)] hover:shadow-[0_0_15px_rgba(34,197,94,0.2)] transition"
             >
               <f.icon
                 className="w-12 h-12 text-emerald-400 mb-4"
                 strokeWidth={1.5}
               />
-              <h3 className="text-xl font-normal text-white mb-2">{f.title}</h3>
+              <h3 className="text-xl font-normal text-[var(--foreground)] mb-2">{f.title}</h3>
               <p className="text-gray-400 text-sm">{f.desc}</p>
             </motion.div>
           ))}

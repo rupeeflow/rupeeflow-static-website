@@ -46,7 +46,7 @@ export default function IMPSInfoSection() {
   ]
 
   return (
-    <section className="relative w-full bg-black text-white pb-24 px-6 overflow-hidden">
+    <section className="relative w-full bg-[var(--background)] text-[var(--foreground)] pb-24 px-6 overflow-hidden">
       {/* Background gradient & glass glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(16,185,129,0.25),transparent_70%)] blur-3xl" />
       <motion.div
@@ -97,7 +97,7 @@ export default function IMPSInfoSection() {
                 className="w-12 h-12 text-emerald-400 mb-4"
                 strokeWidth={1.5}
               />
-              <h3 className="text-xl font-normal text-white mb-2">{f.title}</h3>
+              <h3 className="text-xl font-normal text-[var(--foreground)] mb-2">{f.title}</h3>
               <p className="text-gray-400 text-sm">{f.desc}</p>
             </motion.div>
           ))}

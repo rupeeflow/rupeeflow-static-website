@@ -15,7 +15,7 @@ const countries = [
 
 export default function GlobalReachSection() {
   return (
-    <section className="relative bg-white py-20 md:py-28 overflow-hidden">
+    <section className="relative bg-[var(--card)] py-20 md:py-28 overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -62,7 +62,7 @@ export default function GlobalReachSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg"
+              className="bg-[var(--card)] rounded-2xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg"
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-4xl">{country.flag}</span>

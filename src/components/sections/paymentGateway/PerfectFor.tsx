@@ -58,7 +58,7 @@ const cardVariants = {
 
 export default function PerfectFor() {
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-white overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[var(--card)] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Heading */}
         <motion.div
@@ -92,7 +92,7 @@ export default function PerfectFor() {
                 borderColor: '#30F3BC',
               }}
               transition={{ type: 'spring', stiffness: 260, damping: 22 }}
-              className="relative group bg-white rounded-3xl border border-gray-150 p-4 sm:p-6 md:p-8 flex flex-col items-start justify-between min-h-[160px] sm:min-h-[200px] md:min-h-[240px] cursor-default overflow-hidden"
+              className="relative group bg-[var(--card)] rounded-3xl border border-gray-150 p-4 sm:p-6 md:p-8 flex flex-col items-start justify-between min-h-[160px] sm:min-h-[200px] md:min-h-[240px] cursor-default overflow-hidden"
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: 900,
@@ -145,7 +145,7 @@ export default function PerfectFor() {
         >
           <motion.a
             href="#"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#235065] text-white font-semibold text-sm shadow-xl hover:bg-[#1a3d4f] transition-all"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#235065] text-[var(--foreground)] font-semibold text-sm shadow-xl hover:bg-[#1a3d4f] transition-all"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
           >

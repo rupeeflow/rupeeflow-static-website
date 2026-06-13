@@ -24,7 +24,7 @@ export default function FAQAccordion({
   const rest = words.join(' ')
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-[var(--card)]">
       <div className="max-w-4xl mx-auto px-6">
 
         <div className="text-center mb-14">

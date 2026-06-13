@@ -15,7 +15,7 @@ import PaymentRoundedStripIcon from '../../../public/icons/payment-link/PaymentR
 import FooterStripIcon from '../../../public/icons/payment-link/FooterStripIcon'
 import IntegrateSection from '@/components/sections/paymentLinks/IntegrateSection'
 import MerchantUseCases from '@/components/sections/paymentLinks/MerchantUseCases'
-
+import Button from '@/components/ui/Button'
 
 /* ─────────────────────────────────────────────────
    "Get Paid with a Single Link" — Mockup components
@@ -23,9 +23,32 @@ import MerchantUseCases from '@/components/sections/paymentLinks/MerchantUseCase
 
 function CopyIcon() {
   return (
-    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" className="flex-shrink-0">
-      <rect x="4.5" y="1" width="8.5" height="10" rx="1.5" stroke="#5AABFF" strokeWidth="1.2" />
-      <rect x="2" y="4" width="8.5" height="10" rx="1.5" fill="white" stroke="#5AABFF" strokeWidth="1.2" />
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 15 15"
+      fill="none"
+      className="flex-shrink-0"
+    >
+      <rect
+        x="4.5"
+        y="1"
+        width="8.5"
+        height="10"
+        rx="1.5"
+        stroke="#5AABFF"
+        strokeWidth="1.2"
+      />
+      <rect
+        x="2"
+        y="4"
+        width="8.5"
+        height="10"
+        rx="1.5"
+        fill="white"
+        stroke="#5AABFF"
+        strokeWidth="1.2"
+      />
     </svg>
   )
 }
@@ -35,13 +58,13 @@ function PaymentLinkMockup() {
   return (
     <div className="relative flex flex-col items-center gap-3 w-full py-6 px-4">
       {/* API badge */}
-      <div className="absolute top-4 left-6 bg-white border border-blue-300 rounded-lg px-3 py-1 text-blue-500 text-[11px] font-bold shadow-sm z-20">
+      <div className="absolute top-4 left-6 bg-[var(--card)] border border-blue-300 rounded-lg px-3 py-1 text-blue-500 text-[11px] font-bold shadow-sm z-20">
         API
       </div>
 
       {/* Main floating card */}
       <motion.div
-        className="w-[260px] sm:w-[290px] bg-white rounded-2xl shadow-xl p-4 sm:p-5 z-10"
+        className="w-[260px] sm:w-[290px] bg-[var(--card)] rounded-2xl shadow-xl p-4 sm:p-5 z-10"
         animate={{ y: [0, -7, 0] }}
         transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
       >
@@ -61,7 +84,7 @@ function PaymentLinkMockup() {
       </motion.div>
 
       {/* Peeking second card */}
-      <div className="w-[238px] sm:w-[265px] bg-white rounded-2xl shadow-md h-12 opacity-40 -mt-1" />
+      <div className="w-[238px] sm:w-[265px] bg-[var(--card)] rounded-2xl shadow-md h-12 opacity-40 -mt-1" />
     </div>
   )
 }
@@ -69,28 +92,92 @@ function PaymentLinkMockup() {
 /* ── Card 2: Share With ── */
 type SocialEntry = { label: string; active: boolean; icon: string }
 const sharesData: SocialEntry[] = [
-  { label: 'Chat',     active: false, icon: 'chat' },
+  { label: 'Chat', active: false, icon: 'chat' },
   { label: 'Telegram', active: false, icon: 'telegram' },
-  { label: 'Twitter',  active: false, icon: 'twitter' },
+  { label: 'Twitter', active: false, icon: 'twitter' },
   { label: 'Whatsapp', active: false, icon: 'whatsapp' },
-  { label: 'E-mail',   active: true,  icon: 'email' },
-  { label: 'More',     active: false, icon: 'more' },
+  { label: 'E-mail', active: true, icon: 'email' },
+  { label: 'More', active: false, icon: 'more' },
 ]
 
 function SocialIcon({ type, active }: { type: string; active: boolean }) {
   const c = active ? '#4DA6FF' : '#9CA3AF'
   if (type === 'chat')
-    return <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M2.5 2.5h12a1 1 0 011 1v8a1 1 0 01-1 1H8.5l-5 2.5V3.5a1 1 0 011-1z" stroke={c} strokeWidth="1.3" strokeLinejoin="round" /></svg>
+    return (
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+        <path
+          d="M2.5 2.5h12a1 1 0 011 1v8a1 1 0 01-1 1H8.5l-5 2.5V3.5a1 1 0 011-1z"
+          stroke={c}
+          strokeWidth="1.3"
+          strokeLinejoin="round"
+        />
+      </svg>
+    )
   if (type === 'telegram')
-    return <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M2 8.5L15 2 10 15 7.5 10 2 8.5z" stroke={c} strokeWidth="1.3" strokeLinejoin="round" /><path d="M7.5 10l2-2" stroke={c} strokeWidth="1.3" strokeLinecap="round" /></svg>
+    return (
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+        <path
+          d="M2 8.5L15 2 10 15 7.5 10 2 8.5z"
+          stroke={c}
+          strokeWidth="1.3"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M7.5 10l2-2"
+          stroke={c}
+          strokeWidth="1.3"
+          strokeLinecap="round"
+        />
+      </svg>
+    )
   if (type === 'twitter')
-    return <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M3 3l11 11M14 3L3 14" stroke={c} strokeWidth="1.8" strokeLinecap="round" /></svg>
+    return (
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+        <path
+          d="M3 3l11 11M14 3L3 14"
+          stroke={c}
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+      </svg>
+    )
   if (type === 'whatsapp')
-    return <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="6.5" stroke={c} strokeWidth="1.3" /><path d="M5.5 8.5c0 1.7 1.3 3 3 3" stroke={c} strokeWidth="1.3" strokeLinecap="round" /></svg>
+    return (
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+        <circle cx="8.5" cy="8.5" r="6.5" stroke={c} strokeWidth="1.3" />
+        <path
+          d="M5.5 8.5c0 1.7 1.3 3 3 3"
+          stroke={c}
+          strokeWidth="1.3"
+          strokeLinecap="round"
+        />
+      </svg>
+    )
   if (type === 'email')
-    return <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="2.3" stroke={c} strokeWidth="1.3" /><path d="M10.8 8.5V7A2.3 2.3 0 008.5 4.7" stroke={c} strokeWidth="1.3" strokeLinecap="round" /><circle cx="8.5" cy="8.5" r="6.5" stroke={c} strokeWidth="1.3" /></svg>
+    return (
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+        <circle cx="8.5" cy="8.5" r="2.3" stroke={c} strokeWidth="1.3" />
+        <path
+          d="M10.8 8.5V7A2.3 2.3 0 008.5 4.7"
+          stroke={c}
+          strokeWidth="1.3"
+          strokeLinecap="round"
+        />
+        <circle cx="8.5" cy="8.5" r="6.5" stroke={c} strokeWidth="1.3" />
+      </svg>
+    )
   if (type === 'more')
-    return <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M8.5 3v8M6 6l2.5-3L11 6M5 12v2.5h7V12" stroke={c} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+    return (
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+        <path
+          d="M8.5 3v8M6 6l2.5-3L11 6M5 12v2.5h7V12"
+          stroke={c}
+          strokeWidth="1.3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    )
   return null
 }
 
@@ -98,7 +185,7 @@ function ShareWithMockup() {
   return (
     <div className="flex flex-col items-center gap-3 w-full py-4 px-4">
       <motion.div
-        className="w-[270px] sm:w-[300px] bg-white rounded-2xl shadow-xl p-4 sm:p-5"
+        className="w-[270px] sm:w-[300px] bg-[var(--card)] rounded-2xl shadow-xl p-4 sm:p-5"
         animate={{ y: [0, -6, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
       >
@@ -107,7 +194,7 @@ function ShareWithMockup() {
           <span className="text-gray-400 text-sm">✕</span>
         </div>
         <div className="flex justify-between">
-          {sharesData.map((s) => (
+          {sharesData.map(s => (
             <div key={s.label} className="flex flex-col items-center gap-1.5">
               <div
                 className={`w-10 h-10 rounded-full flex items-center justify-center ${
@@ -116,7 +203,9 @@ function ShareWithMockup() {
               >
                 <SocialIcon type={s.icon} active={s.active} />
               </div>
-              <p className={`text-[9px] font-medium ${s.active ? 'text-blue-500' : 'text-gray-400'}`}>
+              <p
+                className={`text-[9px] font-medium ${s.active ? 'text-blue-500' : 'text-gray-400'}`}
+              >
                 {s.label}
               </p>
             </div>
@@ -126,9 +215,14 @@ function ShareWithMockup() {
 
       {/* URL bar below */}
       <motion.div
-        className="w-[270px] sm:w-[300px] bg-white rounded-xl shadow-md flex items-center gap-2 px-3 py-2.5 border border-gray-100"
+        className="w-[270px] sm:w-[300px] bg-[var(--card)] rounded-xl shadow-md flex items-center gap-2 px-3 py-2.5 border border-gray-100"
         animate={{ y: [0, -4, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: 'easeInOut',
+          delay: 0.6,
+        }}
       >
         <p className="text-gray-400 text-[10px] flex-1 truncate">
           https://www.rupeeflow.in/pay/NlfVhYygR9mAQasassdsada/
@@ -154,12 +248,12 @@ function PaymentOptionsMockup() {
   return (
     <div className="flex flex-col items-center gap-2 w-full py-4 px-4">
       {/* Peek top */}
-      <div className="w-[270px] sm:w-[300px] bg-white rounded-b-2xl h-9 shadow-sm opacity-35 flex items-center px-4">
+      <div className="w-[270px] sm:w-[300px] bg-[var(--card)] rounded-b-2xl h-9 shadow-sm opacity-35 flex items-center px-4">
         <div className="h-2 w-20 bg-gray-200 rounded-full" />
       </div>
 
       <motion.div
-        className="w-[270px] sm:w-[300px] bg-white rounded-2xl shadow-xl p-4 sm:p-5"
+        className="w-[270px] sm:w-[300px] bg-[var(--card)] rounded-2xl shadow-xl p-4 sm:p-5"
         animate={{ y: [0, -5, 0] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
       >
@@ -187,7 +281,12 @@ function PaymentOptionsMockup() {
             key={b.alt}
             className="w-10 h-10 rounded-full shadow-sm flex items-center justify-center  border  overflow-hidden"
             animate={{ y: [0, -3, 0] }}
-            transition={{ duration: 3 + i * 0.3, repeat: Infinity, ease: 'easeInOut', delay: i * 0.12 }}
+            transition={{
+              duration: 3 + i * 0.3,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: i * 0.12,
+            }}
           >
             <Image
               src={b.logo}
@@ -207,11 +306,11 @@ function PaymentOptionsMockup() {
 /* ── Shared browser chrome for cards 4 & 5 ── */
 function BrowserChrome({ children }: { children: React.ReactNode }) {
   return (
-    <div className="w-[280px] sm:w-[320px] bg-white rounded-2xl shadow-xl overflow-hidden">
+    <div className="w-[280px] sm:w-[320px] bg-[var(--card)] rounded-2xl shadow-xl overflow-hidden">
       <div className="px-4 py-2.5 flex items-center gap-2 border-b border-gray-100">
         <div className="flex-1 bg-gray-100 rounded-full h-[18px]" />
         <div className="flex gap-1.5 flex-shrink-0">
-          {[0, 1, 2].map((k) => (
+          {[0, 1, 2].map(k => (
             <div key={k} className="w-2.5 h-2.5 rounded-full bg-gray-300" />
           ))}
         </div>
@@ -267,7 +366,12 @@ function ProcessingAmountMockup() {
     <div className="flex items-center justify-center w-full py-6 px-4">
       <motion.div
         animate={{ y: [0, -7, 0] }}
-        transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.7 }}
+        transition={{
+          duration: 5.5,
+          repeat: Infinity,
+          ease: 'easeInOut',
+          delay: 0.7,
+        }}
       >
         <BrowserChrome>
           <div className="p-5 flex items-center gap-4 relative min-h-[110px]">
@@ -278,8 +382,19 @@ function ProcessingAmountMockup() {
                 transition={{ duration: 1.4, repeat: Infinity, ease: 'linear' }}
               >
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                  <circle cx="11" cy="11" r="8" stroke="#DBEAFE" strokeWidth="2.5" />
-                  <path d="M11 3a8 8 0 018 8" stroke="#60A5FA" strokeWidth="2.5" strokeLinecap="round" />
+                  <circle
+                    cx="11"
+                    cy="11"
+                    r="8"
+                    stroke="#DBEAFE"
+                    strokeWidth="2.5"
+                  />
+                  <path
+                    d="M11 3a8 8 0 018 8"
+                    stroke="#60A5FA"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
                 </svg>
               </motion.div>
             </div>
@@ -299,8 +414,17 @@ function ProcessingAmountMockup() {
             {/* Shield */}
             <div className="absolute right-5 top-4">
               <svg width="28" height="34" viewBox="0 0 28 34" fill="none">
-                <path d="M14 2L2 7v9c0 7 4.8 13.5 12 15.5C21.2 29.5 26 23 26 16V7L14 2z" fill="#22C997" />
-                <path d="M9 17l3 3 7-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path
+                  d="M14 2L2 7v9c0 7 4.8 13.5 12 15.5C21.2 29.5 26 23 26 16V7L14 2z"
+                  fill="#22C997"
+                />
+                <path
+                  d="M9 17l3 3 7-7"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </div>
           </div>
@@ -314,12 +438,14 @@ export default function PaymentLinksPage() {
   return (
     <div className="w-full relative">
       {/* ── HERO SECTION ── */}
-      <section className="relative bg-[#020506] overflow-hidden">
-
+      <section className="relative bg-[var(--background)] overflow-hidden">
         {/* Animated blob 1 — top-left */}
         <motion.div
           className="absolute -left-[100px] top-[10%] w-[420px] h-[420px] rounded-full blur-[130px] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #109F58 0%, #055949 40%, transparent 70%)' }}
+          style={{
+            background:
+              'radial-gradient(circle, #109F58 0%, #055949 40%, transparent 70%)',
+          }}
           animate={{ scale: [1, 1.15, 1], opacity: [0.45, 0.6, 0.45] }}
           transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -327,22 +453,35 @@ export default function PaymentLinksPage() {
         {/* Animated blob 2 — mid-left */}
         <motion.div
           className="absolute left-[5%] top-[40%] w-[480px] h-[480px] rounded-full blur-[110px] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #109F58 0%, transparent 70%)' }}
+          style={{
+            background: 'radial-gradient(circle, #109F58 0%, transparent 70%)',
+          }}
           animate={{ scale: [1, 1.2, 1], opacity: [0.22, 0.38, 0.22] }}
-          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 1.5,
+          }}
         />
 
         {/* Animated blob 3 — right glow accent */}
         <motion.div
           className="absolute right-[8%] top-[20%] w-[320px] h-[320px] rounded-full blur-[100px] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #30F3BC 0%, transparent 65%)' }}
+          style={{
+            background: 'radial-gradient(circle, #30F3BC 0%, transparent 65%)',
+          }}
           animate={{ scale: [1, 1.1, 1], opacity: [0.08, 0.18, 0.08] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 0.8,
+          }}
         />
 
         {/* ── Content row ── */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-24 pb-10 sm:pt-28 sm:pb-14 lg:py-24">
-
           {/* LEFT — text content */}
           <motion.div
             className="lg:w-[46%] w-full text-left"
@@ -360,7 +499,7 @@ export default function PaymentLinksPage() {
               No-code payment collection
             </motion.span>
 
-            <h1 className="fontheading text-2xl sm:text-3xl lg:text-[2.6rem] leading-tight text-white">
+            <h1 className="fontheading text-2xl sm:text-3xl lg:text-[2.6rem] leading-tight text-[var(--foreground)]">
               Accept Payments Instantly with{' '}
               <span className="text-emerald-400">Payment Links</span>
             </h1>
@@ -382,9 +521,11 @@ export default function PaymentLinksPage() {
                 { value: '100+', label: 'Payment methods' },
                 { value: '< 2s', label: 'Processing time' },
                 { value: '99.9%', label: 'Uptime' },
-              ].map((s) => (
+              ].map(s => (
                 <div key={s.label} className="text-center">
-                  <p className="text-emerald-400 font-bold text-xl">{s.value}</p>
+                  <p className="text-emerald-400 font-bold text-xl">
+                    {s.value}
+                  </p>
                   <p className="text-gray-500 text-xs mt-0.5">{s.label}</p>
                 </div>
               ))}
@@ -399,10 +540,10 @@ export default function PaymentLinksPage() {
             >
               {/* <Link
                 href="#"
-                className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/25"
+                className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold text-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/25"
               >
                 <motion.span
-                  className="w-2.5 h-2.5 rounded-full bg-white/80"
+                  className="w-2.5 h-2.5 rounded-full bg-[var(--card)]"
                   animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
                   transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
                 />
@@ -432,16 +573,16 @@ export default function PaymentLinksPage() {
                 priority
               />
 
-              {/* Gradient overlays — blend image edges into the #020506 bg */}
+              {/* Gradient overlays — blend image edges into the light background */}
               <div className="absolute inset-0 pointer-events-none">
                 {/* Top */}
-                <div className="absolute inset-x-0 top-0 h-[28%] bg-gradient-to-b from-[#020506] to-transparent" />
+                <div className="absolute inset-x-0 top-0 h-[28%] bg-gradient-to-b from-[var(--background)] to-transparent" />
                 {/* Bottom */}
-                <div className="absolute inset-x-0 bottom-0 h-[28%] bg-gradient-to-t from-[#020506] to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-[28%] bg-gradient-to-t from-[var(--background)] to-transparent" />
                 {/* Left */}
-                <div className="absolute inset-y-0 left-0 w-[18%] bg-gradient-to-r from-[#020506] to-transparent" />
+                <div className="absolute inset-y-0 left-0 w-[18%] bg-gradient-to-r from-[var(--background)] to-transparent" />
                 {/* Right */}
-                <div className="absolute inset-y-0 right-0 w-[18%] bg-gradient-to-l from-[#020506] to-transparent" />
+                <div className="absolute inset-y-0 right-0 w-[18%] bg-gradient-to-l from-[var(--background)] to-transparent" />
               </div>
             </motion.div>
           </motion.div>
@@ -449,7 +590,7 @@ export default function PaymentLinksPage() {
       </section>
 
       {/* ── WRAPPER: "How to create" + "Integrate" with shared decorative strip ── */}
-      <div className="relative bg-white overflow-hidden">
+      <div className="relative bg-[var(--card)] overflow-hidden">
         {/* PaymentRoundedStrip spanning both sections */}
         <div className="absolute inset-0 pointer-events-none">
           <PaymentRoundedStripIcon
@@ -463,7 +604,8 @@ export default function PaymentLinksPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
-                How to create <span className="text-emerald-500">Payment Links</span>
+                How to create{' '}
+                <span className="text-emerald-500">Payment Links</span>
               </h2>
               <p className="mt-3 text-gray-500 text-sm md:text-base">
                 Follow these simple steps to get paid using links
@@ -473,32 +615,40 @@ export default function PaymentLinksPage() {
             <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-20">
               {/* Left: Steps */}
               <div className="flex-1 space-y-4 sm:space-y-6 w-full max-w-lg">
-                <div className="flex items-start gap-4 bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4 bg-[var(--card)] border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
                   <SettingsIcon className="w-14 h-14 shrink-0" />
                   <div>
-                    <h3 className="fontheading text-lg text-gray-900">Generate Payment Links</h3>
+                    <h3 className="fontheading text-lg text-gray-900">
+                      Generate Payment Links
+                    </h3>
                     <p className="text-sm text-gray-500 mt-1 fontbody2">
-                      Use the Rupeeflow dashboard or APIs to generate payment links with ease.
+                      Use the Rupeeflow dashboard or APIs to generate payment
+                      links with ease.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4 bg-[var(--card)] border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
                   <SharingIcon className="w-14 h-14 shrink-0" />
                   <div>
-                    <h3 className="fontheading text-lg text-gray-900">Share Payment Links</h3>
+                    <h3 className="fontheading text-lg text-gray-900">
+                      Share Payment Links
+                    </h3>
                     <p className="text-sm text-gray-500 mt-1 fontbody2">
                       Send the link via SMS, email, WhatsApp, or social media.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4 bg-[var(--card)] border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
                   <PaidIcon className="w-14 h-14 shrink-0" />
                   <div>
-                    <h3 className="fontheading text-lg text-gray-900">Get Paid</h3>
+                    <h3 className="fontheading text-lg text-gray-900">
+                      Get Paid
+                    </h3>
                     <p className="text-sm text-gray-500 mt-1 fontbody2">
-                      Customers pay using their preferred payment method, and you get notified instantly.
+                      Customers pay using their preferred payment method, and
+                      you get notified instantly.
                     </p>
                   </div>
                 </div>
@@ -506,9 +656,9 @@ export default function PaymentLinksPage() {
                 <div className="pt-2">
                   {/* <Link
                     href="#"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-500 text-[var(--foreground)] text-sm font-semibold hover:bg-emerald-600 transition-colors"
                   >
-                    <span className="w-2 h-2 rounded-full bg-white/80" />
+                    <span className="w-2 h-2 rounded-full bg-[var(--card)]" />
                     Get Started
                   </Link> */}
                 </div>
@@ -528,18 +678,24 @@ export default function PaymentLinksPage() {
                   </div>
 
                   {/* Menu card - positioned center-right, overlapping with character */}
-                  <div className="absolute top-[50%] right-[15%] md:right-[18%] w-[45%] md:w-[50%] z-20 transition-all duration-500 ease-out group-hover:translate-x-[6px] group-hover:translate-y-[-6px] group-hover:scale-[1.08]" style={{ perspective: '1000px' }}>
-                    <div className="relative transform-gpu transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-emerald-500/30 group-hover:rotate-[2deg]" style={{ transformStyle: 'preserve-3d' }}>
+                  <div
+                    className="absolute top-[50%] right-[15%] md:right-[18%] w-[45%] md:w-[50%] z-20 transition-all duration-500 ease-out group-hover:translate-x-[6px] group-hover:translate-y-[-6px] group-hover:scale-[1.08]"
+                    style={{ perspective: '1000px' }}
+                  >
+                    <div
+                      className="relative transform-gpu transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-emerald-500/30 group-hover:rotate-[2deg]"
+                      style={{ transformStyle: 'preserve-3d' }}
+                    >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src="/payment-links/menu.svg"
                         alt="Payment Menu"
                         className="w-full h-auto object-contain drop-shadow-xl"
                       />
-                      
+
                       {/* 3D card glow effect */}
                       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/0 via-emerald-500/0 to-emerald-600/0 group-hover:from-white/5 group-hover:via-emerald-500/10 group-hover:to-emerald-600/5 transition-all duration-500 pointer-events-none" />
-                      
+
                       {/* Enhanced shadow for depth */}
                       <div className="absolute -inset-2 rounded-2xl bg-emerald-500/0 group-hover:bg-emerald-500/10 blur-xl transition-all duration-500 -z-10" />
                     </div>
@@ -547,7 +703,7 @@ export default function PaymentLinksPage() {
 
                   {/* Ambient glow effect behind menu */}
                   <div className="absolute top-[40%] right-[25%] w-[200px] h-[200px] rounded-full bg-emerald-500/0 group-hover:bg-emerald-500/20 blur-3xl transition-all duration-700 pointer-events-none z-0" />
-                  
+
                   {/* Connecting line effect (subtle) */}
                   <div className="absolute top-[45%] right-[35%] w-[80px] h-[2px] bg-gradient-to-r from-emerald-400/0 via-emerald-400/0 to-transparent group-hover:from-emerald-400/30 group-hover:via-emerald-400/20 transition-all duration-500 z-5" />
                 </div>
@@ -561,7 +717,8 @@ export default function PaymentLinksPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
-                Anyone can <span className="text-emerald-500">Integrate</span> easily
+                Anyone can <span className="text-emerald-500">Integrate</span>{' '}
+                easily
               </h2>
             </div>
 
@@ -570,7 +727,9 @@ export default function PaymentLinksPage() {
               <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
                   <SettingsIcon className="w-12 h-12 mb-4" />
-                  <h3 className="fontheading text-base text-gray-900">Custom Branding</h3>
+                  <h3 className="fontheading text-base text-gray-900">
+                    Custom Branding
+                  </h3>
                   <p className="text-sm text-gray-500 mt-2 fontbody2">
                     Personalize payment links with your logo and brand colors.
                   </p>
@@ -578,25 +737,34 @@ export default function PaymentLinksPage() {
 
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
                   <DashboardInsightsIcon className="w-12 h-12 mb-4" />
-                  <h3 className="fontheading text-base text-gray-900">Dashboard Insights</h3>
+                  <h3 className="fontheading text-base text-gray-900">
+                    Dashboard Insights
+                  </h3>
                   <p className="text-sm text-gray-500 mt-2 fontbody2">
-                    Monitor your payment trends, track revenues, and optimize cash flow.
+                    Monitor your payment trends, track revenues, and optimize
+                    cash flow.
                   </p>
                 </div>
 
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
                   <BulkUploadIcon className="w-12 h-12 mb-4" />
-                  <h3 className="fontheading text-base text-gray-900">Bulk Upload</h3>
+                  <h3 className="fontheading text-base text-gray-900">
+                    Bulk Upload
+                  </h3>
                   <p className="text-sm text-gray-500 mt-2 fontbody2">
-                    Generate multiple payment links at once with simple CSV file.
+                    Generate multiple payment links at once with simple CSV
+                    file.
                   </p>
                 </div>
 
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
                   <WebhookIcon className="w-12 h-12 mb-4" />
-                  <h3 className="fontheading text-base text-gray-900">Webhooks and APIs</h3>
+                  <h3 className="fontheading text-base text-gray-900">
+                    Webhooks and APIs
+                  </h3>
                   <p className="text-sm text-gray-500 mt-2 fontbody2">
-                    Automate payment processes and integrate seamlessly with your existing systems.
+                    Automate payment processes and integrate seamlessly with
+                    your existing systems.
                   </p>
                 </div>
               </div>
@@ -645,9 +813,8 @@ export default function PaymentLinksPage() {
           </motion.div>
 
           <div className="space-y-6">
-
             <motion.div
-              className="bg-white rounded-3xl overflow-hidden border border-emerald-500 shadow-sm"
+              className="bg-[var(--card)] rounded-3xl overflow-hidden border border-emerald-500 shadow-sm"
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -658,11 +825,14 @@ export default function PaymentLinksPage() {
                   <PaymentLinkMockup />
                 </div>
                 <div className="md:w-[55%] p-5 sm:p-7 md:p-10 flex flex-col justify-center">
-                  <h3 className="fontheading text-2xl md:text-3xl text-gray-900">Quick and Easy Setup</h3>
+                  <h3 className="fontheading text-2xl md:text-3xl text-gray-900">
+                    Quick and Easy Setup
+                  </h3>
                   <p className="mt-4 text-gray-500 fontbody2 text-sm md:text-base leading-relaxed">
-                    Generate payment links effortlessly from the dashboard or through APIs in just a
-                    few clicks. No technical expertise required — merchants of all sizes can start
-                    collecting payments immediately.
+                    Generate payment links effortlessly from the dashboard or
+                    through APIs in just a few clicks. No technical expertise
+                    required — merchants of all sizes can start collecting
+                    payments immediately.
                   </p>
                 </div>
               </div>
@@ -670,7 +840,7 @@ export default function PaymentLinksPage() {
 
             {/* ── Row 2: No Website Required  (text LEFT, mockup RIGHT) ── */}
             <motion.div
-              className="bg-white rounded-3xl overflow-hidden border border-emerald-500 shadow-sm"
+              className="bg-[var(--card)] rounded-3xl overflow-hidden border border-emerald-500 shadow-sm"
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -681,18 +851,21 @@ export default function PaymentLinksPage() {
                   <ShareWithMockup />
                 </div>
                 <div className="md:w-[55%] p-5 sm:p-7 md:p-10 flex flex-col justify-center">
-                  <h3 className="fontheading text-2xl md:text-3xl text-gray-900">No Website Required</h3>
+                  <h3 className="fontheading text-2xl md:text-3xl text-gray-900">
+                    No Website Required
+                  </h3>
                   <p className="mt-4 text-gray-500 fontbody2 text-sm md:text-base leading-relaxed">
-                    Rupeeflow Payment Links are perfect for merchants without an online presence.
-                    Collect payments via SMS, WhatsApp, email, or social media — no website or
-                    app needed. Bridge the gap between offline and online seamlessly.
+                    Rupeeflow Payment Links are perfect for merchants without an
+                    online presence. Collect payments via SMS, WhatsApp, email,
+                    or social media — no website or app needed. Bridge the gap
+                    between offline and online seamlessly.
                   </p>
                 </div>
               </div>
             </motion.div>
 
             <motion.div
-              className="bg-white rounded-3xl overflow-hidden border border-emerald-500 shadow-sm"
+              className="bg-[var(--card)] rounded-3xl overflow-hidden border border-emerald-500 shadow-sm"
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -703,11 +876,14 @@ export default function PaymentLinksPage() {
                   <PaymentOptionsMockup />
                 </div>
                 <div className="md:w-[55%] p-5 sm:p-7 md:p-10 flex flex-col justify-center">
-                  <h3 className="fontheading text-2xl md:text-3xl text-gray-900">100+ Payment Options</h3>
+                  <h3 className="fontheading text-2xl md:text-3xl text-gray-900">
+                    100+ Payment Options
+                  </h3>
                   <p className="mt-4 text-gray-500 fontbody2 text-sm md:text-base leading-relaxed">
-                    Offer your customers the flexibility to pay using their preferred method — UPI,
-                    net banking, credit/debit cards, wallets, and more. Ensure a smooth checkout
-                    experience that boosts satisfaction and conversions.
+                    Offer your customers the flexibility to pay using their
+                    preferred method — UPI, net banking, credit/debit cards,
+                    wallets, and more. Ensure a smooth checkout experience that
+                    boosts satisfaction and conversions.
                   </p>
                 </div>
               </div>
@@ -715,7 +891,7 @@ export default function PaymentLinksPage() {
 
             {/* ── Row 4: Real-Time Notifications  (text LEFT, mockup RIGHT) ── */}
             <motion.div
-              className="bg-white rounded-3xl overflow-hidden border border-emerald-500 shadow-sm"
+              className="bg-[var(--card)] rounded-3xl overflow-hidden border border-emerald-500 shadow-sm"
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -726,18 +902,21 @@ export default function PaymentLinksPage() {
                   <AmountReceivedMockup />
                 </div>
                 <div className="md:w-[55%] p-5 sm:p-7 md:p-10 flex flex-col justify-center">
-                  <h3 className="fontheading text-2xl md:text-3xl text-gray-900">Real-Time Notifications</h3>
+                  <h3 className="fontheading text-2xl md:text-3xl text-gray-900">
+                    Real-Time Notifications
+                  </h3>
                   <p className="mt-4 text-gray-500 fontbody2 text-sm md:text-base leading-relaxed">
-                    Stay in the loop with instant alerts for every successful payment. Gain visibility
-                    into your transactions, enabling faster decision-making and improved financial
-                    management across all devices.
+                    Stay in the loop with instant alerts for every successful
+                    payment. Gain visibility into your transactions, enabling
+                    faster decision-making and improved financial management
+                    across all devices.
                   </p>
                 </div>
               </div>
             </motion.div>
 
             <motion.div
-              className="bg-white rounded-3xl overflow-hidden border border-emerald-500 shadow-sm"
+              className="bg-[var(--card)] rounded-3xl overflow-hidden border border-emerald-500 shadow-sm"
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -748,16 +927,18 @@ export default function PaymentLinksPage() {
                   <ProcessingAmountMockup />
                 </div>
                 <div className="md:w-[55%] p-5 sm:p-7 md:p-10 flex flex-col justify-center">
-                  <h3 className="fontheading text-2xl md:text-3xl text-gray-900">Secure Transactions</h3>
+                  <h3 className="fontheading text-2xl md:text-3xl text-gray-900">
+                    Secure Transactions
+                  </h3>
                   <p className="mt-4 text-gray-500 fontbody2 text-sm md:text-base leading-relaxed">
-                    Built on ISO 27001 compliance and advanced encryption, Rupeeflow Payment Links
-                    ensure every transaction is safe and secure. Protect sensitive customer data while
-                    delivering a trustworthy payment experience.
+                    Built on ISO 27001 compliance and advanced encryption,
+                    Rupeeflow Payment Links ensure every transaction is safe and
+                    secure. Protect sensitive customer data while delivering a
+                    trustworthy payment experience.
                   </p>
                 </div>
               </div>
             </motion.div>
-
           </div>
 
           {/* Get Started CTA */}
@@ -770,12 +951,11 @@ export default function PaymentLinksPage() {
           >
             {/* <Link
               href="#"
-              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors shadow-lg shadow-emerald-500/20"
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-emerald-500 text-[var(--foreground)] text-sm font-semibold hover:bg-emerald-600 transition-colors shadow-lg shadow-emerald-500/20"
             >
-              <span className="w-2 h-2 rounded-full bg-white/80" />
+              <span className="w-2 h-2 rounded-full bg-[var(--card)]" />
               Get Started
             </Link> */}
-
           </motion.div>
         </div>
       </section>
@@ -803,19 +983,19 @@ export default function PaymentLinksPage() {
         </div>
 
         <div className="relative z-10 text-center py-16 md:py-20 px-6">
-          <h2 className="fontheading text-2xl md:text-4xl text-white mb-8">
+          <h2 className="fontheading text-2xl md:text-4xl text-[var(--foreground)] mb-8">
             Get Paid with more Ease
           </h2>
-          <Link
-            href="#"
-            className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 text-white font-semibold text-sm hover:from-emerald-500 hover:to-emerald-600 transition-all duration-300 shadow-lg shadow-emerald-500/20"
-          >
-            <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
+          <Button href="#" className="px-8 py-3.5 text-sm font-semibold">
+            <span className="w-2.5 h-2.5 rounded-full bg-[var(--card)]" />
             Setup Your Link
-          </Link>
+          </Button>
         </div>
       </section>
-      <FAQAccordion faqs={paymentLinksFAQs} subtitle="Everything you need to know about RupeeFlow Payment Links." />
+      <FAQAccordion
+        faqs={paymentLinksFAQs}
+        subtitle="Everything you need to know about RupeeFlow Payment Links."
+      />
     </div>
   )
 }

@@ -71,7 +71,7 @@ export default function ComingSoon({
         </div>
 
         {/* Title */}
-        <h1 className="cs-title text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-5">
+        <h1 className="cs-title text-4xl sm:text-5xl lg:text-6xl font-black text-[var(--foreground)] leading-tight mb-5">
           {title}{' '}
           <span className="block bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
             is Coming Soon
@@ -84,17 +84,17 @@ export default function ComingSoon({
         </p>
 
         {/* Progress block */}
-        <div className="cs-progress bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 mb-8 text-left">
+        <div className="cs-progress bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 sm:p-8 mb-8 text-left">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <Rocket size={16} className="text-emerald-400" />
-              <span className="text-white text-sm font-semibold">Build Progress</span>
+              <span className="text-[var(--foreground)] text-sm font-semibold">Build Progress</span>
             </div>
             <span className="text-emerald-400 font-black text-lg">{progress}%</span>
           </div>
 
           {/* Bar */}
-          <div className="w-full h-2.5 bg-white/10 rounded-full overflow-hidden">
+          <div className="w-full h-2.5 bg-[var(--card)] rounded-full overflow-hidden">
             <div
               className="cs-bar-fill h-full rounded-full bg-gradient-to-r from-[#00EF64] to-[#53BEC2]"
               style={{ width: `${progress}%` }}
@@ -112,8 +112,8 @@ export default function ComingSoon({
           {features.map((feat, i) => (
             <div
               key={i}
-              className="cs-feature group bg-white/5 border border-white/10 rounded-xl p-5
-                hover:border-emerald-400/30 hover:bg-white/[0.07] transition duration-300"
+              className="cs-feature group bg-[var(--card)] border border-[var(--border)] rounded-xl p-5
+                hover:border-emerald-400/30 hover:bg-[var(--card)]/[0.07] transition duration-300"
             >
               <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mx-auto mb-3 group-hover:bg-emerald-500/20 transition duration-300">
                 <Lock size={16} className="text-emerald-400" />
@@ -144,7 +144,7 @@ export default function ComingSoon({
 
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-sm border border-white/20 text-white hover:bg-white/5 hover:border-white/30 transition duration-200"
+            className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-sm border border-white/20 text-[var(--foreground)] hover:bg-[var(--card)] hover:border-white/30 transition duration-200"
           >
             <ArrowLeft size={15} />
             Back to Home

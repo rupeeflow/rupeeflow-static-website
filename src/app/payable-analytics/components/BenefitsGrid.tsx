@@ -75,10 +75,10 @@ export default function BenefitsGrid() {
                 key={index}
                 variants={staggerItem}
                 whileHover={{ y: -8, transition: { duration: 0.2 } }}
-                className="bg-white rounded-2xl p-6 md:p-8 border-2 border-gray-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300"
+                className="bg-[var(--card)] rounded-2xl p-6 md:p-8 border-2 border-gray-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-4 shadow-lg">
-                  <Icon className="w-7 h-7 text-white" />
+                  <Icon className="w-7 h-7 text-[var(--foreground)]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
                 <p className="fontbody2 text-gray-600 leading-relaxed">{benefit.description}</p>

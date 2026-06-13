@@ -1,6 +1,6 @@
 export default function PrivacyContent() {
   return (
-    <section className="py-16 px-6 bg-white">
+    <section className="py-16 px-6 bg-[var(--card)]">
       <div className="max-w-4xl mx-auto">
 
         {/* Intro */}

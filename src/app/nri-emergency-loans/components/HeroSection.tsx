@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-[#020506] overflow-hidden flex items-center">
+    <section className="relative min-h-screen bg-[var(--background)] overflow-hidden flex items-center">
       {/* Decorative Background Elements */}
       <div className="absolute top-[-150px] left-[-150px] w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(3,151,137,0.25),transparent_60%)] pointer-events-none animate-glow-pulse" />
       <div className="absolute bottom-[-100px] right-[5%] w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,rgba(48,243,188,0.2),transparent_60%)] pointer-events-none animate-glow-pulse-delayed" />
@@ -31,7 +31,7 @@ export default function HeroSection() {
               </span>
             </div>
 
-            <h1 className="fontheading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-6">
+            <h1 className="fontheading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--foreground)] leading-tight mb-6">
               Emergency Funds for Your{' '}
               <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
                 Family in India
@@ -46,9 +46,9 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
                 href="#apply"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-base hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold text-base hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
               >
-                <span className="w-2.5 h-2.5 rounded-full bg-white/90 animate-pulse" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--card)] animate-pulse" />
                 Apply Now
               </Link>
             </div>
@@ -89,7 +89,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-white/10 backdrop-blur-md">
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-[var(--border)] backdrop-blur-md">
               <Image
                 src="/nri-emergency-loans/nri hero.png"
                 alt="NRI Emergency Loans - Support your family in India"
@@ -100,12 +100,12 @@ export default function HeroSection() {
               />
               
               {/* Floating Stats Cards */}
-              <div className="absolute top-8 right-8 bg-black/80 backdrop-blur-md rounded-2xl p-4 border border-emerald-500/30 shadow-lg">
+              <div className="absolute top-8 right-8 bg-[var(--background)]/80 backdrop-blur-md rounded-2xl p-4 border border-emerald-500/30 shadow-lg">
                 <div className="text-emerald-400 text-2xl font-bold">₹10L</div>
                 <div className="text-gray-400 text-xs">Max Loan</div>
               </div>
               
-              <div className="absolute bottom-8 left-8 bg-black/80 backdrop-blur-md rounded-2xl p-4 border border-emerald-500/30 shadow-lg">
+              <div className="absolute bottom-8 left-8 bg-[var(--background)]/80 backdrop-blur-md rounded-2xl p-4 border border-emerald-500/30 shadow-lg">
                 <div className="text-emerald-400 text-2xl font-bold">24 hrs</div>
                 <div className="text-gray-400 text-xs">Disbursal Time</div>
               </div>

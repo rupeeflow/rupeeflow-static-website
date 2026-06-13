@@ -60,7 +60,7 @@ export default function RotatingDevice() {
         <div
           className="relative w-[300px] h-[610px] rounded-[52px]
           bg-gradient-to-b from-[#111] to-[#000]
-          border border-white/10
+          border border-[var(--border)]
           shadow-[0_60px_120px_rgba(0,0,0,0.7)]
           transition-transform duration-[1200ms]
           ease-[cubic-bezier(0.22,1,0.36,1)]"
@@ -98,14 +98,14 @@ export default function RotatingDevice() {
             <div className="absolute inset-0 shadow-[inset_0_-40px_80px_rgba(0,0,0,0.6)] pointer-events-none" />
 
             {/* glass overlay */}
-            <div className="absolute inset-0 bg-white/5 backdrop-blur-[1px] pointer-events-none" />
+            <div className="absolute inset-0 bg-[var(--card)] backdrop-blur-[1px] pointer-events-none" />
 
             {/* text overlay */}
             <div className="absolute bottom-10 left-0 right-0 text-center px-6">
-              <h3 className="text-white text-xl font-semibold mb-2">
+              <h3 className="text-[var(--foreground)] text-xl font-semibold mb-2">
                 {screens[index].title}
               </h3>
-              <p className="text-gray-300 text-sm">
+              <p className="text-gray-700 text-sm">
                 {screens[index].desc}
               </p>
             </div>

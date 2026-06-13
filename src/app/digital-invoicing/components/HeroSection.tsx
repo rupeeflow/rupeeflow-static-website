@@ -8,7 +8,7 @@ import { fadeInUp } from '@/lib/animations';
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-[#020506] text-white overflow-hidden py-20 md:py-28">
+    <section className="relative bg-[var(--background)] text-[var(--foreground)] overflow-hidden py-20 md:py-28">
       {/* Animated background with grid pattern */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#10b98120_1px,transparent_1px),linear-gradient(to_bottom,#10b98120_1px,transparent_1px)] bg-[size:4rem_4rem]" />
@@ -62,7 +62,7 @@ export default function HeroSection() {
               ].map((indicator, idx) => {
                 const Icon = indicator.icon;
                 return (
-                  <div key={idx} className="flex items-center gap-3 bg-white/5 rounded-lg p-3">
+                  <div key={idx} className="flex items-center gap-3 bg-[var(--card)] rounded-lg p-3">
                     <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
                       <Icon className="w-4 h-4 text-emerald-400" />
                     </div>
@@ -81,13 +81,13 @@ export default function HeroSection() {
             >
               <Link
                 href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 text-center"
+                className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 text-center"
               >
                 Start Free Trial
               </Link>
               <Link
                 href="/demo"
-                className="px-8 py-4 border-2 border-emerald-500/50 text-white font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200 text-center"
+                className="px-8 py-4 border-2 border-emerald-500/50 text-[var(--foreground)] font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200 text-center"
               >
                 See Demo
               </Link>
@@ -103,7 +103,7 @@ export default function HeroSection() {
           >
             {/* Invoice mockup */}
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl p-8 border-4 border-emerald-500/20">
+              <div className="bg-[var(--card)] rounded-2xl shadow-2xl p-8 border-4 border-emerald-500/20">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between pb-4 border-b-2 border-gray-200">
                     <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center">
@@ -140,7 +140,7 @@ export default function HeroSection() {
 
                   <div className="flex items-center gap-2 pt-4 border-t border-gray-200">
                     <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                      <Check className="w-3 h-3 text-white" />
+                      <Check className="w-3 h-3 text-[var(--foreground)]" />
                     </div>
                     <span className="text-xs text-green-600 font-medium">GST Verified</span>
                   </div>
@@ -157,7 +157,7 @@ export default function HeroSection() {
                   repeat: Infinity,
                   ease: 'easeInOut',
                 }}
-                className="absolute -top-4 -right-4 bg-emerald-500 text-white px-4 py-2 rounded-full shadow-lg text-sm font-semibold"
+                className="absolute -top-4 -right-4 bg-emerald-500 text-[var(--foreground)] px-4 py-2 rounded-full shadow-lg text-sm font-semibold"
               >
                 IRP Approved ✓
               </motion.div>

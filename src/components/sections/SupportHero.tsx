@@ -29,7 +29,7 @@ export default function SupportHero() {
   }
 
   return (
-    <section className="py-32 px-6 bg-black-emerald text-white relative overflow-hidden">
+    <section className="py-32 px-6 bg-[var(--background)] text-[var(--foreground)] relative overflow-hidden">
       {/* subtle background glow */}
 
       <div className="relative z-10 max-w-6xl mx-auto text-center">
@@ -80,13 +80,13 @@ export default function SupportHero() {
               height={180}
               className="rounded-xl mb-6"
             />
-            <h3 className="text-xl font-semibold mb-2 text-white">Live Chat</h3>
+            <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)]">Live Chat</h3>
             <p className="text-gray-400 text-sm mb-6">
               Connect instantly with our support specialists via in-app chat.
             </p>
             <Link
               href="#"
-              className="inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full bg-teal-emerald-dark hover:bg-teal-emerald  text-white hover:text-black font-semibold transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full bg-teal-emerald-dark hover:bg-teal-emerald  text-[var(--foreground)] hover:text-black font-semibold transition-all"
             >
               Start Chat <MessageCircle className="w-4 h-4" />
             </Link>
@@ -104,7 +104,7 @@ export default function SupportHero() {
               height={180}
               className="rounded-xl mb-6"
             />
-            <h3 className="text-xl font-semibold mb-2 text-white">
+            <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)]">
               Email Support
             </h3>
             <p className="text-gray-400 text-sm mb-6">
@@ -112,7 +112,7 @@ export default function SupportHero() {
             </p>
             <Link
               href="#"
-              className="inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full bg-teal-emerald-dark hover:bg-teal-emerald  text-white hover:text-black font-semibold transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full bg-teal-emerald-dark hover:bg-teal-emerald  text-[var(--foreground)] hover:text-black font-semibold transition-all"
             >
               Send Email <Mail className="w-4 h-4" />
             </Link>
@@ -130,7 +130,7 @@ export default function SupportHero() {
               height={180}
               className="rounded-xl mb-6"
             />
-            <h3 className="text-xl font-semibold mb-2 text-white">
+            <h3 className="text-xl font-semibold mb-2 text-[var(--foreground)]">
               Call Us - Toll Free
             </h3>
             <p className="text-gray-400 text-sm mb-6">
@@ -139,7 +139,7 @@ export default function SupportHero() {
             </p>
             <Link
               href="#"
-              className="inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full bg-teal-emerald-dark hover:bg-teal-emerald  text-white hover:text-black font-semibold transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full bg-teal-emerald-dark hover:bg-teal-emerald  text-[var(--foreground)] hover:text-black font-semibold transition-all"
             >
               Get a Call <Phone className="w-4 h-4" />
             </Link>

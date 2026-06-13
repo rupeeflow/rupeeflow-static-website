@@ -7,7 +7,7 @@ import { Check, ArrowRight, PieChart } from 'lucide-react';
 
 export default function CTASection() {
   return (
-    <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#020506] via-gray-900 to-[#020506] text-white overflow-hidden">
+    <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#020506] via-gray-900 to-[#020506] text-[var(--foreground)] overflow-hidden">
       <div className="absolute inset-0 overflow-hidden opacity-20">
         <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, #10b981 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       </div>
@@ -23,11 +23,11 @@ export default function CTASection() {
           </h2>
           <p className="fontbody2 text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Identify savings and optimize spending with data-driven insights</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Link href="/contact" className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 inline-flex items-center justify-center gap-2">
+            <Link href="/contact" className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 inline-flex items-center justify-center gap-2">
               Get Started Free
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="/demo" className="px-8 py-4 border-2 border-emerald-500/50 text-white font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200">View Demo</Link>
+            <Link href="/demo" className="px-8 py-4 border-2 border-emerald-500/50 text-[var(--foreground)] font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200">View Demo</Link>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
             {['Free trial', 'No credit card', 'Setup in minutes'].map((feature, index) => (

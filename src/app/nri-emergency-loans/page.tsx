@@ -40,7 +40,7 @@ const faqs = [
 
 export default function NRIEmergencyLoansPage() {
   return (
-    <main className="relative min-h-screen bg-white text-gray-900 overflow-hidden">
+    <main className="relative min-h-screen bg-[var(--card)] text-gray-900 overflow-hidden">
       <WebPageSchema
         title="NRI Emergency Loans - Quick Financial Help for Family in India"
         description="Get ₹50K-₹10L emergency loans for your family in India. 24hr disbursal, repay from overseas, support in 12 languages."

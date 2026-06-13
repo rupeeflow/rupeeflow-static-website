@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2, FileText } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] bg-[#020506] text-white overflow-hidden flex items-center">
+    <section className="relative min-h-[90vh] bg-[var(--background)] text-[var(--foreground)] overflow-hidden flex items-center">
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <div className="absolute inset-0" style={{
@@ -44,14 +44,14 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Link
                 href="/contact"
-                className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 inline-flex items-center justify-center gap-2"
+                className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 inline-flex items-center justify-center gap-2"
               >
                 Get Started Free
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/demo"
-                className="px-8 py-4 border-2 border-emerald-500/50 text-white font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200"
+                className="px-8 py-4 border-2 border-emerald-500/50 text-[var(--foreground)] font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200"
               >
                 See Demo
               </Link>

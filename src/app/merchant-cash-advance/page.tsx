@@ -48,7 +48,7 @@ const faqs = [
 
 export default function MerchantCashAdvancePage() {
   return (
-    <main className="relative min-h-screen bg-white text-gray-900 overflow-hidden">
+    <main className="relative min-h-screen bg-[var(--card)] text-gray-900 overflow-hidden">
       <WebPageSchema
         title="Merchant Cash Advance - Quick Business Loans Based on UPI Collections"
         description="Get ₹10K-₹5L instant business loans based on your daily UPI collections. 3-minute approval, flexible repayment, no collateral required."

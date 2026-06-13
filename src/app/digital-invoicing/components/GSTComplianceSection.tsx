@@ -254,7 +254,7 @@ export default function GSTComplianceSection() {
                   z: 50,
                   transition: { duration: 0.3 }
                 }}
-                className="bg-white rounded-2xl shadow-2xl border-2 border-emerald-100 p-5 relative min-h-[200px]"
+                className="bg-[var(--card)] rounded-2xl shadow-2xl border-2 border-emerald-100 p-5 relative min-h-[200px]"
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Glow Effect */}
@@ -320,7 +320,7 @@ export default function GSTComplianceSection() {
                   z: 50,
                   transition: { duration: 0.3 }
                 }}
-                className="bg-white rounded-2xl shadow-2xl border-2 border-teal-100 p-5 relative min-h-[200px]"
+                className="bg-[var(--card)] rounded-2xl shadow-2xl border-2 border-teal-100 p-5 relative min-h-[200px]"
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Glow Effect */}

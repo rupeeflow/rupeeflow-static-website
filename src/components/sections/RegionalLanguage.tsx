@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function LanguageSection() {
   return (
-    <section className="relative w-full bg-black-emerald text-white text-center py-45 px-6 overflow-hidden">
+    <section className="relative w-full bg-[var(--background)] text-[var(--foreground)] text-center py-45 px-6 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
         <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-snug">
@@ -23,7 +23,7 @@ export default function LanguageSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <AudioLines className="w-10 h-10 md:w-14 md:h-14 text-gray-300" />
+            <AudioLines className="w-10 h-10 md:w-14 md:h-14 text-gray-700" />
           </motion.div>
 
           <motion.div
@@ -34,7 +34,7 @@ export default function LanguageSection() {
           >
             <Mic
               strokeWidth={1.4}
-              className="w-24 h-24 md:w-30 md:h-30 text-gray-300"
+              className="w-24 h-24 md:w-30 md:h-30 text-gray-700"
             />
           </motion.div>
 
@@ -44,7 +44,7 @@ export default function LanguageSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <AudioLines className="w-10 h-10 md:w-14 md:h-14 text-gray-300" />
+            <AudioLines className="w-10 h-10 md:w-14 md:h-14 text-gray-700" />
           </motion.div>
         </div>
 
@@ -54,7 +54,7 @@ export default function LanguageSection() {
         </p>
 
         {/* Subtext */}
-        <p className="text-gray-300 max-w-2xl mx-auto text-sm md:text-lg">
+        <p className="text-gray-700 max-w-2xl mx-auto text-sm md:text-lg">
           Supports multiple Indian regional languages for true inclusivity
         </p>
       </div>

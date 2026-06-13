@@ -11,7 +11,7 @@ export default function PartnershipSection() {
   ]
 
   return (
-    <section className="relative overflow-hidden py-16 bg-white">
+    <section className="relative overflow-hidden py-16 bg-[var(--card)]">
       {/* Optional radial glow */}
 
       <div className="relative z-10 flex flex-col items-center text-center px-6">

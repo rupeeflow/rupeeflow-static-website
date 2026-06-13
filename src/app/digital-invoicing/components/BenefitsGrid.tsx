@@ -232,7 +232,7 @@ export default function BenefitsGrid() {
   const currentLaptopCard = laptopCards[laptopCardIndex];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-[var(--card)]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -269,7 +269,7 @@ export default function BenefitsGrid() {
                 className="bg-gradient-to-br from-white to-emerald-50/30 border-2 border-emerald-100 rounded-2xl p-6 md:p-8 hover:shadow-xl hover:border-emerald-200 transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-4 shadow-lg">
-                  <Icon className="w-7 h-7 text-white" />
+                  <Icon className="w-7 h-7 text-[var(--foreground)]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
                 <p className="fontbody2 text-gray-600 leading-relaxed">{benefit.description}</p>
@@ -315,7 +315,7 @@ export default function BenefitsGrid() {
                   z: 50,
                   transition: { duration: 0.3 }
                 }}
-                className="bg-white rounded-2xl shadow-2xl border-2 border-emerald-100 p-5 relative min-h-[200px]"
+                className="bg-[var(--card)] rounded-2xl shadow-2xl border-2 border-emerald-100 p-5 relative min-h-[200px]"
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Glow Effect */}
@@ -381,7 +381,7 @@ export default function BenefitsGrid() {
                   z: 50,
                   transition: { duration: 0.3 }
                 }}
-                className="bg-white rounded-2xl shadow-2xl border-2 border-teal-100 p-5 relative min-h-[200px]"
+                className="bg-[var(--card)] rounded-2xl shadow-2xl border-2 border-teal-100 p-5 relative min-h-[200px]"
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Glow Effect */}

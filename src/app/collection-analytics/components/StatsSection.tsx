@@ -14,7 +14,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-emerald-900 to-teal-900 text-white">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-emerald-900 to-teal-900 text-[var(--foreground)]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ export default function StatsSection() {
             <motion.div
               key={index}
               variants={staggerItem}
-              className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20"
+              className="text-center bg-[var(--card)] backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20"
             >
               <div className="text-4xl md:text-5xl font-bold text-emerald-300 mb-2">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />

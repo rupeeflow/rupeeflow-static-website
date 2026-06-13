@@ -57,7 +57,7 @@ export default function DocumentsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1 group"
+              className="bg-[var(--card)] rounded-3xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1 group"
             >
               {/* Icon */}
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
@@ -93,7 +93,7 @@ export default function DocumentsSection() {
           className="bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-3xl p-6 md:p-8"
         >
           <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 rounded-2xl bg-[var(--card)] flex items-center justify-center flex-shrink-0">
               <Image src="/features/shield.svg" alt="Secure" width={24} height={24} />
             </div>
             <div className="flex-1">
@@ -106,7 +106,7 @@ export default function DocumentsSection() {
             </div>
             <a
               href="#upload"
-              className="px-6 py-3 rounded-xl bg-white text-emerald-600 font-semibold text-sm hover:bg-emerald-50 transition-all duration-300 border border-emerald-200 hover:border-emerald-300 whitespace-nowrap"
+              className="px-6 py-3 rounded-xl bg-[var(--card)] text-emerald-600 font-semibold text-sm hover:bg-emerald-50 transition-all duration-300 border border-emerald-200 hover:border-emerald-300 whitespace-nowrap"
             >
               Upload Documents
             </a>

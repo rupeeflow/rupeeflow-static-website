@@ -2,9 +2,9 @@
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative z-10 py-24 px-6 bg-white/5 backdrop-blur-md border-t border-white/10">
+    <section className="relative z-10 py-24 px-6 bg-[var(--card)] backdrop-blur-md border-t border-[var(--border)]">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="fontheadingthin text-5xl md:text-6xl text-white mb-12">
+        <h2 className="fontheadingthin text-5xl md:text-6xl text-[var(--foreground)] mb-12">
           What Shop Owners Say
         </h2>
 

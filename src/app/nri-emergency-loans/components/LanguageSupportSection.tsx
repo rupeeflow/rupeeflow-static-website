@@ -39,7 +39,7 @@ export default function LanguageSupportSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl p-4 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg text-center group"
+                className="bg-[var(--card)] rounded-xl p-4 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg text-center group"
               >
                 <span className="text-gray-900 group-hover:text-emerald-600 font-semibold transition-colors">
                   {lang}
@@ -56,7 +56,7 @@ export default function LanguageSupportSection() {
             className="bg-gradient-to-r from-cyan-50 to-blue-50 border-2 border-cyan-200 rounded-3xl p-8"
           >
             <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center flex-shrink-0">
+              <div className="w-16 h-16 rounded-2xl bg-[var(--card)] flex items-center justify-center flex-shrink-0">
                 <svg className="w-8 h-8 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
                 </svg>

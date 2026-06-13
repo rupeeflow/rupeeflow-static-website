@@ -76,7 +76,7 @@ export default function UPISwitchPage() {
   ]
 
   return (
-    <main className="relative w-full bg-black text-white overflow-hidden">
+    <main className="relative w-full bg-[var(--background)] text-[var(--foreground)] overflow-hidden">
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(16,185,129,0.2),transparent_70%)] blur-3xl" />
 
@@ -105,7 +105,7 @@ export default function UPISwitchPage() {
       </section>
 
       {/* UPI Switch Features */}
-      <section className="relative z-10 pb-24 px-6 bg-black-emerald/40 backdrop-blur-md">
+      <section className="relative z-10 pb-24 px-6 bg-[var(--background)]/40 backdrop-blur-md">
         <motion.div
           variants={container}
           initial="hidden"
@@ -114,7 +114,7 @@ export default function UPISwitchPage() {
         >
           <motion.h2
             variants={content}
-            className="fontheadingthin text-5xl text-white mb-16"
+            className="fontheadingthin text-5xl text-[var(--foreground)] mb-16"
           >
             How RupeeFlow Excels with Advanced UPI Switching
           </motion.h2>
@@ -124,7 +124,7 @@ export default function UPISwitchPage() {
               <motion.div
                 key={i}
                 variants={content}
-                className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition text-left"
+                className="p-8 rounded-2xl bg-[var(--card)] border border-[var(--border)] backdrop-blur-md hover:bg-[var(--card)] transition text-left"
               >
                 <f.icon
                   className="w-12 h-12 text-emerald-400 mb-4"
@@ -149,7 +149,7 @@ export default function UPISwitchPage() {
         >
           <motion.h2
             variants={content}
-            className="fontheadingthin text-6xl text-white mb-16"
+            className="fontheadingthin text-6xl text-[var(--foreground)] mb-16"
           >
             How the UPI Routing Engine Works
           </motion.h2>
@@ -159,7 +159,7 @@ export default function UPISwitchPage() {
               <motion.div
                 key={i}
                 variants={content}
-                className="p-8 rounded-2xl border border-white/70 backdrop-blur-md bg-gray-500/10 hover:bg-white/10 hover:shadow-[0_0_10px_rgba(34,197,94,0.3)] transition"
+                className="p-8 rounded-2xl border border-white/70 backdrop-blur-md bg-gray-500/10 hover:bg-[var(--card)] hover:shadow-[0_0_10px_rgba(34,197,94,0.3)] transition"
               >
                 <s.icon
                   className="w-10 h-10 text-emerald-400 mb-3"
@@ -196,7 +196,7 @@ export default function UPISwitchPage() {
           <motion.div variants={content}>
             <Link
               href="https://rupeeflow.org/"
-              className="inline-block px-8 py-3 bg-black text-white font-semibold rounded-full hover:bg-neutral-900 transition"
+              className="inline-block px-8 py-3 bg-[var(--background)] text-[var(--foreground)] font-semibold rounded-full hover:bg-neutral-900 transition"
             >
               Get Started →
             </Link>

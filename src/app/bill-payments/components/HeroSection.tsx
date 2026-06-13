@@ -41,7 +41,7 @@ export default function HeroSection({
   mockupComponent: MockupComponent,
 }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen bg-[#020506] overflow-hidden">
+    <section className="relative min-h-screen bg-[var(--background)] overflow-hidden">
       {/* Animated gradient blobs */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Blob 1 - Top left */}
@@ -117,7 +117,7 @@ export default function HeroSection({
             </motion.div>
 
             {/* Heading with emerald accent */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--foreground)] mb-6 leading-tight">
               {heading}{' '}
               <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
                 {headingAccent}
@@ -138,7 +138,7 @@ export default function HeroSection({
                     href={primaryCTA.href}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-shadow"
+                    className="px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-[var(--foreground)] font-semibold shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-shadow"
                   >
                     {primaryCTA.text}
                   </motion.a>
@@ -150,7 +150,7 @@ export default function HeroSection({
                     href={secondaryCTA.href}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="px-8 py-4 rounded-xl border-2 border-emerald-500/30 text-white font-semibold hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all"
+                    className="px-8 py-4 rounded-xl border-2 border-emerald-500/30 text-[var(--foreground)] font-semibold hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all"
                   >
                     {secondaryCTA.text}
                   </motion.a>

@@ -47,7 +47,7 @@ export default function HeroSection() {
   }, [mouseX, mouseY])
 
   return (
-    <section className="relative min-h-screen bg-[#020506] overflow-hidden flex items-center">
+    <section className="relative min-h-screen bg-[var(--background)] overflow-hidden flex items-center">
       {/* Subtle ambient background */}
       <div className="absolute top-[-150px] left-[-150px] w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(3,151,137,0.06),transparent_60%)] pointer-events-none" />
       <div className="absolute bottom-[-100px] right-[5%] w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,rgba(48,243,188,0.04),transparent_60%)] pointer-events-none" />
@@ -72,7 +72,7 @@ export default function HeroSection() {
               </span>
             </motion.div>
 
-            <h1 className="fontheading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
+            <h1 className="fontheading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[var(--foreground)] leading-tight mb-6">
               Get Instant Cash for Your{' '}
               <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
                 Business Growth
@@ -92,14 +92,14 @@ export default function HeroSection() {
             >
               <Link
                 href="#apply"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-base hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold text-base hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
               >
-                <span className="w-2.5 h-2.5 rounded-full bg-white/90 animate-pulse" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--card)] animate-pulse" />
                 Apply Now
               </Link>
               {/* <Link
                 href="#how-it-works"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-emerald-500/50 text-white font-semibold text-base hover:bg-emerald-500/10 transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-emerald-500/50 text-[var(--foreground)] font-semibold text-base hover:bg-emerald-500/10 transition-all duration-300"
               >
                 How It Works
               </Link> */}
@@ -199,7 +199,7 @@ function RealisticHeroImage({
                 scale: 1.02,
                 transition: { duration: 0.2 }
               }}
-              className="relative bg-white/98 backdrop-blur-2xl rounded-[16px] shadow-[0_8px_30px_rgba(0,0,0,0.2)] w-[280px] cursor-pointer group overflow-hidden"
+              className="relative bg-[var(--card)] backdrop-blur-2xl rounded-[16px] shadow-[0_8px_30px_rgba(0,0,0,0.2)] w-[280px] cursor-pointer group overflow-hidden"
             >
               {/* Enhanced shadow on hover */}
               <div className="absolute inset-0 rounded-[16px] shadow-[0_15px_50px_rgba(0,0,0,0.3)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -210,7 +210,7 @@ function RealisticHeroImage({
                 <div className="flex items-center gap-2.5 mb-2">
                   {/* App Icon - iOS rounded square */}
                   <div className="w-7 h-7 rounded-[8px] bg-emerald-600 flex items-center justify-center flex-shrink-0 shadow-sm">
-                    <span className="text-white font-bold text-[10px]">RF</span>
+                    <span className="text-[var(--foreground)] font-bold text-[10px]">RF</span>
                   </div>
                   
                   {/* App Name */}
@@ -266,7 +266,7 @@ function RealisticHeroImage({
               delay: 2.5
             }}
           >
-            <div className="relative bg-white/95 backdrop-blur-md rounded-full shadow-lg border border-gray-200/50 overflow-hidden w-[160px] h-[40px] mt-4">
+            <div className="relative bg-[var(--card)] backdrop-blur-md rounded-full shadow-lg border border-gray-200/50 overflow-hidden w-[160px] h-[40px] mt-4">
               {/* Stage 1: Green Checkmark (shows first) */}
               <motion.div
                 initial={{ opacity: 1, x: 0 }}
@@ -294,7 +294,7 @@ function RealisticHeroImage({
                   }}
                   className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center"
                 >
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 text-[var(--foreground)]" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </motion.div>
@@ -347,7 +347,7 @@ function RealisticHeroImage({
             }}
           >
             <div className="bg-emerald-500/95 backdrop-blur-md rounded-full px-4 py-2 shadow-lg">
-              <span className="text-xs font-semibold text-white">Approved in 3 min</span>
+              <span className="text-xs font-semibold text-[var(--foreground)]">Approved in 3 min</span>
             </div>
           </motion.div>
         </motion.div>
@@ -377,7 +377,7 @@ function RealisticHeroImage({
               delay: 0.2
             }}
           >
-            <div className="w-9 h-9 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center justify-center border border-gray-200/50">
+            <div className="w-9 h-9 rounded-full bg-[var(--card)] backdrop-blur-md shadow-lg flex items-center justify-center border border-gray-200/50">
               <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
               </svg>

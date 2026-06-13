@@ -74,7 +74,7 @@ export default function PartnershipBenefits() {
           <span className="inline-block text-emerald-400 text-xs font-semibold tracking-widest uppercase border border-emerald-400/30 rounded-full px-4 py-1 mb-4">
             Why Partner With Us
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--foreground)] leading-tight">
             Built for{" "}
             <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
               Growth Together
@@ -93,8 +93,8 @@ export default function PartnershipBenefits() {
             return (
               <div
                 key={i}
-                className="pbf-card group flex gap-5 bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8
-                  hover:border-emerald-400/40 hover:bg-white/[0.07]
+                className="pbf-card group flex gap-5 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 sm:p-8
+                  hover:border-emerald-400/40 hover:bg-[var(--card)]/[0.07]
                   hover:shadow-[0_0_30px_rgba(0,239,100,0.08)]
                   transition duration-300"
               >
@@ -105,7 +105,7 @@ export default function PartnershipBenefits() {
 
                 {/* Content */}
                 <div>
-                  <h3 className="text-white font-semibold text-base sm:text-lg leading-snug">
+                  <h3 className="text-[var(--foreground)] font-semibold text-base sm:text-lg leading-snug">
                     {item.title}
                   </h3>
                   <p className="text-gray-400 text-sm mt-2 leading-relaxed">
@@ -118,10 +118,10 @@ export default function PartnershipBenefits() {
         </div>
 
         {/* CTA row */}
-        <div className="pbf-cta mt-10 sm:mt-14 flex flex-col sm:flex-row items-center justify-between gap-5 border-t border-white/10 pt-10 sm:pt-12">
+        <div className="pbf-cta mt-10 sm:mt-14 flex flex-col sm:flex-row items-center justify-between gap-5 border-t border-[var(--border)] pt-10 sm:pt-12">
           <p className="text-gray-400 text-sm sm:text-base max-w-md text-center sm:text-left">
             Ready to build the future of financial services together?{" "}
-            <span className="text-white font-medium">Join our partner ecosystem.</span>
+            <span className="text-[var(--foreground)] font-medium">Join our partner ecosystem.</span>
           </p>
           <MainCTA label="Become a Partner" destination="/contact" />
         </div>

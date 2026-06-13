@@ -59,7 +59,7 @@ const loanTypes = [
 
 export default function LoanTypesSection() {
   return (
-    <section className="relative bg-white py-20 md:py-28 overflow-hidden">
+    <section className="relative bg-[var(--card)] py-20 md:py-28 overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -122,10 +122,10 @@ export default function LoanTypesSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: typeIndex * 0.1 }}
                     viewport={{ once: true }}
-                    className="group relative bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2"
+                    className="group relative bg-[var(--card)] rounded-3xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2"
                   >
                     {/* Amount Badge */}
-                    <div className="absolute -top-3 right-6 px-4 py-1.5 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-bold shadow-lg">
+                    <div className="absolute -top-3 right-6 px-4 py-1.5 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-[var(--foreground)] text-sm font-bold shadow-lg">
                       {type.amount}
                     </div>
 

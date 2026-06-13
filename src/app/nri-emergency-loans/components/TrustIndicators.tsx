@@ -29,7 +29,7 @@ const indicators = [
 
 export default function TrustIndicators() {
   return (
-    <section className="relative bg-white py-20 md:py-28 overflow-hidden">
+    <section className="relative bg-[var(--card)] py-20 md:py-28 overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -57,7 +57,7 @@ export default function TrustIndicators() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="flex items-start gap-4 bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg"
+              className="flex items-start gap-4 bg-[var(--card)] rounded-2xl p-6 border-2 border-gray-100 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg"
             >
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center flex-shrink-0">
                 <Image src={indicator.icon} alt={indicator.title} width={24} height={24} />

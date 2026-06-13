@@ -14,7 +14,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-[var(--card)]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

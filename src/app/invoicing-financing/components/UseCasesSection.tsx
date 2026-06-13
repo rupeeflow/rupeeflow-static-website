@@ -33,7 +33,7 @@ const useCases = [
 
 export default function UseCasesSection() {
   return (
-    <section className="relative bg-white py-20 md:py-28 overflow-hidden">
+    <section className="relative bg-[var(--card)] py-20 md:py-28 overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -63,7 +63,7 @@ export default function UseCasesSection() {
               viewport={{ once: true }}
               className={`flex flex-col ${
                 index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-              } gap-8 items-center bg-white rounded-3xl p-8 md:p-10 border-2 border-gray-100 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10`}
+              } gap-8 items-center bg-[var(--card)] rounded-3xl p-8 md:p-10 border-2 border-gray-100 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10`}
             >
               {/* Image Side */}
               <div className="flex-1 flex justify-center items-center">
@@ -88,7 +88,7 @@ export default function UseCasesSection() {
                 </p>
                 <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-2xl p-5">
                   <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-[var(--card)] flex items-center justify-center flex-shrink-0">
                       <Image
                         src="/features/shield.svg"
                         alt="Success"

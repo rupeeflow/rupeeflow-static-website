@@ -14,6 +14,7 @@ import ERPIcon from '../../../public/icons/salary-disbursment/ERPIcon'
 import MultiSupportIcon from '../../../public/icons/salary-disbursment/MultiSupportIcon'
 import WalletIcon from '../../../public/icons/salary-disbursment/WalletIcon'
 import SalaryFaq from '@/components/sections/salaryDisbursement/SalaryFaq'
+import Button from '@/components/ui/Button'
 
 /* ─────────────────────────────────────────────
    MOCKUP COMPONENTS
@@ -28,13 +29,13 @@ function BulkUploadMockup() {
     { name: 'Kunal Das', role: 'Marketing', amount: '₹72,000', status: 'pending' },
   ]
   return (
-    <div className="w-full bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
+    <div className="w-full bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
       <div className="bg-gradient-to-r from-emerald-500 to-teal-500 px-5 py-4 flex items-center justify-between">
         <div>
-          <p className="text-white text-xs font-semibold opacity-80">January 2025 Payroll</p>
-          <p className="text-white text-lg font-bold">₹12,45,000</p>
+          <p className="text-[var(--foreground)] text-xs font-semibold opacity-80">January 2025 Payroll</p>
+          <p className="text-[var(--foreground)] text-lg font-bold">₹12,45,000</p>
         </div>
-        <motion.button whileTap={{ scale: 0.95 }} className="bg-white text-emerald-600 text-xs font-bold px-4 py-2 rounded-full shadow">
+        <motion.button whileTap={{ scale: 0.95 }} className="bg-[var(--card)] text-emerald-600 text-xs font-bold px-4 py-2 rounded-full shadow">
           Pay All →
         </motion.button>
       </div>
@@ -85,7 +86,7 @@ function ApprovalFlowMockup() {
     { role: 'CFO', action: 'Final Authorization', user: 'Sunita R.', done: false },
   ]
   return (
-    <div className="w-full bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
+    <div className="w-full bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
       <div className="px-5 pt-5 pb-4 border-b border-gray-100">
         <div className="flex items-center justify-between mb-1">
           <p className="text-sm font-bold text-gray-800">Salary Batch #2025-01</p>
@@ -98,7 +99,7 @@ function ApprovalFlowMockup() {
           <div key={step.role} className="flex gap-4">
             <div className="flex flex-col items-center">
               <motion.div
-                className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${step.done ? 'bg-emerald-500 text-white' : 'bg-gray-100 text-gray-400 border-2 border-dashed border-gray-300'}`}
+                className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${step.done ? 'bg-emerald-500 text-[var(--foreground)]' : 'bg-gray-100 text-gray-400 border-2 border-dashed border-gray-300'}`}
                 initial={{ scale: 0.8 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
@@ -122,7 +123,7 @@ function ApprovalFlowMockup() {
         ))}
       </div>
       <div className="px-5 pb-5 flex gap-2">
-        <motion.button whileHover={{ scale: 1.02 }} className="flex-1 bg-emerald-500 text-white text-xs font-bold py-2.5 rounded-xl">
+        <motion.button whileHover={{ scale: 1.02 }} className="flex-1 bg-emerald-500 text-[var(--foreground)] text-xs font-bold py-2.5 rounded-xl">
           Approve & Release
         </motion.button>
         <motion.button whileHover={{ scale: 1.02 }} className="px-4 bg-gray-100 text-gray-500 text-xs font-bold py-2.5 rounded-xl">
@@ -143,7 +144,7 @@ function TrackingMockup() {
     { time: '10:08 AM', label: 'All payments settled', sub: '387/387 successful', color: 'bg-emerald-500' },
   ]
   return (
-    <div className="w-full bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
+    <div className="w-full bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
       <div className="px-5 pt-5 pb-3 flex items-center justify-between border-b border-gray-100">
         <p className="text-sm font-bold text-gray-800">Live Payroll Status</p>
         <span className="flex items-center gap-1.5 text-[10px] font-semibold text-emerald-600">
@@ -199,7 +200,7 @@ function IntegrationsMockup() {
     { name: 'GreytHR', color: 'bg-orange-50 border-orange-200 text-orange-600' },
   ]
   return (
-    <div className="w-full bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
+    <div className="w-full bg-[var(--card)] rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
       <div className="px-5 pt-5 pb-3 border-b border-gray-100">
         <p className="text-sm font-bold text-gray-800">Connected Platforms</p>
         <p className="text-[10px] text-gray-400 mt-0.5">Sync employee data automatically</p>
@@ -222,7 +223,7 @@ function IntegrationsMockup() {
       <div className="px-5 pb-5">
         <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3 flex items-center gap-3">
           <div className="w-7 h-7 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-            <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-3.5 h-3.5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
           </div>
@@ -244,7 +245,7 @@ export default function SalaryDisbursementPage() {
     <div className="w-full relative">
 
       {/* ── HERO SECTION — Text Left / Image Right ── */}
-      <section className="relative min-h-screen bg-[#020506] overflow-hidden flex items-center">
+      <section className="relative min-h-screen bg-[var(--background)] overflow-hidden flex items-center">
         {/* Spotlights */}
         <div
           className="absolute -left-[100px] top-[10%] w-[400px] h-[400px] rounded-full opacity-50 blur-[120px] pointer-events-none"
@@ -275,7 +276,7 @@ export default function SalaryDisbursementPage() {
               <span className="text-emerald-400 text-xs font-semibold tracking-widest uppercase">Salary Disbursements</span>
             </motion.div>
 
-            <h1 className="fontheading text-2xl sm:text-5xl lg:text-[2.2rem] leading-tight text-white mb-6">
+            <h1 className="fontheading text-2xl sm:text-5xl lg:text-[2.2rem] leading-tight text-[var(--foreground)] mb-6">
               Bulk <span className="text-emerald-400">Salary Disbursement</span>
               <br />in One Click
             </h1>
@@ -310,17 +311,13 @@ export default function SalaryDisbursementPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <Link
-                href="#"
-                className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full text-white font-semibold text-sm transition-all duration-300 shadow-lg border border-white/10"
-                style={{ background: 'linear-gradient(135deg, #53BEC2 0%, #00EF64 100%)' }}
-              >
-                <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
+              <Button href="#" className="px-8 py-3.5 text-sm font-semibold bg-gradient-to-r from-[#53BEC2] to-[#00EF64] text-[var(--foreground)]">
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--card)]" />
                 Pay Your Employees
-              </Link>
+              </Button>
               {/* <Link
                 href="#"
-                className="px-8 py-3.5 rounded-full border border-emerald-500/50 text-white font-semibold text-sm hover:bg-emerald-500/10 transition-colors"
+                className="px-8 py-3.5 rounded-full border border-emerald-500/50 text-[var(--foreground)] font-semibold text-sm hover:bg-emerald-500/10 transition-colors"
               >
                 See a Demo →
               </Link> */}
@@ -350,14 +347,14 @@ export default function SalaryDisbursementPage() {
               />
               {/* Floating badges */}
               <motion.div
-                className="absolute top-8 -left-4 bg-white text-gray-800 text-xs font-bold px-4 py-2 rounded-full shadow-lg border border-gray-100"
+                className="absolute top-8 -left-4 bg-[var(--card)] text-gray-800 text-xs font-bold px-4 py-2 rounded-full shadow-lg border border-gray-100"
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
               >
                 ✓ 387 Paid
               </motion.div>
               <motion.div
-                className="absolute bottom-12 -right-4 bg-emerald-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg"
+                className="absolute bottom-12 -right-4 bg-emerald-500 text-[var(--foreground)] text-xs font-bold px-4 py-2 rounded-full shadow-lg"
                 animate={{ y: [0, 5, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
               >
@@ -503,7 +500,7 @@ export default function SalaryDisbursementPage() {
       </section>
 
       {/* ── FEATURES GRID ── */}
-      <section className="relative py-24 bg-white">
+      <section className="relative py-24 bg-[var(--card)]">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             className="text-center mb-16"
@@ -532,7 +529,7 @@ export default function SalaryDisbursementPage() {
             ].map(({ Icon, title, desc }, i) => (
               <motion.div
                 key={title}
-                className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-shadow text-center"
+                className="bg-[var(--card)] border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-shadow text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

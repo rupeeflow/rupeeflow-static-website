@@ -41,7 +41,7 @@ const benefits = [
 
 export default function BenefitsGrid() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-[var(--card)]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export default function BenefitsGrid() {
                 key={index}
                 variants={staggerItem}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                className="bg-white border-2 border-gray-100 rounded-2xl p-6 md:p-8 hover:shadow-xl hover:border-emerald-100 transition-all duration-300"
+                className="bg-[var(--card)] border-2 border-gray-100 rounded-2xl p-6 md:p-8 hover:shadow-xl hover:border-emerald-100 transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center mb-4">
                   <Icon className="w-7 h-7 text-emerald-600" />
@@ -139,7 +139,7 @@ export default function BenefitsGrid() {
                     y: 5,
                     transition: { duration: 0.4 }
                   }}
-                  className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[252px] h-10 bg-black/40 rounded-full blur-2xl"
+                  className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[252px] h-10 bg-[var(--background)]/40 rounded-full blur-2xl"
                   style={{ transform: "translateZ(-50px)" }}
                 />
 
@@ -178,7 +178,7 @@ export default function BenefitsGrid() {
                   />
 
                   {/* Screen */}
-                  <div className="relative w-full h-full bg-white rounded-[2rem] overflow-hidden shadow-inner">
+                  <div className="relative w-full h-full bg-[var(--card)] rounded-[2rem] overflow-hidden shadow-inner">
                     {/* Status Bar */}
                     <div className="absolute top-0 left-0 right-0 h-9 bg-gradient-to-b from-gray-50 to-transparent z-20 flex items-center justify-between px-4">
                       <span className="text-[9px] font-semibold text-gray-900">9:41</span>
@@ -190,7 +190,7 @@ export default function BenefitsGrid() {
                     </div>
 
                     {/* App Header */}
-                    <div className="absolute top-9 left-0 right-0 bg-white border-b border-gray-100 p-2.5 z-10">
+                    <div className="absolute top-9 left-0 right-0 bg-[var(--card)] border-b border-gray-100 p-2.5 z-10">
                       <h3 className="text-xs font-bold text-gray-900">Payment Reminders</h3>
                       <p className="text-[9px] text-gray-500">Automated Collection</p>
                     </div>
@@ -212,7 +212,7 @@ export default function BenefitsGrid() {
                           initial={{ x: 200, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ delay: 1, duration: 0.4 }}
-                          className="bg-white rounded-xl shadow-md border border-gray-100 p-3"
+                          className="bg-[var(--card)] rounded-xl shadow-md border border-gray-100 p-3"
                         >
                           <div className="flex items-start gap-2">
                             <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0">
@@ -240,7 +240,7 @@ export default function BenefitsGrid() {
                           initial={{ x: 200, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ delay: 1.3, duration: 0.4 }}
-                          className="bg-white rounded-xl shadow-md border border-gray-100 p-3"
+                          className="bg-[var(--card)] rounded-xl shadow-md border border-gray-100 p-3"
                         >
                           <div className="flex items-start gap-2">
                             <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
@@ -265,7 +265,7 @@ export default function BenefitsGrid() {
                           initial={{ x: 200, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ delay: 1.6, duration: 0.4 }}
-                          className="bg-white rounded-xl shadow-md border border-gray-100 p-3"
+                          className="bg-[var(--card)] rounded-xl shadow-md border border-gray-100 p-3"
                         >
                           <div className="flex items-start gap-2">
                             <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
@@ -295,7 +295,7 @@ export default function BenefitsGrid() {
                           initial={{ x: 200, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ delay: 1.9, duration: 0.4 }}
-                          className="bg-white rounded-xl shadow-md border border-gray-100 p-3"
+                          className="bg-[var(--card)] rounded-xl shadow-md border border-gray-100 p-3"
                         >
                           <div className="flex items-start gap-2">
                             <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0">
@@ -323,7 +323,7 @@ export default function BenefitsGrid() {
                           initial={{ x: 200, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ delay: 2.2, duration: 0.4 }}
-                          className="bg-white rounded-xl shadow-md border border-gray-100 p-3"
+                          className="bg-[var(--card)] rounded-xl shadow-md border border-gray-100 p-3"
                         >
                           <div className="flex items-start gap-2">
                             <div className="w-8 h-8 rounded-lg bg-yellow-100 flex items-center justify-center flex-shrink-0">
@@ -352,7 +352,7 @@ export default function BenefitsGrid() {
                           initial={{ x: 200, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ delay: 2.5, duration: 0.4 }}
-                          className="bg-white rounded-xl shadow-md border border-gray-100 p-3"
+                          className="bg-[var(--card)] rounded-xl shadow-md border border-gray-100 p-3"
                         >
                           <div className="flex items-start gap-2">
                             <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center flex-shrink-0">
@@ -370,7 +370,7 @@ export default function BenefitsGrid() {
                                   ]
                                 }}
                                 transition={{ duration: 2, repeat: Infinity }}
-                                className="mt-1 px-3 py-1 bg-indigo-500 text-white text-[9px] rounded-md font-medium"
+                                className="mt-1 px-3 py-1 bg-indigo-500 text-[var(--foreground)] text-[9px] rounded-md font-medium"
                               >
                                 Pay Now
                               </motion.button>

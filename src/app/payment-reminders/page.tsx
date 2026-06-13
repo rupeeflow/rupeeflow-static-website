@@ -52,7 +52,7 @@ export default function PaymentRemindersPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-[#020506] text-white">
+      <section className="bg-[var(--background)] text-[var(--foreground)]">
         <Container className="py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -98,7 +98,7 @@ export default function PaymentRemindersPage() {
             {/* RIGHT DASHBOARD WITH FLOATING LIVE CARD */}
             <div className="relative">
 
-              <div className="bg-white rounded-2xl shadow-xl p-10 border border-gray-200">
+              <div className="bg-[var(--card)] rounded-2xl shadow-xl p-10 border border-gray-200">
                 <p className="text-gray-400 text-sm mb-6">Reminder Timeline</p>
 
                 {[
@@ -117,11 +117,11 @@ export default function PaymentRemindersPage() {
               <motion.div
                 animate={{ y: [0, -12, 0] }}
                 transition={{ duration: 6, repeat: Infinity }}
-                className="absolute -bottom-8 right-8 bg-white shadow-lg rounded-xl p-4 border"
+                className="absolute -bottom-8 right-8 bg-[var(--card)] shadow-lg rounded-xl p-4 border"
               >
                 <p className="text-xs text-gray-400">Reminder Message</p>
                 <p className="text-sm font-medium mt-1">Pay ₹12,000</p>
-                <button className="mt-2 bg-emerald-500 text-white px-3 py-1 rounded text-xs">
+                <button className="mt-2 bg-emerald-500 text-[var(--foreground)] px-3 py-1 rounded text-xs">
                   Pay Now
                 </button>
               </motion.div>
@@ -243,7 +243,7 @@ export default function PaymentRemindersPage() {
                   <p className="text-sm text-gray-400">Reminder Message</p>
                   <BellRing className="text-emerald-500" size={20} />
                 </div>
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="bg-[var(--card)] rounded-lg p-4 border border-gray-200">
                   <p className="text-lg font-semibold text-gray-800">Pay ₹12,000</p>
                   <p className="text-sm text-gray-600 mt-1">for Invoice #4582</p>
                   <div className="mt-3 p-2 bg-emerald-50 rounded border border-emerald-200">
@@ -252,7 +252,7 @@ export default function PaymentRemindersPage() {
                   <motion.button 
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="mt-4 w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-2.5 rounded-lg font-medium shadow-lg hover:shadow-xl transition-shadow"
+                    className="mt-4 w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] px-4 py-2.5 rounded-lg font-medium shadow-lg hover:shadow-xl transition-shadow"
                   >
                     Pay Now
                   </motion.button>
@@ -351,7 +351,7 @@ export default function PaymentRemindersPage() {
       </section>
 
       {/* SMART PAYMENT INTELLIGENCE */}
-      <section className="py-28 bg-white">
+      <section className="py-28 bg-[var(--card)]">
         <Container>
           <div className="grid md:grid-cols-2 gap-16 items-center">
 
@@ -365,7 +365,7 @@ export default function PaymentRemindersPage() {
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 5, repeat: Infinity }}
-                className="absolute -bottom-6 right-8 bg-white border shadow-lg rounded-xl p-4 text-sm"
+                className="absolute -bottom-6 right-8 bg-[var(--card)] border shadow-lg rounded-xl p-4 text-sm"
               >
                 <p className="text-gray-400 text-xs">Live Insights</p>
                 Late Risk <span className="text-amber-500">Medium</span><br/>
@@ -387,7 +387,7 @@ export default function PaymentRemindersPage() {
                 <li>• Identify high-risk accounts</li>
               </ul>
 
-              <button className="mt-8 px-6 py-2.5 bg-emerald-500 text-white rounded-lg hover:scale-105 transition">
+              <button className="mt-8 px-6 py-2.5 bg-emerald-500 text-[var(--foreground)] rounded-lg hover:scale-105 transition">
                 View Insights →
               </button>
             </div>
@@ -419,7 +419,7 @@ export default function PaymentRemindersPage() {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 6, repeat: Infinity }}
-              className="bg-white rounded-2xl shadow-lg p-8"
+              className="bg-[var(--card)] rounded-2xl shadow-lg p-8"
             >
               <p className="text-sm text-gray-400 mb-4">Escalation Workflow</p>
 

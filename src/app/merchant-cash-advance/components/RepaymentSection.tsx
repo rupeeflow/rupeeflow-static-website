@@ -64,7 +64,7 @@ export default function RepaymentSection() {
                 whileHover={{ scale: 1.02, x: 10 }}
                 className="relative group"
               >
-                <div className="relative bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 overflow-hidden">
+                <div className="relative bg-[var(--card)] rounded-3xl p-6 border-2 border-gray-100 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 overflow-hidden">
                   {/* Gradient Overlay */}
                   <motion.div 
                     className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-teal-500/0"
@@ -175,10 +175,10 @@ export default function RepaymentSection() {
                 animate={{ y: [0, -8, 0] }}
                 style={{ animationDuration: '3s', animationIterationCount: 'infinite' }}
               >
-                <div className="bg-white rounded-2xl shadow-xl border-2 border-emerald-500/20 p-3 backdrop-blur-sm">
+                <div className="bg-[var(--card)] rounded-2xl shadow-xl border-2 border-emerald-500/20 p-3 backdrop-blur-sm">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-4 h-4 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
@@ -199,10 +199,10 @@ export default function RepaymentSection() {
                 animate={{ x: [0, -8, 0] }}
                 style={{ animationDuration: '4s', animationIterationCount: 'infinite' }}
               >
-                <div className="bg-white rounded-2xl shadow-xl border-2 border-teal-500/20 p-3 backdrop-blur-sm">
+                <div className="bg-[var(--card)] rounded-2xl shadow-xl border-2 border-teal-500/20 p-3 backdrop-blur-sm">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-4 h-4 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
@@ -226,7 +226,7 @@ export default function RepaymentSection() {
           className="bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-3xl p-6 md:p-8"
         >
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 rounded-2xl bg-[var(--card)] flex items-center justify-center flex-shrink-0">
               <Image
                 src="/features/shield.svg"
                 alt="Smart Repayment"

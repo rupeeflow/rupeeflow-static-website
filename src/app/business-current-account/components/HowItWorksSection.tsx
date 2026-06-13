@@ -84,7 +84,7 @@ export default function HowItWorksSection() {
 
               <div className="relative z-10 text-center">
                 {/* Step Number */}
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 text-white text-2xl font-bold mb-4 shadow-lg">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 text-[var(--foreground)] text-2xl font-bold mb-4 shadow-lg">
                   {step.number}
                 </div>
 
@@ -114,7 +114,7 @@ export default function HowItWorksSection() {
         >
           <a
             href="/contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-base hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold text-base hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
           >
             Start Your Application
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

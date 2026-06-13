@@ -41,11 +41,11 @@ export default function IntegrationMockup() {
           >
             <span className="text-purple-400">const</span>{' '}
             <span className="text-blue-300">rupeeflow</span>{' '}
-            <span className="text-white">=</span>{' '}
+            <span className="text-[var(--foreground)]">=</span>{' '}
             <span className="text-yellow-300">require</span>
-            <span className="text-white">(</span>
+            <span className="text-[var(--foreground)]">(</span>
             <span className="text-green-400">&apos;rupeeflow&apos;</span>
-            <span className="text-white">);</span>
+            <span className="text-[var(--foreground)]">);</span>
           </motion.div>
 
           <motion.div
@@ -65,14 +65,14 @@ export default function IntegrationMockup() {
           >
             <span className="text-purple-400">const</span>{' '}
             <span className="text-blue-300">payment</span>{' '}
-            <span className="text-white">=</span>{' '}
+            <span className="text-[var(--foreground)]">=</span>{' '}
             <span className="text-purple-400">await</span>{' '}
             <span className="text-blue-300">rupeeflow</span>
-            <span className="text-white">.</span>
+            <span className="text-[var(--foreground)]">.</span>
             <span className="text-yellow-300">payments</span>
-            <span className="text-white">.</span>
+            <span className="text-[var(--foreground)]">.</span>
             <span className="text-yellow-300">create</span>
-            <span className="text-white">(&#123;</span>
+            <span className="text-[var(--foreground)]">(&#123;</span>
           </motion.div>
 
           <motion.div
@@ -82,9 +82,9 @@ export default function IntegrationMockup() {
             className="ml-4"
           >
             <span className="text-blue-300">amount</span>
-            <span className="text-white">:</span>{' '}
+            <span className="text-[var(--foreground)]">:</span>{' '}
             <span className="text-orange-400">50000</span>
-            <span className="text-white">,</span>
+            <span className="text-[var(--foreground)]">,</span>
           </motion.div>
 
           <motion.div
@@ -94,9 +94,9 @@ export default function IntegrationMockup() {
             className="ml-4"
           >
             <span className="text-blue-300">currency</span>
-            <span className="text-white">:</span>{' '}
+            <span className="text-[var(--foreground)]">:</span>{' '}
             <span className="text-green-400">&apos;INR&apos;</span>
-            <span className="text-white">,</span>
+            <span className="text-[var(--foreground)]">,</span>
           </motion.div>
 
           <motion.div
@@ -106,7 +106,7 @@ export default function IntegrationMockup() {
             className="ml-4"
           >
             <span className="text-blue-300">method</span>
-            <span className="text-white">:</span>{' '}
+            <span className="text-[var(--foreground)]">:</span>{' '}
             <span className="text-green-400">&apos;upi&apos;</span>
           </motion.div>
 
@@ -115,7 +115,7 @@ export default function IntegrationMockup() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1.4 }}
           >
-            <span className="text-white">&#125;);</span>
+            <span className="text-[var(--foreground)]">&#125;);</span>
           </motion.div>
 
           {/* Response */}
@@ -127,27 +127,27 @@ export default function IntegrationMockup() {
           >
             <div className="text-gray-400 text-xs mb-2">{`// Response`}</div>
             <div>
-              <span className="text-white">&#123;</span>
+              <span className="text-[var(--foreground)]">&#123;</span>
             </div>
             <div className="ml-4">
               <span className="text-blue-300">id</span>
-              <span className="text-white">:</span>{' '}
+              <span className="text-[var(--foreground)]">:</span>{' '}
               <span className="text-green-400">&apos;pay_abc123&apos;</span>
-              <span className="text-white">,</span>
+              <span className="text-[var(--foreground)]">,</span>
             </div>
             <div className="ml-4">
               <span className="text-blue-300">status</span>
-              <span className="text-white">:</span>{' '}
+              <span className="text-[var(--foreground)]">:</span>{' '}
               <span className="text-green-400">&apos;success&apos;</span>
-              <span className="text-white">,</span>
+              <span className="text-[var(--foreground)]">,</span>
             </div>
             <div className="ml-4">
               <span className="text-blue-300">amount</span>
-              <span className="text-white">:</span>{' '}
+              <span className="text-[var(--foreground)]">:</span>{' '}
               <span className="text-orange-400">50000</span>
             </div>
             <div>
-              <span className="text-white">&#125;</span>
+              <span className="text-[var(--foreground)]">&#125;</span>
             </div>
           </motion.div>
         </div>
@@ -158,7 +158,7 @@ export default function IntegrationMockup() {
         initial={{ opacity: 0, scale: 0.8, x: 20, y: 20 }}
         animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
         transition={{ duration: 0.5, delay: 2 }}
-        className="absolute -top-4 -right-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2"
+        className="absolute -top-4 -right-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-[var(--foreground)] px-4 py-2 rounded-full shadow-lg flex items-center gap-2"
       >
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

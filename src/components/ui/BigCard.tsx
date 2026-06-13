@@ -1,6 +1,7 @@
 import React from 'react'
 import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
+import Button from '@/components/ui/Button'
 
 interface FeatureCardProps {
   title: string
@@ -66,10 +67,10 @@ const BigCard: React.FC<FeatureCardProps> = ({
 
         {/* Button */}
         <div className="flex mx-12 justify-end">
-          <button className="flex items-center gap-2 border-2 border-green-800 text-green-800 px-[10px] py-[5px]  font-bold rounded-xl hover:bg-green-50 transition">
+          <Button className="px-4 py-2 font-bold">
             LEARN MORE
-            <ChevronRight className="text-green-600 w-5 h-5" />
-          </button>
+            <ChevronRight className="text-white w-5 h-5" />
+          </Button>
         </div>
       </div>
     </div>

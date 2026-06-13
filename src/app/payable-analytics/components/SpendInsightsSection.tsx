@@ -41,7 +41,7 @@ const insights = [
 
 export default function SpendInsightsSection() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-[var(--card)]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,7 +76,7 @@ export default function SpendInsightsSection() {
               >
                 <div className="flex items-start gap-4">
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-${insight.color}-500 to-${insight.color}-600 flex items-center justify-center flex-shrink-0 shadow-lg`}>
-                    <Icon className="w-6 h-6 text-white" />
+                    <Icon className="w-6 h-6 text-[var(--foreground)]" />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-gray-900 mb-1">{insight.title}</h3>

@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import Button from '@/components/ui/Button'
 import { motion } from 'framer-motion'
 import { Calculator } from 'lucide-react'
 import CheckMarkIcon from '../../../public/icons/payment-button/CheckMarkIcon'
@@ -26,7 +27,7 @@ export default function LendingBanner() {
             Smart Lending
           </span>
 
-          <h2 className="text-white text-2xl font-semibold leading-snug mb-3">
+          <h2 className="text-[var(--foreground)] text-2xl font-semibold leading-snug mb-3">
             Get upto <span className="text-emerald-400">₹50L credit</span> instantly with our smart lending plans
           </h2>
           <p className="text-gray-400 text-sm mb-6">
@@ -34,10 +35,10 @@ export default function LendingBanner() {
           </p>
 
           <Link href="/contact" className="inline-block relative overflow-hidden px-8 py-3 rounded-full font-semibold text-black group">
-            <span className="absolute inset-0 bg-white -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+            <span className="absolute inset-0 bg-[var(--card)] -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
             <span className="absolute inset-0 bg-gradient-to-r from-[#0bbf7d] to-[#4ade80] group-hover:opacity-0 transition-opacity duration-300" />
             <span className="relative z-10 flex items-center gap-2">
-              <span className="w-2.5 h-2.5 bg-white rounded-full" />
+              <span className="w-2.5 h-2.5 bg-[var(--card)] rounded-full" />
               Apply Now
             </span>
           </Link>
@@ -46,7 +47,7 @@ export default function LendingBanner() {
         {/* ── Mini loan cards (horizontal scroll) ── */}
         <div className="relative z-10 px-5 pb-6 flex gap-3 overflow-x-auto scrollbar-hide">
           {/* Loan Calculator card */}
-          <div className="bg-white rounded-2xl shadow-lg p-4 min-w-[200px] border border-gray-100 shrink-0">
+          <div className="bg-[var(--card)] rounded-2xl shadow-lg p-4 min-w-[200px] border border-gray-100 shrink-0">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-6 h-6 rounded-lg bg-emerald-50 flex items-center justify-center">
                 <Calculator size={12} className="text-emerald-600" />
@@ -75,7 +76,7 @@ export default function LendingBanner() {
           </div>
 
           {/* Check Eligibility card */}
-          <div className="bg-white rounded-2xl shadow-lg p-4 min-w-[180px] border border-gray-100 shrink-0">
+            <div className="bg-[var(--card)] rounded-2xl shadow-lg p-4 min-w-[180px] border border-gray-100 shrink-0">
             <p className="text-xs font-bold text-gray-800 mb-2">Check Eligibility</p>
             <div className="space-y-2">
               {eligibilityItems.map(item => (
@@ -85,15 +86,15 @@ export default function LendingBanner() {
                 </div>
               ))}
             </div>
-            <button className="mt-3 w-full text-[11px] bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-full py-1.5 font-semibold">
+            <Button className="mt-3 w-full text-[11px] py-1.5 font-semibold">
               Check Now →
-            </button>
+            </Button>
           </div>
 
           {/* Loan Approved card */}
-          <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl shadow-lg p-4 min-w-[160px] text-white shrink-0">
+          <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl shadow-lg p-4 min-w-[160px] text-[var(--foreground)] shrink-0">
             <div className="flex items-center gap-1.5 mb-1">
-              <span className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center">
+              <span className="w-4 h-4 rounded-full bg-[var(--card)] flex items-center justify-center">
                 <CheckMarkIcon width={10} height={10} style={{ filter: 'brightness(0) invert(1)' }} />
               </span>
               <span className="text-xs font-bold">Approved!</span>
@@ -101,7 +102,7 @@ export default function LendingBanner() {
             <p className="text-xl font-bold mt-1">₹10,00,000</p>
             <p className="text-[11px] opacity-80 mt-1">In 2 hours</p>
             <div className="mt-2 pt-2 border-t border-white/20 text-[11px] opacity-90 flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-white/70 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--card)] animate-pulse" />
               EMI starts 30 days later
             </div>
           </div>
@@ -124,7 +125,7 @@ export default function LendingBanner() {
       {/* ════════════════════════════════════════
           DESKTOP LAYOUT  (hidden below lg)
       ════════════════════════════════════════ */}
-      <section className="hidden lg:block relative w-full bg-black overflow-hidden min-h-[790px]">
+      <section className="hidden lg:block relative w-full bg-[var(--background)] overflow-hidden min-h-[790px]">
 
         {/* Background Image */}
         <Image
@@ -139,20 +140,20 @@ export default function LendingBanner() {
         <div className="relative z-10 max-w-[1200px] mx-auto px-10 py-28 flex flex-row items-center gap-10">
 
           {/* LEFT: Glass box */}
-          <div className="bg-black/60 backdrop-blur-xl rounded-[32px] p-6 max-w-[480px] mt-96 shrink-0">
-            <h2 className="text-white text-4xl md:text-5xl font-semibold leading-tight">
+          <div className="bg-[var(--background)]/60 backdrop-blur-xl rounded-[32px] p-6 max-w-[480px] mt-96 shrink-0">
+            <h2 className="text-[var(--foreground)] text-4xl md:text-5xl font-semibold leading-tight">
               Get upto 50L credit instantly
               with our{' '}
               <span className="text-emerald-400">smart lending</span> plans
             </h2>
-            <p className="mt-6 text-gray-300 text-lg">
+            <p className="mt-6 text-gray-700 text-lg">
               Whether you are a NRI, SMB or a vendor
             </p>
             <Link href="/contact" className="mt-10 inline-block relative overflow-hidden px-10 py-4 rounded-full font-semibold text-black group">
-              <span className="absolute inset-0 bg-white -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+              <span className="absolute inset-0 bg-[var(--card)] -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
               <span className="absolute inset-0 bg-gradient-to-r from-[#0bbf7d] to-[#4ade80] group-hover:opacity-0 transition-opacity duration-300" />
               <span className="relative z-10 flex items-center gap-2 transition-all duration-300 group-hover:-translate-x-2">
-                <span className="w-3 h-3 bg-white rounded-full" />
+                <span className="w-3 h-3 bg-[var(--card)] rounded-full" />
                 Apply Now
               </span>
             </Link>
@@ -168,7 +169,7 @@ export default function LendingBanner() {
               className="stat-card"
               style={{ transform: 'rotate(-3deg)' }}
             >
-              <div className="bg-white rounded-2xl shadow-2xl p-4 w-[240px] border border-gray-100">
+              <div className="bg-[var(--card)] rounded-2xl shadow-2xl p-4 w-[240px] border border-gray-100">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center">
                     <Calculator size={14} className="text-emerald-600" />
@@ -205,7 +206,7 @@ export default function LendingBanner() {
               transition={{ duration: 0.6, delay: 0.25, ease: 'easeOut' }}
               style={{ transform: 'rotate(2deg)' }}
             >
-              <div className="bg-white rounded-2xl shadow-2xl p-4 w-[230px] border border-gray-100">
+              <div className="bg-[var(--card)] rounded-2xl shadow-2xl p-4 w-[230px] border border-gray-100">
                 <p className="text-sm font-bold text-gray-800 mb-3">Check Eligibility</p>
                 <div className="space-y-2.5">
                   {eligibilityItems.map(item => (
@@ -215,9 +216,9 @@ export default function LendingBanner() {
                     </div>
                   ))}
                 </div>
-                <button className="mt-4 w-full text-xs bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-full py-2 font-semibold hover:opacity-90 transition-opacity">
+                <Button className="mt-4 w-full text-xs py-2 font-semibold">
                   Check Now →
-                </button>
+                </Button>
               </div>
             </motion.div>
 
@@ -228,9 +229,9 @@ export default function LendingBanner() {
               transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
               style={{ transform: 'rotate(-2deg)' }}
             >
-              <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl shadow-2xl p-4 w-[230px] text-white">
+              <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl shadow-2xl p-4 w-[230px] text-[var(--foreground)]">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+                  <span className="w-5 h-5 rounded-full bg-[var(--card)] flex items-center justify-center">
                     <CheckMarkIcon width={12} height={12} style={{ filter: 'brightness(0) invert(1)' }} />
                   </span>
                   <span className="text-sm font-bold">Loan Approved!</span>
@@ -238,7 +239,7 @@ export default function LendingBanner() {
                 <p className="text-2xl font-bold mt-1">₹10,00,000</p>
                 <p className="text-xs opacity-80 mt-1">Disbursed in 2 hours</p>
                 <div className="mt-3 pt-2 border-t border-white/20 text-xs opacity-90 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/70 animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--card)] animate-pulse" />
                   EMI starts 30 days later
                 </div>
               </div>

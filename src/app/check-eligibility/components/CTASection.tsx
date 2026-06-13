@@ -13,7 +13,7 @@ export default function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white rounded-3xl p-8 md:p-12 border-2 border-gray-100 shadow-xl text-center"
+            className="bg-[var(--card)] rounded-3xl p-8 md:p-12 border-2 border-gray-100 shadow-xl text-center"
           >
             {/* Icon */}
             <motion.div
@@ -23,7 +23,7 @@ export default function CTASection() {
               viewport={{ once: true }}
               className="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mx-auto mb-6"
             >
-              <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-10 h-10 text-[var(--foreground)]" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
             </motion.div>
@@ -61,9 +61,9 @@ export default function CTASection() {
             >
               <a
                 href="#calculator"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-base hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-[var(--foreground)] font-bold text-base hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
               >
-                <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--card)] animate-pulse" />
                 Check Eligibility Again
               </a>
               <a

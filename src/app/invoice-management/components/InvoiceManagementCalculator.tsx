@@ -42,7 +42,7 @@ export default function InvoiceManagementCalculator() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-[var(--card)]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -121,7 +121,7 @@ export default function InvoiceManagementCalculator() {
 
                 <button
                   onClick={calculateSavings}
-                  className="w-full px-6 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
                 >
                   <TrendingUp className="w-5 h-5" />
                   Calculate Improvements
@@ -141,28 +141,28 @@ export default function InvoiceManagementCalculator() {
 
               {showResults ? (
                 <div className="space-y-6">
-                  <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
+                  <div className="bg-[var(--card)] rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Approval Time Reduction</p>
                     <p className="text-4xl font-bold text-emerald-600">
                       <AnimatedCounter value={results.approvalTimeReduction} suffix=" days" />
                     </p>
                   </div>
 
-                  <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
+                  <div className="bg-[var(--card)] rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Processing Speed Increase</p>
                     <p className="text-4xl font-bold text-emerald-600">
                       <AnimatedCounter value={results.processingSpeedUp} suffix="%" />
                     </p>
                   </div>
 
-                  <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
+                  <div className="bg-[var(--card)] rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Visibility Score</p>
                     <p className="text-4xl font-bold text-emerald-600">
                       <AnimatedCounter value={results.visibilityScore} suffix="%" />
                     </p>
                   </div>
 
-                  <div className="bg-white rounded-xl p-6 border-2 border-emerald-100">
+                  <div className="bg-[var(--card)] rounded-xl p-6 border-2 border-emerald-100">
                     <p className="text-sm text-gray-600 mb-2">Compliance Score</p>
                     <p className="text-4xl font-bold text-emerald-600">
                       <AnimatedCounter value={results.complianceScore} suffix="%" />

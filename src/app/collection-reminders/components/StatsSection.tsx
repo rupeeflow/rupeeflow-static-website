@@ -42,7 +42,7 @@ export default function StatsSection() {
             <motion.div
               key={index}
               variants={staggerItem}
-              className="text-center bg-white rounded-2xl p-6 md:p-8 border-2 border-emerald-100"
+              className="text-center bg-[var(--card)] rounded-2xl p-6 md:p-8 border-2 border-emerald-100"
             >
               <div className="text-4xl md:text-5xl font-bold text-emerald-600 mb-2">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />

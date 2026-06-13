@@ -33,7 +33,7 @@ export default function ReconciliationVisual() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-2xl p-6 border-2 border-blue-200"
+              className="bg-[var(--card)] rounded-2xl p-6 border-2 border-blue-200"
             >
               <h3 className="font-bold text-lg mb-4 text-blue-600">Bank Transactions</h3>
               <div className="space-y-3">
@@ -94,7 +94,7 @@ export default function ReconciliationVisual() {
                   }}
                   className="absolute -top-2 -right-2 w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-white" />
+                  <CheckCircle2 className="w-4 h-4 text-[var(--foreground)]" />
                 </motion.div>
               </div>
               <p className="text-sm font-semibold text-emerald-600 mt-4">Auto-Matching</p>
@@ -107,7 +107,7 @@ export default function ReconciliationVisual() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-2xl p-6 border-2 border-emerald-200"
+              className="bg-[var(--card)] rounded-2xl p-6 border-2 border-emerald-200"
             >
               <h3 className="font-bold text-lg mb-4 text-emerald-600">Invoices</h3>
               <div className="space-y-3">
@@ -129,7 +129,7 @@ export default function ReconciliationVisual() {
                         <p className="text-xs text-gray-500">{inv.id}</p>
                         <p className="text-sm font-semibold">₹{inv.amount.toLocaleString()}</p>
                       </div>
-                      <div className="px-2 py-1 bg-emerald-500 text-white text-xs rounded-full">
+                      <div className="px-2 py-1 bg-emerald-500 text-[var(--foreground)] text-xs rounded-full">
                         {inv.status}
                       </div>
                     </div>

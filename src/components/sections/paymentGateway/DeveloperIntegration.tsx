@@ -118,7 +118,7 @@ export default function DeveloperIntegration() {
                   borderColor: '#30F3BC',
                 }}
                 transition={{ type: 'spring', stiffness: 280, damping: 20 }}
-                className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm cursor-default"
+                className="bg-[var(--card)] rounded-2xl p-6 border border-gray-100 shadow-sm cursor-default"
                 style={{ transformStyle: 'preserve-3d', perspective: 800 }}
               >
                 {/* Icon Container */}
@@ -181,7 +181,7 @@ export default function DeveloperIntegration() {
 
             {/* Developer Friendly bottom badge */}
             <motion.div
-              className="absolute bottom-6 right-2 bg-white rounded-2xl shadow-xl p-4 z-20 w-[180px]"
+              className="absolute bottom-6 right-2 bg-[var(--card)] rounded-2xl shadow-xl p-4 z-20 w-[180px]"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5.2, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
               style={{ boxShadow: '0 16px 40px rgba(0,0,0,0.12)' }}
@@ -213,7 +213,7 @@ function FloatingFeatureCard({
 }) {
   return (
     <motion.div
-      className="absolute bg-white rounded-xl shadow-xl z-20 flex items-center gap-2.5 px-3 py-2.5 min-w-[150px]"
+      className="absolute bg-[var(--card)] rounded-xl shadow-xl z-20 flex items-center gap-2.5 px-3 py-2.5 min-w-[150px]"
       style={{
         ...cardStyle,
         boxShadow: '0 12px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(48,243,188,0.08)',

@@ -40,7 +40,7 @@ export default function EligibilityCalculator() {
   }
 
   return (
-    <section id="calculator" className="relative bg-white py-20 md:py-28 overflow-hidden">
+    <section id="calculator" className="relative bg-[var(--card)] py-20 md:py-28 overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -136,7 +136,7 @@ export default function EligibilityCalculator() {
             {/* Calculate Button */}
             <button
               onClick={handleCalculate}
-              className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-lg hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-[1.02]"
+              className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-[var(--foreground)] font-bold text-lg hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-[1.02]"
             >
               Calculate Eligibility
             </button>
@@ -158,11 +158,11 @@ export default function EligibilityCalculator() {
                     result.eligible ? 'bg-emerald-500' : 'bg-red-500'
                   }`}>
                     {result.eligible ? (
-                      <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-6 h-6 text-[var(--foreground)]" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                     ) : (
-                      <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-6 h-6 text-[var(--foreground)]" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                       </svg>
                     )}
@@ -181,7 +181,7 @@ export default function EligibilityCalculator() {
                     {result.eligible && (
                       <a
                         href="#apply"
-                        className="inline-block mt-4 px-6 py-2 rounded-lg bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-colors"
+                        className="inline-block mt-4 px-6 py-2 rounded-lg bg-emerald-600 text-[var(--foreground)] font-semibold text-sm hover:bg-emerald-700 transition-colors"
                       >
                         Apply Now
                       </a>

@@ -44,7 +44,7 @@ const cardVariants = {
 
 export default function FeesComparison() {
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-white overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[var(--card)] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Heading */}
         <motion.div
@@ -81,7 +81,7 @@ export default function FeesComparison() {
                   borderColor: '#30F3BC',
                 }}
                 transition={{ type: 'spring', stiffness: 280, damping: 22 }}
-                className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col gap-3 cursor-default"
+                className="bg-[var(--card)] rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col gap-3 cursor-default"
                 style={{ transformStyle: 'preserve-3d', perspective: 800 }}
               >
                 {/* Icon */}
@@ -143,7 +143,7 @@ export default function FeesComparison() {
             transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
           >
             <motion.div
-              className="bg-white rounded-3xl border border-gray-100 shadow-2xl p-6 overflow-hidden"
+              className="bg-[var(--card)] rounded-3xl border border-gray-100 shadow-2xl p-6 overflow-hidden"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
               style={{ boxShadow: '0 32px 64px rgba(0,0,0,0.1), 0 8px 24px rgba(48,243,188,0.06)' }}
@@ -163,7 +163,7 @@ export default function FeesComparison() {
                       key={tab}
                       className={`px-3 py-1 rounded-md transition-all ${
                         tab === 'Week'
-                          ? 'bg-white text-gray-900 shadow-sm'
+                          ? 'bg-[var(--card)] text-gray-900 shadow-sm'
                           : 'text-gray-400 hover:text-gray-600'
                       }`}
                     >
@@ -176,7 +176,7 @@ export default function FeesComparison() {
               {/* Chart Area */}
               <div className="relative rounded-2xl bg-[#f8fffe] border border-[#e6faf6] p-4">
                 {/* Financial Monitoring Badge */}
-                <div className="absolute top-3 right-3 bg-white rounded-lg px-3 py-1.5 shadow-sm border border-gray-100 flex items-center gap-1.5">
+                <div className="absolute top-3 right-3 bg-[var(--card)] rounded-lg px-3 py-1.5 shadow-sm border border-gray-100 flex items-center gap-1.5">
                   <div className="w-2 h-2 rounded-full bg-[#30F3BC]" />
                   <span className="text-xs font-semibold text-gray-700">Financial Monitoring</span>
                 </div>

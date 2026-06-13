@@ -220,7 +220,7 @@ export default function CareersContent() {
   }
 
   return (
-    <section className="py-20 bg-black-emerald">
+    <section className="py-20 bg-[var(--background)]">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Company Culture Section */}
         <motion.div
@@ -249,7 +249,7 @@ export default function CareersContent() {
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative">
                   <div className="text-emerald-400 mb-4">{value.icon}</div>
-                  <h3 className="text-2xl fontheading text-white mb-3">{value.title}</h3>
+                  <h3 className="text-2xl fontheading text-[var(--foreground)] mb-3">{value.title}</h3>
                   <p className="text-gray-400 fontbody2 leading-relaxed">{value.description}</p>
                 </div>
               </motion.div>
@@ -282,7 +282,7 @@ export default function CareersContent() {
                 className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-teal-500/20 rounded-xl p-6 hover:border-teal-500/40 transition-all duration-300 hover:transform hover:-translate-y-1"
               >
                 <div className="text-teal-400 mb-4">{benefit.icon}</div>
-                <h3 className="text-xl fontheading text-white mb-2">{benefit.title}</h3>
+                <h3 className="text-xl fontheading text-[var(--foreground)] mb-2">{benefit.title}</h3>
                 <p className="text-gray-400 fontbody2 text-sm leading-relaxed">{benefit.description}</p>
               </motion.div>
             ))}
@@ -320,7 +320,7 @@ export default function CareersContent() {
                         <Briefcase className="w-6 h-6 text-emerald-400" />
                       </div>
                       <div>
-                        <h3 className="text-2xl fontheading text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                        <h3 className="text-2xl fontheading text-[var(--foreground)] mb-2 group-hover:text-emerald-400 transition-colors">
                           {job.title}
                         </h3>
                         <div className="flex flex-wrap gap-3 text-sm text-gray-400 fontbody2">
@@ -340,7 +340,7 @@ export default function CareersContent() {
                       </div>
                     </div>
 
-                    <p className="text-gray-300 fontbody mb-6">{job.description}</p>
+                    <p className="text-gray-700 fontbody mb-6">{job.description}</p>
 
                     {/* Responsibilities */}
                     <div className="mb-6">
@@ -373,7 +373,7 @@ export default function CareersContent() {
                   <div className="lg:min-w-[200px] flex lg:flex-col gap-3">
                     <a
                       href={`mailto:careers@rupeeflow.co?subject=Application for ${job.title}`}
-                      className="flex-1 lg:flex-none px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white fontheading rounded-xl hover:from-emerald-500 hover:to-teal-500 transition-all duration-300 text-center group-hover:shadow-lg group-hover:shadow-emerald-500/20"
+                      className="flex-1 lg:flex-none px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-[var(--foreground)] fontheading rounded-xl hover:from-emerald-500 hover:to-teal-500 transition-all duration-300 text-center group-hover:shadow-lg group-hover:shadow-emerald-500/20"
                     >
                       Apply Now
                     </a>
@@ -394,7 +394,7 @@ export default function CareersContent() {
             variants={item}
             className="mt-12 text-center bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-emerald-500/20 rounded-2xl p-12"
           >
-            <h3 className="text-2xl fontheading text-white mb-4">
+            <h3 className="text-2xl fontheading text-[var(--foreground)] mb-4">
               Don&apos;t see a perfect fit?
             </h3>
             <p className="text-gray-400 fontbody mb-6 max-w-2xl mx-auto">
@@ -402,7 +402,7 @@ export default function CareersContent() {
             </p>
             <a
               href="mailto:careers@rupeeflow.co?subject=General Application"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-teal-600 to-emerald-600 text-white fontheading rounded-xl hover:from-teal-500 hover:to-emerald-500 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-teal-600 to-emerald-600 text-[var(--foreground)] fontheading rounded-xl hover:from-teal-500 hover:to-emerald-500 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20"
             >
               Send General Application
             </a>

@@ -153,7 +153,7 @@ export default function AddonsSection() {
       <section className="py-12 sm:py-16 lg:py-24 bg-gray-50">
         <Container>
           <div className="as-rates-header text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-            <span className="inline-block text-emerald-600 text-xs font-semibold tracking-widest uppercase border border-emerald-200 rounded-full px-4 py-1 mb-4 bg-white">
+            <span className="inline-block text-emerald-600 text-xs font-semibold tracking-widest uppercase border border-emerald-200 rounded-full px-4 py-1 mb-4 bg-[var(--card)]">
               Service Rates
             </span>
             <h2 className="rf-h2 text-gray-900">
@@ -171,7 +171,7 @@ export default function AddonsSection() {
             {serviceRates.map(({ category, desc, icon: Icon, iconColor, bgColor, color, services }) => (
               <div
                 key={category}
-                className="as-rate-card bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-500/10 transition duration-300"
+                className="as-rate-card bg-[var(--card)] border border-gray-200 rounded-2xl overflow-hidden hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-500/10 transition duration-300"
               >
                 {/* card header */}
                 <div className={`flex items-center gap-4 px-6 py-5 border-b border-gray-100`}>
@@ -216,7 +216,7 @@ export default function AddonsSection() {
 
 
       {/* ── COMPARISON TABLE — white ── */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-[var(--card)]">
         <Container>
           <div className="as-comp-header text-center max-w-2xl mx-auto mb-10 sm:mb-14">
             <h2 className="rf-h2 text-gray-900">
@@ -247,7 +247,7 @@ export default function AddonsSection() {
                       Popular
                     </span>
                     <p className="text-emerald-400 text-xs font-bold uppercase tracking-wider">Growth</p>
-                    <p className="text-white font-black text-lg mt-0.5">₹2,499</p>
+                    <p className="text-[var(--foreground)] font-black text-lg mt-0.5">₹2,499</p>
                     <p className="text-gray-400 text-xs">/month</p>
                   </th>
                   <th className="px-4 py-4 text-center">
@@ -260,7 +260,7 @@ export default function AddonsSection() {
 
               <tbody>
                 {comparison.map((row, i) => (
-                  <tr key={row.feature} className={`as-table-row border-b border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
+                  <tr key={row.feature} className={`as-table-row border-b border-gray-100 ${i % 2 === 0 ? 'bg-[var(--card)]' : 'bg-gray-50/50'}`}>
                     <td className="px-6 py-3.5 text-gray-700 text-sm font-medium">{row.feature}</td>
 
                     {/* Starter */}
@@ -268,7 +268,7 @@ export default function AddonsSection() {
                       {row.starter === true ? (
                         <CheckCircle2 size={16} className="text-emerald-500 mx-auto" />
                       ) : row.starter === false ? (
-                        <X size={16} className="text-gray-300 mx-auto" />
+                        <X size={16} className="text-gray-700 mx-auto" />
                       ) : (
                         <span className="text-gray-600 text-xs font-medium">{row.starter}</span>
                       )}
@@ -279,7 +279,7 @@ export default function AddonsSection() {
                       {row.growth === true ? (
                         <CheckCircle2 size={16} className="text-emerald-500 mx-auto" />
                       ) : row.growth === false ? (
-                        <X size={16} className="text-gray-300 mx-auto" />
+                        <X size={16} className="text-gray-700 mx-auto" />
                       ) : (
                         <span className="text-emerald-600 text-xs font-semibold">{row.growth}</span>
                       )}
@@ -290,7 +290,7 @@ export default function AddonsSection() {
                       {row.enterprise === true ? (
                         <CheckCircle2 size={16} className="text-emerald-500 mx-auto" />
                       ) : row.enterprise === false ? (
-                        <X size={16} className="text-gray-300 mx-auto" />
+                        <X size={16} className="text-gray-700 mx-auto" />
                       ) : (
                         <span className="text-gray-600 text-xs font-medium">{row.enterprise}</span>
                       )}
@@ -307,13 +307,13 @@ export default function AddonsSection() {
       {/* ── BOTTOM CTA — dark ── */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-[#0C1F18] to-[#0a1a0f]">
         <Container>
-          <div className="as-cta-inner rounded-3xl border border-emerald-500/20 bg-white/5 p-6 sm:p-8 lg:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+          <div className="as-cta-inner rounded-3xl border border-emerald-500/20 bg-[var(--card)] p-6 sm:p-8 lg:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
 
             <div className="max-w-xl">
               <p className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">
                 Not sure which plan?
               </p>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[var(--foreground)] leading-tight">
                 Talk to Us — We&apos;ll Build the{' '}
                 <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                   Right Plan
@@ -332,7 +332,7 @@ export default function AddonsSection() {
                   'Live sandbox access',
                   'No commitment required',
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 text-gray-300 text-sm">
+                  <li key={item} className="flex items-center gap-2.5 text-gray-700 text-sm">
                     <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
                     {item}
                   </li>

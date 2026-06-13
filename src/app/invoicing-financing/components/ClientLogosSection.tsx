@@ -41,7 +41,7 @@ export default function ClientLogosSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="text-center bg-white rounded-2xl p-6 border-2 border-gray-100"
+              className="text-center bg-[var(--card)] rounded-2xl p-6 border-2 border-gray-100"
             >
               <div className="text-3xl md:text-4xl font-bold text-indigo-600 mb-2">
                 {stat.number}

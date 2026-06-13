@@ -35,7 +35,7 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-[var(--card)]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -118,7 +118,7 @@ export default function HowItWorksSection() {
               whileInView={{ x: 0, opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3, type: "spring" }}
-              className="absolute left-[2%] top-[15%] w-48 bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl border-2 border-blue-100 p-3 hidden lg:block"
+              className="absolute left-[2%] top-[15%] w-48 bg-[var(--card)] backdrop-blur-sm rounded-xl shadow-2xl border-2 border-blue-100 p-3 hidden lg:block"
               style={{ zIndex: 2 }}
             >
               <div className="flex items-center gap-2 mb-3">
@@ -183,7 +183,7 @@ export default function HowItWorksSection() {
               whileInView={{ x: 0, opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.5, type: "spring" }}
-              className="absolute right-[2%] top-[15%] w-52 bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl border-2 border-emerald-100 p-3 hidden lg:block"
+              className="absolute right-[2%] top-[15%] w-52 bg-[var(--card)] backdrop-blur-sm rounded-xl shadow-2xl border-2 border-emerald-100 p-3 hidden lg:block"
               style={{ zIndex: 2 }}
             >
               <div className="flex items-center gap-2 mb-3">
@@ -245,7 +245,7 @@ export default function HowItWorksSection() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 1 }}
-              className="absolute bottom-[5%] left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-4 bg-white/95 backdrop-blur-sm rounded-full px-6 py-3 shadow-2xl border-2 border-emerald-100"
+              className="absolute bottom-[5%] left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-4 bg-[var(--card)] backdrop-blur-sm rounded-full px-6 py-3 shadow-2xl border-2 border-emerald-100"
               style={{ zIndex: 2 }}
             >
               <div className="flex items-center gap-2">
@@ -294,7 +294,7 @@ export default function HowItWorksSection() {
                     variants={staggerItem}
                     className="relative text-center"
                   >
-                    <div className="relative z-10 w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                    <div className="relative z-10 w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-[var(--foreground)] font-bold text-xl shadow-lg">
                       <Icon className="w-8 h-8" />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
@@ -315,7 +315,7 @@ export default function HowItWorksSection() {
                   variants={staggerItem}
                   className="flex gap-4"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold shadow-lg">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-[var(--foreground)] font-bold shadow-lg">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>

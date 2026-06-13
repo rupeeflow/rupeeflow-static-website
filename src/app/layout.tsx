@@ -8,6 +8,7 @@ import Footer from '@/components/ui/footer'
 import SmoothScrollProvider from '@/lib/smoothScrollProvider'
 import Marquee from '@/components/sections/MarqueeSection'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+import ScrollProgressBar from '@/components/ui/ScrollProgressBar'
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     template: '%s | RupeeFlow',
   },
   description:
-    'RupeeFlow is India\'s all-in-one fintech platform. Accept payments via Payment Gateway, UPI, Payment Links, Smart POS, QR Code & Payment Button. Send money with Vendor Payouts, Salary Disbursements, Bulk Transfers, Bill Payments & Invoice Management. Get business credit with Merchant Cash Advance, Invoice Financing & NRI Loans.',
+    "RupeeFlow is India's all-in-one fintech platform. Accept payments via Payment Gateway, UPI, Payment Links, Smart POS, QR Code & Payment Button. Send money with Vendor Payouts, Salary Disbursements, Bulk Transfers, Bill Payments & Invoice Management. Get business credit with Merchant Cash Advance, Invoice Financing & NRI Loans.",
   keywords: [
     'payment gateway India',
     'UPI collections',
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     creator: '@rupeeflow',
     title: 'RupeeFlow — Payments, Payouts & Business Credit for India',
     description:
-      'India\'s all-in-one fintech platform for payment collection, vendor payouts, salary disbursements, and business credit.',
+      "India's all-in-one fintech platform for payment collection, vendor payouts, salary disbursements, and business credit.",
   },
   robots: {
     index: true,
@@ -115,7 +116,8 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="antialiased bg-white dark:bg-[#0B0F0E] text-gray-900 dark:text-gray-100 overflow-x-hidden transition-colors duration-300">
+      <body className="antialiased bg-[var(--card)] dark:bg-[#0B0F0E] text-gray-900 dark:text-gray-100 overflow-x-hidden transition-colors duration-300">
+        <ScrollProgressBar />
         <ThemeProvider>
           <SmoothScrollProvider>
             <Navbar />

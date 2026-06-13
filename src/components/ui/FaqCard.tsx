@@ -18,7 +18,7 @@ export default function FaqCard({ question, answer }: FaqCardProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
       className={`border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 ${
-        open ? 'bg-emerald-50' : 'bg-white'
+        open ? 'bg-emerald-50' : 'bg-[var(--card)]'
       }`}
     >
       <button

@@ -44,7 +44,7 @@ export default function BankingPartnershipsPage() {
                 Banking Partnerships
               </span>
 
-              <h1 className="rf-h1 text-white leading-tight mt-2">
+              <h1 className="rf-h1 text-[var(--foreground)] leading-tight mt-2">
                 Banking{" "}
                 <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                   Partnerships
@@ -89,9 +89,9 @@ export default function BankingPartnershipsPage() {
                 {heroStats.map(({ value, label }) => (
                   <div
                     key={label}
-                    className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col gap-1 hover:border-emerald-400/30 transition duration-300"
+                    className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 sm:p-6 flex flex-col gap-1 hover:border-emerald-400/30 transition duration-300"
                   >
-                    <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white">{value}</p>
+                    <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--foreground)]">{value}</p>
                     <p className="text-xs text-gray-400">{label}</p>
                   </div>
                 ))}
@@ -102,7 +102,7 @@ export default function BankingPartnershipsPage() {
                 {["ISO 27001"].map((b) => (
                   <span
                     key={b}
-                    className="flex items-center gap-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-full px-3 py-1"
+                    className="flex items-center gap-1.5 bg-[var(--card)] border border-[var(--border)] text-gray-300 text-xs rounded-full px-3 py-1"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
                     {b}
@@ -116,7 +116,7 @@ export default function BankingPartnershipsPage() {
       </section>
 
       {/* ── SOLUTION PANEL — white bg ── */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-[var(--card)]">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-14">
             <h2 className="rf-h2 text-gray-900">
@@ -192,7 +192,7 @@ export default function BankingPartnershipsPage() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="relative bg-white border border-gray-200 rounded-2xl p-6 sm:p-8
+                className="relative bg-[var(--card)] border border-gray-200 rounded-2xl p-6 sm:p-8
                   hover:border-emerald-500 hover:shadow-xl hover:shadow-emerald-500/10
                   transition duration-300 group"
               >
@@ -220,9 +220,9 @@ export default function BankingPartnershipsPage() {
       {/* ── BOTTOM CTA BAND — dark ── */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-[#0C1F18] to-[#0a1a0f]">
         <Container>
-          <div className="rounded-3xl border border-emerald-500/20 bg-white/5 p-6 sm:p-8 lg:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
+          <div className="rounded-3xl border border-emerald-500/20 bg-[var(--card)] p-6 sm:p-8 lg:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
             <div>
-              <h3 className="rf-h2 text-white">Build the future of digital banking</h3>
+              <h3 className="rf-h2 text-[var(--foreground)]">Build the future of digital banking</h3>
               <p className="rf-lead text-gray-400 mt-3 max-w-xl">
                 Partner with us to deliver secure, scalable financial innovation to your customers.
               </p>

@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2, Users } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] bg-[#020506] text-white overflow-hidden flex items-center">
+    <section className="relative min-h-[90vh] bg-[var(--background)] text-[var(--foreground)] overflow-hidden flex items-center">
       {/* Animated circles background */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         {[...Array(20)].map((_, i) => (
@@ -53,21 +53,21 @@ export default function HeroSection() {
               Optimization
             </h1>
 
-            <p className="fontbody2 text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="fontbody2 text-xl text-gray-700 mb-8 leading-relaxed">
               Build stronger vendor relationships, capture early payment discounts, and streamline onboarding with centralized vendor management.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Link
                 href="/contact"
-                className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 inline-flex items-center justify-center gap-2"
+                className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 inline-flex items-center justify-center gap-2"
               >
                 Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/demo"
-                className="px-8 py-4 border-2 border-emerald-500/50 text-white font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200"
+                className="px-8 py-4 border-2 border-emerald-500/50 text-[var(--foreground)] font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200"
               >
                 View Demo
               </Link>
@@ -75,7 +75,7 @@ export default function HeroSection() {
 
             <div className="flex flex-wrap gap-6">
               {['Centralized database', 'Performance tracking', 'Discount capture'].map((feature, index) => (
-                <div key={index} className="flex items-center gap-2 text-gray-300">
+                <div key={index} className="flex items-center gap-2 text-gray-700">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                   <span className="text-sm">{feature}</span>
                 </div>
@@ -106,7 +106,7 @@ export default function HeroSection() {
                   className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border-2 border-emerald-500/30 shadow-xl"
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-[var(--foreground)] font-bold">
                       {vendor.name.charAt(vendor.name.length - 1)}
                     </div>
                     <div className={`px-2 py-1 bg-${vendor.color}-500/20 text-${vendor.color}-400 text-xs rounded-full`}>

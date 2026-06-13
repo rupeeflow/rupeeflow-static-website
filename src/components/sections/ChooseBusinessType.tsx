@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
+import Button from '@/components/ui/Button'
 import Image from 'next/image'
 import { useGSAP } from '@gsap/react'
 import { gsap, ScrollTrigger } from '@/lib/gsap'
@@ -62,7 +63,7 @@ export default function ChooseBusinessType() {
   }, { scope: sectionRef })
 
   return (
-    <section ref={sectionRef} className="relative bg-white dark:bg-gray-900 py-8 overflow-hidden transition-colors duration-300">
+    <section ref={sectionRef} className="relative bg-[var(--card)] dark:bg-gray-900 py-8 overflow-hidden transition-colors duration-300">
 
       {/* BIG WAVE — hidden on mobile to avoid overflow */}
       <Image
@@ -77,7 +78,7 @@ export default function ChooseBusinessType() {
       <div className="relative z-[10] max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8">
 
         {/* Heading */}
-        <div className="cbt-heading text-center text-black dark:text-white mb-8 sm:mb-14 transition-colors duration-300">
+        <div className="cbt-heading text-center text-black dark:text-[var(--foreground)] mb-8 sm:mb-14 transition-colors duration-300">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
             Choose Your Business Type
           </h2>
@@ -86,23 +87,23 @@ export default function ChooseBusinessType() {
           </p>
         </div>
 
-        {/* Cards — single col on mobile, 2 cols on sm+ */}
-        <div className="cbt-cards grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 md:gap-10">
+        {/* Cards — single col on mobile, 2 cols on sm+; ensure equal height cards */}
+        <div className="cbt-cards grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 md:gap-10 auto-rows-fr">
           {businessCards.map((card, i) => (
             <div
               key={i}
-              className={`cbt-card relative rounded-[18px] sm:rounded-[22px] border p-5 sm:p-7 md:p-10 min-h-[200px] sm:min-h-[260px] overflow-hidden transition-colors duration-300
+              className={`cbt-card relative rounded-[18px] sm:rounded-[22px] border p-5 sm:p-7 md:p-10 min-h-[200px] sm:min-h-[220px] overflow-hidden transition-colors duration-300 h-full flex flex-col
               ${
                 card.active
-                  ? 'border-emerald-500 border-2 bg-white dark:bg-gray-800'
-                  : 'border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-800/70 backdrop-blur-[12px]'
+                  ? 'border-emerald-500 border-2 bg-[var(--card)] dark:bg-gray-800'
+                  : 'border-gray-300 dark:border-gray-700 bg-[var(--card)] dark:bg-gray-800/70 backdrop-blur-[12px]'
               }`}
             >
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 pr-28 sm:pr-32 md:pr-40 text-black dark:text-white transition-colors duration-300">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 pr-28 sm:pr-32 md:pr-40 text-black dark:text-[var(--foreground)] transition-colors duration-300">
                 {card.title}
               </h3>
 
-              <ul className="space-y-2 sm:space-y-3 text-gray-700 dark:text-gray-300 text-sm sm:text-base pr-28 sm:pr-32 md:pr-40 transition-colors duration-300">
+              <ul className="space-y-2 sm:space-y-3 text-black dark:text-gray-300 text-sm sm:text-base pr-28 sm:pr-32 md:pr-40 transition-colors duration-300">
                 {card.items.map((item, j) => (
                   <li key={j} className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 shrink-0" />
@@ -117,22 +118,12 @@ export default function ChooseBusinessType() {
                 alt={card.title}
                 width={180}
                 height={180}
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-[100px] sm:w-[130px] md:w-[160px] pointer-events-none"
+                className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none object-contain w-[120px] sm:w-[120px] md:w-[120px]"
               />
 
-              <Link
-                href={card.link}
-                className="mt-5 sm:mt-0 sm:absolute sm:bottom-4 sm:right-6 z-20
-                           inline-flex items-center gap-2
-                           px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm
-                           bg-gradient-to-r from-[#054C38] to-[#2AB871]
-                           text-white
-                           transition-all duration-300
-                           hover:scale-105 hover:shadow-lg
-                           active:scale-95"
-              >
+              <Button href={card.link} className="mt-5 sm:mt-0 sm:absolute sm:bottom-4 sm:right-6 z-20 px-4 sm:px-5 py-2 text-xs sm:text-sm">
                 See Solution →
-              </Link>
+              </Button>
             </div>
           ))}
         </div>

@@ -39,7 +39,7 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-[var(--card)]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -77,7 +77,7 @@ export default function HowItWorksSection() {
                   className="relative"
                 >
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-16 h-16 rounded-full bg-emerald-500 text-white flex items-center justify-center text-2xl font-bold mb-4 relative z-10 shadow-lg">
+                    <div className="w-16 h-16 rounded-full bg-emerald-500 text-[var(--foreground)] flex items-center justify-center text-2xl font-bold mb-4 relative z-10 shadow-lg">
                       {step.number}
                     </div>
                     <div className="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center mb-4">
@@ -106,7 +106,7 @@ export default function HowItWorksSection() {
                 className="flex gap-4 bg-gray-50 rounded-xl p-6"
               >
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xl font-bold">
+                  <div className="w-12 h-12 rounded-full bg-emerald-500 text-[var(--foreground)] flex items-center justify-center text-xl font-bold">
                     {step.number}
                   </div>
                 </div>

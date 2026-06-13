@@ -65,12 +65,12 @@ export default function ReminderMockup({ className = '' }: MockupProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 blur-2xl rounded-3xl" />
       
       {/* Reminder notifications card */}
-      <div className="relative bg-white rounded-2xl shadow-xl border border-gray-200 p-6 max-w-sm mx-auto">
+      <div className="relative bg-[var(--card)] rounded-2xl shadow-xl border border-gray-200 p-6 max-w-sm mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center relative">
-              <Bell className="w-5 h-5 text-white" />
+              <Bell className="w-5 h-5 text-[var(--foreground)]" />
               {/* Notification badge */}
               <motion.div
                 animate={{
@@ -83,7 +83,7 @@ export default function ReminderMockup({ className = '' }: MockupProps) {
                 }}
                 className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center border-2 border-white"
               >
-                <span className="text-xs font-bold text-white">3</span>
+                <span className="text-xs font-bold text-[var(--foreground)]">3</span>
               </motion.div>
             </div>
             <div>
@@ -106,7 +106,7 @@ export default function ReminderMockup({ className = '' }: MockupProps) {
               <div className="flex items-start gap-3">
                 {/* Icon */}
                 <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${reminder.color} flex items-center justify-center flex-shrink-0`}>
-                  <reminder.icon className="w-5 h-5 text-white" />
+                  <reminder.icon className="w-5 h-5 text-[var(--foreground)]" />
                 </div>
                 
                 {/* Content */}

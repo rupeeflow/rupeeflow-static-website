@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Button from '@/components/ui/Button'
 import Container from '@/components/ui/Container'
 
 const cards = [
@@ -80,12 +81,12 @@ export default function CollectMoney() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-black pt-8 sm:pt-10 pb-8 sm:pb-10 overflow-hidden min-h-screen flex items-center"
+      className="relative bg-[var(--background)] pt-8 sm:pt-10 pb-8 sm:pb-10 overflow-hidden min-h-screen flex items-center"
     >
       <Container className="relative">
         {/* Hero */}
         <div className="cm-heading relative text-center mb-12 md:mb-20 z-10 px-4">
-          <h1 className="rf-h1 text-white max-w-6xl mx-auto text-center">
+          <h1 className="rf-h1 text-[var(--foreground)] max-w-6xl mx-auto text-center">
             India&apos;s First Platform with{' '}
             <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
               End-to-End Payments
@@ -97,7 +98,7 @@ export default function CollectMoney() {
             together
           </h1>
 
-          <p className="mt-4 md:mt-6 rf-lead text-gray-400 text-center">
+          <p className="mt-4 md:mt-6 rf-lead text-black text-center">
             Everything Your Business Needs In One Place
           </p>
 
@@ -111,10 +112,12 @@ export default function CollectMoney() {
           />
         </div>
 
+        
+
         {/* Collect Money Pill */}
         <div className="cm-pill relative w-[260px] sm:w-[320px] h-[46px] sm:h-[60px] mt-8 sm:mt-16 md:mt-40 z-10 mx-4 md:mx-0">
-          <div className="absolute inset-0 rounded-[18px] rounded-tr-[260px] sm:rounded-tr-[320px] bg-gradient-to-r from-[#055949] to-[#109F58]" />
-          <span className="absolute left-5 sm:left-8 top-1/2 -translate-y-1/2 text-white text-[14px] sm:text-[20px] font-semibold tracking-wide">
+          <div className="absolute inset-0 rounded-[18px] rounded-tr-[260px] sm:rounded-tr-[320px] bg-gradient-to-r from-[var(--primary)] to-[var(--accent)]" />
+          <span className="absolute left-5 sm:left-8 top-1/2 -translate-y-1/2 text-black text-[14px] sm:text-[20px] font-semibold tracking-wide">
             COLLECT MONEY
           </span>
         </div>
@@ -124,15 +127,11 @@ export default function CollectMoney() {
           {cards.map((card, i) => (
             <div
               key={i}
-              className="cm-card group relative min-h-[200px] md:h-[220px] flex flex-col backdrop-blur-sm rounded-2xl p-5 md:p-6 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[0_0_40px_rgba(83,190,194,0.3)] hover:-translate-y-1"
-              style={{ background: '#122427BF' }}
+              className="cm-card group relative min-h-[200px] md:h-[220px] flex flex-col rounded-2xl p-5 md:p-6 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 bg-[var(--card)] border border-[var(--border)]"
             >
               {/* Border — white at rest, gradient on hover */}
-              <div className="absolute inset-0 rounded-2xl p-[2px] transition-all duration-300 ease-in-out bg-gradient-to-r from-white/20 via-white/20 to-white/20 group-hover:from-[#53BEC2] group-hover:via-[#00EF64] group-hover:to-[#53BEC2]">
-                <div
-                  className="h-full w-full rounded-2xl transition-all duration-300 ease-in-out"
-                  style={{ background: '#122427BF' }}
-                />
+              <div className="absolute inset-0 rounded-2xl p-[2px] transition-all duration-300 ease-in-out bg-[var(--card)]">
+                <div className="h-full w-full rounded-2xl transition-all duration-300 ease-in-out bg-[var(--card)]" />
               </div>
 
               {/* Content */}
@@ -145,21 +144,16 @@ export default function CollectMoney() {
                   className="absolute top-0 right-0 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 transition-transform duration-300 ease-in-out group-hover:scale-110"
                 />
 
-                <h3 className="rf-h3 text-white">
-                  {card.title}
-                </h3>
+                <h3 className="rf-h3 text-[var(--foreground)]">{card.title}</h3>
 
-                <p className="rf-body text-gray-100 mt-5 max-w-[80%]">
+                <p className="rf-body text-black mt-5 max-w-[80%]">
                   {card.desc}
                 </p>
 
                 <div className="mt-auto pt-4">
-                  <Link 
-                    href={card.href}
-                    className="inline-flex rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black"
-                  >
-                    Learn more →
-                  </Link>
+                    <Button href={card.href} className="px-5 md:px-6 py-2 text-xs md:text-sm">
+                      Learn more →
+                    </Button>
                 </div>
               </div>
             </div>

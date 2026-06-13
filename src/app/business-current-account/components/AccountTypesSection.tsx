@@ -75,7 +75,7 @@ export default function AccountTypesSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-emerald-500"
+              className="bg-[var(--card)] rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-emerald-500"
             >
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 {type.title}

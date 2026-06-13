@@ -76,7 +76,7 @@ export default function ComparisonSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative bg-white rounded-2xl p-8 border-2 ${
+              className={`relative bg-[var(--card)] rounded-2xl p-8 border-2 ${
                 comparison.featured 
                   ? 'border-emerald-500 shadow-2xl shadow-emerald-500/20 scale-105' 
                   : 'border-gray-200 hover:border-emerald-200 hover:shadow-xl'
@@ -84,7 +84,7 @@ export default function ComparisonSection() {
             >
               {/* Featured Badge */}
               {comparison.featured && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs font-bold rounded-full">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-emerald-500 to-teal-500 text-[var(--foreground)] text-xs font-bold rounded-full">
                   MOST POPULAR
                 </div>
               )}
@@ -92,7 +92,7 @@ export default function ComparisonSection() {
               {/* Header */}
               <div className="text-center mb-6">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
@@ -113,7 +113,7 @@ export default function ComparisonSection() {
               {/* CTA Button */}
               <button className={`w-full mt-8 px-6 py-3 rounded-xl font-semibold transition-all ${
                 comparison.featured
-                  ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-lg hover:shadow-emerald-500/30'
+                  ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-[var(--foreground)] hover:shadow-lg hover:shadow-emerald-500/30'
                   : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
               }`}>
                 Get Started

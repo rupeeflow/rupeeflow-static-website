@@ -8,7 +8,7 @@ import { fadeInUp } from '@/lib/animations';
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-[#020506] via-gray-900 to-emerald-950 text-white overflow-hidden py-20 md:py-28">
+    <section className="relative bg-gradient-to-br from-[#020506] via-gray-900 to-emerald-950 text-[var(--foreground)] overflow-hidden py-20 md:py-28">
       {/* Animated dots background */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         <div className="absolute inset-0" style={{
@@ -74,7 +74,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 + idx * 0.1, duration: 0.5 }}
-                    className="flex items-center gap-3 bg-white/5 rounded-lg p-3"
+                    className="flex items-center gap-3 bg-[var(--card)] rounded-lg p-3"
                   >
                     <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${colorClasses[feature.color as keyof typeof colorClasses]}`}>
                       <Icon className="w-4 h-4" />
@@ -94,13 +94,13 @@ export default function HeroSection() {
             >
               <Link
                 href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 text-center"
+                className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 text-center"
               >
                 View Live Demo
               </Link>
               <Link
                 href="/demo"
-                className="px-8 py-4 border-2 border-emerald-500/50 text-white font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200 text-center"
+                className="px-8 py-4 border-2 border-emerald-500/50 text-[var(--foreground)] font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200 text-center"
               >
                 Get Started
               </Link>
@@ -115,7 +115,7 @@ export default function HeroSection() {
             className="relative hidden lg:block"
           >
             {/* Dashboard mockup placeholder */}
-            <div className="relative bg-white rounded-2xl shadow-2xl p-6 border-4 border-emerald-500/20">
+            <div className="relative bg-[var(--card)] rounded-2xl shadow-2xl p-6 border-4 border-emerald-500/20">
               <div className="space-y-4">
                 {/* Header */}
                 <div className="flex items-center justify-between pb-4 border-b-2 border-gray-200">
@@ -170,7 +170,7 @@ export default function HeroSection() {
                 repeat: Infinity,
                 ease: 'easeInOut',
               }}
-              className="absolute -bottom-6 -left-6 bg-emerald-500 text-white px-4 py-3 rounded-xl shadow-xl max-w-xs"
+              className="absolute -bottom-6 -left-6 bg-emerald-500 text-[var(--foreground)] px-4 py-3 rounded-xl shadow-xl max-w-xs"
             >
               <p className="text-sm font-semibold">💡 Insight</p>
               <p className="text-xs mt-1">3 customers likely to delay payment</p>

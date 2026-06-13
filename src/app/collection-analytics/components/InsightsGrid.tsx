@@ -281,7 +281,7 @@ export default function InsightsGrid() {
   const currentRightCard = rightCards[rightCardIndex];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-[var(--card)]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -315,10 +315,10 @@ export default function InsightsGrid() {
                 key={index}
                 variants={staggerItem}
                 whileHover={{ y: -8, transition: { duration: 0.2 } }}
-                className="bg-white border-2 border-gray-100 rounded-2xl p-6 md:p-8 hover:shadow-xl hover:border-emerald-100 transition-all duration-300"
+                className="bg-[var(--card)] border-2 border-gray-100 rounded-2xl p-6 md:p-8 hover:shadow-xl hover:border-emerald-100 transition-all duration-300"
               >
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${colorClasses[insight.color as keyof typeof colorClasses]} flex items-center justify-center mb-4 shadow-lg`}>
-                  <Icon className="w-7 h-7 text-white" />
+                  <Icon className="w-7 h-7 text-[var(--foreground)]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{insight.title}</h3>
                 <p className="fontbody2 text-gray-600 leading-relaxed">{insight.description}</p>
@@ -364,7 +364,7 @@ export default function InsightsGrid() {
                   z: 50,
                   transition: { duration: 0.3 }
                 }}
-                className="bg-white rounded-2xl shadow-2xl border-2 border-purple-100 p-5 relative min-h-[200px]"
+                className="bg-[var(--card)] rounded-2xl shadow-2xl border-2 border-purple-100 p-5 relative min-h-[200px]"
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Glow Effect */}
@@ -430,7 +430,7 @@ export default function InsightsGrid() {
                   z: 50,
                   transition: { duration: 0.3 }
                 }}
-                className="bg-white rounded-2xl shadow-2xl border-2 border-emerald-100 p-5 relative min-h-[200px]"
+                className="bg-[var(--card)] rounded-2xl shadow-2xl border-2 border-emerald-100 p-5 relative min-h-[200px]"
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Glow Effect */}

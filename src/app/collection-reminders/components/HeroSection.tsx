@@ -8,7 +8,7 @@ import { fadeInUp } from '@/lib/animations';
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-[#020506] text-white overflow-hidden py-20 md:py-28">
+    <section className="relative bg-[var(--background)] text-[var(--foreground)] overflow-hidden py-20 md:py-28">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl" />
@@ -72,13 +72,13 @@ export default function HeroSection() {
             >
               <Link
                 href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 text-center"
+                className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-200 text-center"
               >
                 Start Free Trial
               </Link>
               <Link
                 href="/demo"
-                className="px-8 py-4 border-2 border-emerald-500/50 text-white font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200 text-center"
+                className="px-8 py-4 border-2 border-emerald-500/50 text-[var(--foreground)] font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500 transition-all duration-200 text-center"
               >
                 Watch Demo
               </Link>
@@ -146,7 +146,7 @@ export default function HeroSection() {
                 repeat: Infinity,
                 ease: 'easeInOut',
               }}
-              className="absolute top-10 -left-10 bg-white rounded-xl shadow-xl p-4 max-w-xs"
+              className="absolute top-10 -left-10 bg-[var(--card)] rounded-xl shadow-xl p-4 max-w-xs"
             >
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
@@ -169,7 +169,7 @@ export default function HeroSection() {
                 ease: 'easeInOut',
                 delay: 0.5,
               }}
-              className="absolute bottom-10 -right-10 bg-white rounded-xl shadow-xl p-4 max-w-xs"
+              className="absolute bottom-10 -right-10 bg-[var(--card)] rounded-xl shadow-xl p-4 max-w-xs"
             >
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">

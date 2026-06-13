@@ -233,7 +233,7 @@ export default function PayoutDocsPage() {
 
       {/* Payment Modes */}
       <div className="mb-12">
-        <h2 className="text-3xl fontheading text-white mb-6">Payment Modes</h2>
+        <h2 className="text-3xl fontheading text-[var(--foreground)] mb-6">Payment Modes</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {/* IMPS */}
           <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 border border-emerald-500/20 rounded-xl p-6">
@@ -272,7 +272,7 @@ export default function PayoutDocsPage() {
 
       {/* Status Codes */}
       <div className="mb-12">
-        <h2 className="text-3xl fontheading text-white mb-6">Status Codes</h2>
+        <h2 className="text-3xl fontheading text-[var(--foreground)] mb-6">Status Codes</h2>
         <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
           <table className="w-full">
             <thead className="bg-gray-950">

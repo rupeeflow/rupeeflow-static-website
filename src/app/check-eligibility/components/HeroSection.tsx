@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-[#020506] py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-[var(--background)] py-24 md:py-32 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <motion.div
@@ -57,7 +57,7 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Heading */}
-            <h1 className="fontheading text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+            <h1 className="fontheading text-4xl md:text-6xl lg:text-7xl text-[var(--foreground)] mb-6 leading-tight">
               Check Your{' '}
               <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
                 Loan Eligibility
@@ -83,9 +83,9 @@ export default function HeroSection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                  className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300"
+                  className="bg-[var(--card)] backdrop-blur-sm rounded-2xl p-4 border border-[var(--border)] hover:bg-[var(--card)] transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-[var(--card)] flex items-center justify-center mx-auto mb-3">
                     <Image src={stat.icon} alt="" width={20} height={20} className="opacity-80" />
                   </div>
                   <div className="text-emerald-400 text-xl font-bold mb-1">
@@ -106,9 +106,9 @@ export default function HeroSection() {
             >
               <a
                 href="#calculator"
-                className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-lg hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-[var(--foreground)] font-bold text-lg hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105"
               >
-                <span className="w-3 h-3 rounded-full bg-white animate-pulse" />
+                <span className="w-3 h-3 rounded-full bg-[var(--card)] animate-pulse" />
                 Check Eligibility Now
               </a>
             </motion.div>

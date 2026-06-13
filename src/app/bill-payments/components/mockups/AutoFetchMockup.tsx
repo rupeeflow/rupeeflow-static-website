@@ -35,12 +35,12 @@ export default function AutoFetchMockup({ className = '' }: MockupProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 blur-2xl rounded-3xl" />
       
       {/* Auto-fetch card */}
-      <div className="relative bg-white rounded-2xl shadow-xl border border-gray-200 p-6 max-w-sm mx-auto">
+      <div className="relative bg-[var(--card)] rounded-2xl shadow-xl border border-gray-200 p-6 max-w-sm mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
-              <Download className="w-5 h-5 text-white" />
+              <Download className="w-5 h-5 text-[var(--foreground)]" />
             </div>
             <div>
               <p className="text-sm font-semibold text-gray-900">Auto-Fetch Bills</p>

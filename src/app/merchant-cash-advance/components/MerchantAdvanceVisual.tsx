@@ -163,7 +163,7 @@ export default function MerchantAdvanceVisual() {
         >
           {/* Enhanced 3D shadow layers */}
           <div 
-            className="absolute inset-0 bg-black/40 blur-2xl rounded-[48px]"
+            className="absolute inset-0 bg-[var(--background)]/40 blur-2xl rounded-[48px]"
             style={{ 
               transform: 'translateZ(-20px) translateY(15px) scale(0.95)',
               transformStyle: 'preserve-3d'
@@ -200,7 +200,7 @@ export default function MerchantAdvanceVisual() {
           >
             {/* Phone outer shell - Pure black with proportional corners and 3D effect */}
             <div 
-              className="absolute inset-0 bg-black"
+              className="absolute inset-0 bg-[var(--background)]"
               style={{ 
                 borderRadius: `${PHONE_CONFIG.cornerRadius}px`,
                 boxShadow: `
@@ -217,7 +217,7 @@ export default function MerchantAdvanceVisual() {
             >
               {/* Inner bezel with 3D depth */}
               <div 
-                className="absolute bg-black overflow-hidden"
+                className="absolute bg-[var(--background)] overflow-hidden"
                 style={{ 
                   inset: `${PHONE_CONFIG.bezelSize}px`,
                   borderRadius: `${PHONE_CONFIG.innerCornerRadius}px`,
@@ -238,7 +238,7 @@ export default function MerchantAdvanceVisual() {
                   
                   {/* Realistic iPhone Notch - Proportional */}
                   <div 
-                    className="absolute top-0 left-1/2 -translate-x-1/2 bg-black z-50"
+                    className="absolute top-0 left-1/2 -translate-x-1/2 bg-[var(--background)] z-50"
                     style={{ 
                       width: `${PHONE_CONFIG.notchWidth}px`,
                       height: `${PHONE_CONFIG.notchHeight}px`,
@@ -268,7 +268,7 @@ export default function MerchantAdvanceVisual() {
 
                   {/* Status Bar - iOS style - Scaled */}
                   <div 
-                    className="absolute top-0 left-0 right-0 flex items-end justify-between text-white font-medium z-40"
+                    className="absolute top-0 left-0 right-0 flex items-end justify-between text-[var(--foreground)] font-medium z-40"
                     style={{ 
                       height: `${PHONE_CONFIG.statusBarHeight}px`,
                       paddingLeft: `${Math.round(PHONE_CONFIG.width * 0.12)}px`,
@@ -321,7 +321,7 @@ export default function MerchantAdvanceVisual() {
                           }}
                         >
                           <div 
-                            className="bg-white rounded-[1px]"
+                            className="bg-[var(--card)] rounded-[1px]"
                             style={{ 
                               width: `${Math.round(PHONE_CONFIG.width * 0.058)}px`,
                               height: `${Math.round(PHONE_CONFIG.width * 0.023)}px`
@@ -329,7 +329,7 @@ export default function MerchantAdvanceVisual() {
                           />
                         </div>
                         <div 
-                          className="bg-white rounded-r-sm"
+                          className="bg-[var(--card)] rounded-r-sm"
                           style={{ 
                             width: `${Math.round(PHONE_CONFIG.width * 0.008)}px`,
                             height: `${Math.round(PHONE_CONFIG.width * 0.015)}px`
@@ -427,7 +427,7 @@ export default function MerchantAdvanceVisual() {
                                 : { opacity: 0, y: 8 }
                             }
                             transition={{ duration: 0.4, delay: 0.25 }}
-                            className="text-white font-semibold text-center tracking-tight"
+                            className="text-[var(--foreground)] font-semibold text-center tracking-tight"
                             style={{ 
                               fontSize: `${Math.round(PHONE_CONFIG.width * 0.069)}px`,
                               marginBottom: `${Math.round(PHONE_CONFIG.width * 0.031)}px`
@@ -478,7 +478,7 @@ export default function MerchantAdvanceVisual() {
                     {benefits.map((_, index) => (
                       <motion.div
                         key={index}
-                        className="rounded-full bg-white/20 overflow-hidden"
+                        className="rounded-full bg-[var(--card)] overflow-hidden"
                         animate={{
                           width: index === currentIndex ? `${Math.round(PHONE_CONFIG.width * 0.092)}px` : `${Math.round(PHONE_CONFIG.width * 0.023)}px`,
                         }}
@@ -499,7 +499,7 @@ export default function MerchantAdvanceVisual() {
 
                   {/* Home Indicator (Gesture Bar) - iOS style - Scaled */}
                   <div 
-                    className="absolute left-1/2 -translate-x-1/2 bg-white/25 rounded-full"
+                    className="absolute left-1/2 -translate-x-1/2 bg-[var(--card)] rounded-full"
                     style={{ 
                       bottom: `${Math.round(PHONE_CONFIG.height * 0.024)}px`,
                       width: `${PHONE_CONFIG.gestureBarWidth}px`,

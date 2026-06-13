@@ -161,7 +161,7 @@ export default function ContactPage() {
 
   return (
     <div className="w-full relative">
-      <section className="relative min-h-screen bg-white overflow-hidden flex items-center">
+      <section className="relative min-h-screen bg-[var(--card)] overflow-hidden flex items-center">
 
         {/* Spotlights */}
         <div
@@ -238,7 +238,7 @@ export default function ContactPage() {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.75, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="bg-white backdrop-blur-md border border-gray-200 rounded-3xl p-8 md:p-10 shadow-2xl">
+            <div className="bg-[var(--card)] backdrop-blur-md border border-gray-200 rounded-3xl p-8 md:p-10 shadow-2xl">
               {!submitted ? (
                 <>
                   <div className="mb-8">
@@ -317,9 +317,9 @@ export default function ContactPage() {
                           required
                           className="w-full bg-transparent pl-10 pr-10 py-3.5 text-sm text-gray-900 outline-none rounded-xl appearance-none cursor-pointer"
                         >
-                          <option value="" disabled className="bg-white text-gray-400">Select business type</option>
+                          <option value="" disabled className="bg-[var(--card)] text-gray-400">Select business type</option>
                           {businessTypes.map((type) => (
-                            <option key={type} value={type} className="bg-white text-gray-900">{type}</option>
+                            <option key={type} value={type} className="bg-[var(--card)] text-gray-900">{type}</option>
                           ))}
                         </select>
                         <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
@@ -398,7 +398,7 @@ export default function ContactPage() {
                       disabled={!isComplete || loading}
                       className={`w-full py-4 rounded-xl text-sm font-bold tracking-wide transition-all duration-300 flex items-center justify-center gap-2.5 ${
                         isComplete && !loading
-                          ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/25 hover:from-emerald-600 hover:to-emerald-700 cursor-pointer'
+                          ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-[var(--foreground)] shadow-lg shadow-emerald-500/25 hover:from-emerald-600 hover:to-emerald-700 cursor-pointer'
                           : 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed'
                       }`}
                       whileTap={isComplete && !loading ? { scale: 0.97 } : {}}
@@ -413,7 +413,7 @@ export default function ContactPage() {
                         </>
                       ) : (
                         <>
-                          {isComplete && <span className="w-2 h-2 rounded-full bg-white/80" />}
+                          {isComplete && <span className="w-2 h-2 rounded-full bg-[var(--card)]" />}
                           Submit Request
                           {isComplete && (
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

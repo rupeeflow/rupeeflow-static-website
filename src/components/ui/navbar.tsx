@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { navlist } from '@/interface/typesInterfaces'
 import Dropdown from './Dropdown'
 import PaymentsDropdown from './PaymentsDropdown'
+import Button from '@/components/ui/Button'
 import dynamic from 'next/dynamic'
 
 // Dynamically import ThemeToggle to avoid SSR issues
@@ -121,8 +122,8 @@ export default function Navbar() {
         <div
           className={`flex transition-all duration-500 ease-out ${
             scrolled
-              ? 'w-full bg-white/95 dark:bg-gray-900/95 shadow-lg backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50'
-              : 'w-[95%] lg:w-[90%] bg-white/98 dark:bg-gray-900/98 backdrop-blur-md rounded-2xl mt-4 shadow-xl border border-gray-200/50 dark:border-gray-700/50'
+              ? 'w-full bg-[var(--card)] dark:bg-gray-900/95 shadow-lg backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50'
+              : 'w-[95%] lg:w-[90%] bg-[var(--card)] dark:bg-gray-900/98 backdrop-blur-md rounded-2xl mt-4 shadow-xl border border-gray-200/50 dark:border-gray-700/50'
           } items-center justify-between px-4 sm:px-6 relative`}
           style={{ maxWidth: scrolled ? '100%' : '1200px' }}
         >
@@ -163,13 +164,10 @@ export default function Navbar() {
           {/* ── Desktop CTA (lg+) ── */}
           <div className="hidden lg:flex gap-3 items-center relative z-10">
             <ThemeToggle />
-            <Link
-              href="/contact"
-              className="group relative bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-emerald-600/30 transition-all duration-300 hover:scale-105 overflow-hidden"
-            >
+            <Button href="/contact" className="group relative px-6 py-2.5 text-sm font-semibold overflow-hidden">
               <span className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-teal-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               <span className="relative">CONTACT US</span>
-            </Link>
+            </Button>
           </div>
 
           {/* ── Mobile Hamburger (below lg) ── */}
@@ -185,28 +183,34 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* ── Desktop mega/dropdowns — ONLY rendered on lg+ ── */}
+        {/* ── Desktop mega/dropdowns — ONLY rendered on lg+ (animated with Framer Motion) ───────── */}
         <div className="hidden lg:contents">
-          {activeMenu === 'payments' && (
-            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('payments')} onMouseLeave={handleMouseLeave}>
-              <div onClick={closeAll}><PaymentsDropdown /></div>
-            </div>
-          )}
-          {activeMenu === 'credit' && (
-            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('credit')} onMouseLeave={handleMouseLeave}>
-              <div onClick={closeAll}><Dropdown navitems={creditnav} /></div>
-            </div>
-          )}
-          {activeMenu === 'partner' && (
-            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('partner')} onMouseLeave={handleMouseLeave}>
-              <div onClick={closeAll}><Dropdown navitems={partnershipsnav} /></div>
-            </div>
-          )}
-          {activeMenu === 'resources' && (
-            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('resources')} onMouseLeave={handleMouseLeave}>
-              <div onClick={closeAll}><Dropdown navitems={resourcesnav} /></div>
-            </div>
-          )}
+          <AnimatePresence initial={false}>
+            {activeMenu && (
+              <motion.div
+                  key={activeMenu}
+                  initial={{ opacity: 0, y: -8, scale: 0.995 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -6, scale: 0.998 }}
+                  transition={{ duration: 0.14 }}
+                  className="w-full flex justify-center absolute top-full left-0 pointer-events-none"
+                  onMouseEnter={() => handleMouseEnter(activeMenu)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div onClick={closeAll} className="pointer-events-auto">
+                  {activeMenu === 'payments' ? (
+                    <PaymentsDropdown />
+                  ) : activeMenu === 'credit' ? (
+                    <Dropdown navitems={creditnav} />
+                  ) : activeMenu === 'partner' ? (
+                    <Dropdown navitems={partnershipsnav} />
+                  ) : activeMenu === 'resources' ? (
+                    <Dropdown navitems={resourcesnav} />
+                  ) : null}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </header>
 
@@ -216,7 +220,7 @@ export default function Navbar() {
           <>
             {/* Backdrop */}
             <motion.div
-              className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-[100] bg-[var(--background)]/50 backdrop-blur-sm lg:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -226,7 +230,7 @@ export default function Navbar() {
 
             {/* Drawer panel — slides in from the right */}
             <motion.div
-              className="fixed top-0 right-0 bottom-0 z-[101] w-[280px] bg-white dark:bg-gray-900 flex flex-col shadow-2xl lg:hidden"
+              className="fixed top-0 right-0 bottom-0 z-[101] w-[280px] bg-[var(--card)] dark:bg-gray-900 flex flex-col shadow-2xl lg:hidden"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -284,10 +288,10 @@ export default function Navbar() {
                                   <Link
                                     href={item.href}
                                     onClick={closeAll}
-                                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white dark:hover:bg-gray-700 transition-colors group"
+                                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[var(--card)] dark:hover:bg-gray-700 transition-colors group"
                                   >
                                     {item.icon && (
-                                      <div className="w-7 h-7 rounded-lg bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm flex items-center justify-center shrink-0">
+                                      <div className="w-7 h-7 rounded-lg bg-[var(--card)] dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm flex items-center justify-center shrink-0">
                                         <Image src={item.icon} alt="" width={16} height={16} className="w-4 h-4 object-contain" />
                                       </div>
                                     )}
@@ -308,13 +312,9 @@ export default function Navbar() {
 
               {/* CTA at bottom */}
               <div className="p-4 border-t border-gray-100 dark:border-gray-800">
-                <Link
-                  href="/contact"
-                  onClick={closeAll}
-                  className="block w-full py-3 text-center bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-200"
-                >
+                <Button href="/contact" onClick={closeAll} className="block w-full py-3 text-center rounded-xl font-semibold text-sm">
                   Contact Us
-                </Link>
+                </Button>
               </div>
             </motion.div>
           </>

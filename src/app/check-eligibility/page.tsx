@@ -8,7 +8,7 @@ import CTASection from './components/CTASection'
 
 export default function CheckEligibilityPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[var(--card)]">
       <HeroSection />
       <EligibilityCalculator />
       <LoanOptionsGrid />
