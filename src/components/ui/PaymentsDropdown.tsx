@@ -47,14 +47,14 @@ const collectPayments: navlist[] = [
     id: 'cashpoint',
     label: 'UPI Cashpoint',
     desc: 'Offline & on-device UPI cash collection',
-    icon: '/payments/upi-collections.svg',
+    icon: '/images/upi-cashpoint/upi-cashpoint-logo.png',
     href: '/upi-cashpoint',
   },
   {
     id: 'prepaid',
     label: 'Prepaid Cards',
     desc: 'Prepaid, virtual & corporate cards',
-    icon: '/prepaid-card-hero.png',
+    icon: '/prepaid%20cards/prepaid%20cards%20logo.png',
     href: '/prepaid-cards',
   },
   {
@@ -203,12 +203,12 @@ export default function PaymentsDropdown() {
                 className="flex items-start gap-2.5 text-left group"
                 variants={item}
               >
-                <div className="w-5 h-5 mt-0.5 shrink-0 relative opacity-90 group-hover:opacity-100 transition-opacity">
+                <div className="w-6 h-6 mt-0.5 shrink-0 relative opacity-90 group-hover:opacity-100 transition-opacity">
                   <Image
                     src={cp.icon}
                     alt=""
-                    width={20}
-                    height={20}
+                    width={cp.id === 'prepaid' ? 28 : 20}
+                    height={cp.id === 'prepaid' ? 28 : 20}
                     className="w-full h-full"
                   />
                 </div>

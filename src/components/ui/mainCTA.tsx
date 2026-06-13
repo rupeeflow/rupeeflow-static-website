@@ -8,6 +8,10 @@ interface CTAProps {
   fontSize?: string
   bullet?: string
   icon?: number
+  noBullet?: boolean
+  imgSrc?: string
+  imgAlt?: string
+  showArrow?: boolean
 }
 
 const MainCTA: React.FC<CTAProps> = ({
@@ -17,30 +21,44 @@ const MainCTA: React.FC<CTAProps> = ({
   fontSize = 'text-sm',
   bullet = 'w-3 h-3',
   icon = 18,
+  noBullet = false,
+  imgSrc = '',
+  imgAlt = '',
+  showArrow = true,
 }) => {
   const isExternal = destination.startsWith('http')
 
   return (
     <Button href={destination} className={`${size} group relative inline-flex items-center justify-center overflow-hidden rounded-full px-7 border border-emerald-800/40 shadow-lg`}>
-      <span
-        aria-hidden="true"
-        className={`${bullet} absolute left-[6%] rounded-full
-        bg-gradient-to-r from-[#00EF64] to-[#53BEC2]
-        transition-all duration-500 ease-out
-        group-hover:w-[140%] group-hover:h-[140%]
-        group-hover:-translate-x-12 opacity-80`}
-      />
+      {!noBullet && (
+        <span
+          aria-hidden="true"
+          className={`${bullet} absolute left-[6%] rounded-full
+          bg-gradient-to-r from-[#00EF64] to-[#53BEC2]
+          transition-all duration-500 ease-out
+          group-hover:w-[140%] group-hover:h-[140%]
+          group-hover:-translate-x-12 opacity-80`}
+        />
+      )}
+
+      {imgSrc ? (
+        <span className="absolute left-4 z-10">
+          <img src={imgSrc} alt={imgAlt || label} className="w-8 h-8 object-contain rounded-md" />
+        </span>
+      ) : null}
 
       <span
-        className={`${fontSize} relative z-10 font-semibold tracking-wide text-white transition-all duration-300 group-hover:text-black`}
+        className={`${fontSize} relative z-10 font-semibold tracking-wide text-white transition-all duration-300 ${imgSrc ? 'pl-10' : ''} group-hover:text-black`}
       >
         {label}
       </span>
 
-      <MoveRight
-        size={icon}
-        className="absolute right-3 opacity-0 translate-x-4 text-white transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-black"
-      />
+      {showArrow && (
+        <MoveRight
+          size={icon}
+          className="absolute right-3 opacity-0 translate-x-4 text-white transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-black"
+        />
+      )}
     </Button>
   )
 }

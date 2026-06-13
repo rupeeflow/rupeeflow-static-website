@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#fff"/>
+  <g>
+    <rect x="40" y="80" width="200" height="160" rx="12" fill="#ecfdf5" stroke="#bbf7d0"/>
+    <text x="60" y="140" font-size="20" fill="#064e3b">Merchant App</text>
+  </g>
+</svg>

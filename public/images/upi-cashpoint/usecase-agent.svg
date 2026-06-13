@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#fff"/>
+  <g>
+    <rect x="60" y="100" width="180" height="120" rx="12" fill="#fff7ed" stroke="#ffd9a8"/>
+    <text x="80" y="160" font-size="20" fill="#92400e">Agent App</text>
+  </g>
+</svg>
