@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button'
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-[var(--background)] overflow-hidden pb-0">
+    <section className="relative w-full bg-[var(--background)] overflow-visible pb-0">
       {/* Background glows removed per request */}
 
       {/* Main Content Container */}
@@ -22,6 +22,8 @@ export default function Hero() {
             {/* SVG heading with animated color-reveal circles (balls) mask */}
             <svg
               viewBox="0 0 1200 220"
+              overflow="visible"
+              style={{ overflow: 'visible' }}
               className="w-full max-w-4xl h-auto"
               role="img"
               aria-label="Financial infrastructure to grow your revenue."
