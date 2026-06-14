@@ -203,12 +203,12 @@ export default function PaymentsDropdown() {
                 className="flex items-start gap-2.5 text-left group"
                 variants={item}
               >
-                <div className="w-6 h-6 mt-0.5 shrink-0 relative opacity-90 group-hover:opacity-100 transition-opacity">
+                <div className={`${cp.id === 'prepaid' || cp.id === 'cashpoint' ? 'w-8 h-8' : 'w-6 h-6'} mt-0.5 shrink-0 relative opacity-90 group-hover:opacity-100 transition-opacity`}>
                   <Image
                     src={cp.icon}
                     alt=""
-                    width={cp.id === 'prepaid' ? 28 : 20}
-                    height={cp.id === 'prepaid' ? 28 : 20}
+                    width={cp.id === 'prepaid' || cp.id === 'cashpoint' ? 32 : 20}
+                    height={cp.id === 'prepaid' || cp.id === 'cashpoint' ? 32 : 20}
                     className="w-full h-full"
                   />
                 </div>

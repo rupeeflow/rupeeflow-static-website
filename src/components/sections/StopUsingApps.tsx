@@ -67,7 +67,7 @@ export default function StopUsingApps() {
               >
                 <div className={`absolute inset-0 rounded-2xl p-[1.5px] bg-gradient-to-r from-emerald-400 via-teal-300 to-green-400 bg-[length:200%_100%] animate-border-flow ${borderDelays[i]}`} />
                 <div className="relative bg-[var(--card)] rounded-[calc(1rem-1.5px)] p-5 z-10 h-full">
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-br from-emerald-500 to-teal-600 text-black mb-3 shadow-sm shadow-emerald-100 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-br from-emerald-500 to-teal-600 text-white mb-3 shadow-sm shadow-emerald-100 group-hover:scale-110 transition-transform duration-300">
                     <feat.icon size={17} />
                   </div>
                   <h4 className="rf-h4 text-gray-900">{feat.title}</h4>
