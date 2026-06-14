@@ -52,7 +52,7 @@ export default function HeroSection() {
 
         <div className="relative rounded-2xl overflow-hidden border border-[var(--border)] shadow-lg p-6 bg-[var(--card)]">
           <div className="relative h-72 md:h-96 lg:h-112">
-            <Image src="/images/upi-cashpoint/UPI CashpointCollect.png" alt="Terminal" fill className="object-contain" />
+            <Image src="/images/upi-cashpoint/upi-cashpoint-hero.png" alt="Terminal" fill className="object-contain" />
           </div>
         </div>
       </div>
