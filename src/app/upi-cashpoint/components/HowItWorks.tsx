@@ -57,15 +57,15 @@ export default function HowItWorks() {
         <div ref={rootRef} className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 relative overflow-visible">
           <div className="relative w-full h-64 rounded-lg overflow-visible bg-gradient-to-br from-[#effbf7] to-[#dbfff0]">
             <div ref={phoneA} className="absolute left-6 top-6 w-40 h-56 rounded-lg shadow-lg overflow-hidden bg-white flex items-center justify-center">
-              <Image src="/images/upi-cashpoint/install-terminal.png" alt="Install Terminal" width={240} height={320} className="object-contain" />
+              <Image src="/images/upi-cashpoint/Install Terminal.png" alt="Install Terminal" width={240} height={320} className="object-contain" />
             </div>
 
             <div ref={phoneB} className="absolute left-28 top-12 w-36 h-52 rounded-lg shadow-md overflow-hidden bg-white flex items-center justify-center">
-              <Image src="/images/upi-cashpoint/field-agents.png" alt="Field Agents" width={220} height={300} className="object-contain" />
+              <Image src="/images/upi-cashpoint/Field Agents.png" alt="Field Agents" width={220} height={300} className="object-contain" />
             </div>
 
             <div ref={terminal} className="absolute right-6 bottom-6 w-48 h-36 rounded-lg shadow-md overflow-hidden bg-white flex items-center justify-center">
-              <Image src="/images/upi-cashpoint/auto-reconcile.png" alt="Auto Reconcile" width={300} height={200} className="object-contain" />
+              <Image src="/images/upi-cashpoint/Auto Reconcile.png" alt="Auto Reconcile" width={300} height={200} className="object-contain" />
             </div>
 
             <div ref={qr} className="absolute right-20 top-8 w-16 h-16 rounded-full bg-white/90 flex items-center justify-center border border-[var(--border)]">

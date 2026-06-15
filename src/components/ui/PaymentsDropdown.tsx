@@ -207,9 +207,9 @@ export default function PaymentsDropdown() {
                   <Image
                     src={cp.icon}
                     alt=""
-                    width={cp.id === 'prepaid' || cp.id === 'cashpoint' ? 32 : 20}
-                    height={cp.id === 'prepaid' || cp.id === 'cashpoint' ? 32 : 20}
-                    className="w-full h-full"
+                    width={cp.id === 'prepaid' || cp.id === 'cashpoint' ? 32 : 24}
+                    height={cp.id === 'prepaid' || cp.id === 'cashpoint' ? 32 : 24}
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div>
@@ -251,7 +251,7 @@ export default function PaymentsDropdown() {
                     alt=""
                     width={20}
                     height={20}
-                    className="w-full h-full"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div>
@@ -293,7 +293,7 @@ export default function PaymentsDropdown() {
                     alt=""
                     width={20}
                     height={20}
-                    className="w-full h-full"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <span className="text-[13px] font-bold text-[var(--card-foreground)] dark:text-gray-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">

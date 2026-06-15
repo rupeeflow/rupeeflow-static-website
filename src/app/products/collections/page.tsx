@@ -12,6 +12,7 @@ import BhimUPIIcon from '../../../../public/icons/upi-collections/Bhimupi'
 import MailSVG from '../../../../public/icons/global/MailIcon'
 import SMSSvg from '../../../../public/icons/global/SmsIcon'
 import Button from '@/components/ui/Button'
+import CollectPaymentsGrid from './components/CollectPaymentsGrid'
 
 /* ─── Bar chart data (fixed — no Math.random) ─── */
 const barData = [
@@ -327,6 +328,11 @@ export default function CollectPayments() {
           </motion.div>
         </motion.div>
       </section>
+
+      {/* ══════════════════════════════════════════
+          COLLECT PAYMENTS GRID
+      ══════════════════════════════════════════ */}
+      <CollectPaymentsGrid />
 
       {/* ══════════════════════════════════════════
           STATS SECTION
