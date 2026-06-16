@@ -10,7 +10,9 @@ const collectPayments: navlist[] = [
   { id: 'links', label: 'Payment Links', desc: 'Create & send links to get paid', icon: '/payments/payment-links.svg', href: '/payment-links' },
   { id: 'button', label: 'Payment Button', desc: 'Custom payment buttons', icon: '/payments/payment-button.svg', href: '/payment-button' },
   { id: 'upi', label: 'UPI Collections', desc: 'Accept UPI payments with ease', icon: '/payments/upi-collections.svg', href: '/upi-collections' },
+  { id: 'upi-cashpoint', label: 'UPI Cashpoint', desc: 'Assisted UPI acceptance touchpoints', icon: '/payments/upi-collections.svg', href: '/comingsoon' },
   { id: 'qr', label: 'QR Code', desc: 'Multiple QRs for payment collection', icon: '/payments/qr-code.svg', href: '/qr-code' },
+  { id: 'prepaid-cards', label: 'Prepaid Cards', desc: 'Issue prepaid cards for controlled spends', icon: '/cards/prepaid-cards.svg', href: '/prepaid-cards' },
   { id: 'cross', label: 'Cross-border Payments', desc: 'International payment solutions', icon: '/payments/cross-border-payments.svg', href: '/cross-border-payments' },
   // { id: 'voice', label: 'Voice Payments', desc: 'Accept payments via voice', icon: '/payments/voice-payments.svg', href: '/voice-payments' },
 ]
@@ -36,15 +38,15 @@ const payableReceivable: navlist[] = [
   { id: 'cashflow-analytics', label: 'Cashflow Analytics', icon: '/home/wallet.svg', href: '/cashflow-analytics' },
 ];
 
-export default function PaymentsDropdown() {
+export default function PaymentsDropdown({ embedded = false }: { embedded?: boolean }) {
   const [hoveredItem, setHoveredItem] = useState<navlist | null>(null)
   const router = useRouter()
 
   return (
-    <div className="w-full bg-white rounded-b-2xl shadow-2xl overflow-hidden">
-      <div className="h-1 bg-emerald-500" />
+    <div className={`w-full overflow-hidden ${embedded ? '' : 'bg-white rounded-b-2xl shadow-2xl'}`}>
+      {!embedded && <div className="h-1 bg-emerald-500" />}
 
-      <div className="flex min-h-[420px] max-w-[1200px] mx-auto px-4">
+      <div className="flex max-w-[1200px] mx-auto px-4">
         <div className="flex-[2.5] p-6 pr-5">
           <h3 className="text-[11px] font-bold text-emerald-600 tracking-widest uppercase mb-5">
             Collect Payments
@@ -142,7 +144,7 @@ export default function PaymentsDropdown() {
       </div>
 
       {/* Bottom preview strip - changes on hover */}
-      <div className="border-t border-gray-100 bg-gray-50/50 px-6 py-4 flex items-center gap-4 min-h-[60px]">
+      <div className="border-t border-gray-100 bg-gray-50/50 px-6 py-4 flex items-center gap-4 min-h-[54px]">
         {hoveredItem ? (
           <>
             <div className="w-8 h-8 relative opacity-80">
