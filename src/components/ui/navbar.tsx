@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { navlist } from '@/interface/typesInterfaces'
@@ -36,7 +37,9 @@ const paymentsNav: navlist[] = [
   { id: 'gateway', label: 'Payment Gateway', icon: '/payments/payment-gateway.svg', href: '/payment-gateway' },
   { id: 'links', label: 'Payment Links', icon: '/payments/payment-links.svg', href: '/payment-links' },
   { id: 'upi', label: 'UPI Collections', icon: '/payments/upi-collections.svg', href: '/upi-collections' },
+  { id: 'upi-cashpoint', label: 'UPI Cashpoint', icon: '/payments/upi-collections.svg', href: '/comingsoon' },
   { id: 'qr', label: 'QR Code', icon: '/payments/qr-code.svg', href: '/qr-code' },
+  { id: 'prepaid-cards', label: 'Prepaid Cards', icon: '/cards/prepaid-cards.svg', href: '/prepaid-cards' },
   { id: 'button', label: 'Payment Button', icon: '/payments/payment-button.svg', href: '/payment-button' },
   { id: 'cross', label: 'Cross-border Payments', icon: '/payments/cross-border-payments.svg', href: '/cross-border-payments' },
 ]
@@ -72,6 +75,8 @@ const mobileSections = [
 ]
 
 export default function Navbar() {
+  const pathname = usePathname()
+  const isLanding = pathname === '/'
   const [scrolled, setScrolled] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -79,9 +84,9 @@ export default function Navbar() {
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
-    const handleScroll = () =>
-      setScrolled(window.scrollY > window.innerHeight * 0.8)
+    const handleScroll = () => setScrolled(window.scrollY > 48)
     window.addEventListener('scroll', handleScroll)
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -96,7 +101,7 @@ export default function Navbar() {
   }
 
   const handleMouseLeave = () => {
-    closeTimeoutRef.current = setTimeout(() => setActiveMenu(null), 150)
+    closeTimeoutRef.current = setTimeout(() => setActiveMenu(null), 260)
   }
 
   const closeAll = () => {
@@ -109,17 +114,21 @@ export default function Navbar() {
   const toggleMobileSection = (key: string) =>
     setActiveMobileSection(prev => prev === key ? null : key)
 
+  const dropdownWidthClass =
+    activeMenu === 'payments' ? 'max-w-[1200px]' : 'max-w-[860px]'
+
   return (
     <>
       {/* ─────────── HEADER BAR ─────────── */}
       <header className="fixed top-0 z-[99] w-full flex flex-col items-center">
         <div
-          className={`flex transition-all duration-500 ease-out ${
+          className={`mx-auto flex items-center justify-between px-4 sm:px-6 relative transition-all duration-500 ease-out ${
             scrolled
-              ? 'w-full bg-white/95 shadow-lg backdrop-blur-xl border-b border-gray-200/50'
-              : 'w-[95%] lg:w-[90%] bg-white/98 backdrop-blur-md rounded-2xl mt-4 shadow-xl border border-gray-200/50'
-          } items-center justify-between px-4 sm:px-6 relative`}
-          style={{ maxWidth: scrolled ? '100%' : '1200px' }}
+              ? 'mt-0 w-full max-w-full rounded-none border-b border-white/30 bg-white/22 shadow-md backdrop-blur-xl'
+              : isLanding
+                ? 'mt-4 w-[92%] max-w-[1080px] rounded-2xl border border-transparent bg-transparent shadow-none backdrop-blur-sm'
+                : 'mt-4 w-[92%] max-w-[1080px] rounded-2xl border border-white/25 bg-white/10 shadow-lg backdrop-blur-md'
+          }`}
         >
           {/* Logo */}
           <Link href="/" className="relative z-10 shrink-0 transform hover:scale-105 transition-transform duration-300" onClick={closeAll}>
@@ -127,27 +136,27 @@ export default function Navbar() {
           </Link>
 
           {/* ── Desktop Navigation (lg+) ── */}
-          <nav className="hidden lg:flex gap-1 text-sm relative z-10">
+          <nav className="hidden lg:flex gap-0.5 relative z-10">
             <div className="relative" onMouseEnter={() => handleMouseEnter('payments')} onMouseLeave={handleMouseLeave}>
-              <button className="group flex items-center h-14 gap-1 px-4 text-gray-700 hover:text-emerald-600 transition-all duration-300 rounded-lg hover:bg-emerald-50/50">
-                <span className="relative">
-                  Payments
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300" />
+              <button className="group flex items-center h-14 gap-1.5 px-5 text-[15px] font-bold text-[#1F3A2D] hover:text-[#00875A] transition-all duration-300 rounded-lg hover:bg-white/30">
+                <span className="relative tracking-tight">
+                  Products
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#00875A] group-hover:w-full transition-all duration-300" />
                 </span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeMenu === 'payments' ? 'rotate-180' : ''}`} />
               </button>
             </div>
 
             {([
-              ['credit', 'Get Credit', creditnav],
-              ['partner', 'Partnerships', partnershipsnav],
-              ['resources', 'Resources', resourcesnav],
+              ['credit', 'Credit', creditnav],
+              ['partner', 'Partners', partnershipsnav],
+              ['resources', 'Learn', resourcesnav],
             ] as [string, string, navlist[]][]).map(([key, label]) => (
               <div key={key} className="relative" onMouseEnter={() => handleMouseEnter(key)} onMouseLeave={handleMouseLeave}>
-                <button className="group flex items-center h-14 gap-1 px-4 text-gray-700 hover:text-emerald-600 transition-all duration-300 rounded-lg hover:bg-emerald-50/50">
-                  <span className="relative">
+                <button className="group flex items-center h-14 gap-1.5 px-5 text-[15px] font-bold text-[#1F3A2D] hover:text-[#00875A] transition-all duration-300 rounded-lg hover:bg-white/30">
+                  <span className="relative tracking-tight">
                     {label}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300" />
+                    <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#00875A] group-hover:w-full transition-all duration-300" />
                   </span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeMenu === key ? 'rotate-180' : ''}`} />
                 </button>
@@ -181,26 +190,44 @@ export default function Navbar() {
 
         {/* ── Desktop mega/dropdowns — ONLY rendered on lg+ ── */}
         <div className="hidden lg:contents">
-          {activeMenu === 'payments' && (
-            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('payments')} onMouseLeave={handleMouseLeave}>
-              <div onClick={closeAll}><PaymentsDropdown /></div>
-            </div>
-          )}
-          {activeMenu === 'credit' && (
-            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('credit')} onMouseLeave={handleMouseLeave}>
-              <div onClick={closeAll}><Dropdown navitems={creditnav} /></div>
-            </div>
-          )}
-          {activeMenu === 'partner' && (
-            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('partner')} onMouseLeave={handleMouseLeave}>
-              <div onClick={closeAll}><Dropdown navitems={partnershipsnav} /></div>
-            </div>
-          )}
-          {activeMenu === 'resources' && (
-            <div className="w-full flex justify-center animate-in fade-in slide-in-from-top-2 duration-200" onMouseEnter={() => handleMouseEnter('resources')} onMouseLeave={handleMouseLeave}>
-              <div onClick={closeAll}><Dropdown navitems={resourcesnav} /></div>
-            </div>
-          )}
+          <AnimatePresence>
+            {activeMenu && (
+              <motion.div
+                className="w-full flex justify-center"
+                onMouseEnter={() => handleMouseEnter(activeMenu)}
+                onMouseLeave={handleMouseLeave}
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <motion.div
+                  className={`mx-auto mt-2 w-full overflow-hidden rounded-2xl border border-white/65 bg-white/72 shadow-[0_20px_50px_rgba(0,0,0,0.08)] backdrop-blur-2xl ${
+                    scrolled ? `max-w-full ${dropdownWidthClass}` : 'w-[92%] max-w-[1080px]'
+                  }`}
+                  layout
+                  transition={{ layout: { duration: 0.26, ease: [0.22, 1, 0.36, 1] } }}
+                >
+                  <div className="h-1 bg-gradient-to-r from-[#2AB871] via-[#00875A] to-[#006B4F]" />
+                  <AnimatePresence mode="wait" initial={false}>
+                    <motion.div
+                      key={activeMenu}
+                      initial={{ x: 26, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: -26, opacity: 0 }}
+                      transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                      onClick={closeAll}
+                    >
+                      {activeMenu === 'payments' && <PaymentsDropdown embedded />}
+                      {activeMenu === 'credit' && <Dropdown navitems={creditnav} embedded />}
+                      {activeMenu === 'partner' && <Dropdown navitems={partnershipsnav} embedded />}
+                      {activeMenu === 'resources' && <Dropdown navitems={resourcesnav} embedded />}
+                    </motion.div>
+                  </AnimatePresence>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </header>
 

@@ -8,9 +8,10 @@ import Image from 'next/image'
 interface DropdownProps {
   navitems: navlist[]
   scrolled?: boolean
+  embedded?: boolean
 }
 
-export default function Dropdown({ navitems, scrolled = false }: DropdownProps) {
+export default function Dropdown({ navitems, scrolled = false, embedded = false }: DropdownProps) {
   const router = useRouter()
   const pathname = usePathname()
   
@@ -40,10 +41,10 @@ export default function Dropdown({ navitems, scrolled = false }: DropdownProps) 
   }, [pathname, navitems, getActiveItem])
 
   return (
-    <div className={`bg-white rounded-xl shadow-2xl border border-gray-100 w-full mt-2 ${scrolled ? '' : 'max-w-[760px] mx-auto'}`}>
+    <div className={`${embedded ? 'w-full' : `bg-white rounded-xl shadow-2xl border border-gray-100 w-full mt-2 ${scrolled ? '' : 'max-w-[760px] mx-auto'}`}`}>
       <div className={`flex gap-2 p-4 ${scrolled ? 'max-w-[900px] mx-auto' : ''}`}>
         {/* LEFT LIST */}
-        <div className="w-[260px] space-y-2 max-h-[380px] overflow-y-auto">
+        <div className="w-[260px] space-y-2 max-h-[420px] overflow-y-auto">
         {navitems.map((item) => (
           <button
             key={item.id}
@@ -70,7 +71,7 @@ export default function Dropdown({ navitems, scrolled = false }: DropdownProps) 
       </div>
 
       {/* RIGHT PREVIEW */}
-      <div className="flex-1 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl flex items-center justify-center min-h-[380px]">
+      <div className="flex-1 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl flex items-center justify-center min-h-[320px]">
         <div className="text-center p-8">
           <div className="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-lg">
             <div className="w-10 h-10 relative">

@@ -207,17 +207,21 @@ export default function Footer() {
           <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-400 mb-2">
             Licenses &amp; Certificates
           </p>
-          {/* <div className="flex flex-wrap gap-1.5">
-            {badges.map((badge) => (
-              <span
-                key={badge}
-                className="inline-flex items-center gap-1 text-[10px] font-semibold text-gray-300 border border-white/20 rounded-full px-2.5 py-1"
-              >
-                <span className="w-1 h-1 rounded-full bg-emerald-500" />
-                {badge}
-              </span>
-            ))}
-          </div> */}
+          <Link
+            href="/licenses/E-copy-RUPEEFLOW FINANCE PRIVATE LIMITED-ISMS-CA.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open RupeeFlow license certificate"
+            className="inline-flex items-center rounded-md border border-white/15 p-2 hover:border-emerald-400/60 hover:bg-emerald-500/10 transition-all duration-200"
+          >
+            <Image
+              src="/licenses/compliance_seal_1.svg"
+              alt="RupeeFlow license certificate"
+              width={84}
+              height={84}
+              className="h-14 w-auto"
+            />
+          </Link>
         </div>
 
         {/* ── COL 2: COLLECT PAYMENTS ── */}
