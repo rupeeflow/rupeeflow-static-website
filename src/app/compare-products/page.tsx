@@ -31,11 +31,11 @@ interface CompRow {
 interface Category {
   id: string
   label: string
-  icon: React.ElementType
+  icon: React.ComponentType<{ size?: number; className?: string }>
   tagline: string
   competitors: { id: string; name: string; tagline: string }[]
   rows: CompRow[]
-  wins: { icon: React.ElementType; title: string; desc: string }[]
+  wins: { icon: React.ComponentType<{ size?: number; className?: string }>; title: string; desc: string }[]
 }
 
 // ── Data ──────────────────────────────────────────────────────────────────────

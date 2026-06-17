@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion, useScroll, useSpring } from 'framer-motion'
-import RupeeFlowHeroVisual from '@/components/sections/RupeeFlowHeroVisual'
+// import RupeeFlowHeroVisual from '@/components/sections/RupeeFlowHeroVisual'
 
 const coreProducts = [
   'AI Credit Engine',
@@ -47,11 +47,32 @@ export default function HomeExperience() {
         style={{ scaleX: progress }}
       />
 
-      <section className="relative min-h-[88vh] overflow-hidden pb-20 pt-32 md:pt-40">
-        <RupeeFlowHeroVisual />
+      <section className="relative min-h-[88vh] overflow-visible pb-20 pt-32 md:pt-40">
+        {/* <RupeeFlowHeroVisual /> */}
+        
+        {/* Hero Video - Enhanced */}
+        <div className="absolute right-0 top-20 bottom-0 w-1/2 lg:w-2/4 z-0">
+          <video
+            className="h-full w-full object-cover object-center"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            style={{
+              filter: 'contrast(1.1) brightness(1.05) saturate(1.1)',
+              borderRadius: '0px'
+            }}
+          >
+            <source src="/herosection/hf_20260617_093546_144b8369-6489-4617-b248-de1185f68175 (1).mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {/* Subtle overlay for better contrast */}
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#F4F8F6]/20 pointer-events-none"></div>
+        </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
-          <div className="max-w-2xl">
+        <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="max-w-2xl pr-4">
             <p className="mb-5 inline-flex rounded-full border border-[#D0E8DA] bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#00875A] backdrop-blur-sm">
               RupeeFlow Platform
             </p>
@@ -59,7 +80,7 @@ export default function HomeExperience() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
-              className="text-4xl font-extrabold leading-[1.1] md:text-6xl lg:text-7xl"
+              className="text-4xl font-extrabold leading-[1.1] md:text-5xl lg:text-6xl"
             >
               <span className="bg-[linear-gradient(120deg,#006B4F,#00875A,#2AB871,#006B4F)] bg-[length:220%_220%] bg-clip-text text-transparent animate-[gradientShift_8s_ease_infinite]">
                 Financial infrastructure that flows with your business.
