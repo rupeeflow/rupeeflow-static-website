@@ -40,7 +40,7 @@ export default function AEPSInfoSection() {
   ]
 
   return (
-    <section className="relative w-full bg-black text-white pb-24 px-6 overflow-hidden">
+    <section className="relative w-full bg-white text-white pb-24 px-6 overflow-hidden">
       {/* Background gradient & glass layer */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(16,185,129,0.25),transparent_70%)] blur-3xl" />
 

@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
-import Image from "next/image"
+import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 export default function RotatingDevice() {
   const [index, setIndex] = useState(0)
@@ -9,24 +9,24 @@ export default function RotatingDevice() {
 
   const screens = [
     {
-      title: "Smart Spend Controls",
-      desc: "Set limits, budgets and merchant restrictions.",
-      img: "/screens/spend.png",
+      title: 'Smart Spend Controls',
+      desc: 'Set limits, budgets and merchant restrictions.',
+      img: '/screens/spend.png',
     },
     {
-      title: "Real-Time Visibility",
-      desc: "Track every transaction instantly.",
-      img: "/screens/visibility.png",
+      title: 'Real-Time Visibility',
+      desc: 'Track every transaction instantly.',
+      img: '/screens/visibility.png',
     },
     {
-      title: "Expense Automation",
-      desc: "Auto categorize & approve faster.",
-      img: "/screens/automation.png",
+      title: 'Expense Automation',
+      desc: 'Auto categorize & approve faster.',
+      img: '/screens/automation.png',
     },
     {
-      title: "Enterprise Security",
-      desc: "Fraud detection & instant card freeze.",
-      img: "/screens/security.png",
+      title: 'Enterprise Security',
+      desc: 'Fraud detection & instant card freeze.',
+      img: '/screens/security.png',
     },
   ]
 
@@ -36,7 +36,7 @@ export default function RotatingDevice() {
       setTilt(true)
 
       setTimeout(() => {
-        setIndex((prev) => (prev + 1) % screens.length)
+        setIndex(prev => (prev + 1) % screens.length)
       }, 900)
 
       setTimeout(() => {
@@ -50,12 +50,10 @@ export default function RotatingDevice() {
 
   return (
     <div className="relative flex justify-center items-center perspective-[1800px]">
-
       {/* ambient glow */}
       <div className="absolute w-[420px] h-[420px] bg-emerald-400/20 blur-[140px] opacity-40" />
 
       <div className="animate-float">
-
         {/* phone body */}
         <div
           className="relative w-[300px] h-[610px] rounded-[52px]
@@ -66,8 +64,8 @@ export default function RotatingDevice() {
           ease-[cubic-bezier(0.22,1,0.36,1)]"
           style={{
             transform: tilt
-              ? "rotateY(22deg) rotateX(4deg) scale(1.02)"
-              : "rotateY(0deg) rotateX(2deg) scale(1)",
+              ? 'rotateY(22deg) rotateX(4deg) scale(1.02)'
+              : 'rotateY(0deg) rotateX(2deg) scale(1)',
           }}
         >
           {/* glass reflection sweep */}
@@ -79,19 +77,18 @@ export default function RotatingDevice() {
           <div className="absolute inset-0 rounded-[52px] bg-gradient-to-tr from-white/10 to-transparent opacity-40 pointer-events-none" />
 
           {/* screen */}
-          <div className="absolute inset-3 rounded-[40px] overflow-hidden bg-[#0C1F18]">
-
+          <div className="absolute inset-3 rounded-[40px] overflow-hidden bg-white">
             {/* SCREEN IMAGE — perfectly fitted */}
             <div className="absolute inset-0 flex items-center justify-center p-4">
               <Image
-  src={screens[index].img}
-  alt=""
-  width={1080}
-  height={2160}
-  quality={100}
-  priority
-  className="w-full h-full object-contain"
-/>
+                src={screens[index].img}
+                alt=""
+                width={1080}
+                height={2160}
+                quality={100}
+                priority
+                className="w-full h-full object-contain"
+              />
             </div>
 
             {/* screen depth shadow */}
@@ -105,11 +102,8 @@ export default function RotatingDevice() {
               <h3 className="text-white text-xl font-semibold mb-2">
                 {screens[index].title}
               </h3>
-              <p className="text-gray-300 text-sm">
-                {screens[index].desc}
-              </p>
+              <p className="text-gray-300 text-sm">{screens[index].desc}</p>
             </div>
-
           </div>
         </div>
       </div>

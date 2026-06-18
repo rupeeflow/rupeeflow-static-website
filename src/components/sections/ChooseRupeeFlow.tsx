@@ -7,23 +7,31 @@ import Link from 'next/link'
 export default function WhyChooseSection() {
   const features = [
     {
-      icon: <ReceiptIndianRupee className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-neutral-300" />,
+      icon: (
+        <ReceiptIndianRupee className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-neutral-300" />
+      ),
       title: 'All your bills, paid in seconds.',
       desc: 'Effortlessly manage all your utility bills—electricity, water, mobile, and more—from a single, intuitive platform. Say goodbye to late fees and scattered due dates with automated reminders and smart scheduling.',
     },
     {
-      icon: <ShieldCheck className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-neutral-300" />,
+      icon: (
+        <ShieldCheck className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-neutral-300" />
+      ),
       title: 'Payments you can trust.',
       desc: 'Bank-grade security with 256-bit encryption, ISO 27001 compliance, and multi-factor authentication. Every transaction is protected by advanced fraud detection systems and real-time monitoring.',
     },
     {
-      icon: <Clock className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-neutral-300" />,
+      icon: (
+        <Clock className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-neutral-300" />
+      ),
       title: 'Always on, whenever you need us.',
       desc: '24/7/365 availability with dedicated support teams, instant transaction processing, and real-time notifications. RupeeFlow ensures your business never stops with 99.9% uptime guarantee.',
     },
     {
-      icon: <Mic className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-neutral-300" />,
-      title: 'Just say it, and it\'s done.',
+      icon: (
+        <Mic className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 text-neutral-300" />
+      ),
+      title: "Just say it, and it's done.",
       desc: 'Revolutionary voice-powered payments supporting 12+ Indian languages. Simply speak your payment instructions and watch as AI processes transactions with 99.5% accuracy.',
     },
   ]
@@ -46,7 +54,7 @@ export default function WhyChooseSection() {
   }
 
   return (
-    <section className="relative w-full bg-black-emerald text-white py-16 sm:py-24 lg:py-36 px-4 sm:px-6 overflow-hidden">
+    <section className="relative w-full bg-white text-white py-16 sm:py-24 lg:py-36 px-4 sm:px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-10 lg:gap-12">
         {/* Left Side */}
         <motion.div
@@ -57,7 +65,7 @@ export default function WhyChooseSection() {
           className="flex-1"
         >
           <h2 className="rf-h2 mb-4">
-            Why {' '}
+            Why{' '}
             <span className="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
               <br></br>
               RupeeFlow
@@ -68,12 +76,12 @@ export default function WhyChooseSection() {
           </p>
 
           <motion.button
-            whileHover={{ 
+            whileHover={{
               scale: 1.05,
-              boxShadow: "0 10px 30px rgba(16, 185, 129, 0.3)"
+              boxShadow: '0 10px 30px rgba(16, 185, 129, 0.3)',
             }}
             whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             className="relative inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg overflow-hidden group"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

@@ -19,7 +19,7 @@ const ProductHero = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   }
   return (
-    <section className="relative w-full min-h-screen bg-black text-white  flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen bg-white text-white  flex flex-col items-center justify-center overflow-hidden">
       {/* Header */}
       <motion.div
         variants={container}
@@ -27,10 +27,7 @@ const ProductHero = () => {
         animate="visible"
         className="text-center px-5 max-w-5xl mb-10"
       >
-        <motion.h1
-          variants={content}
-          className="rf-h1 text-white mb-6 mt-30"
-        >
+        <motion.h1 variants={content} className="rf-h1 text-white mb-6 mt-30">
           Innovative UPI Solutions for Every User, Business & NRI
         </motion.h1>
         <motion.p

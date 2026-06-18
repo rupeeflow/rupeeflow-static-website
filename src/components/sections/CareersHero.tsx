@@ -25,7 +25,7 @@ export default function CareersHero() {
   }
 
   return (
-    <section className="py-32 px-6 bg-black-emerald text-white relative overflow-hidden">
+    <section className="py-32 px-6 bg-white text-white relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-radial-teal-soft opacity-30 pointer-events-none" />
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-radial-emerald-soft opacity-20 pointer-events-none" />

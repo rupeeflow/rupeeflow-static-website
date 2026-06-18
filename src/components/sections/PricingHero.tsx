@@ -98,41 +98,92 @@ export default function PricingSection() {
   const cardsRef = useRef<HTMLElement>(null)
 
   // Hero section — animate on mount (above the fold)
-  useGSAP(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
 
-    tl.fromTo('.ph-badge',   { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 })
-      .fromTo('.ph-heading', { y: 35, opacity: 0 }, { y: 0, opacity: 1, duration: 0.65 }, '-=0.3')
-      .fromTo('.ph-subtext', { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, '-=0.35')
-      .fromTo('.ph-pill',    { y: 15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, stagger: 0.07 }, '-=0.3')
-      .fromTo('.ph-toggle',  { y: 15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45 }, '-=0.25')
-  }, { scope: heroRef })
+      tl.fromTo(
+        '.ph-badge',
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5 }
+      )
+        .fromTo(
+          '.ph-heading',
+          { y: 35, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.65 },
+          '-=0.3'
+        )
+        .fromTo(
+          '.ph-subtext',
+          { y: 25, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5 },
+          '-=0.35'
+        )
+        .fromTo(
+          '.ph-pill',
+          { y: 15, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.4, stagger: 0.07 },
+          '-=0.3'
+        )
+        .fromTo(
+          '.ph-toggle',
+          { y: 15, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.45 },
+          '-=0.25'
+        )
+    },
+    { scope: heroRef }
+  )
 
   // Cards section — ScrollTrigger (below fold)
-  useGSAP(() => {
-    gsap.fromTo('.ph-plan-card',
-      { y: 55, opacity: 0 },
-      {
-        y: 0, opacity: 1, duration: 0.7, stagger: 0.14, ease: 'power2.out',
-        scrollTrigger: { trigger: '.ph-cards-grid', start: 'top 92%', once: true },
-      }
-    )
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        '.ph-plan-card',
+        { y: 55, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          stagger: 0.14,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '.ph-cards-grid',
+            start: 'top 92%',
+            once: true,
+          },
+        }
+      )
 
-    gsap.fromTo('.ph-baseline-item',
-      { y: 30, opacity: 0 },
-      {
-        y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power2.out',
-        scrollTrigger: { trigger: '.ph-baseline', start: 'top 92%', once: true },
-      }
-    )
+      gsap.fromTo(
+        '.ph-baseline-item',
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.08,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '.ph-baseline',
+            start: 'top 92%',
+            once: true,
+          },
+        }
+      )
 
-    ScrollTrigger.refresh()
-  }, { scope: cardsRef })
+      ScrollTrigger.refresh()
+    },
+    { scope: cardsRef }
+  )
 
   return (
     <>
       {/* ── HERO — dark ── */}
-      <section ref={heroRef} className="relative py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-[#060D0A] to-[#0C1F18] overflow-hidden">
+      <section
+        ref={heroRef}
+        className="relative py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-[#060D0A] to-[#0C1F18] overflow-hidden"
+      >
         {/* grid overlay */}
         <div
           aria-hidden="true"
@@ -158,13 +209,13 @@ export default function PricingSection() {
             </h1>
 
             <p className="ph-subtext text-gray-400 mt-5 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              Transparent, usage-based pricing across collections, payouts, cards,
-              and credit — with zero hidden fees.
+              Transparent, usage-based pricing across collections, payouts,
+              cards, and credit — with zero hidden fees.
             </p>
 
             {/* trust pills */}
             <div className="flex flex-wrap items-center justify-center gap-2 mt-7">
-              {['No setup fee', 'No lock-in', 'Cancel anytime'].map((t) => (
+              {['No setup fee', 'No lock-in', 'Cancel anytime'].map(t => (
                 <span
                   key={t}
                   className="ph-pill flex items-center gap-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-full px-3 py-1"
@@ -177,9 +228,13 @@ export default function PricingSection() {
 
             {/* billing toggle */}
             <div className="ph-toggle flex items-center justify-center gap-3 mt-8">
-              <span className={`text-sm font-medium transition ${!annual ? 'text-white' : 'text-gray-500'}`}>Monthly</span>
+              <span
+                className={`text-sm font-medium transition ${!annual ? 'text-white' : 'text-gray-500'}`}
+              >
+                Monthly
+              </span>
               <button
-                onClick={() => setAnnual((v) => !v)}
+                onClick={() => setAnnual(v => !v)}
                 className={`relative w-12 h-6 rounded-full transition-colors duration-300 focus:outline-none ${
                   annual ? 'bg-emerald-500' : 'bg-white/20'
                 }`}
@@ -191,7 +246,9 @@ export default function PricingSection() {
                   }`}
                 />
               </button>
-              <span className={`text-sm font-medium transition ${annual ? 'text-white' : 'text-gray-500'}`}>
+              <span
+                className={`text-sm font-medium transition ${annual ? 'text-white' : 'text-gray-500'}`}
+              >
                 Annual
                 <span className="ml-1.5 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold rounded-full px-2 py-0.5 border border-emerald-500/30">
                   Save 20%
@@ -206,7 +263,7 @@ export default function PricingSection() {
       <section ref={cardsRef} className="py-12 sm:py-16 lg:py-20 bg-white">
         <Container>
           <div className="ph-cards-grid grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 -mt-10 sm:-mt-16 relative z-10">
-            {plans.map((plan) => (
+            {plans.map(plan => (
               <div
                 key={plan.name}
                 className={`ph-plan-card relative flex flex-col rounded-2xl border transition duration-300 ${
@@ -222,7 +279,7 @@ export default function PricingSection() {
                       className={`text-[11px] font-bold uppercase tracking-wider rounded-full px-3.5 py-1 ${
                         plan.highlight
                           ? 'bg-gradient-to-r from-[#00EF64] to-[#53BEC2] text-black'
-                          : 'bg-gray-900 text-white'
+                          : 'bg-white text-white'
                       }`}
                     >
                       {plan.badge}
@@ -232,35 +289,51 @@ export default function PricingSection() {
 
                 <div className="p-6 sm:p-8 flex flex-col flex-1">
                   {/* plan name */}
-                  <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${plan.highlight ? 'text-emerald-400' : 'text-gray-400'}`}>
+                  <p
+                    className={`text-xs font-bold uppercase tracking-widest mb-3 ${plan.highlight ? 'text-emerald-400' : 'text-gray-400'}`}
+                  >
                     {plan.name}
                   </p>
 
                   {/* price */}
                   <div className="mb-2">
-                    <span className={`text-4xl sm:text-5xl font-black ${plan.highlight ? 'text-white' : 'text-gray-900'}`}>
+                    <span
+                      className={`text-4xl sm:text-5xl font-black ${plan.highlight ? 'text-white' : 'text-gray-900'}`}
+                    >
                       {annual ? plan.annualPrice : plan.monthlyPrice}
                     </span>
                     {plan.period && (
-                      <span className={`text-sm ml-1 ${plan.highlight ? 'text-gray-400' : 'text-gray-500'}`}>
+                      <span
+                        className={`text-sm ml-1 ${plan.highlight ? 'text-gray-400' : 'text-gray-500'}`}
+                      >
                         {plan.period}
                       </span>
                     )}
                   </div>
 
                   {plan.name === 'Growth' && annual && (
-                    <p className="text-emerald-400 text-xs font-semibold mb-1">Billed ₹23,988/year · Save ₹6,000</p>
+                    <p className="text-emerald-400 text-xs font-semibold mb-1">
+                      Billed ₹23,988/year · Save ₹6,000
+                    </p>
                   )}
 
-                  <p className={`text-sm leading-relaxed mb-6 ${plan.highlight ? 'text-gray-400' : 'text-gray-500'}`}>
+                  <p
+                    className={`text-sm leading-relaxed mb-6 ${plan.highlight ? 'text-gray-400' : 'text-gray-500'}`}
+                  >
                     {plan.desc}
                   </p>
 
                   {/* features */}
                   <ul className="space-y-2.5 flex-1 mb-8">
-                    {plan.features.map((f) => (
-                      <li key={f} className={`flex items-start gap-2.5 text-sm ${plan.highlight ? 'text-gray-300' : 'text-gray-600'}`}>
-                        <CheckCircle2 size={15} className="text-emerald-500 shrink-0 mt-0.5" />
+                    {plan.features.map(f => (
+                      <li
+                        key={f}
+                        className={`flex items-start gap-2.5 text-sm ${plan.highlight ? 'text-gray-300' : 'text-gray-600'}`}
+                      >
+                        <CheckCircle2
+                          size={15}
+                          className="text-emerald-500 shrink-0 mt-0.5"
+                        />
                         {f}
                       </li>
                     ))}
@@ -280,7 +353,7 @@ export default function PricingSection() {
                       href={plan.ctaHref}
                       className={`inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl font-bold text-sm border transition duration-200 ${
                         plan.name === 'Enterprise'
-                          ? 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
+                          ? 'border-gray-900 text-gray-900 hover:bg-white hover:text-white'
                           : 'border-emerald-500 text-emerald-600 hover:bg-emerald-50'
                       }`}
                     >
@@ -300,11 +373,16 @@ export default function PricingSection() {
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
               {baseline.map(({ icon: Icon, label }) => (
-                <div key={label} className="ph-baseline-item flex flex-col items-center text-center gap-2">
+                <div
+                  key={label}
+                  className="ph-baseline-item flex flex-col items-center text-center gap-2"
+                >
                   <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center">
                     <Icon size={18} className="text-emerald-600" />
                   </div>
-                  <p className="text-gray-600 text-xs font-medium leading-snug">{label}</p>
+                  <p className="text-gray-600 text-xs font-medium leading-snug">
+                    {label}
+                  </p>
                 </div>
               ))}
             </div>

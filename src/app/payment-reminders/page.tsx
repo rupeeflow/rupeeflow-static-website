@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import Container from "@/components/ui/Container"
-import MainCTA from "@/components/ui/mainCTA"
-import CardFAQ from "@/components/sections/CardFAQ"
-import { motion } from "framer-motion"
+import Container from '@/components/ui/Container'
+import MainCTA from '@/components/ui/mainCTA'
+import CardFAQ from '@/components/sections/CardFAQ'
+import { motion } from 'framer-motion'
 
 import {
   BellRing,
@@ -16,50 +16,46 @@ import {
   LineChart,
   Zap,
   BarChart3,
-  Activity
-} from "lucide-react"
+  Activity,
+} from 'lucide-react'
 
 export default function PaymentRemindersPage() {
-
   const faqs = [
     {
-      question: "Can I customize reminder schedules?",
+      question: 'Can I customize reminder schedules?',
       answer:
-        "Yes. Configure reminders before due dates, on due dates, or after overdue thresholds."
+        'Yes. Configure reminders before due dates, on due dates, or after overdue thresholds.',
     },
     {
-      question: "Which channels are supported?",
+      question: 'Which channels are supported?',
       answer:
-        "Reminders can be delivered via SMS, email, and in-app notifications."
+        'Reminders can be delivered via SMS, email, and in-app notifications.',
     },
     {
-      question: "Will customers receive multiple reminders?",
-      answer:
-        "You control reminder frequency and escalation timing."
+      question: 'Will customers receive multiple reminders?',
+      answer: 'You control reminder frequency and escalation timing.',
     },
     {
-      question: "Can I track reminder delivery status?",
-      answer:
-        "Track delivery, opens, clicks, and payment responses."
+      question: 'Can I track reminder delivery status?',
+      answer: 'Track delivery, opens, clicks, and payment responses.',
     },
     {
-      question: "How do reminders improve cash flow?",
+      question: 'How do reminders improve cash flow?',
       answer:
-        "Automated reminders reduce overdue invoices and accelerate payments."
+        'Automated reminders reduce overdue invoices and accelerate payments.',
     },
   ]
 
   return (
     <>
       {/* HERO */}
-      <section className="bg-[#020506] text-white">
+      <section className="bg-white text-white">
         <Container className="py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-
             {/* LEFT */}
             <div>
               <h1 className="text-6xl font-bold leading-tight">
-                Payment{" "}
+                Payment{' '}
                 <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                   Reminders
                 </span>
@@ -67,16 +63,19 @@ export default function PaymentRemindersPage() {
 
               <p className="mt-6 text-gray-400 text-lg leading-relaxed">
                 Automate reminders for upcoming, due, and overdue invoices.
-                Improve payment behavior and maintain healthy cash flow
-                with intelligent follow-ups.
+                Improve payment behavior and maintain healthy cash flow with
+                intelligent follow-ups.
               </p>
 
               <ul className="mt-8 space-y-4">
                 {[
-                  { icon: BellRing, text: "Automated due-date alerts" },
-                  { icon: CalendarClock, text: "Flexible scheduling rules" },
-                  { icon: Mail, text: "SMS, email & in-app notifications" },
-                  { icon: ShieldCheck, text: "Secure & professional follow-ups" },
+                  { icon: BellRing, text: 'Automated due-date alerts' },
+                  { icon: CalendarClock, text: 'Flexible scheduling rules' },
+                  { icon: Mail, text: 'SMS, email & in-app notifications' },
+                  {
+                    icon: ShieldCheck,
+                    text: 'Secure & professional follow-ups',
+                  },
                 ].map((item, i) => {
                   const Icon = item.icon
                   return (
@@ -97,18 +96,22 @@ export default function PaymentRemindersPage() {
 
             {/* RIGHT DASHBOARD WITH FLOATING LIVE CARD */}
             <div className="relative">
-
               <div className="bg-white rounded-2xl shadow-xl p-10 border border-gray-200">
                 <p className="text-gray-400 text-sm mb-6">Reminder Timeline</p>
 
                 {[
-                  ["Before Due", "Scheduled"],
-                  ["Due Date", "Alert"],
-                  ["Overdue", "Escalation"],
+                  ['Before Due', 'Scheduled'],
+                  ['Due Date', 'Alert'],
+                  ['Overdue', 'Escalation'],
                 ].map(([label, status]) => (
-                  <div key={label} className="flex justify-between py-2 text-sm">
+                  <div
+                    key={label}
+                    className="flex justify-between py-2 text-sm"
+                  >
                     <span className="text-gray-600">{label}</span>
-                    <span className="text-emerald-600 font-medium">{status}</span>
+                    <span className="text-emerald-600 font-medium">
+                      {status}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -125,9 +128,7 @@ export default function PaymentRemindersPage() {
                   Pay Now
                 </button>
               </motion.div>
-
             </div>
-
           </div>
         </Container>
       </section>
@@ -136,14 +137,13 @@ export default function PaymentRemindersPage() {
       <section className="py-28 bg-gray-50">
         <Container>
           <h2 className="text-4xl font-semibold text-center">
-            Collection Reminders for <span className="text-emerald-600">All Business Types</span>
+            Collection Reminders for{' '}
+            <span className="text-emerald-600">All Business Types</span>
           </h2>
 
           <div className="mt-20 space-y-24">
-
             {/* Absolute Visibility */}
             <div className="grid md:grid-cols-2 gap-16 items-center">
-
               <div>
                 <h3 className="flex items-center gap-2 text-xl font-semibold">
                   <Eye className="text-emerald-600" /> Absolute Visibility
@@ -164,19 +164,19 @@ export default function PaymentRemindersPage() {
               {/* Payment Pattern Card with 3D animation */}
               <motion.div
                 initial={{ rotateY: 0, rotateX: 0 }}
-                whileHover={{ 
+                whileHover={{
                   rotateY: 5,
                   rotateX: -5,
                   scale: 1.02,
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3 },
                 }}
-                animate={{ 
+                animate={{
                   y: [0, -15, 0],
                   rotateY: [0, 2, 0],
-                  transition: { 
+                  transition: {
                     y: { duration: 6, repeat: Infinity },
-                    rotateY: { duration: 8, repeat: Infinity }
-                  }
+                    rotateY: { duration: 8, repeat: Infinity },
+                  },
                 }}
                 style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
                 className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-2xl p-8 border border-gray-100"
@@ -190,14 +190,14 @@ export default function PaymentRemindersPage() {
                     <motion.div
                       key={i}
                       initial={{ height: 0, opacity: 0 }}
-                      whileInView={{ 
-                        height: `${h}%`, 
+                      whileInView={{
+                        height: `${h}%`,
                         opacity: 1,
-                        transition: { delay: i * 0.1, duration: 0.5 }
+                        transition: { delay: i * 0.1, duration: 0.5 },
                       }}
-                      whileHover={{ 
+                      whileHover={{
                         scale: 1.1,
-                        backgroundColor: i % 2 === 0 ? '#10b981' : '#34d399'
+                        backgroundColor: i % 2 === 0 ? '#10b981' : '#34d399',
                       }}
                       className="bg-gradient-to-t from-emerald-600 to-emerald-400 w-6 rounded-t-lg cursor-pointer"
                     />
@@ -213,28 +213,26 @@ export default function PaymentRemindersPage() {
                   <span>Sun</span>
                 </div>
               </motion.div>
-
             </div>
 
             {/* Embedded Payment Links */}
             <div className="grid md:grid-cols-2 gap-16 items-center">
-
               {/* Reminder Message Card with 3D animation */}
               <motion.div
                 initial={{ rotateY: 0, rotateX: 0 }}
-                whileHover={{ 
+                whileHover={{
                   rotateY: -5,
                   rotateX: 5,
                   scale: 1.02,
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3 },
                 }}
-                animate={{ 
+                animate={{
                   y: [0, -12, 0],
                   rotateY: [0, -2, 0],
-                  transition: { 
+                  transition: {
                     y: { duration: 6, repeat: Infinity },
-                    rotateY: { duration: 7, repeat: Infinity }
-                  }
+                    rotateY: { duration: 7, repeat: Infinity },
+                  },
                 }}
                 style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
                 className="bg-gradient-to-br from-white to-emerald-50 rounded-2xl shadow-2xl p-8 border border-emerald-100"
@@ -244,12 +242,18 @@ export default function PaymentRemindersPage() {
                   <BellRing className="text-emerald-500" size={20} />
                 </div>
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
-                  <p className="text-lg font-semibold text-gray-800">Pay ₹12,000</p>
-                  <p className="text-sm text-gray-600 mt-1">for Invoice #4582</p>
+                  <p className="text-lg font-semibold text-gray-800">
+                    Pay ₹12,000
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    for Invoice #4582
+                  </p>
                   <div className="mt-3 p-2 bg-emerald-50 rounded border border-emerald-200">
-                    <p className="text-emerald-600 text-sm font-mono">securepay.in/4582</p>
+                    <p className="text-emerald-600 text-sm font-mono">
+                      securepay.in/4582
+                    </p>
                   </div>
-                  <motion.button 
+                  <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="mt-4 w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-2.5 rounded-lg font-medium shadow-lg hover:shadow-xl transition-shadow"
@@ -276,7 +280,6 @@ export default function PaymentRemindersPage() {
 
             {/* Channels */}
             <div className="grid md:grid-cols-2 gap-16 items-center">
-
               <div>
                 <h3 className="flex items-center gap-2 text-xl font-semibold">
                   <Layers className="text-emerald-600" />
@@ -294,56 +297,63 @@ export default function PaymentRemindersPage() {
               {/* Channels Card with 3D animation */}
               <motion.div
                 initial={{ rotateY: 0, rotateX: 0 }}
-                whileHover={{ 
+                whileHover={{
                   rotateY: 5,
                   rotateX: -5,
                   scale: 1.02,
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3 },
                 }}
-                animate={{ 
+                animate={{
                   y: [0, -10, 0],
                   rotateY: [0, 3, 0],
-                  transition: { 
+                  transition: {
                     y: { duration: 6, repeat: Infinity },
-                    rotateY: { duration: 9, repeat: Infinity }
-                  }
+                    rotateY: { duration: 9, repeat: Infinity },
+                  },
                 }}
                 style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
                 className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-2xl p-8 border border-blue-100"
               >
-                <p className="text-sm text-gray-400 mb-6">Communication Channels</p>
+                <p className="text-sm text-gray-400 mb-6">
+                  Communication Channels
+                </p>
                 <div className="space-y-4">
                   {[
                     { name: 'SMS', color: 'green', icon: '📱' },
                     { name: 'Email', color: 'blue', icon: '✉️' },
-                    { name: 'In-App', color: 'purple', icon: '🔔' }
+                    { name: 'In-App', color: 'purple', icon: '🔔' },
                   ].map((channel, i) => (
                     <motion.div
                       key={channel.name}
                       initial={{ x: -50, opacity: 0 }}
-                      whileInView={{ 
-                        x: 0, 
+                      whileInView={{
+                        x: 0,
                         opacity: 1,
-                        transition: { delay: i * 0.2, duration: 0.5 }
+                        transition: { delay: i * 0.2, duration: 0.5 },
                       }}
-                      whileHover={{ 
+                      whileHover={{
                         scale: 1.05,
                         x: 10,
-                        transition: { duration: 0.2 }
+                        transition: { duration: 0.2 },
                       }}
                       className={`flex items-center justify-between p-3 rounded-lg bg-${channel.color}-50 border border-${channel.color}-200 cursor-pointer`}
                     >
                       <div className="flex items-center gap-3">
                         <span className="text-2xl">{channel.icon}</span>
-                        <span className={`font-medium text-${channel.color}-700`}>{channel.name}</span>
+                        <span
+                          className={`font-medium text-${channel.color}-700`}
+                        >
+                          {channel.name}
+                        </span>
                       </div>
-                      <div className={`w-2 h-2 rounded-full bg-${channel.color}-500 animate-pulse`} />
+                      <div
+                        className={`w-2 h-2 rounded-full bg-${channel.color}-500 animate-pulse`}
+                      />
                     </motion.div>
                   ))}
                 </div>
               </motion.div>
             </div>
-
           </div>
         </Container>
       </section>
@@ -352,7 +362,6 @@ export default function PaymentRemindersPage() {
       <section className="py-28 bg-white">
         <Container>
           <div className="grid md:grid-cols-2 gap-16 items-center">
-
             <motion.div
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 6, repeat: Infinity }}
@@ -366,7 +375,8 @@ export default function PaymentRemindersPage() {
                 className="absolute -bottom-6 right-8 bg-white border shadow-lg rounded-xl p-4 text-sm"
               >
                 <p className="text-gray-400 text-xs">Live Insights</p>
-                Late Risk <span className="text-amber-500">Medium</span><br/>
+                Late Risk <span className="text-amber-500">Medium</span>
+                <br />
                 Collection Rate <span className="text-emerald-600">92%</span>
               </motion.div>
             </motion.div>
@@ -389,7 +399,6 @@ export default function PaymentRemindersPage() {
                 View Insights →
               </button>
             </div>
-
           </div>
         </Container>
       </section>
@@ -398,7 +407,6 @@ export default function PaymentRemindersPage() {
       <section className="py-28 bg-gray-100">
         <Container>
           <div className="grid md:grid-cols-2 gap-16 items-center">
-
             <div>
               <h2 className="flex items-center gap-2 text-3xl font-semibold">
                 <Zap className="text-emerald-600" />
@@ -422,9 +430,9 @@ export default function PaymentRemindersPage() {
               <p className="text-sm text-gray-400 mb-4">Escalation Workflow</p>
 
               {[
-                ["Day 1 Reminder", "Sent"],
-                ["Day 3 Follow-up", "Delivered"],
-                ["Day 7 Escalation", "Scheduled"],
+                ['Day 1 Reminder', 'Sent'],
+                ['Day 3 Follow-up', 'Delivered'],
+                ['Day 7 Escalation', 'Scheduled'],
               ].map(([label, status]) => (
                 <div key={label} className="flex justify-between py-2 text-sm">
                   <span>{label}</span>
@@ -432,7 +440,6 @@ export default function PaymentRemindersPage() {
                 </div>
               ))}
             </motion.div>
-
           </div>
         </Container>
       </section>

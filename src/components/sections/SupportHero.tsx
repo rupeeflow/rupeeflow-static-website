@@ -29,7 +29,7 @@ export default function SupportHero() {
   }
 
   return (
-    <section className="py-32 px-6 bg-black-emerald text-white relative overflow-hidden">
+    <section className="py-32 px-6 bg-white text-white relative overflow-hidden">
       {/* subtle background glow */}
 
       <div className="relative z-10 max-w-6xl mx-auto text-center">

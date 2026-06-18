@@ -1,8 +1,15 @@
 import Container from '@/components/ui/Container'
 import MainCTA from '@/components/ui/mainCTA'
 import Image from 'next/image'
-import { Check, Wallet, ShieldCheck, Users, Settings, BarChart3 } from 'lucide-react'
-import { prepaidFAQs } from "@/data/prepaidCardFaqs"
+import {
+  Check,
+  Wallet,
+  ShieldCheck,
+  Users,
+  Settings,
+  BarChart3,
+} from 'lucide-react'
+import { prepaidFAQs } from '@/data/prepaidCardFaqs'
 import CardFAQ from '@/components/sections/CardFAQ'
 
 export default function PrepaidCardsPage() {
@@ -11,28 +18,37 @@ export default function PrepaidCardsPage() {
       {/* HERO */}
       <Container className="py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-
           {/* LEFT */}
           <div>
             <h1 className="text-6xl font-bold text-white leading-tight">
-              Prepaid{" "}
+              Prepaid{' '}
               <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                 Cards
               </span>
             </h1>
 
             <p className="mt-6 text-gray-300 text-lg leading-relaxed">
-              Enable secure, pre-funded spending with complete control over budgets,
-              eliminating overspending risks while simplifying expense management.
+              Enable secure, pre-funded spending with complete control over
+              budgets, eliminating overspending risks while simplifying expense
+              management.
             </p>
 
             <ul className="mt-8 space-y-4">
               {[
-                { icon: Wallet, text: "Pre-load funds for controlled spending" },
-                { icon: ShieldCheck, text: "Eliminate credit risk & overspending" },
-                { icon: Users, text: "Ideal for employees, vendors & incentives" },
-                { icon: Settings, text: "Set limits & usage rules instantly" },
-                { icon: BarChart3, text: "Track spending in real time" },
+                {
+                  icon: Wallet,
+                  text: 'Pre-load funds for controlled spending',
+                },
+                {
+                  icon: ShieldCheck,
+                  text: 'Eliminate credit risk & overspending',
+                },
+                {
+                  icon: Users,
+                  text: 'Ideal for employees, vendors & incentives',
+                },
+                { icon: Settings, text: 'Set limits & usage rules instantly' },
+                { icon: BarChart3, text: 'Track spending in real time' },
               ].map((item, i) => {
                 const Icon = item.icon
                 return (
@@ -69,7 +85,7 @@ export default function PrepaidCardsPage() {
       <div className="py-20 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
         <div className="text-center max-w-3xl mx-auto px-6">
           <h2 className="text-5xl font-semibold text-white">
-            Why Choose{" "}
+            Why Choose{' '}
             <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
               Prepaid Cards
             </span>
@@ -77,28 +93,29 @@ export default function PrepaidCardsPage() {
           </h2>
 
           <p className="mt-3 text-xl text-gray-300">
-            Control spending, prevent misuse, and manage budgets with zero credit exposure.
+            Control spending, prevent misuse, and manage budgets with zero
+            credit exposure.
           </p>
         </div>
 
         <div className="mt-14 max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           {[
             {
-              title: "Budget Control",
-              desc: "Predefine spending amounts and eliminate overspending risks.",
+              title: 'Budget Control',
+              desc: 'Predefine spending amounts and eliminate overspending risks.',
             },
             {
-              title: "Risk-Free Spending",
-              desc: "Avoid credit exposure while ensuring secure transactions.",
+              title: 'Risk-Free Spending',
+              desc: 'Avoid credit exposure while ensuring secure transactions.',
             },
             {
-              title: "Instant Issuance",
-              desc: "Create and distribute cards instantly to employees or vendors.",
+              title: 'Instant Issuance',
+              desc: 'Create and distribute cards instantly to employees or vendors.',
             },
           ].map((item, i) => (
             <div
               key={i}
-              className="p-7 rounded-2xl border border-white/10 bg-[#0F0F0F]
+              className="p-7 rounded-2xl border border-white/10 bg-white
               hover:-translate-y-1 transition
               hover:border-emerald-400/40
               hover:shadow-[0_0_25px_rgba(0,239,100,0.15)]"
@@ -113,44 +130,60 @@ export default function PrepaidCardsPage() {
       {/* FEATURE SECTIONS */}
       <div className="py-24 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
         <div className="max-w-6xl mx-auto px-6 space-y-28">
-
           {[
             {
-              title: "Controlled Budget Distribution",
-              desc: "Allocate prepaid funds across teams and projects with precision.",
-              points: ["Department budgets", "Project allocation", "Spend caps"],
-              image: "Budget Distribution Preview",
+              title: 'Controlled Budget Distribution',
+              desc: 'Allocate prepaid funds across teams and projects with precision.',
+              points: [
+                'Department budgets',
+                'Project allocation',
+                'Spend caps',
+              ],
+              image: 'Budget Distribution Preview',
             },
             {
-              title: "Secure & Safe Transactions",
-              desc: "Ensure funds are used only for approved purposes.",
-              points: ["Merchant restrictions", "Usage controls", "Secure payments"],
-              image: "Secure Payment Preview",
+              title: 'Secure & Safe Transactions',
+              desc: 'Ensure funds are used only for approved purposes.',
+              points: [
+                'Merchant restrictions',
+                'Usage controls',
+                'Secure payments',
+              ],
+              image: 'Secure Payment Preview',
             },
             {
-              title: "Instant Card Issuance",
-              desc: "Create and distribute prepaid cards in seconds.",
-              points: ["Virtual & physical cards", "Instant activation", "Bulk issuance"],
-              image: "Card Issuance Preview",
+              title: 'Instant Card Issuance',
+              desc: 'Create and distribute prepaid cards in seconds.',
+              points: [
+                'Virtual & physical cards',
+                'Instant activation',
+                'Bulk issuance',
+              ],
+              image: 'Card Issuance Preview',
             },
             {
-              title: "Real-Time Spend Visibility",
-              desc: "Monitor transactions and optimize budgets instantly.",
-              points: ["Live dashboards", "Expense alerts", "Downloadable reports"],
-              image: "Spend Insights Preview",
+              title: 'Real-Time Spend Visibility',
+              desc: 'Monitor transactions and optimize budgets instantly.',
+              points: [
+                'Live dashboards',
+                'Expense alerts',
+                'Downloadable reports',
+              ],
+              image: 'Spend Insights Preview',
             },
           ].map((item, i) => (
             <div key={i} className="grid md:grid-cols-2 gap-14 items-center">
-
-              <div className={`${i % 2 ? "md:order-2" : ""} bg-white/5 border border-white/10 rounded-2xl aspect-video flex items-center justify-center text-gray-500`}>
+              <div
+                className={`${i % 2 ? 'md:order-2' : ''} bg-white/5 border border-white/10 rounded-2xl aspect-video flex items-center justify-center text-gray-500`}
+              >
                 {item.image}
               </div>
 
-              <div className={`${i % 2 ? "md:order-1" : ""}`}>
+              <div className={`${i % 2 ? 'md:order-1' : ''}`}>
                 <h3 className="text-2xl font-semibold text-white">
-                  {item.title.split(" ").slice(0, -1).join(" ")}{" "}
+                  {item.title.split(' ').slice(0, -1).join(' ')}{' '}
                   <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
-                    {item.title.split(" ").slice(-1)}
+                    {item.title.split(' ').slice(-1)}
                   </span>
                 </h3>
 
@@ -168,7 +201,11 @@ export default function PrepaidCardsPage() {
                 </ul>
 
                 <div className="mt-6">
-                  <MainCTA label="Learn More" destination="#" size="w-40 h-10" />
+                  <MainCTA
+                    label="Learn More"
+                    destination="#"
+                    size="w-40 h-10"
+                  />
                 </div>
               </div>
             </div>
@@ -183,7 +220,6 @@ export default function PrepaidCardsPage() {
         </p>
       </div>
 
-
       <CardFAQ faqs={prepaidFAQs} />
 
       {/* FINAL CTA */}
@@ -192,7 +228,8 @@ export default function PrepaidCardsPage() {
           Simplify prepaid spending today
         </h3>
         <p className="text-gray-400 mt-4">
-          Control budgets, reduce risk, and empower teams with secure prepaid cards.
+          Control budgets, reduce risk, and empower teams with secure prepaid
+          cards.
         </p>
 
         <div className="mt-8 flex justify-center">

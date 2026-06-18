@@ -19,7 +19,9 @@ function PayChannelsMockup() {
   const methods = ['NEFT', 'RTGS', 'IMPS', 'UPI']
   return (
     <div className="bg-white rounded-2xl border border-gray-200 shadow-lg p-6 w-full max-w-[360px]">
-      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-4">Select Payment Channel</p>
+      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-4">
+        Select Payment Channel
+      </p>
 
       <div className="grid grid-cols-2 gap-3 mb-6">
         {methods.map((m, i) => (
@@ -30,9 +32,19 @@ function PayChannelsMockup() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 + i * 0.1, duration: 0.4 }}
           >
-            <span className={`text-sm font-bold ${i === 2 ? 'text-emerald-600' : 'text-gray-600'}`}>{m}</span>
+            <span
+              className={`text-sm font-bold ${i === 2 ? 'text-emerald-600' : 'text-gray-600'}`}
+            >
+              {m}
+            </span>
             <span className="text-[10px] text-gray-400">
-              {m === 'NEFT' ? 'Batch · T+1' : m === 'RTGS' ? '₹2L+ · Real time' : m === 'IMPS' ? 'Instant · 24/7' : 'Instant · UPI'}
+              {m === 'NEFT'
+                ? 'Batch · T+1'
+                : m === 'RTGS'
+                  ? '₹2L+ · Real time'
+                  : m === 'IMPS'
+                    ? 'Instant · 24/7'
+                    : 'Instant · UPI'}
             </span>
           </motion.div>
         ))}
@@ -59,14 +71,26 @@ function PayChannelsMockup() {
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
       >
         Send Payment
-        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        <svg
+          className="w-4 h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M14 5l7 7m0 0l-7 7m7-7H3"
+          />
         </svg>
       </motion.div>
 
       <div className="flex items-center gap-2 mt-4 justify-center">
         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-        <span className="text-[10px] text-gray-400 font-medium">Processed in &lt; 2 seconds</span>
+        <span className="text-[10px] text-gray-400 font-medium">
+          Processed in &lt; 2 seconds
+        </span>
       </div>
     </div>
   )
@@ -87,7 +111,9 @@ function InvoiceApprovalMockup() {
           <p className="text-xs text-gray-400 font-medium">Invoice</p>
           <p className="fontheading text-gray-900 text-base">#INV-2024-0891</p>
         </div>
-        <span className="text-xs bg-amber-100 text-amber-700 font-semibold px-3 py-1 rounded-full">Approval Flow</span>
+        <span className="text-xs bg-amber-100 text-amber-700 font-semibold px-3 py-1 rounded-full">
+          Approval Flow
+        </span>
       </div>
 
       <div className="space-y-4 mb-5">
@@ -100,13 +126,21 @@ function InvoiceApprovalMockup() {
             transition={{ delay: 0.15 + i * 0.15, duration: 0.4 }}
           >
             <div className="flex flex-col items-center shrink-0">
-              <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step.done ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400 animate-pulse'}`}>
+              <div
+                className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step.done ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400 animate-pulse'}`}
+              >
                 {step.done ? '✓' : '…'}
               </div>
-              {i < steps.length - 1 && <div className="w-px h-6 bg-gray-200 mt-1" />}
+              {i < steps.length - 1 && (
+                <div className="w-px h-6 bg-gray-200 mt-1" />
+              )}
             </div>
             <div className="pt-0.5">
-              <p className={`text-sm font-semibold ${step.done ? 'text-gray-900' : 'text-gray-400'}`}>{step.label}</p>
+              <p
+                className={`text-sm font-semibold ${step.done ? 'text-gray-900' : 'text-gray-400'}`}
+              >
+                {step.label}
+              </p>
               <p className="text-[10px] text-gray-400 mt-0.5">{step.time}</p>
             </div>
           </motion.div>
@@ -134,7 +168,9 @@ function LiveTrackingMockup() {
       <div className="flex items-center gap-2 mb-5">
         <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping absolute" />
         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 relative" />
-        <p className="text-sm font-semibold text-gray-700">Live Transaction Tracker</p>
+        <p className="text-sm font-semibold text-gray-700">
+          Live Transaction Tracker
+        </p>
       </div>
 
       <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5">
@@ -144,11 +180,15 @@ function LiveTrackingMockup() {
         </div>
         <div className="flex justify-between text-xs mb-1">
           <span className="text-gray-500">To</span>
-          <span className="font-semibold text-gray-700">ABC Vendors Pvt. Ltd.</span>
+          <span className="font-semibold text-gray-700">
+            ABC Vendors Pvt. Ltd.
+          </span>
         </div>
         <div className="flex justify-between text-xs">
           <span className="text-gray-500">Mode</span>
-          <span className="text-emerald-600 font-semibold">IMPS · Real-time</span>
+          <span className="text-emerald-600 font-semibold">
+            IMPS · Real-time
+          </span>
         </div>
       </div>
 
@@ -162,12 +202,24 @@ function LiveTrackingMockup() {
             transition={{ delay: 0.2 + i * 0.2, duration: 0.4 }}
           >
             <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-              <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              <svg
+                className="w-3 h-3 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={3}
+                  d="M5 13l4 4L19 7"
+                />
               </svg>
             </div>
             <div className="flex-1 flex justify-between">
-              <span className="text-sm text-gray-700 font-medium">{s.label}</span>
+              <span className="text-sm text-gray-700 font-medium">
+                {s.label}
+              </span>
               <span className="text-[10px] text-gray-400">{s.ts}</span>
             </div>
           </motion.div>
@@ -184,16 +236,40 @@ function LiveTrackingMockup() {
 /* ─── Animated mockup: Instant Reconciliation ─── */
 function ReconciliationMockup() {
   const rows = [
-    { inv: 'INV-001', vendor: 'Sharma & Co.', amount: '₹25,000', status: 'Matched' },
-    { inv: 'INV-002', vendor: 'TechVendors', amount: '₹18,500', status: 'Matched' },
-    { inv: 'INV-003', vendor: 'FastSupply', amount: '₹42,000', status: 'Matched' },
-    { inv: 'INV-004', vendor: 'QuickParts', amount: '₹9,800', status: 'Matched' },
+    {
+      inv: 'INV-001',
+      vendor: 'Sharma & Co.',
+      amount: '₹25,000',
+      status: 'Matched',
+    },
+    {
+      inv: 'INV-002',
+      vendor: 'TechVendors',
+      amount: '₹18,500',
+      status: 'Matched',
+    },
+    {
+      inv: 'INV-003',
+      vendor: 'FastSupply',
+      amount: '₹42,000',
+      status: 'Matched',
+    },
+    {
+      inv: 'INV-004',
+      vendor: 'QuickParts',
+      amount: '₹9,800',
+      status: 'Matched',
+    },
   ]
   return (
     <div className="bg-white rounded-2xl border border-gray-200 shadow-lg p-6 w-full max-w-[380px]">
       <div className="flex items-center justify-between mb-4">
-        <p className="fontheading text-gray-900 text-base">Auto-Reconciliation</p>
-        <span className="text-xs bg-emerald-100 text-emerald-700 font-semibold px-3 py-1 rounded-full">4/4 Matched</span>
+        <p className="fontheading text-gray-900 text-base">
+          Auto-Reconciliation
+        </p>
+        <span className="text-xs bg-emerald-100 text-emerald-700 font-semibold px-3 py-1 rounded-full">
+          4/4 Matched
+        </span>
       </div>
 
       <div className="space-y-2.5 mb-4">
@@ -209,14 +285,28 @@ function ReconciliationMockup() {
               <p className="text-xs font-semibold text-gray-800">{row.inv}</p>
               <p className="text-[10px] text-gray-400">{row.vendor}</p>
             </div>
-            <span className="text-xs font-bold text-gray-900">{row.amount}</span>
+            <span className="text-xs font-bold text-gray-900">
+              {row.amount}
+            </span>
             <div className="flex items-center gap-1">
               <div className="w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-                <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                <svg
+                  className="w-2.5 h-2.5 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={3}
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
               </div>
-              <span className="text-[10px] text-emerald-600 font-semibold">{row.status}</span>
+              <span className="text-[10px] text-emerald-600 font-semibold">
+                {row.status}
+              </span>
             </div>
           </motion.div>
         ))}
@@ -233,23 +323,25 @@ function ReconciliationMockup() {
 export default function VendorPaymentPage() {
   return (
     <div className="w-full relative">
-
       {/* ── HERO SECTION ── */}
-      <section className="relative min-h-screen bg-[#020506] overflow-hidden">
+      <section className="relative min-h-screen bg-white overflow-hidden">
         {/* Spotlights */}
         <div
           className="absolute -left-[100px] top-[10%] w-[400px] h-[400px] rounded-full opacity-50 blur-[120px] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #109F58 0%, #055949 40%, transparent 70%)' }}
+          style={{
+            background:
+              'radial-gradient(circle, #109F58 0%, #055949 40%, transparent 70%)',
+          }}
         />
         <div
           className="absolute right-[-50px] top-[25%] w-[400px] h-[400px] rounded-full opacity-25 blur-[100px] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #109F58 0%, transparent 70%)' }}
+          style={{
+            background: 'radial-gradient(circle, #109F58 0%, transparent 70%)',
+          }}
         />
-
 
         {/* ── LEFT content | RIGHT hero image ── */}
         <div className="relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-10">
-
           {/* LEFT */}
           <motion.div
             className="flex-1 text-left"
@@ -265,7 +357,9 @@ export default function VendorPaymentPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-emerald-400 text-xs font-semibold tracking-wide uppercase">Vendor Payments</span>
+              <span className="text-emerald-400 text-xs font-semibold tracking-wide uppercase">
+                Vendor Payments
+              </span>
             </motion.div>
 
             <h1 className="fontheading text-4xl sm:text-5xl lg:text-[3.5rem] leading-tight text-white mb-6">
@@ -276,8 +370,9 @@ export default function VendorPaymentPage() {
             </h1>
 
             <p className="text-gray-400 max-w-xl text-base md:text-lg fontbody2 leading-relaxed mb-10">
-              Transform your vendor payments with a single click and get complete
-              control with real-time updates. NEFT, RTGS, IMPS, UPI — all in one place.
+              Transform your vendor payments with a single click and get
+              complete control with real-time updates. NEFT, RTGS, IMPS, UPI —
+              all in one place.
             </p>
 
             {/* Stats row */}
@@ -291,9 +386,11 @@ export default function VendorPaymentPage() {
                 { value: '< 2s', label: 'Settlement' },
                 { value: '99.9%', label: 'Uptime' },
                 { value: '24/7', label: 'Support' },
-              ].map((s) => (
+              ].map(s => (
                 <div key={s.label}>
-                  <p className="fontheading text-2xl text-emerald-400">{s.value}</p>
+                  <p className="fontheading text-2xl text-emerald-400">
+                    {s.value}
+                  </p>
                   <p className="text-xs text-gray-500 mt-0.5">{s.label}</p>
                 </div>
               ))}
@@ -337,7 +434,6 @@ export default function VendorPaymentPage() {
               />
             </motion.div>
           </motion.div>
-
         </div>
       </section>
 
@@ -345,7 +441,6 @@ export default function VendorPaymentPage() {
       <section className="relative py-24 bg-white overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-
             {/* Left: Man holding laptop image */}
             <motion.div
               className="flex-1 flex justify-center"
@@ -374,19 +469,33 @@ export default function VendorPaymentPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <h2 className="fontheading text-3xl md:text-4xl text-gray-900 mb-6">
-                Why Rupeeflow for <span className="text-emerald-500">Vendor Payments?</span>
+                Why Rupeeflow for{' '}
+                <span className="text-emerald-500">Vendor Payments?</span>
               </h2>
               <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-8 max-w-xl">
-                Rupeeflow simplifies vendor payment management for businesses of all sizes.
-                From automated bulk transfers to real-time tracking, our platform ensures
-                every payment is accurate, on time, and fully reconciled.
+                Rupeeflow simplifies vendor payment management for businesses of
+                all sizes. From automated bulk transfers to real-time tracking,
+                our platform ensures every payment is accurate, on time, and
+                fully reconciled.
               </p>
 
               <div className="space-y-5">
                 {[
-                  { Icon: CheckIcon, title: 'One-Click Bulk Payments', desc: 'Pay hundreds of vendors simultaneously with a single upload.' },
-                  { Icon: LightingFastIcon, title: 'Lightning-Fast Transfers', desc: 'Process payments via IMPS, NEFT, RTGS, or UPI in seconds.' },
-                  { Icon: SafeGuardIcon, title: 'Enterprise-Grade Security', desc: 'ISO 27001 compliant with multi-layer encryption and fraud protection.' },
+                  {
+                    Icon: CheckIcon,
+                    title: 'One-Click Bulk Payments',
+                    desc: 'Pay hundreds of vendors simultaneously with a single upload.',
+                  },
+                  {
+                    Icon: LightingFastIcon,
+                    title: 'Lightning-Fast Transfers',
+                    desc: 'Process payments via IMPS, NEFT, RTGS, or UPI in seconds.',
+                  },
+                  {
+                    Icon: SafeGuardIcon,
+                    title: 'Enterprise-Grade Security',
+                    desc: 'ISO 27001 compliant with multi-layer encryption and fraud protection.',
+                  },
                 ].map(({ Icon, title, desc }, i) => (
                   <motion.div
                     key={title}
@@ -398,8 +507,12 @@ export default function VendorPaymentPage() {
                   >
                     <Icon className="w-10 h-10 shrink-0" />
                     <div>
-                      <h4 className="fontheading text-base text-gray-900">{title}</h4>
-                      <p className="text-sm text-gray-500 fontbody2 mt-1">{desc}</p>
+                      <h4 className="fontheading text-base text-gray-900">
+                        {title}
+                      </h4>
+                      <p className="text-sm text-gray-500 fontbody2 mt-1">
+                        {desc}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -432,12 +545,12 @@ export default function VendorPaymentPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
-              Powerful <span className="text-emerald-500">Vendor Payment</span> Features
+              Powerful <span className="text-emerald-500">Vendor Payment</span>{' '}
+              Features
             </h2>
           </motion.div>
 
           <div className="space-y-24">
-
             {/* 1. Pay Instantly — text left, mockup right */}
             <motion.div
               className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16"
@@ -447,11 +560,14 @@ export default function VendorPaymentPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex-1">
-                <h3 className="fontheading text-xl md:text-2xl text-gray-900 mb-4">Pay Instantly via Multiple Channels</h3>
+                <h3 className="fontheading text-xl md:text-2xl text-gray-900 mb-4">
+                  Pay Instantly via Multiple Channels
+                </h3>
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
-                  Disburse vendor payments through NEFT, RTGS, IMPS, or UPI with just a few clicks.
-                  Rupeeflow ensures your payments reach vendors instantly, reducing delays and
-                  strengthening business relationships.
+                  Disburse vendor payments through NEFT, RTGS, IMPS, or UPI with
+                  just a few clicks. Rupeeflow ensures your payments reach
+                  vendors instantly, reducing delays and strengthening business
+                  relationships.
                 </p>
                 {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
@@ -474,11 +590,14 @@ export default function VendorPaymentPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex-1">
-                <h3 className="fontheading text-xl md:text-2xl text-gray-900 mb-4">Automated Invoicing & Approvals</h3>
+                <h3 className="fontheading text-xl md:text-2xl text-gray-900 mb-4">
+                  Automated Invoicing & Approvals
+                </h3>
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
-                  Streamline your accounts payable with automated invoice processing and configurable
-                  maker-checker approval workflows. Reduce manual effort and ensure compliance
-                  with every vendor payment.
+                  Streamline your accounts payable with automated invoice
+                  processing and configurable maker-checker approval workflows.
+                  Reduce manual effort and ensure compliance with every vendor
+                  payment.
                 </p>
                 {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
@@ -501,11 +620,14 @@ export default function VendorPaymentPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex-1">
-                <h3 className="fontheading text-xl md:text-2xl text-gray-900 mb-4">Live Payment Tracking</h3>
+                <h3 className="fontheading text-xl md:text-2xl text-gray-900 mb-4">
+                  Live Payment Tracking
+                </h3>
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
-                  Track every vendor payment in real time from initiation to settlement. Get instant
-                  notifications on payment status, failed transactions, and successful settlements
-                  to maintain complete visibility over your outflows.
+                  Track every vendor payment in real time from initiation to
+                  settlement. Get instant notifications on payment status,
+                  failed transactions, and successful settlements to maintain
+                  complete visibility over your outflows.
                 </p>
                 {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
@@ -528,11 +650,14 @@ export default function VendorPaymentPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex-1">
-                <h3 className="fontheading text-xl md:text-2xl text-gray-900 mb-4">Instant Reconciliation</h3>
+                <h3 className="fontheading text-xl md:text-2xl text-gray-900 mb-4">
+                  Instant Reconciliation
+                </h3>
                 <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed mb-6 max-w-xl">
-                  Automatically match vendor payments with invoices and purchase orders in real time.
-                  Eliminate manual reconciliation effort, reduce errors, and close your books faster
-                  with Rupeeflow&apos;s smart reconciliation engine.
+                  Automatically match vendor payments with invoices and purchase
+                  orders in real time. Eliminate manual reconciliation effort,
+                  reduce errors, and close your books faster with
+                  Rupeeflow&apos;s smart reconciliation engine.
                 </p>
                 {/* <Link href="#" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">
                   Get Started
@@ -545,7 +670,6 @@ export default function VendorPaymentPage() {
                 <ReconciliationMockup />
               </div>
             </motion.div>
-
           </div>
         </div>
       </section>
@@ -561,20 +685,53 @@ export default function VendorPaymentPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
-              Everything You Need for <span className="text-emerald-500">Vendor Payments</span>
+              Everything You Need for{' '}
+              <span className="text-emerald-500">Vendor Payments</span>
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { Icon: CardsIcon, title: 'Card Payments', desc: 'Pay vendors via credit or debit cards with secure tokenized transactions.' },
-              { Icon: LightingFastIcon, title: 'Lightning-Fast Payouts', desc: 'Process vendor payments in under 2 seconds via IMPS for instant settlements.' },
-              { Icon: ReconcileIcon, title: 'Smart Reconciliation', desc: 'Auto-match payments with invoices and generate settlement reports instantly.' },
-              { Icon: SecurityIcon, title: 'Advanced Security', desc: '256-bit encryption, ISO 27001 compliance, and multi-layer fraud protection.' },
-              { Icon: ReportsIcon, title: 'Detailed Reports', desc: 'Generate comprehensive payout reports with transaction-level detail and analytics.' },
-              { Icon: ColoredSettingIcon, title: 'Customizable Workflows', desc: 'Configure approval hierarchies, payment schedules, and notification rules.' },
-              { Icon: WebIcon, title: 'Global Payouts', desc: 'Pay international vendors with multi-currency support and competitive FX rates.' },
-              { Icon: SafeGuardIcon, title: 'Fraud Protection', desc: 'AI-powered fraud detection safeguards every transaction against unauthorized access.' },
+              {
+                Icon: CardsIcon,
+                title: 'Card Payments',
+                desc: 'Pay vendors via credit or debit cards with secure tokenized transactions.',
+              },
+              {
+                Icon: LightingFastIcon,
+                title: 'Lightning-Fast Payouts',
+                desc: 'Process vendor payments in under 2 seconds via IMPS for instant settlements.',
+              },
+              {
+                Icon: ReconcileIcon,
+                title: 'Smart Reconciliation',
+                desc: 'Auto-match payments with invoices and generate settlement reports instantly.',
+              },
+              {
+                Icon: SecurityIcon,
+                title: 'Advanced Security',
+                desc: '256-bit encryption, ISO 27001 compliance, and multi-layer fraud protection.',
+              },
+              {
+                Icon: ReportsIcon,
+                title: 'Detailed Reports',
+                desc: 'Generate comprehensive payout reports with transaction-level detail and analytics.',
+              },
+              {
+                Icon: ColoredSettingIcon,
+                title: 'Customizable Workflows',
+                desc: 'Configure approval hierarchies, payment schedules, and notification rules.',
+              },
+              {
+                Icon: WebIcon,
+                title: 'Global Payouts',
+                desc: 'Pay international vendors with multi-currency support and competitive FX rates.',
+              },
+              {
+                Icon: SafeGuardIcon,
+                title: 'Fraud Protection',
+                desc: 'AI-powered fraud detection safeguards every transaction against unauthorized access.',
+              },
             ].map(({ Icon, title, desc }, i) => (
               <motion.div
                 key={title}
@@ -585,8 +742,12 @@ export default function VendorPaymentPage() {
                 transition={{ duration: 0.45, delay: i * 0.06 }}
               >
                 <Icon className="w-12 h-12 mb-5" />
-                <h3 className="fontheading text-lg text-gray-900 mb-3">{title}</h3>
-                <p className="text-sm text-gray-500 fontbody2 leading-relaxed">{desc}</p>
+                <h3 className="fontheading text-lg text-gray-900 mb-3">
+                  {title}
+                </h3>
+                <p className="text-sm text-gray-500 fontbody2 leading-relaxed">
+                  {desc}
+                </p>
               </motion.div>
             ))}
           </div>

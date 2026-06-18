@@ -1,19 +1,34 @@
-'use client';
+'use client'
 //test
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ArrowRight, CheckCircle2, PieChart } from 'lucide-react';
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { ArrowRight, CheckCircle2, PieChart } from 'lucide-react'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] bg-[#020506] text-white overflow-hidden flex items-center">
+    <section className="relative min-h-[90vh] bg-white text-white overflow-hidden flex items-center">
       {/* Animated wave background */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
-        <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          className="absolute w-full h-full"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <defs>
-            <pattern id="wave" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M0 50 Q 25 25, 50 50 T 100 50" stroke="#10b981" fill="none" strokeWidth="2"/>
+            <pattern
+              id="wave"
+              x="0"
+              y="0"
+              width="100"
+              height="100"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M0 50 Q 25 25, 50 50 T 100 50"
+                stroke="#10b981"
+                fill="none"
+                strokeWidth="2"
+              />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#wave)" />
@@ -30,18 +45,20 @@ export default function HeroSection() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-full mb-6">
               <PieChart className="w-4 h-4 text-emerald-400" />
-              <span className="text-sm font-medium text-emerald-400">98% Visibility • 8% Savings</span>
+              <span className="text-sm font-medium text-emerald-400">
+                98% Visibility • 8% Savings
+              </span>
             </div>
 
             <h1 className="fontheading text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               Payable Analytics &{' '}
-              <span className="text-emerald-500">
-                Spend Intelligence
-              </span>
+              <span className="text-emerald-500">Spend Intelligence</span>
             </h1>
 
             <p className="fontbody2 text-xl text-gray-300 mb-8 leading-relaxed">
-              Gain complete visibility into spending patterns, identify cost-saving opportunities, and optimize your payables with data-driven insights.
+              Gain complete visibility into spending patterns, identify
+              cost-saving opportunities, and optimize your payables with
+              data-driven insights.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -61,8 +78,15 @@ export default function HeroSection() {
             </div>
 
             <div className="flex flex-wrap gap-6">
-              {['Real-time dashboards', 'Spend categorization', 'Savings identification'].map((feature, index) => (
-                <div key={index} className="flex items-center gap-2 text-gray-300">
+              {[
+                'Real-time dashboards',
+                'Spend categorization',
+                'Savings identification',
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 text-gray-300"
+                >
                   <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                   <span className="text-sm">{feature}</span>
                 </div>
@@ -79,14 +103,34 @@ export default function HeroSection() {
           >
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-emerald-500/30 shadow-2xl">
               <h3 className="font-bold text-lg mb-6">Spend Breakdown</h3>
-              
+
               {/* Spend categories */}
               <div className="space-y-4">
                 {[
-                  { category: 'Inventory', amount: 450000, percentage: 45, color: 'blue' },
-                  { category: 'Services', amount: 300000, percentage: 30, color: 'emerald' },
-                  { category: 'Operations', amount: 150000, percentage: 15, color: 'purple' },
-                  { category: 'Others', amount: 100000, percentage: 10, color: 'yellow' },
+                  {
+                    category: 'Inventory',
+                    amount: 450000,
+                    percentage: 45,
+                    color: 'blue',
+                  },
+                  {
+                    category: 'Services',
+                    amount: 300000,
+                    percentage: 30,
+                    color: 'emerald',
+                  },
+                  {
+                    category: 'Operations',
+                    amount: 150000,
+                    percentage: 15,
+                    color: 'purple',
+                  },
+                  {
+                    category: 'Others',
+                    amount: 100000,
+                    percentage: 10,
+                    color: 'yellow',
+                  },
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -95,8 +139,12 @@ export default function HeroSection() {
                     transition={{ delay: 0.5 + i * 0.1 }}
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium">{item.category}</span>
-                      <span className="text-sm text-gray-400">₹{item.amount.toLocaleString()}</span>
+                      <span className="text-sm font-medium">
+                        {item.category}
+                      </span>
+                      <span className="text-sm text-gray-400">
+                        ₹{item.amount.toLocaleString()}
+                      </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="flex-1 h-3 bg-gray-700 rounded-full overflow-hidden">
@@ -107,7 +155,9 @@ export default function HeroSection() {
                           className={`h-full bg-gradient-to-r from-${item.color}-500 to-${item.color}-400`}
                         />
                       </div>
-                      <span className="text-sm font-bold text-emerald-400 w-12 text-right">{item.percentage}%</span>
+                      <span className="text-sm font-bold text-emerald-400 w-12 text-right">
+                        {item.percentage}%
+                      </span>
                     </div>
                   </motion.div>
                 ))}
@@ -117,7 +167,9 @@ export default function HeroSection() {
               <div className="mt-6 pt-6 border-t border-gray-700">
                 <div className="flex items-center justify-between">
                   <span className="font-bold">Total Monthly Spend</span>
-                  <span className="text-2xl font-bold text-emerald-400">₹10L</span>
+                  <span className="text-2xl font-bold text-emerald-400">
+                    ₹10L
+                  </span>
                 </div>
               </div>
             </div>
@@ -125,5 +177,5 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

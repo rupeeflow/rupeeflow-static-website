@@ -17,27 +17,37 @@ const stats = [
 export default function PartnershipBanner() {
   const sectionRef = useRef<HTMLDivElement>(null)
 
-  useGSAP(() => {
-    gsap.fromTo('.pb-content',
-      { y: 30, opacity: 0 },
-      {
-        y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power2.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 92%', once: true },
-      }
-    )
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        '.pb-content',
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 92%',
+            once: true,
+          },
+        }
+      )
 
-    ScrollTrigger.refresh()
-  }, { scope: sectionRef })
+      ScrollTrigger.refresh()
+    },
+    { scope: sectionRef }
+  )
 
   return (
     <div ref={sectionRef}>
-
       {/* ════════════════════════════════════════
           MOBILE LAYOUT  (hidden on lg+)
       ════════════════════════════════════════ */}
       <section className="lg:hidden relative py-5 px-4 overflow-hidden">
         <div className="relative rounded-2xl overflow-hidden">
-
           {/* Background Image */}
           <div className="relative h-[560px] sm:h-[620px]">
             <Image
@@ -54,9 +64,8 @@ export default function PartnershipBanner() {
 
           {/* Content pinned to bottom */}
           <div className="absolute inset-0 flex flex-col justify-end p-6 pb-8">
-
             {/* Badge */}
-            <div className="pb-content inline-flex items-center gap-2 text-emerald-400 text-xs font-semibold uppercase tracking-widest border border-emerald-400/30 rounded-full px-4 py-1.5 mb-5 self-start bg-black/40 backdrop-blur-sm">
+            <div className="pb-content inline-flex items-center gap-2 text-emerald-400 text-xs font-semibold uppercase tracking-widest border border-emerald-400/30 rounded-full px-4 py-1.5 mb-5 self-start bg-white/40 backdrop-blur-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               Partnerships
             </div>
@@ -71,7 +80,9 @@ export default function PartnershipBanner() {
 
             {/* Subtext */}
             <p className="pb-content text-gray-200 text-sm leading-relaxed mb-5 max-w-xs drop-shadow-md">
-              Co-build, co-market, and grow together with RupeeFlow&apos;s financial infrastructure. Unlock new revenue streams with embedded finance.
+              Co-build, co-market, and grow together with RupeeFlow&apos;s
+              financial infrastructure. Unlock new revenue streams with embedded
+              finance.
             </p>
 
             {/* Benefit bullets */}
@@ -81,7 +92,10 @@ export default function PartnershipBanner() {
                 'Ready-to-deploy APIs with full sandbox',
                 'RBI-licensed & enterprise-grade security',
               ].map(item => (
-                <li key={item} className="flex items-start gap-2 text-gray-200 text-xs drop-shadow-md">
+                <li
+                  key={item}
+                  className="flex items-start gap-2 text-gray-200 text-xs drop-shadow-md"
+                >
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
                   {item}
                 </li>
@@ -91,7 +105,10 @@ export default function PartnershipBanner() {
             {/* Stats */}
             <div className="pb-content grid grid-cols-3 gap-2 mb-6">
               {stats.map(s => (
-                <div key={s.label} className="bg-black/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 text-center">
+                <div
+                  key={s.label}
+                  className="bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 text-center"
+                >
                   <p className="text-white font-black text-lg">{s.val}</p>
                   <p className="text-gray-300 text-xs mt-0.5">{s.label}</p>
                 </div>
@@ -109,7 +126,6 @@ export default function PartnershipBanner() {
                 Connect With Us →
               </span>
             </Link>
-
           </div>
         </div>
       </section>
@@ -119,7 +135,6 @@ export default function PartnershipBanner() {
       ════════════════════════════════════════ */}
       <section className="hidden lg:block relative w-full py-6 px-6">
         <div className="relative max-w-[1400px] mx-auto h-[600px] xl:h-[680px] rounded-2xl overflow-hidden">
-
           {/* Background Image - person visible on right */}
           <Image
             src="/home/partnership-banner.png"
@@ -134,8 +149,7 @@ export default function PartnershipBanner() {
 
           {/* Content — left side, narrower to not cover the person */}
           <div className="absolute inset-0 flex items-center pl-12">
-            <div className="pb-content bg-black/75 backdrop-blur-9xl rounded-3xl p-8 xl:p-10 max-w-md border border-white/30 shadow-2xl">
-
+            <div className="pb-content bg-white/75 backdrop-blur-9xl rounded-3xl p-8 xl:p-10 max-w-md border border-white/30 shadow-2xl">
               {/* Badge */}
               <div className="inline-flex items-center gap-1.5 text-emerald-400 text-xs font-semibold uppercase tracking-widest mb-5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -149,7 +163,9 @@ export default function PartnershipBanner() {
 
               {/* Subtext */}
               <p className="text-gray-200 text-sm mb-5">
-                Co-build, co-market, and grow together with RupeeFlow&apos;s financial infrastructure. Unlock new revenue streams with embedded finance.
+                Co-build, co-market, and grow together with RupeeFlow&apos;s
+                financial infrastructure. Unlock new revenue streams with
+                embedded finance.
               </p>
 
               {/* Benefit bullets */}
@@ -159,7 +175,10 @@ export default function PartnershipBanner() {
                   'Ready-to-deploy APIs with full sandbox',
                   'RBI-licensed & enterprise-grade security',
                 ].map(item => (
-                  <li key={item} className="flex items-start gap-2 text-gray-200 text-sm">
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-gray-200 text-sm"
+                  >
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
                     {item}
                   </li>
@@ -187,13 +206,10 @@ export default function PartnershipBanner() {
                   Connect With Us →
                 </span>
               </Link>
-
             </div>
           </div>
-
         </div>
       </section>
-
     </div>
   )
 }

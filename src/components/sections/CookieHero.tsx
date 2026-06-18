@@ -18,7 +18,7 @@ export default function CookieHero() {
   }
 
   return (
-    <section className="py-32 px-6 bg-black-emerald text-white relative overflow-hidden">
+    <section className="py-32 px-6 bg-white text-white relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-radial-teal-soft opacity-30 pointer-events-none" />
 
@@ -35,8 +35,7 @@ export default function CookieHero() {
             variants={content}
             className="fontheading2 text-4xl md:text-5xl lg:text-6xl mb-6"
           >
-            Cookie{' '}
-            <span className="text-gradient-teal-emerald">Policy</span>
+            Cookie <span className="text-gradient-teal-emerald">Policy</span>
           </motion.h1>
 
           <motion.p variants={content} className="fontbody2 text-gray-300 mb-2">
@@ -52,8 +51,8 @@ export default function CookieHero() {
             className="fontbody2 text-gray-400 max-w-3xl mx-auto text-lg"
           >
             This Cookie Policy explains how RupeeFlow uses cookies, web beacons,
-            and similar tracking technologies on our website, mobile applications,
-            and digital platforms to enhance your experience.
+            and similar tracking technologies on our website, mobile
+            applications, and digital platforms to enhance your experience.
           </motion.p>
         </motion.div>
       </div>

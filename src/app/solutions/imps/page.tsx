@@ -86,7 +86,7 @@ export default function IMPSIntegrationPage() {
   ]
 
   return (
-    <main className="relative w-full bg-black text-white overflow-hidden">
+    <main className="relative w-full bg-white text-white overflow-hidden">
       {/* Background Glows */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_40%,rgba(16,185,129,0.25),transparent_70%)] blur-3xl" />
       <motion.div
@@ -120,7 +120,7 @@ export default function IMPSIntegrationPage() {
       </section>
 
       {/* Features Section */}
-      <section className="relative z-10 pb-24 px-6 bg-black-emerald/40 backdrop-blur-md">
+      <section className="relative z-10 pb-24 px-6 bg-white/40 backdrop-blur-md">
         <motion.div
           variants={container}
           initial="hidden"
@@ -212,7 +212,7 @@ export default function IMPSIntegrationPage() {
           <motion.div variants={content}>
             <Link
               href="https://rupeeflow.org/"
-              className="inline-block px-8 py-3 bg-black text-white font-semibold rounded-full hover:bg-neutral-900 transition"
+              className="inline-block px-8 py-3 bg-white text-white font-semibold rounded-full hover:bg-white transition"
             >
               Get Started →
             </Link>

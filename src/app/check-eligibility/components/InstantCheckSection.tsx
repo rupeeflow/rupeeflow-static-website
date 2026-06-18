@@ -32,10 +32,14 @@ export default function InstantCheckSection() {
     <section className="relative bg-white py-20 md:py-28 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle, #10b981 1px, transparent 1px)',
-          backgroundSize: '30px 30px',
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle, #10b981 1px, transparent 1px)',
+            backgroundSize: '30px 30px',
+          }}
+        />
       </div>
 
       <Container>
@@ -49,7 +53,7 @@ export default function InstantCheckSection() {
           >
             {/* Decorative Elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
 
             <div className="relative z-10">
               {/* Badge */}
@@ -84,7 +88,8 @@ export default function InstantCheckSection() {
                 viewport={{ once: true }}
                 className="fontbody2 text-white/90 text-lg mb-10 max-w-2xl mx-auto"
               >
-                No paperwork, no credit score impact, completely free. Find out your loan eligibility instantly.
+                No paperwork, no credit score impact, completely free. Find out
+                your loan eligibility instantly.
               </motion.p>
 
               {/* Features Grid */}
@@ -98,14 +103,18 @@ export default function InstantCheckSection() {
                 {features.map((feature, index) => (
                   <div key={index} className="text-center">
                     <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-3">
-                      <Image src={feature.icon} alt="" width={24} height={24} className="opacity-90" />
+                      <Image
+                        src={feature.icon}
+                        alt=""
+                        width={24}
+                        height={24}
+                        className="opacity-90"
+                      />
                     </div>
                     <div className="text-white font-bold text-sm mb-1">
                       {feature.title}
                     </div>
-                    <div className="text-white/70 text-xs">
-                      {feature.desc}
-                    </div>
+                    <div className="text-white/70 text-xs">{feature.desc}</div>
                   </div>
                 ))}
               </motion.div>
@@ -134,8 +143,16 @@ export default function InstantCheckSection() {
                 viewport={{ once: true }}
                 className="mt-8 flex items-center justify-center gap-2 text-white/80 text-sm"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span>Trusted by 50,000+ customers</span>
               </motion.div>

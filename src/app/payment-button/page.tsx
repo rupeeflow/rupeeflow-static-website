@@ -26,19 +26,30 @@ export default function PaymentButtonPage() {
   return (
     <div className="w-full relative">
       {/* ── HERO SECTION ── */}
-      <section className="relative bg-[#020506] overflow-hidden">
-
+      <section className="relative bg-white overflow-hidden">
         {/* Background glows */}
-        <div className="absolute -left-[100px] top-[10%] w-[420px] h-[420px] rounded-full opacity-50 blur-[130px] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #109F58 0%, #055949 40%, transparent 70%)' }} />
-        <div className="absolute left-[5%] top-[40%] w-[480px] h-[480px] rounded-full opacity-25 blur-[110px] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #109F58 0%, transparent 70%)' }} />
-        <div className="absolute right-[10%] top-[20%] w-[300px] h-[300px] rounded-full opacity-10 blur-[90px] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #30F3BC 0%, transparent 65%)' }} />
+        <div
+          className="absolute -left-[100px] top-[10%] w-[420px] h-[420px] rounded-full opacity-50 blur-[130px] pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(circle, #109F58 0%, #055949 40%, transparent 70%)',
+          }}
+        />
+        <div
+          className="absolute left-[5%] top-[40%] w-[480px] h-[480px] rounded-full opacity-25 blur-[110px] pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, #109F58 0%, transparent 70%)',
+          }}
+        />
+        <div
+          className="absolute right-[10%] top-[20%] w-[300px] h-[300px] rounded-full opacity-10 blur-[90px] pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, #30F3BC 0%, transparent 65%)',
+          }}
+        />
 
         {/* ── Two-column content ── */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-10 lg:gap-14 pt-24 pb-10 sm:pt-28 sm:pb-14 lg:pt-24 lg:pb-20">
-
           {/* LEFT — text */}
           <motion.div
             className="lg:w-[46%] w-full text-left"
@@ -58,13 +69,13 @@ export default function PaymentButtonPage() {
 
             <h1 className="text-[46px] text-white leading-tight">
               Collect Smarter with{' '}
-              <span className="text-emerald-400">Custom Payment</span>{' '}
-              Button
+              <span className="text-emerald-400">Custom Payment</span> Button
             </h1>
 
             <p className="mt-6 rf-lead text-gray-400 max-w-lg leading-relaxed">
-              Create a payment button in minutes and embed it on any website or app.
-              Accept fast, secure payments — no complex integrations or coding required.
+              Create a payment button in minutes and embed it on any website or
+              app. Accept fast, secure payments — no complex integrations or
+              coding required.
             </p>
 
             {/* Stats */}
@@ -78,9 +89,11 @@ export default function PaymentButtonPage() {
                 { value: '100+', label: 'Payment modes' },
                 { value: '< 2s', label: 'Load time' },
                 { value: '99.9%', label: 'Uptime' },
-              ].map((s) => (
+              ].map(s => (
                 <div key={s.label} className="text-center">
-                  <p className="text-emerald-400 font-bold text-xl">{s.value}</p>
+                  <p className="text-emerald-400 font-bold text-xl">
+                    {s.value}
+                  </p>
                   <p className="text-gray-500 text-xs mt-0.5">{s.label}</p>
                 </div>
               ))}
@@ -121,7 +134,6 @@ export default function PaymentButtonPage() {
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="relative w-full max-w-[580px] mx-auto">
-
               {/* Main image */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                 <Image
@@ -145,12 +157,23 @@ export default function PaymentButtonPage() {
               <motion.div
                 className="hidden sm:block absolute -top-2 right-4 z-20 bg-[#0d1f14] border border-emerald-500/30 rounded-2xl p-4 w-[200px] shadow-xl"
                 animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 4.5,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <Image src="/rflogo-darkbg.svg" alt="RupeeFlow" width={80} height={18} />
+                  <Image
+                    src="/rflogo-darkbg.svg"
+                    alt="RupeeFlow"
+                    width={80}
+                    height={18}
+                  />
                 </div>
-                <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-widest mb-2">Step 1 — Configure</p>
+                <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-widest mb-2">
+                  Step 1 — Configure
+                </p>
                 <div className="space-y-1.5">
                   <div className="bg-white/5 border border-white/10 rounded-lg px-2.5 py-1.5">
                     <p className="text-[10px] text-gray-400">Label</p>
@@ -170,19 +193,28 @@ export default function PaymentButtonPage() {
               <motion.div
                 className="hidden xl:block absolute -right-48 top-[36%] z-20 bg-[#0d1a0f] border border-emerald-500/20 rounded-2xl p-4 w-[210px] shadow-xl"
                 animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+                transition={{
+                  duration: 5.5,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                  delay: 0.8,
+                }}
               >
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-6 h-6 rounded-md bg-emerald-500/20 flex items-center justify-center">
                     <span className="text-emerald-400 text-[10px] font-bold">{`</>`}</span>
                   </div>
-                  <p className="text-xs text-white font-semibold">Step 2 — Copy Code</p>
+                  <p className="text-xs text-white font-semibold">
+                    Step 2 — Copy Code
+                  </p>
                 </div>
-                <div className="bg-black/40 rounded-lg p-2.5 font-mono text-[9px] text-emerald-300 leading-relaxed border border-white/5">
+                <div className="bg-white/40 rounded-lg p-2.5 font-mono text-[9px] text-emerald-300 leading-relaxed border border-white/5">
                   {`<script\n  src="rupeeflow.js"\n  data-key="rf_live_***"\n  data-amount="500"\n/>`}
                 </div>
                 <div className="mt-2.5 flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-lg px-2.5 py-1.5 cursor-pointer">
-                  <span className="text-[10px] text-emerald-400 font-semibold">Copy snippet</span>
+                  <span className="text-[10px] text-emerald-400 font-semibold">
+                    Copy snippet
+                  </span>
                   <span className="text-emerald-400 text-[10px]">⎘</span>
                 </div>
               </motion.div>
@@ -191,11 +223,18 @@ export default function PaymentButtonPage() {
               <motion.div
                 className="hidden sm:block absolute -bottom-6 right-6 z-20 bg-white rounded-2xl shadow-xl p-4 w-[190px] border border-gray-100"
                 animate={{ y: [0, -7, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                  delay: 1.4,
+                }}
               >
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <p className="text-xs font-bold text-gray-800">Step 3 — Button Live!</p>
+                  <p className="text-xs font-bold text-gray-800">
+                    Step 3 — Button Live!
+                  </p>
                 </div>
                 <div className="w-full bg-gradient-to-r from-[#054C38] to-[#2AB871] rounded-full py-2 text-center text-white text-xs font-semibold shadow-md">
                   Pay Now →
@@ -205,7 +244,6 @@ export default function PaymentButtonPage() {
                   <span className="text-emerald-600 font-bold">127</span>
                 </div>
               </motion.div>
-
             </div>
           </motion.div>
         </div>
@@ -213,7 +251,6 @@ export default function PaymentButtonPage() {
 
       {/* ── HOW TO CREATE PAYMENT BUTTON ── */}
       <div className="relative bg-white overflow-hidden">
-
         {/* Decorative strip spanning both sections */}
         <div className="absolute inset-0 pointer-events-none">
           <PaymentButtonRoundedStripIcon
@@ -226,7 +263,8 @@ export default function PaymentButtonPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
-                How to create <span className="text-emerald-500">Payment Button</span>
+                How to create{' '}
+                <span className="text-emerald-500">Payment Button</span>
               </h2>
               <p className="mt-3 text-gray-500 text-sm md:text-base">
                 Get Started in 3 Simple Steps
@@ -239,9 +277,12 @@ export default function PaymentButtonPage() {
                 <div className="flex items-start gap-5 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                   <CreatePaymentButton className="w-16 h-16 shrink-0" />
                   <div>
-                    <h3 className="fontheading text-xl text-gray-900">Create</h3>
+                    <h3 className="fontheading text-xl text-gray-900">
+                      Create
+                    </h3>
                     <p className="text-sm text-gray-500 mt-1 fontbody2">
-                      Design your button using Rupeeflow&apos;s intuitive dashboard.
+                      Design your button using Rupeeflow&apos;s intuitive
+                      dashboard.
                     </p>
                   </div>
                 </div>
@@ -259,15 +300,17 @@ export default function PaymentButtonPage() {
                 <div className="flex items-start gap-5 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                   <ButtonSettingsIcon className="w-16 h-16 shrink-0" />
                   <div>
-                    <h3 className="fontheading text-xl text-gray-900">Integrate</h3>
+                    <h3 className="fontheading text-xl text-gray-900">
+                      Integrate
+                    </h3>
                     <p className="text-sm text-gray-500 mt-1 fontbody2">
-                      Start receiving payments through UPI apps — directly into your bank account.
+                      Start receiving payments through UPI apps — directly into
+                      your bank account.
                     </p>
                   </div>
                 </div>
 
                 <div className="pt-2">
-
                   {/* <Link
                     href="#"
                     className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors"
@@ -275,7 +318,6 @@ export default function PaymentButtonPage() {
                     <span className="w-2 h-2 rounded-full bg-white/80" />
                     Get Started
                   </Link> */}
-
                 </div>
               </div>
 
@@ -300,9 +342,23 @@ export default function PaymentButtonPage() {
                   {/* Floating badge: Create Copy Integrate */}
                   <div className="absolute top-16 left-4 bg-white rounded-lg px-3 py-2 shadow-lg border border-gray-100 flex items-center gap-2">
                     <span className="w-4 h-4 rounded bg-emerald-500 flex items-center justify-center">
-                      <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                      <svg
+                        className="w-2.5 h-2.5 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={3}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
                     </span>
-                    <span className="text-[11px] font-semibold text-gray-800">Create</span>
+                    <span className="text-[11px] font-semibold text-gray-800">
+                      Create
+                    </span>
                     <span className="text-[11px] text-gray-400">Copy</span>
                     <span className="text-[11px] text-gray-400">Integrate</span>
                   </div>
@@ -310,23 +366,35 @@ export default function PaymentButtonPage() {
                   {/* Floating badge: Quick Setup */}
                   <div className="hidden sm:block absolute top-12 -right-4 bg-white rounded-lg px-3 py-1.5 shadow-lg border border-gray-100 text-[11px]">
                     <span className="text-gray-600">Quick </span>
-                    <span className="text-emerald-500 font-semibold">Setup</span>
+                    <span className="text-emerald-500 font-semibold">
+                      Setup
+                    </span>
                   </div>
 
                   {/* Floating badge: Payment ₹5000 */}
                   <div className="absolute top-[55%] left-0 bg-white rounded-lg px-3 py-2 shadow-lg border border-gray-100">
                     <p className="text-[10px] text-gray-400">Payment</p>
-                    <p className="text-sm font-bold text-gray-800">&#8377; 5000</p>
+                    <p className="text-sm font-bold text-gray-800">
+                      &#8377; 5000
+                    </p>
                   </div>
 
                   {/* Floating badge: Received */}
                   <div className="absolute top-[65%] left-10 bg-emerald-500 rounded-md px-3 py-1 shadow-lg">
-                    <span className="text-[10px] font-semibold text-white">Received</span>
+                    <span className="text-[10px] font-semibold text-white">
+                      Received
+                    </span>
                   </div>
 
                   {/* Chat icon */}
                   <div className="absolute top-10 -right-2 w-7 h-7 bg-emerald-500 rounded-lg flex items-center justify-center shadow-md">
-                    <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v7a2 2 0 01-2 2H6l-4 4V5z" /></svg>
+                    <svg
+                      className="w-3.5 h-3.5 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v7a2 2 0 01-2 2H6l-4 4V5z" />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -339,7 +407,8 @@ export default function PaymentButtonPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
-                Just one <span className="text-emerald-500">click</span> is enough.
+                Just one <span className="text-emerald-500">click</span> is
+                enough.
               </h2>
             </div>
 
@@ -349,7 +418,9 @@ export default function PaymentButtonPage() {
                 {/* Quick Setup */}
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:shadow-md transition-shadow">
                   <LightingIcon className="w-10 h-10 mb-3" />
-                  <h3 className="fontheading text-sm text-gray-900 mb-3">Quick Setup</h3>
+                  <h3 className="fontheading text-sm text-gray-900 mb-3">
+                    Quick Setup
+                  </h3>
                   <ul className="space-y-1.5">
                     <li className="flex items-start gap-2 text-xs text-gray-500 fontbody2">
                       <CheckMarkIcon className="w-4 h-4 mt-0.5 shrink-0" />
@@ -369,7 +440,9 @@ export default function PaymentButtonPage() {
                 {/* Copy & Paste */}
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:shadow-md transition-shadow">
                   <CopyIcon className="w-10 h-10 mb-3" />
-                  <h3 className="fontheading text-sm text-gray-900 mb-3">Copy &amp; Paste</h3>
+                  <h3 className="fontheading text-sm text-gray-900 mb-3">
+                    Copy &amp; Paste
+                  </h3>
                   <ul className="space-y-1.5">
                     <li className="flex items-start gap-2 text-xs text-gray-500 fontbody2">
                       <CheckMarkIcon className="w-4 h-4 mt-0.5 shrink-0" />
@@ -385,7 +458,9 @@ export default function PaymentButtonPage() {
                 {/* Accept Payments */}
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:shadow-md transition-shadow">
                   <AcceptingIcon className="w-10 h-10 mb-3" />
-                  <h3 className="fontheading text-sm text-gray-900 mb-3">Accept Payments</h3>
+                  <h3 className="fontheading text-sm text-gray-900 mb-3">
+                    Accept Payments
+                  </h3>
                   <ul className="space-y-1.5">
                     <li className="flex items-start gap-2 text-xs text-gray-500 fontbody2">
                       <CheckMarkIcon className="w-4 h-4 mt-0.5 shrink-0" />
@@ -401,7 +476,9 @@ export default function PaymentButtonPage() {
                 {/* Style Your Button */}
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:shadow-md transition-shadow">
                   <DrawingIcon className="w-10 h-10 mb-3" />
-                  <h3 className="fontheading text-sm text-gray-900 mb-3">Style Your Button</h3>
+                  <h3 className="fontheading text-sm text-gray-900 mb-3">
+                    Style Your Button
+                  </h3>
                   <ul className="space-y-1.5">
                     <li className="flex items-start gap-2 text-xs text-gray-500 fontbody2">
                       <CheckMarkIcon className="w-4 h-4 mt-0.5 shrink-0" />
@@ -417,7 +494,9 @@ export default function PaymentButtonPage() {
                 {/* Fits Any Device */}
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:shadow-md transition-shadow">
                   <FitsIcon className="w-10 h-10 mb-3" />
-                  <h3 className="fontheading text-sm text-gray-900 mb-3">Fits Any Device</h3>
+                  <h3 className="fontheading text-sm text-gray-900 mb-3">
+                    Fits Any Device
+                  </h3>
                   <ul className="space-y-1.5">
                     <li className="flex items-start gap-2 text-xs text-gray-500 fontbody2">
                       <CheckMarkIcon className="w-4 h-4 mt-0.5 shrink-0" />
@@ -437,7 +516,9 @@ export default function PaymentButtonPage() {
                 {/* Safe And Secure */}
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:shadow-md transition-shadow">
                   <SafeAndSecureIcon className="w-10 h-10 mb-3" />
-                  <h3 className="fontheading text-sm text-gray-900 mb-3">Safe And Secure</h3>
+                  <h3 className="fontheading text-sm text-gray-900 mb-3">
+                    Safe And Secure
+                  </h3>
                   <ul className="space-y-1.5">
                     <li className="flex items-start gap-2 text-xs text-gray-500 fontbody2">
                       <CheckMarkIcon className="w-4 h-4 mt-0.5 shrink-0" />
@@ -480,8 +561,22 @@ export default function PaymentButtonPage() {
 
                   {/* Floating badge: Fits Any Device */}
                   <div className="hidden sm:flex absolute top-[35%] -left-8 bg-white rounded-md px-3 py-1.5 shadow-lg border border-gray-100 items-center gap-1.5">
-                    <svg className="w-3 h-3 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
-                    <span className="text-[11px] font-medium text-gray-700">Fits Any Device</span>
+                    <svg
+                      className="w-3 h-3 text-emerald-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span className="text-[11px] font-medium text-gray-700">
+                      Fits Any Device
+                    </span>
                   </div>
 
                   {/* Floating badge: Active Now */}
@@ -491,8 +586,22 @@ export default function PaymentButtonPage() {
 
                   {/* Floating badge: Safe And Secure */}
                   <div className="hidden sm:flex absolute top-[55%] -left-8 bg-white rounded-md px-3 py-1.5 shadow-lg border border-gray-100 items-center gap-1.5">
-                    <svg className="w-3 h-3 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                    <span className="text-[11px] font-medium text-gray-700">Safe And Secure</span>
+                    <svg
+                      className="w-3 h-3 text-emerald-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                      />
+                    </svg>
+                    <span className="text-[11px] font-medium text-gray-700">
+                      Safe And Secure
+                    </span>
                   </div>
                 </div>
               </div>
@@ -505,7 +614,8 @@ export default function PaymentButtonPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
-                <span className="text-emerald-500">One Button</span> for All Payment Types
+                <span className="text-emerald-500">One Button</span> for All
+                Payment Types
               </h2>
               <p className="mt-3 text-gray-500 text-sm md:text-base fontbody2">
                 Choose the right payment button for your business needs.
@@ -518,7 +628,9 @@ export default function PaymentButtonPage() {
                 {/* Quick Pay Button */}
                 <div className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
                   <QuickPayButtonIcon className="w-14 h-14 mb-4" />
-                  <h3 className="fontheading text-base text-gray-900 mb-3">Quick Pay Button</h3>
+                  <h3 className="fontheading text-base text-gray-900 mb-3">
+                    Quick Pay Button
+                  </h3>
                   <ul className="space-y-2 mb-5">
                     <li className="flex items-start gap-2 text-xs text-gray-500 fontbody2">
                       <CheckMarkIcon className="w-4 h-4 mt-0.5 shrink-0" />
@@ -538,13 +650,14 @@ export default function PaymentButtonPage() {
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                     Pay Now
                   </button> */}
-
                 </div>
 
                 {/* Checkout Button */}
                 <div className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
                   <CheckoutButtonIcon className="w-14 h-14 mb-4" />
-                  <h3 className="fontheading text-base text-gray-900 mb-3">Checkout Button</h3>
+                  <h3 className="fontheading text-base text-gray-900 mb-3">
+                    Checkout Button
+                  </h3>
                   <ul className="space-y-2 mb-5">
                     <li className="flex items-start gap-2 text-xs text-gray-500 fontbody2">
                       <CheckMarkIcon className="w-4 h-4 mt-0.5 shrink-0" />
@@ -564,13 +677,14 @@ export default function PaymentButtonPage() {
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7.2 14.6l.1-.1L8.5 12h7.2c.7 0 1.4-.4 1.7-1l3.9-7-1.7-1-3.9 7H8.5L4.3 2H1v2h2l3.6 7.6L5.2 14c-.1.3-.2.6-.2 1 0 1.1.9 2 2 2h12v-2H7.4c-.1 0-.2-.1-.2-.2v-.2z" /></svg>
                     Checkout
                   </button> */}
-
                 </div>
 
                 {/* Donate Button */}
                 <div className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
                   <DonateButtonIcon className="w-14 h-14 mb-4" />
-                  <h3 className="fontheading text-base text-gray-900 mb-3">Donate Button</h3>
+                  <h3 className="fontheading text-base text-gray-900 mb-3">
+                    Donate Button
+                  </h3>
                   <ul className="space-y-2 mb-5">
                     <li className="flex items-start gap-2 text-xs text-gray-500 fontbody2">
                       <CheckMarkIcon className="w-4 h-4 mt-0.5 shrink-0" />
@@ -590,13 +704,14 @@ export default function PaymentButtonPage() {
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
                     Donate
                   </button> */}
-
                 </div>
 
                 {/* Custom Button */}
                 <div className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
                   <SettingsButtonIcon className="w-14 h-14 mb-4" />
-                  <h3 className="fontheading text-base text-gray-900 mb-3">Custom Button</h3>
+                  <h3 className="fontheading text-base text-gray-900 mb-3">
+                    Custom Button
+                  </h3>
                   <ul className="space-y-2 mb-5">
                     <li className="flex items-start gap-2 text-xs text-gray-500 fontbody2">
                       <CheckMarkIcon className="w-4 h-4 mt-0.5 shrink-0" />
@@ -616,23 +731,22 @@ export default function PaymentButtonPage() {
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.49.49 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.49.49 0 00-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1112 8.4a3.6 3.6 0 010 7.2z" /></svg>
                     Custom Pay
                   </button> */}
-
                 </div>
               </div>
 
               {/* Right: PhoneFooterIcon frame with person image + floating elements */}
               <div className="lg:w-[45%] flex justify-center">
                 <div className="relative w-full max-w-[460px]">
-
                   {/* Phone frame container */}
                   <div className="relative w-[330px] md:w-[350px] mx-auto">
-
                     {/* PhoneFooterIcon as the frame */}
                     <PhoneFooterIcon className="w-full h-auto relative " />
 
                     {/* Person image inside the frame */}
-                    <div className="absolute inset-3 z-0 " style={{ borderRadius: '70px', margin: '3px' }}>
-
+                    <div
+                      className="absolute inset-3 z-0 "
+                      style={{ borderRadius: '70px', margin: '3px' }}
+                    >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src="/images/payment-button/personalOptions.png"
@@ -674,19 +788,26 @@ export default function PaymentButtonPage() {
 
                   {/* Floating badge: Explore Payment Types (top right) */}
                   <div className="hidden lg:block absolute top-[8%] -right-[25%] bg-white rounded-lg px-4 py-2.5 shadow-lg border border-gray-200 z-20">
-                    <span className="text-sm font-semibold text-gray-800">Explore Payment Types</span>
+                    <span className="text-sm font-semibold text-gray-800">
+                      Explore Payment Types
+                    </span>
                   </div>
 
                   {/* Floating badge: One Click Pay (right middle) */}
                   <div className="hidden lg:block absolute top-[45%] -right-[20%] bg-white rounded-lg px-4 py-2 shadow-lg border border-gray-200 z-20">
-                    <span className="text-xs font-semibold text-gray-700">One Click Pay</span>
+                    <span className="text-xs font-semibold text-gray-700">
+                      One Click Pay
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <FAQAccordion faqs={paymentButtonFAQs} subtitle="Everything you need to know about RupeeFlow Payment Button." />
+        <FAQAccordion
+          faqs={paymentButtonFAQs}
+          subtitle="Everything you need to know about RupeeFlow Payment Button."
+        />
       </div>
     </div>
   )

@@ -18,7 +18,7 @@ export default function RefundHero() {
   }
 
   return (
-    <section className="py-32 px-6 bg-black-emerald text-white relative overflow-hidden">
+    <section className="py-32 px-6 bg-white text-white relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-radial-teal-soft opacity-30 pointer-events-none" />
 
@@ -36,7 +36,9 @@ export default function RefundHero() {
             className="fontheading2 text-4xl md:text-5xl lg:text-6xl mb-6"
           >
             Refund &{' '}
-            <span className="text-gradient-teal-emerald">Cancellation Policy</span>
+            <span className="text-gradient-teal-emerald">
+              Cancellation Policy
+            </span>
           </motion.h1>
 
           <motion.p variants={content} className="fontbody2 text-gray-300 mb-2">
@@ -51,9 +53,10 @@ export default function RefundHero() {
             variants={content}
             className="fontbody2 text-gray-400 max-w-3xl mx-auto text-lg"
           >
-            This policy outlines the terms and conditions for refunds, cancellations,
-            reversals, and chargebacks related to RupeeFlow&apos;s payment services,
-            in compliance with RBI guidelines and consumer protection laws.
+            This policy outlines the terms and conditions for refunds,
+            cancellations, reversals, and chargebacks related to
+            RupeeFlow&apos;s payment services, in compliance with RBI guidelines
+            and consumer protection laws.
           </motion.p>
         </motion.div>
       </div>

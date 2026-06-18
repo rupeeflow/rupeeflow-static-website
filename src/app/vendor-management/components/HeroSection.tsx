@@ -1,12 +1,12 @@
-'use client';
+'use client'
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Users } from 'lucide-react';
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { ArrowRight, CheckCircle2, Users } from 'lucide-react'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] bg-[#020506] text-white overflow-hidden flex items-center">
+    <section className="relative min-h-[90vh] bg-white text-white overflow-hidden flex items-center">
       {/* Animated circles background */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         {[...Array(20)].map((_, i) => (
@@ -42,19 +42,21 @@ export default function HeroSection() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-full mb-6">
               <Users className="w-4 h-4 text-emerald-400" />
-              <span className="text-sm font-medium text-emerald-400">2% Discounts • 95% Satisfaction</span>
+              <span className="text-sm font-medium text-emerald-400">
+                2% Discounts • 95% Satisfaction
+              </span>
             </div>
 
             <h1 className="fontheading text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Vendor Management &{' '}
-              <span className="text-emerald-500">
-                Relationship
-              </span>{' '}
+              <span className="text-emerald-500">Relationship</span>{' '}
               Optimization
             </h1>
 
             <p className="fontbody2 text-xl text-gray-300 mb-8 leading-relaxed">
-              Build stronger vendor relationships, capture early payment discounts, and streamline onboarding with centralized vendor management.
+              Build stronger vendor relationships, capture early payment
+              discounts, and streamline onboarding with centralized vendor
+              management.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -74,8 +76,15 @@ export default function HeroSection() {
             </div>
 
             <div className="flex flex-wrap gap-6">
-              {['Centralized database', 'Performance tracking', 'Discount capture'].map((feature, index) => (
-                <div key={index} className="flex items-center gap-2 text-gray-300">
+              {[
+                'Centralized database',
+                'Performance tracking',
+                'Discount capture',
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 text-gray-300"
+                >
                   <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                   <span className="text-sm">{feature}</span>
                 </div>
@@ -92,10 +101,25 @@ export default function HeroSection() {
           >
             <div className="grid grid-cols-2 gap-4">
               {[
-                { name: 'Vendor A', score: 95, status: 'Excellent', color: 'emerald' },
+                {
+                  name: 'Vendor A',
+                  score: 95,
+                  status: 'Excellent',
+                  color: 'emerald',
+                },
                 { name: 'Vendor B', score: 88, status: 'Good', color: 'blue' },
-                { name: 'Vendor C', score: 92, status: 'Excellent', color: 'emerald' },
-                { name: 'Vendor D', score: 78, status: 'Fair', color: 'yellow' },
+                {
+                  name: 'Vendor C',
+                  score: 92,
+                  status: 'Excellent',
+                  color: 'emerald',
+                },
+                {
+                  name: 'Vendor D',
+                  score: 78,
+                  status: 'Fair',
+                  color: 'yellow',
+                },
               ].map((vendor, i) => (
                 <motion.div
                   key={i}
@@ -109,7 +133,9 @@ export default function HeroSection() {
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold">
                       {vendor.name.charAt(vendor.name.length - 1)}
                     </div>
-                    <div className={`px-2 py-1 bg-${vendor.color}-500/20 text-${vendor.color}-400 text-xs rounded-full`}>
+                    <div
+                      className={`px-2 py-1 bg-${vendor.color}-500/20 text-${vendor.color}-400 text-xs rounded-full`}
+                    >
                       {vendor.status}
                     </div>
                   </div>
@@ -123,7 +149,9 @@ export default function HeroSection() {
                         className={`h-full bg-gradient-to-r from-${vendor.color}-500 to-${vendor.color}-400`}
                       />
                     </div>
-                    <span className="text-sm font-bold text-emerald-400">{vendor.score}</span>
+                    <span className="text-sm font-bold text-emerald-400">
+                      {vendor.score}
+                    </span>
                   </div>
                 </motion.div>
               ))}
@@ -132,5 +160,5 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

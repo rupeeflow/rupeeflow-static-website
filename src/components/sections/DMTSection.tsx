@@ -47,7 +47,7 @@ export default function DMTSection() {
   }
 
   return (
-    <section className="relative w-full overflow-hidden bg-black text-white py-24 px-6">
+    <section className="relative w-full overflow-hidden bg-white text-white py-24 px-6">
       {/* Background Glows */}
       <motion.div
         variants={flareGlow}

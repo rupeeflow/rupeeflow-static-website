@@ -5,32 +5,43 @@ import { useState, useEffect, useCallback } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, Building2, Users, TrendingUp, CheckCircle2 } from 'lucide-react'
+import {
+  ArrowRight,
+  Building2,
+  Users,
+  TrendingUp,
+  CheckCircle2,
+} from 'lucide-react'
 
 interface PartnershipsDropdownProps {
   navitems: navlist[]
   scrolled?: boolean
 }
 
-export default function PartnershipsDropdown({ navitems, scrolled = false }: PartnershipsDropdownProps) {
+export default function PartnershipsDropdown({
+  navitems,
+  scrolled = false,
+}: PartnershipsDropdownProps) {
   const router = useRouter()
   const pathname = usePathname()
-  
+
   const getActiveItem = useCallback(() => {
-    const normalizedPathname = pathname.endsWith('/') && pathname !== '/' 
-      ? pathname.slice(0, -1) 
-      : pathname
-    
+    const normalizedPathname =
+      pathname.endsWith('/') && pathname !== '/'
+        ? pathname.slice(0, -1)
+        : pathname
+
     const matchedItem = navitems.find(item => {
-      const normalizedHref = item.href.endsWith('/') && item.href !== '/' 
-        ? item.href.slice(0, -1) 
-        : item.href
+      const normalizedHref =
+        item.href.endsWith('/') && item.href !== '/'
+          ? item.href.slice(0, -1)
+          : item.href
       return normalizedHref === normalizedPathname
     })
-    
+
     return matchedItem || navitems[0]
   }, [pathname, navitems])
-  
+
   const [active, setActive] = useState<navlist>(getActiveItem())
 
   useEffect(() => {
@@ -63,7 +74,7 @@ export default function PartnershipsDropdown({ navitems, scrolled = false }: Par
   const productContent = getProductContent(active.id)
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
@@ -94,7 +105,13 @@ export default function PartnershipsDropdown({ navitems, scrolled = false }: Par
                 `}
               >
                 <div className="w-6 h-6 relative">
-                  <Image src={item.icon} alt={item.label} width={24} height={24} className="w-full h-full" />
+                  <Image
+                    src={item.icon}
+                    alt={item.label}
+                    width={24}
+                    height={24}
+                    className="w-full h-full"
+                  />
                 </div>
                 <span className="text-sm font-medium flex-1">{item.label}</span>
               </motion.button>
@@ -105,15 +122,15 @@ export default function PartnershipsDropdown({ navitems, scrolled = false }: Par
         {/* RIGHT CONTENT CARD */}
         <div className="flex-1 relative overflow-hidden min-h-[440px]">
           {/* Background Image with Depth */}
-          <motion.div 
+          <motion.div
             className="absolute inset-0"
             initial={{ scale: 1 }}
             animate={{ scale: 1.02 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <Image 
-              src="/partnership.jpeg" 
-              alt="Partnerships" 
+            <Image
+              src="/partnership.jpeg"
+              alt="Partnerships"
               fill
               className="object-cover"
               priority
@@ -139,7 +156,12 @@ export default function PartnershipsDropdown({ navitems, scrolled = false }: Par
                   {/* Product Icon - Minimal */}
                   <div className="mb-5">
                     <div className="w-11 h-11 rounded-xl bg-white shadow-sm border border-gray-100/50 flex items-center justify-center">
-                      <Image src={active.icon} alt={active.label} width={22} height={22} />
+                      <Image
+                        src={active.icon}
+                        alt={active.label}
+                        width={22}
+                        height={22}
+                      />
                     </div>
                   </div>
 
@@ -166,7 +188,9 @@ export default function PartnershipsDropdown({ navitems, scrolled = false }: Par
                           <div>
                             <div className="flex items-center gap-1.5 mb-1">
                               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                              <span className="text-[10px] font-medium text-emerald-700 uppercase tracking-wide">Active</span>
+                              <span className="text-[10px] font-medium text-emerald-700 uppercase tracking-wide">
+                                Active
+                              </span>
                             </div>
                             <div className="text-[24px] font-semibold text-gray-900 tracking-tight">
                               {productContent.metric}
@@ -183,15 +207,19 @@ export default function PartnershipsDropdown({ navitems, scrolled = false }: Par
                             )}
                           </div>
                         </div>
-                        
+
                         <div className="pt-3 border-t border-gray-100 space-y-2">
                           <div className="flex items-center gap-2">
                             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                            <span className="text-[11px] text-gray-700">{productContent.feature1}</span>
+                            <span className="text-[11px] text-gray-700">
+                              {productContent.feature1}
+                            </span>
                           </div>
                           <div className="flex items-center gap-2">
                             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                            <span className="text-[11px] text-gray-700">{productContent.feature2}</span>
+                            <span className="text-[11px] text-gray-700">
+                              {productContent.feature2}
+                            </span>
                           </div>
                         </div>
 
@@ -199,11 +227,13 @@ export default function PartnershipsDropdown({ navitems, scrolled = false }: Par
                         <div className="mt-3 pt-3 border-t border-gray-100">
                           <div className="flex items-center gap-2">
                             <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
-                            <span className="text-[10px] text-gray-600">Growing network</span>
+                            <span className="text-[10px] text-gray-600">
+                              Growing network
+                            </span>
                           </div>
                         </div>
                       </div>
-                      
+
                       {/* Subtle depth shadow */}
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/5 rounded-lg -z-10 translate-y-1" />
                     </div>
@@ -215,7 +245,9 @@ export default function PartnershipsDropdown({ navitems, scrolled = false }: Par
                   {/* Secondary Feature */}
                   <div className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-full bg-gray-50/80 border border-gray-200/50">
                     <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                    <span className="text-[11px] text-gray-700">Trusted by leading institutions</span>
+                    <span className="text-[11px] text-gray-700">
+                      Trusted by leading institutions
+                    </span>
                   </div>
 
                   {/* CTA Button - Premium Style */}
@@ -227,7 +259,7 @@ export default function PartnershipsDropdown({ navitems, scrolled = false }: Par
                     }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-lg text-[13px] font-medium shadow-sm hover:shadow-md transition-all duration-200"
+                    className="group inline-flex items-center gap-2 px-5 py-2.5 bg-white text-white rounded-lg text-[13px] font-medium shadow-sm hover:shadow-md transition-all duration-200"
                   >
                     <span>Explore {active.label}</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />

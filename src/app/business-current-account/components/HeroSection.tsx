@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-[#020506] overflow-hidden flex items-center">
+    <section className="relative min-h-screen bg-white overflow-hidden flex items-center">
       {/* Subtle ambient background */}
       <div className="absolute top-[-150px] left-[-150px] w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(3,151,137,0.06),transparent_60%)] pointer-events-none" />
       <div className="absolute bottom-[-100px] right-[5%] w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,rgba(48,243,188,0.04),transparent_60%)] pointer-events-none" />
@@ -39,7 +39,8 @@ export default function HeroSection() {
             </h1>
 
             <p className="fontbody2 text-gray-300 text-lg md:text-xl mb-8 max-w-2xl mx-auto lg:mx-0">
-              Open your account in 10 minutes with zero balance requirement. Get free NEFT/RTGS, virtual accounts, and seamless API integration.
+              Open your account in 10 minutes with zero balance requirement. Get
+              free NEFT/RTGS, virtual accounts, and seamless API integration.
             </p>
 
             <motion.div
@@ -71,20 +72,44 @@ export default function HeroSection() {
               className="mt-10 flex flex-wrap items-center gap-6 justify-center lg:justify-start text-sm text-gray-400"
             >
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <svg
+                  className="w-5 h-5 text-emerald-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span>RBI Compliant</span>
               </div>
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <svg
+                  className="w-5 h-5 text-emerald-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span>100% Secure</span>
               </div>
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <svg
+                  className="w-5 h-5 text-emerald-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span>Instant Activation</span>
               </div>
@@ -106,7 +131,7 @@ export default function HeroSection() {
                 className="object-contain"
                 priority
               />
-              
+
               {/* Floating Stats Card - positioned to not overlap face */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -116,12 +141,22 @@ export default function HeroSection() {
               >
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 >
                   <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-4 w-[200px]">
-                    <div className="text-xs text-gray-600 mb-1">Account Balance</div>
-                    <div className="text-2xl font-bold text-emerald-600">₹12,45,890</div>
-                    <div className="text-xs text-emerald-600 mt-1">+18.5% this month</div>
+                    <div className="text-xs text-gray-600 mb-1">
+                      Account Balance
+                    </div>
+                    <div className="text-2xl font-bold text-emerald-600">
+                      ₹12,45,890
+                    </div>
+                    <div className="text-xs text-emerald-600 mt-1">
+                      +18.5% this month
+                    </div>
                   </div>
                 </motion.div>
               </motion.div>
@@ -135,14 +170,20 @@ export default function HeroSection() {
               >
                 <motion.div
                   animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+                  transition={{
+                    duration: 3.5,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: 1,
+                  }}
                 >
                   <div className="bg-emerald-500/95 backdrop-blur-md rounded-full px-6 py-3 shadow-lg">
-                    <span className="text-sm font-semibold text-white">Free NEFT/RTGS</span>
+                    <span className="text-sm font-semibold text-white">
+                      Free NEFT/RTGS
+                    </span>
                   </div>
                 </motion.div>
               </motion.div>
-
             </div>
           </motion.div>
         </div>

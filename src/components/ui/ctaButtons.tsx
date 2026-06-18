@@ -23,7 +23,7 @@ const CtaButtons = () => {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="w-full bg-black-emerald z-10 mx-auto gap-10 flex flex-col items-center text-center"
+      className="w-full bg-white z-10 mx-auto gap-10 flex flex-col items-center text-center"
     >
       {/* CTA Buttons */}
       <motion.div

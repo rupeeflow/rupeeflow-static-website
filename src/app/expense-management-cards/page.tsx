@@ -1,7 +1,7 @@
 import Container from '@/components/ui/Container'
 import MainCTA from '@/components/ui/mainCTA'
 import Image from 'next/image'
-import { expenseFAQs } from "@/data/expenseCardFaqs"
+import { expenseFAQs } from '@/data/expenseCardFaqs'
 import {
   Check,
   Receipt,
@@ -19,11 +19,10 @@ export default function ExpenseManagementCardsPage() {
       {/* HERO */}
       <Container className="py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-
           {/* LEFT */}
           <div>
             <h1 className="text-6xl font-bold text-white leading-tight">
-              Expense Management{" "}
+              Expense Management{' '}
               <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                 Cards
               </span>
@@ -37,11 +36,20 @@ export default function ExpenseManagementCardsPage() {
 
             <ul className="mt-8 space-y-4">
               {[
-                { icon: Receipt, text: "Auto-capture receipts & match expenses" },
-                { icon: ClipboardCheck, text: "Policy-based approvals & workflows" },
-                { icon: Users, text: "Assign cards by team, role, or project" },
-                { icon: ShieldCheck, text: "Ensure compliance & audit readiness" },
-                { icon: BarChart4, text: "Live expense insights & reporting" },
+                {
+                  icon: Receipt,
+                  text: 'Auto-capture receipts & match expenses',
+                },
+                {
+                  icon: ClipboardCheck,
+                  text: 'Policy-based approvals & workflows',
+                },
+                { icon: Users, text: 'Assign cards by team, role, or project' },
+                {
+                  icon: ShieldCheck,
+                  text: 'Ensure compliance & audit readiness',
+                },
+                { icon: BarChart4, text: 'Live expense insights & reporting' },
               ].map((item, i) => {
                 const Icon = item.icon
                 return (
@@ -78,7 +86,7 @@ export default function ExpenseManagementCardsPage() {
       <div className="py-20 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
         <div className="text-center max-w-3xl mx-auto px-6">
           <h2 className="text-5xl font-semibold text-white">
-            Why Choose{" "}
+            Why Choose{' '}
             <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
               Expense Cards
             </span>
@@ -86,28 +94,29 @@ export default function ExpenseManagementCardsPage() {
           </h2>
 
           <p className="mt-3 text-xl text-gray-300">
-            Automate expense workflows while maintaining complete financial control.
+            Automate expense workflows while maintaining complete financial
+            control.
           </p>
         </div>
 
         <div className="mt-14 max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           {[
             {
-              title: "Automated Workflows",
-              desc: "Streamline expense approvals and eliminate manual processes.",
+              title: 'Automated Workflows',
+              desc: 'Streamline expense approvals and eliminate manual processes.',
             },
             {
-              title: "Policy Enforcement",
-              desc: "Ensure compliance with company spending policies in real time.",
+              title: 'Policy Enforcement',
+              desc: 'Ensure compliance with company spending policies in real time.',
             },
             {
-              title: "Audit & Compliance Ready",
-              desc: "Maintain accurate records and simplify audits effortlessly.",
+              title: 'Audit & Compliance Ready',
+              desc: 'Maintain accurate records and simplify audits effortlessly.',
             },
           ].map((item, i) => (
             <div
               key={i}
-              className="p-7 rounded-2xl border border-white/10 bg-[#0F0F0F]
+              className="p-7 rounded-2xl border border-white/10 bg-white
               hover:-translate-y-1 transition
               hover:border-emerald-400/40
               hover:shadow-[0_0_25px_rgba(0,239,100,0.15)]"
@@ -122,46 +131,62 @@ export default function ExpenseManagementCardsPage() {
       {/* FEATURE SECTIONS */}
       <div className="py-24 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
         <div className="max-w-6xl mx-auto px-6 space-y-28">
-
           {[
             {
-              title: "Receipt Automation",
-              desc: "Capture receipts instantly and match them with transactions.",
-              points: ["Mobile receipt capture", "Auto expense matching", "Digital storage"],
-              image: "Receipt Capture Preview",
+              title: 'Receipt Automation',
+              desc: 'Capture receipts instantly and match them with transactions.',
+              points: [
+                'Mobile receipt capture',
+                'Auto expense matching',
+                'Digital storage',
+              ],
+              image: 'Receipt Capture Preview',
             },
             {
-              title: "Approval Workflows",
-              desc: "Route expenses through automated approval hierarchies.",
-              points: ["Multi-level approvals", "Custom workflows", "Faster reimbursements"],
-              image: "Workflow Preview",
+              title: 'Approval Workflows',
+              desc: 'Route expenses through automated approval hierarchies.',
+              points: [
+                'Multi-level approvals',
+                'Custom workflows',
+                'Faster reimbursements',
+              ],
+              image: 'Workflow Preview',
             },
             {
-              title: "Policy Enforcement",
-              desc: "Control spending with rules and real-time policy checks.",
-              points: ["Spending categories", "Limit enforcement", "Real-time alerts"],
-              image: "Policy Control Preview",
+              title: 'Policy Enforcement',
+              desc: 'Control spending with rules and real-time policy checks.',
+              points: [
+                'Spending categories',
+                'Limit enforcement',
+                'Real-time alerts',
+              ],
+              image: 'Policy Control Preview',
             },
             {
-              title: "Expense Analytics",
-              desc: "Gain insights to optimize budgets and reduce unnecessary spend.",
-              points: ["Spend breakdown", "Trend analysis", "Exportable reports"],
-              image: "Analytics Preview",
+              title: 'Expense Analytics',
+              desc: 'Gain insights to optimize budgets and reduce unnecessary spend.',
+              points: [
+                'Spend breakdown',
+                'Trend analysis',
+                'Exportable reports',
+              ],
+              image: 'Analytics Preview',
             },
           ].map((item, i) => (
             <div key={i} className="grid md:grid-cols-2 gap-14 items-center">
-
               {/* IMAGE */}
-              <div className={`${i % 2 ? "md:order-2" : ""} bg-white/5 border border-white/10 rounded-2xl aspect-video flex items-center justify-center text-gray-500`}>
+              <div
+                className={`${i % 2 ? 'md:order-2' : ''} bg-white/5 border border-white/10 rounded-2xl aspect-video flex items-center justify-center text-gray-500`}
+              >
                 {item.image}
               </div>
 
               {/* TEXT */}
-              <div className={`${i % 2 ? "md:order-1" : ""}`}>
+              <div className={`${i % 2 ? 'md:order-1' : ''}`}>
                 <h3 className="text-2xl font-semibold text-white">
-                  {item.title.split(" ").slice(0, -1).join(" ")}{" "}
+                  {item.title.split(' ').slice(0, -1).join(' ')}{' '}
                   <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
-                    {item.title.split(" ").slice(-1)}
+                    {item.title.split(' ').slice(-1)}
                   </span>
                 </h3>
 
@@ -179,7 +204,11 @@ export default function ExpenseManagementCardsPage() {
                 </ul>
 
                 <div className="mt-6">
-                  <MainCTA label="Learn More" destination="#" size="w-40 h-10" />
+                  <MainCTA
+                    label="Learn More"
+                    destination="#"
+                    size="w-40 h-10"
+                  />
                 </div>
               </div>
             </div>
@@ -193,7 +222,6 @@ export default function ExpenseManagementCardsPage() {
           Built for finance teams seeking control, compliance, and efficiency.
         </p>
       </div>
-
 
       <CardFAQ faqs={expenseFAQs} />
 

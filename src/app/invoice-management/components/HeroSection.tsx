@@ -1,19 +1,23 @@
-'use client';
+'use client'
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ArrowRight, CheckCircle2, FileText } from 'lucide-react';
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { ArrowRight, CheckCircle2, FileText } from 'lucide-react'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] bg-[#020506] text-white overflow-hidden flex items-center">
+    <section className="relative min-h-[90vh] bg-white text-white overflow-hidden flex items-center">
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'linear-gradient(45deg, #10b981 25%, transparent 25%), linear-gradient(-45deg, #10b981 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #10b981 75%), linear-gradient(-45deg, transparent 75%, #10b981 75%)',
-          backgroundSize: '60px 60px',
-          backgroundPosition: '0 0, 0 30px, 30px -30px, -30px 0px'
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'linear-gradient(45deg, #10b981 25%, transparent 25%), linear-gradient(-45deg, #10b981 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #10b981 75%), linear-gradient(-45deg, transparent 75%, #10b981 75%)',
+            backgroundSize: '60px 60px',
+            backgroundPosition: '0 0, 0 30px, 30px -30px, -30px 0px',
+          }}
+        />
       </div>
 
       <div className="container mx-auto px-6 md:px-8 lg:px-12 py-20 relative z-10">
@@ -26,19 +30,19 @@ export default function HeroSection() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-full mb-6">
               <FileText className="w-4 h-4 text-emerald-400" />
-              <span className="text-sm font-medium text-emerald-400">Real-time Tracking • Automated Workflows</span>
+              <span className="text-sm font-medium text-emerald-400">
+                Real-time Tracking • Automated Workflows
+              </span>
             </div>
 
             <h1 className="fontheading text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Centralized Invoice{' '}
-              <span className="text-emerald-500">
-                Management
-              </span>{' '}
-              System
+              <span className="text-emerald-500">Management</span> System
             </h1>
 
             <p className="fontbody2 text-xl text-gray-300 mb-8 leading-relaxed">
-              Streamline invoice approvals, track payment status, and maintain complete visibility across your entire payables workflow.
+              Streamline invoice approvals, track payment status, and maintain
+              complete visibility across your entire payables workflow.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -58,8 +62,15 @@ export default function HeroSection() {
             </div>
 
             <div className="flex flex-wrap gap-6">
-              {['Multi-level approvals', 'Vendor portal', 'Complete audit trail'].map((feature, index) => (
-                <div key={index} className="flex items-center gap-2 text-gray-300">
+              {[
+                'Multi-level approvals',
+                'Vendor portal',
+                'Complete audit trail',
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 text-gray-300"
+                >
                   <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                   <span className="text-sm">{feature}</span>
                 </div>
@@ -86,9 +97,21 @@ export default function HeroSection() {
 
                 {/* Invoice cards with approval stages */}
                 {[
-                  { stage: 'Pending Review', color: 'yellow', invoice: 'INV-2024-001' },
-                  { stage: 'Manager Approved', color: 'blue', invoice: 'INV-2024-002' },
-                  { stage: 'Payment Scheduled', color: 'emerald', invoice: 'INV-2024-003' },
+                  {
+                    stage: 'Pending Review',
+                    color: 'yellow',
+                    invoice: 'INV-2024-001',
+                  },
+                  {
+                    stage: 'Manager Approved',
+                    color: 'blue',
+                    invoice: 'INV-2024-002',
+                  },
+                  {
+                    stage: 'Payment Scheduled',
+                    color: 'emerald',
+                    invoice: 'INV-2024-003',
+                  },
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -99,7 +122,9 @@ export default function HeroSection() {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <p className="text-sm font-medium">{item.invoice}</p>
-                      <div className={`px-2 py-1 bg-${item.color}-500/20 text-${item.color}-400 text-xs rounded-full`}>
+                      <div
+                        className={`px-2 py-1 bg-${item.color}-500/20 text-${item.color}-400 text-xs rounded-full`}
+                      >
                         {item.stage}
                       </div>
                     </div>
@@ -112,7 +137,9 @@ export default function HeroSection() {
                           className={`h-full bg-gradient-to-r from-${item.color}-500 to-${item.color}-400`}
                         />
                       </div>
-                      <span className="text-xs text-gray-400">{(i + 1) * 33}%</span>
+                      <span className="text-xs text-gray-400">
+                        {(i + 1) * 33}%
+                      </span>
                     </div>
                   </motion.div>
                 ))}
@@ -122,5 +149,5 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

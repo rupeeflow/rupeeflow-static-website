@@ -1,5 +1,5 @@
-import Container from "@/components/ui/Container"
-import MainCTA from "@/components/ui/mainCTA"
+import Container from '@/components/ui/Container'
+import MainCTA from '@/components/ui/mainCTA'
 
 type Props = {
   title: string
@@ -18,7 +18,6 @@ export default function CardProductPage({
 }: Props) {
   return (
     <div className="py-20">
-
       {/* HERO + FEATURES */}
       <Container>
         {/* HERO */}
@@ -26,9 +25,7 @@ export default function CardProductPage({
           <div>
             <h1 className="text-4xl font-bold text-gray-900">{title}</h1>
             <p className="text-xl text-emerald-600 mt-4">{subtitle}</p>
-            <p className="text-gray-600 mt-6 leading-relaxed">
-              {description}
-            </p>
+            <p className="text-gray-600 mt-6 leading-relaxed">{description}</p>
 
             <div className="mt-8">
               <MainCTA label="Get Started" destination="/signup" />
@@ -65,7 +62,6 @@ export default function CardProductPage({
       {/* ✅ FULL WIDTH DARK BENEFITS SECTION */}
       <div className="mt-24 py-24 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
         <div className="max-w-6xl mx-auto px-6">
-
           <h2 className="text-3xl font-semibold text-center text-white mb-12">
             Why Businesses Choose This
           </h2>
@@ -78,20 +74,15 @@ export default function CardProductPage({
                 transition-all duration-300 hover:-translate-y-1
                 ${
                   i === 1
-                    ? "bg-[#0C1F18] shadow-emerald-900/40"
-                    : "bg-[#0F0F0F] hover:bg-[#0C1F18]"
+                    ? 'bg-white shadow-emerald-900/40'
+                    : 'bg-white hover:bg-white'
                 }`}
               >
-                <h3 className="font-semibold text-white text-lg">
-                  {b.title}
-                </h3>
-                <p className="text-gray-400 mt-3 leading-relaxed">
-                  {b.desc}
-                </p>
+                <h3 className="font-semibold text-white text-lg">{b.title}</h3>
+                <p className="text-gray-400 mt-3 leading-relaxed">{b.desc}</p>
               </div>
             ))}
           </div>
-
         </div>
       </div>
 
@@ -110,7 +101,6 @@ export default function CardProductPage({
           </div>
         </div>
       </Container>
-
     </div>
   )
 }

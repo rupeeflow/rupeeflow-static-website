@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-[#020506] py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-white py-24 md:py-32 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -40,7 +40,12 @@ export default function HeroSection() {
         { icon: '/features/shield.svg', delay: 0, x: '10%', y: '20%' },
         { icon: '/home/rupee.svg', delay: 0.5, x: '85%', y: '30%' },
         { icon: '/features/clock.svg', delay: 1, x: '15%', y: '70%' },
-        { icon: '/Developer-friendly/security-card.svg', delay: 1.5, x: '80%', y: '75%' },
+        {
+          icon: '/Developer-friendly/security-card.svg',
+          delay: 1.5,
+          x: '80%',
+          y: '75%',
+        },
       ].map((item, index) => (
         <motion.div
           key={index}
@@ -60,7 +65,13 @@ export default function HeroSection() {
           style={{ left: item.x, top: item.y }}
         >
           <div className="w-16 h-16 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-            <Image src={item.icon} alt="" width={32} height={32} className="w-8 h-8 opacity-60" />
+            <Image
+              src={item.icon}
+              alt=""
+              width={32}
+              height={32}
+              className="w-8 h-8 opacity-60"
+            />
           </div>
         </motion.div>
       ))}
@@ -97,8 +108,9 @@ export default function HeroSection() {
 
             {/* Description */}
             <p className="fontbody2 text-gray-300 text-lg md:text-xl mb-8 max-w-2xl mx-auto lg:mx-0">
-              Fund your dreams or handle medical emergencies with loans up to ₹25 Lakhs. 
-              Quick approval, flexible repayment, and competitive interest rates.
+              Fund your dreams or handle medical emergencies with loans up to
+              ₹25 Lakhs. Quick approval, flexible repayment, and competitive
+              interest rates.
             </p>
 
             {/* Key Stats */}
@@ -161,11 +173,20 @@ export default function HeroSection() {
                   <div className="bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-2xl p-6 border border-emerald-500/30">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
-                        <Image src="/business/developer.svg" alt="Education" width={24} height={24} />
+                        <Image
+                          src="/business/developer.svg"
+                          alt="Education"
+                          width={24}
+                          height={24}
+                        />
                       </div>
                       <div>
-                        <div className="text-white font-bold text-lg">Education Loan</div>
-                        <div className="text-emerald-300 text-sm">Up to ₹25 Lakhs</div>
+                        <div className="text-white font-bold text-lg">
+                          Education Loan
+                        </div>
+                        <div className="text-emerald-300 text-sm">
+                          Up to ₹25 Lakhs
+                        </div>
                       </div>
                     </div>
                     <div className="text-gray-300 text-sm">
@@ -177,11 +198,20 @@ export default function HeroSection() {
                   <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl p-6 border border-cyan-500/30">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
-                        <Image src="/features/shield.svg" alt="Medical" width={24} height={24} />
+                        <Image
+                          src="/features/shield.svg"
+                          alt="Medical"
+                          width={24}
+                          height={24}
+                        />
                       </div>
                       <div>
-                        <div className="text-white font-bold text-lg">Medical Loan</div>
-                        <div className="text-cyan-300 text-sm">Up to ₹15 Lakhs</div>
+                        <div className="text-white font-bold text-lg">
+                          Medical Loan
+                        </div>
+                        <div className="text-cyan-300 text-sm">
+                          Up to ₹15 Lakhs
+                        </div>
                       </div>
                     </div>
                     <div className="text-gray-300 text-sm">
@@ -204,7 +234,9 @@ export default function HeroSection() {
                 className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-2xl"
               >
                 <div className="text-center">
-                  <div className="text-emerald-600 text-2xl font-bold">48hrs</div>
+                  <div className="text-emerald-600 text-2xl font-bold">
+                    48hrs
+                  </div>
                   <div className="text-gray-600 text-xs">Quick Approval</div>
                 </div>
               </motion.div>

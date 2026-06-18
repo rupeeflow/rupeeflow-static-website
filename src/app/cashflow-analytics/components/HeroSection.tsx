@@ -1,12 +1,12 @@
-'use client';
+'use client'
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Activity } from 'lucide-react';
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { ArrowRight, CheckCircle2, Activity } from 'lucide-react'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] bg-[#020506] text-white overflow-hidden flex items-center">
+    <section className="relative min-h-[90vh] bg-white text-white overflow-hidden flex items-center">
       {/* Animated flowing lines background */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         {[...Array(10)].map((_, i) => (
@@ -40,19 +40,19 @@ export default function HeroSection() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-full mb-6">
               <Activity className="w-4 h-4 text-emerald-400" />
-              <span className="text-sm font-medium text-emerald-400">94% Accuracy • Real-time Tracking</span>
+              <span className="text-sm font-medium text-emerald-400">
+                94% Accuracy • Real-time Tracking
+              </span>
             </div>
 
             <h1 className="fontheading text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               Cashflow Forecasting &{' '}
-              <span className="text-emerald-500">
-                Liquidity
-              </span>{' '}
-              Management
+              <span className="text-emerald-500">Liquidity</span> Management
             </h1>
 
             <p className="fontbody2 text-xl text-gray-300 mb-8 leading-relaxed">
-              Predict cash positions with 94% accuracy, plan for liquidity needs, and never run out of cash with intelligent forecasting.
+              Predict cash positions with 94% accuracy, plan for liquidity
+              needs, and never run out of cash with intelligent forecasting.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -72,8 +72,15 @@ export default function HeroSection() {
             </div>
 
             <div className="flex flex-wrap gap-6">
-              {['13-week forecasting', 'Scenario planning', 'Liquidity alerts'].map((feature, index) => (
-                <div key={index} className="flex items-center gap-2 text-gray-300">
+              {[
+                '13-week forecasting',
+                'Scenario planning',
+                'Liquidity alerts',
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 text-gray-300"
+                >
                   <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                   <span className="text-sm">{feature}</span>
                 </div>
@@ -100,7 +107,7 @@ export default function HeroSection() {
               <div className="relative h-48">
                 <svg className="w-full h-full" viewBox="0 0 400 150">
                   {/* Grid lines */}
-                  {[0, 1, 2, 3, 4].map((i) => (
+                  {[0, 1, 2, 3, 4].map(i => (
                     <line
                       key={i}
                       x1="0"
@@ -126,7 +133,13 @@ export default function HeroSection() {
 
                   {/* Gradient definition */}
                   <defs>
-                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <linearGradient
+                      id="gradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="0%"
+                    >
                       <stop offset="0%" stopColor="#10b981" />
                       <stop offset="100%" stopColor="#14b8a6" />
                     </linearGradient>
@@ -161,5 +174,5 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -24,7 +24,7 @@ export default function RevenueCalculator() {
       const monthlyRevenue = revenue * 30
       const eligibleAmount = Math.min(monthlyRevenue * 2, 500000)
       const dailyRepayment = Math.floor(revenue * 0.05)
-      
+
       setResult({
         eligible: `₹${(eligibleAmount / 100000).toFixed(1)}L`,
         monthly: `₹${(monthlyRevenue / 100000).toFixed(1)}L`,
@@ -67,7 +67,7 @@ export default function RevenueCalculator() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Enter Your Daily Revenue
               </h3>
-              
+
               <div className="mb-6">
                 <label className="block text-gray-700 font-semibold mb-3 text-sm">
                   Average Daily UPI Collections (₹)
@@ -79,7 +79,7 @@ export default function RevenueCalculator() {
                   <input
                     type="number"
                     value={dailyRevenue}
-                    onChange={(e) => setDailyRevenue(e.target.value)}
+                    onChange={e => setDailyRevenue(e.target.value)}
                     placeholder="5000"
                     className="w-full pl-10 pr-4 py-4 rounded-xl border-2 border-emerald-300 focus:border-emerald-500 focus:outline-none transition-colors text-gray-900 text-lg font-semibold"
                   />
@@ -98,9 +98,11 @@ export default function RevenueCalculator() {
 
               {/* Quick Examples */}
               <div className="mt-6 pt-6 border-t border-emerald-200">
-                <p className="text-gray-600 text-sm mb-3 font-semibold">Quick Examples:</p>
+                <p className="text-gray-600 text-sm mb-3 font-semibold">
+                  Quick Examples:
+                </p>
                 <div className="grid grid-cols-3 gap-2">
-                  {['2000', '5000', '10000'].map((amount) => (
+                  {['2000', '5000', '10000'].map(amount => (
                     <button
                       key={amount}
                       onClick={() => {
@@ -127,7 +129,9 @@ export default function RevenueCalculator() {
               {result ? (
                 <div className="space-y-6">
                   <div className="text-center pb-6 border-b border-gray-100">
-                    <div className="text-gray-600 text-sm mb-2">You&apos;re Eligible For</div>
+                    <div className="text-gray-600 text-sm mb-2">
+                      You&apos;re Eligible For
+                    </div>
                     <div className="text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-2">
                       {result.eligible}
                     </div>
@@ -136,39 +140,77 @@ export default function RevenueCalculator() {
 
                   <div className="space-y-4">
                     <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50">
-                      <span className="text-gray-600 text-sm">Monthly Revenue</span>
-                      <span className="text-gray-900 font-bold text-lg">{result.monthly}</span>
+                      <span className="text-gray-600 text-sm">
+                        Monthly Revenue
+                      </span>
+                      <span className="text-gray-900 font-bold text-lg">
+                        {result.monthly}
+                      </span>
                     </div>
                     <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50">
-                      <span className="text-gray-600 text-sm">Daily Repayment</span>
-                      <span className="text-emerald-600 font-bold text-lg">{result.repayment}</span>
+                      <span className="text-gray-600 text-sm">
+                        Daily Repayment
+                      </span>
+                      <span className="text-emerald-600 font-bold text-lg">
+                        {result.repayment}
+                      </span>
                     </div>
                   </div>
 
                   <div className="pt-6 border-t border-gray-100">
                     <div className="flex items-start gap-3 mb-4">
-                      <svg className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      <svg
+                        className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
                       </svg>
-                      <span className="text-gray-700 text-sm">3-minute approval process</span>
+                      <span className="text-gray-700 text-sm">
+                        3-minute approval process
+                      </span>
                     </div>
                     <div className="flex items-start gap-3 mb-4">
-                      <svg className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      <svg
+                        className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
                       </svg>
-                      <span className="text-gray-700 text-sm">Funds in 24 hours</span>
+                      <span className="text-gray-700 text-sm">
+                        Funds in 24 hours
+                      </span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      <svg
+                        className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
                       </svg>
-                      <span className="text-gray-700 text-sm">No collateral required</span>
+                      <span className="text-gray-700 text-sm">
+                        No collateral required
+                      </span>
                     </div>
                   </div>
 
                   <a
                     href="#apply"
-                    className="block w-full py-3 rounded-xl bg-gray-900 text-white font-semibold text-center hover:bg-gray-800 transition-colors"
+                    className="block w-full py-3 rounded-xl bg-white text-white font-semibold text-center hover:bg-gray-800 transition-colors"
                   >
                     Apply Now
                   </a>
@@ -177,12 +219,24 @@ export default function RevenueCalculator() {
                 <div className="flex items-center justify-center h-full min-h-[200px] sm:min-h-[400px]">
                   <div className="text-center">
                     <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-10 h-10 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      <svg
+                        className="w-10 h-10 text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                        />
                       </svg>
                     </div>
                     <p className="text-gray-500 text-sm">
-                      Enter your daily revenue to see<br />how much you can borrow
+                      Enter your daily revenue to see
+                      <br />
+                      how much you can borrow
                     </p>
                   </div>
                 </div>

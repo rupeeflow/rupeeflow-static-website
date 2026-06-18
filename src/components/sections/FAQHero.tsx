@@ -31,7 +31,7 @@ export default function FAQHero({ onSearch }: FAQHeroProps) {
   }
 
   return (
-    <section className="py-32 px-6 bg-black-emerald text-white relative overflow-hidden">
+    <section className="py-32 px-6 bg-white text-white relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-radial-teal-soft opacity-30 pointer-events-none" />
 
@@ -56,14 +56,14 @@ export default function FAQHero({ onSearch }: FAQHeroProps) {
             RupeeFlow Finance Private Limited
           </motion.p>
 
-          <motion.p variants={content} className="fontbody2 text-gray-400 mb-12">
+          <motion.p
+            variants={content}
+            className="fontbody2 text-gray-400 mb-12"
+          >
             Last Updated: October 27, 2025
           </motion.p>
 
-          <motion.div
-            variants={content}
-            className="max-w-2xl mx-auto"
-          >
+          <motion.div variants={content} className="max-w-2xl mx-auto">
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
@@ -75,7 +75,8 @@ export default function FAQHero({ onSearch }: FAQHeroProps) {
               />
             </div>
             <p className="fontbody2 text-gray-400 text-sm mt-4">
-              Can&apos;t find what you&apos;re looking for? Contact our 24/7 support team
+              Can&apos;t find what you&apos;re looking for? Contact our 24/7
+              support team
             </p>
           </motion.div>
         </motion.div>

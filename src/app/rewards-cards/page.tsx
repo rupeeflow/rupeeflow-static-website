@@ -1,7 +1,7 @@
 import Container from '@/components/ui/Container'
 import MainCTA from '@/components/ui/mainCTA'
 import Image from 'next/image'
-import { rewardsFAQs } from "@/data/rewardsCardFaqs"
+import { rewardsFAQs } from '@/data/rewardsCardFaqs'
 
 import {
   Check,
@@ -20,11 +20,10 @@ export default function RewardsCardsPage() {
       {/* HERO */}
       <Container className="py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-
           {/* LEFT */}
           <div>
             <h1 className="text-6xl font-bold text-white leading-tight">
-              Rewards{" "}
+              Rewards{' '}
               <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                 Cards
               </span>
@@ -38,11 +37,23 @@ export default function RewardsCardsPage() {
 
             <ul className="mt-8 space-y-4">
               {[
-                { icon: Gift, text: "Instant rewards & incentive distribution" },
-                { icon: Trophy, text: "Recognize performance & milestones" },
-                { icon: Smile, text: "Boost employee satisfaction & engagement" },
-                { icon: Wallet, text: "Tax-efficient perks & benefit programs" },
-                { icon: HeartHandshake, text: "Strengthen retention & company culture" },
+                {
+                  icon: Gift,
+                  text: 'Instant rewards & incentive distribution',
+                },
+                { icon: Trophy, text: 'Recognize performance & milestones' },
+                {
+                  icon: Smile,
+                  text: 'Boost employee satisfaction & engagement',
+                },
+                {
+                  icon: Wallet,
+                  text: 'Tax-efficient perks & benefit programs',
+                },
+                {
+                  icon: HeartHandshake,
+                  text: 'Strengthen retention & company culture',
+                },
               ].map((item, i) => {
                 const Icon = item.icon
                 return (
@@ -72,7 +83,6 @@ export default function RewardsCardsPage() {
               priority
             />
           </div>
-
         </div>
       </Container>
 
@@ -80,7 +90,7 @@ export default function RewardsCardsPage() {
       <div className="py-20 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
         <div className="text-center max-w-3xl mx-auto px-6">
           <h2 className="text-5xl font-semibold text-white">
-            Why Choose{" "}
+            Why Choose{' '}
             <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
               Rewards Cards
             </span>
@@ -88,28 +98,29 @@ export default function RewardsCardsPage() {
           </h2>
 
           <p className="mt-3 text-xl text-gray-300">
-            Recognize achievements, motivate teams, and build a high-performance culture.
+            Recognize achievements, motivate teams, and build a high-performance
+            culture.
           </p>
         </div>
 
         <div className="mt-14 max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           {[
             {
-              title: "Boost Engagement",
-              desc: "Reward employees instantly and improve workplace motivation.",
+              title: 'Boost Engagement',
+              desc: 'Reward employees instantly and improve workplace motivation.',
             },
             {
-              title: "Performance Incentives",
-              desc: "Encourage excellence with milestone and achievement rewards.",
+              title: 'Performance Incentives',
+              desc: 'Encourage excellence with milestone and achievement rewards.',
             },
             {
-              title: "Flexible Redemption",
-              desc: "Allow employees to spend rewards anywhere they prefer.",
+              title: 'Flexible Redemption',
+              desc: 'Allow employees to spend rewards anywhere they prefer.',
             },
           ].map((item, i) => (
             <div
               key={i}
-              className="p-7 rounded-2xl border border-white/10 bg-[#0F0F0F]
+              className="p-7 rounded-2xl border border-white/10 bg-white
               hover:-translate-y-1 transition
               hover:border-emerald-400/40
               hover:shadow-[0_0_25px_rgba(0,239,100,0.15)]"
@@ -124,46 +135,62 @@ export default function RewardsCardsPage() {
       {/* FEATURES */}
       <div className="py-24 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
         <div className="max-w-6xl mx-auto px-6 space-y-28">
-
           {[
             {
-              title: "Instant Rewards Distribution",
-              desc: "Send incentives and bonuses instantly to employees.",
-              points: ["One-click reward issuance", "Bulk distribution", "Real-time delivery"],
-              image: "Rewards Distribution Preview",
+              title: 'Instant Rewards Distribution',
+              desc: 'Send incentives and bonuses instantly to employees.',
+              points: [
+                'One-click reward issuance',
+                'Bulk distribution',
+                'Real-time delivery',
+              ],
+              image: 'Rewards Distribution Preview',
             },
             {
-              title: "Employee Recognition",
-              desc: "Celebrate achievements and milestones effortlessly.",
-              points: ["Milestone rewards", "Performance bonuses", "Peer recognition"],
-              image: "Recognition Dashboard",
+              title: 'Employee Recognition',
+              desc: 'Celebrate achievements and milestones effortlessly.',
+              points: [
+                'Milestone rewards',
+                'Performance bonuses',
+                'Peer recognition',
+              ],
+              image: 'Recognition Dashboard',
             },
             {
-              title: "Flexible Spending",
-              desc: "Give employees the freedom to redeem rewards anywhere.",
-              points: ["Universal acceptance", "Online & offline use", "Mobile wallet support"],
-              image: "Flexible Spend Preview",
+              title: 'Flexible Spending',
+              desc: 'Give employees the freedom to redeem rewards anywhere.',
+              points: [
+                'Universal acceptance',
+                'Online & offline use',
+                'Mobile wallet support',
+              ],
+              image: 'Flexible Spend Preview',
             },
             {
-              title: "Insights & Engagement Metrics",
-              desc: "Measure program effectiveness and employee participation.",
-              points: ["Usage insights", "Engagement tracking", "Reward impact analysis"],
-              image: "Engagement Analytics",
+              title: 'Insights & Engagement Metrics',
+              desc: 'Measure program effectiveness and employee participation.',
+              points: [
+                'Usage insights',
+                'Engagement tracking',
+                'Reward impact analysis',
+              ],
+              image: 'Engagement Analytics',
             },
           ].map((item, i) => (
             <div key={i} className="grid md:grid-cols-2 gap-14 items-center">
-
               {/* IMAGE */}
-              <div className={`${i % 2 ? "md:order-2" : ""} bg-white/5 border border-white/10 rounded-2xl aspect-video flex items-center justify-center text-gray-500`}>
+              <div
+                className={`${i % 2 ? 'md:order-2' : ''} bg-white/5 border border-white/10 rounded-2xl aspect-video flex items-center justify-center text-gray-500`}
+              >
                 {item.image}
               </div>
 
               {/* TEXT */}
-              <div className={`${i % 2 ? "md:order-1" : ""}`}>
+              <div className={`${i % 2 ? 'md:order-1' : ''}`}>
                 <h3 className="text-2xl font-semibold text-white">
-                  {item.title.split(" ").slice(0, -1).join(" ")}{" "}
+                  {item.title.split(' ').slice(0, -1).join(' ')}{' '}
                   <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
-                    {item.title.split(" ").slice(-1)}
+                    {item.title.split(' ').slice(-1)}
                   </span>
                 </h3>
 
@@ -181,10 +208,13 @@ export default function RewardsCardsPage() {
                 </ul>
 
                 <div className="mt-6">
-                  <MainCTA label="Learn More" destination="#" size="w-40 h-10" />
+                  <MainCTA
+                    label="Learn More"
+                    destination="#"
+                    size="w-40 h-10"
+                  />
                 </div>
               </div>
-
             </div>
           ))}
         </div>
@@ -193,7 +223,8 @@ export default function RewardsCardsPage() {
       {/* TRUST STRIP */}
       <div className="py-14 border-y border-white/10 text-center">
         <p className="text-lg font-medium bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
-          Empower teams with meaningful recognition and performance-driven rewards.
+          Empower teams with meaningful recognition and performance-driven
+          rewards.
         </p>
       </div>
 

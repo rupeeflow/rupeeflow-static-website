@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-[#020506] py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-white py-24 md:py-32 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <motion.div
@@ -66,16 +66,28 @@ export default function HeroSection() {
 
             {/* Description */}
             <p className="fontbody2 text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-              Find out how much you can borrow in just 60 seconds. No impact on credit score. 
-              100% free and secure.
+              Find out how much you can borrow in just 60 seconds. No impact on
+              credit score. 100% free and secure.
             </p>
 
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               {[
-                { icon: '/features/clock.svg', value: '60 sec', label: 'Quick Check' },
-                { icon: '/Developer-friendly/security-card.svg', value: 'No Impact', label: 'Credit Score' },
-                { icon: '/features/shield.svg', value: '100%', label: 'Secure' },
+                {
+                  icon: '/features/clock.svg',
+                  value: '60 sec',
+                  label: 'Quick Check',
+                },
+                {
+                  icon: '/Developer-friendly/security-card.svg',
+                  value: 'No Impact',
+                  label: 'Credit Score',
+                },
+                {
+                  icon: '/features/shield.svg',
+                  value: '100%',
+                  label: 'Secure',
+                },
                 { icon: '/home/rupee.svg', value: '₹50L', label: 'Max Loan' },
               ].map((stat, index) => (
                 <motion.div
@@ -86,14 +98,18 @@ export default function HeroSection() {
                   className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300"
                 >
                   <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-3">
-                    <Image src={stat.icon} alt="" width={20} height={20} className="opacity-80" />
+                    <Image
+                      src={stat.icon}
+                      alt=""
+                      width={20}
+                      height={20}
+                      className="opacity-80"
+                    />
                   </div>
                   <div className="text-emerald-400 text-xl font-bold mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-gray-400 text-xs">
-                    {stat.label}
-                  </div>
+                  <div className="text-gray-400 text-xs">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
