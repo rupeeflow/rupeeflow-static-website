@@ -1,50 +1,86 @@
-name: Build and Deploy Static Site
+name: Deploy rupeeflow.co to S3 + CloudFront
 
 on:
   push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
+    branches:
+      - feature/payout-design
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  quality-check:
-    name: Code Quality Check
+  deploy:
+    name: Build & Deploy
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      # ── 1. Checkout code ──
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+      # ── 2. Setup pnpm ──
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-          bun-version: latest
+          version: latest
 
+      # ── 3. Setup Node.js 24 ──
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'pnpm'
+
+      # ── 4. Install dependencies ──
       - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # ── 5. Build Next.js static export ──
+      - name: Build
+        run: pnpm run build
+        env:
+          NODE_ENV: production
+
+      # ── 6. Configure AWS credentials ──
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # ── 7. Upload JS/CSS/images with long cache (1 year) ──
+      - name: Upload assets to S3
         run: |
-          if ! bun install --frozen-lockfile; then
-              echo "Lockfile out of sync, updating..."
-              bun install
-              echo "Please update your lockfile locally and commit it"
-              exit 1
-          fi
+          aws s3 sync out/ s3://rupeeflow-co-static-site \
+            --delete \
+            --cache-control "public,max-age=31536000,immutable" \
+            --exclude "*.html" \
+            --exclude "*.xml" \
+            --exclude "*.txt" \
+            --exclude "*.json"
 
-      - name: Type check
-        run: bun run type-check
+      # ── 8. Upload HTML/XML with no cache (always fresh) ──
+      - name: Upload HTML to S3
+        run: |
+          aws s3 sync out/ s3://rupeeflow-co-static-site \
+            --delete \
+            --cache-control "no-cache,no-store,must-revalidate" \
+            --include "*.html" \
+            --include "*.xml" \
+            --include "*.txt" \
+            --include "*.json"
 
-      - name: Lint code
-        run: bun run lint
+      # ── 9. Invalidate CloudFront cache ──
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E2MTW01QDLC79U \
+            --paths "/*"
 
-      - name: Run tests
-        run: bun test
-
-      - name: Build static site
-        run: bun run build
-
-      # Optional: Deploy to GitHub Pages
-    #   - name: Deploy to GitHub Pages
-    #     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    #     uses: peaceiris/actions-gh-pages@v3
-    #     with:
-    #       github_token: ${{ secrets.GITHUB_TOKEN }}
-    #       publish_dir: ./out
+      # ── 10. Done ──
+      - name: Done
+        run: |
+          echo "✓ Deployed successfully!"
+          echo "  Live at: https://rupeeflow.co"

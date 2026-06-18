@@ -61,7 +61,7 @@ export default function UPISwitchSection() {
   ]
 
   return (
-    <section className="relative w-full bg-black text-white pt-20 pb-32 px-6 overflow-hidden">
+    <section className="relative w-full bg-white text-white pt-20 pb-32 px-6 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(20,184,166,0.15),transparent_70%)] blur-3xl" />
 

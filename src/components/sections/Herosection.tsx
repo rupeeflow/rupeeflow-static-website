@@ -56,7 +56,7 @@ export default function Hero() {
             className="relative px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 rounded-full bg-transparent text-[#ffffff] transition-all duration-300 text-xs sm:text-sm hover:scale-105 overflow-hidden group text-center"
           >
             <span className="absolute inset-0 rounded-full p-[2px] bg-gradient-to-r from-[#53BEC2] via-[#00EF64] to-[#53BEC2] bg-[length:200%_100%] animate-border-flow">
-              <span className="flex h-full w-full items-center justify-center rounded-full bg-[#020506] group-hover:bg-[#01222D] transition-colors duration-300"></span>
+              <span className="flex h-full w-full items-center justify-center rounded-full bg-white group-hover:bg-white transition-colors duration-300"></span>
             </span>
             <span className="relative z-10">Start Getting Paid</span>
           </Link>
@@ -66,7 +66,7 @@ export default function Hero() {
             className="relative px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 rounded-full bg-transparent text-[#ffffff] transition-all duration-300 text-xs sm:text-sm hover:scale-105 overflow-hidden group text-center"
           >
             <span className="absolute inset-0 rounded-full p-[2px] bg-gradient-to-r from-[#53BEC2] via-[#00EF64] to-[#53BEC2] bg-[length:200%_100%] animate-border-flow-delayed">
-              <span className="flex h-full w-full items-center justify-center rounded-full bg-[#020506] group-hover:bg-[#01222D] transition-colors duration-300"></span>
+              <span className="flex h-full w-full items-center justify-center rounded-full bg-white group-hover:bg-white transition-colors duration-300"></span>
             </span>
             <span className="relative z-10">Make Bulk Payouts</span>
           </Link>
@@ -76,7 +76,7 @@ export default function Hero() {
             className="relative px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 rounded-full bg-transparent text-[#ffffff] transition-all duration-300 text-xs sm:text-sm hover:scale-105 overflow-hidden group text-center"
           >
             <span className="absolute inset-0 rounded-full p-[2px] bg-gradient-to-r from-[#53BEC2] via-[#00EF64] to-[#53BEC2] bg-[length:200%_100%] animate-border-flow-delayed-2">
-              <span className="flex h-full w-full items-center justify-center rounded-full bg-[#020506] group-hover:bg-[#01222D] transition-colors duration-300"></span>
+              <span className="flex h-full w-full items-center justify-center rounded-full bg-white group-hover:bg-white transition-colors duration-300"></span>
             </span>
             <span className="relative z-10">Get instant 5L Credit</span>
           </Link>
@@ -84,7 +84,7 @@ export default function Hero() {
 
         {/* Stats Cards - Modern Design */}
         <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-4xl w-full mb-0 px-4">
-          <div className="group relative border border-[#029789]/30 bg-[#020506]/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-1">
+          <div className="group relative border border-[#029789]/30 bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-1">
             <div className="relative z-10">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
                 100K<span className="text-[#30f3bc]">+</span>
@@ -95,7 +95,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="group relative border border-[#029789]/30 bg-[#020506]/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-2">
+          <div className="group relative border border-[#029789]/30 bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-2">
             <div className="relative z-10">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
                 10&nbsp;<span className="text-[#30f3bc]">Cr+</span>
@@ -106,7 +106,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="group relative border border-[#029789]/30 bg-[#020506]/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-3">
+          <div className="group relative border border-[#029789]/30 bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-500 hover:border-[#30f3bc]/50 hover:shadow-[0_0_30px_rgba(48,243,188,0.15)] opacity-0 animate-fade-in-up-stagger-3">
             <div className="relative z-10">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
                 5<span className="text-[#30f3bc]">+</span>

@@ -3,8 +3,17 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Pay-Out API Documentation | RupeeFlow',
-  description: 'Complete Pay-Out API documentation for sending money to bank accounts. Learn how to create payouts, check status, handle webhooks, and check wallet balance.',
-  keywords: ['Pay-Out API', 'bank transfer API', 'IMPS API', 'NEFT API', 'RTGS API', 'payout API', 'money transfer'],
+  description:
+    'Complete Pay-Out API documentation for sending money to bank accounts. Learn how to create payouts, check status, handle webhooks, and check wallet balance.',
+  keywords: [
+    'Pay-Out API',
+    'bank transfer API',
+    'IMPS API',
+    'NEFT API',
+    'RTGS API',
+    'payout API',
+    'money transfer',
+  ],
 }
 
 export default function PayoutDocsPage() {
@@ -16,12 +25,15 @@ export default function PayoutDocsPage() {
           Pay-Out API
         </h1>
         <p className="text-xl text-gray-300 fontbody mb-6">
-          Send money to bank accounts via IMPS, NEFT, or RTGS. Perfect for bulk payouts, refunds, vendor payments, and salary disbursements.
+          Send money to bank accounts via IMPS, NEFT, or RTGS. Perfect for bulk
+          payouts, refunds, vendor payments, and salary disbursements.
         </p>
 
         {/* Version Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 border border-emerald-500/30 rounded-lg">
-          <span className="text-emerald-400 fontbody font-semibold">Version 1.0</span>
+          <span className="text-emerald-400 fontbody font-semibold">
+            Version 1.0
+          </span>
         </div>
       </div>
 
@@ -36,7 +48,11 @@ export default function PayoutDocsPage() {
         description="Create a payout to transfer money to beneficiary bank accounts. Supports single and bulk payouts with IMPS, NEFT, and RTGS payment modes."
         headers={[
           { name: 'Content-Type', value: 'application/json' },
-          { name: 'Authorization', value: 'Basic <Base64(ClientID:ClientSecret)>', description: 'Basic Auth using Client ID and Secret' },
+          {
+            name: 'Authorization',
+            value: 'Basic <Base64(ClientID:ClientSecret)>',
+            description: 'Basic Auth using Client ID and Secret',
+          },
         ]}
         requestBody={`{
   "data": [
@@ -117,7 +133,10 @@ export default function PayoutDocsPage() {
         description="Retrieve the current status of a payout transaction using the order ID."
         headers={[
           { name: 'Content-Type', value: 'application/json' },
-          { name: 'Authorization', value: 'Basic <Base64(ClientID:ClientSecret)>' },
+          {
+            name: 'Authorization',
+            value: 'Basic <Base64(ClientID:ClientSecret)>',
+          },
         ]}
         requestBody={`{
   "orderId": "mpout_01JJ3TQW8PMXXXXXXXXXJTTV08"
@@ -150,17 +169,27 @@ export default function PayoutDocsPage() {
       {/* Endpoint 3: Payout Webhook Response */}
       <div className="mb-12">
         <div className="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/30 rounded-xl p-6 mb-6">
-          <h2 className="text-3xl fontheading text-purple-400 mb-3">Payout Webhook Response</h2>
+          <h2 className="text-3xl fontheading text-purple-400 mb-3">
+            Payout Webhook Response
+          </h2>
           <p className="text-gray-300 fontbody2 mb-4">
-            Configure your webhook URL in the dashboard to receive real-time payout status updates. We&apos;ll send a POST request to your endpoint whenever the payout status changes.
+            Configure your webhook URL in the dashboard to receive real-time
+            payout status updates. We&apos;ll send a POST request to your
+            endpoint whenever the payout status changes.
           </p>
           <div className="bg-gray-950 border border-purple-500/20 rounded-lg p-4">
-            <p className="text-sm text-gray-400 fontbody2 mb-2">Configure in Dashboard:</p>
-            <code className="text-purple-400 text-sm">Settings → Webhooks → Add Webhook URL</code>
+            <p className="text-sm text-gray-400 fontbody2 mb-2">
+              Configure in Dashboard:
+            </p>
+            <code className="text-purple-400 text-sm">
+              Settings → Webhooks → Add Webhook URL
+            </code>
           </div>
         </div>
 
-        <h3 className="text-xl fontheading text-emerald-400 mb-3">Webhook Payload</h3>
+        <h3 className="text-xl fontheading text-emerald-400 mb-3">
+          Webhook Payload
+        </h3>
         <pre className="bg-gray-950 border border-gray-800 rounded-lg p-4 overflow-x-auto mb-4">
           <code className="text-sm text-gray-300 font-mono">{`{
   "orderId": "mpout_01JJ3TQW8PMXXXXXXXXXJTTV08",
@@ -172,15 +201,22 @@ export default function PayoutDocsPage() {
         </pre>
 
         <div className="bg-gradient-to-br from-teal-500/10 to-emerald-500/10 border border-teal-500/30 rounded-lg p-4">
-          <h4 className="text-lg fontheading text-teal-400 mb-2">📝 Webhook Notes</h4>
+          <h4 className="text-lg fontheading text-teal-400 mb-2">
+            📝 Webhook Notes
+          </h4>
           <ul className="space-y-2">
             <li className="text-gray-300 fontbody2 text-sm flex items-start gap-2">
               <span className="text-teal-500 mt-1">•</span>
-              <span>Webhook sent when payout status changes (SUCCESS, FAILED, PENDING)</span>
+              <span>
+                Webhook sent when payout status changes (SUCCESS, FAILED,
+                PENDING)
+              </span>
             </li>
             <li className="text-gray-300 fontbody2 text-sm flex items-start gap-2">
               <span className="text-teal-500 mt-1">•</span>
-              <span>Your webhook endpoint must return HTTP 200 status code</span>
+              <span>
+                Your webhook endpoint must return HTTP 200 status code
+              </span>
             </li>
             <li className="text-gray-300 fontbody2 text-sm flex items-start gap-2">
               <span className="text-teal-500 mt-1">•</span>
@@ -188,7 +224,10 @@ export default function PayoutDocsPage() {
             </li>
             <li className="text-gray-300 fontbody2 text-sm flex items-start gap-2">
               <span className="text-teal-500 mt-1">•</span>
-              <span>txnRefId contains the bank&apos;s UTR (Unique Transaction Reference)</span>
+              <span>
+                txnRefId contains the bank&apos;s UTR (Unique Transaction
+                Reference)
+              </span>
             </li>
           </ul>
         </div>
@@ -202,7 +241,10 @@ export default function PayoutDocsPage() {
         description="Get your payout wallet balance and transaction summary. Monitor available balance, total payouts, and top-up history."
         headers={[
           { name: 'Content-Type', value: 'application/json' },
-          { name: 'Authorization', value: 'Basic <Base64(ClientID:ClientSecret)>' },
+          {
+            name: 'Authorization',
+            value: 'Basic <Base64(ClientID:ClientSecret)>',
+          },
         ]}
         responseBody={`{
   "statusCode": 200,
@@ -238,7 +280,9 @@ export default function PayoutDocsPage() {
           {/* IMPS */}
           <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 border border-emerald-500/20 rounded-xl p-6">
             <h3 className="text-xl fontheading text-emerald-400 mb-3">IMPS</h3>
-            <p className="text-gray-300 fontbody2 mb-4">Instant payment transfer (24x7 including weekends and holidays)</p>
+            <p className="text-gray-300 fontbody2 mb-4">
+              Instant payment transfer (24x7 including weekends and holidays)
+            </p>
             <ul className="space-y-2 text-sm text-gray-400 fontbody2">
               <li>• Processing Time: Instant</li>
               <li>• Limit: Up to ₹5 lakhs</li>
@@ -249,7 +293,9 @@ export default function PayoutDocsPage() {
           {/* NEFT */}
           <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 border border-teal-500/20 rounded-xl p-6">
             <h3 className="text-xl fontheading text-teal-400 mb-3">NEFT</h3>
-            <p className="text-gray-300 fontbody2 mb-4">National Electronic Funds Transfer for standard transfers</p>
+            <p className="text-gray-300 fontbody2 mb-4">
+              National Electronic Funds Transfer for standard transfers
+            </p>
             <ul className="space-y-2 text-sm text-gray-400 fontbody2">
               <li>• Processing Time: 2-4 hours</li>
               <li>• Limit: No maximum limit</li>
@@ -260,7 +306,9 @@ export default function PayoutDocsPage() {
           {/* RTGS */}
           <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 border border-blue-500/20 rounded-xl p-6">
             <h3 className="text-xl fontheading text-blue-400 mb-3">RTGS</h3>
-            <p className="text-gray-300 fontbody2 mb-4">Real-Time Gross Settlement for large value transfers</p>
+            <p className="text-gray-300 fontbody2 mb-4">
+              Real-Time Gross Settlement for large value transfers
+            </p>
             <ul className="space-y-2 text-sm text-gray-400 fontbody2">
               <li>• Processing Time: Same day</li>
               <li>• Limit: Minimum ₹2 lakhs</li>
@@ -273,12 +321,16 @@ export default function PayoutDocsPage() {
       {/* Status Codes */}
       <div className="mb-12">
         <h2 className="text-3xl fontheading text-white mb-6">Status Codes</h2>
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-white/50 border border-gray-800 rounded-lg overflow-hidden">
           <table className="w-full">
             <thead className="bg-gray-950">
               <tr>
-                <th className="px-6 py-3 text-left text-sm fontheading text-emerald-400">Status</th>
-                <th className="px-6 py-3 text-left text-sm fontheading text-emerald-400">Description</th>
+                <th className="px-6 py-3 text-left text-sm fontheading text-emerald-400">
+                  Status
+                </th>
+                <th className="px-6 py-3 text-left text-sm fontheading text-emerald-400">
+                  Description
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-800">
@@ -287,7 +339,8 @@ export default function PayoutDocsPage() {
                   <code className="text-emerald-400 fontbody">SUCCESS</code>
                 </td>
                 <td className="px-6 py-4 text-sm text-gray-300 fontbody2">
-                  Payout completed successfully. Funds credited to beneficiary account.
+                  Payout completed successfully. Funds credited to beneficiary
+                  account.
                 </td>
               </tr>
               <tr>
@@ -303,7 +356,8 @@ export default function PayoutDocsPage() {
                   <code className="text-blue-400 fontbody">PROCESSING</code>
                 </td>
                 <td className="px-6 py-4 text-sm text-gray-300 fontbody2">
-                  Payout batch is being processed. Individual transactions may have different statuses.
+                  Payout batch is being processed. Individual transactions may
+                  have different statuses.
                 </td>
               </tr>
               <tr>
@@ -311,7 +365,8 @@ export default function PayoutDocsPage() {
                   <code className="text-red-400 fontbody">FAILED</code>
                 </td>
                 <td className="px-6 py-4 text-sm text-gray-300 fontbody2">
-                  Payout failed. Amount refunded to wallet. Check error message for details.
+                  Payout failed. Amount refunded to wallet. Check error message
+                  for details.
                 </td>
               </tr>
             </tbody>

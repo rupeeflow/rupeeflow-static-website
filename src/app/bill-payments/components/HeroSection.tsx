@@ -1,33 +1,33 @@
-'use client';
+'use client'
 
-import { motion } from 'framer-motion';
-import { LucideIcon } from 'lucide-react';
-import { fadeInUp, viewportConfig } from '@/lib/animations';
+import { motion } from 'framer-motion'
+import { LucideIcon } from 'lucide-react'
+import { fadeInUp, viewportConfig } from '@/lib/animations'
 
 // TypeScript interfaces for component props
 interface CTAButton {
-  text: string;
-  href: string;
-  variant: 'primary' | 'secondary';
+  text: string
+  href: string
+  variant: 'primary' | 'secondary'
 }
 
 interface StatItem {
-  value: string;
-  label: string;
+  value: string
+  label: string
 }
 
 interface HeroSectionProps {
   badge: {
-    text: string;
-    icon?: LucideIcon;
-  };
-  heading: string;
-  headingAccent: string;
-  description: string;
-  primaryCTA?: CTAButton;
-  secondaryCTA?: CTAButton;
-  stats: StatItem[];
-  mockupComponent: React.ComponentType;
+    text: string
+    icon?: LucideIcon
+  }
+  heading: string
+  headingAccent: string
+  description: string
+  primaryCTA?: CTAButton
+  secondaryCTA?: CTAButton
+  stats: StatItem[]
+  mockupComponent: React.ComponentType
 }
 
 export default function HeroSection({
@@ -41,7 +41,7 @@ export default function HeroSection({
   mockupComponent: MockupComponent,
 }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen bg-[#020506] overflow-hidden">
+    <section className="relative min-h-screen bg-white overflow-hidden">
       {/* Animated gradient blobs */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Blob 1 - Top left */}
@@ -57,7 +57,7 @@ export default function HeroSection({
           }}
           className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-emerald-500/30 to-teal-500/30 rounded-full blur-3xl"
         />
-        
+
         {/* Blob 2 - Top right */}
         <motion.div
           animate={{
@@ -72,7 +72,7 @@ export default function HeroSection({
           }}
           className="absolute top-20 -right-40 w-[500px] h-[500px] bg-gradient-to-bl from-emerald-400/25 to-cyan-500/25 rounded-full blur-3xl"
         />
-        
+
         {/* Blob 3 - Bottom center */}
         <motion.div
           animate={{
@@ -112,8 +112,12 @@ export default function HeroSection({
               }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6"
             >
-              {badge.icon && <badge.icon className="w-4 h-4 text-emerald-400" />}
-              <span className="text-sm font-semibold text-emerald-400">{badge.text}</span>
+              {badge.icon && (
+                <badge.icon className="w-4 h-4 text-emerald-400" />
+              )}
+              <span className="text-sm font-semibold text-emerald-400">
+                {badge.text}
+              </span>
             </motion.div>
 
             {/* Heading with emerald accent */}
@@ -190,5 +194,5 @@ export default function HeroSection({
         </div>
       </div>
     </section>
-  );
+  )
 }

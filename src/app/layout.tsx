@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: '%s | RupeeFlow',
   },
   description:
-    'RupeeFlow is India\'s all-in-one fintech platform. Accept payments via Payment Gateway, UPI, Payment Links, QR Code & Payment Button. Send money with Vendor Payouts, Salary Disbursements, Bulk Transfers, Bill Payments & Invoice Management. Get business credit with Merchant Cash Advance, Invoice Financing & NRI Loans.',
+    "RupeeFlow is India's all-in-one fintech platform. Accept payments via Payment Gateway, UPI, Payment Links, QR Code & Payment Button. Send money with Vendor Payouts, Salary Disbursements, Bulk Transfers, Bill Payments & Invoice Management. Get business credit with Merchant Cash Advance, Invoice Financing & NRI Loans.",
   keywords: [
     'payment gateway India',
     'UPI collections',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     creator: '@rupeeflow',
     title: 'RupeeFlow — Payments, Payouts & Business Credit for India',
     description:
-      'India\'s all-in-one fintech platform for payment collection, vendor payouts, salary disbursements, and business credit.',
+      "India's all-in-one fintech platform for payment collection, vendor payouts, salary disbursements, and business credit.",
   },
   robots: {
     index: true,
@@ -114,12 +114,14 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="antialiased background-black text-white overflow-x-hidden">
+      <body className="antialiased bg-white text-[#0B1628] overflow-x-hidden">
         <SmoothScrollProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Marquee />
-          <Footer />
+          <div className="mx-4 md:mx-6 lg:mx-8 min-h-screen border-x border-gray-200">
+            <Navbar />
+            <main>{children}</main>
+            <Marquee />
+            <Footer />
+          </div>
         </SmoothScrollProvider>
       </body>
     </html>

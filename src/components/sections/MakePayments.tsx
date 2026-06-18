@@ -69,7 +69,10 @@ export default function MakePayments() {
   // }, { scope: sectionRef })
 
   return (
-    <section ref={sectionRef} className="relative bg-black pt-10 md:pt-19 pb-10 md:pb-16 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative bg-white pt-10 md:pt-19 pb-10 md:pb-16 overflow-hidden"
+    >
       <Container className="relative">
         {/* ================= HERO AREA ================= */}
         <div className="relative h-[70px] sm:h-[80px] md:h-[110px] mb-10 sm:mb-16 md:mb-28 px-4 md:px-0">
@@ -127,7 +130,7 @@ export default function MakePayments() {
                 </p>
 
                 <div className="mt-auto pt-4">
-                  <Link 
+                  <Link
                     href={card.href}
                     className="inline-flex rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:bg-gradient-to-r group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black"
                   >

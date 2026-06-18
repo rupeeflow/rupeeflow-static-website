@@ -34,7 +34,7 @@ const data = [
 
 const BuiltForSection = () => {
   return (
-    <div className="flex w-full py-20 flex-col bg-black items-center justify-center relative">
+    <div className="flex w-full py-20 flex-col bg-white items-center justify-center relative">
       <h1 className="text-3xl  lg:text-5xl fontheadingthin text-white text-center ml-4 sm:ml-8 lg:ml-12 mb-2">
         Built for Individuals, Businesses and NRIs
       </h1>

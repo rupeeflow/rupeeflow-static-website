@@ -5,32 +5,45 @@ import { useState, useEffect, useCallback } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, BookOpen, FileText, Code, HelpCircle, DollarSign, GitCompare } from 'lucide-react'
+import {
+  ArrowRight,
+  BookOpen,
+  FileText,
+  Code,
+  HelpCircle,
+  DollarSign,
+  GitCompare,
+} from 'lucide-react'
 
 interface ResourcesDropdownProps {
   navitems: navlist[]
   scrolled?: boolean
 }
 
-export default function ResourcesDropdown({ navitems, scrolled = false }: ResourcesDropdownProps) {
+export default function ResourcesDropdown({
+  navitems,
+  scrolled = false,
+}: ResourcesDropdownProps) {
   const router = useRouter()
   const pathname = usePathname()
-  
+
   const getActiveItem = useCallback(() => {
-    const normalizedPathname = pathname.endsWith('/') && pathname !== '/' 
-      ? pathname.slice(0, -1) 
-      : pathname
-    
+    const normalizedPathname =
+      pathname.endsWith('/') && pathname !== '/'
+        ? pathname.slice(0, -1)
+        : pathname
+
     const matchedItem = navitems.find(item => {
-      const normalizedHref = item.href.endsWith('/') && item.href !== '/' 
-        ? item.href.slice(0, -1) 
-        : item.href
+      const normalizedHref =
+        item.href.endsWith('/') && item.href !== '/'
+          ? item.href.slice(0, -1)
+          : item.href
       return normalizedHref === normalizedPathname
     })
-    
+
     return matchedItem || navitems[0]
   }, [pathname, navitems])
-  
+
   const [active, setActive] = useState<navlist>(getActiveItem())
 
   useEffect(() => {
@@ -90,7 +103,7 @@ export default function ResourcesDropdown({ navitems, scrolled = false }: Resour
   const IconComponent = productContent.icon
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
@@ -121,7 +134,13 @@ export default function ResourcesDropdown({ navitems, scrolled = false }: Resour
                 `}
               >
                 <div className="w-6 h-6 relative">
-                  <Image src={item.icon} alt={item.label} width={24} height={24} className="w-full h-full" />
+                  <Image
+                    src={item.icon}
+                    alt={item.label}
+                    width={24}
+                    height={24}
+                    className="w-full h-full"
+                  />
                 </div>
                 <span className="text-sm font-medium flex-1">{item.label}</span>
               </motion.button>
@@ -132,15 +151,15 @@ export default function ResourcesDropdown({ navitems, scrolled = false }: Resour
         {/* RIGHT CONTENT CARD */}
         <div className="flex-1 relative overflow-hidden min-h-[440px]">
           {/* Background Image with Depth */}
-          <motion.div 
+          <motion.div
             className="absolute inset-0"
             initial={{ scale: 1 }}
             animate={{ scale: 1.02 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <Image 
-              src="/resources.jpeg" 
-              alt="Resources" 
+            <Image
+              src="/resources.jpeg"
+              alt="Resources"
               fill
               className="object-cover"
               priority
@@ -167,7 +186,12 @@ export default function ResourcesDropdown({ navitems, scrolled = false }: Resour
                     {/* Product Icon - Minimal */}
                     <div className="mb-5">
                       <div className="w-11 h-11 rounded-xl bg-white shadow-sm border border-gray-100/50 flex items-center justify-center">
-                        <Image src={active.icon} alt={active.label} width={22} height={22} />
+                        <Image
+                          src={active.icon}
+                          alt={active.label}
+                          width={22}
+                          height={22}
+                        />
                       </div>
                     </div>
 
@@ -190,8 +214,12 @@ export default function ResourcesDropdown({ navitems, scrolled = false }: Resour
                       {/* Resource Card - Compact Premium Design */}
                       <div className="bg-white/90 backdrop-blur-md rounded-lg p-3.5 shadow-[0_8px_24px_rgba(0,0,0,0.08)] border border-gray-200/50">
                         {/* Icon with dynamic color */}
-                        <div className={`w-10 h-10 rounded-lg bg-${productContent.color}-50 flex items-center justify-center mb-3`}>
-                          <IconComponent className={`w-5 h-5 text-${productContent.color}-600`} />
+                        <div
+                          className={`w-10 h-10 rounded-lg bg-${productContent.color}-50 flex items-center justify-center mb-3`}
+                        >
+                          <IconComponent
+                            className={`w-5 h-5 text-${productContent.color}-600`}
+                          />
                         </div>
 
                         {/* Metric */}
@@ -219,7 +247,7 @@ export default function ResourcesDropdown({ navitems, scrolled = false }: Resour
                           <ArrowRight className="w-3 h-3" />
                         </motion.button>
                       </div>
-                      
+
                       {/* Subtle depth shadow */}
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/5 rounded-lg -z-10 translate-y-1" />
                     </div>
@@ -229,8 +257,12 @@ export default function ResourcesDropdown({ navitems, scrolled = false }: Resour
                 {/* Secondary Feature */}
                 <div className="mb-auto mt-4">
                   <div className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-full bg-gray-50/80 border border-gray-200/50">
-                    <div className={`w-1.5 h-1.5 rounded-full bg-${productContent.color}-500`} />
-                    <span className="text-[11px] text-gray-700">Free access for all users</span>
+                    <div
+                      className={`w-1.5 h-1.5 rounded-full bg-${productContent.color}-500`}
+                    />
+                    <span className="text-[11px] text-gray-700">
+                      Free access for all users
+                    </span>
                   </div>
                 </div>
 
@@ -244,7 +276,7 @@ export default function ResourcesDropdown({ navitems, scrolled = false }: Resour
                     }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-lg text-[13px] font-medium shadow-sm hover:shadow-md transition-all duration-200"
+                    className="group inline-flex items-center gap-2 px-5 py-2.5 bg-white text-white rounded-lg text-[13px] font-medium shadow-sm hover:shadow-md transition-all duration-200"
                   >
                     <span>Explore {active.label}</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />

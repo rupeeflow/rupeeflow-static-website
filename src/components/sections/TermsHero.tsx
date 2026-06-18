@@ -18,7 +18,7 @@ export default function TermsHero() {
   }
 
   return (
-    <section className="py-32 px-6 bg-black-emerald text-white relative overflow-hidden">
+    <section className="py-32 px-6 bg-white text-white relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-radial-teal-soft opacity-30 pointer-events-none" />
 

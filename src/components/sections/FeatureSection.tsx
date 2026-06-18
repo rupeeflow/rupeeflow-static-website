@@ -45,7 +45,7 @@ export default function FeatureSection() {
   ]
 
   return (
-    <section className="relative bg-black text-center py-32 px-6 overflow-hidden">
+    <section className="relative bg-white text-center py-32 px-6 overflow-hidden">
       {/* Background gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(16,185,129,0.15),transparent_70%)] blur-3xl" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(45,212,191,0.15),transparent_70%)] blur-3xl" />

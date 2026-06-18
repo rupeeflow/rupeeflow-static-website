@@ -7,7 +7,8 @@ import { useRef, useState, useEffect } from 'react'
 const benefits = [
   {
     title: 'Unlimited Transactions',
-    description: 'Make unlimited NEFT, RTGS, UPI, and IMPS transactions without any charges or restrictions.',
+    description:
+      'Make unlimited NEFT, RTGS, UPI, and IMPS transactions without any charges or restrictions.',
     type: 'transactions',
     bullets: [
       'Zero transaction fees on all NEFT and RTGS transfers',
@@ -19,7 +20,8 @@ const benefits = [
   },
   {
     title: 'Multi-User Access',
-    description: 'Add multiple users with role-based permissions for better team collaboration and control.',
+    description:
+      'Add multiple users with role-based permissions for better team collaboration and control.',
     type: 'users',
     bullets: [
       'Add unlimited team members to your account',
@@ -31,7 +33,8 @@ const benefits = [
   },
   {
     title: 'Real-Time Notifications',
-    description: 'Get instant alerts for all transactions via SMS, email, and push notifications.',
+    description:
+      'Get instant alerts for all transactions via SMS, email, and push notifications.',
     type: 'notifications',
     bullets: [
       'Instant SMS alerts for every transaction',
@@ -43,7 +46,8 @@ const benefits = [
   },
   {
     title: 'Automated Reconciliation',
-    description: 'Virtual accounts enable automatic payment matching and reconciliation for your business.',
+    description:
+      'Virtual accounts enable automatic payment matching and reconciliation for your business.',
     type: 'reconciliation',
     bullets: [
       'Create unlimited virtual account numbers',
@@ -92,12 +96,24 @@ function TransactionsDashboard() {
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div>
-              <div className="text-emerald-400/70 text-sm">Total Transactions</div>
+              <div className="text-emerald-400/70 text-sm">
+                Total Transactions
+              </div>
               <div className="text-white text-3xl font-bold">2,847</div>
             </div>
             <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30">
-              <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              <svg
+                className="w-6 h-6 text-emerald-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                />
               </svg>
             </div>
           </div>
@@ -114,18 +130,30 @@ function TransactionsDashboard() {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                      tx.status === 'completed' ? 'bg-emerald-500/20' : 'bg-emerald-400/20'
-                    }`}>
-                      <span className={`text-xs font-bold ${
-                        tx.status === 'completed' ? 'text-emerald-400' : 'text-emerald-300'
-                      }`}>
+                    <div
+                      className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                        tx.status === 'completed'
+                          ? 'bg-emerald-500/20'
+                          : 'bg-emerald-400/20'
+                      }`}
+                    >
+                      <span
+                        className={`text-xs font-bold ${
+                          tx.status === 'completed'
+                            ? 'text-emerald-400'
+                            : 'text-emerald-300'
+                        }`}
+                      >
                         {tx.type}
                       </span>
                     </div>
                     <div>
-                      <div className="text-white font-semibold">{tx.amount}</div>
-                      <div className="text-gray-400 text-xs capitalize">{tx.status}</div>
+                      <div className="text-white font-semibold">
+                        {tx.amount}
+                      </div>
+                      <div className="text-gray-400 text-xs capitalize">
+                        {tx.status}
+                      </div>
                     </div>
                   </div>
                   {tx.status === 'completed' && (
@@ -134,15 +162,27 @@ function TransactionsDashboard() {
                       animate={{ scale: 1 }}
                       transition={{ delay: 0.3 }}
                     >
-                      <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      <svg
+                        className="w-5 h-5 text-emerald-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
                       </svg>
                     </motion.div>
                   )}
                   {tx.status === 'processing' && (
                     <motion.div
                       animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                      transition={{
+                        duration: 1,
+                        repeat: Infinity,
+                        ease: 'linear',
+                      }}
                       className="w-5 h-5 border-2 border-emerald-400 border-t-transparent rounded-full"
                     />
                   )}
@@ -157,7 +197,10 @@ function TransactionsDashboard() {
           animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
           className="absolute -top-4 -right-4 w-20 h-20 bg-emerald-500/20 rounded-2xl backdrop-blur-sm border border-emerald-500/30 flex items-center justify-center"
-          style={{ transformStyle: 'preserve-3d', transform: 'translateZ(50px)' }}
+          style={{
+            transformStyle: 'preserve-3d',
+            transform: 'translateZ(50px)',
+          }}
         >
           <span className="text-emerald-400 text-2xl font-bold">∞</span>
         </motion.div>
@@ -184,8 +227,18 @@ function MultiUserAccess() {
           className="relative w-32 h-32 mx-auto"
         >
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-2xl flex items-center justify-center border-4 border-emerald-400/30">
-            <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            <svg
+              className="w-16 h-16 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+              />
             </svg>
           </div>
         </motion.div>
@@ -213,7 +266,11 @@ function MultiUserAccess() {
             >
               <motion.div
                 animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 2 + idx, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 2 + idx,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
               >
                 {/* Connection Line */}
                 <svg
@@ -237,25 +294,47 @@ function MultiUserAccess() {
                     transition={{ duration: 1.5, delay: idx * 0.3 }}
                   />
                   <defs>
-                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <linearGradient
+                      id="gradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="0%"
+                    >
                       <stop offset="0%" stopColor="#10b981" stopOpacity="0.2" />
-                      <stop offset="100%" stopColor="#10b981" stopOpacity="0.8" />
+                      <stop
+                        offset="100%"
+                        stopColor="#10b981"
+                        stopOpacity="0.8"
+                      />
                     </linearGradient>
                   </defs>
                 </svg>
 
                 {/* User Card */}
                 <div className="bg-white rounded-2xl shadow-xl p-4 w-32 border-2 border-emerald-100">
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2 shadow-lg`}
+                  <div
+                    className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2 shadow-lg`}
                     style={{
-                      backgroundColor: idx === 0 ? '#10b981' : idx === 1 ? '#14b8a6' : '#22c55e'
+                      backgroundColor:
+                        idx === 0
+                          ? '#10b981'
+                          : idx === 1
+                            ? '#14b8a6'
+                            : '#22c55e',
                     }}
                   >
-                    <span className="text-white font-bold text-sm">{user.avatar}</span>
+                    <span className="text-white font-bold text-sm">
+                      {user.avatar}
+                    </span>
                   </div>
                   <div className="text-center">
-                    <div className="text-gray-900 font-semibold text-sm">{user.name}</div>
-                    <div className="text-emerald-600 text-xs font-medium">{user.role}</div>
+                    <div className="text-gray-900 font-semibold text-sm">
+                      {user.name}
+                    </div>
+                    <div className="text-emerald-600 text-xs font-medium">
+                      {user.role}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -286,7 +365,7 @@ function NotificationsAnimation() {
       const randomMsg = messages[Math.floor(Math.random() * messages.length)]
       setNotifications(prev => [
         { id: Date.now(), ...randomMsg },
-        ...prev.slice(0, 2)
+        ...prev.slice(0, 2),
       ])
     }, 3500)
 
@@ -309,9 +388,9 @@ function NotificationsAnimation() {
             <div className="bg-white px-6 py-3 flex items-center justify-between">
               <span className="text-xs font-semibold">9:41</span>
               <div className="flex gap-1">
-                <div className="w-4 h-3 bg-gray-900 rounded-sm" />
-                <div className="w-4 h-3 bg-gray-900 rounded-sm" />
-                <div className="w-4 h-3 bg-gray-900 rounded-sm" />
+                <div className="w-4 h-3 bg-white rounded-sm" />
+                <div className="w-4 h-3 bg-white rounded-sm" />
+                <div className="w-4 h-3 bg-white rounded-sm" />
               </div>
             </div>
 
@@ -325,20 +404,32 @@ function NotificationsAnimation() {
                   exit={{ opacity: 0, x: 100 }}
                   transition={{ duration: 0.5, type: 'spring' }}
                   className={`bg-white rounded-2xl p-4 shadow-lg border-l-4 ${
-                    notif.type === 'success' ? 'border-emerald-500' :
-                    notif.type === 'warning' ? 'border-emerald-400' : 'border-emerald-600'
+                    notif.type === 'success'
+                      ? 'border-emerald-500'
+                      : notif.type === 'warning'
+                        ? 'border-emerald-400'
+                        : 'border-emerald-600'
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-lg ${
-                      notif.type === 'success' ? 'bg-emerald-100' :
-                      notif.type === 'warning' ? 'bg-emerald-50' : 'bg-teal-100'
-                    }`}>
+                    <div
+                      className={`w-10 h-10 rounded-full flex items-center justify-center text-lg ${
+                        notif.type === 'success'
+                          ? 'bg-emerald-100'
+                          : notif.type === 'warning'
+                            ? 'bg-emerald-50'
+                            : 'bg-teal-100'
+                      }`}
+                    >
                       {notif.icon}
                     </div>
                     <div className="flex-1">
-                      <div className="text-xs text-gray-500 mb-1">RupeeFlow</div>
-                      <div className="text-sm font-semibold text-gray-900">{notif.message}</div>
+                      <div className="text-xs text-gray-500 mb-1">
+                        RupeeFlow
+                      </div>
+                      <div className="text-sm font-semibold text-gray-900">
+                        {notif.message}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -378,7 +469,9 @@ function ReconciliationAnimation() {
         <div className="grid grid-cols-2 gap-8">
           {/* Left: Invoices */}
           <div className="space-y-3">
-            <div className="text-center text-sm font-semibold text-gray-600 mb-4">Invoices</div>
+            <div className="text-center text-sm font-semibold text-gray-600 mb-4">
+              Invoices
+            </div>
             {[1, 2, 3].map((item, idx) => (
               <motion.div
                 key={`invoice-${item}`}
@@ -390,14 +483,18 @@ function ReconciliationAnimation() {
                 }`}
               >
                 <div className="text-white text-xs mb-1">INV-{1000 + item}</div>
-                <div className="text-white font-bold">₹{(item * 10000).toLocaleString()}</div>
+                <div className="text-white font-bold">
+                  ₹{(item * 10000).toLocaleString()}
+                </div>
               </motion.div>
             ))}
           </div>
 
           {/* Right: Payments */}
           <div className="space-y-3">
-            <div className="text-center text-sm font-semibold text-gray-600 mb-4">Payments</div>
+            <div className="text-center text-sm font-semibold text-gray-600 mb-4">
+              Payments
+            </div>
             {[1, 2, 3].map((item, idx) => (
               <motion.div
                 key={`payment-${item}`}
@@ -409,7 +506,9 @@ function ReconciliationAnimation() {
                 }`}
               >
                 <div className="text-white text-xs mb-1">PAY-{2000 + item}</div>
-                <div className="text-white font-bold">₹{(item * 10000).toLocaleString()}</div>
+                <div className="text-white font-bold">
+                  ₹{(item * 10000).toLocaleString()}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -428,8 +527,16 @@ function ReconciliationAnimation() {
             transition={{ duration: 1, ease: 'linear' }}
             className="w-16 h-16 rounded-full bg-emerald-500 flex items-center justify-center shadow-2xl"
           >
-            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            <svg
+              className="w-8 h-8 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clipRule="evenodd"
+              />
             </svg>
           </motion.div>
         </motion.div>
@@ -503,7 +610,7 @@ export default function BenefitsSection() {
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
                   {benefit.description}
                 </p>
-                
+
                 {/* Bullet Points */}
                 <ul className="space-y-3">
                   {benefit.bullets.map((bullet, idx) => (
@@ -511,26 +618,33 @@ export default function BenefitsSection() {
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ duration: 0.5, delay: index * 0.2 + idx * 0.1 }}
+                      transition={{
+                        duration: 0.5,
+                        delay: index * 0.2 + idx * 0.1,
+                      }}
                       className="flex items-start gap-3"
                     >
-                      <svg 
-                        className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" 
-                        fill="currentColor" 
+                      <svg
+                        className="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5"
+                        fill="currentColor"
                         viewBox="0 0 20 20"
                       >
-                        <path 
-                          fillRule="evenodd" 
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" 
-                          clipRule="evenodd" 
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
                         />
                       </svg>
-                      <span className="text-gray-700 leading-relaxed">{bullet}</span>
+                      <span className="text-gray-700 leading-relaxed">
+                        {bullet}
+                      </span>
                     </motion.li>
                   ))}
                 </ul>
               </div>
-              <div className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+              <div
+                className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}
+              >
                 <div className="relative w-full aspect-square">
                   {renderAnimation(benefit.type)}
                 </div>

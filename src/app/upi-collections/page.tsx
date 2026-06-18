@@ -16,23 +16,25 @@ import UpiSolutionsStack from '../../components/sections/upiCollections/UpiSolut
 export default function UpiCollectionsPage() {
   return (
     <div className="w-full relative">
-
       {/* ── HERO SECTION ── */}
-      <section className="relative min-h-screen bg-[#020506] overflow-hidden">
-
+      <section className="relative min-h-screen bg-white overflow-hidden">
         {/* Background glows */}
         <div
           className="absolute -left-[100px] top-[10%] w-[500px] h-[500px] rounded-full opacity-40 blur-[130px] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #109F58 0%, #055949 40%, transparent 70%)' }}
+          style={{
+            background:
+              'radial-gradient(circle, #109F58 0%, #055949 40%, transparent 70%)',
+          }}
         />
         <div
           className="absolute right-[5%] top-[20%] w-[350px] h-[350px] rounded-full opacity-20 blur-[100px] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #109F58 0%, transparent 70%)' }}
+          style={{
+            background: 'radial-gradient(circle, #109F58 0%, transparent 70%)',
+          }}
         />
 
         {/* ── Hero content: LEFT text | RIGHT phone mockup ── */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-24 flex flex-col lg:flex-row items-center gap-10 lg:gap-8">
-
           {/* LEFT: Heading + description + UPI badges + CTA */}
           <motion.div
             className="flex-1 text-left"
@@ -48,19 +50,21 @@ export default function UpiCollectionsPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-emerald-400 text-xs font-semibold tracking-wide uppercase">UPI Collections</span>
+              <span className="text-emerald-400 text-xs font-semibold tracking-wide uppercase">
+                UPI Collections
+              </span>
             </motion.div>
 
             <h1 className="fontheading text-4xl sm:text-5xl lg:text-[3.5rem] leading-tight text-white mb-6">
               Simplify cashflow with{' '}
-              <span className="text-emerald-400">UPI</span>
-              {' '}powered{' '}
+              <span className="text-emerald-400">UPI</span> powered{' '}
               <span className="text-emerald-400">Rupeeflow</span>
             </h1>
 
             <p className="text-gray-400 max-w-xl text-base md:text-lg fontbody2 leading-relaxed mb-8">
-              Effortless UPI payment. Whether it&apos;s BHIM, PhonePe, WhatsApp, or any UPI-supported app,
-              experience smooth transactions without the hassle of SMS notifications or remembering VPAs.
+              Effortless UPI payment. Whether it&apos;s BHIM, PhonePe, WhatsApp,
+              or any UPI-supported app, experience smooth transactions without
+              the hassle of SMS notifications or remembering VPAs.
             </p>
 
             {/* UPI app badges */}
@@ -71,11 +75,11 @@ export default function UpiCollectionsPage() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               {[
-                { Icon: GpayIcon,   },
-                { Icon: PhonePayIcon,   },
-                { Icon: PaytmIcon,  },
-                { Icon: BhimUPIIcon,  },
-              ].map(({ Icon,  }) => (
+                { Icon: GpayIcon },
+                { Icon: PhonePayIcon },
+                { Icon: PaytmIcon },
+                { Icon: BhimUPIIcon },
+              ].map(({ Icon }) => (
                 <div
                   key={Icon.name}
                   className="flex items-center justify-center bg-white rounded-full p-2 shadow-lg w-13 h-13"
@@ -123,13 +127,27 @@ export default function UpiCollectionsPage() {
               {/* Phone body */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
                 className="relative bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-gray-200 w-[230px] md:w-[270px] z-10"
               >
                 {/* Green header */}
-                <div className="bg-emerald-600 px-5 pt-7 pb-5" style={{ borderBottomLeftRadius: '0.5rem', borderBottomRightRadius: '0.5rem' }}>
-                  <h3 className="text-white font-bold text-base text-left">Scan QR</h3>
-                  <p className="text-emerald-200 text-xs text-left mt-0.5">Make payment</p>
+                <div
+                  className="bg-emerald-600 px-5 pt-7 pb-5"
+                  style={{
+                    borderBottomLeftRadius: '0.5rem',
+                    borderBottomRightRadius: '0.5rem',
+                  }}
+                >
+                  <h3 className="text-white font-bold text-base text-left">
+                    Scan QR
+                  </h3>
+                  <p className="text-emerald-200 text-xs text-left mt-0.5">
+                    Make payment
+                  </p>
                 </div>
 
                 {/* QR Code area */}
@@ -151,17 +169,36 @@ export default function UpiCollectionsPage() {
 
                 {/* Bottom icons */}
                 <div className="flex items-center justify-center gap-8 py-4 bg-white">
-                  <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  <svg
+                    className="w-5 h-5 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
                   </svg>
-                  <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <svg
+                    className="w-5 h-5 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
                   </svg>
                 </div>
               </motion.div>
             </div>
           </motion.div>
-
         </div>
       </section>
 
@@ -194,20 +231,34 @@ export default function UpiCollectionsPage() {
             >
               {[
                 {
-                  icon: <ProfileIcon className="w-12 h-12 sm:w-14 sm:h-14 shrink-0" />,
+                  icon: (
+                    <ProfileIcon className="w-12 h-12 sm:w-14 sm:h-14 shrink-0" />
+                  ),
                   title: 'Sign-up',
                   desc: 'Register with Rupeeflow and integrate the UPI payment gateway on your website or app.',
                 },
                 {
-                  icon: <ProfileSearchIcon className="w-12 h-12 sm:w-14 sm:h-14 shrink-0" />,
+                  icon: (
+                    <ProfileSearchIcon className="w-12 h-12 sm:w-14 sm:h-14 shrink-0" />
+                  ),
                   title: 'KYC',
                   desc: 'Ensure compliance and enable secure transactions by completing the simple KYC process.',
                 },
                 {
                   icon: (
                     <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 bg-emerald-50 rounded-xl flex items-center justify-center">
-                      <svg className="w-6 h-6 sm:w-7 sm:h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      <svg
+                        className="w-6 h-6 sm:w-7 sm:h-7 text-emerald-600"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                        />
                       </svg>
                     </div>
                   ),
@@ -225,14 +276,17 @@ export default function UpiCollectionsPage() {
                 >
                   {step.icon}
                   <div>
-                    <h3 className="fontheading text-base sm:text-lg text-gray-900">{step.title}</h3>
-                    <p className="text-sm text-gray-500 mt-1 fontbody2">{step.desc}</p>
+                    <h3 className="fontheading text-base sm:text-lg text-gray-900">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 mt-1 fontbody2">
+                      {step.desc}
+                    </p>
                   </div>
                 </motion.div>
               ))}
 
               <div className="pt-2">
-
                 {/* <Link
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors"
@@ -240,7 +294,6 @@ export default function UpiCollectionsPage() {
                   <span className="w-2 h-2 rounded-full bg-white/80" />
                   Get Started
                 </Link> */}
-
               </div>
             </motion.div>
 
@@ -256,7 +309,11 @@ export default function UpiCollectionsPage() {
                 <motion.div
                   className="absolute inset-0 overflow-hidden"
                   animate={{ scale: [1, 1.03, 1] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 >
                   <div className="relative w-full h-full">
                     <Image
@@ -286,7 +343,8 @@ export default function UpiCollectionsPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="fontheading text-3xl md:text-4xl text-gray-900">
-              <span className="text-emerald-500">UPI Payment</span> Gateway for Businesses
+              <span className="text-emerald-500">UPI Payment</span> Gateway for
+              Businesses
             </h2>
           </motion.div>
 
@@ -330,7 +388,11 @@ export default function UpiCollectionsPage() {
                   <motion.div
                     className="absolute inset-0 overflow-hidden"
                     animate={{ scale: [1, 1.04, 1] }}
-                    transition={{ duration: 9 + i, repeat: Infinity, ease: 'easeInOut' }}
+                    transition={{
+                      duration: 9 + i,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    }}
                   >
                     <div className="relative w-full h-full">
                       <Image
@@ -347,8 +409,12 @@ export default function UpiCollectionsPage() {
                 {/* Text panel */}
                 <div className="flex-1 flex flex-col justify-center p-5 sm:p-8 md:p-14">
                   <div className="w-10 h-1 bg-emerald-500 rounded-full mb-5" />
-                  <h3 className="fontheading text-2xl md:text-3xl text-gray-900 mb-4">{card.title}</h3>
-                  <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed">{card.desc}</p>
+                  <h3 className="fontheading text-2xl md:text-3xl text-gray-900 mb-4">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-gray-500 fontbody2 leading-relaxed">
+                    {card.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -362,7 +428,6 @@ export default function UpiCollectionsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-
             {/* <Link
               href="#"
               className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors"
@@ -370,14 +435,16 @@ export default function UpiCollectionsPage() {
               <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
               Get Started
             </Link> */}
-            
           </motion.div>
         </div>
       </section>
 
       {/* ── POWERFUL UPI PAYMENT SOLUTIONS (Sticky Stacking) ── */}
       <UpiSolutionsStack />
-      <FAQAccordion faqs={upiCollectionsFAQs} subtitle="Everything you need to know about RupeeFlow UPI Collections." />
+      <FAQAccordion
+        faqs={upiCollectionsFAQs}
+        subtitle="Everything you need to know about RupeeFlow UPI Collections."
+      />
     </div>
   )
 }

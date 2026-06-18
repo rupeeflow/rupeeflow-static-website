@@ -1,7 +1,7 @@
 import Container from '@/components/ui/Container'
 import MainCTA from '@/components/ui/mainCTA'
 import Image from 'next/image'
-import { virtualFAQs } from "@/data/virtualCardFaqs"
+import { virtualFAQs } from '@/data/virtualCardFaqs'
 
 import {
   Check,
@@ -20,29 +20,34 @@ export default function VirtualCardsPage() {
       {/* HERO */}
       <Container className="py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-
           {/* LEFT */}
           <div>
             <h1 className="text-6xl font-bold text-white leading-tight">
-              Virtual{" "}
+              Virtual{' '}
               <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                 Cards
               </span>
             </h1>
 
             <p className="mt-6 text-gray-300 text-lg leading-relaxed">
-              Issue secure, instantly deployable virtual cards for online payments,
-              subscriptions, and vendor transactions — eliminating fraud risks
-              while maintaining full spending control.
+              Issue secure, instantly deployable virtual cards for online
+              payments, subscriptions, and vendor transactions — eliminating
+              fraud risks while maintaining full spending control.
             </p>
 
             <ul className="mt-8 space-y-4">
               {[
-                { icon: Zap, text: "Instant card creation & activation" },
-                { icon: Shield, text: "Reduce fraud with tokenized transactions" },
-                { icon: Smartphone, text: "Perfect for SaaS & online payments" },
-                { icon: Lock, text: "Set usage limits & expiry controls" },
-                { icon: Globe, text: "Enable secure global transactions" },
+                { icon: Zap, text: 'Instant card creation & activation' },
+                {
+                  icon: Shield,
+                  text: 'Reduce fraud with tokenized transactions',
+                },
+                {
+                  icon: Smartphone,
+                  text: 'Perfect for SaaS & online payments',
+                },
+                { icon: Lock, text: 'Set usage limits & expiry controls' },
+                { icon: Globe, text: 'Enable secure global transactions' },
               ].map((item, i) => {
                 const Icon = item.icon
                 return (
@@ -79,7 +84,7 @@ export default function VirtualCardsPage() {
       <div className="py-20 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
         <div className="text-center max-w-3xl mx-auto px-6">
           <h2 className="text-5xl font-semibold text-white">
-            Why Choose{" "}
+            Why Choose{' '}
             <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
               Virtual Cards
             </span>
@@ -87,28 +92,29 @@ export default function VirtualCardsPage() {
           </h2>
 
           <p className="mt-3 text-xl text-gray-300">
-            Enhance payment security, eliminate fraud exposure, and control online spending.
+            Enhance payment security, eliminate fraud exposure, and control
+            online spending.
           </p>
         </div>
 
         <div className="mt-14 max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           {[
             {
-              title: "Fraud Protection",
-              desc: "Use tokenized virtual cards to prevent misuse and data theft.",
+              title: 'Fraud Protection',
+              desc: 'Use tokenized virtual cards to prevent misuse and data theft.',
             },
             {
-              title: "Subscription Control",
-              desc: "Assign cards to SaaS tools and prevent unauthorized renewals.",
+              title: 'Subscription Control',
+              desc: 'Assign cards to SaaS tools and prevent unauthorized renewals.',
             },
             {
-              title: "Instant Deployment",
-              desc: "Create and deactivate cards instantly for vendors or teams.",
+              title: 'Instant Deployment',
+              desc: 'Create and deactivate cards instantly for vendors or teams.',
             },
           ].map((item, i) => (
             <div
               key={i}
-              className="p-7 rounded-2xl border border-white/10 bg-[#0F0F0F]
+              className="p-7 rounded-2xl border border-white/10 bg-white
               hover:-translate-y-1 transition
               hover:border-emerald-400/40
               hover:shadow-[0_0_25px_rgba(0,239,100,0.15)]"
@@ -123,46 +129,62 @@ export default function VirtualCardsPage() {
       {/* FEATURE SECTIONS */}
       <div className="py-24 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
         <div className="max-w-6xl mx-auto px-6 space-y-28">
-
           {[
             {
-              title: "Secure Online Payments",
-              desc: "Protect sensitive card data with tokenized virtual transactions.",
-              points: ["Tokenized card numbers", "Reduced fraud exposure", "Secure checkout"],
-              image: "Secure Payment Preview",
+              title: 'Secure Online Payments',
+              desc: 'Protect sensitive card data with tokenized virtual transactions.',
+              points: [
+                'Tokenized card numbers',
+                'Reduced fraud exposure',
+                'Secure checkout',
+              ],
+              image: 'Secure Payment Preview',
             },
             {
-              title: "Subscription Spend Control",
-              desc: "Prevent unexpected charges and manage recurring payments.",
-              points: ["Vendor-specific cards", "Auto-expiry dates", "Spending caps"],
-              image: "Subscription Control Preview",
+              title: 'Subscription Spend Control',
+              desc: 'Prevent unexpected charges and manage recurring payments.',
+              points: [
+                'Vendor-specific cards',
+                'Auto-expiry dates',
+                'Spending caps',
+              ],
+              image: 'Subscription Control Preview',
             },
             {
-              title: "Instant Vendor Payments",
-              desc: "Pay vendors quickly without exposing primary account details.",
-              points: ["Single-use cards", "Controlled payment amounts", "Secure sharing"],
-              image: "Vendor Payment Preview",
+              title: 'Instant Vendor Payments',
+              desc: 'Pay vendors quickly without exposing primary account details.',
+              points: [
+                'Single-use cards',
+                'Controlled payment amounts',
+                'Secure sharing',
+              ],
+              image: 'Vendor Payment Preview',
             },
             {
-              title: "Global Digital Transactions",
-              desc: "Enable secure payments for international SaaS and services.",
-              points: ["Multi-currency usage", "Cross-border security", "Global acceptance"],
-              image: "Global Payments Preview",
+              title: 'Global Digital Transactions',
+              desc: 'Enable secure payments for international SaaS and services.',
+              points: [
+                'Multi-currency usage',
+                'Cross-border security',
+                'Global acceptance',
+              ],
+              image: 'Global Payments Preview',
             },
           ].map((item, i) => (
             <div key={i} className="grid md:grid-cols-2 gap-14 items-center">
-
               {/* IMAGE */}
-              <div className={`${i % 2 ? "md:order-2" : ""} bg-white/5 border border-white/10 rounded-2xl aspect-video flex items-center justify-center text-gray-500`}>
+              <div
+                className={`${i % 2 ? 'md:order-2' : ''} bg-white/5 border border-white/10 rounded-2xl aspect-video flex items-center justify-center text-gray-500`}
+              >
                 {item.image}
               </div>
 
               {/* TEXT */}
-              <div className={`${i % 2 ? "md:order-1" : ""}`}>
+              <div className={`${i % 2 ? 'md:order-1' : ''}`}>
                 <h3 className="text-2xl font-semibold text-white">
-                  {item.title.split(" ").slice(0, -1).join(" ")}{" "}
+                  {item.title.split(' ').slice(0, -1).join(' ')}{' '}
                   <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
-                    {item.title.split(" ").slice(-1)}
+                    {item.title.split(' ').slice(-1)}
                   </span>
                 </h3>
 
@@ -180,7 +202,11 @@ export default function VirtualCardsPage() {
                 </ul>
 
                 <div className="mt-6">
-                  <MainCTA label="Learn More" destination="#" size="w-40 h-10" />
+                  <MainCTA
+                    label="Learn More"
+                    destination="#"
+                    size="w-40 h-10"
+                  />
                 </div>
               </div>
             </div>
@@ -194,7 +220,6 @@ export default function VirtualCardsPage() {
           Trusted for secure digital payments and subscription control.
         </p>
       </div>
-
 
       <CardFAQ faqs={virtualFAQs} />
 

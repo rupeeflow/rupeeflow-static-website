@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-[#020506] overflow-hidden flex items-center">
+    <section className="relative min-h-screen bg-white overflow-hidden flex items-center">
       {/* Decorative Background Elements */}
       <div className="absolute top-[-150px] left-[-150px] w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(3,151,137,0.25),transparent_60%)] pointer-events-none animate-glow-pulse" />
       <div className="absolute bottom-[-100px] right-[5%] w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,rgba(48,243,188,0.2),transparent_60%)] pointer-events-none animate-glow-pulse-delayed" />
@@ -39,8 +39,8 @@ export default function HeroSection() {
             </h1>
 
             <p className="fontbody2 text-gray-300 text-lg md:text-xl mb-8 max-w-2xl mx-auto lg:mx-0">
-              ₹50,000 to ₹10,00,000 for medical emergencies, education, or urgent needs. 
-              Apply from anywhere, funds reach India in 24 hours.
+              ₹50,000 to ₹10,00,000 for medical emergencies, education, or
+              urgent needs. Apply from anywhere, funds reach India in 24 hours.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -56,26 +56,58 @@ export default function HeroSection() {
             {/* Trust Indicators */}
             <div className="mt-10 flex flex-wrap items-center gap-6 justify-center lg:justify-start text-sm text-gray-400">
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <svg
+                  className="w-5 h-5 text-emerald-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span>100% Online</span>
               </div>
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <svg
+                  className="w-5 h-5 text-emerald-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span>RBI Compliant</span>
               </div>
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <svg
+                  className="w-5 h-5 text-emerald-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span>Secure Transfer</span>
               </div>
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <svg
+                  className="w-5 h-5 text-emerald-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span>Multi-Language</span>
               </div>
@@ -98,15 +130,17 @@ export default function HeroSection() {
                 className="w-full h-auto object-cover"
                 priority
               />
-              
+
               {/* Floating Stats Cards */}
-              <div className="absolute top-8 right-8 bg-black/80 backdrop-blur-md rounded-2xl p-4 border border-emerald-500/30 shadow-lg">
+              <div className="absolute top-8 right-8 bg-white/80 backdrop-blur-md rounded-2xl p-4 border border-emerald-500/30 shadow-lg">
                 <div className="text-emerald-400 text-2xl font-bold">₹10L</div>
                 <div className="text-gray-400 text-xs">Max Loan</div>
               </div>
-              
-              <div className="absolute bottom-8 left-8 bg-black/80 backdrop-blur-md rounded-2xl p-4 border border-emerald-500/30 shadow-lg">
-                <div className="text-emerald-400 text-2xl font-bold">24 hrs</div>
+
+              <div className="absolute bottom-8 left-8 bg-white/80 backdrop-blur-md rounded-2xl p-4 border border-emerald-500/30 shadow-lg">
+                <div className="text-emerald-400 text-2xl font-bold">
+                  24 hrs
+                </div>
                 <div className="text-gray-400 text-xs">Disbursal Time</div>
               </div>
             </div>

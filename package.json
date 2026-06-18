@@ -12,8 +12,6 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "type-check": "tsc --noEmit",
-    "install:clean": "rm -f bun.lockb && bun install",
-    "deps:update": "bun install && git add bun.lockb package.json",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -34,7 +32,7 @@
     "@react-three/postprocessing": "^3.0.4",
     "@studio-freight/lenis": "^1.0.42",
     "@tabler/icons-react": "^3.34.1",
-    "bun": "^1.3.1",
+    "@types/three": "^0.184.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "critters": "^0.0.25",

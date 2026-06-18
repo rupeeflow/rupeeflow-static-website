@@ -5,12 +5,12 @@ import { motion } from 'framer-motion'
 import FAQAccordion from '@/components/ui/FAQAccordion'
 import { qrCodeFAQs } from '@/data/faqs'
 import UPIStripIcon from '../../../public/icons/upi-collections/UpiStripIcon'
-import Image from "next/image"
+import Image from 'next/image'
 
 export default function QrCodePage() {
   return (
     <div className="w-full relative">
-      <section className="relative min-h-screen bg-[#020506] overflow-hidden">
+      <section className="relative min-h-screen bg-white overflow-hidden">
         <div
           className="absolute -left-[100px] top-[10%] w-[400px] h-[400px] rounded-full opacity-50 blur-[120px] pointer-events-none"
           style={{
@@ -72,10 +72,8 @@ export default function QrCodePage() {
 
             {/* Browser + Phone mockups */}
             <div className="relative max-w-5xl mr-auto ml-0 md:ml-[-5%] lg:ml-[9%]">
-
               {/* Browser window — Payment Details (using actual image), shifted left */}
               <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl w-[85%] md:w-[75%]">
-
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/qr-collections/QrCheckout.png"
@@ -315,14 +313,12 @@ export default function QrCodePage() {
               </div>
 
               <div className="pt-2">
-
                 {/* <Link
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors"
                 >
                   Get started
                 </Link> */}
-
               </div>
             </div>
 
@@ -400,13 +396,16 @@ export default function QrCodePage() {
                     />
                   </svg>
                 </Link> */}
-
               </div>
               <div className="w-full lg:w-[45%] relative h-[260px] sm:h-[300px] lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
                 <motion.div
                   className="relative w-full h-full"
                   animate={{ scale: [1, 1.03, 1] }}
-                  transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 9,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 >
                   <Image
                     src="/images/qr-collections/QrCheckout.png"
@@ -473,7 +472,11 @@ export default function QrCodePage() {
                 <motion.div
                   className="relative w-full h-full"
                   animate={{ scale: [1, 1.03, 1] }}
-                  transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 >
                   <Image
                     src="/home/Accept-payment-qr.png"
@@ -546,7 +549,11 @@ export default function QrCodePage() {
                 <motion.div
                   className="relative w-full h-full"
                   animate={{ scale: [1, 1.03, 1] }}
-                  transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 11,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 >
                   <Image
                     src="/images/upi-collections/staticqr.png"
@@ -620,7 +627,11 @@ export default function QrCodePage() {
                 <motion.div
                   className="relative w-full h-full"
                   animate={{ scale: [1, 1.03, 1] }}
-                  transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 12,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 >
                   <Image
                     src="/images/Dashboard.png"
@@ -687,7 +698,11 @@ export default function QrCodePage() {
                 <motion.div
                   className="relative w-full h-full"
                   animate={{ scale: [1, 1.03, 1] }}
-                  transition={{ duration: 13, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{
+                    duration: 13,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 >
                   <Image
                     src="/images/upi-collections/securetransactions.jpeg"
@@ -812,7 +827,10 @@ export default function QrCodePage() {
           </div>
         </div>
       </section>
-      <FAQAccordion faqs={qrCodeFAQs} subtitle="Everything you need to know about RupeeFlow QR Code Payments." />
+      <FAQAccordion
+        faqs={qrCodeFAQs}
+        subtitle="Everything you need to know about RupeeFlow QR Code Payments."
+      />
     </div>
   )
 }

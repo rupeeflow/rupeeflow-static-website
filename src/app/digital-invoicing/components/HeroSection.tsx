@@ -1,14 +1,14 @@
-'use client';
+'use client'
 //test
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { Check, FileText, Shield, Zap } from 'lucide-react';
-import { fadeInUp } from '@/lib/animations';
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { Check, FileText, Shield, Zap } from 'lucide-react'
+import { fadeInUp } from '@/lib/animations'
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-[#020506] text-white overflow-hidden py-20 md:py-28">
+    <section className="relative bg-white text-white overflow-hidden py-20 md:py-28">
       {/* Animated background with grid pattern */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#10b98120_1px,transparent_1px),linear-gradient(to_bottom,#10b98120_1px,transparent_1px)] bg-[size:4rem_4rem]" />
@@ -41,15 +41,14 @@ export default function HeroSection() {
             {/* Heading */}
             <h1 className="fontheading text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               Generate GST-Compliant{' '}
-              <span className="text-emerald-500">
-                E-Invoices
-              </span>
+              <span className="text-emerald-500">E-Invoices</span>
             </h1>
 
             {/* Description */}
             <p className="fontbody2 text-lg md:text-xl text-gray-300 leading-relaxed">
-              Create, send, and track professional invoices in seconds. Fully GST-compliant with
-              automatic e-invoice generation and IRP integration.
+              Create, send, and track professional invoices in seconds. Fully
+              GST-compliant with automatic e-invoice generation and IRP
+              integration.
             </p>
 
             {/* Trust indicators with icons */}
@@ -60,15 +59,20 @@ export default function HeroSection() {
                 { icon: FileText, text: 'Auto E-way Bills' },
                 { icon: Check, text: 'Digital Signatures' },
               ].map((indicator, idx) => {
-                const Icon = indicator.icon;
+                const Icon = indicator.icon
                 return (
-                  <div key={idx} className="flex items-center gap-3 bg-white/5 rounded-lg p-3">
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 bg-white/5 rounded-lg p-3"
+                  >
                     <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
                       <Icon className="w-4 h-4 text-emerald-400" />
                     </div>
-                    <span className="text-sm text-gray-300">{indicator.text}</span>
+                    <span className="text-sm text-gray-300">
+                      {indicator.text}
+                    </span>
                   </div>
-                );
+                )
               })}
             </div>
 
@@ -111,10 +115,12 @@ export default function HeroSection() {
                     </div>
                     <div className="text-right">
                       <p className="text-xs text-gray-500">E-INVOICE</p>
-                      <p className="text-sm font-bold text-gray-900">#INV-2024-001</p>
+                      <p className="text-sm font-bold text-gray-900">
+                        #INV-2024-001
+                      </p>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <div className="h-3 bg-gray-200 rounded w-3/4" />
                     <div className="h-3 bg-gray-200 rounded w-1/2" />
@@ -133,8 +139,12 @@ export default function HeroSection() {
 
                   <div className="pt-4 border-t-2 border-gray-200">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm font-semibold text-gray-700">Total</span>
-                      <span className="text-lg font-bold text-emerald-600">₹1,18,000</span>
+                      <span className="text-sm font-semibold text-gray-700">
+                        Total
+                      </span>
+                      <span className="text-lg font-bold text-emerald-600">
+                        ₹1,18,000
+                      </span>
                     </div>
                   </div>
 
@@ -142,7 +152,9 @@ export default function HeroSection() {
                     <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
                       <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="text-xs text-green-600 font-medium">GST Verified</span>
+                    <span className="text-xs text-green-600 font-medium">
+                      GST Verified
+                    </span>
                   </div>
                 </div>
               </div>
@@ -166,5 +178,5 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

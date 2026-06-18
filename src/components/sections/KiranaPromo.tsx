@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 export default function KiranaPromo() {
   return (
-    <section className="relative bg-black text-white py-24 px-6 overflow-hidden">
+    <section className="relative bg-white text-white py-24 px-6 overflow-hidden">
       {/* Gradient glow background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(16,185,129,0.2),transparent_70%)] blur-3xl" />
 

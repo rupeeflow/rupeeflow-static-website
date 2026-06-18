@@ -1,5 +1,6 @@
 import './globals.css'
 import HomeExperience from '@/components/sections/HomeExperience'
+import ProductsGrid from '@/components/sections/ProductsGrid'
 import StopUsingApps from '@/components/sections/StopUsingApps'
 import CollectMoney from '@/components/sections/CollectMoney'
 import MakePayments from '@/components/sections/MakePayments'
@@ -17,15 +18,17 @@ import { FAQSchema, WebPageSchema } from '@/components/StructuredData'
 
 export default function HomePage() {
   return (
-    <div className="w-full relative bg-[#F4F8F6]">
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_20%_0%,rgba(42,184,113,0.1),transparent_35%),radial-gradient(circle_at_85%_30%,rgba(0,135,90,0.08),transparent_40%),linear-gradient(#F4F8F6,#F4F8F6)]" />
+    <div className="w-full relative bg-white">
       <WebPageSchema
         title="RupeeFlow — AI-led Financial Infrastructure"
         description="RupeeFlow provides AI-native financial infrastructure including credit engine, embedded finance, WhatsApp banking, supply chain finance, NRI finance, AI treasury, and gig worker financial services."
         url="/"
       />
-      <FAQSchema faqs={faq.map(f => ({ question: f.question, answer: f.answer }))} />
+      <FAQSchema
+        faqs={faq.map(f => ({ question: f.question, answer: f.answer }))}
+      />
       <HomeExperience />
+      <ProductsGrid />
       <StopUsingApps />
       <LendingBanner />
       <CollectMoney />

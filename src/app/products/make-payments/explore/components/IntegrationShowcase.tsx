@@ -1,8 +1,8 @@
-'use client';
+'use client'
 
-import { motion } from 'framer-motion';
-import { Code, Zap, Shield, Smartphone } from 'lucide-react';
-import IntegrationMockup from './IntegrationMockup';
+import { motion } from 'framer-motion'
+import { Code, Zap, Shield, Smartphone } from 'lucide-react'
+import IntegrationMockup from './IntegrationMockup'
 
 /**
  * Integration Showcase Component
@@ -14,24 +14,28 @@ export default function IntegrationShowcase() {
     {
       icon: Code,
       title: 'Developer Friendly',
-      description: 'RESTful APIs with comprehensive documentation and SDKs for all major languages',
+      description:
+        'RESTful APIs with comprehensive documentation and SDKs for all major languages',
     },
     {
       icon: Zap,
       title: 'Quick Integration',
-      description: 'Get started in minutes with our plug-and-play SDKs and detailed guides',
+      description:
+        'Get started in minutes with our plug-and-play SDKs and detailed guides',
     },
     {
       icon: Shield,
       title: 'Secure & Compliant',
-      description: 'ISO 27001 certified with 256-bit encryption and fraud detection',
+      description:
+        'ISO 27001 certified with 256-bit encryption and fraud detection',
     },
     {
       icon: Smartphone,
       title: 'Mobile Ready',
-      description: 'Native SDKs for iOS and Android with seamless mobile payment experience',
+      description:
+        'Native SDKs for iOS and Android with seamless mobile payment experience',
     },
-  ];
+  ]
 
   const integrationLogos = [
     { name: 'React', color: 'text-blue-500' },
@@ -40,10 +44,10 @@ export default function IntegrationShowcase() {
     { name: 'PHP', color: 'text-purple-600' },
     { name: 'Java', color: 'text-red-600' },
     { name: 'Ruby', color: 'text-red-500' },
-  ];
+  ]
 
   return (
-    <section className="py-20 bg-[#020506] relative overflow-hidden">
+    <section className="py-20 bg-white relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <motion.div
@@ -83,10 +87,14 @@ export default function IntegrationShowcase() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Integrate in <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Minutes</span>
+            Integrate in{' '}
+            <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+              Minutes
+            </span>
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            Powerful APIs and SDKs that developers love. Get started quickly with our comprehensive documentation
+            Powerful APIs and SDKs that developers love. Get started quickly
+            with our comprehensive documentation
           </p>
         </motion.div>
 
@@ -113,7 +121,9 @@ export default function IntegrationShowcase() {
                   <feature.icon className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-1">{feature.title}</h3>
+                  <h3 className="text-lg font-bold text-white mb-1">
+                    {feature.title}
+                  </h3>
                   <p className="text-sm text-gray-400">{feature.description}</p>
                 </div>
               </motion.div>
@@ -139,7 +149,9 @@ export default function IntegrationShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-gray-400 text-sm mb-6">Supported Languages & Frameworks</p>
+          <p className="text-gray-400 text-sm mb-6">
+            Supported Languages & Frameworks
+          </p>
           <div className="flex flex-wrap justify-center gap-8">
             {integrationLogos.map((logo, index) => (
               <motion.div
@@ -150,8 +162,14 @@ export default function IntegrationShowcase() {
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 className="flex flex-col items-center gap-2"
               >
-                <div className={`w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center ${logo.color} hover:bg-white/20 transition-colors`}>
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <div
+                  className={`w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center ${logo.color} hover:bg-white/20 transition-colors`}
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <circle cx="12" cy="12" r="10" />
                   </svg>
                 </div>
@@ -162,5 +180,5 @@ export default function IntegrationShowcase() {
         </motion.div>
       </div>
     </section>
-  );
+  )
 }

@@ -75,7 +75,7 @@ export default function DMTPage() {
   ]
 
   return (
-    <main className="relative w-full bg-black text-white overflow-hidden">
+    <main className="relative w-full bg-white text-white overflow-hidden">
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(16,185,129,0.2),transparent_70%)] blur-3xl" />
 
@@ -101,7 +101,7 @@ export default function DMTPage() {
       </section>
 
       {/* DMT Features */}
-      <section className="relative z-10 pb-24 px-6 bg-black-emerald/40 backdrop-blur-md">
+      <section className="relative z-10 pb-24 px-6 bg-white/40 backdrop-blur-md">
         <motion.div
           variants={container}
           initial="hidden"
@@ -193,7 +193,7 @@ export default function DMTPage() {
           <motion.div variants={content}>
             <Link
               href="https://rupeeflow.org/"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-black text-white font-semibold rounded-full hover:bg-neutral-900 transition"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-white text-white font-semibold rounded-full hover:bg-white transition"
             >
               Get DMT Access <ArrowRightCircle className="w-5 h-5" />
             </Link>

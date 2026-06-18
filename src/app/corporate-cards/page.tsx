@@ -1,10 +1,16 @@
 import Container from '@/components/ui/Container'
 import MainCTA from '@/components/ui/mainCTA'
 import Image from 'next/image'
-import { Check, Building2, Users, ShieldCheck, Settings, BarChart3 } from 'lucide-react'
-import CardFAQ from "@/components/sections/CardFAQ"
-import { corporateFAQs } from "@/data/corporateCardFaqs"
-
+import {
+  Check,
+  Building2,
+  Users,
+  ShieldCheck,
+  Settings,
+  BarChart3,
+} from 'lucide-react'
+import CardFAQ from '@/components/sections/CardFAQ'
+import { corporateFAQs } from '@/data/corporateCardFaqs'
 
 export default function CorporateCardsPage() {
   return (
@@ -12,11 +18,10 @@ export default function CorporateCardsPage() {
       {/* HERO */}
       <Container className="py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-
           {/* LEFT */}
           <div>
             <h1 className="text-6xl font-bold text-white leading-tight">
-              Corporate{" "}
+              Corporate{' '}
               <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
                 Cards
               </span>
@@ -30,11 +35,20 @@ export default function CorporateCardsPage() {
             {/* FEATURES */}
             <ul className="mt-8 space-y-4">
               {[
-                { icon: Building2, text: "Centralized expense control across teams" },
-                { icon: Users, text: "Assign cards to employees & departments" },
-                { icon: Settings, text: "Custom limits & policy enforcement" },
-                { icon: ShieldCheck, text: "Enterprise-grade fraud protection" },
-                { icon: BarChart3, text: "Real-time analytics & reporting" },
+                {
+                  icon: Building2,
+                  text: 'Centralized expense control across teams',
+                },
+                {
+                  icon: Users,
+                  text: 'Assign cards to employees & departments',
+                },
+                { icon: Settings, text: 'Custom limits & policy enforcement' },
+                {
+                  icon: ShieldCheck,
+                  text: 'Enterprise-grade fraud protection',
+                },
+                { icon: BarChart3, text: 'Real-time analytics & reporting' },
               ].map((item, i) => {
                 const Icon = item.icon
                 return (
@@ -71,7 +85,7 @@ export default function CorporateCardsPage() {
       <div className="py-20 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
         <div className="text-center max-w-3xl mx-auto px-6">
           <h2 className="text-5xl font-semibold text-white">
-            Why Choose{" "}
+            Why Choose{' '}
             <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
               Corporate Cards
             </span>
@@ -87,21 +101,21 @@ export default function CorporateCardsPage() {
         <div className="mt-14 max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           {[
             {
-              title: "Centralized Control",
-              desc: "Manage and monitor company-wide expenses from one dashboard.",
+              title: 'Centralized Control',
+              desc: 'Manage and monitor company-wide expenses from one dashboard.',
             },
             {
-              title: "Policy Enforcement",
-              desc: "Set spending rules and ensure compliance automatically.",
+              title: 'Policy Enforcement',
+              desc: 'Set spending rules and ensure compliance automatically.',
             },
             {
-              title: "Enterprise Security",
-              desc: "Protect funds with advanced fraud detection & controls.",
+              title: 'Enterprise Security',
+              desc: 'Protect funds with advanced fraud detection & controls.',
             },
           ].map((item, i) => (
             <div
               key={i}
-              className="p-7 rounded-2xl border border-white/10 bg-[#0F0F0F]
+              className="p-7 rounded-2xl border border-white/10 bg-white
               hover:-translate-y-1 transition
               hover:border-emerald-400/40
               hover:shadow-[0_0_25px_rgba(0,239,100,0.15)]"
@@ -116,46 +130,62 @@ export default function CorporateCardsPage() {
       {/* FEATURE SECTIONS */}
       <div className="py-24 bg-gradient-to-b from-[#0F0F0F] to-[#0C1F18]">
         <div className="max-w-6xl mx-auto px-6 space-y-28">
-
           {[
             {
-              title: "Centralized Expense Management",
-              desc: "Gain complete control over departmental and employee spending.",
-              points: ["Department budgets", "Real-time monitoring", "Approval workflows"],
-              image: "Expense Management Preview",
+              title: 'Centralized Expense Management',
+              desc: 'Gain complete control over departmental and employee spending.',
+              points: [
+                'Department budgets',
+                'Real-time monitoring',
+                'Approval workflows',
+              ],
+              image: 'Expense Management Preview',
             },
             {
-              title: "Advanced Policy Controls",
-              desc: "Create rules and enforce policies automatically.",
-              points: ["Spending limits", "Merchant restrictions", "Compliance controls"],
-              image: "Policy Control Preview",
+              title: 'Advanced Policy Controls',
+              desc: 'Create rules and enforce policies automatically.',
+              points: [
+                'Spending limits',
+                'Merchant restrictions',
+                'Compliance controls',
+              ],
+              image: 'Policy Control Preview',
             },
             {
-              title: "Fraud & Risk Protection",
-              desc: "Protect your organization with enterprise-grade security tools.",
-              points: ["Real-time alerts", "Suspicious activity detection", "Secure transactions"],
-              image: "Fraud Protection Preview",
+              title: 'Fraud & Risk Protection',
+              desc: 'Protect your organization with enterprise-grade security tools.',
+              points: [
+                'Real-time alerts',
+                'Suspicious activity detection',
+                'Secure transactions',
+              ],
+              image: 'Fraud Protection Preview',
             },
             {
-              title: "Insights & Reporting",
-              desc: "Track trends and optimize spending decisions.",
-              points: ["Expense analytics", "Department reports", "Exportable insights"],
-              image: "Analytics Preview",
+              title: 'Insights & Reporting',
+              desc: 'Track trends and optimize spending decisions.',
+              points: [
+                'Expense analytics',
+                'Department reports',
+                'Exportable insights',
+              ],
+              image: 'Analytics Preview',
             },
           ].map((item, i) => (
             <div key={i} className="grid md:grid-cols-2 gap-14 items-center">
-
               {/* IMAGE */}
-              <div className={`${i % 2 ? "md:order-2" : ""} bg-white/5 border border-white/10 rounded-2xl aspect-video flex items-center justify-center text-gray-500`}>
+              <div
+                className={`${i % 2 ? 'md:order-2' : ''} bg-white/5 border border-white/10 rounded-2xl aspect-video flex items-center justify-center text-gray-500`}
+              >
                 {item.image}
               </div>
 
               {/* TEXT */}
-              <div className={`${i % 2 ? "md:order-1" : ""}`}>
+              <div className={`${i % 2 ? 'md:order-1' : ''}`}>
                 <h3 className="text-2xl font-semibold text-white">
-                  {item.title.split(" ").slice(0, -1).join(" ")}{" "}
+                  {item.title.split(' ').slice(0, -1).join(' ')}{' '}
                   <span className="bg-gradient-to-r from-[#00EF64] to-[#53BEC2] bg-clip-text text-transparent">
-                    {item.title.split(" ").slice(-1)}
+                    {item.title.split(' ').slice(-1)}
                   </span>
                 </h3>
 
@@ -174,7 +204,11 @@ export default function CorporateCardsPage() {
 
                 {/* Learn More */}
                 <div className="mt-6">
-                  <MainCTA label="Learn More" destination="#" size="w-40 h-10" />
+                  <MainCTA
+                    label="Learn More"
+                    destination="#"
+                    size="w-40 h-10"
+                  />
                 </div>
               </div>
             </div>
@@ -188,9 +222,9 @@ export default function CorporateCardsPage() {
           Trusted by enterprises for secure and scalable spend management.
         </p>
       </div>
-      
-{/* FAQ SECTION */}
-<CardFAQ faqs={corporateFAQs} />
+
+      {/* FAQ SECTION */}
+      <CardFAQ faqs={corporateFAQs} />
 
       {/* FINAL CTA */}
       <div className="py-28 text-center">
@@ -205,8 +239,6 @@ export default function CorporateCardsPage() {
           <MainCTA label="Request Corporate Cards" destination="/contact" />
         </div>
       </div>
-      
     </>
-    
   )
 }

@@ -27,7 +27,7 @@ const MainCTA: React.FC<CTAProps> = ({
       rel={isExternal ? 'noopener noreferrer' : ''}
       className={`${size} group relative inline-flex items-center justify-center overflow-hidden
       rounded-full px-7
-      bg-[#0F0F0F]
+      bg-white
       border border-white/10
       hover:border-emerald-400/60
       transition-all duration-300 ease-in-out

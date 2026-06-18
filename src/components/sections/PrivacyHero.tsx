@@ -18,7 +18,7 @@ export default function PrivacyHero() {
   }
 
   return (
-    <section className="py-32 px-6 bg-black-emerald text-white relative overflow-hidden">
+    <section className="py-32 px-6 bg-white text-white relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-radial-teal-soft opacity-30 pointer-events-none" />
 
@@ -35,8 +35,7 @@ export default function PrivacyHero() {
             variants={content}
             className="fontheading2 text-4xl md:text-5xl lg:text-6xl mb-6"
           >
-            Privacy{' '}
-            <span className="text-gradient-teal-emerald">Policy</span>
+            Privacy <span className="text-gradient-teal-emerald">Policy</span>
           </motion.h1>
 
           <motion.p variants={content} className="fontbody2 text-gray-300 mb-2">
@@ -51,9 +50,9 @@ export default function PrivacyHero() {
             variants={content}
             className="fontbody2 text-gray-400 max-w-3xl mx-auto text-lg"
           >
-            We are committed to protecting your privacy and security. This policy
-            explains how we collect, use, disclose, and protect your information
-            when you use RupeeFlow&apos;s payment services.
+            We are committed to protecting your privacy and security. This
+            policy explains how we collect, use, disclose, and protect your
+            information when you use RupeeFlow&apos;s payment services.
           </motion.p>
         </motion.div>
       </div>

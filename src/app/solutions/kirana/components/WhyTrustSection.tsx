@@ -28,7 +28,7 @@ const features = [
 
 export default function WhyTrustSection() {
   return (
-    <section className="relative z-10 py-24 px-6 bg-black border-t border-white/10">
+    <section className="relative z-10 py-24 px-6 bg-white border-t border-white/10">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.7 }}
