@@ -1,17 +1,18 @@
 import './globals.css'
 import HomeExperience from '@/components/sections/HomeExperience'
 import ProductsGrid from '@/components/sections/ProductsGrid'
+import UnifiedPlatformSection from '@/components/sections/UnifiedPlatformSection'
 import StopUsingApps from '@/components/sections/StopUsingApps'
 import CollectMoney from '@/components/sections/CollectMoney'
-import MakePayments from '@/components/sections/MakePayments'
-import GetCredit from '@/components/sections/GetCredit'
+// import MakePayments from '@/components/sections/MakePayments'
+// import GetCredit from '@/components/sections/GetCredit'
 import LendingBanner from '@/components/sections/LendingBanner'
 import PartnershipBanner from '@/components/sections/PartnershipBanner'
 import ChooseRupeeFlow from '@/components/sections/ChooseRupeeFlow'
 import FaqSection from '@/components/sections/FAQ'
 import BlogSection from '@/components/sections/BlogSection'
-import BusinessBanking from '@/components/sections/BusinessBanking'
-import ChooseBusinessType from '@/components/sections/ChooseBusinessType'
+// import BusinessBanking from '@/components/sections/BusinessBanking'
+// import ChooseBusinessType from '@/components/sections/ChooseBusinessType'
 import blogPosts from '@/data/blogPostsHome.json'
 import faq from '@/data/top-faqs.json'
 import { FAQSchema, WebPageSchema } from '@/components/StructuredData'
@@ -29,13 +30,14 @@ export default function HomePage() {
       />
       <HomeExperience />
       <ProductsGrid />
+      <UnifiedPlatformSection />
       <StopUsingApps />
       <LendingBanner />
       <CollectMoney />
-      <MakePayments />
-      <GetCredit />
-      <BusinessBanking />
-      <ChooseBusinessType />
+      {/* <MakePayments />     — re-enable with image assets */}
+      {/* <GetCredit />        — re-enable with image assets */}
+      {/* <BusinessBanking />  — re-enable with image assets */}
+      {/* <ChooseBusinessType /> — re-enable with image assets */}
       <ChooseRupeeFlow />
       <PartnershipBanner />
       <BlogSection

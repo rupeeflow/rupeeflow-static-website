@@ -387,7 +387,7 @@ export default function Navbar() {
         </div>
 
         {/* ── Desktop mega/dropdowns — ONLY rendered on lg+ ── */}
-        <div className="hidden lg:contents">
+        <div className="hidden lg:block absolute left-0 right-0 top-16 z-[98]">
           <AnimatePresence>
             {activeMenu && (
               <motion.div
