@@ -7,8 +7,13 @@ import BenefitsGrid from './components/BenefitsGrid'
 import TestimonialsSection from './components/TestimonialsSection'
 import FAQSection from './components/FAQSection'
 import CTASection from './components/CTASection'
+import LoanOfferingUnavailable from '@/components/solutions/LoanOfferingUnavailable'
+import { SHOW_LOAN_OFFERING } from '@/lib/loanOffering'
 
 export default function EducationMedicalLoanPage() {
+  // Content preserved — flip SHOW_LOAN_OFFERING to true to show again.
+  if (!SHOW_LOAN_OFFERING) return <LoanOfferingUnavailable />
+
   return (
     <main className="min-h-screen bg-white">
       <HeroSection />

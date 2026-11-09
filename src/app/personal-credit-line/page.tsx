@@ -11,43 +11,56 @@ import UseCasesSection from './components/UseCasesSection'
 import FAQSection from '@/components/sections/FAQ'
 import CTASection from './components/CTASection'
 import { WebPageSchema, FAQSchema } from '@/components/StructuredData'
+import LoanOfferingUnavailable from '@/components/solutions/LoanOfferingUnavailable'
+import { SHOW_LOAN_OFFERING } from '@/lib/loanOffering'
 
 const faqs = [
   {
     question: 'What is a Personal Credit Line?',
-    answer: 'A Personal Credit Line is a revolving credit facility where you get approved for a credit limit (₹5,000 to ₹50,000) and can withdraw funds as needed. You only pay interest on the amount you use, not the entire credit limit.',
+    answer:
+      'A Personal Credit Line is a revolving credit facility where you get approved for a credit limit (₹5,000 to ₹50,000) and can withdraw funds as needed. You only pay interest on the amount you use, not the entire credit limit.',
   },
   {
     question: 'How much can I get?',
-    answer: 'You can get a credit line between ₹5,000 to ₹50,000 based on your income, credit history, and repayment capacity. The limit can be increased over time with good repayment behavior.',
+    answer:
+      'You can get a credit line between ₹5,000 to ₹50,000 based on your income, credit history, and repayment capacity. The limit can be increased over time with good repayment behavior.',
   },
   {
     question: 'How does the voice-enabled feature work?',
-    answer: 'Our platform supports voice commands in 12 Indian languages. You can apply, check balance, withdraw funds, and make payments using simple voice commands through our mobile app.',
+    answer:
+      'Our platform supports voice commands in 12 Indian languages. You can apply, check balance, withdraw funds, and make payments using simple voice commands through our mobile app.',
   },
   {
     question: 'What are the interest charges?',
-    answer: 'Interest is charged only on the amount you withdraw and for the duration you use it. Rates start from 1.5% per month. No interest on unused credit limit.',
+    answer:
+      'Interest is charged only on the amount you withdraw and for the duration you use it. Rates start from 1.5% per month. No interest on unused credit limit.',
   },
   {
     question: 'Can I repay early?',
-    answer: 'Yes! You can repay anytime without any prepayment penalties. Early repayment reduces your interest charges and frees up your credit limit for future use.',
+    answer:
+      'Yes! You can repay anytime without any prepayment penalties. Early repayment reduces your interest charges and frees up your credit limit for future use.',
   },
   {
     question: 'How quickly can I access funds?',
-    answer: 'Once your credit line is approved, you can withdraw funds instantly 24/7 through our app. Money is transferred to your bank account within minutes.',
+    answer:
+      'Once your credit line is approved, you can withdraw funds instantly 24/7 through our app. Money is transferred to your bank account within minutes.',
   },
   {
     question: 'What can I use the credit line for?',
-    answer: 'You can use it for any personal need - medical emergencies, education fees, home repairs, travel, shopping, or any unexpected expenses. No restrictions on usage.',
+    answer:
+      'You can use it for any personal need - medical emergencies, education fees, home repairs, travel, shopping, or any unexpected expenses. No restrictions on usage.',
   },
   {
     question: 'Who is eligible for Personal Credit Line?',
-    answer: 'Anyone with a regular income (salaried or self-employed), minimum credit score of 650, and age between 21-60 years is eligible. Both urban and rural residents can apply.',
+    answer:
+      'Anyone with a regular income (salaried or self-employed), minimum credit score of 650, and age between 21-60 years is eligible. Both urban and rural residents can apply.',
   },
 ]
 
 export default function PersonalCreditLinePage() {
+  // Content preserved — flip SHOW_LOAN_OFFERING to true to show again.
+  if (!SHOW_LOAN_OFFERING) return <LoanOfferingUnavailable />
+
   return (
     <main className="relative min-h-screen bg-white text-gray-900 overflow-hidden">
       <WebPageSchema

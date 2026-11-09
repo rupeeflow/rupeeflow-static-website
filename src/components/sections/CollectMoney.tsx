@@ -92,7 +92,7 @@ export default function CollectMoney() {
             </span>{' '}
             &{' '}
             <span className="bg-gradient-to-r from-[#53BEC2] to-[#00EF64] bg-clip-text text-transparent">
-              Lending
+              Payouts
             </span>{' '}
             together
           </h1>
@@ -145,16 +145,14 @@ export default function CollectMoney() {
                   className="absolute top-0 right-0 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 transition-transform duration-300 ease-in-out group-hover:scale-110"
                 />
 
-                <h3 className="rf-h3 text-white">
-                  {card.title}
-                </h3>
+                <h3 className="rf-h3 text-white">{card.title}</h3>
 
                 <p className="rf-body text-gray-100 mt-5 max-w-[80%]">
                   {card.desc}
                 </p>
 
                 <div className="mt-auto pt-4">
-                  <Link 
+                  <Link
                     href={card.href}
                     className="inline-flex rounded-full px-5 md:px-6 py-2 text-xs md:text-sm font-medium items-center gap-2 bg-gradient-to-r from-[#054C38] to-[#2AB871] text-white transition-all duration-300 ease-in-out group-hover:from-[#53BEC2] group-hover:to-[#00EF64] group-hover:text-black"
                   >

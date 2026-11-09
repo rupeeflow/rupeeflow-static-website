@@ -5,9 +5,9 @@ import Image from 'next/image'
 
 const stats = [
   { value: '1M+', label: 'Transactions Processed' },
-  { value: '10K+', label: 'Active Users' },
-  { value: '1000+', label: 'Businesses Onboard' },
-  { value: '12+', label: 'Regional Languages Supported' },
+  { value: '200', label: 'Active Users' },
+  { value: '100+', label: 'Businesses Onboard' },
+  { value: '5+', label: 'Regional Languages Supported' },
 ]
 
 // Animation variants
@@ -64,9 +64,7 @@ export default function StatsSection() {
                 variants={cardVariants}
                 className="bg-white shadow-md rounded-2xl py-10 flex flex-col items-center justify-center"
               >
-                <h3 className="rf-h2 text-gray-900">
-                  {stat.value}
-                </h3>
+                <h3 className="rf-h2 text-gray-900">{stat.value}</h3>
                 <p className="rf-caption text-gray-500 mt-2 text-center px-3">
                   {stat.label}
                 </p>

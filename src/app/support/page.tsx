@@ -6,11 +6,10 @@ import { Metadata } from 'next'
 import faq from '@/data/top-faqs.json'
 import { WebPageSchema, FAQSchema } from '@/components/StructuredData'
 
-
 export const metadata: Metadata = {
   title: 'Support - Get Help with RupeeFlow Payment Solutions',
   description:
-    'Expert support for RupeeFlow payment infrastructure. Access documentation, FAQs, API guides, and contact our team for help with Payment Gateway, UPI Collections, Vendor Payouts, Business Credit, and all RupeeFlow products.',
+    'Expert support for RupeeFlow payment infrastructure. Access documentation, FAQs, API guides, and contact our team for help with Payment Gateway, UPI Collections, Vendor Payouts, and all RupeeFlow products.',
   keywords: [
     'payment support',
     'API documentation',
@@ -44,7 +43,9 @@ const SupportPage = () => {
         description="Expert support for RupeeFlow payment infrastructure. Access documentation, FAQs, API guides, and contact our technical team."
         url="/support"
       />
-      <FAQSchema faqs={faq.map(f => ({ question: f.question, answer: f.answer }))} />
+      <FAQSchema
+        faqs={faq.map(f => ({ question: f.question, answer: f.answer }))}
+      />
       <SupportHero />
       <FaqSupportSection />
     </div>

@@ -27,10 +27,7 @@ const ProductHero = () => {
         animate="visible"
         className="text-center px-5 max-w-5xl mb-10"
       >
-        <motion.h1
-          variants={content}
-          className="rf-h1 text-white mb-6 mt-30"
-        >
+        <motion.h1 variants={content} className="rf-h1 text-white mb-6 mt-30">
           Innovative UPI Solutions for Every User, Business & NRI
         </motion.h1>
         <motion.p
@@ -60,7 +57,7 @@ const ProductHero = () => {
           Get Started <ArrowRight className="w-4 h-4" />
         </Link>
 
-        <Link
+        {/* <Link
           href="https://play.google.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -75,7 +72,7 @@ const ProductHero = () => {
           <span className="text-sm font-semibold text-white">
             DOWNLOAD THE APP
           </span>
-        </Link>
+        </Link> */}
       </motion.div>
     </section>
   )

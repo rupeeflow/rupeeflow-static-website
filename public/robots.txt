@@ -1,6 +1,15 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
+
+# Loan / credit product pages are not currently offered
+Disallow: /merchant-cash-advance
+Disallow: /nri-emergency-loans
+Disallow: /invoicing-financing
+Disallow: /personal-credit-line
+Disallow: /education-medical-loan
+Disallow: /check-eligibility
+
 Disallow: /api/
 Disallow: /admin/
 

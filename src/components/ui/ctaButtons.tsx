@@ -37,7 +37,7 @@ const CtaButtons = () => {
           Explore Solutions <ArrowRight className="w-4 h-4" />
         </Link>
 
-        <Link
+        {/* <Link
           href="https://play.google.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -52,7 +52,7 @@ const CtaButtons = () => {
           <span className="text-sm font-semibold text-white">
             DOWNLOAD THE APP
           </span>
-        </Link>
+        </Link> */}
       </motion.div>
     </motion.div>
   )

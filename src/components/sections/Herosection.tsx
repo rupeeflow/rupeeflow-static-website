@@ -13,7 +13,7 @@ export default function Hero() {
       {/* Main Content Container */}
       <div className="relative z-10 flex flex-col items-center justify-start px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-28 pb-8 sm:pb-12 lg:pb-16">
         {/* Pills */}
-        <div className="flex justify-center gap-2 sm:gap-3 mb-3 sm:mb-4 lg:mb-6 flex-wrap opacity-0 animate-fade-in mt-4 sm:mt-6">
+        {/* <div className="flex justify-center gap-2 sm:gap-3 mb-3 sm:mb-4 lg:mb-6 flex-wrap opacity-0 animate-fade-in mt-4 sm:mt-6">
           {['Payment Gateway', 'Credits', 'Lending'].map(item => (
             <span
               key={item}
@@ -22,7 +22,7 @@ export default function Hero() {
               {item}
             </span>
           ))}
-        </div>
+        </div> */}
 
         {/* Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#ffffff] text-center max-w-5xl opacity-0 animate-fade-in-up px-4 leading-tight">
@@ -34,7 +34,8 @@ export default function Hero() {
 
         {/* Subtext */}
         <p className="mt-3 sm:mt-4 lg:mt-6 text-sm sm:text-base lg:text-lg text-gray-400 text-center max-w-3xl opacity-0 animate-fade-in-up-delayed px-4">
-          Accept payments, Make payouts. Get instant credit – All In One App
+          Accept payments. Make payouts. Run your business cash flow — all in
+          one place.
         </p>
 
         {/* Decorative Frame */}
@@ -72,13 +73,15 @@ export default function Hero() {
           </Link>
 
           <Link
-            href="#"
+            href="https://erp.rupeeflow.co"
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 rounded-full bg-transparent text-[#ffffff] transition-all duration-300 text-xs sm:text-sm hover:scale-105 overflow-hidden group text-center"
           >
             <span className="absolute inset-0 rounded-full p-[2px] bg-gradient-to-r from-[#53BEC2] via-[#00EF64] to-[#53BEC2] bg-[length:200%_100%] animate-border-flow-delayed-2">
               <span className="flex h-full w-full items-center justify-center rounded-full bg-[#020506] group-hover:bg-[#01222D] transition-colors duration-300"></span>
             </span>
-            <span className="relative z-10">Get instant 5L Credit</span>
+            <span className="relative z-10">Open Onichannel</span>
           </Link>
         </div>
 
@@ -101,7 +104,7 @@ export default function Hero() {
                 10&nbsp;<span className="text-[#30f3bc]">Cr+</span>
               </h3>
               <p className="text-xs sm:text-sm lg:text-base text-gray-400 mt-1 sm:mt-2 lg:mt-3 leading-snug">
-                Credit Disbursed
+                Payments Processed
               </p>
             </div>
           </div>

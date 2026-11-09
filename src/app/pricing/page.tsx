@@ -6,11 +6,19 @@ import { WebPageSchema } from '@/components/StructuredData'
 
 export const metadata: Metadata = {
   title: 'Pricing - Transparent Payment Solutions Pricing | RupeeFlow',
-  description: 'Simple, transparent pricing for Payment Gateway, UPI Collections, Payment Links, QR Code, Vendor Payouts, Bulk Transfers, Salary Disbursements, and Business Credit. No hidden fees. Scale as you grow with RupeeFlow.',
-  keywords: ['payment pricing', 'UPI pricing', 'fintech pricing', 'payment gateway cost', 'transaction fees'],
+  description:
+    'Simple, transparent pricing for Payment Gateway, UPI Collections, Payment Links, QR Code, Vendor Payouts, Bulk Transfers, and Salary Disbursements. No hidden fees. Scale as you grow with RupeeFlow.',
+  keywords: [
+    'payment pricing',
+    'UPI pricing',
+    'fintech pricing',
+    'payment gateway cost',
+    'transaction fees',
+  ],
   openGraph: {
     title: 'Pricing - Transparent Payment Solutions | RupeeFlow',
-    description: 'Simple, transparent pricing for payment solutions. No hidden fees.',
+    description:
+      'Simple, transparent pricing for payment solutions. No hidden fees.',
     url: 'https://rupeeflow.co/pricing',
     siteName: 'RupeeFlow',
     type: 'website',
@@ -18,7 +26,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing - Transparent Payment Solutions | RupeeFlow',
-    description: 'Simple, transparent pricing for payment solutions. No hidden fees.',
+    description:
+      'Simple, transparent pricing for payment solutions. No hidden fees.',
   },
   alternates: {
     canonical: 'https://rupeeflow.co/pricing',
@@ -30,7 +39,7 @@ const PricingPage = () => {
     <div>
       <WebPageSchema
         title="Pricing - Transparent Payment Solutions Pricing"
-        description="Simple, transparent pricing for Payment Gateway, UPI Collections, Payment Links, Vendor Payouts, Bulk Transfers, Salary Disbursements & Business Credit. No hidden fees."
+        description="Simple, transparent pricing for Payment Gateway, UPI Collections, Payment Links, Vendor Payouts, Bulk Transfers & Salary Disbursements. No hidden fees."
         url="/pricing"
       />
       <PricingSection />

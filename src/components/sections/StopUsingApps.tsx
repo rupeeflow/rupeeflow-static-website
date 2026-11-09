@@ -26,18 +26,22 @@ const features = [
   {
     icon: ShieldCheck,
     delay: 0.3,
-    title: 'Credit for Your Expenses',
-    desc: 'Unlock up to ₹50L in business or personal credit — for NRIs, MSMEs, and startups. Instant approval, flexible repayment, and a fully paperless process backed by AI underwriting.',
+    title: 'Secure by Design',
+    desc: 'Bank-grade security with real-time fraud checks, encrypted settlements, and full audit trails — so every payment and payout stays protected end to end.',
   },
 ]
 
-const borderDelays = ['', 'animate-border-flow-delayed', 'animate-border-flow-delayed-2', 'animate-border-flow-delayed']
+const borderDelays = [
+  '',
+  'animate-border-flow-delayed',
+  'animate-border-flow-delayed-2',
+  'animate-border-flow-delayed',
+]
 
 export default function StopUsingApps() {
   return (
     <section className="bg-white py-12 sm:py-16 lg:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 items-start gap-8 lg:gap-16">
-
         {/* ── LEFT CONTENT ── */}
         <div>
           <motion.div
@@ -47,10 +51,13 @@ export default function StopUsingApps() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="rf-h2 text-gray-900">
-              <span className="text-emerald-500">Stop</span> Using 5 Different Apps
+              <span className="text-emerald-500">Stop</span> Using 5 Different
+              Apps
             </h2>
             <p className="rf-lead text-gray-500 mt-4 max-w-xl leading-relaxed">
-              One unified platform for AI-powered payments, instant payouts, smart cards, and business credit — everything your business needs, seamlessly connected.
+              One unified platform for AI-powered payments, instant payouts, and
+              smart cards — everything your business needs, seamlessly
+              connected.
             </p>
           </motion.div>
 
@@ -62,10 +69,16 @@ export default function StopUsingApps() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: feat.delay, ease: 'easeOut' }}
+                transition={{
+                  duration: 0.5,
+                  delay: feat.delay,
+                  ease: 'easeOut',
+                }}
                 className="relative group"
               >
-                <div className={`absolute inset-0 rounded-2xl p-[1.5px] bg-gradient-to-r from-emerald-400 via-teal-300 to-green-400 bg-[length:200%_100%] animate-border-flow ${borderDelays[i]}`} />
+                <div
+                  className={`absolute inset-0 rounded-2xl p-[1.5px] bg-gradient-to-r from-emerald-400 via-teal-300 to-green-400 bg-[length:200%_100%] animate-border-flow ${borderDelays[i]}`}
+                />
                 <div className="relative bg-white rounded-[calc(1rem-1.5px)] p-5 z-10 h-full">
                   <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-br from-emerald-500 to-teal-600 text-white mb-3 shadow-sm shadow-emerald-100 group-hover:scale-110 transition-transform duration-300">
                     <feat.icon size={17} />
@@ -80,7 +93,6 @@ export default function StopUsingApps() {
 
         {/* ── RIGHT VISUAL AREA — original 4 payment image cards ── */}
         <div className="relative h-[560px] hidden lg:block">
-
           {/* PERSON */}
           <div className="absolute right-[1px] bottom-0 z-10 stat-card">
             <Image
@@ -94,44 +106,110 @@ export default function StopUsingApps() {
 
           {/* TOP CARD LEFT — UPI Collections */}
           <div className="zone topLeft">
-            <img src="/different/collections.png" className="card w-[210px]" alt="" />
+            <img
+              src="/different/collections.png"
+              className="card w-[210px]"
+              alt=""
+            />
           </div>
 
           {/* TOP CARD RIGHT — Payment Gateway */}
           <div className="zone topRight">
-            <img src="/different/gateway.png" className="card w-[210px]" alt="" />
+            <img
+              src="/different/gateway.png"
+              className="card w-[210px]"
+              alt=""
+            />
           </div>
 
           {/* LEFT CARD — Business */}
           <div className="zone leftZone">
-            <img src="/different/business.png" className="card w-[250px] right-3.5" alt="" />
+            <img
+              src="/different/business.png"
+              className="card w-[250px] right-3.5"
+              alt=""
+            />
           </div>
 
           {/* BOTTOM CARD — Vendor */}
           <div className="zone bottomZone">
-            <img src="/different/vendor.png" className="card w-[240px] " alt="" />
+            <img
+              src="/different/vendor.png"
+              className="card w-[240px] "
+              alt=""
+            />
           </div>
-
         </div>
       </div>
 
       <style jsx>{`
         .card {
           border-radius: 14px;
-          border: 1px solid rgba(0,0,0,0.08);
-          box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
           background: #fff;
         }
-        .zone { position: absolute; z-index: 20; }
-        .topLeft  { top: 30px;   right: 360px; animation: slideLeftRight 12s ease-in-out infinite; }
-        .topRight { top: -100px; right: 80px;  animation: slideRightLeft 14s ease-in-out infinite; }
-        .leftZone { left: 20px;  top: 160px;   animation: floatUp 12s ease-in-out infinite; }
-        .bottomZone { right: 260px; bottom: 0; animation: floatDown 13s ease-in-out infinite; }
+        .zone {
+          position: absolute;
+          z-index: 20;
+        }
+        .topLeft {
+          top: 30px;
+          right: 360px;
+          animation: slideLeftRight 12s ease-in-out infinite;
+        }
+        .topRight {
+          top: -100px;
+          right: 80px;
+          animation: slideRightLeft 14s ease-in-out infinite;
+        }
+        .leftZone {
+          left: 20px;
+          top: 160px;
+          animation: floatUp 12s ease-in-out infinite;
+        }
+        .bottomZone {
+          right: 260px;
+          bottom: 0;
+          animation: floatDown 13s ease-in-out infinite;
+        }
 
-        @keyframes slideLeftRight { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-45px); } }
-        @keyframes slideRightLeft { 0%,100% { transform: translateX(0); } 50% { transform: translateX(45px); } }
-        @keyframes floatUp  { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-35px); } }
-        @keyframes floatDown { 0%,100% { transform: translateY(0); } 50% { transform: translateY(35px); } }
+        @keyframes slideLeftRight {
+          0%,
+          100% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(-45px);
+          }
+        }
+        @keyframes slideRightLeft {
+          0%,
+          100% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(45px);
+          }
+        }
+        @keyframes floatUp {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-35px);
+          }
+        }
+        @keyframes floatDown {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(35px);
+          }
+        }
       `}</style>
     </section>
   )

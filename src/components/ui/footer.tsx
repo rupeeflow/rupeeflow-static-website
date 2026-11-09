@@ -2,7 +2,14 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaXTwitter, FaLinkedinIn, FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa6'
+import {
+  FaXTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube,
+} from 'react-icons/fa6'
+import NoLoanNotice from '@/components/ui/NoLoanNotice'
 
 /* ── Link data ──────────────────────────────────────────── */
 const collectLinks = [
@@ -29,14 +36,6 @@ const payLinks = [
   { label: 'Payable Analytics', href: '/payable-analytics' },
 ]
 
-const creditLinks = [
-  { label: 'Merchant Cash Advance', href: '/merchant-cash-advance' },
-  { label: 'NRI Loans', href: '/nri-emergency-loans' },
-  { label: 'Invoice Financing', href: '/invoicing-financing' },
-  { label: 'Credit Line', href: '/personal-credit-line' },
-  { label: 'Education Loans', href: '/education-medical-loan' },
-]
-
 const partnerLinks = [
   { label: 'For Banks', href: '/partnerships/banking' },
   { label: 'Affiliate Program', href: '/partnerships/affiliates' },
@@ -44,6 +43,19 @@ const partnerLinks = [
   // { label: 'Co-branded Digital Wallet', href: '/comingsoon' },
   { label: 'Payment Gateway', href: '/payment-gateway' },
   // { label: 'Bharat Connect', href: '/comingsoon' },
+]
+
+const solutionLinks = [
+  { label: 'B2B Manufacturing', href: '/solutions/b2b-manufacturing' },
+  { label: 'Cafe', href: '/solutions/cafe' },
+  { label: 'Restaurants', href: '/solutions/restaurants' },
+  { label: 'Retail', href: '/solutions/retail' },
+  { label: 'Beverages', href: '/solutions/beverages' },
+  { label: 'SaaS', href: '/solutions/saas' },
+  { label: 'E-Commerce', href: '/solutions/ecommerce' },
+  { label: 'Education', href: '/solutions/education' },
+  { label: 'BFSI', href: '/solutions/bfsi' },
+  { label: 'Freelance', href: '/solutions/freelance' },
 ]
 
 const resourceLinks = [
@@ -114,7 +126,6 @@ function FooterGroup({
 export default function Footer() {
   return (
     <footer className="w-full bg-[#0c1a13] text-gray-300">
-
       {/* Thin emerald top accent */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-emerald-500/60 to-transparent" />
 
@@ -147,36 +158,70 @@ export default function Footer() {
 
       {/* ── MAIN LINK GRID ── */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[2fr_1.1fr_1.1fr_1.1fr_1.1fr] gap-x-8 gap-y-10 border-b border-white/[0.06]">
-
         {/* ── BRAND COLUMN ── */}
         <div className="col-span-2 md:col-span-1">
-          <Image src="/rflogo-darkbg.svg" alt="RupeeFlow" width={160} height={36} className="mb-4" />
+          <Image
+            src="/rflogo-darkbg.svg"
+            alt="RupeeFlow"
+            width={160}
+            height={36}
+            className="mb-4"
+          />
 
           <p className="text-sm text-gray-300 leading-relaxed max-w-[260px] mb-6">
-            Providing Indian businesses and NRIs better financial solutions — fast, secure, and built for scale.
+            Providing Indian businesses and NRIs better financial solutions —
+            fast, secure, and built for scale.
           </p>
 
           {/* Offices */}
           {[
             {
               label: 'Registered Office — Bangalore',
-              lines: ['No. 112, AKR Tech Park,', 'Bommanahalli, Bangalore South,', 'Karnataka — 560068, India'],
+              lines: [
+                'No. 112, AKR Tech Park,',
+                'Bommanahalli, Bangalore South,',
+                'Karnataka — 560068, India',
+              ],
             },
             {
               label: 'Branch Office — Hyderabad',
-              lines: ['Coworkzone, 4th Floor, Plot No. 63,', 'Jubilee Hills, Hyderabad — 500033,', 'Telangana, India'],
+              lines: [
+                'Coworkzone, 4th Floor, Plot No. 63,',
+                'Jubilee Hills, Hyderabad — 500033,',
+                'Telangana, India',
+              ],
             },
-          ].map((office) => (
+          ].map(office => (
             <div key={office.label} className="flex items-start gap-2.5 mb-4">
-              <svg className="w-3.5 h-3.5 text-emerald-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              <svg
+                className="w-3.5 h-3.5 text-emerald-500 mt-1 shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
               </svg>
               <div>
-                <p className="text-xs font-semibold text-gray-100 mb-0.5">{office.label}</p>
+                <p className="text-xs font-semibold text-gray-100 mb-0.5">
+                  {office.label}
+                </p>
                 <p className="text-xs text-gray-400 leading-relaxed">
                   {office.lines.map((line, i) => (
-                    <span key={i}>{line}{i < office.lines.length - 1 && <br />}</span>
+                    <span key={i}>
+                      {line}
+                      {i < office.lines.length - 1 && <br />}
+                    </span>
                   ))}
                 </p>
               </div>
@@ -185,23 +230,36 @@ export default function Footer() {
 
           {/* Email */}
           <div className="flex items-center gap-2.5 mb-5">
-            <svg className="w-3.5 h-3.5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            <svg
+              className="w-3.5 h-3.5 text-emerald-500 shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
             </svg>
-            <Link href="mailto:support@rupeeflow.co" className="text-xs text-gray-300 hover:text-emerald-400 transition-colors">
+            <Link
+              href="mailto:support@rupeeflow.co"
+              className="text-xs text-gray-300 hover:text-emerald-400 transition-colors"
+            >
               support@rupeeflow.co
             </Link>
           </div>
 
           {/* App download */}
-          <Link
+          {/* <Link
             href="https://play.google.com"
             target="_blank"
             className="inline-flex items-center gap-2 border border-emerald-500/40 rounded-lg px-4 py-2 hover:bg-emerald-500/10 hover:border-emerald-400 transition-all duration-200 group mb-6"
           >
             <Image src="/icons/google-play.png" alt="" width={16} height={16} />
             <span className="font-semibold text-white text-[11px] tracking-wide group-hover:text-emerald-300 transition-colors">DOWNLOAD THE APP</span>
-          </Link>
+          </Link> */}
 
           {/* Compliance badges — inline pills in brand column */}
           <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-400 mb-2">
@@ -226,35 +284,64 @@ export default function Footer() {
         {/* ── COL 3: MAKE PAYMENTS ── */}
         <FooterGroup title="Make Payments" links={payLinks} />
 
-        {/* ── COL 4: GET CREDIT + PARTNERSHIPS ── */}
+        {/* ── COL 4: SOLUTIONS + PARTNERSHIPS ── */}
         <div>
-          <FooterGroup title="Get Credit" links={creditLinks} />
-          <FooterGroup title="Partnerships" links={partnerLinks} className="mt-8" />
+          <FooterGroup title="Solutions" links={solutionLinks} />
+          <FooterGroup
+            title="Partnerships"
+            links={partnerLinks}
+            className="mt-8"
+          />
         </div>
 
         {/* ── COL 5: COMPANY + RESOURCES + LEGAL ── */}
         <div>
           <FooterGroup title="Company" links={companyLinks} />
-          <FooterGroup title="Resources" links={resourceLinks} className="mt-8" />
+          <FooterGroup
+            title="Resources"
+            links={resourceLinks}
+            className="mt-8"
+          />
           <FooterGroup title="Legal" links={legalLinks} className="mt-8" />
         </div>
+      </div>
 
+      {/* ── NO LOAN DISCLAIMER ── */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 pb-4">
+        <NoLoanNotice className="border-red-500/50 bg-red-500/10 text-red-400" />
       </div>
 
       {/* ── BOTTOM BAR ── */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-
         <p className="text-xs text-gray-400">
-          © {new Date().getFullYear()} RupeeFlow Finance Pvt Ltd. All Rights Reserved.
-          <span className="hidden md:inline ml-4 text-gray-500">CIN: U64990KA2025PTC209485</span>
+          © {new Date().getFullYear()} RupeeFlow Finance Pvt Ltd. All Rights
+          Reserved.
+          <span className="hidden md:inline ml-4 text-gray-500">
+            CIN: U64990KA2025PTC209485
+          </span>
         </p>
 
         <div className="flex items-center gap-4 text-xs text-gray-400">
-          <Link href="/legal/privacy" className="hover:text-emerald-400 transition-colors">Privacy Policy</Link>
+          <Link
+            href="/legal/privacy"
+            className="hover:text-emerald-400 transition-colors"
+          >
+            Privacy Policy
+          </Link>
           <span className="w-px h-3 bg-white/10" />
-          <Link href="/legal/terms" className="hover:text-emerald-400 transition-colors">Terms</Link>
+          <Link
+            href="/legal/terms"
+            className="hover:text-emerald-400 transition-colors"
+          >
+            Terms
+          </Link>
           <span className="w-px h-3 bg-white/10" />
-          <Link href="/legal/cookies" className="hover:text-emerald-400 transition-colors">Cookie Policy</Link>
+          <Link
+            href="/legal/cookies"
+            className="hover:text-emerald-400 transition-colors"
+          >
+            Cookie Policy
+          </Link>
         </div>
 
         {/* Social icons */}
@@ -270,9 +357,7 @@ export default function Footer() {
             </Link>
           ))}
         </div>
-
       </div>
-
     </footer>
   )
 }

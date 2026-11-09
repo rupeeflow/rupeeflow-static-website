@@ -5,32 +5,69 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useGSAP } from '@gsap/react'
 import { gsap, ScrollTrigger } from '@/lib/gsap'
+import { SHOW_LOAN_OFFERING } from '@/lib/loanOffering'
 
 gsap.registerPlugin(useGSAP)
 
 const businessCards = [
   {
     title: 'MSME / SMBs',
-    items: ['Payment Gateway', 'Bulk Payouts', 'Invoice Financing', 'Business Current Account'],
+    items: SHOW_LOAN_OFFERING
+      ? [
+          'Payment Gateway',
+          'Bulk Payouts',
+          'Invoice Financing',
+          'Business Current Account',
+        ]
+      : [
+          'Payment Gateway',
+          'Bulk Payouts',
+          'Invoice Management',
+          'Business Current Account',
+        ],
     image: '/business/msme.svg',
     active: true,
     link: '/solutions/msme',
   },
   {
     title: 'Kirana Store / Small Merchant',
-    items: ['Kirana POS', 'Merchant Cash', 'Bill Payments', 'Voice Payments'],
+    items: SHOW_LOAN_OFFERING
+      ? ['Kirana POS', 'Merchant Cash', 'Bill Payments', 'Voice Payments']
+      : [
+          'Kirana POS',
+          'UPI & QR Collections',
+          'Bill Payments',
+          'Voice Payments',
+        ],
     image: '/business/kirana.svg',
     link: '/solutions/kirana',
   },
   {
     title: 'NRI / Overseas Indian',
-    items: ['Cross-border Remittance', 'NRI Emergency Loans', 'Direct bill Payments to India', 'Multi-currency support'],
+    items: SHOW_LOAN_OFFERING
+      ? [
+          'Cross-border Remittance',
+          'NRI Emergency Loans',
+          'Direct bill Payments to India',
+          'Multi-currency support',
+        ]
+      : [
+          'Cross-border Remittance',
+          'Family Bill Payments',
+          'Direct bill Payments to India',
+          'Multi-currency support',
+        ],
     image: '/business/nri.svg',
     link: '/solutions/nri',
   },
   {
     title: 'Developer / Platform',
-    items: ['Payment Gateway APIs', 'Payouts APIs', 'Verification APIs', 'Banking-as-a-Service'],
+    items: [
+      'Payment Gateway APIs',
+      'Payouts APIs',
+      'Verification APIs',
+      'Banking-as-a-Service',
+    ],
     image: '/business/developer.svg',
     link: '/solutions/developer',
   },
@@ -39,31 +76,53 @@ const businessCards = [
 export default function ChooseBusinessType() {
   const sectionRef = useRef<HTMLElement>(null)
 
-  useGSAP(() => {
-    // Heading fades up
-    gsap.fromTo('.cbt-heading',
-      { y: 40, opacity: 0 },
-      {
-        y: 0, opacity: 1, duration: 0.65, ease: 'power2.out',
-        scrollTrigger: { trigger: '.cbt-heading', start: 'top 92%', once: true },
-      }
-    )
+  useGSAP(
+    () => {
+      // Heading fades up
+      gsap.fromTo(
+        '.cbt-heading',
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.65,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '.cbt-heading',
+            start: 'top 92%',
+            once: true,
+          },
+        }
+      )
 
-    // Cards stagger up
-    gsap.fromTo('.cbt-card',
-      { y: 50, opacity: 0 },
-      {
-        y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power2.out',
-        scrollTrigger: { trigger: '.cbt-cards', start: 'top 92%', once: true },
-      }
-    )
+      // Cards stagger up
+      gsap.fromTo(
+        '.cbt-card',
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '.cbt-cards',
+            start: 'top 92%',
+            once: true,
+          },
+        }
+      )
 
-    ScrollTrigger.refresh()
-  }, { scope: sectionRef })
+      ScrollTrigger.refresh()
+    },
+    { scope: sectionRef }
+  )
 
   return (
-    <section ref={sectionRef} className="relative bg-white py-8 overflow-hidden">
-
+    <section
+      ref={sectionRef}
+      className="relative bg-white py-8 overflow-hidden"
+    >
       {/* BIG WAVE — hidden on mobile to avoid overflow */}
       <Image
         src="/wave.png"
@@ -75,7 +134,6 @@ export default function ChooseBusinessType() {
 
       {/* CONTENT */}
       <div className="relative z-[10] max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8">
-
         {/* Heading */}
         <div className="cbt-heading text-center text-black mb-8 sm:mb-14">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
@@ -136,7 +194,6 @@ export default function ChooseBusinessType() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   )

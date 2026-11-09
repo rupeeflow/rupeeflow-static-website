@@ -18,11 +18,11 @@ const nunitoSans = Nunito_Sans({
 export const metadata: Metadata = {
   applicationName: 'RupeeFlow',
   title: {
-    default: 'RupeeFlow — Payments, Payouts & Business Credit for India',
+    default: 'RupeeFlow — Payments & Payouts for Indian Businesses',
     template: '%s | RupeeFlow',
   },
   description:
-    'RupeeFlow is India\'s all-in-one fintech platform. Accept payments via Payment Gateway, UPI, Payment Links, QR Code & Payment Button. Send money with Vendor Payouts, Salary Disbursements, Bulk Transfers, Bill Payments & Invoice Management. Get business credit with Merchant Cash Advance, Invoice Financing & NRI Loans.',
+    "RupeeFlow is India's all-in-one payments platform for B2B manufacturing, cafes, restaurants, retail, beverages, SaaS, and more. Accept payments via Payment Gateway, UPI, Payment Links & QR. Send vendor payouts, salary disbursements, and bulk transfers.",
   keywords: [
     'payment gateway India',
     'UPI collections',
@@ -36,16 +36,17 @@ export const metadata: Metadata = {
     'business bill payments',
     'rental payments',
     'tax payments GST',
-    'merchant cash advance',
-    'invoice financing',
-    'NRI emergency loans',
-    'personal credit line',
-    'business credit India',
     'payroll processing India',
     'auto collect',
     'instant settlements',
     'fintech India',
     'RupeeFlow',
+    'B2B manufacturing payments India',
+    'cafe payment solutions India',
+    'restaurant payment gateway India',
+    'retail UPI QR payments',
+    'beverage manufacturing payments',
+    'FMCG B2B collections',
   ],
   authors: [{ name: 'RupeeFlow' }],
   openGraph: {
@@ -53,17 +54,17 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: 'https://rupeeflow.co',
     siteName: 'RupeeFlow',
-    title: 'RupeeFlow — Payments, Payouts & Business Credit for India',
+    title: 'RupeeFlow — Payments & Payouts for Indian Businesses',
     description:
-      'Accept payments via Payment Gateway, UPI & QR Code. Send payouts for vendors, salary & bulk transfers. Get business credit with Merchant Cash Advance & Invoice Financing.',
+      'Accept payments via Payment Gateway, UPI & QR Code. Send payouts for vendors, salary & bulk transfers — all on one platform.',
   },
   twitter: {
     card: 'summary_large_image',
     site: '@rupeeflow',
     creator: '@rupeeflow',
-    title: 'RupeeFlow — Payments, Payouts & Business Credit for India',
+    title: 'RupeeFlow — Payments & Payouts for Indian Businesses',
     description:
-      'India\'s all-in-one fintech platform for payment collection, vendor payouts, salary disbursements, and business credit.',
+      "India's all-in-one fintech platform for payment collection, vendor payouts, and salary disbursements.",
   },
   robots: {
     index: true,
@@ -87,7 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${nunitoSans.variable} overflow-x-hidden`}>
       <head>
-        {/* WebSite structured data — tells Google the site name is "RupeeFlow" */}
+        {/* WebSite + Organization structured data for industry query coverage */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -97,6 +98,123 @@ export default function RootLayout({
               name: 'RupeeFlow',
               alternateName: 'RupeeFlow',
               url: 'https://rupeeflow.co',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: 'https://rupeeflow.co/solutions/{search_term_string}',
+                'query-input': 'required name=search_term_string',
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'RupeeFlow',
+              url: 'https://rupeeflow.co',
+              logo: 'https://rupeeflow.co/rupeeflow.png',
+              sameAs: ['https://erp.rupeeflow.co'],
+              description:
+                'Payments and payouts platform for B2B manufacturing, cafes, restaurants, retail, beverages, SaaS, ecommerce, education, BFSI, and freelancers in India.',
+              knowsAbout: [
+                'B2B Manufacturing payments',
+                'Cafe payments',
+                'Restaurant payments',
+                'Retail payments',
+                'Beverage manufacturing payments',
+                'SaaS billing',
+                'E-commerce checkout',
+                'Education fee collection',
+                'BFSI collections',
+                'Freelance payment links',
+              ],
+              areaServed: 'IN',
+              makesOffer: [
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'B2B Manufacturing Payment Solutions',
+                    url: 'https://rupeeflow.co/solutions/b2b-manufacturing',
+                  },
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Cafe Payment Solutions',
+                    url: 'https://rupeeflow.co/solutions/cafe',
+                  },
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Restaurant Payment Solutions',
+                    url: 'https://rupeeflow.co/solutions/restaurants',
+                  },
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Retail Payment Solutions',
+                    url: 'https://rupeeflow.co/solutions/retail',
+                  },
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Beverage Payment Solutions',
+                    url: 'https://rupeeflow.co/solutions/beverages',
+                  },
+                },
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'ItemList',
+              name: 'RupeeFlow Industry Solutions',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'B2B Manufacturing',
+                  url: 'https://rupeeflow.co/solutions/b2b-manufacturing',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Cafe',
+                  url: 'https://rupeeflow.co/solutions/cafe',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 3,
+                  name: 'Restaurants',
+                  url: 'https://rupeeflow.co/solutions/restaurants',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 4,
+                  name: 'Retail',
+                  url: 'https://rupeeflow.co/solutions/retail',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 5,
+                  name: 'Beverages',
+                  url: 'https://rupeeflow.co/solutions/beverages',
+                },
+              ],
             }),
           }}
         />

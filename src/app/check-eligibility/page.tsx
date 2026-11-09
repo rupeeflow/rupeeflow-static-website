@@ -5,8 +5,13 @@ import FactorsSection from './components/FactorsSection'
 import ImproveTipsSection from './components/ImproveTipsSection'
 import InstantCheckSection from './components/InstantCheckSection'
 import CTASection from './components/CTASection'
+import LoanOfferingUnavailable from '@/components/solutions/LoanOfferingUnavailable'
+import { SHOW_LOAN_OFFERING } from '@/lib/loanOffering'
 
 export default function CheckEligibilityPage() {
+  // Content preserved — flip SHOW_LOAN_OFFERING to true to show again.
+  if (!SHOW_LOAN_OFFERING) return <LoanOfferingUnavailable />
+
   return (
     <main className="min-h-screen bg-white">
       <HeroSection />

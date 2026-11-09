@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'RupeeFlow',
     short_name: 'RupeeFlow',
-    description: 'Payments, Payouts & Business Credit for India',
+    description: 'Payments & Payouts for Indian Businesses',
     start_url: '/',
     display: 'browser',
     background_color: '#ffffff',
@@ -24,4 +24,4 @@ export default function manifest(): MetadataRoute.Manifest {
   }
 }
 
-export const dynamic = 'force-static';
+export const dynamic = 'force-static'

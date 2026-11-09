@@ -16,11 +16,13 @@ export default function SolutionPage() {
   return (
     <>
       <WebPageSchema
-        title="Products — Collect, Pay & Get Credit | RupeeFlow"
-        description="RupeeFlow's complete product suite: Payment Gateway, UPI Collections, Payment Links, QR Code, Payment Button, Vendor Payments, Salary Disbursements, Bulk Payouts, Invoice Management, Bill Payments, Tax Payments, Merchant Cash Advance, Invoice Financing, and NRI Loans."
+        title="Products — Collect & Pay | RupeeFlow"
+        description="RupeeFlow's complete product suite: Payment Gateway, UPI Collections, Payment Links, QR Code, Payment Button, Vendor Payments, Salary Disbursements, Bulk Payouts, Invoice Management, Bill Payments, and Tax Payments."
         url="/products"
       />
-      <FAQSchema faqs={faq.map(f => ({ question: f.question, answer: f.answer }))} />
+      <FAQSchema
+        faqs={faq.map(f => ({ question: f.question, answer: f.answer }))}
+      />
       <ProductHero />
       <KiranaPromo />
       <NEFTInfoSection />
