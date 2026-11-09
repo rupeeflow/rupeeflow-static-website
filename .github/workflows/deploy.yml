@@ -23,7 +23,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: latest
+          version: 10
 
       # ── 3. Setup Node.js 24 ──
       - name: Setup Node.js
@@ -35,6 +35,8 @@ jobs:
       # ── 4. Install dependencies ──
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          HUSKY: '0'
 
       # ── 5. Build Next.js static export ──
       - name: Build
