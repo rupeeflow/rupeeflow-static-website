@@ -23,9 +23,14 @@ export default function NoLoanNotice({
       </p>
       <p>
         Note:{' '}
-        <span className="underline underline-offset-2">
+        <a
+          href="https://www.rupeeflowcard.com/"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          className="underline underline-offset-2 hover:text-red-700"
+        >
           https://www.rupeeflowcard.com/
-        </span>{' '}
+        </a>{' '}
         does not belong to RupeeFlow and is not affiliated with, endorsed by, or
         operated by RupeeFlow.
       </p>
